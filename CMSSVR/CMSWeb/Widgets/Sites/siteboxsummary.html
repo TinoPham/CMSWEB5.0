@@ -1,0 +1,11 @@
+﻿<div class="site-box {{configBox.SizeClass}}" ng-controller="boxgadgetCtrl"  ng-init="init(box)">
+    <div class="site-sumarybox">
+        <div class="{{configBox.Class}}">
+            <div class="summarybox-header-text"> <span>{{configBox.PreTitle | translate}}</span>  <span class="box-title">{{configBox.Title | translate}}</span></div>
+            <div class="site-summarybox-header"></div>
+            <div class="site-summarybox-body">
+                <h1 class="total">{{model.Value}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,126 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.Http;
+using Newtonsoft.Json;
+using Cryptography;
+using System.Web;
+
+namespace MessageContentHandler.Content
+{
+	 public class EncryptMediaFormatter : MediaTypeFormatter
+	{
+		
+		private readonly JsonSerializerSettings jsonSetting;
+		private readonly string Header_Key;
+		public EncryptMediaFormatter(HttpConfiguration config, string headerKey = "SID", string HeaderValue = "application/encrypt")
+			: base()
+		{
+			Header_Key = headerKey;
+			SupportedMediaTypes.Add(new MediaTypeHeaderValue(HeaderValue));
+			jsonSetting = new JsonSerializerSettings
+			{
+				DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+				PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None
+			};
+		}
+		public override bool CanWriteType(Type type)
+		{
+				return true;
+		}
+
+		public override bool CanReadType(Type type)
+		{
+			return true;
+		}
+
+		public override MediaTypeFormatter GetPerRequestFormatterInstance(Type type, HttpRequestMessage request, MediaTypeHeaderValue mediaType)
+		{
+			MediaTypeFormatter formatter = base.GetPerRequestFormatterInstance(type, request, mediaType);
+
+			return formatter;
+		}
+		public override System.Threading.Tasks.Task WriteToStreamAsync(Type type, object value, Stream writeStream, HttpContent content, System.Net.TransportContext transportContext)
+		{
+			var hder = HttpContext.Current.Request;
+			string encryptkey = GetSID(hder.Headers);
+
+			return Task.Factory.StartNew( () => 
+					{
+						WriteToStream(type, value, writeStream, content, encryptkey);
+					}
+			);
+		}
+
+		public override System.Threading.Tasks.Task WriteToStreamAsync(Type type, object value, Stream writeStream, HttpContent content, System.Net.TransportContext transportContext, System.Threading.CancellationToken cancellationToken)
+		{
+			return base.WriteToStreamAsync(type, value, writeStream, content, transportContext, cancellationToken);
+		}
+
+		public override Task<object> ReadFromStreamAsync(Type type, Stream readStream, HttpContent content, IFormatterLogger formatterLogger, System.Threading.CancellationToken cancellationToken)
+		{
+			return base.ReadFromStreamAsync(type, readStream, content, formatterLogger, cancellationToken);
+		}
+
+		public override Task<object> ReadFromStreamAsync(Type type, Stream readStream, HttpContent content, IFormatterLogger formatterLogger)
+		{
+			//return base.ReadFromStreamAsync(type, readStream, content, formatterLogger);
+			var hder = HttpContext.Current.Request;
+			string decryptkey = GetSID( hder.Headers);
+			return Task<object>.Factory.StartNew( () =>
+				{
+					return ReadFromStream(type, readStream, content, decryptkey);
+				}
+			);
+		}
+
+		private string GetSID(NameValueCollection headers)
+		{
+			string [] sid = headers.GetValues(Header_Key);
+			return sid == null? string.Empty : sid.FirstOrDefault(); 
+		}
+
+		private void WriteToStream(Type type, object value, Stream writeStream, HttpContent content, string encryptkey)
+		{
+			using (var writer = new StreamWriter(writeStream))
+			{
+				string buff = Encrypt(type, value, encryptkey);
+				writer.Write(buff);
+			}
+		}
+
+		private object ReadFromStream(Type type, Stream readStream, HttpContent content, string decryptkey)
+		{
+			string jsontext = Decrypt(readStream, decryptkey);
+			try{
+				object ret = JsonConvert.DeserializeObject(jsontext, type, jsonSetting);
+
+				return ret;
+			}
+			catch(Exception)
+			{
+				return null;
+			}
+		}
+		private string Encrypt(Type type, object value, string encryptkey)
+		{
+			string val = JsonConvert.SerializeObject(value, jsonSetting);
+
+			return OpenSSLSHA256.OpenSSLEncrypt(val, encryptkey);
+		}
+		private string Decrypt(Stream stream, string decryptkey)
+		{
+			byte [] buff = new byte [stream.Length];
+			stream.Read(buff, 0, buff.Length);
+			string b64 = System.Text.Encoding.UTF8.GetString(buff);
+			 return OpenSSLSHA256.OpenSSLDecrypt(b64, decryptkey);
+		}
+	}
+}

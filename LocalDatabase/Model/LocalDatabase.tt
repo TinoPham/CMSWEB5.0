@@ -1,0 +1,287 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Xml" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.Diagnostics" #>
+<#
+    EnvDTE.DTE dte = GetEnvDTE();
+
+    string sourceFileName = dte.Solution.FindProjectItem(Host.TemplateFile).Name;  
+    ProjectItem enumProjectItem = dte.Solution.FindProjectItem(sourceFileName);
+    Project project = enumProjectItem.ContainingProject;
+    string DefaultNameSpace = string.Empty;
+    foreach (Property prop in project.Properties)
+        {
+            if( prop.Name == "DefaultNamespace")
+            {
+                DefaultNameSpace  = prop.Value.ToString();
+                break;
+            }
+        }
+
+    string Namespace = DefaultNameSpace + ".Model";
+    string Context_Name = "DBModel";
+    string FilePath= this.Host.ResolvePath("ItemConfig.xml");
+    WriteUsings();
+    WriteOpenNameSpace(Namespace);
+    XmlDocument doc= LoadFile(FilePath);
+    XmlNode root = doc.DocumentElement;
+    XmlNode ChildNodes = root.SelectSingleNode("./Base");
+    ItemNode2Class i2class= new ItemNode2Class();
+    StringBuilder Base_class= new StringBuilder();
+    if(ChildNodes != null && ChildNodes.ChildNodes != null)
+    {
+        foreach( XmlNode child in ChildNodes.ChildNodes)
+        {
+            Base_class.Append(i2class.CreateItemClass( child, true));
+            Base_class.AppendLine();
+            Base_class.AppendLine();
+        }
+    }
+//
+    StringBuilder dbSetCollection = new StringBuilder();
+    ChildNodes = root.SelectSingleNode("./ItemClass");
+    StringBuilder all_class= new StringBuilder();
+    List<string>alldbset = new List<string>();
+    if(ChildNodes != null && ChildNodes.ChildNodes != null)
+    {
+        foreach( XmlNode child in ChildNodes.ChildNodes)
+        {
+            all_class.Append( i2class.CreateItemClass( child, false));
+            all_class.AppendLine();
+            all_class.AppendLine();
+            alldbset.Add( child.Attributes["Name"].Value );
+
+        }
+    }
+
+    Write( ContextClass(Context_Name, string.Empty, alldbset.ToArray()).ToString());
+    Write( Base_class.ToString());
+    Write(all_class.ToString());
+
+    WriteCloseNameSpace();
+   
+
+#>
+
+<#+
+   private EnvDTE.DTE GetEnvDTE()
+    {
+        IServiceProvider hostServiceProvider = (IServiceProvider)Host;
+       
+        if (hostServiceProvider == null)
+               throw new Exception("Host property returned unexpected value (null)");
+       
+        EnvDTE.DTE dte = (EnvDTE.DTE)hostServiceProvider.GetService(typeof(EnvDTE.DTE));
+       
+        if (dte == null)
+               throw new Exception("Unable to retrieve EnvDTE.DTE");
+   
+        return dte;
+    }
+   public List<EnvDTE.ProjectItem> GetProjectItemsRecursively(EnvDTE.ProjectItems items)
+  {
+
+      var ret = new List<EnvDTE.ProjectItem>();
+
+      if (items == null) 
+        return ret;
+
+      foreach(EnvDTE.ProjectItem item in items)
+      {
+        ret.Add(item);
+        ret.AddRange(GetProjectItemsRecursively(item.ProjectItems));
+      }
+      return ret;
+  }
+
+    StringBuilder ContextClass(string contextName, string iface, string[] DBSets)
+    {
+        string Class_Header_Line = "\t";
+        string Property_heaer_line = "\t\t";
+        StringBuilder builder= new StringBuilder();
+        //add begin class
+        builder.Append( Class_Header_Line);
+        builder.Append(string.Format( "partial class {0}", contextName));
+        builder.Append(": DbContext");
+        if(!string.IsNullOrEmpty( iface))
+            builder.Append(", " + iface);
+
+        builder.AppendLine();
+        builder.AppendLine( Class_Header_Line + "{");
+        builder.Append(Property_heaer_line + "public DBModel() : base(){}");
+        builder.AppendLine();
+        builder.AppendLine();
+        builder.Append(Property_heaer_line + "public DBModel(string NameorConnectionString) : base(NameorConnectionString){}");
+        builder.AppendLine();
+        builder.AppendLine();
+        
+        foreach( string item in DBSets)
+        {
+            builder.Append( Property_heaer_line);
+            builder.Append( string.Format("public DbSet<{0}> {0}s ", item));
+            builder.Append(" {get; set;}");
+            builder.AppendLine();
+            builder.AppendLine();
+
+        }
+        builder.Append(Class_Header_Line + "}");
+        builder.AppendLine();
+        return builder;
+
+    }
+
+  void WriteUsings()
+  {
+        WriteLine("using System;");
+        WriteLine("using System.Collections.Generic;");
+        WriteLine("using System.ComponentModel.DataAnnotations;");
+        WriteLine("using System.Data.Entity;");
+        WriteLine("using System.Linq;");
+        WriteLine("using System.Text;");
+        WriteLine("using System.Threading.Tasks;");
+        WriteLine("using System.Data.Entity.ModelConfiguration;");
+        WriteLine("using System.ComponentModel.DataAnnotations.Schema;");
+        WriteLine("using System.Data.Entity.ModelConfiguration.Configuration;");
+        WriteLine("using MongoDB.Bson.Serialization.Attributes;");
+        
+  }
+XmlDocument LoadFile(string filename)
+{
+        XmlDocument doc = new XmlDocument();
+        doc.Load(filename);
+        return doc;
+}
+void CreateClass(XmlNode base_node )
+    {
+        if( base_node == null || base_node.ChildNodes == null || base_node.ChildNodes.Count == 0)
+            return;
+
+    }
+
+void WriteOpenNameSpace(string ns)
+    {
+        WriteLine("namespace " +  ns);
+        WriteLine("{");
+    }
+
+void WriteCloseNameSpace()
+    {
+        WriteLine("}");
+    }
+#>
+
+<#+
+public class ItemNode2Class
+{
+        public const string Class_Header_Line = "\t";
+        const string Property_heaer_line = "\t\t";
+        const string str_Name= "Name";
+        const string str_Item = "Item";
+        const string str_Items = "Items";
+        const string str_Property = "Property";
+        const string str_Type = "Type";
+        const string str_Table = "Table";
+        const string str_Interface = "Interface";
+        const string str_Base = "Base";
+        const string str_Attribute= "Attribute";
+        const string str_Length= "Length";
+        const string str_Override = "Override";
+        const string str_Mark = "Mark";
+        const string str_Identity = "Identity";
+
+        public ItemNode2Class(){}
+        private string PropertyItem( XmlNode propertyNode)
+        {
+            if( propertyNode == null || propertyNode.Attributes == null || propertyNode.Attributes.Count == 0)
+                return string.Empty;
+            string patt= Attributevalue( propertyNode.Attributes[str_Attribute]);
+            string max_length= Attributevalue( propertyNode.Attributes[str_Length]);
+            string str_mark = Attributevalue( propertyNode.Attributes[str_Mark]); 
+            string Identity = Attributevalue( propertyNode.Attributes[str_Identity]); 
+            bool is_Override = string.Compare( str_mark, str_Override, true ) == 0;
+            string property_name = Attributevalue( propertyNode.Attributes[str_Name]);
+            string str_ret = Property_heaer_line;
+            if(!string.IsNullOrEmpty(patt) || !string.IsNullOrEmpty(max_length))
+            {
+                str_ret += "[";
+                if( !string.IsNullOrEmpty(patt))
+                    str_ret += string.Format("{0}, DatabaseGenerated(DatabaseGeneratedOption.{1})", patt, string.IsNullOrEmpty( Identity)? "None" : Identity );
+                if( !string.IsNullOrEmpty(max_length))
+                     str_ret += (string.IsNullOrEmpty(patt)? string.Empty : ", ") + string.Format("MaxLength({0})", max_length);
+                str_ret += "]";
+                str_ret += Environment.NewLine + Property_heaer_line;
+            }
+
+            str_ret += string.Format("public {0}", string.IsNullOrEmpty(str_mark)? "" : str_mark + " ") + Attributevalue( propertyNode.Attributes[str_Type]) + " ";
+            str_ret += property_name ;
+            if( is_Override)
+                str_ret +=  "{ get { return base." + property_name + ";} set { base." + property_name +" = value;} }";
+            else
+                str_ret+= " { get; set;}";
+            //str_ret += property_name + ( is_Override? string.Format("{ get {return base.{0};} set { base.{0}} = value;}", property_name) : " { get; set;}");
+            return str_ret;
+
+        }
+    private bool GetBoolean( string input)
+        {
+            if(input == null )
+                return false; 
+            if( input.GetType().Equals( typeof(string)))
+                return string.Compare( input, "true", true) == 0;
+            
+            int ret = 0;
+            return int.TryParse(input.ToString(), out ret) == true ? ret == 1: false;
+        }
+   
+    private string Attributevalue( XmlAttribute att)
+        {
+            if( att == null)
+                return string.Empty;
+            return att.Value ?? string.Empty;
+        }
+    public string CreateItemClass(XmlNode ItemNode, bool baseclass)
+        {
+            string ret = Class_Header_Line;
+            string strTable = Attributevalue(ItemNode.Attributes[str_Table] );
+            if(!string.IsNullOrEmpty(strTable))
+            {
+                ret += string.Format("[Table(\"{0}\")]", strTable);
+                ret += Environment.NewLine + Class_Header_Line;
+            }
+            ret += "[BsonIgnoreExtraElements]";
+            ret += Environment.NewLine + Class_Header_Line;
+            if( baseclass)
+                ret += "public abstract partial class ";
+            else
+                ret += "public partial class ";
+            
+            ret +=  Attributevalue(ItemNode.Attributes[str_Name]);
+        
+            if(!string.IsNullOrEmpty(Attributevalue( ItemNode.Attributes[ str_Base])))
+            {
+                ret +=  ": " +Attributevalue( ItemNode.Attributes[ str_Base]);
+            }
+            ret += Environment.NewLine + Class_Header_Line;
+            ret+= "{" + Environment.NewLine;
+            foreach(XmlNode pnode in ItemNode.ChildNodes)
+            {
+                if( pnode.NodeType != XmlNodeType.Element)
+                    continue;
+                ret += PropertyItem( pnode) + Environment.NewLine;
+                ret += Environment.NewLine;
+            }
+            ret += Class_Header_Line +  "}";
+            return ret;
+        }
+}
+ #>
+
+

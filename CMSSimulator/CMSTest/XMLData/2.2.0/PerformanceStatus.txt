@@ -1,0 +1,13 @@
+
+        <dvr_performance>
+            <physical_memory>287</physical_memory>
+            <virtual_memory>443</virtual_memory>
+            <cpu_usage>29</cpu_usage>
+            <system_memory>1008</system_memory>
+            <system_cpu_usage>37</system_cpu_usage>
+            <date_time>1263552613</date_time>
+            <gmt_time>01/15/2010 10:50:13</gmt_time>
+            <time_zone_name>SE Asia Standard Time</time_zone_name>
+            <time_zone_bias>-420</time_zone_bias>
+        </dvr_performance>
+    

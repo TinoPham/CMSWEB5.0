@@ -1,0 +1,50 @@
+﻿@import url('../app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('../app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * CMS - WIDGETS PANEL
+ * -----------
+ */
+
+.widget {
+	.widget-progress {
+		position: relative;
+
+		&.maximized {
+			position: fixed;
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+			top: @resized_left;
+			left: @left-sidebar-width-default;
+			right: 0px;
+			bottom: 0px;
+			z-index: 11;
+			margin: 0px;
+			border-left: 1px solid #eee;
+			width: auto;
+			padding: 0px;
+
+			.panel {
+				height: 100%;
+			}
+
+			.todo-panel .todo-view .todo-list .editable-container .editable-input{
+				width: 90%;
+			}
+		}
+	}
+}
+
+/*Set FULL Widget */
+#wrapper {
+	&.enlarged {
+		.widget {
+			.widget-progress {
+				&.maximized {
+					left: @resized_left;
+				}
+			}
+		}
+	}
+}

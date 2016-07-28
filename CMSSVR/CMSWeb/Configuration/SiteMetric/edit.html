@@ -1,0 +1,62 @@
+﻿<form name="myForm" class="site-metric-manages form-edit" novalidate angular-validator angular-validator-submit="vm.SaveMetric()">
+	<fieldset>
+		<div class="modal-header">
+			<span class="close" data-ng-click="vm.Cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+			<h3 class="modal-title 123">{{vm.btn_Type|translate}}</h3>
+		</div>
+		<div class="modal-body">
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label for="metricname">{{vm.Resx.SITEMETRIC_NAME|translate}} <span class="required"><i class="glyphicon glyphicon-asterisk"></i></span></label>
+					<input type="text" class="form-control" name="metricname" placeholder="{{vm.Resx.SITEMETRIC_NAME|translate}}"
+						ng-model="vm.metricSelected.MetricName" maxlength="50" autocomplete="off"
+						required-message="'{{vm.Resx.SITEMETRIC_NAME_REQUIRED|translate}}'" required
+						validate-on="dirty" autofocus>
+				</div>
+				<div class="form-group">
+					<label for="metricmeasure">{{vm.Resx.SITEMETRIC_DESCRIPTION|translate}}</label>
+					<textarea class="form-control vresize" name="metricmeasure" ng-model="vm.metricSelected.MetricMeasure"
+						rows="2" cols="2" maxlength="50" autocomplete="off"></textarea>
+					<label class="required">{{'MAXLENGTH_DESCRIPTION_MSG'|translate}}</label>
+				</div>
+				<div class="form-group">
+					<label>{{vm.Resx.SITEMETRIC_LIST|translate}} <span class="required"><i class="glyphicon glyphicon-asterisk"></i></span></label>
+					<div class="panel-metric-list">
+						<div class="table-body scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+							<div ng-repeat="item in vm.metricList">
+								<div class="input-group">
+									<input id="listname{{$index}}" name="listname{{$index}}" type="text" class="form-control"
+										ng-model="item.MetricName" maxlength="50" autocomplete="off"
+										required-message="'{{vm.Resx.SITEMETRIC_LIST_REQUIRED|translate}}'" required
+										validator="vm.validMetricNameFunc(vm.metricList, {{$index}}) === true"
+										invalid-message="vm.validMetricNameFunc(vm.metricList, {{$index}})"
+										validate-on="dirty" metric-child-input>
+
+									<span class="input-group-btn">
+										<button ng-click="vm.RemoveChildMetric(item)" class="btn btn-default" type="button">
+											<i class=" icon-cancel-1"></i>
+										</button>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="footer-metric-list">
+							<span ng-click="vm.AddChildMetric()" class="btn">
+								<i class="icon-plus-1"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<!-- END :: Metric List-->
+
+				<div ng-if="vm.msgValidator" class="alert alert-danger" role="alert">
+					<span>{{vm.msgValidator}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" ng-click="vm.Cancel()">{{vm.Resx.BTN_CANCEL|translate}}</button>
+			<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">{{vm.Resx.BTN_SAVE|translate}}</button>
+		</div>
+	</fieldset>
+</form>

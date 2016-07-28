@@ -1,0 +1,133 @@
+﻿<div class="panel col-md-12 custom-filter-block">
+	<div class="row">
+		<div class="panel" style="margin-bottom: 0">
+			<div class="panel-header">
+				<span class="btn pull-right">
+					<span data-ng-click="cancel()"><i class="icon-cancel-1"></i></span>
+				</span>
+				<h3 class="title"> {{'CUSTOM_FILTER' | translate}}</h3>
+			</div>
+			<div class="panel-body">
+				<div ng-if="ForeignKeyMode" class="fnc-restyle-select-item-list scrollbar-dynamic" style="height: 300px;" data-jquery-scrollbar="scrollOption">
+					<ul class="list-group">
+						<li class="btn list-group-item" ng-class="{'active': p.Checked === true}" ng-repeat="p in data | orderBy:'Name'" ng-click="p.Checked = !p.Checked">
+							<span>{{p.Name}}</span>
+						</li>
+					</ul>
+				</div>
+
+			    <div class="row" ng-if="!ForeignKeyMode">
+			        <div class="col-xs-12">
+			            <div class="form-group">
+			                <div class="row">
+			                    <h5>{{'MSG_SHOWRECORD' | translate}} {{fields.fieldName | translate}}:</h5>
+			                </div>
+			            </div>
+			        </div>
+			        <div class="col-xs-12">
+			            <div class="col-xs-12">
+
+			                <div class="form-group">
+			                    <div class="row">
+
+			                        <div class="col-md-4">
+			                            <div class="input-group-btn">
+			                                <button type="button" style="min-width: 120px;" class=" col-md-12 btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			                                    <i class="{{filter.selectfirst.className}} "></i>
+			                                    {{filter.selectfirst.id === 0 && fields.fieldType === 'string' && fields.key !== '' ? 'Specific': ''}}
+			                                    <span class="caret"></span>
+			                                </button>
+			                                <ul class="dropdown-menu">
+			                                    <li ng-repeat="d in filterDef">
+			                                        <a ng-click="selectFilter(d, true)">
+			                                            {{d.T_Resource | translate}}
+			                                        </a>
+			                                    </li>
+			                                </ul>
+			                            </div>
+			                        </div>
+			                        <div class="col-md-8" ng-if="filter.selectfirst.id === 0 && fields.key !== ''">
+			                            <div class="form-group no-margin">
+			                                <div class="input-group col-sm-12">
+			                                    <multiselect name="{{fields.key}}" class="form-control multiple-select" ng-model="Selected"
+			                                                 options="rowName as row.Name for row in vm.datalist"
+			                                                 ms-header="{{'ANY_STRING'|translate}}" multiple="true" change="ddlChanged(fields.key)" autocomplete>
+			                                    </multiselect>
+			                                </div>
+			                            </div>
+			                        </div>
+			                        <div class="col-md-8" ng-show="filter.selectfirst.id === 0 && fields.key === ''">
+			                            <input type="datetime" class="form-control" ng-disabled="true" aria-label="...">
+			                        </div>
+			                        <div class="col-md-8" ng-show="filter.selectfirst.id !== 0 && filter.key !== ''">
+			                            <div ng-if="fields.fieldType === 'datetime'" class="input-group" options="{{dateOptions}}" cmsdatetimepicker ng-model="filter.firstvalue">
+			                                <input type="text" name="DateFrom" class="form-control input-sm" readonly />
+			                                <span class="input-group-addon"><i class="icon-calendar"></i></span>
+			                            </div>
+			                            <!--<input ng-if="fields.fieldType === 'datetime'" ng-model="filter.firstvalue" type="date" class="form-control" aria-label="...">-->
+			                            <input ng-if="fields.fieldType === 'string' || (fields.Expand && fields.Expand.fieldType === 'string')" ng-model="filter.firstvalue" type="text" class="form-control" aria-label="..." input-restrictor="[^0-9a-zA-Z !\\#$%&+,\-.\/:;<=>?@\[\]^_{|}~]*">
+			                            <input ng-if="fields.fieldType === 'number'" ng-model="filter.firstvalue" type="number" class="form-control" aria-label="...">
+			                            <input ng-if="fields.fieldType === 'money'" ng-model="filter.firstvalue" type="number" class="form-control" aria-label="...">
+			                        </div>
+			                    </div>
+			                </div><!-- /form-group -->
+
+			            </div>
+			        </div>
+			        <!-- <div class="col-xs-12">
+			                 <div class="col-xs-12">
+			                     <div class="form-group">
+			                         <div class="row" role="group" aria-label="...">
+			                             <label class="col-xs-4">{{'Conditions' | translate}}</label>
+			                             <button class="col-xs-4" type="button"
+			                                     ng-click="filter.SelectAnd = !filter.SelectAnd" class="btn"
+			                                     ng-class="{'btn-default active' : filter.SelectAnd === false }">
+			                                 {{'Or' | translate}}</button>
+			                             <button class="col-xs-4"  type="button"
+			                                     ng-click="filter.SelectAnd = !filter.SelectAnd" class="btn"
+			                                     ng-class="{'btn-default active' : filter.SelectAnd === true }">{{'And' | translate}}</button>
+			                         </div>
+			                     </div>
+			                 </div>
+			             </div>-->
+			        <!--<div class="col-xs-12">
+			                <div class="col-xs-12">
+			                    <div class="form-group">
+			                        <div class="row">
+			                            <div class="col-md-4">
+			                                <div class="input-group-btn">
+			                                    <button type="button" class="btn btn-default dropdown-toggle col-md-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			                                        <i class="{{filter.selectend.className}} "></i>
+			                                        <span class="caret"></span></button>
+			                                    <ul class="dropdown-menu">
+			                                        <li ng-repeat="d in filterDef"><a ng-click="selectFilter(d, false)">{{d.name | translate}}</a></li>
+			                                    </ul>
+			                                </div>
+			                            </div>
+			                            <div class="col-md-8" ng-show="filter.selectend.id === 0">
+			                                <input type="datetime" class="form-control" ng-disabled="true" aria-label="...">
+			                            </div>
+			                            <div class="col-md-8"  ng-show="filter.selectend.id !== 0">
+			                                <input ng-if="fields.fieldType === 'datetime'" ng-model="filter.endvalue" type="date" class="form-control" aria-label="...">
+			                                <input ng-if="fields.fieldType === 'string' || (fields.Expand && fields.Expand.fieldType === 'string')" ng-model="filter.endvalue"  type="text" class="form-control" aria-label="...">
+			                                <input ng-if="fields.fieldType === 'number'" ng-model="filter.endvalue"  type="number" class="form-control" aria-label="...">
+			                                <input ng-if="fields.fieldType === 'money'" ng-model="filter.endvalue" type="number" class="form-control" aria-label="...">
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>-->
+			    </div>
+                
+			    <div class="row" style="text-align: center" ng-if="errorMsg !== ''">
+			        <span style="color: red">{{errorMsg}}</span>
+			    </div>
+			</div>
+			<div class="panel-footer text-align-right">
+				<span class="btn btn-default pull-left" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i>{{'Close' | translate}}</span>
+				<span class="btn btn-orange-3" data-ng-click="clearFilter()"><i aria-hidden="true" class="icon-erase"></i>{{'Clear' | translate}}</span>
+				<span class="btn btn-primary" data-ng-click="save()"><i aria-hidden="true" class="icon-ok-circled2"></i>{{'Done' | translate}}</span>
+			</div>
+		</div>
+	</div>
+</div>

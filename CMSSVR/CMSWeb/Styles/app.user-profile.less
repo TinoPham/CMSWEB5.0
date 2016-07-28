@@ -1,0 +1,23 @@
+﻿@import url('app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+.user-profile{
+	.modal-body{
+		margin: 1% 2%;
+	}
+
+	.img-profile{
+		margin: 5px 0 0 0px;
+
+		img{
+			.image-circle(80px, 80px);
+		}
+	}
+
+	.user-upload{
+		margin-top: 40px;
+		.btn-file-text{
+			padding-left: 5px;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SVRDatabase.Model.SeqCount>
+
+@{
+    ViewBag.Title = "Sequence List";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sequence List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null,new{@class = "btn btn-warning"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Sequence ID
+        </th>
+        <th>
+            Sequence Name
+        </th>
+        <th>
+            Sequence
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.SequenceName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Sequence)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

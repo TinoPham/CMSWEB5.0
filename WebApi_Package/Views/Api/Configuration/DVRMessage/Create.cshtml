@@ -1,0 +1,59 @@
+﻿@model SVRDatabase.Model.DVRMessage
+
+@{
+    ViewBag.Title = "Create";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create DVR Message</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>DVR Message</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <!--Html.LabelFor(model => model.MessageID, new { class = "control-label col-md-2" }) -->
+            <label class="control-label col-md-2">Message ID</label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.MessageID)
+                @Html.ValidationMessageFor(model => model.MessageID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <!--tml.LabelFor(model => model.MessageBody, new { class = "control-label col-md-2" }) -->
+            <label class="control-label col-md-2">Message Body</label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.MessageBody)
+                @Html.ValidationMessageFor(model => model.MessageBody)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">DVR Date</label>
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.DvrDate,String.Format("{0:yyyy-MM-dd}", DateTime.Today),new { @class = "form-control", type="date"})
+                @Html.ValidationMessageFor(model => model.DvrDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

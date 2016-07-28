@@ -1,0 +1,20 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "Error View";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page not-found-page">
+<h2>Index</h2>
+
+
+@Html.ActionLink("Server Error", "Error1");
+
+@Html.ActionLink("Access Denied", "Error2");
+
+@Html.ActionLink("Not Found", "Error3");
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

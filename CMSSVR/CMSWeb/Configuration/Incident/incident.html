@@ -1,0 +1,63 @@
+﻿<div class="container-fluid incident-management" data-ng-controller="incidentCtrl" ng-cloak>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body ">
+		        <div class="col-md-1">
+			        <h4>{{Resx.INCIDENT_TYPE|translate}}</h4>
+		        </div>
+		        <div class="col-md-5">
+			        <select class="form-control" ng-model="typeSelected" ng-options="type as type.CaseTypeName for type in incidentTypes" ng-change="ChangeValue()"></select>
+                </div>   
+                <!--<div class="col-md-5">
+			        <alert ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.msg|translate}}</alert>
+                </div>  -->
+		        <div class="col-md-1 pull-right">
+			        <button class="btn btn-primary pull-right" ng-click="Save()">{{Resx.BTN_SAVE|translate}}</button>
+                </div>		
+            </div>
+            <!-- content-->
+            <div class="panel-body">
+                <div class="col-md-6">
+			        <div class="panel-group">
+				        <div class="panel panel-default">
+					        <div class="panel-heading" data-toggle="collapse" href="#mandatoryFieldsBody">
+						        <h4 class="panel-title">{{Resx.INCIDENT_MANDATORY_FIELDS|translate}}</h4>
+                            </div>
+					        <div id="Div1" class="panel-collapse collapse in">
+						        <ul class="list-group">
+							        <li class="list-group-item" ng-repeat="item in mandatorys">
+								        <checkbox class="btn-primary" ng-model="item.Status" disabled></checkbox>
+								        <span>{{item.FieldsGUIName}}</span>
+								        <ul class="list-group">
+									        <li class="list-group-item" ng-repeat="child in item.ItemChilds">
+										        <checkbox class="btn-primary" ng-model="child.Status" disabled></checkbox>
+										        <span>{{child.FieldsGUIName}}</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>                                  
+                            </div>
+                        </div>
+                    </div>
+		</div>
+                <div class="col-md-6">
+			        <div class="panel-group">
+				        <div class="panel panel-default">
+					        <div class="panel-heading" data-toggle="collapse" href="#selectFieldsBody">
+						        <h4 class="panel-title">{{Resx.INCIDENT_FIELDS_SELECTION|translate}}</h4>
+                            </div>
+					        <div id="Div2" class="panel-collapse collapse in">
+						        <ul class="list-group">
+							        <li class="list-group-item" ng-repeat="item in fields">
+								        <checkbox class="btn-primary" ng-model="item.Status"></checkbox>
+								        <span>{{item.FieldsGUIName}}</span>
+                                    </li>
+                                </ul>   
+                            </div>
+                        </div>
+                    </div>           
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

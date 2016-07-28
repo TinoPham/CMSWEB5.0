@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @System.Web.Optimization.Styles.Render("~/Content/bootstrap")
+    @System.Web.Optimization.Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        @Html.Partial("Header")
+            <div class ="well" style="margin:0 auto; width:500px">
+                    @RenderBody()
+                
+            </div>
+        <div>
+                    @Html.Partial("Footer")
+                </div>
+            
+        </div>
+</body>
+</html>

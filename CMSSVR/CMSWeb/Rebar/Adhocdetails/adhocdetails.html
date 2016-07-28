@@ -1,0 +1,82 @@
+﻿<div ng-controller="adhocdetailsCtrl as vm" class="adhoc-detail">
+    <div class="panel">
+        <div class="panel-header">
+            <div class="col-sm-12" style="padding-top: 5px;">
+
+                <div class="drivethrough-reports-chart box-header">
+                    <div class="tree-site-content">
+                        <div class="btn-group drivethrough-dropdown-button" outside-click="clickOutside($event ,'.drivethrough-dropdown-button')">
+                            <a id="btn-popMenuConvSites" class="btn btn-xs dropdown-toggle" pop-menu>
+                                {{'SELECT_REGION_STRING'|translate}} 
+                                <span class="badge" style="padding: 6px;border-radius: 15px;background-color: #86AAC4;">{{vm.selectedSites.length}}</span>
+                                <i class="icon-down-open-2"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-left filter-dlg">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel">
+                                                <div class="panel-header chart-pop-header" style="height: 32px;">
+                                                    <div class="">
+                                                        <div class="input-group">
+                                                            <input type="text" ng-model="vm.querySite" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="scroll-body" slimscroll="{height: '300px'}">
+                                                    <div class="tree-site-addmin">
+                                                        <tree-component class="cms-tree" ng-if="vm.rebarTree" model="vm.rebarTree" filter-text="vm.querySite" def-col="vm.treeDef" options="vm.treeOptions"></tree-component>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-footer">
+                                                    <div class="btn-group">
+                                                        <span id="closeConvSites" class="btn btn-default btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>    <!-- END ::btn-group drivethrough-dropdown-button -->
+                     <!--    <div class="adhoc-report-name ">   
+                            <h3> <i class="icon-doc"></i>{{ vm.rpt.ReportName }}</h3>
+                            <span class='arrow-right'></span>
+                        </div> -->
+                         <!-- END :: Show report name-->
+
+                        <div class="head-block-right">                             
+                            <div class="pull-right">
+                                <!--<span class="dropdown pull-right" dropdown>
+                                    <span class="btn btn-sm dropdown-toggle" dropdown-toggle  style="padding: 0px; height: 32px;">
+                                        <i class=" icon-doc"></i>
+                                        <span>{{'EXPORT_STRING'| translate}}</span>
+                                        <span class="icon-down-dir"></span>
+                                    </span>
+                                    <ul class="dropdown-menu">                                        
+                                        <li><a class="btn pull-right" style="width: 100%;" ng-click="vm.export(vm.rpt)">{{'EXPORT_TO_EXCEL' | translate}}</a></li>
+                                    </ul>
+                                </span>-->
+                                <i ng-if="vm.rpt.IsAssignee !== true" tooltip="{{ 'BTN_DELETE' | translate}}" tooltip-placement="left" class="icon-trash" ng-click="vm.deleteItem(vm.rpt)"></i>
+                                <i ng-if="vm.rpt.IsAssignee !== true" tooltip="{{ 'BTN_EDIT' | translate}}" tooltip-placement="left" class="icon-pencil" ng-click="vm.showEditAhocDialog(vm.rpt, false)"  ></i>
+                            </div>
+
+                            <div class="checkbox checkbox-default" ng-click="vm.groupBySite()">
+                                    <input ng-click="vm.groupBySite()" type="checkbox" style="height: 20px;width: 20px;" ng-model="vm.groupSite">
+                                    <label><i class=" icon-store-3"></i> {{'GROUP_BY_SITE' | translate}}</label>
+                            </div><!-- END :: choorse group by box-->
+                        </div>
+
+                        
+                    </div>  
+                </div> <!-- END :: Select region -->             
+              
+
+            </div>
+            </div> <!-- END :: Panel header-->
+        <div class="panel-body">
+                <div ng-if="vm.reload === true" class="panel ahoc-report-view" ng-include="'rebar/adhocdetails/ahocreportview.html'" ng-controller="ahocreportviewCtrl as vmd" ng-init="vmd.initCtrl(vm.items, vm.callback)"></div>
+        </div> <!-- END :: Panel body-->
+    </div>
+</div>

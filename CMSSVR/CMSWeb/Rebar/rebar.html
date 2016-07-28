@@ -1,0 +1,77 @@
+﻿<div ng-controller="rebarCtrl as vm" ng-init="vm.Init()" class="rebar-manage bam-manage sites-manage resizer-position col-xs-12 col-sm-12">
+	<!-- Tri fix bug #3750 -->
+    <!--<div ng-show="pageReady" -->
+	<div scroll ng-class="boolChangeClass? 'min': ''"
+    class="bamPanel_small panel bamPanel menurebar">
+		<div class="dropdown row-resizerhead topbar-profile resizer-position topbar-profile-bam topbar-profile_small rebar-menu">
+			<div class="report_names" outside-click="clickOutside(this.event ,'.report_names')">
+                <h5 class="report_name">{{'REPORT_NAME' | translate}}</h5>
+				<a class="show_report_name" pop-menu>
+					<span class="dashboard" title="{{title |translate}}" >
+                        <span>{{title |translate}}</span><i class="icon-down-open-mini"></i>
+                    </span>
+                </a>
+				<div id="bam-dropdown-menu"
+					 ng-class="isiPad === true ? 'forIpad ' : ' '; isScroll === true ? 'dropdown-menu_scrolldisplay' : 'dropdown-menu_initdisplay'"
+					 class="row dropdown-menu">
+                    <div id="sub_menu_bam" ng-include="'widgets/rebar/rebar-menu.html'">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div tooltip="{{'FLAG_SETTING' | translate}}" tooltip-placement="left"  class="pull-right btn btn-sm  btn-flag-setting" ng-click="vm.configFlag()">
+        	<i class="icon-flag-setting"></i>
+        	<!-- <span></span> -->
+        </div>
+		<div class="dropdown bam-btn-export-header pull-right" dropdown ng-click="ExportTo(ExportFormat.Excel)">
+			<span class="btn btn-only-icon dropdown-toggle" dropdown-toggle>
+				<i class="icon-download-3"></i>
+			</span>
+			<!--<ul class="dropdown-menu pull-right">
+			<li><div class="btn pull-left" ng-click="ExportTo(ExportFormat.CSV)">{{'EXPORT_TO_CSV' | translate}}</div></li>
+			<li><div class="btn pull-left" ng-click="ExportTo(ExportFormat.Excel)">{{'EXPORT_TO_EXCEL' | translate}}</div></li>
+			<li><div class="btn pull-left" ng-click="ExportTo(ExportFormat.PDF)">{{'EXPORT_TO_PDF' | translate}}</div></li>
+		</ul>-->
+		</div>
+        <div class="pull-right rebar-menu-right">
+			<rb-search search-config="searchConfig" search-model="rebarSearch" single-date="isSingleDate"
+					   advance-search="advanceSearch"
+					   mode-for="modeSearchFor"
+					   search-data="SearchData" search-submit-event="EventRefresh()"></rb-search>
+            </div>
+        </div>
+        <div ng-if="showDynamicSearch" class="search-breadcrumb">
+            <div ng-repeat="searchItem in searchBreadcrumb.config">
+                <div ng-if="searchItem.name === 'dateItem' && searchItem.visable"class="item-filter">
+                    <span class="content">{{'DATE_STRING'|translate}}: {{searchBreadcrumb.data.DateFrom | date: 'MM/dd/yyyy'}} - {{searchBreadcrumb.data.DateTo | date: 'MM/dd/yyyy'}}</span>
+                    <span class="end btn"></span>
+                </div>
+                <div ng-if="searchItem.name === 'dateItem' && searchItem.visable" class="item-filter">
+                    <span class="content time">{{'TIME_STRING'|translate}}: {{searchBreadcrumb.data.DateFrom | date: 'h:mma'}} - {{searchBreadcrumb.data.DateTo | date: 'h:mma'}}</span>
+                    <span class="end btn"></span>
+                </div>
+                <div ng-if="searchItem.name === 'tenderTypeItem' && searchItem.visable" class="item-filter">
+                    <span class="content" ng-class="searchBreadcrumb.data.PaymentIDs.length === 0? 'empty':''" tooltip="{{tooltipPayment}}" tooltip-placement="bottom">{{'METHOD_PAYMENT_STRING'|translate}}: {{getItemData(searchItem.name, searchBreadcrumb.data.PaymentIDs)}}</span>
+                    <span class="end btn"></span>
+                </div>
+                <div ng-if="searchItem.name === 'registerItem' && searchItem.visable" class="item-filter">
+                    <span class="content" ng-class="searchBreadcrumb.data.RegIDs.length === 0? 'empty':''" tooltip="{{tooltipRegister}}" tooltip-placement="bottom">{{'REGISTER_STRING'|translate}}: {{getItemData(searchItem.name, searchBreadcrumb.data.RegIDs)}}</span>
+                    <span class="end btn"></span>
+                </div>
+                <div ng-if="searchItem.name === 'transactionItem' && searchItem.visable" class="item-filter">
+                    <span class="content min">{{'TRANSNB_STRING'|translate}}: {{getItemData(searchItem.name, searchBreadcrumb.data.TransNB, searchBreadcrumb.data.TransNB_OP)}}</span>
+                    <span class="end btn"></span>
+                </div>
+                <div ng-if="searchItem.name === 'employeeItem' && searchItem.visable" class="item-filter">
+                    <span class="content" ng-class="searchBreadcrumb.data.EmpIDs.length === 0? 'empty':''" tooltip="{{tooltipEmployee}}" tooltip-placement="bottom">{{'EMPLOYEE_STRING'|translate}}: {{getItemData(searchItem.name, searchBreadcrumb.data.EmpIDs)}}</span>
+                    <span class="end btn"></span>
+                </div>
+                <div ng-if="searchItem.name === 'totalItem' && searchItem.visable" class="item-filter">
+                    <span class="content min">{{'TOTAL_SALE_STRING'|translate}}: {{getItemData(searchItem.name, searchBreadcrumb.data.TransAmount, searchBreadcrumb.data.TransAmount_OP)}}</span>
+                    <span class="end btn"></span>
+                </div>
+            </div>
+        </div>
+    <div  ng-class="boolChangeClass? 'srolldown': ''"  class="panelContent rebar_content" ui-view=""></div>
+</div>

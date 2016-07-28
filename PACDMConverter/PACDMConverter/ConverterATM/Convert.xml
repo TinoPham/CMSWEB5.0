@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+	<Object table="Transact" src="AccessTransATM" des="Transact">
+		<Item src="TransactKey" des="TransactKey"/>
+		<Item src="T_0TransNB" des="T_0TransNB"/>
+		<Item src="T_TransCode" des="T_TransCode"/>
+		<Item src="T_TransAmount" des="T_TransAmount"/>
+		<Item src="T_TransTermFee" des="T_TransTermFee"/>
+		<Item src="T_TransType" des="T_TransType"/>
+		<Item src="T_TransTotal" des="T_TransTotal"/>
+		<Item src="TransDateTime" des="TransDate"/>
+		<Item src="BusinessDate" des="BusinessDate"/>
+		<Item src="T_CameraNB" des="T_CameraNB"/>
+		<Item src="T_CardNB" des="T_CardNB"/>
+		<Item src="T_AcctBalance" des="T_AcctBalance"/>
+		<Item src="DVRDateTime" des="DVRDate"/>
+		<Item src="T_TransXString1" des="ExStrings"/>
+		<Item src="T_TransXString2" des="ExStrings"/>
+	</Object>
+
+	<ItemKey>
+		<Item Column="T_CameraNB" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB"/>
+		<Item Column="T_TransType" SqlTable="tbl_ATM_TransTypeList" ContextType="ATMTransType"/>
+		<Item Column="T_TransCode" SqlTable="tbl_ATM_TransCodeList" ContextType="ATMTransCode"/>
+		<Item Column="T_CardNB" SqlTable="tbl_ATM_CardNBList" ContextType="ATMCardNB"/>
+		<Item Column="T_TransXString2" SqlTable="tbl_ATM_ExtraName" ContextType="ATMExtraName" ConvertBase="ConvertItemATMTransXString"/>
+		<Item Column="T_TransXString1" SqlTable="tbl_ATM_ExtraName" ContextType="ATMExtraName" ConvertBase="ConvertItemATMTransXString"/>
+	</ItemKey>
+</Config>

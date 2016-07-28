@@ -1,0 +1,188 @@
+﻿<div class="panel modal-transaction col-md-12">
+	<div class="panel-header">
+		<div class="panel-header rebar-panel-header">
+			<div class="additional-btn">
+				<!--<a  ng-click="refresh()" tooltip="Refresh" tooltip-placement="left" class="ng-scope"><i class="icon-ccw-1"></i></a>-->
+				<a ng-click="fullSize()" tooltip="{{'MAXIMIZE' | translate}}" tooltip-placement="left" class="ng-scope">
+					<i ng-class="{'icon-resize-full-1': !isMax, 'icon-resize-small-1': isMax}" class="icon-resize-full-1"></i>
+				</a>
+				<a data-ng-click="cancel()" class="collapse-btn"
+				   tooltip="{{'CLOSE_TRANSACTION' | translate}}" tooltip-placement="left"><i class="icon-cancel-3"></i></a>
+				<span ng-show="isMax" class="ng-hide">&nbsp;&nbsp;</span>
+			</div>
+		</div>
+	</div>
+	<!-- END :: Panel header -->
+	<div class="row modal-transaction-title">
+		<div class="col-sm-4 logo-branch rebar-company-logo">
+			<div>
+				<img ng-show="picSource != null" ng-src="{{picSource}}" class="thumbnail logo" />
+				<!--<h3 class="modal-title">{{'TRANSATION_DETAIL'|translate}}</h3>-->
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<div class="title-control">
+				<div class="title-row">
+					<h3>{{'TRANSATION_DETAIL'| translate}}</h3>
+				</div>
+				<div class="title-row">
+					<h5>{{'#' + data.TranNo }}</h5>
+				</div>
+				<!--  <div class="title-row btn-close-transaction">
+					 <span class="" data-ng-click="cancel()">
+						 <i aria-hidden="true" class="icon-cancel-1"></i>
+					 </span>
+				 </div> -->
+			</div>
+			<div class="flag-list">
+				<div class="cms-flag" ng-if="data.ExceptionTypes.length > 0" ng-repeat="flag in data.ExceptionTypes" title="{{flag.Name}}">
+					<div class="cms-flag-item" style="background-color: #f1f1f1;" ng-style="{'color' : flag.Color}" ng-click="editTranFlag()">
+						<i class=" icon-flag cms-item-icon-flag"></i>
+						<span class="cms-flag-num" style="background-color: #f81413;color: #FFF;">{{flag.TypeWeight ? flag.TypeWeight : 0}}</span>
+					</div>
+				</div>
+
+				<div class="cms-flag" ng-if="data.ExceptionTypes.length <= 0">
+					<div class="cms-flag-item-add" style="background-color: #f1f1f1; color: #DDD; border: 1px dashed #DDD;" ng-click="editTranFlag()">
+						<i class="icon-pencil cms-item-icon-flag"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-body row  modal-transaction-body">
+		<div class="col-md-12 infos">
+			<div class="panel transaction-header" ng-class="{'col-md-12': showVideo === false,  'col-md-8': showVideo === true  }">
+				<div class="panel-heading">
+					<div class="col-sm-8 col-xs-6 transaction-header-branch">
+						<div>
+							<h3> <i class="icon-info-circled-alt"></i> {{'TRANSACTION_INFO'|translate}}</h3>
+						</div>
+						<div class="btn-group" role="group" aria-label="..." ng-keydown="nextOrPrevFn($event)">
+							<button type="button" class="btn btn-sm btn-primary" ng-click="showPrevTransaction()"><i class="icon-left-open"></i></button>
+							<button type="button" class="btn btn-sm btn-primary" ng-click="showNextTransaction()" autofocus><i class="icon-right-open"></i></button>
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-6 btn-list-control" style="padding-right: 0;">
+						<div class="transaction-header-control">
+							<div class="title-row">
+								<span class="btn-compare" tooltip-placement="left" tooltip="{{'COMPARE_TOOLTIP' | translate}}"
+									  ng-click="selectComparition()">
+									<i aria-hidden="true" class="icon-compare"></i>
+								</span>
+								<span class="btn-note have-note" tooltip-placement="left" tooltip="{{'NOTE_TOOLTIP' | translate}}"
+									  ng-click="showNotes=!showNotes">
+									<i aria-hidden="true" class="icon-doc-text"></i>
+								</span>
+								<span class="" data-ng-click="showVideoFn()" tooltip-placement="left" tooltip="{{'VIDEO_TOOLTIP' | translate}}">
+									<i aria-hidden="true" class="icon-vpc"></i>
+                                    <!--<span class="title-row-name">
+										 {{showVideo ? 'Turn off video' : 'Turn on video' | translate}}
+									</span>-->
+								</span>
+                                <span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-6 col-xs-12 transaction-header-title">
+							<div> <span class="tran-line-title">{{'CASHIER' | translate}} </span>{{data.EmployeeName}} </div>
+							<div> <span class="tran-line-title">{{'REG#:' | translate}} </span> {{data.RegisterName}} </div>
+						</div>
+						<div class="col-sm-6 col-xs-12 transaction-header-control detail">
+							<div class="title-row"> <span class="tran-line-title"> {{'ORDER_DATE' | translate}} </span> {{data.TranDate | date:'MM/dd/yyyy':'UTC'}} </div>
+							<div class="title-row"> <span class="tran-line-title"> {{'ORDER_TIME' | translate}}</span> {{data.TranDate | date:'HH:mm:ss':'UTC'}} </div>
+							<div class="title-row"> <span class="tran-line-title"> {{'STORE' | translate}}  </span>{{data.StoreName}} </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div ng-if="showVideo === true" class="transaction-header-video col-md-4">
+				<div class="panel">
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ATpjqJdQ6VQ" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 tables">
+			<div class="arrow-for-only-pc">
+				<i ng-click="showPrevTransaction()" ng-style="{'left': isMax ? '-23px' : '-70px'}" class="icon-left-open-big"></i>
+				<i ng-click="showNextTransaction()" ng-style="{'right': isMax ? '-23px' : '-70px'}" class="icon-right-open-big"></i>
+			</div>
+			<div class="table-responsive table-hover transaction-body scrollbar-dynamic" data-jquery-scrollbar>
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="first-col">
+								<div>{{'ITEMS' | translate}}</div>
+							</th>
+							<th>{{'DESCRIPTION_STRING' | translate}}{{'s'}}</th>
+							<th>{{'Qty' | translate}}</th>
+							<th>{{'TOTAL' | translate}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--     <tr ng-if="!data.Details || data.Details.length === 0" class="no-row-data">
+									 <th colspan="6">{{'NO_DATA_STRING' | translate}}</th>
+								 </tr>  -->
+						<tr ng-if="data.Details && data.Details.length > 0" ng-repeat="d in data.Details">
+							<th scope="row" class="start-col-row">#{{ d.ItemCodeName  }}</th>
+							<td>{{ d.DescriptionName}}</td>
+							<td>{{ d.Qty}}</td>
+							<td>{{ d.Total }}</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="summary-line">{{ 'SubTotal' | translate }}{{': '}}</td>
+							<td>{{ data.SubTotal }}</td>
+						</tr>
+
+						<tr ng-if="!data.Taxs">
+							<td colspan="3" class="summary-line">{{ 'TAX_FOOTER' | translate }}{{': '}}</td>
+							<td>0</td>
+						</tr>
+						<tr ng-if="data.Taxs" ng-repeat="t in data.Taxs">
+							<td colspan="3" class="summary-line">{{ 'TAX_FOOTER ' | translate }} {{t.Name}} :</td>
+							<td>{{ t.Ammount }}</td>
+						</tr>
+						<tr ng-if="!data.Payments">
+							<td colspan="3" class="summary-line">{{ 'METHOD_PAYMENT_STRING' | translate }}{{': '}}</td>
+							<td>0</td>
+						</tr>
+						<tr ng-if="data.Payments" ng-repeat="p in data.Payments">
+							<td colspan="3" class="summary-line">{{ 'METHOD_PAYMENT_STRING ' | translate }} {{p.Name}} :</td>
+							<td>{{ p.Ammount }}</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="summary-line">{{ 'CHANGE_FOOTER' | translate }}</td>
+							<td>{{ data.ChangeAmount }}</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="summary-line">{{ 'TOTAL' | translate }}{{': '}}</td>
+							<td>{{ data.Total }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<div class="modal-footer row transaction-footer">
+		<div class="col-md-12">
+			<div class="title-note" ng-show="showNotes == true">
+				<i class="icon-doc-text"></i> {{'Notes'|translate}}
+			</div>
+			<div class="area-note" ng-show="showNotes == true">
+				<textarea class="form-control text-area-note" style="min-width: 100%" 
+						  ng-model="data.Note.Note" 
+						  ng-change="noteChanged()"
+						  placeholder="{{'WRITENOTES' | translate}}" maxlength="250"></textarea>
+			</div>
+			<div class="pull-right note-button">
+				<span class="btn btn-info" data-ng-click="SaveException(0)"><i aria-hidden="true" class="icon-floppy-1"></i>{{'Save' | translate}}</span>
+			</div>
+		</div>
+	</div>
+</div>

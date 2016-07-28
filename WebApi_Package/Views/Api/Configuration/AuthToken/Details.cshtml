@@ -1,0 +1,43 @@
+﻿@model SVRDatabase.Model.AuthToken
+
+@{
+    ViewBag.Title = "Details";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AuthToken</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Token)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Token)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Expiration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Expiration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApiUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApiUserId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

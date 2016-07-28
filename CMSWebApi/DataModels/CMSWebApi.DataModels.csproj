@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38141BA5-49F0-4D34-8351-0685DC0FF561}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMSWebApi.DataModels</RootNamespace>
+    <AssemblyName>CMSWebApi.DataModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdhocModel.cs" />
+    <Compile Include="Alert\AlertModel.cs" />
+    <Compile Include="Alert\IgnoreAlertModel.cs" />
+    <Compile Include="BamModel.cs" />
+    <Compile Include="BoxGadgetModel.cs" />
+    <Compile Include="CalendarEvent.cs" />
+    <Compile Include="ChartModel.cs" />
+    <Compile Include="CmsMetadata.cs" />
+    <Compile Include="CMSWebRecipient.cs" />
+    <Compile Include="CommonInfoModel.cs" />
+    <Compile Include="CustomReportModel.cs" />
+    <Compile Include="EmailSettingModel.cs" />
+    <Compile Include="ExportModel\ExportModel.cs" />
+    <Compile Include="HeaderBam.cs" />
+    <Compile Include="HeatMapsModel.cs" />
+    <Compile Include="ModelBinderProvider\BAMHeatMapParams.cs" />
+    <Compile Include="ModelBinderProvider\DashboardBamParams.cs" />
+    <Compile Include="ModelBinderProvider\BAMReportParams.cs" />
+    <Compile Include="DistributionModel.cs" />
+    <Compile Include="ModelBinderProvider\RebarReportParams.cs" />
+    <Compile Include="POSModels.cs" />
+    <Compile Include="RebarModel.cs" />
+    <Compile Include="SaleReports\SaleReportsModel.cs" />
+    <Compile Include="DashBoardCache\AlertCacheModel.cs" />
+    <Compile Include="Dashboard.cs" />
+    <Compile Include="DashBoardCache\CacheModelBase.cs" />
+    <Compile Include="DashBoardCache\IOPCCountPeriodicCacheModel.cs" />
+    <Compile Include="DashBoardCache\POSPeriodicCacheModel.cs" />
+    <Compile Include="FileModel.cs" />
+    <Compile Include="CompanyModel.cs" />
+    <Compile Include="MapsModel.cs" />
+    <Compile Include="ModelBinderProvider\AlertChartParam.cs" />
+    <Compile Include="ModelBinderProvider\AlertCompareParam.cs" />
+    <Compile Include="ModelBinderProvider\CompareModelBinderBase.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="RegionSite.cs" />
+    <Compile Include="RegionSiteModel.cs" />
+    <Compile Include="IncidentModel.cs" />
+    <Compile Include="RecipientModel.cs" />
+    <Compile Include="FiscalYearModel.cs" />
+    <Compile Include="GoalTypeModel.cs" />
+    <Compile Include="JobTitleModel.cs" />
+    <Compile Include="MetricSiteModel.cs" />
+    <Compile Include="ODataMetadata.cs" />
+    <Compile Include="SiteMonitorModel.cs" />
+    <Compile Include="SynUserModel.cs" />
+    <Compile Include="TableParamModel.cs" />
+    <Compile Include="UserGroupModel.cs" />
+    <Compile Include="SiteModel.cs" />
+    <Compile Include="UserModel.cs" />
+    <Compile Include="ApplicationMenu.cs" />
+    <Compile Include="DataGridPagingInformation.cs" />
+    <Compile Include="TransactionalInformation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Commons\Commons.csproj">
+      <Project>{4158702b-07dc-4b34-9cad-586ea4406b2f}</Project>
+      <Name>Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\Extensions.csproj">
+      <Project>{d237564a-b94c-4e32-9bb2-86b9209448d8}</Project>
+      <Name>Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\CMSWebApi.Utils.csproj">
+      <Project>{a0cb2ec9-9357-4c0f-8759-502c14c27844}</Project>
+      <Name>CMSWebApi.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

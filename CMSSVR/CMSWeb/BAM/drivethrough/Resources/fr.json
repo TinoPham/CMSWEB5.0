@@ -1,0 +1,11 @@
+﻿{
+	"CONVERSION_STRING":"% conv."
+	,"COUNT":"Comptage"
+	,"DWELL":"Séjour"
+	,"LOCATION_STRING": "Emplacement"
+	,"NO_DATA_STRING":"Il n’y a pas de données."
+	,"SUMMARY_STRING":"Sommaire"
+	,"TRAFFIC_IN_STRING":"ENTRÉE"
+	,"TRAFFIC_OUT_STRING":"SORTIE"
+	,"TRANSACTION_STRING":"PDV"
+}

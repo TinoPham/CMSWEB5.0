@@ -1,0 +1,178 @@
+﻿/*
+ * CMS DatePicker
+ * -----------
+ */
+
+/*CMS DatePicker*/
+.controlmaxwidth {
+    width: 100%;    
+}
+
+.cmsbox {  
+     /*background: linear-gradient(220deg, transparent 10px, #3498DB 10px);*/        
+    position: relative;
+    /*border-corner-shape: bevel;
+    border-right: 80%;*/
+}
+
+.btn-transparent {
+    background-color: transparent;
+}
+
+.btndate {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 0px solid transparent;
+}
+
+    .btndate[disabled] {
+        pointer-events: none;
+        cursor: not-allowed;
+        filter: alpha(opacity=65);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        opacity: .65;
+    }
+
+.btndate-sm {
+    padding: 5px 2px 1px 0px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.btndate-default {
+color: #333;
+background-color: #fff;
+}
+
+.btndate-default [disabled] {
+    background-color: #fff;
+}
+
+.btndate-mode {
+color: #333;
+background-color: #a9a9a9;
+border: 1px solid #a9a9a9;
+}
+
+.btndate-N {
+    border: 1px solid red;
+}
+.btndate-event {
+    color:lightgreen;
+}
+
+.btndate-mode [disabled] {
+    background-color: #fff;
+}
+
+
+.cmsboxdefault {  
+   min-width: 36px;
+}
+
+#cmsdatetable > tbody > tr > td, #cmsdatetable > thead > tr:last-child > th {
+    border-left: 1px solid #eee;
+}
+
+#cmsdatetable > tbody > tr > td:last-child, #cmsdatetable > thead > tr:last-child > th:last-child{
+    border-right: 1px solid #eee;
+}
+
+.cmsboxfull {
+    background-color: #bbbbbb;
+}
+
+.cmsbox:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 20px solid white;
+    border-left: 25px solid transparent;
+    width: 0;
+}
+
+.sup {
+    font-style: italic;
+    top: -.9em;
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+    left:.4em;
+}
+
+/* Calendar Event Datepicker */
+.cal-event {
+	@media (max-width: 991px) {
+		.calendar > table > thead > tr > th {
+			.btn-sm, .btn-group-sm > .btn {
+				padding: 5px 10px;
+			}
+		}
+		.calendar > table > tbody > tr > td {
+			.btn-sm, .btn-group-sm > .btn {
+				padding: 5px 10px;
+			}
+		}
+	}
+	@media (min-width: 992px) and (max-width:1279px) {
+		.calendar {
+				margin-top: 5px;
+			}
+		.calendar > table > thead > tr > th {
+			.btn-sm, .btn-group-sm > .btn {
+				padding: 1px 5px;
+				font-size: 11px;
+			}
+		}
+		.calendar > table > tbody > tr > td {
+			.btn-sm, .btn-group-sm > .btn {
+				padding: 1px 3px;
+				font-size: 11px;
+			}
+		}
+	}
+	@media (min-width: 1280px) and (max-width:1600px) {
+		.calendar {
+			margin-top: 5px;
+		}
+		.calendar > table > thead > tr > th {
+			.btn-sm, .btn-group-sm > .btn {
+				padding: 3px 6px;
+			}
+		}
+		.calendar > table > tbody > tr > td {
+			.btn-sm, .btn-group-sm > .btn {
+				padding: 3px 6px;
+			}
+		}
+	}
+	@media (min-width: 1601px) {
+		.calendar > table > thead > tr > th {
+			.btn-sm, .btn-group-sm > .btn {
+				padding: 5px 10px;
+			}
+		}
+		.calendar > table > tbody > tr > td {
+			.btn-sm, .btn-group-sm > .btn {
+				padding: 5px 10px;
+			}
+		}
+	}
+}

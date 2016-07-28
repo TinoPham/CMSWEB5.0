@@ -1,0 +1,172 @@
+﻿multiselect {
+	.btn-group {
+		width: 100%;
+		position: absolute;
+		top: 0px;
+		left: 0;
+		line-height: 20px;
+		z-index: 0 !important;
+
+		&.open {
+			.dropdown-toggle {
+				-moz-box-shadow: none;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+
+			.dropdown-menu {
+				display: block;
+				border: 1px solid #ccc;
+			}
+		}
+
+		> .form-control {
+			border: none;
+			height: 28px;
+
+			.caret {
+				margin-top: -13px;
+			}
+		}
+	}
+
+	.dropdown-menu {
+		padding-left: 5px;
+		padding-right: 5px;
+		width: 100%;
+		overflow-y: auto;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		padding: 2px;
+
+		li {
+			.checkbox, .radio {
+				width: 100%;
+				padding-top: 3px;
+			}
+
+			.checkbox {
+				label {
+					&::after {
+						padding-top: 0;
+						margin-top: -1px;
+					}
+				}
+			}
+
+			&.input-search {
+				height: 35px;
+			}
+
+			.i-name {
+				/*font-weight: normal;
+				margin-bottom: 0;
+				padding: 5px;*/
+			}
+
+			.i-color {
+				-moz-border-radius: 100%;
+				-webkit-border-radius: 100%;
+				border-radius: 100%;
+				border: 1px solid;
+				padding: 1px 8px;
+				margin-right: 3px;
+			}
+		}
+	}
+
+	.select-header {
+		padding-right: 25px;
+		overflow: hidden;
+		-ms-text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.dropdown-menu-list {
+		list-style: none;
+		padding: 0;
+
+		&.scroll-body{
+			max-height: 250px;
+			height: 250px;
+			overflow: auto;
+		}
+
+		> :first-child {
+			border-top: 1px solid #eee;
+		}
+
+		li {
+			border-bottom: 1px solid #eee;
+			padding: 2px;
+
+			&:hover {
+				background-color: #eee;
+			}
+
+			.checkbox, .radio {
+				width: 100%;
+				padding-top: 3px;
+				margin: 3px 0;
+			}
+
+			.checkbox {
+				label {
+					-ms-word-wrap: break-word;
+					word-wrap: break-word;
+					font-weight: normal;
+
+					&::after {
+						padding-top: 0;
+						margin-top: -1px;
+					}
+				}
+			}
+
+			&.input-search {
+				height: 35px;
+			}
+
+			.i-name {
+				-ms-word-wrap: break-word;
+				word-wrap: break-word;
+				font-weight: normal;
+			}
+
+			.i-color {
+				-moz-border-radius: 100%;
+				-webkit-border-radius: 100%;
+				border-radius: 100%;
+				border: 1px solid;
+				padding: 1px 8px;
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.multiple-controls {
+		border-bottom: 1px solid #DDD;
+		-moz-box-shadow: 0 1px 5px -2px #ABB7B7;
+		-webkit-box-shadow: 0 1px 5px -2px #ABB7B7;
+		box-shadow: 0 1px 5px -2px #ABB7B7;
+	}
+}
+
+/*ThangPham, Customize angular select UI, July 01 2015, Start*/
+.select-control {
+	multiselect {
+		padding: 6px 0;
+
+		&.form-control {
+			padding: 6px 0;
+		}
+
+		.btn-group {
+			position: relative;
+			top: -6px;
+		}
+	}
+}

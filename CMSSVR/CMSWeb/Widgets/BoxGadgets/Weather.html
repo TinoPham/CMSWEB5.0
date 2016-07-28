@@ -1,0 +1,92 @@
+﻿<div  ng-controller="weatherCtrl as vm">
+	
+    <div ng-show="!vm.isErr" class="weather-view">
+         
+        <ul>
+            <li class="weather-up">
+             
+                
+                <div class="main-info">
+                    <div class="main-temp">{{ units === 'f' ? vm.weather.temp_imperial : vm.weather.temp_metric}}&deg;</div>
+                    <div  class="butonUnitsGroup">
+                        <div>&deg;F</div>
+                        <div ng-click="units = units === 'f' ? 'c' : 'f'" class="butonUnits">
+                          <div class="point" ng-class="units === 'f' ? 'imperial' : 'metric'"></div>
+                        </div>
+                        <div>&deg;C</div>
+                    </div>
+                    
+                    <div class="info">
+                        <div>{{vm.weather.city}}</div>
+                        <div>{{vm.weather.forecast[0].day |translate}}{{vm.datenow | date:', d '}}{{(vm.datenow | date:'WT_MMM') | translate}}{{vm.datenow | date:' yyyy'}}</div>
+                        <div>{{vm.datenow | date:'h:mm a'}}</div>
+                    </div>
+                </div>
+                <div class="main-icon">
+                    
+                        <ul>
+                            <li><i class="icon-{{vm.weather.code}}"></i></li>
+                            <li>
+                                <div>{{vm.weather.currently |translate}}</div>
+                                <div> <i class="icon-high">{{units === 'f' ? vm.weather.high_imperial : vm.weather.high_metric}}&deg;</i>  <i class="icon-low">{{units === 'f' ? vm.weather.low_imperial : vm.weather.low_metric}}&deg;</i></div>
+                                
+                            </li>
+                            
+                        </ul>
+                    </div>
+            </li>
+            <li class="weather-down">
+                <ul>
+                    <li >
+                        <div
+                            tooltip="{{vm.weather.forecast[1].date | date: 'dd '}} {{ (vm.weather.forecast[1].date | date: 'WT_MMM') | translate}} {{vm.weather.forecast[1].date | date: ' yyyy'}}">
+                            {{vm.weather.forecast[1].day |translate}}
+                        </div>
+                        <div><i class="icon-{{vm.weather.forecast[1].code}}"></i></div>
+                        <div class="weather-down-high-low">
+                            <span>{{units === 'f' ? vm.weather.forecast[1].high_imperial : vm.weather.forecast[1].high_metric}}&deg;{{units | uppercase}}</span>
+                            <span>{{units === 'f' ? vm.weather.forecast[1].low_imperial : vm.weather.forecast[1].low_metric}}&deg;{{units | uppercase}}</span>
+                        </div>
+                        
+                    </li><li>
+                        <div 
+                            tooltip="{{vm.weather.forecast[2].date | date: 'dd '}} {{ (vm.weather.forecast[2].date | date: 'WT_MMM') | translate}} {{vm.weather.forecast[2].date | date: ' yyyy'}}">
+                            {{vm.weather.forecast[2].day |translate}}
+                        </div>
+                        <div><i class="icon-{{vm.weather.forecast[2].code}}"></i></div>
+                        <div class="weather-down-high-low">
+                            <span>{{units === 'f' ? vm.weather.forecast[2].high_imperial : vm.weather.forecast[2].high_metric}}&deg;{{units | uppercase}}</span>
+                            <span>{{units === 'f' ? vm.weather.forecast[2].low_imperial : vm.weather.forecast[2].low_metric}}&deg;{{units | uppercase}}</span>
+                        </div>
+                    </li><li>
+                        <div
+                            tooltip="{{vm.weather.forecast[3].date | date: 'dd '}} {{ (vm.weather.forecast[3].date | date: 'WT_MMM') | translate}} {{vm.weather.forecast[3].date | date: ' yyyy'}}">
+                            {{vm.weather.forecast[3].day |translate}}
+                        </div>
+                        <div><i class="icon-{{vm.weather.forecast[3].code}}"></i></div>
+                        <div class="weather-down-high-low">
+                            <span>{{units === 'f' ? vm.weather.forecast[3].high_imperial : vm.weather.forecast[3].high_metric}}&deg;{{units | uppercase}}</span>
+                            <span>{{units === 'f' ? vm.weather.forecast[3].low_imperial : vm.weather.forecast[3].low_metric}}&deg;{{units | uppercase}}</span>
+                        </div>
+                    </li><li>
+                        <div
+                            tooltip="{{vm.weather.forecast[4].date | date: 'dd '}} {{ (vm.weather.forecast[4].date | date: 'WT_MMM') | translate}} {{vm.weather.forecast[4].date | date: ' yyyy'}}">
+                            {{vm.weather.forecast[4].day |translate}}
+                        </div>
+                        <div class=""><i class="icon-{{vm.weather.forecast[4].code}}"></i></div>
+                        <div class="weather-down-high-low">
+                            <span>{{units === 'f' ? vm.weather.forecast[4].high_imperial : vm.weather.forecast[4].high_metric}}&deg;{{units | uppercase}}</span>
+                            <span>{{units === 'f' ? vm.weather.forecast[4].low_imperial : vm.weather.forecast[4].low_metric}}&deg;{{units | uppercase}}</span>
+                        </div>
+                        
+                        
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div ng-show="vm.isErr" class="weather-error">
+        {{vm.msgError |translate}}
+    </div>
+
+</div>

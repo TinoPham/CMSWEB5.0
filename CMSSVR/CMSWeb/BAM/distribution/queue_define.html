@@ -1,0 +1,48 @@
+﻿<form name="Queuedefine" class="form-horizontal queue-define" novalidate angular-validator angular-validator-submit="SaveQueuedefine()">
+	<div class="modal-header">
+		<span class="close"  data-ng-click="vm.closePopup()">
+			<i  data-ng-click="vm.closePopup()" aria-hidden="true" class="icon-cancel-1"></i>
+		</span>
+		<h3 class="modal-title">{{'QUEUE_TITLE' | translate}} </h3>
+	</div>
+
+	<div class="modal-body scroll-body scrollbar-dynamic" id="queuebox" data-jquery-scrollbar>
+		<div class="queue-block" ng-repeat="item in vm.arrQueue">
+			<div class="form-group">
+				<i class="icon-trash" data-ng-click="vm.RemoveQueue(item.id)"></i>
+				<i class="icon-doc-new" data-ng-click="vm.AddArea(item.id)"></i>
+				<input type="text" class="form-control bold_text" ng-model="item.name" placeholder="{{'QUEUE_NAME' | translate}}" value="{{item.name}}" required-message="'required'" required autofocus
+					maxlength="50">
+			</div>
+
+              <div class="input-group" ng-repeat="area in item.areas">
+                 <select name="area_{{area.id}}" ng-model="area.id" ng-change="vm.onchangeArea(area,item)">
+                     <option ng-repeat="aa in areaitem" value="{{aa.id}}" ng-selected="{{aa.id == area.id}}" >{{aa.name}}</option>                    
+                 </select>
+                  <span class="input-group-addon" id="basic-addon2">	
+                    <i class="icon-trash" data-ng-click="vm.RemoveArea(item.id,area.id)"></i>
+                  </span>
+              </div>
+        </div>
+        <!-- END :: A Queue Block -->
+		
+         <div class="queue-block btn-add-queue">
+            <div class="btn btn-default" data-ng-click="vm.AddQueue()" ng-disabled="!vm.AllRegionsData">
+                <i class='icon-plus'></i>
+            </div>
+         </div>
+        <!-- END :: A Queue Block -->
+
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary ng-binding" type="submit" data-ng-click="vm.Save()" ng-disabled="Queuedefine.$invalid || vm.disableSelect">
+           <!-- <i class="icon-floppy-1"></i>-->
+            {{'BTN_SAVE' | translate}}
+        </button>
+		 <button class="btn btn-primary ng-binding applyStore" type="submit" data-ng-click="vm.Apply()" ng-disabled="Queuedefine.$invalid || vm.disableSelect">
+           <!-- <i class="icon-floppy-1"></i>-->
+            {{'QUEUE_APPLY_HEADER' | translate}}
+        </button>
+    </div>
+</form>

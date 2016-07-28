@@ -1,0 +1,19 @@
+﻿{
+  "FORGOT_PASSWORD": "Mot de passe oublié?"
+, "LOGIN_HEADER":"Ouvrir session"
+, "LOGIN_FOOTER_WCMSWEB":"Qu'est-ce que CMS Web?"
+, "LOGIN":"Ouvrir session"
+, "PASSWORD_PLACEHOLD":"Mot De Passe"
+, "REMEMBER":"Se souvenir du Mot de passe"
+, "RESET_PASSWORD":"Réinitialiser le Mot de passe"
+, "RESET_PASSWORD_NOTES":"Veuillez saisir votre courriel et le nom d'utilisateur, puis soumettre un mot de passe de réinitialisation. Votre nouveau mot de passe sera envoyé à votre courriel."
+, "USER_NAME_PLACEHOLD":"Nom d'utilisateur"
+
+, "LOGIN_EXPIRED_MSG": "Ce compte est expiré."
+, "LOGIN_ERROR_MSG": "Erreur d'identification : {0}"
+, "LOGIN_FAIL_MSG": "Le nom d'utilisateur ou mot de passe est incorrect."
+, "SET_COOKIE_FAIL_MSG":"Impossible de fixer la valeur du témoin. Veuillez activer les témoins dans votre navigateur et corriger l'heure et la date du système."
+, "PAGE_FORGOT_PASSWORD":"Mot de passe oublié"
+, "RESET_PASSWORD_MSG":"Un courriel contenant votre mot de passe a été envoyé à votre adresse courriel, veuillez aller à votre messagerie pour obtenir le mot de passe."
+
+}

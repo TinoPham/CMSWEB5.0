@@ -1,0 +1,58 @@
+﻿@model SVRDatabase.Model.SeqCount
+
+@{
+    ViewBag.Title = "Create";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>SeqCount</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Sequence ID</label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.ID)
+                @Html.ValidationMessageFor(model => model.ID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Sequence Name</label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.SequenceName)
+                @Html.ValidationMessageFor(model => model.SequenceName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Sequence</label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.Sequence)
+                @Html.ValidationMessageFor(model => model.Sequence)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

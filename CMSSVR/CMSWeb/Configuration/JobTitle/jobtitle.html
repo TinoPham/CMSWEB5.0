@@ -1,0 +1,21 @@
+<div class="panel job-title-manages" ng-controller="jobtitleCtrl as vm" ng-cloak>
+	<func-header
+		listview='vm.listView'
+		query='vm.query'
+		add-fn='vm.addJobTitle()'
+		edit-fn='vm.editJobTitle(vm.selectedRows)'
+		del-fn='vm.deleteJob(vm.selectedRows)'
+		refresh-fn='vm.ReloadData()'
+		import-fn='false'
+		show-view-mode="true"></func-header>
+
+	<!--<!--GRID VIEW-->
+	<div ng-if="vm.listView === false" class="panel-content">
+		<div class="gridview" ng-grid="vm.gridOptions"></div>
+	</div>
+	<!--LIST VIEW-->
+	<div ng-if="vm.listView === true" class="panel-content">
+		<div class="listview" ng-grid="vm.listOptions"></div>
+	</div>
+</div>
+

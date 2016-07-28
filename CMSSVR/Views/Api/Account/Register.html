@@ -1,0 +1,53 @@
+﻿<div class="tile-area">
+<div style="margin:0 auto; width:400px">
+    <!--<form id="frmRegister" novalidate>-->
+    <div class="panel" ng-init = "InitRegister( this)">
+        <div class="panel-header bg-lightBlue fg-white">
+           Register Account
+        </div>
+        <div class="panel-content"> 
+            <div class="input-control text">
+                    <input type="text" id="Name" name="Name" ng-model="User.Name" placeholder="Name"/>
+                </div>
+
+                <div class="input-control text" ClearInput>
+                    <input type="text" name="UserName" ng-model="User.UserName" placeholder="User Name" required />
+                    <button  class="btn-clear"></button>
+                    <span class="errorMessage" ng-show="RegisterForm.UserName.$dirty && RegisterForm.UserName.$invalid">
+                            User Name is required
+                        </span>
+                </div>
+               <div class="input-control password" TogglePassword>
+                    <input type="password" name="Password" ng-model="User.Password" placeholder="Password" required />
+                    <button class="btn-reveal"></button>
+                        <span class="errorMessage" ng-show="RegisterForm.Password.$dirty && RegisterForm.Password.$invalid">
+                            Password is required
+                        </span>
+               </div>
+
+            <div class="input-control password" TogglePassword>
+                    <input type="password" name="ConfirmPassword" ng-model="User.ConfirmPassword" placeholder="Confirm Password" required />
+                    <button class="btn-reveal"></button>
+                        <span class="errorMessage" ng-show="RegisterForm.ConfirmPassword.$dirty && RegisterForm.ConfirmPassword.$invalid">
+                            Password is required
+                        </span>
+               </div>
+
+            
+    
+            <div style="margin-top:10px;width:100%; height:25px">
+                
+            <div class="place-left">
+            <input type="button" id="_btnsave" value="Register" class="info" ng-click="register()" />
+            </div>
+            <div class="place-right">
+            <input type="button"  id="btncancel" class="button info" value="Cancel" ng-click="CancelRegister()" ></input>
+            </div>
+        </div>
+         </div>
+
+
+    </div>
+    <!--</form>-->
+    </div>
+</div>

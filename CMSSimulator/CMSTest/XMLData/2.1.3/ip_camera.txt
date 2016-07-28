@@ -1,0 +1,178 @@
+
+        <time_change>15326</time_change>
+        <configuration_id>2</configuration_id>
+        <configuration_name>ip_camera</configuration_name>
+    <ip_camera>
+      <cameras size="6">
+        <camera id="0">
+          <ip>10.1.4.231</ip>
+          <port>80</port>
+          <model>6</model>
+          <fullmodelname>IQINVISION IQeye705</fullmodelname>
+          <mask>0</mask>
+          <params size="1">
+            <param id="0">
+              <video_source>64</video_source>
+              <frame_rate>21</frame_rate>
+              <user_name>root</user_name>
+              <password>system</password>
+              <location_name>
+              </location_name>
+              <resolution_width>2048</resolution_width>
+              <resolution_height>1536</resolution_height>
+              <max_fps>30</max_fps>
+              <supported_resolution size="10">
+                <resolution width="2560" height="1920" />
+                <resolution width="2048" height="1536" />
+                <resolution width="1920" height="1080" />
+                <resolution width="1600" height="1200" />
+                <resolution width="1280" height="1024" />
+                <resolution width="1280" height="720" />
+                <resolution width="720" height="480" />
+                <resolution width="704" height="576" />
+                <resolution width="704" height="480" />
+                <resolution width="640" height="480" />
+              </supported_resolution>
+            </param>
+          </params>
+        </camera>
+        <camera id="1">
+          <ip>10.0.4.223</ip>
+          <port>80</port>
+          <model>6</model>
+          <fullmodelname>IQINVISION IQeye705</fullmodelname>
+          <mask>0</mask>
+          <params size="1">
+            <param id="0">
+              <video_source>65</video_source>
+              <frame_rate>30</frame_rate>
+              <user_name>root</user_name>
+              <password>system</password>
+              <location_name>
+              </location_name>
+              <resolution_width>1280</resolution_width>
+              <resolution_height>720</resolution_height>
+              <max_fps>30</max_fps>
+              <supported_resolution size="10">
+                <resolution width="2560" height="1920" />
+                <resolution width="2048" height="1536" />
+                <resolution width="1920" height="1080" />
+                <resolution width="1600" height="1200" />
+                <resolution width="1280" height="1024" />
+                <resolution width="1280" height="720" />
+                <resolution width="720" height="480" />
+                <resolution width="704" height="576" />
+                <resolution width="704" height="480" />
+                <resolution width="640" height="480" />
+              </supported_resolution>
+            </param>
+          </params>
+        </camera>
+        <camera id="2">
+          <ip>10.0.4.228</ip>
+          <port>80</port>
+          <model>6</model>
+          <fullmodelname>IQINVISION IQeye702</fullmodelname>
+          <mask>0</mask>
+          <params size="1">
+            <param id="0">
+              <video_source>66</video_source>
+              <frame_rate>0</frame_rate>
+              <user_name>root</user_name>
+              <password>system</password>
+              <location_name>
+              </location_name>
+              <resolution>0</resolution>
+            </param>
+          </params>
+        </camera>
+        <camera id="3">
+          <ip>10.0.4.225</ip>
+          <port>80</port>
+          <model>6</model>
+          <fullmodelname>IQINVISION IQeye702</fullmodelname>
+          <mask>0</mask>
+          <params size="1">
+            <param id="0">
+              <video_source>67</video_source>
+              <frame_rate>26</frame_rate>
+              <user_name>root</user_name>
+              <password>system</password>
+              <location_name>
+              </location_name>
+              <resolution_width>1600</resolution_width>
+              <resolution_height>1200</resolution_height>
+              <max_fps>30</max_fps>
+              <supported_resolution size="7">
+                <resolution width="1600" height="1200" />
+                <resolution width="1280" height="1024" />
+                <resolution width="1280" height="720" />
+                <resolution width="720" height="480" />
+                <resolution width="704" height="576" />
+                <resolution width="704" height="480" />
+                <resolution width="640" height="480" />
+              </supported_resolution>
+            </param>
+          </params>
+        </camera>
+        <camera id="4">
+          <ip>10.0.4.224</ip>
+          <port>80</port>
+          <model>6</model>
+          <fullmodelname>IQINVISION IQeye702</fullmodelname>
+          <mask>0</mask>
+          <params size="1">
+            <param id="0">
+              <video_source>68</video_source>
+              <frame_rate>30</frame_rate>
+              <user_name>root</user_name>
+              <password>system</password>
+              <location_name>
+              </location_name>
+              <resolution_width>1280</resolution_width>
+              <resolution_height>720</resolution_height>
+              <max_fps>30</max_fps>
+              <supported_resolution size="7">
+                <resolution width="1600" height="1200" />
+                <resolution width="1280" height="1024" />
+                <resolution width="1280" height="720" />
+                <resolution width="720" height="480" />
+                <resolution width="704" height="576" />
+                <resolution width="704" height="480" />
+                <resolution width="640" height="480" />
+              </supported_resolution>
+            </param>
+          </params>
+        </camera>
+        <camera id="5">
+          <ip>10.0.4.227</ip>
+          <port>80</port>
+          <model>6</model>
+          <fullmodelname>IQINVISION IQeye752</fullmodelname>
+          <mask>0</mask>
+          <params size="1">
+            <param id="0">
+              <video_source>69</video_source>
+              <frame_rate>30</frame_rate>
+              <user_name>root</user_name>
+              <password>system</password>
+              <location_name>
+              </location_name>
+              <resolution_width>1600</resolution_width>
+              <resolution_height>1200</resolution_height>
+              <max_fps>30</max_fps>
+              <supported_resolution size="7">
+                <resolution width="1600" height="1200" />
+                <resolution width="1280" height="1024" />
+                <resolution width="1280" height="720" />
+                <resolution width="720" height="480" />
+                <resolution width="704" height="576" />
+                <resolution width="704" height="480" />
+                <resolution width="640" height="480" />
+              </supported_resolution>
+            </param>
+          </params>
+        </camera>
+      </cameras>
+    </ip_camera>
+      

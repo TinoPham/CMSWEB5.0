@@ -1,0 +1,1 @@
+{"ReportId":1,"Metrics":[{"MetricId":6,"Name":"Average transaction value","ResourceKey":"METRIC_ATV","Order":0,"Active":true},{"MetricId":8,"Name":"Unconverted potential dollar","ResourceKey":"METRIC_UPD","Order":0,"Active":true}]}

@@ -1,0 +1,1353 @@
+
+        <time_change>0</time_change>
+        <configuration_id>13</configuration_id>
+        <configuration_name>text_overlay</configuration_name>
+    <text_overlay>
+      <channels size="64">
+        <channel id="0">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>138</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="1">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>122</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="2">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>122</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="3">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="4">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="5">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="6">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="7">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="8">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="9">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="10">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="11">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="12">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="13">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="14">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="15">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="16">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="17">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="18">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="19">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="20">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="21">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="22">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="23">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="24">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="25">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="26">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="27">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="28">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="29">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="30">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="31">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="32">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="33">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>0</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="34">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="35">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="36">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="37">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="38">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="39">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="40">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="41">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="42">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="43">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="44">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="45">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="46">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="47">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="48">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="49">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="50">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="51">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="52">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="53">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="54">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="55">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="56">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="57">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="58">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="59">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="60">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="61">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="62">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="63">
+          <scroll_delay>1</scroll_delay>
+          <text_delay>1800</text_delay>
+          <disable>1</disable>
+          <brightness>104</brightness>
+          <show_color_mode>0</show_color_mode>
+          <trackers size="2">
+            <tracker id="0">
+              <left>69</left>
+              <top>31</top>
+              <width>861</width>
+              <height>594</height>
+            </tracker>
+            <tracker id="1">
+              <left>69</left>
+              <top>740</top>
+              <width>861</width>
+              <height>170</height>
+            </tracker>
+          </trackers>
+        </channel>
+      </channels>
+    </text_overlay>
+      

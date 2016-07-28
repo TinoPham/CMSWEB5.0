@@ -1,0 +1,35 @@
+
+        <configuration_id>12</configuration_id>
+        <configuration_name>intelli_guard</configuration_name>
+    <intelli_guard>
+      <channels size="1">
+        <channel id="0" interval_alarm="30">
+          <motions size="1">
+            <motion id="0">
+              <left>50</left>
+              <top>354</top>
+              <width>646</width>
+              <height>154</height>
+              <send_email>0</send_email>
+              <enable_sound>0</enable_sound>
+              <update_background>0</update_background>
+              <area_name>
+              </area_name>
+              <wave_file>
+              </wave_file>
+              <detection_size>0</detection_size>
+              <detection_sense>100</detection_sense>
+              <sound_duration>0</sound_duration>
+              <fresh_time>0</fresh_time>
+              <active_time>0</active_time>
+              <use_control>0</use_control>
+              <control_number>0</control_number>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+            </motion>
+          </motions>
+        </channel>
+      </channels>
+    </intelli_guard>
+       

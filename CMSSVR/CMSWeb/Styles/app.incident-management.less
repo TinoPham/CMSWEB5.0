@@ -1,0 +1,66 @@
+﻿/** INCIDENT MANAGEMENT, START**/
+.incident-management {
+	ul {
+		list-style: none;
+	}
+
+    select {
+        width: auto;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    .alert {
+        margin-bottom: 0px;
+    }
+
+	.panel-collapse {
+		.list-group{ 
+			border-top: 0px !important; 
+			&:first-child{
+				.list-group-item{
+					&:first-child{
+						border-top: 1px solid #ddd;
+						border-top-right-radius: 0;
+						border-top-left-radius: 0;
+					}
+                    border: none;
+				}
+			}
+			.list-group{ //level 2
+					margin: 0;
+					margin-top: 10px;
+                    padding-left: 20px;
+			}
+			div{ 
+				&.list-group{//level 2
+					margin: 0;
+					a{
+						&.list-group-item{
+							border-top: 1px solid #ddd;
+							border-bottom: 0;
+							padding-left: 30px;
+						}
+					}
+				}
+			}
+		}
+		>.list-group{
+			border: 0px;
+			margin-bottom: 0;
+			/*.list-group-item{ border-width: 1px 0;}*/
+		}
+		.list-group-item{
+			border-radius: 0;
+			li{
+				.list-group-item{
+					margin: 0 -15px;
+					border-bottom: 0;
+					padding-left: 30px;
+					&:last-child{ padding-bottom: 0; }
+				}
+			}
+		}
+	}
+}
+/** INCIDENT MANAGEMENT, END**/

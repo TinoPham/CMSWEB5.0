@@ -1,0 +1,46 @@
+﻿<div class="rebar-box-dashboard">
+    <div class="col-md-3">
+		<div class="panel box-item" ng-click="vm.gotoExceptionPage(vm.stateList.Refund)">
+			<div ng-if="!vm.boxdataList" class="la-ball-scale-multiple la-2x">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+            <h5 ng-if="vm.boxdataList">{{'REFUND' | translate}}</h5>
+            <h3 ng-if="vm.boxdataList">{{(vm.data1 && vm.data1.Total) ? vm.data1.Total : 0   | number:0}}</h3>
+        </div>
+    </div>
+    <div class="col-md-3">
+		<div class="panel  box-item"  ng-click="vm.gotoExceptionPage(vm.stateList.NoSale)">
+			<div ng-if="!vm.boxdataList" class="la-ball-scale-multiple la-2x">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+            <h5 ng-if="vm.boxdataList">{{'NOSALES_STRING' | translate}}</h5>
+            <h3 ng-if="vm.boxdataList">{{(vm.data2 && vm.data2.Total) ? vm.data2.Total : 0   | number:0}}</h3>
+        </div>
+    </div>
+    <div class="col-md-3">
+		<div class="panel  box-item" ng-click="vm.gotoExceptionPage(vm.stateList.Discount)">
+			<div ng-if="!vm.boxdataList" class="la-ball-scale-multiple la-2x">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+            <h5 ng-if="vm.boxdataList">{{'DISCOUNT_STRING' | translate}}</h5>
+            <h3 ng-if="vm.boxdataList">{{(vm.data3 && vm.data3.Total) ? vm.data3.Total : 0   | number:0}}</h3>
+        </div>
+    </div>
+    <div class="col-md-3">
+		<div class="panel  box-item"  ng-click="vm.gotoExceptionPage(vm.stateList.Cancel)">
+			<div ng-if="!vm.boxdataList" class="la-ball-scale-multiple la-2x">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+            <h5 ng-if="vm.boxdataList">{{'CANCELS_STRING' | translate}}</h5>
+            <h3 ng-if="vm.boxdataList">{{(vm.data4 && vm.data4.Total) ? vm.data4.Total : 0   | number:0}}</h3>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,699 @@
+<!-- START :: panel Incident info -->
+<div id="Incident-Info" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	
+  	<h2>Incident info</h2>
+
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+
+  </div>
+  <!-- END :: heading -->
+
+
+  <div class="panel-body">
+  		
+
+  		<div id="Incident-Info--General-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		 <h4>General info</h4>
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Report by</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Approved By
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Case status
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">				      
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form -->
+
+
+		<div id="Incident-Info--Event-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		 <h4>Event info</h4>
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Location</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Date time
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+						 <div class="input-group" options="{{vm.optionsDate}}" cmsdatetimepicker 
+						 ng-model="vm.dateIncident">
+		                    <input type="text" name="dateIncident" class="form-control input-sm" readonly />
+		                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+			            </div>  
+				    </div>
+				  </div>
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form  Event info-->
+
+
+
+
+		<div id='Incident-Info--Contact-Info' class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		<h4>Contact info</h4>
+
+				<div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Name</label>
+				    <div class="col-sm-2 span-left">
+				      <input type="text" class="form-control" id="" placeholder="First name">
+				    </div>
+				    <div class="col-sm-2 span-center">
+				      <input type="text" class="form-control" id="" placeholder="Last name">
+				    </div>
+				    <div class="col-sm-2 span-right">
+				      <input type="text" class="form-control" id="" placeholder="Middle name">
+				    </div>
+				</div>
+
+				<div class="form-group have-bottom-line">
+				    <label for="" class="col-sm-4 control-label">Phone</label>
+				    <div class="col-sm-3 span-left">
+				      <input type="number" class="form-control" id="" placeholder="Cell phone">
+				    </div>				   
+				    <div class="col-sm-3 span-right">
+				      <input type="number" class="form-control" id="" placeholder="Home phone">
+				    </div>
+				</div>
+
+
+				<div class="form-group have-bottom-line">
+				    <label for="" class="col-sm-4 control-label">Address</label>
+				    <div class="col-sm-6 ">
+				      <input type="text" class="form-control" id="" placeholder="Street">
+				    </div>
+
+				    <div class="col-md-offset-4 col-sm-3 span-left margin_top_15">
+				      <input type="text" class="form-control" id="" placeholder="City">
+				    </div>
+
+				    <div class="col-sm-3 span-right margin_top_15">
+				        <select class="form-control">
+				      	<option value="">Choose country</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+
+
+				     <div class="col-md-offset-4 col-sm-3 span-left margin_top_15">
+					      <select class="form-control">
+					      	<option value="">Choose state/Prov</option>
+					      	<option value="">1</option>
+					      	<option value="">2</option>				      	
+					      </select>
+				    </div>
+				    <div class="col-sm-3 span-right margin_top_15">
+				        <input type="text" class="form-control" id="" placeholder="Zip Code">
+				    </div>
+
+				</div>	
+
+				<div class="form-group ">
+				    <label for="" class="col-sm-4 control-label">Email</label>
+				    <div class="col-sm-6 ">
+				      <input type="email" class="form-control" id="" placeholder="E-mail">
+				    </div>
+				  
+				</div>	
+
+				<div class="form-group ">
+				    <label for="" class="col-sm-4 control-label">Orther info</label>				
+
+				    <div class="col-sm-6 margin_top_15">
+				     <textarea class="form-control"></textarea>
+				    </div>
+				</div>		
+
+
+				
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form  Contact info-->
+
+
+
+
+  </div>
+    <!-- END :: panel - body -->
+
+</div>
+<!-- END :: panel Incident info -->
+
+
+<!-- START :: panel Injured Person -->
+<div id="Injured-Person" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	
+  	<h2>Injured Person</h2>
+
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+
+  </div>
+  <!-- END :: heading -->
+
+
+  <div class="panel-body">
+  		
+
+  		<div id="Incident-Info--General-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		 <!-- <h4>General info</h4> -->
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">First name</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="">
+				    </div>
+				  </div>
+				  <!-- END :: a  form-group -->
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Last name</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="">
+				    </div>
+				  </div>
+				  <!-- END :: a  form-group -->
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Date of birth
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+						 <div class="input-group" options="{{vm.optionsDate}}" cmsdatetimepicker 
+						 ng-model="vm.dateIncident">
+		                    <input type="text" name="dateIncident" class="form-control input-sm" readonly />
+		                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+			            </div>  
+				    </div>
+				  </div>
+				  <!-- END :: a  form-group -->
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Age</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div>
+				  </div>
+				  <!-- END :: a  form-group -->
+
+
+				  	<div class="form-group ">
+					    <label for="" class="col-sm-4 control-label">Address</label>				
+
+					    <div class="col-sm-6 margin_top_15">
+					     <textarea class="form-control"></textarea>
+					    </div>
+					</div>		
+					 <!-- END :: a  form-group -->
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Gender
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+				   <!-- END :: a  form-group -->
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Student
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">				      
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+				   <!-- END :: a  form-group -->
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Grade level
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">				      
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+				   <!-- END :: a  form-group -->
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Other</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="">
+				    </div>
+				  </div>
+				  <!-- END :: a  form-group -->
+
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">parent/guardian</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="">
+				    </div>
+				  </div>
+				  <!-- END :: a  form-group -->
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">identify injury</label>
+				    <div class="col-sm-6">
+
+						<div class="dropdown dynamic-options">
+						  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    Please choose
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						    <li><a href="#">Action</a></li>
+						    <li><a href="#">Another action</a></li>
+						    <li><a href="#">Something else here</a></li>						    
+						    <li><button class="btn btn-primary btn-main-color">
+						    	<i class="icon-plus-2"></i>
+						    	Add more value
+						    </button></li>
+						  </ul>
+						</div>
+						<!-- END :: Dropdown -->
+
+				    </div>				   
+				  </div>
+				  <!-- END :: a  form-group -->
+
+
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form -->
+
+  </div>
+    <!-- END :: panel - body -->
+
+</div>
+<!-- END :: panel Injured Person-->
+
+
+
+<!-- START :: panel Details Of Injury -->
+<div id="Details-Of-Injury" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	
+  	<h2>Injured Person</h2>
+
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+
+  </div>
+  <!-- END :: heading -->
+
+
+  <div class="panel-body">
+  		
+
+  		<div id="Incident-Info--General-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		
+					<div class="form-group">
+					    <label for="" class="col-sm-4 control-label">
+					    	Date Time
+					    	
+					    </label>
+					    <div class="col-sm-6">
+							 <div class="input-group" options="{{vm.optionsDatetime}}" cmsdatetimepicker 
+							 ng-model="vm.dateIncident">
+			                    <input type="text" name="dateIncident" class="form-control input-sm" />
+			                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+				            </div>  
+					    </div>
+					</div>
+					<!-- END :: form-group -->
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	bodily injury
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+				  <!-- END :: form-group -->
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	property damage
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">				      
+				      <textarea class="form-control"></textarea>
+				    </div>
+				  </div>
+				  <!-- END :: form-group -->
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	injury type
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-3 span-left">				      
+				       <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+
+				    <div class="col-sm-3 span-right">				      
+				       <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+				  <!-- END :: form-group -->
+
+				    <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	On school Premises
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+				  <!-- END :: form-group -->
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	location address
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">				      
+				      <textarea class="form-control"></textarea>
+				    </div>
+				  </div>
+				  <!-- END :: form-group -->
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	injury location
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+				  <!-- END :: form-group -->
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	description
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">				      
+				      <textarea class="form-control"></textarea>
+				    </div>
+				  </div>
+				  <!-- END :: form-group -->
+
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form -->
+
+  </div>
+    <!-- END :: panel - body -->
+
+</div>
+<!-- END :: panel Details Of Injury -->
+
+
+
+<!-- START :: panel Witness -->
+<div id="Witness" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	
+  	<h2>Witness</h2>
+
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+
+  </div>
+  <!-- END :: heading -->
+
+
+  <div class="panel-body">
+  		
+
+  		<div id="Incident-Info--General-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		<table class="table cms-table-summary margin_top_15">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>First name</th>
+								<th>Last name</th>
+								<th>Age</th>
+								<th>Address</th>
+								<th>Email</th>
+								<th>Home Phone</th>
+								<th>Cell Phone</th>
+							</tr>
+							
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+
+							<tr>
+								<td colspan="8">
+									<button class="btn btn-default"> <i class='icon-plus-4'></i>Add more</button>
+								</td>
+							</tr>
+						
+							
+						</tbody>
+					</table>
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form -->
+
+  </div>
+    <!-- END :: panel - body -->
+
+</div>
+<!-- END :: panel Witness -->
+
+
+<!-- START :: panel Other-Details -->
+<div id="Other-Details" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	
+  	<h2>Other Details</h2>
+
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+
+  </div>
+  <!-- END :: heading -->
+
+
+  <div class="panel-body">
+  		
+
+  		<div id="Incident-Info--General-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		 <!-- <h4>General info</h4> -->
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Name of school</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="">
+				    </div>
+				  </div>
+				  <!-- END :: A form-group -->
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Teacher in charge
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-3 span-left">
+				  	   <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div>
+
+				     <div class="col-sm-3 span-right">
+				  	   <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div> 
+				  </div>
+				  <!-- END :: A form-group -->
+
+				   <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Principal
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-3 span-left">
+				  	   <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div>
+
+				     <div class="col-sm-3 span-right">
+				  	   <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div> 
+				  </div>
+				  <!-- END :: A form-group -->
+
+
+				  	<div class="form-group">
+					    <label for="" class="col-sm-4 control-label">
+					    	Date 
+					    </label>
+					    <div class="col-sm-6">
+							 <div class="input-group" options="{{vm.optionsDate}}" cmsdatetimepicker 
+							 ng-model="vm.dateIncident">
+			                    <input type="text" name="dateIncident" class="form-control input-sm" readonly />
+			                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+				            </div>  
+					    </div>
+					</div>
+					<!-- END :: form-group -->
+
+
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form -->
+
+  </div>
+    <!-- END :: panel - body -->
+
+</div>
+<!-- END :: panel Other-Details -->
+
+
+

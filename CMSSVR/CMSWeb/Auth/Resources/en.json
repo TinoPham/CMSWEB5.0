@@ -1,0 +1,19 @@
+﻿{
+  "FORGOT_PASSWORD": "Forgot Password?"
+, "LOGIN_HEADER":"Sign In"
+, "LOGIN_FOOTER_WCMSWEB":"What is CMS Web?"
+, "LOGIN":"Login"
+, "PASSWORD_PLACEHOLD":"Password"
+, "REMEMBER":"Remember Password"
+, "RESET_PASSWORD":"Reset Password"
+, "RESET_PASSWORD_NOTES":"Please input your email and User Name, then submit a reset password. Your new password will be sent to your email."
+, "USER_NAME_PLACEHOLD":"Username"
+
+, "LOGIN_EXPIRED_MSG": "This account is expired."
+, "LOGIN_ERROR_MSG": "Login Error: {0}"
+, "LOGIN_FAIL_MSG": "The User name or Password is incorrect."
+, "SET_COOKIE_FAIL_MSG":"Cannot set Cookie value. Please enable cookies in your browser and correct system date time."
+,"PAGE_FORGOT_PASSWORD":"Forgot Password"
+, "RESET_PASSWORD_MSG":"An email include your password was sent to your email, please go to your mailbox to get the password."
+
+}

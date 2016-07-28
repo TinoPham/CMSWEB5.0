@@ -1,0 +1,44 @@
+﻿<form name="myForm" class="recipient-manages" novalidate angular-validator angular-validator-submit="vm.SaveRecipient()">
+	<div class="modal-header">
+		<span class="close" data-ng-click="CloseRecipient()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{btn_Type|translate}} {{Resx.RECIPIENT_NAME|translate}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="form-horizontal">
+			<div class="form-group">
+				<span for="firstname" class="col-sm-3 control-label">{{Resx.RECIPIENT_FIRST_NAME|translate}}</span>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="firstname" placeholder="{{Resx.RECIPIENT_FIRST_NAME|translate}}" 
+						ng-model="recipSelected.FirstName" maxlength="50" 
+						required-message="'{{Resx.RECIPIENT_FIRSTNAME_REQUIRED|translate}}'" required
+						validate-on="dirty" autofocus/>
+				</div>
+			</div>
+			<div class="form-group">
+				<span for="lastname" class="col-sm-3 control-label">{{Resx.RECIPIENT_LAST_NAME|translate}}</span>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="lastname" placeholder="{{Resx.RECIPIENT_LAST_NAME|translate}}" 
+						ng-model="recipSelected.LastName" maxlength="50"
+						required-message="'{{Resx.RECIPIENT_LASTNAME_REQUIRED|translate}}'" required
+						validate-on="dirty" />
+				</div>
+			</div>
+			<div class="form-group">
+				<span for="email" class="col-sm-3 control-label">{{Resx.EMAIL|translate}}</span>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="email" placeholder="{{Resx.EMAIL|translate}}" 
+						ng-model="recipSelected.Email" maxlength="50" 
+						required-message="'{{Resx.RECIPIENT_EMAIL_REQUIRED|translate}}'" required
+						validator="EmailValidFunc(recipSelected.Email) === true" 
+						invalid-message="EmailValidFunc(recipSelected.Email)"
+						validate-on="blur">
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="CloseRecipient()">{{Resx.BTN_CANCEL|translate}}</button>
+		<button type="submit" class="btn btn-primary" ng-click="SaveRecipient()" ng-disabled="myForm.$invalid">{{Resx.BTN_SAVE|translate}}</button>
+	</div>
+</form>

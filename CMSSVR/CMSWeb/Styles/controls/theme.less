@@ -1,0 +1,31 @@
+﻿/*
+ * Customize: override theme (bootstrap)
+ * -----------
+ */
+
+//
+// Navbar
+// --------------------------------------------------
+
+// Default navbar
+.navbar-default {
+	background-color: transparent;
+	border: none;
+
+	.navbar-nav {
+		> .active {
+			> a, a:hover, a:focus {
+				color: #555555;
+				background-color: #eee;
+				border-bottom: none;
+			}
+		}
+
+		.open {
+			> a, a:hover, a:focus {
+				color: #555555;
+				/*background-color: #eee;*/
+			}
+		}
+	}
+}

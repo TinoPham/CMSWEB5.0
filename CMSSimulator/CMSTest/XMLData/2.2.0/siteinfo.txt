@@ -1,0 +1,51 @@
+
+        <time_change>14611</time_change>
+        <configuration_id>5</configuration_id>
+        <configuration_name>server_info</configuration_name>
+    <site_info>
+      <server_info>
+        <user_name>i3dvr</user_name>
+        <version>2.2.1 (02.03.2012)</version>
+        <server_id>100-001</server_id>
+        <pacid>100-143</pacid>
+        <ip_add>10.0.2.6</ip_add>
+        <server_name>SRX-Pro Server</server_name>
+        <location>
+        </location>
+        <model>SRX-Pro Server</model>
+        <distributor>
+        </distributor>
+        <sale_date>
+          <year>2012</year>
+          <month>9</month>
+          <day>15</day>
+        </sale_date>
+        <note>
+        </note>
+        <display>0</display>
+      </server_info>
+      <system_info>
+        <user_name>i3dvr</user_name>
+        <comp_name>DH55HC_143</comp_name>
+        <language>en</language>
+        <drives>
+          <drive total_space="39997" free_space="35073">C:</drive>
+          <drive total_space="305242" free_space="301157">D:</drive>
+          <drive total_space="305242" free_space="159">E:</drive>
+          <drive total_space="99998" free_space="136">F:</drive>
+          <drive total_space="165246" free_space="121">G:</drive>
+          <drive total_space="0" free_space="0">H:CDROM</drive>
+        </drives>
+        <computer>
+          <cpu_model>Intel(R) Core(TM) i5 CPU 650 @ 3.20GHz</cpu_model>
+          <total_memory>2997 MBytes</total_memory>
+          <free_memory>2062 MBytes</free_memory>
+        </computer>
+        <system>
+          <os>Windows XP Professional </os>
+          <version>Service Pack 2 (Build 2600)</version>
+          <mac_address>70-71-BC-E2-C0-B2</mac_address>
+        </system>
+      </system_info>
+    </site_info>
+      

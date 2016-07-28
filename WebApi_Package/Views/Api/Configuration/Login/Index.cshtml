@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Api/Shared/_LayoutLogin.cshtml";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Login","Login"))
+{ 
+    <div class="container">
+    <div class="editor-label">@Html.Label("User name")</div>
+    <div class ="editor-field">@Html.TextBox("userID")</div>
+    <div class ="editor-lable">@Html.Label("Password")</div>
+    <div class="editor-field">@Html.Password("password")</div>
+    <div style="margin-top:10px">
+    <input type="submit" value="Login" class="btn btn-success" />
+     </div>
+    <div class="editor-label" style="margin-top:10px">User name, Password are the same to login.</div>
+        </div>
+}

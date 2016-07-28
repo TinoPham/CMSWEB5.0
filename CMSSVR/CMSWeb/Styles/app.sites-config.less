@@ -1,0 +1,769 @@
+﻿@import url('app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * CMS: Configuration > Site Admin CSS
+ * -----------
+ */
+
+.sites-config {
+    .panel-content {
+        margin-top: -5px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    @media (min-width: 992px) {
+        .server-id-serial {
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100px;
+            white-space: nowrap;
+        }
+    }
+
+    @media screen and (min-width: 401px) and (max-width: 991px) {
+        .server-id-serial {
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 250px;
+            white-space: nowrap;
+        }
+
+        .serial-number {
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 250px;
+            white-space: nowrap;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .server-id-serial {
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 150px;
+            white-space: nowrap;
+        }
+
+        .serial-number {
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 150px;
+            white-space: nowrap;
+        }
+    }
+
+    .site-controls {
+        padding: 0px;
+        background-color: #FDFDFD;
+        border-bottom: 1px solid rgba(217, 217, 217, 0.34);
+
+        .trash {
+            i {
+                color: red;
+            }
+        }
+
+        span {
+            padding-right: 3px;
+            font-size: 13px;
+
+
+
+            i {
+                font-size: 18px;
+                padding-right: 5px;
+            }
+        }
+
+        .dropdown-site-li {
+            float: left;
+            width: 100%;
+            text-align: left;
+        }
+    }
+
+    .site-content {
+        margin-left: 5px;
+    }
+    //Edit Site CSS
+    .form-edit {
+        padding: 0;
+
+        .panel-heading, .panel-header {
+            .panel-title {
+                width: 100%;
+            }
+        }
+
+        .panel-left {
+            .site-mac-image {
+                font-size: 20px;
+                color: #9B9B9B;
+                -moz-border-radius: 0;
+                -webkit-border-radius: 0;
+                border-radius: 0;
+                border-left: none;
+                padding: 0px 3px 0px 4px;
+                position: relative;
+
+                &:hover, &:focus {
+                    cursor: default !important;
+                }
+
+
+                &.open {
+                    color: #000;
+                    cursor: pointer;
+
+                    &:hover, &:focus {
+                        color: #777777;
+                        background-color: #ccc;
+                    }
+                }
+            }
+
+            .btn-remove-mac {
+                font-size: 20px;
+                padding: 0px 7px;
+                color: red;
+                background-color: #FFF;
+                position: relative;
+                -moz-border-radius: 0;
+                -webkit-border-radius: 0;
+                border-radius: 0;
+                border-left: none;
+
+                &:hover, &:focus {
+                    background-color: #ccc;
+                    cursor: pointer;
+                }
+            }
+
+            .input-group-addon {
+                border-left: none;
+                -moz-border-radius: 0;
+                -webkit-border-radius: 0;
+                border-radius: 0;
+                position: relative;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .form-group {
+                .input-group {
+                    .form-control {
+                        z-index: auto;
+                    }
+                }
+
+                .input-mac-group {
+                    width: 100%;
+                }
+
+                .zipcode-input {
+                    .has-error {
+                        border: 1px solid #a94442;
+
+                        .angucomplete-dropdown {
+                            margin-top: 1px;
+                        }
+                    }
+
+                    .validationMessage {
+                        display: none;
+                    }
+                }
+
+                .serial-group {
+                    border-left: 1px solid #ccc;
+                    padding: 0;
+                    margin-bottom: 5px;
+
+                    .addon-index {
+                        font-weight: bold;
+                        cursor: default;
+                    }
+
+                    .addon-remove {
+                        color: #fff;
+                        background-color: #e15554;
+                    }
+
+                    .serial-info {
+                        border: 1px solid #ccc;
+                        background-color: #fff;
+                        padding: 1px 5px;
+                        font-size: 12px;
+                        height: 38px;
+
+                        .serial-number {
+                            -ms-text-overflow: ellipsis;
+                            -o-text-overflow: ellipsis;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            width: 100px;
+                            white-space: nowrap;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            .start-date, .end-date {
+                float: left;
+                padding: 3px 0;
+
+                .dropdown-menu {
+                    top: -271px !important;
+                }
+            }
+
+            .angucomplete-dropdown {
+                .scroll-body-autocomplete {
+                    max-height: 200px;
+                    overflow-y: auto;
+                }
+            }
+
+            .scroll-body {
+                height: 635px;
+                overflow: auto;
+                width: 100%;
+            }
+
+            .site-hour-header {
+                background-color: #FAFAFA;
+                border-bottom: 1px solid #eee;
+                height: 25px;
+                -moz-box-shadow: 0 3px 4px -4px #eee;
+                -webkit-box-shadow: 0 3px 4px -4px #eee;
+                box-shadow: 0 3px 4px -4px #eee;
+            }
+
+            .site-hour-body {
+                height: 70px;
+                overflow-y: auto;
+                width: 100%;
+
+                &.has-data {
+                    background-color: #CFCFCF;
+                }
+
+                .site-hour-item {
+                    height: 25px;
+                    border-bottom: 1px dashed #eee;
+                }
+            }
+        }
+
+        .panel-right {
+            .panel-body {
+                padding: 0;
+            }
+
+            .form-group {
+                margin-bottom: 0;
+
+                &.search-group {
+                    background-color: #FAFAFA;
+                    padding: 2px;
+                }
+            }
+
+            .user-list {
+                margin-bottom: 0;
+                padding: 0 2px;
+
+                .list-group-item {
+                    padding: 3px 5px;
+
+                    &:first-child, &:last-child {
+                        -moz-border-radius: 0;
+                        -webkit-border-radius: 0;
+                        border-radius: 0;
+                    }
+
+                    &:nth-child(odd) {
+                        background-color: #FAFAFA;
+                    }
+
+                    &:nth-child(even) {
+                        background-color: #fff;
+                    }
+
+                    &.active, &:hover, &.focus {
+                        background-color: @hover-bg-color;
+                        border: 1px solid #ddd;
+                        color: #5b5b5b;
+                        cursor: pointer;
+                    }
+
+                    .item-info {
+                        height: 50px;
+
+                        .i-name, .i-pos {
+                            font-size: 12px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            -ms-text-overflow: ellipsis;
+                            -o-text-overflow: ellipsis;
+                            text-overflow: ellipsis;
+                        }
+
+                        .i-name {
+                            font-weight: bold;
+                        }
+
+                        .i-image {
+                            margin-top: 0;
+                            margin-right: 10px;
+                            float: left;
+
+                            img {
+                                .image-circle(50px, 50px);
+                            }
+                        }
+
+                        .icon-checked {
+                            color: #fff;
+                            background-color: #6ABE6A;
+                            -moz-border-radius: 100%;
+                            -webkit-border-radius: 100%;
+                            border-radius: 100%;
+                            border: 1px solid rgb(150, 241, 203);
+                            overflow: hidden;
+                            width: 17px;
+                            height: 17px;
+                            position: absolute;
+                            bottom: 4px;
+                            left: 36px;
+                            text-align: center;
+                            font-size: 10px;
+                            padding-top: 2px;
+                        }
+
+                        .i-color {
+                            margin-left: 0;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+            .scroll-body {
+                height: 570px;
+                overflow: auto;
+                width: 100%;
+            }
+        }
+
+        .border-top {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @media (min-width: 992px) {
+            .panel-left {
+                padding-right: 0;
+            }
+
+            .panel-right {
+                padding-left: 0;
+                border-left: 1px solid #E5E5E5;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .panel-left {
+                .slimScrollDiv {
+                    height: 270px !important;
+
+                    .scroll-body {
+                        height: 270px !important;
+                    }
+                }
+            }
+
+            .panel-right {
+                .slimScrollDiv {
+                    height: 230px !important;
+
+                    .scroll-body {
+                        height: 230px !important;
+                    }
+                }
+
+                .panel-heading, .panel-header {
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+    }
+}
+
+// Fix style modal configuration 
+.site-metric-manages.form-edit {
+	color :#898f97;
+	.modal-body {
+		.form-horizontal {
+			.form-group {
+				margin-left: 15px !important;
+				margin-right: 15px !important;			
+				label {
+					font-weight: 100;
+				}
+
+				.panel-metric-list {
+					padding: 10px;
+					background: #eeeeee;
+					.table-body {
+						.input-group {
+							margin-bottom: 10px;
+							input {
+								height: 35px;
+							}
+							span {
+								button {
+									height: 35px;
+								}
+							}
+
+						}
+					} /*Table body have Metric List text box loop */
+				}
+				.footer-metric-list {
+					text-align: center;
+					margin-top: 10px;
+					margin-bottom: 10px;
+					span {
+						border: 1px solid #ccc;						
+						i {
+							font-size: 18px;
+						}
+					}
+					
+				}
+			}
+
+		} /*END::form-horizontal*/
+
+	}	
+
+}
+
+//END :: Fix style modal configuration
+
+
+// ---------------------------------------------------------------------------------
+//                START   :: Improve treesite  on mobile  configuration
+//----------------------------------------------------------------------------------
+@media (max-width: @screen-xs-max) {
+    .sites-config {
+        .panel-content {
+            .site-content {
+                .cms-tree {
+                    .node-content {
+                        a  {
+                            span {
+                                float: none;
+                                max-width: 120px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ---------------------------------------------------------------------------------
+//                END   :: Improve treesite  on mobile  configuration
+//----------------------------------------------------------------------------------
+
+//Working Hours Manager CSS
+.working-hours-manage {
+	.form-horizontal {
+		.control-label {
+			text-align: left;
+		}
+	}
+
+	@media (max-width: 767px){
+		.align-middle {
+			margin-bottom: 5px;
+			margin-top: -5px;
+		}
+	}
+}
+
+
+//Set auto scroll Tree site
+@media screen and (max-height: 768px) {
+	.site-content{
+		height: 470px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (min-height: 769px) and (max-height: 864px) {
+	.site-content{
+		height: 570px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (min-height: 865px) and (max-height: 900px) {
+	.site-content{
+		height: 650px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (min-height: 901px) and (max-height: 950px) {
+	.site-content{
+		height: 700px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (min-height: 951px) and (max-height: 1000px) {
+	.site-content{
+		height: 740px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (min-height: 1001px) and (max-height: 1200px) {
+	.site-content{
+		height: 750px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (min-height: 1201px) {
+	.site-content{
+		height: 940px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}
+
+// Fix table Site - alert 
+@media screen and (min-width: 1179px) and (max-width: 1450px) {
+
+	.panel.site-monitor.sensor-alert.alerts {
+		
+		table.sensors-table.table-bordered {
+			tr {
+				&> td {
+					vertical-align: middle;
+					padding: 4px 6px;
+				}
+				th {
+					text-align: center;
+					span {
+						margin-left: 0px;
+					}
+				}
+			}
+			thead {
+				tr {
+					th {
+						&:nth-child(2) {
+							width: 110px;
+						}
+					}
+				}
+			}
+			tbody {
+				tr.sensor {
+					& td {
+						&:nth-child(2) {
+							span {
+								margin-left: -5px;
+								word-wrap: break-word;
+							}
+						}
+					}
+				}
+			}
+		}
+	
+    }
+}
+// END  :: Fix table Site - alert 
+
+
+
+//  Fix reload btn
+// .form-add-site-config {
+// 		background: red !important;
+// }
+.sites-config  {
+	.siteadmin-reload-btn {
+		position: absolute;
+		right: 15px;
+	}
+}
+//  END  ::   Fix reload btn
+
+
+// -------------------------------------------------------------------
+//    FIX :: General on mobie view
+// -------------------------------------------------------------------
+@media (max-width: @screen-xs-max) { 
+
+
+    // Custom Tree
+    .sites-config {
+        tree-component {
+            display: block;
+            overflow-x: scroll;
+            margin-bottom: 20px;
+            groupnode {
+                display: block;
+                width: 500px;
+            }
+        }
+    }
+    // END :: Custom Tree
+	
+
+	// Button Sensor Monitor
+	.panel.sensor-alert {
+		.site-alert-controls {
+			div.form-group.col-sm-4 {
+				margin-top: 15px;
+			}
+			div.pull-right {
+				margin-top: -30px;
+			}
+		}
+	}
+	// END :: Button Sensor Monitor
+
+
+	.panel.sites-config {
+		.panel-header.function-header {
+			div.pull-right.btn-group {
+				&:nth-child(2) {
+					float: left !important;
+					width: 100%;
+					margin-left: 1px;	
+					padding-right: 20px;				
+					form {
+						width: 100%;
+						span.search-button {
+   							top: 8px;
+						}
+
+						div.input-group {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+
+
+
+        .panel-content {
+            .site-controls {
+                & > span {
+                    font-weight: bold;               
+                    &:first-child {
+                         span {
+                            span {
+                                display: none;
+                            }
+                            i {
+                                color: green;
+                            }
+                        }
+                    }
+                    
+                    &:not(:first-child) {
+                        float: right;
+                         span {
+                                display: none;
+                         }
+                    }        
+                }   
+            }
+
+        }
+	}
+
+
+    div.panel  {
+        .panel-header {
+            div.btn-group {
+                width: 100%;
+                padding-right: 20px;        
+                  & > span {
+                        i {
+                            font-size: 18px;
+                        }             
+                        &:first-child {
+                           
+                            span {
+                                display: none;
+                            }
+                            i {
+                                color: green;
+                            }
+                            
+                        }
+                        
+                        &:not(:first-child) {
+                            float: right;
+                             span {
+                                    display: none;
+                             }
+                        }        
+                    } 
+                    form {
+                       width: 100%;
+                       div.input-group {
+                        width: 100%;
+                        span.search-button {
+                            top: 7px;
+                        }
+                       }
+                    }
+            }
+        }
+    }  
+
+
+
+
+
+ }
+// -------------------------------------------------------------------
+//END :: General on mobie view
+// -------------------------------------------------------------------
+
+
+

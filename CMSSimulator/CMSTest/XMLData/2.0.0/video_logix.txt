@@ -1,0 +1,616 @@
+
+        <time_change>15346</time_change>
+        <configuration_id>7</configuration_id>
+        <configuration_name>video_logix</configuration_name>
+    <video_logix>
+      <channels size="32">
+        <channel id="0">
+          <video_source>64</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="1">
+            <polygon_tracker id="0">
+              <polygon num_point="4" type="0">14,60;391,60;391,244;14,244;</polygon>
+              <name>Area 0</name>
+              <user_name>Area 0</user_name>
+              <object_type>3</object_type>
+              <alarm_type>0</alarm_type>
+              <begin_time>
+                <hour>0</hour>
+                <minute>0</minute>
+                <second>0</second>
+              </begin_time>
+              <end_time>
+                <hour>0</hour>
+                <minute>0</minute>
+                <second>0</second>
+              </end_time>
+              <is_send_mail>0</is_send_mail>
+              <is_audio_dial_out>0</is_audio_dial_out>
+              <wave_file>
+              </wave_file>
+              <sound_duration>60</sound_duration>
+              <condition>any</condition>
+              <condition_value>1</condition_value>
+              <idle_time>
+                <hour>-1</hour>
+                <minute>-1</minute>
+                <second>-1</second>
+              </idle_time>
+              <miss_alarm_condition>-1</miss_alarm_condition>
+            </polygon_tracker>
+          </area_trackers>
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="1">
+          <video_source>65</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="2">
+          <video_source>66</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="3">
+          <video_source>67</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="4">
+          <video_source>68</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="5">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="6">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="7">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="8">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="9">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="10">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="11">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="12">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="13">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="14">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="15">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="16">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="17">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="18">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="19">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="20">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="21">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="22">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="23">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="24">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="25">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="26">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="27">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="28">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="29">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="30">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+        <channel id="31">
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <enable>0</enable>
+          <is_hide_detection_box>0</is_hide_detection_box>
+          <control_out>-1</control_out>
+          <min_object_size>8</min_object_size>
+          <environment_type>-1</environment_type>
+          <area_trackers size="0" />
+          <stay_trackers size="0" />
+          <stop_trackers size="0" />
+          <miss_trackers size="0" />
+          <cross_wires_trackers size="0" />
+          <direction_trackers size="0" />
+          <pass_through_trackers size="0" />
+        </channel>
+      </channels>
+    </video_logix>
+      

@@ -1,0 +1,17 @@
+﻿<!--<script src="Widgets/SiteList.js"></script>-->
+<div ng-controller="sitelistCtrl as vm">
+	<!--<func-header listview='vm.listView' selected='vm.selected' query='vm.query' add-fn='vm.showDialog(vm.selected)'
+		edit-fn='vm.showDialog(vm.selected)' del-fn='vm.showDialog(vm.selected)' import-fn='vm.showDialog(vm.selected)'></func-header>-->
+	<hr />
+	<div class="container-fluid listrap">
+		<div class="row">
+			<div class="col-lg-3 col-sm-4 icon-camera" ng-repeat="site in sites | filter:{ serverID: vm.query}" role="row">
+				<button class="thumbnail listrap-toggle" ng-class="{'active': site.selected === true}" cms-popover templatelink="'Widgets/Templates/tooltip.html'" pop-data="pop" trigger="click">
+					<img src="../Content/Images/icon-camera.png" alt="ALT NAME" class="img-camera">
+					<span class="selected-item" ng-click="vm.select(site)"></span>
+					<h4 class="img-camera-name" ng-click="vm.select(site)">{{site.serverID}}</h4>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

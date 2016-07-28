@@ -1,0 +1,27 @@
+﻿<div class="panel col-md-12">               
+    <div class="row">
+        <div class="panel" style="margin-bottom: 0">
+            <div class="panel-header">
+                <span class="btn pull-right">
+                    <span  data-ng-click="cancel()"><i class="icon-cancel-1"></i></span>
+                </span>
+                <h3 class="title"> {{'COLUMN_SELECT' | translate}}</h3>      
+            </div>
+            <div class="panel-body fnc-restyle-select-item-list scrollbar-dynamic" data-jquery-scrollbar>
+                <ul ui-sortable="sortableOptions" ng-model="fields">
+                    <li class="col-sm-12"
+                        ng-repeat="ty in fields" ng-show="ty.isShow === true"
+                        ng-class="getActiveclass(ty.checked) " 
+                        ng-click="selectedOptions(ty)" >
+                        <span>{{ty.fieldName | translate}}</span>      
+                    </li>
+                </ul>
+            </div>  
+        
+            <div class="panel-footer text-align-right">
+                <span class="btn btn-default " data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i>{{'BTN_CANCEL' | translate}}</span>
+                <span class="btn btn-info " data-ng-click="save()"><i aria-hidden="true" class="icon-ok-circled2"></i>{{'BTN_DONE' | translate}}</span>
+            </div>
+        </div>
+    </div>
+</div>

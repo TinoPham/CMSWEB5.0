@@ -1,0 +1,11 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Rapport des occasions par heure"},
+{"NameField":"rpt_SubTitle", "ValueField":"Trafic hebdomadaire par heure"},
+{"NameField":"footer", "ValueField":"Préparé sous contrat pour l'usage exclusif d’i3 International. La reproduction de ce rapport est interdite."},
+{"NameField":"header_Total", "ValueField":"Total"},
+{"NameField":"header_TimeOfDay", "ValueField":"Heure du jour"},
+{"NameField":"LineChartTitle", "ValueField":"Trafic par heure du jour"},
+{"NameField":"PieChartTitle", "ValueField":"% trafic par jour de la semaine"},
+{"NameField":"rpt_NODATA", "ValueField":"Données de ne sont pas disponibles"},
+{"NameField":"rpt_TitleWeek", "ValueField":"Semaine "}
+]

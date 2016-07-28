@@ -1,0 +1,52 @@
+<div ng-controller="incidentCtrl as vm" ng-init="vm.Init()" class="incident-manage col-xs-12 col-sm-12">
+
+	<div ng-class="{ 'active': filterLeftFlag === true }"
+	class="incident-filter-left col-md-2">
+
+		<div class="filter-wrapper">
+
+		  <div class="form-group have-btn-add">
+			    <a class="btn btn-primary btn-main-color" href="#/addnewincident">
+			    	<i class=" icon-doc-new"></i>Add new incident	
+			    </a>
+			    <a class="btn btn-primary hidden-md-up" ng-click="filterLeftFlag = false">
+			    	<i class=" icon-cancel-1"></i> Close
+			    </a>
+		  </div>
+
+		  <div class="panel-group" id="incident-filter-left" role="tablist" 
+		  ng-include="'widgets/incident/incident-filter-left.html'"
+		   aria-multiselectable="true"></div>
+		   <!-- END :: Filter left -->
+
+		</div>
+
+	</div>
+	<!-- END :: Lefbar -->
+
+	<div class="col-md-10 col-md-offset-2 incident-report-content-wrapper" >
+		<div class="incident-report-content">
+
+			<div class="nav-icon">
+				<ul>
+				    <li ng-click="filterLeftFlag = true">
+				    	<i class="icon-search-3"></i>
+				    	<span>Search</span>
+				    </li>
+				    <li>
+				    	<a href="#/addnewincident">
+					    	<i class=" icon-doc-new"></i>
+					    	<span>Add new incident	</span>
+				    	</a>
+				    </li>				   
+				</ul>
+			</div>
+
+			<div class="incident-filter-result-box"   ng-include="'widgets/incident/incident-filter-result.html'">  
+			</div>
+		</div>
+	</div>
+	<!-- END :: Right bar -->
+
+
+</div><!-- END :: incident-manage -->

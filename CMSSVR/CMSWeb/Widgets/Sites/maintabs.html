@@ -1,0 +1,77 @@
+﻿<div class="main_tab">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" ng-class="{'active': numTab === TabIndex.map}">
+      <a href="#maps" aria-controls="maps" 
+      ng-click ="selectMaps(maps_model)"
+       role="tab" data-toggle="tab">
+        <i class="icon-sitemap"></i>
+        <span>{{'TAB_SITE_MAPS' | translate}}</span>
+      </a>
+    </li>
+    <li role="presentation" ng-class="{'active': numTab === TabIndex.recording}">
+      <a href="#recording" aria-controls="recording" 
+       ng-click ="selectRec(maps_model)" role="tab" data-toggle="tab">
+        <i class="icon-mic-1"></i>
+        <span>{{'TAB_RECORDING' | translate}}</span>
+        </a>
+    </li>
+    <li role="presentation" ng-class="{'active': numTab === TabIndex.channel}">
+      <a href="#channels" aria-controls="channels" 
+       ng-click ="selectRec(maps_model)"
+       role="tab" data-toggle="tab">
+        <i class="icon-videocam-2"></i>
+        <span>{{'TAB_CHANNELS' | translate}}</span>
+        </a>
+    </li>
+    <li role="presentation" ng-class="{'active': numTab === TabIndex.alert}">
+      <a href="#alerts" aria-controls="alerts"
+       ng-click ="selectAlerts()"
+       role="tab" data-toggle="tab">
+        <i class="icon-bell"></i>
+        <span>{{'TAB_ALERTS' | translate}}</span>
+        </a>
+    </li>
+    <li role="presentation" ng-class="{'active': numTab === TabIndex.site}">
+      <a href="#sitedetails" aria-controls="sitedetails"
+       ng-click ="selectsite(maps_model)"
+       role="tab" data-toggle="tab">
+        <i class="icon-pin56"></i>
+        <span>{{'TAB_SITE_DETAIL' | translate}}</span>
+       </a>
+    </li>
+  </ul>
+
+
+  <!-- Tab panes -->
+  <div class="tab-content" ng-class="{'scrollScreen':isMobile}">
+
+    <div role="tabpanel" class="tab-pane" ng-class="{'active': numTab === TabIndex.map}" id="maps"
+    ng-include="'widgets/sites/maps.html'"
+    ng-controller="mapsCtrl" ng-init="init(maps_model)"></div>
+
+    <div role="tabpanel" class="tab-pane" ng-class="{'active': numTab === TabIndex.recording}" id="recording"
+     ng-include="'widgets/sites/recording.html'" 
+     ng-controller="recordingCtrl" ng-init="init(maps_model)">
+   </div>
+
+    <div role="tabpanel" class="tab-pane" ng-class="{'active': numTab === TabIndex.channel}" id="channels"
+   ng-include="'widgets/sites/channels.html'"
+   ng-controller="channelsCtrl" ng-init="init(maps_model)"></div>
+
+    <div role="tabpanel" class="tab-pane" ng-class="{'active': numTab === TabIndex.alert}" id="alerts"
+    ng-include="'widgets/sites/alerts.html'"
+      ng-controller="alertsCtrl as vm"
+      ng-init="init(maps_model,alertSelected)">
+    </div><!-- Tab :: Alert -->
+
+    <div role="tabpanel" class="tab-pane" ng-class="{'active': numTab === TabIndex.site}" id="sitedetails"
+      ng-include="'widgets/sites/sitedetails.html'"
+      ng-controller="sitedetailsCtrl"
+      ng-init="init(maps_model)">
+   </div> <!-- Tab :: sitedetails -->
+
+  </div> <!-- END  :: tab-content -->
+
+</div><!-- END  :: main_tab-->

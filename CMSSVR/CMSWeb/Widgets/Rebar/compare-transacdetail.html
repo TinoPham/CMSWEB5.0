@@ -1,0 +1,356 @@
+﻿<div class="panel modal-transaction col-md-12 modal-select-compare show-compare"> 
+    
+     <div class="panel-header">
+        <div class="panel-header rebar-panel-header">
+            <h2>  {{'TRANSACTION_COMPARISION' | translate}} </h2>
+             <div class="additional-btn" >
+                    <!--<a  ng-click="refresh()" tooltip="Refresh" tooltip-placement="left" class="ng-scope"><i class="icon-ccw-1"></i></a>-->
+                    <a  ng-click="fullSize()" tooltip="{{isMaxCom == false ? 'MAXIMIZE' :  'MINIMIZE' | translate }}" tooltip-placement="left" class="ng-scope">
+                        <i ng-class="{'icon-resize-full-1': !isMaxCom, 'icon-resize-small-1': isMaxCom}" class="icon-resize-full-1"></i>
+                    </a>
+                    <a data-ng-click="cancel()" class="collapse-btn"
+                     tooltip="{{'CLOSE_TRANSACTION' | translate}}" tooltip-placement="left"><i class="icon-cancel-1"></i></a>                
+                    <span ng-show="isMaxCom" class="ng-hide">&nbsp;&nbsp;</span>
+                </div>
+        </div>
+    </div>
+    <!-- END :: Panel header -->
+
+
+    <div class="row modal-transaction-title">
+        <div class="col-sm-4 infos-transaction-compare">
+             <div class="title-control">
+                <div class="compare-title-row">
+                    <h3>{{'Transaction'| translate}}</h3>
+                </div>
+                <div class="compare-title-row">
+                    <h5>{{'#' + datacompare.TranNo }}</h5>
+                </div>
+            </div> 
+            
+        </div>
+        <div class="col-sm-4  logo-branch rebar-company-logo">
+            <div>
+                <img ng-show="picSource != null" ng-src="{{picSource}}" class="thumbnail logo" />
+                <!-- <div> {{'TRANSACTION_COMPARISION' | translate}}</div>  -->
+            </div>
+            
+        </div>
+        <div class="col-sm-4 infos-transaction-compare">
+            <div class="title-control">
+                <div class="title-row">
+                    <h3>{{'Transaction'| translate}}</h3>
+                </div>
+                <div class="title-row">
+                    <h5>{{'#' + data.TranNo }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>  <!-- END :: modal-transaction-title  -->
+
+    <div class="modal-body row  modal-transaction-body">
+        <div class="col-md-12">      
+
+            <div class="panel col-md-6 compare-item">
+                <div class="transaction-header">
+                       <div class="panel-heading">
+                    <div class="col-sm-12 transaction-header-branch">
+                        <div>
+								<h3>
+									<i class="icon-info-circled-alt"></i> {{'TRANSACTION_INFO'|translate}} :
+									<strong>{{'#' + datacompare.TranNo }}</strong>
+								</h3>
+                            <!-- <span class="pull-right">{{'#' + datacompare.TranNo }}</span> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <!--<div class="transaction-header-control">
+                                <div class="title-row">
+                                </div>
+                            </div>-->
+                    </div>
+                </div>
+                    <div class="panel-body">
+                        <div class="row">       
+                            <div class="col-sm-6  col-xs-12 transaction-header-branch">
+								<div> <span class="tran-line-title">{{'CASHIER' | translate}} </span>{{datacompare.EmployeeName}} </div>
+								<div> <span class="tran-line-title">{{'REG#:' | translate}} </span> {{datacompare.RegisterName}} </div>
+
+
+                            </div>
+                            <div class="col-sm-6  col-xs-12 transaction-header-control">
+								<div class="title-row"> <span class="tran-line-title"> {{'ORDER_DATE' | translate}} </span> {{datacompare.TranDate | date:'MM/dd/yyyy':'UTC'}} </div>
+								<div class="title-row"> <span class="tran-line-title"> {{'ORDER_TIME' | translate}}</span> {{datacompare.TranDate | date:'HH:mm':'UTC'}} </div>
+								<div class="title-row"> <span class="tran-line-title"> {{'STORE' | translate}}  </span>{{datacompare.StoreName}} </div>
+                            </div>
+                        </div>
+                        <div class="row total">
+                            <table class="table">
+
+                                <tbody>
+                                    <tr>
+                                        <th> {{ 'SubTotal' | translate }}{{':'}} </td>
+										<td>{{ datacompare.SubTotal }}</td>
+                                    </tr>
+                                    <tr ng-if="datacompare.Taxs.length <= 0" >
+                                        <th>{{ 'TAX_FOOTER' | translate }}{{':'}} </td>
+                                        <td>0</td>
+                                    </tr>   
+                                      <tr ng-if="datacompare.Taxs.length > 0"  ng-repeat="tax in datacompare.Taxs">
+                                        <th>{{ 'TAX_FOOTER ' | translate }} {{tax.Name}} : </td>
+										<td>{{tax.Ammount }}</td>
+                                    </tr>                                 
+                                      <tr ng-if="PaymentList.length <= 0">
+                                        <th>{{ 'METHOD_PAYMENT_STRING' | translate }}{{':'}}</td>
+                                        <td>0</td>
+                                    </tr>
+                                      <tr ng-if="PaymentList.length > 0" ng-repeat="p in PaymentList" >
+                                        <th>{{ 'METHOD_PAYMENT_STRING ' | translate }} {{p.Name}} :</td>
+										<td>{{ p.AmmountCom }}</td>
+                                    </tr>
+                                      <tr>
+                                        <th>{{ 'CHANGE_FOOTER' | translate }}{{':'}}</td>
+										<td>{{ datacompare.ChangeAmount }}</td>
+                                    </tr>
+                                      <tr>
+                                        <th>{{ 'Total:' | translate }}</td>
+										<td>{{ datacompare.Total }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                             <div class="col-xs-12">
+								<div class="cms-flag" ng-if="datacompare.ExceptionTypes.length > 0" ng-repeat="flag in datacompare.ExceptionTypes" title="{{flag.Name}}">
+									<div class="cms-flag-item" style="background-color: #f1f1f1;" ng-style="{'color' : flag.Color}">
+                                         <i class=" icon-flag cms-item-icon-flag"></i>
+                                         <span class="cms-flag-num" style="background-color: #f81413;color: #FFF;">{{flag.TypeWeight ? flag.TypeWeight : 0}}</span>
+                                     </div>
+                                 </div>   
+								<div class="cms-flag" ng-if="datacompare.ExceptionTypes.length <= 0">
+                                    
+                                </div>
+                             </div>     
+                    </div>
+						<!--{{data}}-->
+                    </div>
+                </div>  
+             
+            </div>
+
+            <div class="panel col-md-6" style="padding-left: 0; padding-right: 0;">
+                <div class="transaction-header">
+                    <div class="panel-heading">
+                        <div class="col-sm-6 transaction-header-branch">
+                            <div>
+								<h3>
+									<i class="icon-info-circled-alt"></i> {{'TRANSACTION_INFO'|translate}} :
+									<strong>{{'#' + data.TranNo }}</strong>
+								</h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!--<div class="transaction-header-control">
+                                    <div class="title-row">
+                                    </div>
+                                </div>-->
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">       
+                            <div class="col-sm-6  col-xs-12 transaction-header-branch">
+								<div> <span class="tran-line-title">{{'CASHIER' | translate}} </span>{{data.EmployeeName}} </div>
+								<div> <span class="tran-line-title">{{'REG#:' | translate}} </span> {{data.RegisterName}} </div>
+
+
+                            </div>
+                            <div class="col-sm-6  col-xs-12 transaction-header-control">
+								<div class="title-row"> <span class="tran-line-title"> {{'ORDER_DATE' | translate}} </span> {{data.TranDate | date:'MM/dd/yyyy':'UTC'}} </div>
+								<div class="title-row"> <span class="tran-line-title"> {{'ORDER_TIME' | translate}}</span> {{data.TranDate | date:'HH:mm':'UTC'}} </div>
+								<div class="title-row"> <span class="tran-line-title"> {{'STORE' | translate}}  </span>{{data.StoreName}} </div>
+                            </div>        
+							<!--{{data}}-->
+                        </div>  
+                         <div class="row total">
+                            <table class="table">
+                             
+                                <tbody>
+                                    <tr>
+                                        <th> {{ 'SubTotal' | translate }}{{':'}} </td>
+										<td>{{ data.SubTotal }}</td>
+                                    </tr>
+                                    <tr ng-if="data.Taxs.length <= 0" >
+                                        <th>{{ 'TAX_FOOTER' | translate }}{{':'}} </td>
+                                        <td>0</td>
+                                    </tr>   
+                                      <tr ng-if="data.Taxs.length > 0" ng-repeat="tax in data.Taxs">
+                                        <th>{{ 'TAX_FOOTER ' | translate }} {{tax.Name}} : </td>
+										<td>{{ tax.Ammount }}</td>
+                                    </tr>                                 
+                                      <tr ng-if="PaymentList.length <= 0">
+                                        <th>{{ 'METHOD_PAYMENT_STRING' | translate }}{{':'}}</td>
+                                        <td>0</td>
+                                    </tr>
+                                      <tr ng-if="PaymentList.length > 0" ng-repeat="p in PaymentList" >
+                                        <th>{{ 'METHOD_PAYMENT_STRING ' | translate }} {{p.Name}} :</td>
+										<td>{{ p.Ammount }}</td>
+                                    </tr>
+                                      <tr>
+                                        <th>{{ 'CHANGE_FOOTER' | translate }}{{':'}}</td>
+										<td>{{ data.ChangeAmount }}</td>
+                                    </tr>
+                                      <tr>
+                                        <th>{{ 'Total:' | translate }}</td>
+										<td>{{ data.Total }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>  
+                        <div class="row">
+                            <div class="col-xs-12">
+								<div class="cms-flag" ng-if="data.ExceptionTypes.length > 0" ng-repeat="flag in data.ExceptionTypes" title="{{flag.Name}}">
+									<div class="cms-flag-item" style="background-color: #f1f1f1;" ng-style="{'color' : flag.Color}" ng-click="editTranFlag()">
+                                        <i class=" icon-flag cms-item-icon-flag"></i>
+                                        <span class="cms-flag-num" style="background-color: #f81413;color: #FFF;">{{flag.TypeWeight ? flag.TypeWeight : 0}}</span>
+                                    </div>
+                                </div>   
+
+								<div class="cms-flag" ng-if="data.ExceptionTypes.length <= 0">
+                                    
+                                </div>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+
+
+    <!--START :: COLAPSE show detail items list -->
+        <div class="panel-group col-md-12 show-detail-itemlist" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            {{'TRANSATION_DETAIL' | translate}}
+                        </a>
+                    </h4>
+                    <i class="icon-down-open-big pull-right" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" tooltip ="{{expand?'MINIMIZE':'MAXIMIZE' | translate}}" ng-click="expand=!expand" ></i>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+
+                        <div class="col-md-6">
+                            <div class="table-responsive table-hover transaction-body">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th class="first-col">
+                                            <div>{{'ITEMS' | translate}}</div>
+                                        </th>
+                                        <th>{{'DESCRIPTIONS' | translate}}</th>
+                                        <th>{{'Qty' | translate}}</th>
+                                        <th>{{'TOTAL' | translate}}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr ng-if="datacompare.Details && datacompare.Details.length > 0" ng-repeat="d in datacompare.Details">
+                                        <th scope="row" class="start-col-row">#{{ d.ItemCodeName  }}</th>
+                                        <td>{{ d.DescriptionName}}</td>
+                                        <td>{{ d.Qty}}</td>
+                                        <td>{{ d.Total }}</td>
+                                    </tr>
+
+                                    <!--           <tr>
+                                                  <td colspan="2"  class="summary-line">{{ 'Sub Total:' | translate }}</td>
+                                                  <td style="color: #426d8f;">{{ data.SubTotal }}</td>
+                                                  <td style="color: #ef5055;">{{ datacompare.SubTotal }}</td>
+                                              </tr>
+
+                                              <tr ng-if="TaxtList.length <= 0">
+                                                  <td colspan="2"  class="summary-line">{{ 'Tax:' | translate }}</td>
+                                                  <td style="color: #426d8f;">0</td>
+                                                  <td style="color: #ef5055;">0</td>
+                                              </tr>
+                                              <tr ng-if="TaxtList.length > 0" ng-repeat="t in TaxtList">
+                                                  <td colspan="2"  class="summary-line">{{ 'Tax ' | translate }} {{t.Name}} :</td>
+                                                   <td style="color: #426d8f;">{{ t.Ammount }}</td>
+                                                   <td style="color: #ef5055;">{{ t.AmmountCom }}</td>
+                                              </tr>
+                                              <tr ng-if="PaymentList.length <= 0">
+                                                  <td colspan="2"  class="summary-line">{{ 'Payment:' | translate }}</td>
+                                                  <td style="color: #426d8f;">0</td>
+                                                  <td style="color: #ef5055;">0</td>
+                                              </tr>
+                                              <tr ng-if="PaymentList.length > 0" ng-repeat="p in PaymentList">
+                                                  <td colspan="2"  class="summary-line">{{ 'Payment ' | translate }} {{p.Name}} :</td>
+                                                  <td style="color: #426d8f;">{{ p.Ammount }}</td>
+                                                  <td style="color: #ef5055;">{{ p.AmmountCom }}</td>
+                                              </tr>
+                                              <tr>
+                                                  <td colspan="2"  class="summary-line">{{ 'Changes:' | translate }}</td>
+                                                  <td style="color: #426d8f;">{{ data.ChangeAmount }}</td>
+                                                  <td style="color: #ef5055;">{{ datacompare.ChangeAmount }}</td>
+                                              </tr>
+                                              <tr>
+                                                  <td colspan="2"  class="summary-line">{{ 'Total:' | translate }}</td>
+                                                  <td style="color: #426d8f;">{{ data.Total }}</td>
+                                                  <td style="color: #ef5055;">{{ datacompare.Total }}</td>
+                                              </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="table-responsive table-hover transaction-body compare-transaction-table">
+								<table class="table">
+									<thead>
+										<tr>
+											<th class="first-col">
+												<div>{{'ITEMS' | translate}}</div>
+											</th>
+											<th>{{'DESCRIPTIONS' | translate}}</th>
+											<th>{{'Qty' | translate}}</th>
+											<th>{{'TOTAL' | translate}}</th>
+										</tr>
+									</thead>
+									<tbody>
+
+										<tr ng-if="data.Details && data.Details.length > 0" ng-repeat="d in data.Details">
+											<th scope="row" class="start-col-row">#{{ d.ItemCodeName  }}</th>
+											<td>{{ d.DescriptionName}}</td>
+											<td>{{ d.Qty}}</td>
+											<td>{{ d.Total }}</td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+
+                        </div>
+
+                    </div> <!--  END panel body-->
+                </div>
+            </div>
+
+        </div>
+        <!--END  :: COLAPSE show detail items list-->
+
+
+
+
+
+
+
+
+    </div> <!-- END :: modal-transaction-body -->
+   <!--  <div class="col-md-12 compare-footer">
+        <div class="pull-right">
+            <span class="btn btn-danger" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i>{{'Close' | translate}}</span>
+        </div> 
+    </div> -->
+
+</div>

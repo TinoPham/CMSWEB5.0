@@ -1,0 +1,1 @@
+{"GoalName":"dfdfd","GoalID":0,"MapValue":[{"GoalTypeID":1,"MinValue":"0.5555","MaxValue":"6","GoalTypeName":"Conversion rate %"}],"GoalLastUpdated":"2015-07-13T09:41:30.281Z","GoalCreateBy":70}

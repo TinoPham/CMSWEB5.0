@@ -1,0 +1,108 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+using CMSWebApi.DataModels;
+using CMSWebApi.DataModels.ModelBinderProvider;
+using CMSWebApi.ServiceInterfaces;
+using CMSWebApi.Utils;
+using PACDMModel.Model;
+using System.Data.Entity;
+
+
+namespace CMSWebApi.BusinessServices.ReportBusiness
+{
+	public partial class ReportBusinessService : BusinessBase<IUsersService>
+	{
+		
+		#region Alert Compares
+		private async Task<ALertCompModel> AlertSeverityComapre(IEnumerable<int> kdvrs, CMSWebApi.Utils.AlertSeverity? alerttype, DateTime altDate, DateTime cmpDate)
+		{
+			int alt_count = await CountAlertbyServerity(altDate, kdvrs, alerttype);
+			int cmp_count = await CountAlertbyServerity(cmpDate, kdvrs, alerttype);
+
+			return new ALertCompModel { Value = alt_count, CmpValue = toValueCompare(alt_count, cmp_count), Increase = cmp_count >= alt_count };
+		}
+		private async Task<ALertCompModel> AlertTypeComapre(IEnumerable<int> kdvrs, CMSWebApi.Utils.AlertType? alerttype, DateTime altDate, DateTime cmpDate)
+		{
+			int alt_count = await CountAlertbyALertType(altDate, kdvrs, alerttype);
+			int cmp_count = await CountAlertbyALertType(cmpDate, kdvrs, alerttype);
+			return new ALertCompModel{ Value = alt_count, CmpValue = toValueCompare(alt_count, cmp_count), Increase = cmp_count >= alt_count };
+		}
+		#endregion
+		
+		#region Alert Charts
+		IQueryable<ColumnChartModel> AlertChartMostDVR(DateTime sdate, DateTime edate, IEnumerable<int> sites, int top)
+		{
+			IQueryable<tAlertEvent> alts = IAlertService.GetAlertsbyTypes<tAlertEvent>(sites, null, sdate, edate, item => item);
+			IQueryable<IGrouping<int, tAlertEvent>> group = alts.GroupBy( alt => alt.KDVR.Value, alt => alt);
+			IQueryable<ColumnChartModel> icount =  group.Select( it=> new ColumnChartModel{ Label = it.FirstOrDefault().tDVRAddressBook.ServerID, Value = it.Count()});
+			return icount.OrderBy( it => it.Value).Take(top);
+		}
+
+		IQueryable<ColumnChartModel> AlertChartbyDVR(DateTime sdate, DateTime edate, IEnumerable<int> sites)
+		{
+			IQueryable<tAlertEvent> alts = IAlertService.GetAlertsbyTypes<tAlertEvent>(sites, null, sdate, edate, item => item);
+			IQueryable<IGrouping<byte, tAlertEvent>> group = alts.GroupBy(alt => alt.KAlertType, alt => alt);
+			return group.Select(item => new ColumnChartModel { Value = item.GroupBy( alt => alt.KDVR.Value).Count() , Label = item.FirstOrDefault().tAlertType.AlertType });
+		}
+
+		IQueryable<ColumnChartModel> AlertChartbyAlerttype(DateTime sdate, DateTime edate, IEnumerable<byte> alttypes, IEnumerable<int> sites)
+		{
+			return AlertChartbyAlerttype( sites, sdate, edate, alttypes);
+		}
+
+		IQueryable<ColumnChartModel> AlertChartbyServerity(DateTime sdate, DateTime edate, IEnumerable<byte> altTypes, IEnumerable<int> sites)
+		{
+			return AlertChartbyAlerttype(sites, sdate, edate, altTypes);
+		}
+
+		IQueryable<ColumnChartModel> AlertChartbyAlerttype(IEnumerable<int> sites, DateTime sDate, DateTime eDate, IEnumerable<byte> altTypes)
+		{
+			var alts = IAlertService.GetAlertsbyTypes<tAlertEvent>(sites, altTypes, sDate, eDate, item => item);
+			IQueryable<IGrouping<byte, tAlertEvent>> group = alts.GroupBy(alt => alt.KAlertType, alt => alt);
+			return GroupAlertType(group);
+		}
+
+		IQueryable<ColumnChartModel> GroupAlertType(IQueryable<IGrouping<byte, tAlertEvent>> altgroups)
+		{
+			return altgroups.Select( item => new ColumnChartModel{ Value = item.Count(), Label = !item.Any()? null : item.FirstOrDefault().tAlertType.AlertType});
+		}
+		#endregion
+
+		private Task<int> CountALertbyDate( DateTime date, IEnumerable<int> kdvrs)
+		{
+			DateTime sdate = StartTimeOfDate(date);
+			DateTime edate = EndTimeOfDate(date);
+			IQueryable<int> alerts = IAlertService.GetAlerts<int>(kdvrs, null, null, sdate, edate, item => item.KAlertEvent, null);
+			return alerts.CountAsync();
+		}
+
+		private Task<int> CountAlertbyALertType(DateTime date, IEnumerable<int> kdvrs, AlertType? alerttype)
+		{
+			DateTime sdate = StartTimeOfDate(date);
+			DateTime edate = EndTimeOfDate(date);
+			IQueryable<int> alerts = IAlertService.GetAlerts<int>(kdvrs, null, (byte?)alerttype, sdate, edate, item => item.KAlertEvent, null);
+			return alerts.CountAsync();
+		}
+
+		private Task<int> CountAlertbyServerity(DateTime date, IEnumerable<int> kdvrs, AlertSeverity? Serverity)
+		{
+			DateTime sdate = StartTimeOfDate(date);
+			DateTime edate = EndTimeOfDate(date);
+			IQueryable<int> alerts = IAlertService.GetAlerts<int>(kdvrs, (byte?)Serverity, null, sdate, edate, item => item.KAlertEvent, null);
+			return alerts.CountAsync();
+		}
+		
+		private Task<int> CountDVRRecordingLess( int limitday, IEnumerable<int> kdvrs)
+		{
+			IQueryable<int> rets = kdvrs == null? IDVRService.GetDVRs<int>( item => item.RecordingDay<= limitday, item => item.KDVR, null) : IDVRService.GetDVRs<int>( item => item.RecordingDay<= limitday && kdvrs.Contains( item.KDVR), item => item.KDVR, null);
+			return rets.CountAsync();
+		}
+
+		
+
+	}
+}

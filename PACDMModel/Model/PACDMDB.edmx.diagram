@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="23a375915ddb443c85a8bd6eb734f57d" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="Model.tAlertEvents" Width="1.5" PointX="12" PointY="108.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tAlertSeverity" Width="1.5" PointX="7.5" PointY="110.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tAlertType" Width="1.5" PointX="9.75" PointY="110" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tAudioSource" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tBandwidth" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_ATM_CardNBList" Width="1.5" PointX="14.25" PointY="92.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_ATM_ExtraName" Width="1.5" PointX="19.5" PointY="154.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_ATM_Trans_XString" Width="1.5" PointX="21.75" PointY="143.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_ATM_Transact" Width="1.5" PointX="16.5" PointY="141.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_ATM_TransCodeList" Width="1.5" PointX="14.25" PointY="89.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_ATM_TransTypeList" Width="1.5" PointX="14.25" PointY="202.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_ATM_XStringList" Width="1.5" PointX="19.5" PointY="156.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_BatchList" Width="1.5" PointX="14.25" PointY="132.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_CardList" Width="1.5" PointX="14.25" PointY="107.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_DevNameList" Width="1.5" PointX="14.25" PointY="105" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_ExtraName" Width="1.5" PointX="19.5" PointY="132.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_FullNameList" Width="1.5" PointX="14.25" PointY="102.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_SiteIDList" Width="1.5" PointX="14.25" PointY="99.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_Trans_XString" Width="1.5" PointX="21.75" PointY="137.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_Transact" Width="1.5" PointX="16.5" PointY="135.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_TranTypeList" Width="1.5" PointX="14.25" PointY="97.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_UnitIDList" Width="1.5" PointX="14.25" PointY="94.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_CA_XStringList" Width="1.5" PointX="19.5" PointY="129.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_Alarm" Width="1.5" PointX="16.5" PointY="147.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_AlarmAlarmType" Width="1.5" PointX="14.25" PointY="87.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_AlarmArea" Width="1.5" PointX="14.25" PointY="205.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_AlarmObjectType" Width="1.5" PointX="14.25" PointY="207.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_Count" Width="1.5" PointX="16.5" PointY="151.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_Count_Area" Width="1.5" PointX="14.25" PointY="210.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_Count_ObjectType" Width="1.5" PointX="14.25" PointY="212.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_DriveThrough" Width="1.5" PointX="10.5" PointY="132.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_QTime" Width="1.5" PointX="7.5" PointY="154.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_TrafficCount" Width="1.5" PointX="12.75" PointY="199" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_TrafficCountRegion" Width="1.5" PointX="10.5" PointY="154.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_IOPC_TrafficCountRegionName" Width="1.5" PointX="8.25" PointY="159.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_LPR_Info" Width="1.5" PointX="16.5" PointY="131.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_CameraNBList" Width="1.5" PointX="14.25" PointY="110.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_CardIDList" Width="1.5" PointX="17.25" PointY="129.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_CheckIDList" Width="1.5" PointX="17.25" PointY="126.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_DescriptionList" Width="1.5" PointX="22.5" PointY="131" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_ExtraName" Width="1.5" PointX="19.5" PointY="126.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_ExtraStringValue" Width="1.5" PointX="24.75" PointY="136.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_ItemCodeList" Width="2.25" PointX="22.5" PointY="153.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_OperatorList" Width="1.5" PointX="17.25" PointY="156.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_PACID" Width="1.5" PointX="5.25" PointY="141.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_PaymentList" Width="1.5" PointX="22.5" PointY="134.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_RegisterList" Width="1.5" PointX="17.25" PointY="158.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_Retail" Width="1.5" PointX="24.75" PointY="142.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_RetailExtraNumber" Width="1.5" PointX="27" PointY="143.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_RetailExtraString" Width="1.5" PointX="27" PointY="140.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_Sensor" Width="1.5" PointX="7.5" PointY="178.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_ShiftList" Width="1.5" PointX="17.25" PointY="160.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_StoreList" Width="1.5" PointX="17.25" PointY="163.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_SubRetail" Width="1.5" PointX="27" PointY="146" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_TaxesList" Width="1.5" PointX="22.5" PointY="156.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_TerminalList" Width="1.5" PointX="17.25" PointY="165.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_Transact" Width="1.5" PointX="19.5" PointY="140.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_TransExtraNumber" Width="1.5" PointX="21.75" PointY="140.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_TransExtraString" Width="1.5" PointX="21.75" PointY="146.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_POS_TransTaxes" Width="1.5" PointX="24.75" PointY="147.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_WeatherInfo" Width="1.5" PointX="5.25" PointY="166.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tbl_ZipCode" Width="1.5" PointX="1.125" PointY="152.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tCMSConfigPage" Width="1.5" PointX="3" PointY="134" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tCMSDVRSupportVersion" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tCMSHaspInfo" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tCMSSystemConfig" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tCMSSystemStatu" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDateFormat" Width="1.5" PointX="12" PointY="106.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRAddressBook" Width="1.5" PointX="3" PointY="137.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRAnalogRe" Width="1.5" PointX="5.25" PointY="126.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRBackupSchedule" Width="1.5" PointX="5.25" PointY="129.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRBookMark" Width="1.5" PointX="5.25" PointY="131.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRChangeHistory" Width="1.5" PointX="5.25" PointY="136.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRChannel" Width="1.5" PointX="11.25" PointY="140.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRConfigChangeTime" Width="1.5" PointX="5.25" PointY="148" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRConfigurationBackup" Width="1.5" PointX="11.25" PointY="137" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRControl" Width="1.5" PointX="9" PointY="205.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRDigitalMonitor" Width="1.5" PointX="5.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRDigitalMonitorChannel" Width="1.5" PointX="10.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRDigitalMonitorOption" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVREmail" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRHardware" Width="1.5" PointX="5.25" PointY="213.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRHWDigitalMonitor" Width="1.5" PointX="5.25" PointY="209.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRIGChannel" Width="1.5" PointX="13.5" PointY="114.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRIGTracker" Width="1.5" PointX="13.5" PointY="117" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRIOCard" Width="1.5" PointX="5.25" PointY="221.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRIPCameraInput" Width="1.5" PointX="19.5" PointY="149.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRIPCamera" Width="1.5" PointX="11.25" PointY="149.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRIPCameraUser" Width="1.5" PointX="13.5" PointY="196" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRIPRe" Width="1.5" PointX="21.75" PointY="150.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRIZChannel" Width="1.5" PointX="13.5" PointY="123" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRIZTracker" Width="1.5" PointX="13.5" PointY="127.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRKeepAlife" Width="1.5" PointX="5.25" PointY="230" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRLDAPGroup" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRLocation" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRLog" Width="1.5" PointX="5.25" PointY="232.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRLogContent" Width="1.5" PointX="5.25" PointY="235.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRMotionConfig" Width="1.5" PointX="5.25" PointY="238" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRMotionTracker" Width="1.5" PointX="13.5" PointY="152.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRNetwork" Width="1.5" PointX="8.25" PointY="133.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRNetworkCard" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVROSInfo" Width="1.5" PointX="5.25" PointY="248.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRRecordSchedule" Width="1.5" PointX="13.5" PointY="158.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRResolution" Width="1.5" PointX="5.25" PointY="151.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRRestartTime" Width="1.5" PointX="8.25" PointY="151" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRRS232Ports" Width="1.5" PointX="5.25" PointY="258" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRSensor" Width="1.5" PointX="5.25" PointY="260.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRServerInfo" Width="1.5" PointX="14.25" PointY="142.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRSetupPage" Width="1.5" PointX="8.25" PointY="289.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRStorageConfig" Width="1.5" PointX="5.25" PointY="269.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRStorage" Width="1.5" PointX="5.25" PointY="272.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRStoreImage" Width="1.5" PointX="14.25" PointY="83" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRSystemInfo" Width="1.5" PointX="7.5" PointY="196.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRTechnicalLog" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRTextOverlayChannel" Width="1.5" PointX="13.5" PointY="161.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRTextOverlayConfig" Width="1.5" PointX="5.25" PointY="282.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRTextOverlayTracker" Width="1.5" PointX="13.5" PointY="164.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRTimeAttribute" Width="1.5" PointX="14.25" PointY="139.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRUserConfig" Width="1.5" PointX="5.25" PointY="287.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRUserOperation" Width="1.5" PointX="5.25" PointY="295.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRUserPrivChannel" Width="1.5" PointX="13.5" PointY="216" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRUserPrivOp" Width="1.5" PointX="7.5" PointY="292" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRUserPrivSetup" Width="1.5" PointX="10.5" PointY="292" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRUser" Width="1.5" PointX="5.25" PointY="291.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVCPoint" Width="1.5" PointX="15.75" PointY="173.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVCTracker" Width="1.5" PointX="13.5" PointY="172.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVersion" Width="1.5" PointX="0.75" PointY="143.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVideoSource" Width="1.5" PointX="14.25" PointY="147.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVideoSourceImage" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVirtualRuler" Width="1.5" PointX="19.5" PointY="135.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVLChannel" Width="1.5" PointX="13.5" PointY="177.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVLPoint" Width="1.5" PointX="15.75" PointY="185.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVPChannels" Width="1.5" PointX="13.5" PointY="180.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVPPoints" Width="1.5" PointX="15.75" PointY="191.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tDVRVPTrackers" Width="1.5" PointX="13.5" PointY="189.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tI3Privileges" Width="1.5" PointX="11.25" PointY="216.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tIGActiveTime" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tIPModel" Width="1.5" PointX="9" PointY="162" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tNetworkType" Width="1.5" PointX="6" PointY="123.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tPTZType" Width="1.5" PointX="9" PointY="130.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tResolutionDef" Width="1.5" PointX="12" PointY="97" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tRulerUnit" Width="1.5" PointX="17.25" PointY="123.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tSMTPLoginMethod" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tSystemType" Width="1.5" PointX="5.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tTimeFormat" Width="1.5" PointX="12" PointY="103.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tTimeZone" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tVideoFormat" Width="1.5" PointX="9.75" PointY="97.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tWeek" Width="1.5" PointX="6" PointY="164.375" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_tAlertEvent_tAlertType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRStoreImages_tAlertEvent" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tAlertType_tAlertSeverity" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_ATM_Transact_tbl_ATM_CardNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_ATM_Trans_XString_tbl_ATM_ExtraName" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_ATM_Trans_XString_tbl_ATM_Transact" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_ATM_Trans_XString_tbl_ATM_XStringList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_ATM_Transact_tbl_ATM_TransCodeList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_ATM_Transact_tbl_ATM_TransTypeList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_ATM_Transact_tbl_POS_CameraNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_ATM_Transact_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Transact_tbl_CA_BatchList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Transact_tbl_CA_CardList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Transact_tbl_CA_DevNameList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Trans_XString_tbl_CA_ExtraName" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Transact_tbl_CA_FullNameList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Transact_tbl_CA_SiteIDList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Trans_XString_tbl_CA_Transact" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Trans_XString_tbl_CA_XStringList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Transact_tbl_CA_TranTypeList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Transact_tbl_CA_UnitIDList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Transact_tbl_POS_CameraNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_CA_Transact_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_Alarm_tbl_IOPC_AlarmAlarmType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_Alarm_tbl_IOPC_AlarmArea" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_Alarm_tbl_IOPC_AlarmObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_Alarm_tbl_POS_CameraNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_Alarm_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_Count_tbl_IOPC_Count_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_Count_tbl_IOPC_Count_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_Count_tbl_POS_CameraNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_Count_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_DriveThrough_tbl_POS_CameraNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_DriveThrough_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_QTime_tbl_POS_CameraNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_QTime_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_TrafficCount_tbl_IOPC_TrafficCountRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_TrafficCountRegion_tbl_IOPC_TrafficCountRegionName" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_TrafficCountRegion_tbl_POS_CameraNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_IOPC_TrafficCountRegion_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_LPR_Info_tbl_POS_CameraNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_LPR_Info_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Transact_tbl_POS_CameraNBList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Transact_tbl_POS_CardIDList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Transact_tbl_POS_CheckIDList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Retail_tbl_POS_DescriptionList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_SubRetail_tbl_POS_DescriptionList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_RetailExtraNumber_tbl_POS_ExtraName" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_RetailExtraString_tbl_POS_ExtraName" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_TransExtraNumber_tbl_POS_ExtraName" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_TransExtraString_tbl_POS_ExtraName1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_RetailExtraString_tbl_POS_ExtraStringValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_TransExtraString_tbl_POS_ExtraStringValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Retail_tbl_POS_ItemCodeList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Transact_tbl_POS_OperatorList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_PACID_tbl_ZipCode" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_PACID_tDVRAddressBooks" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Sensor_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Transact_tbl_POS_PACID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Transact_tbl_POS_RegisterList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Retail_tbl_POS_Transact" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_RetailExtraNumber_tbl_POS_Retail" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_RetailExtraString_tbl_POS_Retail" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_SubRetail_tbl_POS_Retail" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Transact_tbl_POS_ShiftList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Transact_tbl_POS_StoreList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_TransTaxes_tbl_POS_TaxesList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_Transact_tbl_POS_TerminalList" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_TransExtraNumber_tbl_POS_Transact" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_TransExtraString_tbl_POS_Transact" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_POS_TransTaxes_tbl_POS_Transact" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tbl_WeatherInfo_tbl_ZipCode" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRChangeHistory_tCMSConfigPages" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRConfigChangeTime_tCMSConfigPages" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRConfigurationBackup_tCMSConfigPages" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tCMSSystemStatus_tSystemTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRTimeAttributes_tDateFormat" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRAddressBook_tDVRVersion" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRAnalogRes_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRBackupSchedule_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRBookMark_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRChangeHistory_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRChannels_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRConfigChangeTime_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRConfigurationBackup_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRControl_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRDrivers_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRHardware_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRIOCard_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRIPCameras_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRKeepAlive_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRLog_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRLog_tDVRAddressBook1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRMotionAreas_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRNetwork_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVROSInfo_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVROSInfo_tDVRAddressBook1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRResolutions_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRRestartTime_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRSensor_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDvrStorageConfig_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRSystemInfo_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRTextOverlayConfig_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRTimeAttributes_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUserConfig_tDVRUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUsers_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRVideoSource_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tRS232Port_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PK_tDVRHWDigitalMonitor_tDVRAddressBook" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRChannels_tPTZType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRIGChannels_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRIGTrackers_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRIZChannels_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRIZTrackers_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRMotionTrackers_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRRecordSchedule_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRTextOverlayChannels_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRTextOverlayTrackers_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUserPrivChannel_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRVCTrackers_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRVirtualRuler_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRVPChannels_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRVPTrackers_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tVLAreas_tDVRChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRDigitalMonitorOption_tDVRDigitalMonitor" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRDigitalMonitorChannel_tDVRDigitalMonitorOption" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVREmail_tSMTPLoginMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRIPCameraInputs_tDVRIPCameras" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRIPCameras_tResolutionDef" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRIPRes_tDVRIPCamerasInputs" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tIPCamera_Table_tIPModel" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tIPCameraUsers_tIPCamera" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRNetwork_tNetworkType" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRResolutions_tResolutionDef" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRRestartTime_tWeek" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRSystemInfo_tRS232Ports" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUserPrivSetup_tDVRSetupPages" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRTimeAttributes_tTimeFormat" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUserPrivOp_tDVRUserOperations" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUserPrivChannel_tDVRUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUserPrivChannel_tI3Privileges" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUserPrivOp_tDVRUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUserPrivSetup_tDVRUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRUserPrivSetup_tI3Privileges" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRVCPoints_tDVRVCTracker" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRVideoSource_tResolutionDef" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRVirtualRuler_tRulerUnit" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRVPPoints_tDVRVPTrackers" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tResolutionDef_tVideoFormat" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_tDVRDigitalMonitor_tDVRAddressBook" />
+        <AssociationConnector Association="Model.FK_tDVRControls_tDVRIOCard" />
+        <AssociationConnector Association="Model.FK_tDVRSensors_tDVRIOCard" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Audit_Schedule" PointX="0.75" PointY="14.75" Width="1.5" />
+        <EntityTypeShape EntityType="Model.CMSWebUser" PointX="11.125" PointY="15" Width="1.5" />
+        <EntityTypeShape EntityType="Model.tLanguage" Width="1.5" PointX="7.375" PointY="8.875" />
+        <AssociationConnector Association="Model.FK_tDVRServerInfo_tLanguage" />
+        <EntityTypeShape EntityType="Model.tAlertEvent" Width="1.5" PointX="12" PointY="108.875" />
+        <AssociationConnector Association="Model.FK_tAlertEvent_tDVRAddressBook" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoardElements" PointX="13.375" PointY="13.75" Width="1.5" />
+        <EntityTypeShape EntityType="Model.V_CMSWeb_Function_Level" Width="1.5" PointX="10.425401329260971" PointY="16.161590106860544" />
+        <EntityTypeShape EntityType="Model.View_Fact_IOPC_Count" Width="2.875" PointX="1.625" PointY="18.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoardStyles" PointX="13.375" PointY="9.75" Width="1.875" />
+        <EntityTypeShape EntityType="Model.tDVRVLTrackers" Width="1.5" PointX="6.6374732827010909" PointY="14.698708049347022" />
+        <AssociationConnector Association="Model.FK_tVLTrackers_tDVRChannels" />
+        <AssociationConnector Association="Model.FK_tVLPoint_tVLTrackers" />
+        <EntityTypeShape EntityType="Model.tDVRVCChannels" Width="1.5" PointX="2.625" PointY="8.625" />
+        <EntityTypeShape EntityType="Model.tCMSWebRecipients" PointX="5.375" PointY="4.75" Width="2.125" />
+        <EntityTypeShape EntityType="Model.tDVRChannels" Width="1.5" PointX="11.25" PointY="140.875" />
+        <AssociationConnector Association="Model.FK_tDVRVCChannels_tDVRChannels" />
+        <EntityTypeShape EntityType="Model.tbl_POS_TransPayment" Width="1.5" PointX="3.4239741095453375" PointY="31.249232619651234" />
+        <AssociationConnector Association="Model.FK_tbl_POS_TransPayment_tbl_POS_PaymentList" />
+        <AssociationConnector Association="Model.FK_tbl_POS_TransPayment_tbl_POS_Transact" />
+        <EntityTypeShape EntityType="Model.Fact_POS_TransactPayment" Width="1.5" PointX="5.9868654822869534" PointY="19.39885568031988" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_ActivityLog" Width="1.5" PointX="2.184687909756176" PointY="26.775470820616686" />
+        <AssociationConnector Association="Model.FK_tDVREmail_tDVRAddressBook" />
+        <AssociationConnector Association="Model.FK_tSMTPLoginMethod_tSMTPLoginMethod" />
+        <EntityTypeShape EntityType="Model.tbl_Exception_Type" Width="1.5" PointX="3.375" PointY="14.75" />
+        <AssociationConnector Association="Model.FK_tSMTPLoginMethod_tSMTPLoginMethod" />
+        </Diagram>
+      <Diagram DiagramId="b38948c114ee4d3bb4e019a893309dc1" Name="CMSWeb" ZoomLevel="83" >
+        <EntityTypeShape EntityType="Model.tCMSWeb_AM_Files" Width="3.75" PointX="35" PointY="5.375" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_AM_FTP" Width="1.5" PointX="32.75" PointY="5.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Audit" Width="2.125" PointX="6.125" PointY="0.625" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Audit_Media" Width="1.5" PointX="13.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Audit_Note" Width="2.375" PointX="2.875" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Audit_Schedule" Width="1.5" PointX="3.75" PointY="1.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_AgeClasification" Width="1.5" PointX="9.25" PointY="42.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_AlarmCondition" Width="2.25" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_BiologicalInfo" Width="1.5" PointX="9.25" PointY="35.375" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_Burglary" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_BusInterruptionType" Width="1.5" PointX="30.75" PointY="26.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_CaseDisposition" Width="1.5" PointX="13.5" PointY="26.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_CaseEvent" Width="1.5" PointX="16" PointY="4.625" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_CaseLinks" Width="1.5" PointX="18.25" PointY="9.375" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_CaseStatus" Width="1.5" PointX="13.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_CaseType" Width="1.5" PointX="10.75" PointY="5.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_CashShortage" Width="1.5" PointX="10.75" PointY="9" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_CourtInfo" Width="1.5" PointX="15.75" PointY="26.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_DishonestEmployee" Width="1.5" PointX="18" PointY="29.375" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_Disposition" Width="2.75" PointX="10.875" PointY="11.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_DispositionType" Width="1.5" PointX="10.75" PointY="14.125" />
+        <EntityTypeShape EntityType="Model.tCMSWEb_CM_EmergencyEvacuation" Width="1.5" PointX="8.75" PointY="8.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_EnviromentInfo" Width="1.5" PointX="19.75" PointY="13" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_EventAttachments" Width="1.5" PointX="20.5" PointY="8.375" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_EventMaps" Width="1.875" PointX="20.5" PointY="5.375" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_Events" Width="1.5" PointX="18.25" PointY="4.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_EvidenceInfo" Width="1.5" PointX="20.75" PointY="33.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_FieldsGUI" Width="2.25" PointX="18.25" PointY="1" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_FraudType" Width="1.5" PointX="15.75" PointY="22.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_GeneralIncident" Width="1.5" PointX="11" PointY="1.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_HairColorType" Width="1.5" PointX="7" PointY="37.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_HeightMeasureType" Width="1.5" PointX="7" PointY="33.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_IncidentField" Width="2.25" PointX="13" PointY="5.375" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_InjuriedPerson" Width="1.5" PointX="25" PointY="3.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_InjuryInfo" Width="1.5" PointX="25" PointY="13.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_InjuryType" Width="1.5" PointX="22.75" PointY="5.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_InjuryTypeForStudent" Width="1.5" PointX="22.75" PointY="2.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_Internet" Width="1.5" PointX="8.75" PointY="25.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_InterruptionInfo" Width="1.5" PointX="33" PointY="26.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_InterviewInfo" Width="1.5" PointX="23" PointY="32.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_InvestigationInfo" Width="1.5" PointX="15.75" PointY="19" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_LawEnforcement" Width="1.5" PointX="18" PointY="21.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_LocationInjury" Width="1.5" PointX="22.75" PointY="9.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_LossInjury_CareTaking" Width="1.5" PointX="26" PointY="28" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_LossInjury_ContractorCharges" Width="1.5" PointX="26" PointY="20" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_LossInjury_OfficeUse" Width="1.5" PointX="23.75" PointY="21.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_LossInjury_SectionOne" Width="1.5" PointX="29" PointY="20.625" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_LossInjury_SectionTwo" Width="1.5" PointX="31.25" PointY="21.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_LossType" Width="1.5" PointX="26.75" PointY="23.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_Merchandise" Width="2.5" PointX="14.25" PointY="12.625" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_ObjectCondition" Width="1.5" PointX="13" PointY="17.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_OperationalInfo" Width="2.875" PointX="32.25" PointY="1.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_OperationHumanType" Width="1.5" PointX="30" PointY="1.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_OperationSystemType" Width="2.5" PointX="29.625" PointY="5.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_PoliceInfo" Width="1.5" PointX="15.75" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_PolicyViolationType" Width="1.5" PointX="27.75" PointY="1.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_Shoplifting" Width="1.5" PointX="16" PointY="38.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_SkinColorType" Width="1.5" PointX="7" PointY="40.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_StockInfo" Width="2.75" PointX="17.25" PointY="12.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_SubjectDetail" Width="1.5" PointX="11.5" PointY="37.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_SubjectInfo" Width="1.75" PointX="13.875" PointY="41.625" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_SubjectType" Width="1.5" PointX="9.25" PointY="44.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_SuspiciousIncident" Width="1.5" PointX="8.75" PointY="1.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_TemplateObjects" Width="1.5" PointX="16" PointY="1.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_TransactionFraud" Width="1.5" PointX="21" PointY="22.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_TransactionInfo" Width="1.5" PointX="18.75" PointY="17.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_WeightMeasureType" Width="1.5" PointX="7" PointY="35.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CM_Witness" Width="1.5" PointX="27.25" PointY="5.375" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Company" Width="1.875" PointX="0.5" PointY="19.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_EX_MappingReportFilter" Width="1.5" PointX="6" PointY="13.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_EX_ReportFilterFields" Width="1.5" PointX="3.75" PointY="8.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_EX_ReportTimeRange" Width="2.625" PointX="6.125" PointY="28.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_FiscalYear" Width="2.25" PointX="12" PointY="30.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_FiscalYear_Types" Width="2.25" PointX="9" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Function_Level" Width="2.375" PointX="0.5" PointY="29.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Functions" Width="2.375" PointX="3.75" PointY="36.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Goal_Types" Width="1.5" PointX="9.75" PointY="17.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Goals" Width="1.5" PointX="9.75" PointY="20.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_GoalType_Map" Width="1.5" PointX="12" PointY="20.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Levels" Width="1.875" PointX="1.125" PointY="36.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Metric_List" Width="1.875" PointX="26.875" PointY="16.625" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_MetricSiteList" Width="2.875" PointX="20.375" PointY="14.875" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_Modules" Width="1.5" PointX="1.5" PointY="42.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_ReminderTypes" Width="1.5" PointX="20.75" PointY="19" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_SynUser" Width="2.25" PointX="22.75" PointY="17" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_SynUser_Types" Width="2.25" PointX="21" PointY="12" />
+        <EntityTypeShape EntityType="Model.CMSWebUser" Width="1.75" PointX="2.75" PointY="11.625" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_WorkingHours" Width="1.5" PointX="31" PointY="31" />
+        <EntityTypeShape EntityType="Model.tCMSWebAlertsMapping" Width="1.5" PointX="10.75" PointY="24" />
+        <EntityTypeShape EntityType="Model.tCMSWebBAMHeatMapArea" Width="1.5" PointX="31" PointY="33.75" />
+        <EntityTypeShape EntityType="Model.tCMSWebFreqType" Width="1.5" PointX="24.75" PointY="1" />
+        <EntityTypeShape EntityType="Model.tCMSWebModule" Width="1.5" PointX="30" PointY="16.125" />
+        <EntityTypeShape EntityType="Model.tCMSWebRecipient" Width="1.5" PointX="8.25" PointY="11.125" />
+        <EntityTypeShape EntityType="Model.tCMSWebRegion" Width="2.5" PointX="5.75" PointY="17.625" />
+        <EntityTypeShape EntityType="Model.tCMSWebReport" Width="2.125" PointX="5.25" PointY="21.375" />
+        <EntityTypeShape EntityType="Model.tCMSWebReportColumn" Width="1.5" PointX="5.25" PointY="29.25" />
+        <EntityTypeShape EntityType="Model.tCMSWebReportFilter" Width="1.5" PointX="7.5" PointY="19.375" />
+        <EntityTypeShape EntityType="Model.tCMSWebReportRecipient" Width="1.5" PointX="7.5" PointY="28.625" />
+        <EntityTypeShape EntityType="Model.tCMSWebReportSort" Width="1.5" PointX="7.5" PointY="22.5" />
+        <EntityTypeShape EntityType="Model.tCMSWebSiteMapArea" Width="1.5" PointX="24.75" PointY="17" />
+        <EntityTypeShape EntityType="Model.tCMSWebSite" Width="1.5" PointX="28.75" PointY="26.75" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_AM_Files_tCMSWeb_AM_FTP" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_Audit_tCMSWeb_Audit_Note" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_Audit_tCMSWeb_Audit_Schedule" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_Audit_Media_tCMSWeb_Audit_Note" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_AgeClasification_tCMSWeb_CM_SubjectDetail_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_BiologicalInfo_tCMSWeb_CM_SubjectDetail_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_HairColorType_tCMSWeb_CM_BiologicalInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_HeightMeasureType_tCMSWeb_CM_BiologicalInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_SkinColorType_tCMSWeb_CM_BiologicalInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_WeightMeasureType_tCMSWeb_CM_BiologicalInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_BusInterruptionType_tCMSWeb_CM_InterruptionInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_CaseDisposition_tCMSWeb_CM_CourtInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_CaseEvent_tCMSWeb_CM_CaseLinks_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_CaseEvent_tCMSWeb_CM_Events_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_CaseStatus_tCMSWeb_CM_CaseEvent_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_CaseType_tCMSWeb_CM_CaseEvent_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_SubjectInfo_tCMSWeb_CM_CaseEvent_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_CaseType_tCMSWeb_CM_IncidentField_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_CourtInfo_tCMSWeb_CM_LawEnforcement_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_FraudType_tCMSWeb_CM_DishonestEmployee_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_Disposition_tCMSWeb_CM_Merchandise_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_DispositionType_tCMSWeb_CM_Disposition_FK1" />
+        <AssociationConnector Association="Model.tCMSWEb_CM_EmergencyEvacuation_tCMSWeb_CM_GeneralIncident_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_Events_tCMSWeb_CM_EventAttachments_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_Events_tCMSWeb_CM_EventMaps_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_FieldsGUI_tCMSWeb_CM_EventMaps_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_SubjectInfo_tCMSWeb_CM_Events_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_EvidenceInfo_tCMSWeb_CM_InterviewInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_FieldsGUI_tCMSWeb_CM_IncidentField_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_TemplateObjects_tCMSWeb_CM_FieldsGUI_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_FraudType_tCMSWeb_CM_LawEnforcement_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_FraudType_tCMSWeb_CM_TransactionFraud_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_Internet_tCMSWeb_CM_GeneralIncident_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_SuspiciousIncident_tCMSWeb_CM_GeneralIncident_FK1" />
+        <AssociationConnector Association="Model.FK_IdentifyInjuryID" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_CM_InjuriedPerson_RF_tCMSWeb_CM_InjuryTypeForStudent_InjuryTypeID" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_CM_InjuriedPerson_RF_tCMSWeb_CM_LocationInjury_LocationID" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_CM_Witness_RF_tCMSWeb_CM_InjuriedPerson_InjuriedPersonID" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_InjuryType_tCMSWeb_CM_InjuryInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_InvestigationInfo_tCMSWeb_CM_LawEnforcement_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_PoliceInfo_tCMSWeb_CM_LawEnforcement_FK1" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_CM_LossInjury_CareTaking_RF_tCMSWeb_CM_LossInjury_OfficeUse_OfficeUseID" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_CM_LossInjury_ContractorCharges_RF_tCMSWeb_CM_LossInjury_OfficeUse_OfficeUseID" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_CM_LossInjury_SectionOne_RF_tCMSWeb_CM_LossInjury_OfficeUse_OfficeUseID" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_CM_LossInjury_SectionOne_tCMSWeb_CM_LossType_LossTypeID" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_CM_LossInjury_SectionTwo_RF_tCMSWeb_CM_LossInjury_SectionOne" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_CM_StockInfo_tCMSWeb_CM_Merchandise" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_ObjectCondition_tCMSWeb_CM_Merchandise_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_StockInfo_tCMSWeb_CM_Merchandise_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_OperationHumanType_tCMSWeb_CM_OperationalInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_OperationSystemType_tCMSWeb_CM_OperationalInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_PolicyViolationType_tCMSWeb_CM_OperationHumanType_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_SubjectInfo_tCMSWeb_CM_Shoplifting_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_SubjectDetail_tCMSWeb_CM_SubjectInfo_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_SubjectType_tCMSWeb_CM_SubjectDetail_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_CM_TransactionInfo_tCMSWeb_CM_TransactionFraud_FK1" />
+        <AssociationConnector Association="Model.FK_ReportFilter" />
+        <AssociationConnector Association="Model.tCMSWeb_FiscalYear_Types_tCMSWeb_FiscalYear_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_Functions_tCMSWeb_Function_Level_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_Levels_tCMSWeb_Function_Level_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_Modules_tCMSWeb_Functions_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_Goal_Types_tCMSWeb_GoalType_Map_FK1" />
+        <AssociationConnector Association="Model.tCMSWeb_Goals_tCMSWeb_GoalType_Map_FK1" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_WorkingHours_tCMSWebSites" />
+        <AssociationConnector Association="Model.FK_tCMSWebBAMHeatMapAreas_tCMSWebSites" />
+        <AssociationConnector Association="Model.FK_tCMSWebReportFilter_tCMSWebReport" />
+        <AssociationConnector Association="Model.FK_tCMSWebReportRecipients_tCMSWebReport" />
+        <AssociationConnector Association="Model.FK_tCMSWebReportSort_tCMSWebReport" />
+        <AssociationConnector Association="Model.FK_tCMSWebReportFilter_tCMSWebReportColumns" />
+        <AssociationConnector Association="Model.FK_tCMSWebReportSort_tCMSWebReportColumns" />
+        <AssociationConnector Association="Model.tCMSWeb_Audit_Snapshot" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_UserGroup_Function" Width="2.5" PointX="0.5" PointY="27" />
+        <EntityTypeShape EntityType="Model.tCMSWebBAMHeatMapAreas" Width="1.5" PointX="5.625" PointY="10.125" FillColor="0, 122, 204" />
+        <EntityTypeShape EntityType="Model.tCMSWebModules" Width="1.5" PointX="2.625" PointY="0.5" />
+        <EntityTypeShape EntityType="Model.tCMSWebReportColumns" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tCMSWebReportRecipients" Width="2.375" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.tCMSWebSiteMapAreas" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.tCMSWebSites" Width="2.5" PointX="0.875" PointY="7.5" />
+        <EntityTypeShape EntityType="Model.countries" Width="1.5" PointX="30.375" PointY="15.75" />
+        <EntityTypeShape EntityType="Model.states" Width="1.5" PointX="3.375" PointY="31.75" />
+        <EntityTypeShape EntityType="Model.tbl_WeatherDes" Width="1.5" PointX="8.375" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.tbl_POS_Labor" Width="1.5" PointX="20.375" PointY="25.75" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_MetricSiteList_tCMSWeb_Metric_List" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_MetricSiteList_tCMSWebSites" />
+        <AssociationConnector Association="Model.FK_tCMSWebSites_countries" />
+        <AssociationConnector Association="Model.FK_tCMSWebSites_states" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_AM_Files_tCMSWeb_Company" />
+        <AssociationConnector Association="Model.FK_tCMSWebSites_tCMSWeb_Goals" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_SynUser_tCMSWeb_SynUser_Types" />
+        <AssociationConnector Association="Model.FK_tCMSWebSites_tCMSWebRegion" />
+        <AssociationConnector Association="Model.FK_tCMSWebSiteMapAreas_tCMSWebSites" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_EX_Report" Width="4.25" PointX="0.5" PointY="23.75" />
+        <AssociationConnector Association="Model.FK_ExceptionReport" />
+        <AssociationConnector Association="Model.FK_ExceptionReport_ReportTimeRange" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_UserPosition" Width="2.25" PointX="22.375" PointY="25.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_UserList" Width="4.125" PointX="33.375" PointY="10.25" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_Audit_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_Audit_Note_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.tCMSWeb_Company_tCMSWeb_UserList_FK1" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_EX_Report_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_FiscalYear_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_Goals_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_Metric_List_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_SynUser_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.FK_tCMSWebRegion_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.FK_tCMSWebReport_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.FK_tCMSWebSites_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.tCMSWeb_EX_Report_User" />
+        <AssociationConnector Association="Model.tCMSWeb_User_Sites" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_UserPosition_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.tCMSWeb_UserPosition_tCMSWeb_UserList_FK1" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_UserGroups" Width="3.125" PointX="40.5" PointY="17.875" />
+        <AssociationConnector Association="Model.tCMSWeb_UserGroup_Function" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_UserGroups_tCMSWeb_UserList" />
+        <AssociationConnector Association="Model.tCMSWeb_User_UserGroups" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_CalendarEvents" Width="2.375" PointX="4.125" PointY="39.5" />
+        <AssociationConnector Association="Model.tCMSWeb_CalendarEvents_Sites" />
+        </Diagram>
+      <Diagram DiagramId="59a8d48956a343bfb68a341c90214602" Name="DashBoard" >
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoard_GroupUser_Element" Width="2.25" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoard_User_Element" Width="2.75" PointX="3" PointY="2.125" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoard_WidgetGroupSize" Width="3.625" PointX="1.5" PointY="14.625" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoard_WidgetPositions" Width="1.5" PointX="0.75" PointY="10.25" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoardGroupUsers" Width="3.125" PointX="6" PointY="3.625" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoardLayouts" Width="3.375" PointX="8.25" PointY="11.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoardUsers" Width="1.5" PointX="6" PointY="6.5" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_NoteItem" Width="2.125" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_ToDoListItem" Width="2.625" PointX="8.75" PointY="0.75" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_DashBoard_GroupUser_Element_tCMSWeb_DashBoard_WidgetPositions" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_DashBoard_User_Element_tCMSWeb_DashBoard_WidgetPositions" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_DashBoard_WidgetPositions_tCMSWeb_DashBoard_WidgetGroupSize" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_DshB_GroupUser_tCMSWeb_DashBoardLayout" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_DshBUser_tCMSWeb_DashBoardLayout" />
+        <AssociationConnector Association="Model.tCMSWeb_DashBoard_LayoutConfiguration" />
+        <EntityTypeShape EntityType="Model.tCMSWeb_DashBoardElements" Width="2.625" PointX="5.875" PointY="14.125" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_GroupUser_Element_tCMSWeb_DashBoardElements" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_UserElement_tCMSWeb_DashBoardElements" />
+        <AssociationConnector Association="Model.FK_tCMSWeb_DashBoardElements_tCMSWeb_DashBoard_WidgetGroupSize" />
+      </Diagram>
+      <Diagram DiagramId="73129bddcc12451faa040f3e83a3c8d2" Name="DataWH" ZoomLevel="93" >
+        <EntityTypeShape EntityType="Model.Dim_IOPC_Alarm_AlarmType" Width="1.5" PointX="0.75" PointY="67.75" />
+        <EntityTypeShape EntityType="Model.Dim_IOPC_Monitored_Location" Width="1.5" PointX="0.75" PointY="51.5" />
+        <EntityTypeShape EntityType="Model.Dim_IOPC_ObjectType" Width="1.5" PointX="6.75" PointY="31.625" />
+        <EntityTypeShape EntityType="Model.Dim_POS_CameraNB" Width="1.5" PointX="6.75" PointY="42.625" />
+        <EntityTypeShape EntityType="Model.Dim_POS_CardID" Width="1.5" PointX="12.75" PointY="29.25" />
+        <EntityTypeShape EntityType="Model.Dim_POS_CheckID" Width="1.5" PointX="12.75" PointY="35.875" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Date" Width="1.5" PointX="0.75" PointY="55.875" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Description" Width="1.5" PointX="12.75" PointY="81.25" />
+        <EntityTypeShape EntityType="Model.Dim_POS_ExtraName" Width="1.5" PointX="12.75" PointY="39.5" />
+        <EntityTypeShape EntityType="Model.Dim_POS_ExtraStringValue" Width="1.5" PointX="3.75" PointY="69.625" />
+        <EntityTypeShape EntityType="Model.Dim_POS_ItemCode" Width="1.5" PointX="12.75" PointY="32.875" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Operator" Width="1.5" PointX="12.75" PointY="84.375" />
+        <EntityTypeShape EntityType="Model.Dim_POS_PACID" Width="2.5" PointX="5.75" PointY="35.25" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Payment" Width="1.5" PointX="12.75" PointY="105.75" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Register" Width="1.5" PointX="12.75" PointY="77.625" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Shift" Width="1.5" PointX="12.75" PointY="21.875" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Site" Width="2.25" PointX="12.75" PointY="88.125" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Store" Width="1.5" PointX="12.75" PointY="73.875" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Tax" Width="1.5" PointX="0.75" PointY="64.75" />
+        <EntityTypeShape EntityType="Model.Dim_POS_Terminal" Width="1.5" PointX="12.75" PointY="25.5" />
+        <EntityTypeShape EntityType="Model.Dim_POS_TransactionType" Width="1.5" PointX="12.75" PointY="71.125" />
+        <EntityTypeShape EntityType="Model.Dim_POS_TransNBText" Width="1.5" PointX="12.75" PointY="42.625" />
+        <EntityTypeShape EntityType="Model.Fact_IOPC_Alarm" Width="1.5" PointX="3" PointY="64.5" />
+        <EntityTypeShape EntityType="Model.Fact_IOPC_Count" Width="1.5" PointX="9" PointY="51.625" />
+        <EntityTypeShape EntityType="Model.Fact_IOPC_DriveThrough" Width="1.5" PointX="9" PointY="63.5" />
+        <EntityTypeShape EntityType="Model.Fact_IOPC_LPR_Info" Width="1.5" PointX="6" PointY="49.75" />
+        <EntityTypeShape EntityType="Model.Fact_IOPC_Periodic_Hourly_Traffic" Width="1.5" PointX="9" PointY="46.875" />
+        <EntityTypeShape EntityType="Model.Fact_IOPC_QTime" Width="1.5" PointX="9" PointY="57.375" />
+        <EntityTypeShape EntityType="Model.Fact_IOPC_TrafficCount" Width="1.5" PointX="3" PointY="50" />
+        <EntityTypeShape EntityType="Model.Fact_POS_Periodic_Hourly_Transact" Width="1.5" PointX="12" PointY="67.125" />
+        <EntityTypeShape EntityType="Model.Fact_POS_RetailExtraNumber" Width="1.5" PointX="15" PointY="46.125" />
+        <EntityTypeShape EntityType="Model.Fact_POS_RetailExtraString" Width="1.5" PointX="6" PointY="55.125" />
+        <EntityTypeShape EntityType="Model.Fact_POS_Sensor" Width="1.5" PointX="12" PointY="48.75" />
+        <EntityTypeShape EntityType="Model.Fact_POS_Transact" Width="1.5" PointX="12" PointY="53.75" />
+        <EntityTypeShape EntityType="Model.Fact_POS_TransactTax" Width="1.5" PointX="3" PointY="56.125" />
+        <EntityTypeShape EntityType="Model.Fact_POS_TransExtraNumber" Width="1.5" PointX="6" PointY="65.125" />
+        <EntityTypeShape EntityType="Model.Fact_POS_TransExtraString" Width="1.5" PointX="15" PointY="56" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Alarm_Dim_IOPC_Alarm_AlarmType" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Alarm_Dim_IOPC_Monitored_Location" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Count_Dim_IOPC_Monitored_Location" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_TrafficCount_Dim_IOPC_Monitored_Location" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Alarm_Dim_IOPC_ObjectType" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Count_Dim_IOPC_ObjectType" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Alarm_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Count_Dim_POS_CameraNB1" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_DriveThrough_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_DriveThrough_Dim_POS_CameraNB1" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_LPR_Info_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Periodic_Hourly_Traffic_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_QTime_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_QTime_Dim_POS_CameraNB1" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_TrafficCount_Dim_POS_CameraNB2" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_TrafficCount_Dim_POS_CameraNB3" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_CameraNB" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_CardID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_CardID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_CardID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_CardID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_CardID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_CardID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_CheckID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_CheckID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_CheckID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_CheckID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_CheckID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_CheckID" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Alarm_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Count_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_DriveThrough_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_DriveThrough_Dim_POS_Date1" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_LPR_Info_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Periodic_Hourly_Traffic_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_QTime_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_TrafficCount_Dim_POS_Date1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Hourly_Transact_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Date1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Date2" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_Date1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Sensor_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Date1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Date2" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_Date1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_Date1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_Date" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_Date1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Description" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_Description" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Description" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Description1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_ExtraName" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_ExtraName" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_ExtraName" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_ExtraName" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_ExtraStringValue" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_ExtraStringValue" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_ItemCode" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_ItemCode" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_ItemCode" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Operator" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_Operator" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Operator" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_Operator" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_Operator" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_Operator" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Alarm_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Count_Dim_POS_PACID1" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_DriveThrough_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_LPR_Info_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Periodic_Hourly_Traffic_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_QTime_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_TrafficCount_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Hourly_Transact_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Sensor_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_PACID" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Register" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_Register" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Register" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_Register" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_Register" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_Register" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Shift" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_Shift" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Shift" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_Shift" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_Shift" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_Shift" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Alarm_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_Count_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_DriveThrough_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_LPR_Info_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_QTime_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_IOPC_TrafficCount_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_Site" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Store" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_Store" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Store" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_Store" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_Store" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_Store" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_Tax" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_Terminal" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_Terminal" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_Terminal" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_Terminal" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_Terminal" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_Terminal" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_TransactionType1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_TransactionType1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_TransactionType1" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraNumber_Dim_POS_TransNBText" />
+        <AssociationConnector Association="Model.FK_Fact_POS_RetailExtraString_Dim_POS_TransNBText" />
+        <AssociationConnector Association="Model.FK_Fact_POS_Transact_Dim_POS_TransNBText" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransactTax_Dim_POS_TransNBText" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraNumber_Dim_POS_TransNBText" />
+        <AssociationConnector Association="Model.FK_Fact_POS_TransExtraString_Dim_POS_TransNBText" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

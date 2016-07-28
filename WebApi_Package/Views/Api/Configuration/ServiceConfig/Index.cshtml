@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SVRDatabase.Model.ServiceConfig>
+
+@{
+    ViewBag.Title = "Service Configuration List";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Service Configuration List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null,new{@class = "btn btn-warning"})
+</p>
+<table class="table">
+    <tr>
+        <th>            
+            Converter Limitted
+        </th>
+        <th>
+            DVR Authenticate
+        </th>
+        <th>
+            Converter Interval
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConverterLimit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DVRAuthenticate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConverterInterval)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

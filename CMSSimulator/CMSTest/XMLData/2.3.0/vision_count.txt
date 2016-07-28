@@ -1,0 +1,1554 @@
+
+        <time_change>15346</time_change>
+        <configuration_id>23</configuration_id>
+        <configuration_name>vision_count</configuration_name>
+    <vision_count>
+      <channels size="64">
+        <channel id="0">
+          <enable>0</enable>
+          <video_source>0</video_source>
+          <resolution>0</resolution>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="1">
+          <enable>0</enable>
+          <video_source>1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="2">
+          <enable>0</enable>
+          <video_source>64</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="3">
+          <enable>1</enable>
+          <video_source>65</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>3</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="1">
+            <areas size="0" />
+            <doors size="1">
+              <door id="0">
+                <user_name>Door 0</user_name>
+                <transaction_channel>-1</transaction_channel>
+                <alarm_without_condition>1</alarm_without_condition>
+                <alarm_condition_minute>0</alarm_condition_minute>
+                <alarm_condition_second>10</alarm_condition_second>
+                <polyline num_point="4" type="2">93,66;122,254;409,263;393,21;</polyline>
+              </door>
+            </doors>
+          </trackers>
+        </channel>
+        <channel id="4">
+          <enable>0</enable>
+          <video_source>65</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="5">
+          <enable>0</enable>
+          <video_source>65</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="6">
+          <enable>0</enable>
+          <video_source>65</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="7">
+          <enable>0</enable>
+          <video_source>7</video_source>
+          <resolution>0</resolution>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="8">
+          <enable>0</enable>
+          <video_source>8</video_source>
+          <resolution>0</resolution>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="9">
+          <enable>0</enable>
+          <video_source>9</video_source>
+          <resolution>0</resolution>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="10">
+          <enable>0</enable>
+          <video_source>10</video_source>
+          <resolution>0</resolution>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="11">
+          <enable>0</enable>
+          <video_source>11</video_source>
+          <resolution>0</resolution>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="12">
+          <enable>0</enable>
+          <video_source>12</video_source>
+          <resolution>0</resolution>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="13">
+          <enable>0</enable>
+          <video_source>66</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="14">
+          <enable>0</enable>
+          <video_source>67</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="15">
+          <enable>0</enable>
+          <video_source>68</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="16">
+          <enable>0</enable>
+          <video_source>69</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="17">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="18">
+          <enable>0</enable>
+          <video_source>70</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="19">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="20">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="21">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="22">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="23">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="24">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="25">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="26">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="27">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="28">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="29">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="30">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="31">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="32">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="33">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="34">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="35">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="36">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="37">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="38">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="39">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="40">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="41">
+          <enable>0</enable>
+          <video_source>71</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="42">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="43">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="44">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="45">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="46">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="47">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="48">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="49">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="50">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="51">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="52">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="53">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="54">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="55">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="56">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="57">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="58">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="59">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="60">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="61">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="62">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+        <channel id="63">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <resolution>0</resolution>
+          <resolution_width>-1</resolution_width>
+          <resolution_height>-1</resolution_height>
+          <function_type>0</function_type>
+          <env_type>-1</env_type>
+          <begin_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </begin_time>
+          <end_time>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </end_time>
+          <control_out>-1</control_out>
+          <trackers size="0">
+            <areas size="0" />
+            <doors size="0" />
+          </trackers>
+        </channel>
+      </channels>
+    </vision_count>
+       

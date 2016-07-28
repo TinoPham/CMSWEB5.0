@@ -1,0 +1,37 @@
+﻿<div class="rebar-weekataglance" ng-controller="rebardashboardCtrl as vm">
+    <!--<div class="row">
+        <div ng-include="'widgets/rebar/box.html'"></div>
+    </div>                      
+    <div class="col">
+        <div ng-include="'widgets/rebar/rebar-box-employer.html'"></div>        
+    </div>     
+    <div class="col">
+        <div ng-include="'widgets/rebar/rebar-box-trantype.html'"></div>                      
+    </div>-->
+    
+    <div  class="col-md-6" >
+        <div class="panel  smart-exception"
+         ng-class="{'panel-full-box' : vm.smartexceptionProperty.Max === true}" 
+         ng-include="'rebar/weekataglance/smartexception.html'">
+        </div>
+    </div> 
+    <!-- END :: A Panel  -->
+
+    <div  class="col-md-6">
+         <div class="panel employee-data"  
+         ng-class="{'panel-full-box' : vm.employeedataProperty.Max === true}" 
+         ng-include="'rebar/weekataglance/employeedata.html'">
+        </div>
+    </div>     
+     <!-- END :: A Panel  -->
+
+
+    <div  class="col-md-12 rebar-transact-viewer">
+        <div  class="panel employee-data-table"  ng-if="!vm.showDetail" ng-class="{'panel-full-box' : vm.employeedatatableProperty.Max === true}"    ng-include="'rebar/weekataglance/employeedatatable.html'" />
+        <div ng-if="vm.showDetail">
+			<div ng-if="vm.GridDataInfoType === 0" ng-include="'widgets/rebar/rebar-transact-viewer.html'" class="rebar-transact-viewer-table" ng-controller="rebarTransactViewerCtrl as rvm" ng-init="initCtrl(vm.paramShowTran, vm.closeDetail, definedFilter, optionsShow)" />
+			<div class="panel employee-data-table" ng-if="vm.GridDataInfoType > 0" ng-class="{'panel-full-box' : vm.employeedatatableProperty.Max === true}" ng-include="'widgets/rebar/rebar-iopc-viewer.html'" />
+        </div>
+    </div>
+     <!-- END :: A Panel  -->
+ </div>

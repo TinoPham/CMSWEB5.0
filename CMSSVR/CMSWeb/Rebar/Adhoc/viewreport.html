@@ -1,0 +1,63 @@
+﻿<div name="myForm" class="site-folder-manages form-edit">
+
+    <div class="modal-header">
+        <span class="close" data-ng-click="vm.Cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+        <h3 class="modal-title 123">{{'VIEW_REPORT'|translate}}</h3>
+    </div>
+    <div class="modal-body">
+        <div style="margin:15px;" ng-show ="vm.Nodata !== ''">
+            <h3>{{vm.Nodata | translate}}</h3>
+        </div>
+        <div style="margin:15px;" ng-show ="vm.Nodata === ''">
+            <div class="row" ng-repeat="r in vm.data.DataResult" ng-style="{'border': vm.selectIndex === $index? '2px solid #DDD': '1px solid #DDD'}" style="margin-bottom: 5px;">
+                <div class="col-sm-12" ng-click="vm.SelectRow($index,r)"  style="cursor: pointer;padding-top: 10px;padding-bottom: 10px" ng-style="{'background': vm.selectIndex === $index? '#DDD': '#FFF'}">
+                    <span class="pull-left">
+                        <span><i ng-class="{'icon-right-open-big': vm.selectIndex !== $index, 'icon-down-open-big': vm.selectIndex === $index}"></i></span>
+                        <span style="font-weight: bold;">{{vm.GroupProperty? r[vm.GroupProperty]  + '(' + r.SiteName + ')': r.SiteName}}</span>: 
+                        <span>{{r.TotalTran}}$</span>
+                    </span>
+                    <span class="pull-right">
+                        <span>{{'COUNT_STRING' | translate}}</span>: <span style="font-weight: bold">{{r.CountTran}}</span>
+                    </span>
+                </div>
+                <div class="col-sm-12" ng-if="vm.selectIndex === $index" ng-show="vm.showContent">
+                    <div  ng-if="vm.selectIndex === $index" class="panel" ng-include="'widgets/rebar/rebar-transact-viewer.html'" ng-controller="rebarTransactViewerCtrl as rvm" ng-init="initCtrl(vm.paramTran, vm.callback, vm.definefield, vm.rebartransactviewerProperty)"></div>
+                </div>
+            </div>
+             
+            <div class="row">
+                <div class="col-sm-12">
+                    <span style="float: right" ng-show="vm.totalPages > 1">
+                        <nav style="text-align: center;">
+                            <ul class="pagination">
+                                <li ng-click="vm.prevPage()" ng-disabled="vm.currentPage < 2">
+                                    <a aria-label="Previous">
+                                       <span aria-hidden="true">
+                                            <i class=" icon-left-open-big"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li ng-click="vm.prevPage(1)"><a>1</a></li>
+                                <li><a class="input-page">
+                                        <input type="number" class="form-control" ng-model="vm.currentPage" style="max-width: 50px;"></a></li>
+                                <li ng-click="vm.gotoPage()"><a>{{'GO' | translate}}</a></li>
+                                <li ng-click="vm.nextPage(vm.totalPages)"><a>{{vm.totalPages ? vm.totalPages : 0}}</a></li>
+                                <li ng-click="vm.nextPage()" ng-disabled="vm.currentPage >= vm.totalPages">
+                                    <a aria-label="Next">
+                                         <span aria-hidden="true">
+                                            <i class=" icon-right-open-big"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="vm.Cancel()">{{'BTN_CLOSE'|translate}}</button>
+        <!--<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">{{'BTN_SAVE'|translate}}</button>-->
+    </div>
+</div>

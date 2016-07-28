@@ -1,0 +1,47 @@
+﻿<div class="panel col-md-12">               
+   <!-- <div class="row">
+        <h4 class="title"> {{'FLAG_STRING' | translate}}</h4>
+    </div>-->
+    <div class="row">
+        <div class="panel" style="margin-bottom: 0">
+            <div class="panel-header">
+                <span class="btn pull-right">
+                    <span  data-ng-click="cancel()"><i class="icon-cancel-1"></i></span>
+                </span>
+                <h3 class="title"> {{'FLAG_STRING' | translate}}</h3>      
+            </div>
+            <div class="panel-body"> 
+             
+                <div class="col-sm-6 flag-form" ng-repeat="ty in data">
+                    <div class="select-flag-form">
+                    <span>
+                        <span class="select-flag-form-icon" ng-style="{'color': ty.Color}">
+                            <i class="icon-flag"></i>
+                        </span>
+                        <span>{{ty.Name}}</span>
+                    </span>
+
+                    
+
+            <!--         <span class="pull-right select-flag-form-check">
+                        <input type="checkbox" ng-disabled="ty.IsSystem === true" ng-checked="ty.Checked" ng-model="ty.Checked" class="input-control"/>
+                    </span> -->
+
+                    <span class="pull-right select-flag-form-weight">
+                        <span> <i class="icon-chain"></i>{{ty.TypeWeight}}</span>
+                         <div class="checkbox checkbox-default select-flag-form-check">
+                            <input type="checkbox" ng-disabled="ty.IsSystem === true" ng-checked="ty.Checked" ng-model="ty.Checked" >
+                            <label></label>                            
+                        </div>
+                    </span>
+                    </div>       
+                </div>
+            </div>  
+            <div class="panel-footer">
+                <span class="btn btn-primary pull-left" data-ng-click="configFlag()"><i aria-hidden="true" class="icon-wrench-1"></i>{{'FLAG_SETTING' | translate}}</span>
+                <!-- <span class="btn btn-danger pull-right" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i>{{'BTN_CLOSE' | translate}}</span> -->
+                <span class="btn btn-info pull-right" data-ng-click="saveFlags()"><i aria-hidden="true" class="icon-ok-circled2"></i>{{'BTN_DONE' | translate}}</span>
+            </div>
+        </div>
+    </div>
+</div>

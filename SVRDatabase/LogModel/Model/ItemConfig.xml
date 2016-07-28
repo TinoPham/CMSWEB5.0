@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+	<!--<Base>
+		<Item Name="ItemBase" Type="Class">
+			<Property Name="ID" Type="int" Attribute="Key" Identity="None" />
+			<Property Name="Name" Mark ="virtual" Type="string" Length="150"/>
+		</Item>
+	</Base>-->
+
+	<ItemClass>
+
+	  <Item Name ="DVRMessage" Base ="" Table="DVRMessages">
+		<Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+		<Property Name="MessageID" Type="int"/>
+		<Property Name="MessageBody" Type="byte[]" />
+		<Property Name="DvrDate" Type="DateTime"/>
+	</Item>
+
+		<Item Name ="Log" Base ="" Table="Logs">
+			<Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+			<Property Name="LogID" Type="int"/>
+			<Property Name="Message" Type="string" Required="1"/>
+			<Property Name="MessageData" Type="byte[]"/>
+			<Property Name="ProgramSet" Type="Byte"/>
+			<Property Name="DVRDate" Type="DateTime"/>
+		</Item>
+
+    <Item Name ="DBConfig" Base ="" Table="DBConfigs">
+      <Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+      <Property Name="Name" Type="string" Length="250" Required="1"/>
+      <Property Name="Server" Type="string" Length="250" Required="1"/>
+      <Property Name="UserID" Type="string" Length="50" Required="1"/>
+      <Property Name="Password" Type="string" Length="50" Required="1"/>
+      <Property Name="Trusted" Type="bool"/>
+      <Property Name="CreateDate" Type="DateTime"/>
+      <Property Name="LastEditDate" Type="DateTime"/>
+      <Property Name="IsActive" Type="bool"/>
+    </Item>
+
+    <Item Name ="ServiceConfig" Base ="" Table="ServiceConfigs">
+      <Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+      <Property Name="ConverterLimit" Type="Int16"/>
+      <Property Name="DVRAuthenticate" Type="string" Length="250"/>
+      <Property Name="ConverterInterval" Type="Int16"/>
+      <Property Name="AuthenticateMode" Type="bool"/>
+      <Property Name="KeepAliveInterval" Type ="Int16" />
+    </Item>
+    
+    <Item Name ="DVRInfo" Base ="" Table="DVRInfos">
+		<Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+		<Property Name="HASPK" Type="string" Length="256"/>
+		<Property Name="KDVR" Type="Int64"/>
+		<Property Name="LastConvert" Type="Nullable&#60;DateTime&#62;"/>
+		<Property Name="LastDvrMessage" Type="Nullable&#60;DateTime&#62;"/>
+		<Property Name="CreateDate" Type="Nullable&#60;DateTime&#62;"/>
+		<Property Name="ForceStop" Type="bool"/>
+		<Property Name="ConverterInterval" Type="Int16"/>
+		<Property Name="HostName" Type="String" Length="256"/>
+		<Property Name="Locked" Type="bool" />
+		<Property Name="Note" Type="String" Length="256" />
+    </Item>
+
+		<Item Name ="DVRDetail" Base ="" Table="DVRDetails">
+			<Property Name="ID" Type="Int64"Identity="Identity"/>
+      <Property Name="IDInfo" Type="Int64"/>
+			<Property Name="MACAddress" Type="string" Length="50"/>
+			<Property Name="IPAddress" Type="String" Length="50"/>
+			<Property Name="IPV4" Type="bool" />
+		</Item>
+
+
+    <Item Name ="SeqCount" Base ="" Table="SeqCounts">
+      <Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+      <Property Name="SequenceName" Type="string" Length="50"/>
+      <Property Name="Sequence" Type="Int64"/>
+    </Item>
+  
+    <Item Name ="ApiUser" Base ="" Table="ApiUser">
+      <Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+      <Property Name="Name" Type="string" Length="50"/>
+      <Property Name="UserName" Type="string" Length="50"/>
+      <Property Name="Password" Type="string" Length="50"/>
+    </Item>
+  
+    <Item Name ="AuthToken" Base ="" Table="AuthToken">
+      <Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+      <Property Name="Token" Type="string" Length="500"/>
+      <Property Name="Expiration" Type="Nullable&#60;DateTime&#62;"/>
+      <Property Name="ApiUserId" Type="Int64" />
+    </Item>
+	</ItemClass>
+</Items>	

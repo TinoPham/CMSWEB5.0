@@ -1,0 +1,21 @@
+﻿{
+"SITEMETRIC_CREATE_BY":"Créer par"
+, "SITEMETRIC_CREATE_DATE":"Date de création"
+, "SITEMETRIC_NAME":"Nom Métrique"
+, "SITEMETRIC_LIST":"Liste Métrique"
+, "SITEMETRIC_LIST_NAME":"Nom de la liste métrique"
+, "SITEMETRIC_DESCRIPTION":"Description"
+,"SITEMETRIC_HEADER_DELETE":"Supprimer le site métrique"
+,"SITEMETRIC_BTN_ADD":"Ajouter Métrique du Magasins"
+,"SITEMETRIC_BTN_EDIT":"Modifier site métrique"
+
+, "SITEMETRIC_LIST_REQUIRED":"Le nom de la liste métrique ne peut pas être vide."
+, "SITEMETRIC_NAME_EXIST":"Ce nom de liste métrique existe déjà : {0}"
+, "SITEMETRIC_LIST_EXIST":"Cette liste métrique existe déjà : {0}"
+, "SITEMETRIC_NAME_REQUIRED":"Le nom métrique ne peut pas être vide."
+, "SITEMETRIC_DELETE_CONFIRM_MSG":"Êtes-vous sûr de vouloir supprimer cette métrique du site?"
+, "SITEMETRIC_DELETE_CONFIRM_MSGS":"Êtes-vous sûr que vous voulez supprimer ces métriques du site?"
+, "SITEMETRIC_CONFIRM_BODY":"Veuillez sélectionner une métrique de site."
+, "SITEMETRIC_IS_USED":"Impossible de supprimer. Cette métrique est en cours d'utilisation : {0}"
+
+}

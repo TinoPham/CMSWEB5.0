@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+	<Object table="Info" src="AccessTransInfo" des="Info">
+		<Item src="LPR_ID" des="LPR_ID" ConvertBase=""/>
+		<Item src="LPR_CamNo" des="CamNo" ConvertBase=""/>
+		<Item src="DVRDate" des="DVRDate" ConvertBase=""/>
+		<Item src="LPR_NUM" des="LPR_Num" ConvertBase=""/>
+		<Item src="LPR_JPEG_FILE_NAME" des="LPR_ImageBase64" ConvertBase=""/>
+		<Item src="LPR_Possibility" des="LPR_Possibility" ConvertBase=""/>
+		<Item src="LPR_PACID" des="LPR_PACID" ConvertBase=""/>
+		<Item src="LPR_isMatch" des="LPR_isMatch" ConvertBase=""/>
+	</Object>
+
+	<ItemKey>
+		<Item Column="LPR_CamNo" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB"/>
+	</ItemKey>
+</Config>

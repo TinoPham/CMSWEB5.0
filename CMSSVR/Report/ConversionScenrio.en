@@ -1,0 +1,18 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"\"What If\" Conversion Rate"},
+{"NameField":"rpt_SubTitle", "ValueField":"Conversion Increase of 1%"},
+{"NameField":"footer", "ValueField":"Prepared under contract for the exclusive use of i3 International. Reproduction of this report is prohibited."},
+{"NameField":"header_Day", "ValueField":"Day"},
+{"NameField":"header_Traffic", "ValueField":"Traffic"},
+{"NameField":"header_Trans", "ValueField":"Trans"},
+{"NameField":"header_Sales", "ValueField":"Sales"},
+{"NameField":"header_Conv", "ValueField":"Conv%"},
+{"NameField":"header_Total", "ValueField":"Total"},
+{"NameField":"header_SalesShopper", "ValueField":"Sales \/ Shopper"},
+{"NameField":"header_ATV", "ValueField":"ATV"},
+{"NameField":"header_NewSales", "ValueField":"New Sales"},
+{"NameField":"header_SalesDifference", "ValueField":"Sales Difference"},
+{"NameField":"header_Change", "ValueField":"%Change"},
+{"NameField":"rpt_NODATA", "ValueField":"Data is not available"},
+{"NameField":"rpt_TitleWeek", "ValueField":"Week "}
+]

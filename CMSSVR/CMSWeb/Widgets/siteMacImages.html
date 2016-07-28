@@ -1,0 +1,23 @@
+﻿<div ng-controller="siteimagesCtrl" class="site-mac-content">
+	<div class="site-image-content row">
+		<span ng-if="$parent.model.Files.length === 0"><i class="icon-picture fa-4x"></i></span>
+		<div ng-repeat="file in $parent.model.Files">
+			<div class="col-xs-4 no-margin no-padding">
+				<div class="control-image-mac" ng-click="showSlide($parent.model,file) ">
+					<div class="remove-image-mac">
+						<label ng-click="removeImage($event, file)"><i class="icon-cancel-1"></i></label>
+					</div>
+					<img class="site-image-mac" ng-show="file.Name!=null" ng-src="{{ file.hasData? 'data:image/png;base64,' + file.Data : url+ '?skey=' + file.SiteKey + '&fname=' + file.Name + '&fdname='+ file.KDVR.toString()}}" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-image-controls row">
+		<span class="control-upload input-group-btn btn-file">
+			<label ng-if="isAdd === true" class="btn">{{'BTN_ADD_IMAGES' | translate}}</label>
+			<label ng-if="isAdd === false" class="btn">{{'BTN_CHANGE_IMAGES' | translate}}</label>
+			<input type="file" accept="{{MacFileAcept}}"
+				file-upload="{{MacFileOption}}" multiple>
+		</span>
+	</div>
+</div>

@@ -1,0 +1,1 @@
+{"SiteKey":0,"WorkingHours":[],"CalendarEvent":[],"DvrMetrics":[],"DvrUsers":[],"Macs":[{"Id":0,"MacAddress":"","DvrName":"","Image":"","Files":[]}],"Files":[],"HaspLicense":[{"KDVR":5260,"SerialNumber":"128615","ServerID":"Virtual DVR"},{"KDVR":5262,"SerialNumber":"139187","ServerID":"Virtual DVR"}],"ServerId":"iutre","RegionKey":848}

@@ -1,0 +1,15 @@
+﻿{
+	"BAM":"BAM",
+	"CAR_WOT8": "Véhicule sans transaction",
+	"CUSTOMER_WOT9":"Client sans transaction",
+	"EMPLOYEE_NAME":"Nom de l'employé",
+	"REFUND1":"Exception sans Client", 
+	"SMART_EXCEPTION": "Exception Intelligente",
+	"RATIO_TO_SALE": "Rapport Vente",
+	"RISK_FACTOR":"Facteurs De Risque",
+	"PERCENTAGE_TO_SALE":"Pourcentage de vente",
+	"NO":"Non.",
+	"TOTAL":"Total",
+	"TOTAL_RISKFACTOR":"Total des facteurs de risque",
+	"TOTAL_TRANSACTION":"Transaction total"
+}

@@ -1,0 +1,51 @@
+﻿<div class="canned-box" ng-controller="cannedCtrl as vm">
+	<div ng-show="cannedData.length > 0" class="main-content">
+		<div class="list-group list-group-root">
+			<div ng-repeat="canned in cannedData">
+				<a href="#item-{{$index}}" class="list-group-item" data-toggle="collapse" ng-click="getCannedChildData($event, canned, $index)">
+					<span>
+						<i class="icon-store-3" ng-if="groupByField"></i>
+						<i class="icon-user-1" ng-if="!groupByField"></i>
+						<span ng-if="groupByField">{{vm.SiteName(canned)}}</span>
+						<span ng-if="!groupByField">{{vm.EmpName(canned)}}</span>
+						<span>:</span>
+					</span>
+					<span class="amount-value">{{canned.TotalAmount|currency}}</span>
+					<span class="badge">{{'COUNT_STRING'|translate}}: {{canned.TotalTrans}}</span>
+				</a>
+				<div class="list-group list-group-child collapse" id="item-{{$index}}">
+					<div ng-repeat="cannedChild in canned.Childs">
+					    <a href="#child-{{$parent.$index}}-{{$index}}" class="list-group-item" data-toggle="collapse" ng-click="getCannedDetail($event, cannedChild, $parent.$index, $index)">
+					        <span>
+					            <i class="icon-user-1"  ng-if="groupByField"></i>
+								<i class="icon-store-3" ng-if="!groupByField"></i>
+					            <span ng-if="groupByField">{{vm.EmpName(cannedChild)}}</span>
+					            <span ng-if="!groupByField">{{vm.SiteName(cannedChild)}}</span>
+					            <span>:</span>
+					        </span>
+					        <span class="amount-value">{{cannedChild.TotalAmount|currency}}</span>
+					        <span class="badge">{{'COUNT_STRING'|translate}}: {{cannedChild.TotalTrans}}</span>
+					    </a>
+
+					    <div class="table-data-visable collapse" id="child-{{$parent.$index}}-{{$index}}" ng-show="vm.Showdetail === $index && vm.parentshowdetail === $parent.$index">
+					        <div ng-if="vm.Showdetail === $index && vm.parentshowdetail === $parent.$index" class="panel"
+								 ng-include="'widgets/rebar/transaction-list.html'" 
+								 ng-controller="transactionListCtrl as rvm" 
+								 ng-init="initCtrl(vm.param, vm.LookupCacheItem, vm.definefield, vm.rebartransactviewerProperty)"></div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div class="footer-content">
+			<div class="load-more">
+				<div class="btn btn-blue-3"><i class="icon-ccw-1"></i>{{'BTN_LOAD_MORE'|translate}}</div>
+			</div>
+		</div>-->
+	</div>
+	<div ng-if="!cannedData || cannedData.length === 0" class="no-data">
+		<i class="icon-boxes6"></i>
+		<span>{{'NO_DATA_STRING'|translate}}</span>
+	</div>
+	<div ng-if="totalTransCount > 0">{{'COUNT_STRING' | translate}}: {{totalTransCount}}.</div>
+</div>

@@ -1,0 +1,6 @@
+﻿<div  class="pull-right" ng-show="UserInfo.authenticated">
+    <div>Welcome: <b>{{UserInfo.Name}}</b></div>
+    <a id="_Logout" ng-href="#" ng-click="logout()">Log out</a> | 
+    <a id="_edit" ui-sref="register({ ret:$state.current.name})">Edit</a>
+
+</div>

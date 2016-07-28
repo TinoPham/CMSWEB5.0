@@ -1,0 +1,400 @@
+@import url('../app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('../app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * Customize: new Panels and override Bootstrap's Panels
+ * -----------
+ */
+
+// Base class
+.panel {
+	position: relative;
+	background: #fff;
+	color: #5b5b5b;
+	margin-bottom: 20px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+
+	.panel-header, .panel-content, .panel-heading, .panel-body {
+		display: block;
+		width: 100%;
+		clear: both;
+
+		&.padding {
+			//padding: 15px;
+            padding: 10px;
+	}
+
+		&.padding-sm {
+			padding: 10px;
+		}
+
+		&.padding-xs {
+			padding: 1%;
+		}
+
+		&.padding-box {
+			padding: 10px 15px 5px 15px;
+		}
+	}
+
+	.panel-header, .panel-heading {
+		height: 43px;
+		display: block;
+		-webkit-border-radius: 2px 2px 0 0;
+		-moz-border-radius: 2px 2px 0 0;
+		border-radius: 2px 2px 0 0;
+		background: rgba(0,0,0,0.02);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+		&.transparent {
+			background: transparent;
+			border: none;
+		}
+
+		&.centered {
+			text-align: center;
+		}
+
+		.left-btn {
+			position: absolute;
+			left: 10px;
+			top: 6px;
+		}
+
+		h1,h2,h3,h4,h5,h6, .panel-title {
+			padding: 4px 10px;
+			margin: 0px;
+			font-weight: 400;
+			font-size: 14px;
+			display: block;
+			color: #5b5b5b;
+			width: 60%;
+			overflow: hidden;
+			-ms-text-overflow: ellipsis;
+			-o-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+			i {
+				margin: 0 .2em;
+			}
+
+			&.no-style {
+				padding: 0px;
+				margin: 20px 0px 10px 0px;
+				margin-top: 20px;
+				margin-bottom: 10px;
+				font-size: 30px;
+				border-bottom: none;
+			}
+		}
+
+		.additional-btn {
+			position: absolute;
+			top: 10px;
+			right: 13px;
+			z-index: 2;
+
+				> a {
+					color: #666;
+					margin-left: 7px;
+					margin-right: 0px;
+					cursor: pointer;
+					-webkit-transition: All 0.4s ease;
+					-moz-transition: All 0.4s ease;
+					-o-transition: All 0.4s ease;
+					transition: All 0.4s ease;
+
+					i {
+						font-weight: normal;
+						font-style: normal;
+					}
+
+					&:hover {
+						color: #606090 !important;
+					}
+				}
+
+			.btn-group {
+				> a {
+					color: #ccc;
+					margin-left: 7px;
+					margin-right: 0px;
+					cursor: pointer;
+					-webkit-transition: All 0.4s ease;
+					-moz-transition: All 0.4s ease;
+					-o-transition: All 0.4s ease;
+					transition: All 0.4s ease;
+
+				i {
+					font-weight: normal;
+					font-style: normal;
+				}
+			}
+		}
+
+			.close-btn, .collapse-btn {
+				font-size: 15px;
+			}
+
+			.close-btn {
+				&:hover, &:focus {
+					color: #EB5055 !important;
+				}
+			}
+		}
+
+		&:hover .additional-btn > a {
+			color: #666;
+			-webkit-transition: All 0.4s ease;
+			-moz-transition: All 0.4s ease;
+			-o-transition: All 0.4s ease;
+			transition: All 0.4s ease;
+		}
+	}
+
+	.panel-content, .panel-body {
+		-webkit-border-radius: 0 0 2px 2px;
+		-moz-border-radius: 0 0 2px 2px;
+		border-radius: 0 0 2px 2px;
+	}
+
+	.panel-footer {
+		-webkit-border-radius: 0 0 2px 2px;
+		-moz-border-radius: 0 0 2px 2px;
+		border-radius: 0 0 2px 2px;
+		overflow: hidden;
+
+		&.transparent {
+			padding: 12px 15px !important;
+			background-color: transparent !important;
+		}
+
+		.tranding {
+			overflow: hidden;
+			-ms-text-overflow: ellipsis;
+			-o-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+
+	.panel-icon {
+		font-size: 50px;
+		position: absolute;
+		right: 4%;
+		top: 10px;
+		color: rgba(255,255,255,1);
+	}
+
+	.btn-group {
+		z-index: 1;
+	}
+
+	.text-box {
+		.maindata {
+			font-size: 11px;
+			color: #fff;
+			font-family: "Open Sans";
+			text-transform: uppercase;
+			white-space: nowrap;
+			-ms-text-overflow: ellipsis;
+			-o-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			margin-bottom: 5px;
+
+			b, strong {
+				font-size: 12px;
+				padding-left: 3px;
+			}
+		}
+
+		.animate-number {
+			padding: 0;
+			margin: 0px 0;
+			font-weight: 300;
+			font-size: 32px;
+			display: block;
+			color: #fff;
+		}
+
+		h2 {
+			padding: 0;
+			margin: 0px 0;
+			font-weight: 300;
+			font-size: 32px;
+			display: block;
+			color: #fff;
+			line-height: 30px;
+		}
+	}
+
+	&.centered {
+		.panel-header{
+			text-align: center;
+		}
+	}
+
+	&.maximized {
+		position: fixed;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+		top: 50px;
+		left: 240px;
+		right: 0px;
+		bottom: 0px;
+		z-index: 5;
+		margin: 0px;
+		width: auto;
+		padding: 0px;
+	}
+
+	&.full {
+		padding: 0px;
+
+		.box-footer {
+			padding: 20px 20px 15px 20px;
+
+			a, a:hover {
+				color: #1B1E24;
+				text-decoration: none;
+			}
+		}
+	}
+
+	&:before, &:after {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	&:hover .additional-btn > a.hidden {
+		display: inline-block !important;
+		visibility: visible !important;
+	}
+}
+
+// Collapsable panels (aka, accordion)
+.panel-group {
+	.panel-heading {
+		+ .panel-collapse > .panel-body,
+		+ .panel-collapse > .list-group {
+			border-top: none;
+		}
+	}
+
+	.panel-header {
+		+ .panel-collapse > .panel-content,
+		+ .panel-collapse > .list-group {
+			border-top: none;
+		}
+	}
+}
+
+// Contextual variations
+.panel-default {
+  .panel-variant(@panel-default-bg, @panel-default-text, @panel-default-text-hover, @panel-default-border, @panel-default-heading-text);
+  .progress-bar-default {
+		background-color: #215F2E;
+	}
+
+	i.default {
+		color: #215F2E;
+	}
+}
+.panel-primary {
+	.panel-variant(@panel-primary-bg, @panel-primary-text, @panel-primary-text-hover, @panel-primary-border, @panel-primary-heading-text);
+	 .progress-bar-primary {
+		background-color: #215F2E;
+	}
+
+	i.primary {
+		color: #215F2E;
+	}
+}
+.panel-success {
+ .panel-variant(@panel-success-bg, @panel-success-text, @panel-success-text-hover, @panel-success-border, @panel-success-heading-text);
+ .progress-bar-success {
+		background-color: #215F2E;
+	}
+
+	i.success {
+		color: #215F2E;
+	}
+}
+.panel-info {
+  .panel-variant(@panel-info-bg, @panel-info-text, @panel-info-text-hover, @panel-info-border, @panel-info-heading-text);
+
+	.progress-bar-info {
+		background-color: #215F2E;
+	}
+
+	i.info {
+		color: #215F2E;
+	}
+}
+.panel-warning {
+  .panel-variant(@panel-warning-bg, @panel-warning-text, @panel-warning-text-hover, @panel-warning-border, @panel-warning-heading-text);
+
+	.progress-bar-warning {
+		background-color: #215F2E;
+	}
+
+	i.warning {
+		color: #215F2E;
+	}
+}
+.panel-danger {
+  .panel-variant(@panel-danger-bg, @panel-danger-text, @panel-danger-text-hover, @panel-danger-border, @panel-danger-heading-text);
+
+	.progress-bar-danger {
+		background-color: #215F2E;
+	}
+
+	i.danger {
+		color: #215F2E;
+	}
+}
+
+// New Portlets Control Style
+.portlets {
+	min-height: 50px;
+
+	/*.panel-header {
+		cursor: move;
+	}*/
+}
+
+// Panels Skin (new define style)
+.panel-skin(white-1);
+.panel-skin(red-1);
+.panel-skin(blue-1);
+.panel-skin(blue-2);
+.panel-skin(blue-3);
+.panel-skin(darkblue-1);
+.panel-skin(darkblue-2);
+.panel-skin(darkblue-3);
+.panel-skin(lightblue-1);
+.panel-skin(lightblue-2);
+.panel-skin(orange-1);
+.panel-skin(orange-2);
+.panel-skin(orange-3);
+.panel-skin(orange-4);
+.panel-skin(green-1);
+.panel-skin(green-2);
+.panel-skin(green-3);
+.panel-skin(pink-1);
+.panel-skin(pink-2);
+.panel-skin(yellow-1);
+.panel-skin(yellow-2);

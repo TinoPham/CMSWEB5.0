@@ -1,0 +1,44 @@
+﻿ <div class="tree-node tree-handle" ng-class="{'select': node.ID === rSelect.ID && node.Type === rSelect.Type}" ui-tree-handle>
+        
+     <div  class="tree-node-content">
+
+         <a class="btn btn-xs font-style-node" nodrag ng-click="toggle(this)">
+             <i 
+                 class="glyphicon tree-node-toggle cms-tree-node-toggle" 
+                 ng-class="{'glyphicon-triangle-right': collapsed && node.Type === 0, 'glyphicon-triangle-right cms-tree_expand': !collapsed && node.Type === 0, 'icon-null': node.Type === 1}">
+             </i>
+         </a>
+         <span>
+             <label ng-if="SiteOption.CheckEnable === true" class="i-checks">
+                 <input  type="checkbox" ng-click="checklist(node)" ng-class="{'check_ok': node.Checked == true, 'uncheck':node.Checked == false, 'checkintermin':node.Checked == null}">
+                 <i class="glyphicon" ng-class="{'check_ok': node.Checked == true, 'uncheck':node.Checked == false, 'checkintermin':node.Checked == null}"></i>
+             </label> 
+             <a class="btn btn-xs font-style-node" nodrag ng-click="selectfn(node)">
+                 <i 
+                     class="glyphicon tree-node-toggle cms-tree-node-toggle" 
+                     ng-class="{'glyphicon-folder-close': collapsed && node.ParentKey !== null && node.Type === 0, 'glyphicon-folder-open': !collapsed && node.ParentKey !== null && node.Type === 0, 'glyphicon-home': node.ParentKey === null && node.Type === 0, 'glyphicon-facetime-video':node.Type === 1}">
+                 </i>
+                 <span ng-bind-html="node.Name | cmshighlight:vm.query"></span>
+             </a>
+             <b class="badge pull-right" ng-if="node.Type === 0 && SiteOption.HasMenu">{{node.SiteCount}}</b>
+             <b class="control-group pull-right" ng-if="SiteOption.HasMenu">
+                 <a ng-if="node.Type === 0" class="btn btn-xs font-style-node" ng-click="editaddRegion(this, node, true)" tooltip="{{tooltipobj.get(1,node.Type)}}" nodrag>
+                     <i class="glyphicon tree-node-toggle cms-tree-node-toggle glyphicon-cloud-upload"></i>
+                 </a>
+                 <a ng-if="node.Type === 0" class="btn btn-xs font-style-node" ng-click="editaddSite(this,node, true)" tooltip="{{tooltipobj.get(2,node.Type)}}" nodrag>
+                     <i class="glyphicon tree-node-toggle cms-tree-node-toggle glyphicon-plus"></i>
+                 </a>
+                 <a class="btn btn-xs font-style-node" ng-click="node.Type === 0? editaddRegion(this,node, false) : editaddSite(this,node, false)" tooltip="{{tooltipobj.get(3,node.Type)}}" nodrag>
+                     <i class="glyphicon tree-node-toggle cms-tree-node-toggle glyphicon-edit"></i>
+                 </a>
+                 <a ng-if="node.Type === 1 || (node.Type ===0 && node.Sites.length === 0)" class="btn btn-xs font-style-node"ng-click="deleteNode(this, node)" tooltip="{{tooltipobj.get(4,node.Type)}}" nodrag>
+                     <i class="glyphicon tree-node-toggle cms-tree-node-toggle glyphicon-remove-circle"></i>
+                 </a>
+             </b>
+         </span>
+     </div>
+ </div>
+<ol ui-tree-nodes="" ng-model="node.Sites" ng-class="{hidden: collapsed}">
+    <li ng-repeat="node in node.Sites" ui-tree-node ng-include="'Widgets/siteadminnode.html'">
+    </li>
+</ol>

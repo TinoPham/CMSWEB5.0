@@ -1,0 +1,11 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Opportunity by Hour Report"},
+{"NameField":"rpt_SubTitle", "ValueField":"Traffic Weekly by Hour"},
+{"NameField":"footer", "ValueField":"Prepared under contract for the exclusive use of i3 International. Reproduction of this report is prohibited."},
+{"NameField":"header_Total", "ValueField":"Total"},
+{"NameField":"header_TimeOfDay", "ValueField":"Time Of Day"},
+{"NameField":"LineChartTitle", "ValueField":"Traffic by Time of Day"},
+{"NameField":"PieChartTitle", "ValueField":"Traffic % by Day of Week"},
+{"NameField":"rpt_NODATA", "ValueField":"Data is not available"},
+{"NameField":"rpt_TitleWeek", "ValueField":"Week "}
+]

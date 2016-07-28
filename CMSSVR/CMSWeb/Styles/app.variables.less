@@ -1,0 +1,365 @@
+//CMS Web Variables.less
+//=========================
+
+//COLORS - LIBS, START
+//--------------------------------------------------------
+
+@light-blue:		#3c8dbc;
+@red:				#dd4b39;
+@green:				#00a65a;
+@aqua:				#00c0ef;
+@yellow:			#f39c12;
+@blue:				#0073b7;
+@navy:				#001F3F;
+@teal:				#39CCCC;
+@olive:				#3D9970;
+@lime:				#01FF70;
+@orange:			#FF851B;
+@fuchsia:			#F012BE;
+@purple:			#605ca8;
+@maroon:			#D81B60;
+@black:				#111;
+@gray-base:			#000;
+@gray:				#d2d6de;
+@gray-lighter:		lighten(@gray-base, 93.5%); // #eee
+
+@transparent:		rgba(0,0,0,0);
+@white-1:			#ffffff;
+@red-1:				#EB5055;
+@blue-1:			#3C989E;
+@blue-2:			#3498DB;
+@blue-3:			#2980B9;
+@darkblue-1:		#252932;
+@darkblue-2:		#4A525F;
+@darkblue-3:		#38464A;
+@lightblue-1:		#ABB7B7;
+@lightblue-2:		#7A868F;
+@orange-1:			#E84C3D;
+@orange-2:			#DE745E;
+@orange-3:			#E27A3F;
+@orange-4:			#edce8c;
+@green-1:			#68C39F;
+@green-2:			#9EC789;
+@green-3:			#209C83;
+@pink-1:			#F57A82;
+@pink-2:			#F56F6C;
+@yellow-1:			#F4CDA5;
+@yellow-2:			#EAE696;
+
+@brand-primary:		darken(#428bca, 6.5%);
+@brand-success:		#5cb85c;
+@brand-info:		#5bc0de;
+@brand-warning:		#f0ad4e;
+@brand-danger:		#d9534f;
+//-----------------------------------------------------------------
+//COLORS - LIBS, END
+
+/* COMMON, START */
+@resized_left:					50px;
+@hovercolor:					#68C39F;
+@brand-light:					#edf1f2;
+@text-color:					#58666e;
+@border-color:					darken(@brand-light, 5%);
+@table-border-color:			lighten(@border-color, 4%);
+@table-striped-color:			lighten(@brand-light, 4.5%);
+@input-border:					darken(@brand-info, 5%);
+@hover-bg-color:				rgba(180, 220, 240, 0.40);
+@cms-background:				#f3f4f6;
+@tree-node-move:				red;
+@text-muted:					#777;
+@input-color:					@gray;
+@input-bg-disabled:				@gray-lighter;
+
+//-- Z-index master list
+@zindex-navbar:            1000;
+@zindex-dropdown:          1000;
+@zindex-popover:           1060;
+@zindex-tooltip:           1070;
+@zindex-navbar-fixed:      1030;
+@zindex-modal:             1040;
+
+//--Border radius list
+@border-radius-base:        4px;
+@border-radius-large:       6px;
+@border-radius-small:       3px;
+
+//-- Extra Screen list, start
+@screen-xs:                  480px;
+@screen-xs-min:              @screen-xs;
+@screen-phone:               @screen-xs-min;
+
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+@screen-tablet:              @screen-sm-min;
+
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+@screen-desktop:             @screen-md-min;
+
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+@screen-lg-desktop:          @screen-lg-min;
+
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+//-- Extra Screen list, end
+
+/* COMMON, END */
+
+
+//SKIN DEFAULT, START
+//----------------------------------------------------------
+@left-sidebar-width-default:						240px;
+@right_sidebar_width-default:						240px;
+@maincolor-default:									@white-1;
+@contentbg-default:									#E4EAE6;//#f3f3f3;
+@placeholder-default-color:							#ccc;
+@placeholder-default-hover:							#aaa;
+@placeholder-default-bg-focus:						#f2f2f2;
+@placeholder-default-border-focus:					#888;
+
+/** TOP BAR **/
+@topbar-default-bg:									#434a55;
+@topbar-default-bg-hover:							#59646E;
+@topbar-default-color:								#eee;
+@topbar-default-color-hover:						@topbar-default-color;
+@topbar-default-shadow:								rgba(0,0,0,0.2);
+@topbar-default-border-img:							rgba(0,0,0,0.15);
+@topbar-default-bg-hover-dropdown:					rgba(0, 0, 0, 0.3);
+@topbar-default-color-dropdown-message:				#4C5264;
+@topbar-default-bg-unread:							#FFFCE0;
+@topbar-default-color-msg-time:						#7A868F;
+
+/** LEFT BAR **/
+@leftbar-default-bg:								lighten(@maincolor-default,13%); //for Root
+@leftbar-default-bg-hover:							#88a9c2;
+@leftbar-default-color:								#4A525F;
+@leftbar-default-color-hover:						@placeholder-default-color;
+@leftbar-default-border:							rgba(0, 0, 0, 0.3);
+@leftbar-default-border-hover:						lighten(@blue, 4%);
+@leftbar-default-shadow:							rgba(0,0,0,0.2);
+@leftbar-default-border-subdrop:					rgba(0,0,0,0.3);
+
+@leftbar-default-bg-level1:							darken(@leftbar-default-bg,8%);
+@leftbar-default-bg-hover-level1:					darken(@leftbar-default-bg-level1,8%);
+@leftbar-default-bg-active-level1:					darken(@leftbar-default-bg-level1,30%);
+@leftbar-default-color-level1:						@leftbar-default-color;
+@leftbar-default-border-level1:						rgba(0, 0, 0, 0.1);
+
+@leftbar-default-bg-level2:							darken(@leftbar-default-bg-level1,13%);
+@leftbar-default-bg-hover-level2:					lighten(@leftbar-default-bg-level2,8%);
+
+@leftbar-default-bg-level3:							darken(@leftbar-default-bg-hover-level2,13%);
+@leftbar-default-bg-hover-level3:					lighten(@leftbar-default-bg-level3,8%);
+
+@leftbar-default-bg-search-form:					@leftbar-default-border-level1;
+@leftbar-default-color-search-btn:					rgba(95, 93, 93, 0.6);
+@leftbar-default-color-hover-search-btn:			darken(@leftbar-default-color-search-btn,20%);
+@leftbar-default-border-img:						rgba(226, 226, 226, 1);
+@leftbar-default-color-online:						#00AC65;
+@leftbar-default-color-divider:						rgba(234, 234, 234, 0.35);
+@leftbar-default-color-dropdown-item:				#424242;
+@leftbar-default-color-dropdown-icon:				#9B9B9B;
+@leftbar-default-color-textshadow:					rgba(0,0,0,0);
+
+@leftbar-default-bg-dropdown-level1:				darken(@leftbar-default-bg, 8%);
+@leftbar-default-bg-hover-dropdown-level1:			#ababab;
+@leftbar-default-border-dropdown-level1:			#CFCFCF;
+@leftbar-default-color-hover-dropdown-level1:		@white-1;
+@leftbar-default-bg-dropdown-level2:				darken(@leftbar-default-bg, 8%);
+@leftbar-default-bg-dropdown-level3:				darken(@leftbar-default-bg-dropdown-level2, 3%);
+@leftbar-default-bg-dropdown-level4:				darken(@leftbar-default-bg-dropdown-level3, 3%);
+
+/** FOOTER **/
+@footer-default-color:				#7A868F;
+@footer-default-bg:					@white-1;
+@footer-default-border:				#B9C1CB;
+
+
+//----------------------------------------------------------
+//SKIN DEFAULT, END
+
+
+//Dropdown List, Start
+//---------------------------------------------------------------------------------------
+@dropdown-color:			#5A5A5A;
+@drodown-hover-color:		@white-1;
+@dropdown-bg:				#ebebeb;
+@dropdown-border:			#CFCFCF;
+//---------------------------------------------------------------------------------------
+//Dropdown List, End
+
+
+// Buttons - override buttons bootstrap, Start
+//----------------------------------------------------------------------
+@btn-default-color:              @white-1;
+@btn-default-bg:                 @lightblue-1;
+@btn-default-border:             @lightblue-1;
+//@btn-default-status:			 #98A3A3;
+
+@btn-primary-color:              @white-1;
+@btn-primary-bg:                 @darkblue-2;
+@btn-primary-border:             @darkblue-2;
+//@btn-primary-status:			 #3E444F;
+
+@btn-success-color:              @white-1;
+@btn-success-bg:                 @green-1;
+@btn-success-border:             @green-1;
+//@btn-success-status:			 #5CAD8D;
+
+@btn-info-color:                 @white-1;
+@btn-info-bg:                    #65BBD6;
+@btn-info-border:                #65BBD6;
+//@btn-info-status:				 #5BA9C2;
+
+@btn-warning-color:              @white-1;
+@btn-warning-bg:                 #FFC052;
+@btn-warning-border:             #FFC052;
+//@btn-warning-status:			 #F5B84F;
+
+@btn-danger-color:               @white-1;
+@btn-danger-bg:                  #E15554;
+@btn-danger-border:              #E15554;
+//@btn-danger-status:			 #C74B4A;
+
+@btn-white-color:					#333;
+@btn-white-bg:						#fff;
+@btn-white-border:					#ccc;
+
+@btn-function-color:               #aaa;
+@btn-function-bg:                  #F3F3F3;
+@btn-function-border:              #f2f2f2;
+
+//----------------------------------------------------------------------
+// Buttons - override buttons bootstrap, End
+
+//Form states and alerts, Start
+//## Define colors for form feedback states and, by default, alerts.
+
+@state-success-text:				#3c763d;
+@state-success-bg:					#dff0d8;
+@state-success-border:				darken(spin(@state-success-bg, -10), 5%);
+
+@state-info-text:					#31708f;
+@state-info-bg:						#d9edf7;
+@state-info-border:					darken(spin(@state-info-bg, -10), 7%);
+
+@state-warning-text:				#8a6d3b;
+@state-warning-bg:					#fcf8e3;
+@state-warning-border:				darken(spin(@state-warning-bg, -10), 5%);
+
+@state-danger-text:					#a94442;
+@state-danger-bg:					#f2dede;
+@state-danger-border:				darken(spin(@state-danger-bg, -10), 5%);
+
+//------------------------------------------------------------------------------
+//Form states and alerts, End
+
+//Panels , start
+//-------------------------------------------------------------------------------
+
+// Border color for elements within panels
+@panel-default-bg:				#fff;
+@panel-default-text:			#5b5b5b;
+@panel-default-text-hover:		#909090;
+@panel-default-border:			rgba(0, 0, 0, 0.1);
+@panel-default-heading-text:	#5b5b5b;
+
+@panel-primary-bg:				@brand-primary;
+@panel-primary-text:			#fff;
+@panel-primary-text-hover:		@brand-primary;
+@panel-primary-border:			@brand-primary;
+@panel-primary-heading-text:	#fff;
+
+@panel-success-bg:				#65BD77;
+@panel-success-text:			#fff;
+@panel-success-text-hover:		#DEFFE5;
+@panel-success-border:			#3B934B;
+@panel-success-heading-text:	#2C7439;
+
+@panel-info-bg:					#4393D8;
+@panel-info-text:				#fff;
+@panel-info-text-hover:			#DEFFE5;
+@panel-info-border:				#15558B;
+@panel-info-heading-text:		#15558B;
+
+@panel-warning-bg:				#F7CB17;
+@panel-warning-text:			#fff;
+@panel-warning-text-hover:		#DEFFE5;
+@panel-warning-border:			#9D5D03;
+@panel-warning-heading-text:	#9D5D03;
+
+@panel-danger-bg:				#D9534F;
+@panel-danger-text:				#fff;
+@panel-danger-text-hover:		#fff;
+@panel-danger-border:			#791C1A;
+@panel-danger-heading-text:		#791C1A;
+
+
+//-------------------------------------------------------------------------------
+//Panels , end
+
+
+//Modals , start
+//-------------------------------------------------------------------------------
+@modal-inner-padding:						5px;
+@modal-title-padding:						5px;
+@modal-title-line-height:					1.4;
+@modal-content-bg:							#fff;
+@modal-content-border-color:				rgba(0,0,0,.2);
+@modal-content-fallback-border-color:		#999;
+@modal-backdrop-bg:							#000;
+@modal-backdrop-opacity:					.5;
+@modal-header-border-color:					#e5e5e5;
+@modal-footer-border-color:					@modal-header-border-color;
+@modal-lg:									900px;
+@modal-md:									745px; //840px;
+@modal-sm:									450px;
+@modal-dashboard-lg:						585px;
+@modal-dashboard-md:						385px;
+@modal-dashboard-sm:						285px;
+
+//-------------------------------------------------------------------------------
+//Modals , end
+
+//Tables, start
+//---------------------------------------------------------------------------
+@table-default-header-bg:					@topbar-default-bg;
+@table-defautl-header-border:				lighten(@topbar-default-bg, 15%);
+@table-default-border:						#E4E4E4;
+@table-default-row-odd-bg:					#eee;
+@table-default-row-hover-bg:				@hover-bg-color;
+@table-default-row-hover-border:			#CDD9DF;
+
+//Skin blue
+@table-blue-header-bg:					#89a9c2;
+@table-blue-header-border:				#dcdcdc;
+@table-blue-border:						#fff;
+@table-blue-row-odd-bg:					#eee;
+@table-blue-row-hover-bg:				@hover-bg-color;
+@table-blue-row-hover-border:			#CDD9DF;
+
+//---------------------------------------------------------------------------
+//Tables, end
+
+//Tooltips, start
+//---------------------------------------------------------------------------
+
+@tooltip-bg:					@topbar-default-bg;
+@tooltip-arrow-color:			@topbar-default-bg;
+
+//---------------------------------------------------------------------------
+//Tooltips, end
+
+//---------------------------------------------------------------------------
+// Start  :: BAM maincolor 
+@bam-red :  #eb605b;
+@bam-green :  #17b374;
+@bam-orange :  #efad4d;
+@bam-blue-lv1 :  #89a9c2;
+@bam-blue-lv2 :  #426d8f;
+@bam-blue-lv3 :  #434955;
+@bam-gray :  #abb7b7;
+// END  :: BAM maincolor 
+//---------------------------------------------------------------------------

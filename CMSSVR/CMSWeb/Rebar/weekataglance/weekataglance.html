@@ -1,0 +1,28 @@
+﻿<div class="rebar-weekataglance" ng-controller="rebarweekataglanceCtrl as vm">
+
+    <div  class="col-md-6" >
+        <div class="panel  smart-exception"
+         ng-class="{'panel-full-box' : vm.smartexceptionProperty.Max === true}" 
+         ng-include="'rebar/weekataglance/smartexception.html'">
+        </div>
+    </div> 
+    <!-- END :: A Panel  -->
+
+    <div  class="col-md-6">
+         <div class="panel employee-data"  
+         ng-class="{'panel-full-box' : vm.employeedataProperty.Max === true}" 
+         ng-include="'rebar/weekataglance/employeedata.html'">
+        </div>
+    </div>     
+     <!-- END :: A Panel  -->
+
+
+    <div  class="col-md-12 rebar-transact-viewer">
+        <div  class="panel employee-data-table"  ng-if="!vm.showDetail" ng-class="{'panel-full-box' : vm.employeedatatableProperty.Max === true}"    ng-include="'rebar/weekataglance/employeedatatable.html'" />
+        <div ng-if="vm.showDetail">
+           <div ng-include="'widgets/rebar/rebar-transact-viewer.html'" class="rebar-transact-viewer-table" ng-controller="rebarTransactViewerCtrl as rvm" ng-init="initCtrl(vm.paramShowTran, vm.closeDetail, definedFilter, optionsShow)" />
+        </div>
+    </div>
+     <!-- END :: A Panel  -->
+
+</div>

@@ -1,0 +1,2247 @@
+.bam-manage {
+
+ // ----------------------------------------------------
+ // <!-- START BAM NAVIGATION -->
+ // ----------------------------------------------------   
+
+ .bamPanel {
+		padding: 0px 0px 0px  25px !important;        
+        position:fixed;
+        top:50px;
+        left:0px;
+        width:100%;
+        z-index: 1;
+        box-shadow: 1px 1px 3px #ccc;
+        .horizontal{
+             height:1px;
+             display:-webkit-box;;
+             background: #eee;
+             width:100%;
+        }
+
+        // ----------------------------------------------------
+        // <!-- Start head of control  BAM -->
+       .bamPanel_big{
+            height:190px;
+        }
+
+        .bamPanel_small{
+            height: 55px;
+        }
+    
+        .topbar-profile{
+            padding: 0px !important;           
+            margin-top: 4px;
+            display: table;
+            position: relative;                
+           .func_transition_height(0.4s);  
+
+            &.topbar-profile_big{
+                height: 110px;
+                  .func_transition_height(0.4s);  
+            }
+
+            &.topbar-profile_small{
+                .func_transition_height(0.4s);  
+                    height: 45px;
+                    margin-top: 0px;
+                 & div {
+                    &.report_names {
+                        h5 {
+                            font-size: 10px;
+                            float: left;
+                            margin-top: 8px;
+                            margin-right: 7px;
+                        }
+                        a {
+                            span {
+                               font-size: 18px;
+                               float: left;
+                            }
+                        }
+                        .dropdown-menu_scrolldisplay {
+                            top: 1px !important;
+                            .func_transition_height(0.4s);  
+                        }
+                    } 
+                }
+            }
+            >div{
+               
+                height: auto;
+                padding:0px;                
+                display: table-cell;
+                vertical-align: middle;
+                &.report_names { 
+                     width: 30%;                    
+                    h5 {
+                        color: #88a9c2;
+                        font-weight: bold;
+                        margin-bottom: 0px;
+                    }
+                    a {
+                        cursor: pointer;
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                        span {
+                            color: #757575;
+                            font-size: 24px;
+                            font-weight: bold;
+                        }
+                        
+                    }                
+                    #mask-bam-menu {
+                        position: fixed;
+                        width: 100%;
+                        height: 100%;
+                        background: transparent;
+                        top: 0;
+                        left: 0;
+                        z-index: 10;
+                    }
+                    .dropdown-menu {
+                        width: 100%;
+                        margin-top: 44px;
+                        background: #F9F9F9;
+                        >div{
+                            display:inline-flex;
+                            &#sub_menu_bam {
+                                &:nth-child(odd) {
+                                    background: #fff;
+                                }
+                            }
+                        }
+                        .divdashboard {
+                            min-height: 400px;
+                            min-width: 250px;
+                            padding-top: 20px !important;
+                            white-space: nowrap;
+                            hr {
+                                border: 1px solid #88a9c2;
+                            }
+                            
+                            &:nth-child(even) {
+                                background: #F9F9F9;
+                            }
+                            .groupName {
+                                font-size: 16px;
+                                text-transform: capitalize;
+                                /*font-weight:bold;*/
+                                font-style:normal;
+                                color:black;
+                            }
+
+                            .linkName {
+                                font-size: 14px;
+                                color: black;
+                                text-transform: capitalize;
+                                &:hover {
+                                    color: #88a9c2 !important;
+                                }
+                            }
+                            ul {
+                                padding-left: 0px;
+                                .liName {  
+                                    overflow:hidden;
+                                    text-overflow:ellipsis;                              
+                                    list-style: none;
+                                    margin-bottom: 30px !important;
+                                } 
+
+                                >div {
+                                    max-width:300px;
+                                    .tooltip-inner {
+                                        max-width:300px;
+                                    }
+                                }
+                            }
+                           
+                        }                        
+                    }
+
+                    .dropdown-menu_scrolldisplay{
+                            top: 80% !important;
+                        }
+
+                        .dropdown-menu_initdisplay{
+                            top: 60% !important;
+                        }
+
+                }
+                 // <!-- END :: Report name -->
+
+                 &.infos {
+                     width: 80%; 
+                      .info_box{
+                            float: right;
+                            // width:300px;
+                            //margin-right: 10px;
+                        
+                            div{
+                                margin-top: 2px;  
+                                position: relative;                             
+                                span{
+                                    background: #86aac4;
+                                    border: 0;
+                                    border-radius: 0px;
+                                    width: 10px;
+                                    height: 23px;
+                                    font-size: 11px !important;
+                                    padding: 6px;
+                                    color: #fff;
+                                    display: block;
+                                    width: 50px;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+
+                                label{
+                                    background: #f1f1f1;
+                                    border: 0;
+                                    border-radius: 0px;
+                                    width: 270px;
+                                    height: 23px;
+                                    font-size: 11px !important;
+                                    line-height: 1;
+                                    margin-left: 50px;
+                                }
+                            }
+                        }
+
+                      
+                 } /* END :: &.infos */
+
+              
+
+                .pull-right{
+                 & > div{
+                    &:not(.btn-group) {
+                            min-width: 180px;
+                            width: 180px;
+                            margin-right:5px;
+                        }                       
+
+                    }
+
+                .dateReportHead{
+                        display: inline-table;
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+
+                        .dropdown-menu{
+                            left:auto !important;
+                            //right:0;
+                            &.ng-valid-date  {
+                                min-width: 252px;
+                            }
+                        }
+
+                        /** Hide done and clear button Carlendar**/
+                        ul.dropdown-menu.ng-valid-date {
+                            li:nth-child(2) {
+                                padding: 0 !important;
+                                margin-top: -11px;
+                                &:last-child {
+                                    span {
+                                        width: 100%;
+                                        margin-top: 10px;
+                                        button {
+                                            width: 100%;
+
+                                            &.btn-danger {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+
+                                    & > button {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                          
+                     /** END :: Hide done and clear button Carlendar **/
+                    } /* EMD ::  .dateReportHead */
+                    
+                    .more-info-button {                       
+                       .dropdown-content {
+                            width: 330px;
+                           height: 320px;
+                           border: 1px solid #ccc;
+                           border-bottom: 2px solid #434955;
+
+                           .left-box {
+                                width: 100%;
+                                float: left;
+                                text-align: center;
+                                margin-right: 0px; 
+                                padding-top: 17px;                              
+                                .number-box {
+                                    width: 135px;
+                                    height: 135px;
+                                    display: inline-block;                                  
+                                    margin-bottom: 10px;
+                                    text-align: center;
+                                    vertical-align: bottom;
+                                    color: #fff;
+                                    h2 {
+                                        margin-top: 50px;
+                                        color: #fff;
+                                        line-height: 15px;
+                                    }
+                                    p {
+                                        line-height: 13px;
+                                        font-size: 13px;
+                                    }
+                                    &:nth-child(odd) {
+                                        margin-right: 5px;
+                                    }
+                                    &:nth-child(even) {
+                                        margin-left: 5px;
+                                    }
+                                    &:nth-child(1) {
+                                        background: #89a9c2;
+                                    }
+                                    &:nth-child(2) {
+                                        background: #426d8f;
+                                    }
+                                    &:nth-child(3) {
+                                        background: #434955;
+                                    }
+                                    &:nth-child(4) {
+                                        background: #eb5055;
+                                    }
+                                }
+                            }
+                           .right-box {
+                                float: right;
+                                width: 40%;
+                                background: #eeeeee;
+                                height: 100%;
+                                border-left: 1px solid #ccc;
+                                margin-right: 0px;
+                                text-align: center;
+                                button {                                
+                                    width: 90%;
+                                    margin-bottom: 5px;
+                                    &:first-child {                                    
+                                        // margin-top: 50%;
+                                        margin-bottom: 5px;
+                                    }
+                                }
+                                .temp-box {
+                                    height: 110px;
+                                    &.big {
+                                        height: 200px;
+                                        width: 90%;
+                                        margin: auto;
+                                        padding-top: 30px;
+                                        a {
+                                            width: 100%;
+                                            margin-bottom: 5px;
+                                        }
+                                    }
+                                }
+                           }
+                       }
+                    } /*  END ::    .more-info-button */
+                    
+                    .bam-btn-export-header{                        
+                        span {
+                            padding-left: 0px;
+                        }
+                    }/* END :: bam-btn-export-header */
+
+                    
+                } /* END ::  .pull-right{ */
+
+                .dateReportHead-From{
+                    .dropdown-menu{
+                            right:auto!important;
+                    }
+                }
+            }
+        }
+     // <!-- END :: head of control  BAM -->
+     // ----------------------------------------------------  
+     
+
+     // ----------------------------------------------------  
+     // <!-- Start :: bottom of control  BAM -->        
+        .topbar-compare{
+            height: 80px;
+            padding: 0px !important;
+            //padding-right: 20px !important;
+            //margin-left:240px;
+
+            >div{
+                margin-top: 20px;
+            }
+
+            .pull-left{
+                >div{
+                    min-width: 180px;
+                    width: 180px;
+                    margin-right:5px;
+                    
+                }
+
+                select{
+                    display: inline-block;
+                    width: 265px;
+                    padding: 2px 5px;
+                }
+
+                .dateReport{
+                    display: inline-table;
+                    /** Hide done and clear button Carlendar**/
+                    ul.dropdown-menu.ng-valid-date {
+                        li:nth-child(2) {
+                            padding: 0 !important;
+                            margin-top: -11px;
+                            &:last-child {
+                                span {
+                                    width: 100%;
+                                    margin-top: 10px;
+
+                                    button {
+                                        width: 100%;
+
+                                        &.btn-danger {
+                                            display: none;
+                                        }
+                                    }
+                                }
+
+                                & > button {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                          
+                     /** END :: Hide done and clear button Carlendar **/
+                    }
+
+            }
+
+            .pull-right{
+                
+                >span{
+                    margin-left: 20px;
+                    display: inline-block;
+                }
+                .icon-cw-2:before{
+                    content: "\e84d";
+                }
+
+                .dropdown-menu{
+                    top: 25px;
+                }
+
+                select{
+                    display: inline-block;
+                    width: 80px;
+                    padding: 2px 5px;
+                }
+            }
+            
+        }
+        // <!-- END :: bottom of control  BAM -->
+        // ----------------------------------------------------  
+	}   
+    
+ // ----------------------------------------------------
+ // <!-- END BAM NAVIGATION -->
+ // ----------------------------------------------------
+
+
+
+    
+ // ----------------------------------------------------
+ // <!-- START :: BAM  REPORT 's HEADER -->
+ // ----------------------------------------------------
+ .bam_report_header {
+    width:100%;
+    height: 75px;
+    background: #fff;
+    padding:0;
+    .header_main{
+        width:100%;
+        height:100%;
+        .header_icon{
+            background: #434955;
+            width: 75px;
+            height: 100%;
+            float: left;
+            text-align:center;
+            i{
+                color: #fff;
+                font-size: 25px;
+                font-weight: normal;
+                font-style: normal;
+                line-height: 75px;
+            }
+
+            .icon-gauge:before{
+                content: "\eae4";
+            }
+        }
+
+        .header_info{
+            float: left;
+            width: auto;
+            height: 100%;
+            color: #676767;
+            font-size: 14px;
+            font-weight:normal;
+            font-style:normal !important;
+            display: table;
+            ul{
+                list-style:none;
+                padding:0;
+                padding-left: 40px;
+                display: table-cell;
+                vertical-align: middle;
+                li{
+                    padding: 3px;
+                    text-align: left;
+                    color: #666;
+                    font-size: 14px;
+                    &.report-name {
+                        i {                            
+                            font-size: 20px!important;
+                            font-weight: bold!important;
+                            color: #666!important;
+                        }
+                    }
+                    &:not(.report-name) {
+                        i {
+                            font-size: 14px;
+                        }
+                     }
+                    a {
+                        cursor: pointer;
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                    i{
+                        
+                        line-height: 1;
+                        margin: 0 auto;
+                        font-size: 12px;
+                        font-weight:normal;
+                        font-style:normal !important;
+                        width:120px;
+                        height: auto;
+                        text-align:left;
+                        &.icon-location:before{
+                        content:"\e9a3";
+                        }
+                        &.icon-region:before{
+                            content:"\ec1b";
+                        }
+                        &.icon-week:before{
+                            content:"\ea74";
+                        }
+
+                        &.icon-doc-circled:before{
+                            content:"\ea63";
+                        }
+
+                        &.icon-doc-circled{
+                            font-weight:bold;
+                            color: #000;
+                            font-size:14px;
+                        }
+                    }
+
+                    
+                } //<!-- END  :: <li>  -->
+               
+            }//<!-- END  :: <ul>  -->
+        }// <!-- END  :: .header_info  -->
+
+         .header_butons {
+            float: right;
+            width:auto;
+            height: 100%;
+            display: table;
+            .wrap-flex { 
+                  padding-right: 30px;
+                  display: table-cell;
+                  vertical-align: middle;
+                 .btn-list {
+                     i{
+                        font-size:12px;
+                        color:#fff;
+
+                    }
+                     .icon-print:before{
+                        content:"\e99c";
+                    }
+
+                    .icon-normallize:before{
+                        content:"\ec82";
+                    }
+                    >span{
+                        margin:1px;
+                        .dropdown-menu{
+                            top: 25px;
+                        }
+                    }
+                 }              
+                 .switch-ios-button{
+                   margin-top: 15px;
+                   text-align: right;
+                   label {
+                    cursor: pointer;
+                        span {
+                            font-size: 12px;
+                            color: #666;
+                       }
+                       &:last-child {
+                        margin-left: 15px;
+                       }
+                   }
+                   
+                 }
+            }
+        }  // <!-- END  :: .header_butons  -->
+
+    }// <!-- END  :: .header_main  -->
+
+ }
+ 
+
+
+ // ----------------------------------------------------
+ // <!-- END  :: BAM  REPORT 's HEADER -->
+ // ----------------------------------------------------
+
+ 
+	.icon-bam{
+		font-size: 15px;
+		padding: 5px;
+		margin-left: 7px;
+		background-color: #89A9C2;
+		color: white;
+		margin-right: 15px;
+		border-radius: 3px;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        text-align: center;		
+	}
+	.icon-head{
+		background-color: transparent !important;
+		color:#87A9C2;
+		margin-right: 7px;
+		font-size: 22px;
+		padding: 0px;
+		margin-left: 0px;
+		}
+
+    .panelContent{
+        margin-top: 30px;
+        z-index:0;
+    }
+
+    .tree-right{
+        z-index:2;
+    }
+
+
+
+    // ==========================================
+    //            Week At A Glance            ===
+    // ==========================================
+    .bam-week-at-theglance {
+
+        .panel.bam-bam-week-at-theglance-body {
+
+            background: transparent;
+            div:not(#conversion-pie-chart) { //col-md
+                padding-right: 4px;
+                padding-left: 4px;
+                & > div:not(#conversion-pie-chart) {
+                      background: #fff;
+                      margin-top: 7px;
+                      &.conversion-chart {
+                         height: 270px;
+                         padding: 15px;
+                         display: flex;
+                         align-items: center;
+                         z-index: 0;
+                         position: relative;
+                         & > h3 {
+                            position: absolute;
+                            top: 0;
+                            left: 15px;
+                            font-size: 16px;   
+                            z-index:1;                         
+                            text-overflow:ellipsis;
+                            overflow: hidden;
+                            white-space:nowrap;
+                            width: 450px;
+                            strong {
+                                font-weight: bold;
+                            }
+                         }
+                         & > div:not(#conversion-pie-chart) {
+                            &:first-child {
+                                text-align: center;
+                            }
+                            #conversion-pie-chart {                           
+                                span {
+                                    margin-top: 0px;
+                                    background: #666666;
+                                    z-index: 0 !important;
+                                    border-radius: 50%;
+                                    height: 126px !important;
+                                    line-height: 120px !important;
+                                    padding-top: 3px;
+                                }
+                              }
+
+                            .conversion-info-chart {
+                                 margin-top: 0px;
+                                 float: right;
+                                 & > div {
+                                    float: right;
+                                    width: 100%;
+                                    &.head {
+                                        border-bottom:  1px solid #e6e6e6;
+                                        padding-bottom: 15px;
+                                        margin-top: 0px;
+                                         div {
+                                            &:nth-child(1) {
+                                                float: left;
+                                            } 
+                                            &:nth-child(2) {
+                                              float: right;  
+                                              text-align: right;
+                                            } 
+                                            &.compare-box {
+                                                 i {
+
+                                                    &.icon-up-circled-2 {
+                                                        color: #0baf6c;
+                                                    }
+
+                                                    &.icon-down-circled-2 {
+                                                        color: #eb605a;
+                                                    }
+                                                 }
+                                            }
+
+                                        } 
+                                        .small-conversion-chart {
+                                            ul {
+                                                padding-left: 0;
+                                                margin-left: 0;
+                                                li {
+                                                    float: left;
+                                                    height: 60px;
+                                                    width: 15px;
+                                                    /*background: #ccc;*/
+                                                    margin-right: 10px;
+                                                    list-style: none;
+                                                    position: relative;
+                                                    span {
+                                                        position: absolute;
+                                                        bottom: 0;
+                                                        left: 0;
+                                                        background: #fecb32;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.foot {    
+                                        div {
+                                            &:nth-child(1) {
+                                                float: left;
+                                            } 
+                                            &:nth-child(2) {
+                                              float: right;  
+                                              text-align: right;
+                                            } 
+                                        }                                   
+                                    }
+                                   
+                                 }
+
+                            }
+                         }
+                          
+                      } // END :: conversion-chart 
+
+
+                     
+                }
+              
+            }
+            
+        .compare-box,
+        .value-box {
+            h4 {
+                text-transform: uppercase;
+                line-height: 0px;
+                font-size: 14px;
+            }
+             h3 {
+                font-family: 'Open Sans Bold';
+                font-weight: bold;
+                line-height : 25px;
+                font-size: 30px;
+             }   
+        }
+
+        } // END  :: .bam-bam-week-at-theglance-body 
+
+    }
+    // ========================================================
+    //            END ::  Week At A Glance                  ===
+    // ========================================================
+
+
+    // =======================================================
+    //                       DasBoard                      ===
+    // =======================================================
+    .bam-dashboard {
+
+        .bam-dashboard-body {
+            background: none;
+            display: flex;
+
+            width: 100%;
+            & > div {
+                &.col-sm-12 {
+                    background: #fff;
+                    margin-top: -11px;
+                }
+            }
+        }
+
+        .mobile {
+            overflow: scroll !important;
+        }
+
+        .top-summary {
+            
+            .infos-box {
+                & > div {  
+                    // background: red !important;
+                    &:nth-child(1) {
+                         .panel {
+                             background: #89a9c2;
+                        }
+                    }
+                    &:nth-child(2) {
+                        .panel {
+                             background: #426d8f;
+                        }
+                       
+                    }
+                    &:nth-child(3) {
+                        .panel {
+                             background: #eb5055;
+                        }
+                      
+                    }
+                    &:nth-child(4) {
+                        .panel {
+                             background: #434955;
+                        }
+                        
+                    }
+                    
+                }
+            }
+        }
+
+
+    }
+
+    .dashboard_sumary{
+        height: 500px
+    }
+
+    .dashboard_sumaryDetail{
+        .bam-dashboard-tabledetail{
+
+        }
+    }
+	.dashboard_chart {
+		display: inline-block;
+		width: 100%;
+	}
+
+    // =======================================================
+    //             END ::   DasBoard                     
+    // =======================================================
+	.General:before {
+		content: '\e91d';
+	}
+
+	.Traffic:before {
+		content: '\e853';
+	}
+
+	.Custom:before {
+		content: '\e813';
+	}
+
+	 .panelConversion {
+        //float: left;
+        padding-left: 0px;
+        padding-right: 5px;
+    }
+
+    .panelDPO {
+        //float: right;
+        padding-right: 0;
+        padding-left: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .panelDPO {
+             padding-left: 0px;
+        }
+
+        .panelConversion {
+            padding-right: 0px;
+        }
+    }
+
+	.panelBorder {
+		padding: 15px 15px;
+	}
+
+	.panelGraph {
+		padding: 15px 15px;
+	}
+}
+
+  // =======================================================
+    //                       DasBoard                      ===
+    // =======================================================
+
+
+// ====================================================================
+
+ // <!--     START   ::  Box Treestie on Chart
+
+// ====================================================================
+.header-Content,
+.drivethrough-reports-chart,
+.sale-reports-chart,
+.chart-content {
+    .tree-site-content {
+        & > div {
+            ul {
+                border-radius: 0px;
+                border-top: 5px solid #88a9c2;
+                li {
+                    .row {
+                        .panel {
+                            margin-bottom: 0px;
+                            div {
+                                &.panel-header  {
+                                background: transparent;
+                                border-bottom: none;
+                                text-align: center;
+                                 & > div {
+                                    padding: 5px;
+                                    .input-group {
+                                        width: 100%;
+                                    }
+                                    
+                                 }
+                                }
+                                &.panel-footer {
+                                    text-align: center;
+                                    border-top: none;
+                                    padding-top: 10px;
+                                    padding-bottom: 10px;
+                                    .btn-group {
+                                        .btn {
+                                            background: #88a9c2;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ====================================================================
+
+ // <!--     END    ::  Box Treestie on Chart
+
+// ====================================================================
+
+
+
+
+// ====================================================================
+
+ // <!--     START ::  BAM MOBILE VERSION     -->
+
+// ====================================================================
+@media (max-width: @screen-xs-max) { 
+    .bam-manage {
+        // -----------------------------------------
+        //           START :: BAm control panel
+        // -----------------------------------------
+        .bamPanel  {
+            .func_transition(0.4s);  
+            & > div {
+                &.topbar-profile   {
+                    display: block;
+                    text-align: center;
+                    .report_names {
+                        margin-top: 5px !important;
+                        margin-bottom: 5px !important; 
+                        width: 100% !important;
+                        display: block;
+                        .report_name {
+                            margin-top: 0px;
+                            display: inline-block;
+                            font-size: 12px;                            
+                            float: none  !important;
+                        }
+                        .show_report_name {
+                            span {
+                                float: none  !important;
+                            }
+                        }
+                        &  >  a {
+                            & > span {
+                                font-size: 16px;
+                            }
+                        }
+                        a.dropdown-toggle {
+                             display: inline-block;
+                        }
+                        #bam-dropdown-menu{
+                            .func_bam_dropdown_menu_smaller();                            
+                            #sub_menu_bam {
+                                height: auto;
+                                max-height: 450px;
+                                overflow:auto;
+                                overflow-x: hidden;
+                                 & > div {
+                                    &:last-child {
+                                        &.divdashboard  {
+                                              ul {
+                                                &.in {
+                                                    border-top: 1px solid #88a9c2;
+                                                    padding-top: 11px;
+                                                    margin-top: 22px;
+                                                }
+                                              }
+                                        }
+                                    }
+                                 }
+                            }
+                        }
+                    }
+                    .infos {
+                        width: 100%;
+                        margin-bottom: 10px;
+                        display: block;
+                        .info_box {
+                            float: inherit;
+                            width: 80%;
+                            margin: auto;
+                            div {                                
+                             margin: auto;                             
+                             margin-bottom: 2px;
+                             width: 100%;
+                                
+
+                                &.input-group {
+                                    label {
+                                        text-align: left;
+                                        width: 100%;
+                                        padding-left: 60px;
+                                        margin-left: 0px;
+                                        z-index: 1;
+                                    }
+                                    span {
+                                        z-index: 2;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+                    &.topbar-profile_big {
+                        height: inherit;
+                         .func_transition(0.4s);  
+                        div {
+                            &#bam-dropdown-menu {
+                                margin-top: -50px;
+                            }
+                        }
+                    }
+
+                    &.topbar-profile_small {
+                        height: inherit;
+                         .func_transition(0.4s);  
+                        div {
+                            &#bam-dropdown-menu {
+                                margin-top: 20px !important;
+                            }
+                        }
+                    }
+
+                } /* END :: topbar-profile */
+
+                &.topbar-compare  {
+                    height: inherit !important;
+                    & > div { /* pull-left and pull-right*/
+                       
+                        &:nth-child(1) {/* pull-left */
+                             & > div {
+                                &.dateReport  {
+                                    width: 100%;
+                                    margin-bottom: 0px !important;
+                                }
+
+                                select{
+                                    display: inline-block;
+                                    width: 100%;
+                                    padding: 2px 5px;
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) {/* pull-right*/
+                           width: 100%;
+                           margin-top: 0px;
+                            span {
+                                width: 100%;
+                                margin-left: 0px; 
+                                select {
+                                     width: 100%;
+                                }
+                                &.btn {
+                                    margin-top: 7px;
+                                    margin-bottom: 15px;
+                                }
+                            }
+                        }
+                    }
+
+                }/* END :: topbar-compare */
+            }
+            
+            &.bamPanel_small {
+                margin-left: 0px !important;
+                .topbar-profile_small {
+                    
+                    .report_names {
+                        padding-bottom:   10px; 
+                        .report_name {
+                            font-size: 12px !important;
+                        }
+                        &  >  a {
+                            & > span {
+                                font-size: 16px !important;
+                            }
+                        }   
+                    }
+                    // March 18, 2016 Tri: fix bug no display in iPad
+                    //.infos {
+                    //    display: none;
+                    //    
+                    //}
+                }
+
+                &.min {
+                    .topbar-compare {
+                        display: none;
+                    }
+                }
+            }
+        }
+        // -----------------------------------------
+        //           END  :: BAm control panel
+        // -----------------------------------------
+
+
+
+
+
+        // -------------------------------------------
+        //          START :: BAM  REPORT 's HEADER
+        // -------------------------------------------
+        .title-summary {
+            .bam_report_header {
+                height: auto !important;
+                display: -webkit-box;
+                .header_main  {
+                    .header_info {
+                        height: 138px;
+                    }
+                    .header_butons {
+                        width: 100%;
+                        margin-top: 5px;
+                        border-top: 1px solid #E8E8E8;
+                        padding-top: 5px;
+                        .wrap-flex {
+                            padding: 0px;
+                            text-align: center;
+                            .switch-ios-button {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // -------------------------------------------
+        //          END :: BAM  REPORT 's HEADER
+        // -------------------------------------------
+
+
+        
+        
+         // -----------------------------------------
+        //           START :: BAm week at a glance
+        // -----------------------------------------
+        .bam-week-at-theglance {
+         
+            div.panel {
+                &.bam-bam-week-at-theglance-body {
+                    & > div {
+                        padding-right: 0px  !important;
+                        padding-left: 0px  !important;
+                        &:nth-child(1) {      
+                            .conversion-chart {
+                                height: auto !important;
+                                display: block !important;
+                                align-items: inherit !important;
+                                &  > div {
+                                    &:nth-child(1) { /*pie chart*/
+                                        padding-top: 100px;
+                                        #conversion-pie-chart {
+                                            margin-top: -100px !important;
+                                            margin: auto;                                          
+                                        }
+                                    }
+
+                                     &:nth-child(2) { /*small col  chart*/
+                                        .conversion-info-chart {
+                                              .head {
+                                                 .small-conversion-chart {
+                                                    float: none !important;
+                                                    display: -webkit-box;
+                                                    ul {
+                                                        display: block;
+                                                        margin: auto !important;
+                                                    }
+                                                 }
+                                                 .compare-box {
+                                                    float: none !important;
+                                                    text-align: center !important;
+                                                 }
+                                            }
+                                        }
+                                    }
+                                }
+                            } /* END :: conversion-chart*/
+                        }
+                    }
+                } /* END :: &.bam-bam-week-at-theglance-body */
+            }
+            
+        }
+        // -----------------------------------------
+        //           END  :: BAm week at a glance
+        // -----------------------------------------
+
+
+       // -----------------------------------------
+        //           END  :: Box Treestie on Chart
+        // -----------------------------------------
+
+        .sale-reports-chart,
+        .chart-content {
+            .tree-site-content {
+                & > div {
+                    &.open.btn-group {
+                        display: -webkit-box;
+                    }
+                    ul {
+                        width: 100%;
+                        li {
+                            .row {
+                                .panel {
+                                   
+                                    div {
+                                        &.panel-header  {
+                                    
+                                        }
+                                        &.panel-footer {
+                                           
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // -----------------------------------------
+        //           END  :: Box Treestie on Chart
+        // -----------------------------------------
+
+
+    }
+
+
+
+
+
+ }
+// ====================================================================
+
+ // <!--     END   ::  BAM MOBILE VERSION     -->
+
+// ====================================================================
+
+
+
+
+
+
+// ====================================================================
+
+ // <!--     START   ::  BAM TABLET VERSION     -->
+
+// ====================================================================
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .bam-manage {
+
+        // -----------------------------------------
+        //           START :: BAm control panel
+        // -----------------------------------------
+        .bamPanel  {    
+            &.bamPanel_small {
+                margin-left: 0px !important;                    
+                .topbar-profile_small {
+                    
+                    .report_names {
+                        padding-bottom:   10px; 
+                        .report_name {
+                            font-size: 12px !important;
+                        }
+                        &  >  a {
+                            & > span {
+                                font-size: 16px !important;
+                            }
+                        }   
+                    }
+                  
+                    // March 18, 2016 Tri: fix bug no display in iPad
+                    .infos {
+                       
+                       & > div {
+                        & > span.btn {
+                            // margin-bottom: 2px;
+                        }
+                        & > .btn-group {
+                            // margin-bottom: 2px;
+                        }
+                       }
+                    }
+                }
+            }
+
+            #bam-dropdown-menu{     
+                 .func_bam_dropdown_menu_smaller();                         
+                #sub_menu_bam {
+                    .divdashboard {
+
+                       min-height: inherit !important;
+                       &:last-child {
+                        padding-bottom: 20px;
+                            div {
+                                // display: none;
+                            }
+                            ul.collapse {
+                                margin-top: 25px;
+                            }
+                       }
+                       &:not(:first-child) {
+                        padding-top: 15px !important;
+                       }
+                    }
+                }
+
+                .forSafari {
+                    #sub_menu_bam {
+                        display: table;
+                        .divdashboard {
+                            &:nth-child(2) {
+                                background: transparent;
+                            }                            
+                        }
+                    }
+                }
+              }
+        }
+
+
+        // --------------------------------------------------
+        //           END :: BAm control panel
+        // --------------------------------------------------
+
+
+
+        // -----------------------------------------
+        //           START :: Week at a glance
+        // -------------------------------------------
+       
+        .panelContent {
+            .bam-bam-week-at-theglance-body {
+                & > div {
+                     background: #fff;
+                    &:nth-child(1) {
+                        margin-bottom: 7px;
+                    }
+                    &:nth-child(2) {
+                       margin-bottom: 7px;
+                    }
+                }
+
+                .conversion-chart {
+                    & > div {
+                        #conversion-pie-chart {
+                            margin: auto;
+                        }
+                        &:nth-child(2) {
+                            .conversion-info-chart {
+                               width: 100%; 
+                           }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // -----------------------------------------
+        //           END :: Week at a glance
+        // -------------------------------------------
+
+
+     
+    }
+ }
+// ====================================================================
+
+ // <!--     END   ::  BAM TABLET VERSION     -->
+
+// ====================================================================
+
+
+
+// ====================================================================
+
+ // <!--     START   ::  BAM  FOR BOTH **MOBILE** AND  **TABLET**     -->
+
+// ====================================================================
+@media  (max-width: 1024px) { 
+
+.bam-manage {
+
+        // -----------------------------------------
+        //           START :: BAm control panel
+        // -----------------------------------------
+        .bamPanel  {     
+       
+            .topbar-profile  {
+                &.topbar-profile_small {
+                    .infos {
+                        div.pull-right {
+                            // March 18, 2016 Tri: fix bug no display in iPad
+                            //display: none;
+                             .dateReportHead-From,
+                                .dateReportHead {
+                                    vertical-align: middle;
+                                }
+                                label {
+                                    vertical-align: middle;
+                                }
+                                span {
+                                    vertical-align: middle;
+                                }
+                        }
+                    }
+                }
+            }
+
+            #bam-dropdown-menu{  
+
+                &.forSafari {
+                    display: table;
+                    #sub_menu_bam {
+                        display: table;
+                        .divdashboard {
+                            &:nth-child(2) {
+                                background: transparent;
+                            }                            
+                        }
+                    }
+                }
+              }
+        }
+
+        // --------------------------------------------------
+        //           END :: BAm control panel
+        // --------------------------------------------------
+
+
+     
+    }
+
+
+}
+
+@media (max-width: 667px)
+{
+
+    .bam-manage
+    {
+        // -----------------------------------------
+        //           START :: BAm control panel
+        // -----------------------------------------
+        .bamPanel
+        {
+            /*.topbar-profile  {
+                &.topbar-profile_small {
+                    .infos {
+                        div.pull-right {
+                            // March 18, 2016 Tri: fix bug no display in iPad
+                            //display: none;
+                            .dateReportHead-From {
+                                // display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #bam-dropdown-menu{  
+
+                &.forSafari {
+                    display: table;
+                    #sub_menu_bam {
+                        display: table;
+                        .divdashboard {
+                            &:nth-child(2) {
+                                background: transparent;
+                            }                            
+                        }
+                    }
+                }
+              }*/
+            .dateReport
+            {
+                >ul
+                {
+                    width: 100%;
+
+                    table
+                    {
+                        width: 100%;
+                    }
+                }
+            }
+            // --------------------------------------------------
+            //           END :: BAm control panel
+            // --------------------------------------------------
+        }
+    }
+}
+
+@media (max-width: 375px)
+{
+
+    .bam-manage
+    {
+        // -----------------------------------------
+        //           START :: BAm control panel
+        // -----------------------------------------
+        .bamPanel
+        {
+            .topbar-profile  {
+                &.topbar-profile_small {
+                    .infos {
+                        div.pull-right {
+                            display: none;
+                            .dateReportHead-From,
+                            .dateReportHead {
+                                vertical-align: middle;
+                            }
+                            label {
+                                vertical-align: middle;
+                            }
+                            span {
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
+
+            
+            // --------------------------------------------------
+            //           END :: BAm control panel
+            // --------------------------------------------------
+        }
+    }
+}
+// ====================================================================
+
+ // <!--     END   ::  BAM  FOR BOTH **MOBILE** AND  **TABLET**     -->
+
+// ====================================================================
+
+
+
+// ====================================================================
+
+ // <!--     START ::  BAM ONLY PC VERSION     -->
+
+// ====================================================================
+@media (min-width: @screen-lg-min) {
+    .bam-manage
+    {
+        .bamPanel_small
+        {
+            .topbar-profile
+            {
+                .infos
+                {
+                    & > div
+                    {
+                        &.pull-right
+                        {
+                            .dateReportHead
+                            {
+                                position: relative;
+                                vertical-align: middle;
+
+                                select
+                                {
+                                    padding: 3px 12px;
+                                }
+                            }
+
+                            span
+                            {
+                                &.show-type
+                                {
+                                    display: inline-table;
+                                    vertical-align: middle;
+
+                                    select
+                                    {
+                                        padding: 3px 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bamPanel_big
+        {
+            .topbar-compare
+            {
+                height: 50px;
+
+                & > div
+                {
+                    margin-top: 9px;
+
+                    &.pull-left
+                    {
+                        & > div
+                        {
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        #bam-dropdown-menu
+        {
+            #sub_menu_bam
+            {
+                & > div
+                {
+                    &.divdashboard
+                    {
+                        &:not(:last-child)
+                        {
+                            width: 250px;
+                        }
+
+                        &:last-child
+                        {
+                            &.adhoc-block-nav {
+                                min-width: 500px;
+                            }
+                            width: 500px;
+
+                            ul
+                            {
+                                li
+                                {
+                                    &:nth-of-type(odd)
+                                    {
+                                        float: left;
+                                        display: inline;
+                                        width: 50%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ====================================================================
+
+ // <!--     START ::   BAM ONLY PC VERSION     -->
+
+// ====================================================================
+
+
+
+// ====================================================================
+
+ // <!--     START ::   BAM ONLY FOR Mobile horizontal    -->
+
+// ====================================================================
+
+
+@media (max-height : 1024px) { 
+
+         #bam-dropdown-menu{                                  
+            #sub_menu_bam {
+                max-height: 720px !important;     
+                height: auto;                                
+                overflow:auto;
+                overflow-x: hidden;        
+              
+            }
+        }
+
+} /* Nexus 7 or smaller*/
+
+
+
+@media (max-height : 768px) { 
+
+         #bam-dropdown-menu{                                  
+            #sub_menu_bam {
+                max-height: 500px !important;     
+                height: auto;                                
+                overflow:auto;
+                overflow-x: hidden;        
+              
+            }
+        }
+
+} /* Nexus 7 or smaller*/
+
+
+
+@media (max-height : 600px) { 
+
+         #bam-dropdown-menu{                                  
+            #sub_menu_bam {
+                max-height: 400px !important;     
+                height: auto;                                
+                overflow:auto;
+                overflow-x: hidden;        
+              
+            }
+        }
+
+} /* Nexus 7 or smaller*/
+
+
+@media (max-height : 450px) { 
+
+         #bam-dropdown-menu{                                  
+            #sub_menu_bam {
+                max-height: 300px !important;             
+              
+            }
+        }
+
+} /* Iphone 6 plus or smaller */
+
+@media (max-height : 375px) { 
+
+         #bam-dropdown-menu{                                  
+            #sub_menu_bam {
+                max-height: 230px !important;             
+              
+            }
+        }
+
+} /* Iphone 6 plus or smaller */
+
+
+@media (max-height : 320px) { 
+
+         #bam-dropdown-menu{                                  
+            #sub_menu_bam {
+                max-height: 180px !important;             
+              
+            }
+        }
+
+} /* Iphone 6 plus or smaller */
+
+
+// ====================================================================
+
+ // <!--     END  ::    BAM ONLY FOR Mobile horizontal     -->
+
+// ====================================================================
+
+
+
+
+
+
+// ====================================================================
+
+ // <!--     START   ::    CSS FOR forCustomreport  -->
+
+// ====================================================================
+
+@media (min-width: 1024px) and (max-width: 1500px) {
+    /* START ::  FOR cUSTOM REPORT */
+    .bam-manage {
+
+        &.forCustomreport {
+            .bamPanel {
+                .topbar-profile {
+                    .report_names {
+                        width: 50%;
+                        max-width: 330px !important;
+                    }
+                    .infos {
+                        & > div {
+                            
+                            .dateReportHead.form-group {
+                                width: 100px;
+                                min-width: 100px;
+                                select {
+                                    width: 100px;
+                                    min-width: 100px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* END ::  FOR cUSTOM REPORT */
+}
+
+
+
+// ====================================================================
+
+ // <!--     END   ::    CSS FOR forCustomreport   -->
+
+// ====================================================================
+
+
+
+// ====================================================================
+ // <!--     START   ::   Fix header BAM on table and small PC screen  
+// ====================================================================
+@media (max-width: 1280px) {
+
+    .bam-manage {
+        .bamPanel {
+            .topbar-profile {
+                .infos {
+                    .show-type {
+                        width: 75px;
+                        select {
+                            padding-left: 0px !important;
+                            padding-right: 0px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media (min-width: @screen-sm-min) and (max-width: 1200px) {
+
+    #sidebar {
+        padding-right: 0px !important;
+    }
+
+     .panelContent {
+        margin-top: 70px !important;
+        & > div {
+            width: 100% !important;
+        }
+     }  
+
+    .bamPanel  {     
+
+        &.bamPanel_small {
+            
+            .topbar-profile_small {
+                
+                .report_names {
+                    float: left;
+                    width: 100% !important;
+                    border-bottom: 1px solid #ccc;
+                    padding-top: 5px;
+                    margin-bottom: 10px;
+                    .report_name {
+                        font-size: 12px !important;
+                    }
+                    &  >  a {
+                        & > span {
+                            font-size: 16px !important;
+                        }
+                    }   
+                }
+                .infos {
+                    width: 100% !important;
+                    float: left;
+                    padding-bottom: 10px;
+                    .pull-right {
+                            float: left !important;
+                        span.show-type {
+                            display: inline-block;
+                            width: 80px;
+                            select {
+                                padding-top: 3px;
+                            }
+                        }
+                        .dateReportHead {
+                            min-width: 140px  !important;
+                            width: 140px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ====================================================================
+ // <!--     START   ::  Fix header BAM on table and small PC screen   
+// ====================================================================
+
+
+
+
+// ====================================================================
+
+ // <!--     START   ::  BAM TOOL TIP    -->
+
+// ====================================================================
+.bam_tooltip {
+    /*position: fixed;
+    top: 120;
+    left: 150;*/
+    border: none!important;
+    padding: 15px 30px !important;
+    background: #434955 !important;
+    /*box-shadow: 2px 2px 10px #000; */
+    border-radius: 3px;
+    z-index: 1000;
+    color: #fff;  
+    &:before {
+        content: "\eba3";
+        font-family: "fontello";
+        position: absolute;
+        top: 2px;/*35%;*/
+        left: -5px;/*-8px;*/
+        color: #434955 !important;
+        font-size: 20px;
+    }
+    ul {
+       padding-left: 0;
+       margin-bottom: 0px;
+        li {
+            list-style: none;
+            .green {
+                color: #0dae6b;
+            }
+			.yellow {
+                color: #f2c500;
+            }
+            .bold {
+                font-family: 'Open Sans Bold';
+            }
+        }
+    }
+}
+
+// ====================================================================
+
+ // <!--     END   ::   BAM TOOL TIP   -->
+
+// ====================================================================
+
+
+@media screen and (max-width: 320px) {
+    
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+	
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
+	
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+	
+    // March 18, 2016 Tri: fix bug no display in iPad
+    .topbar-profile  {
+                &.topbar-profile_small {
+                    .infos {
+                        div.pull-right {
+                            // March 18, 2016 Tri: fix bug no display in iPad
+                            display: none;
+                            .dateReportHead-From {
+                                // display: none;
+                            }
+                        }
+                    }
+                }
+            }
+}
+
+@media screen and (min-width: 768px) and (max-width: 864px) {
+	.bam-manage .bamPanel .topbar-profile{
+            margin-left: 50px;
+        }
+
+     .bam-manage .bamPanel .topbar-compare{
+            margin-left: 50px;
+        }
+
+}
+
+@media screen and (min-width: 865px) and (max-width: 900px) {
+	
+}
+
+@media screen and (min-width: 901px) and (max-width: 950px) {
+	
+}
+
+@media screen and (min-width: 951px) and (max-width: 1007px) {
+
+     .bam-manage .bamPanel .topbar-profile{
+            margin-left: 50px;
+        }
+
+     .bam-manage .bamPanel .topbar-compare{
+            margin-left: 50px;
+        }
+    
+    
+}
+
+@media screen and (min-width: 1008px) and (max-width: 1200px) {
+
+    .bam-manage {
+        .bamPanel {
+            .infos {
+                & > div {
+                    &:nth-child(2) {
+                        display: block !important;
+                        span {
+                            &.show-type {
+                                display: inline-block;
+                                select {
+                                 width: 80px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .topbar-profile{
+                 margin-left: 50px;
+            }
+            .topbar-compare{
+                margin-left: 50px;
+            }  
+             #bam-dropdown-menu{
+             .func_bam_dropdown_menu_smaller();
+             #sub_menu_bam {
+                .divdashboard  {
+                    &:nth-child(3) {
+                        div {
+                            display: inherit;
+                        }
+                    }
+                }
+             }
+            } 
+
+        } /* END :: bamPanel */
+
+
+        .panelContent  {
+            .bam-bam-week-at-theglance-body {
+               .conversion-chart {
+                     display: table !important;
+                    & > div {
+                        width: 100%;
+                        &:first-child {                          
+                            #conversion-pie-chart {
+                                  margin: auto;
+                            }
+                        }
+                    }
+               }
+
+               .avt-chart {
+                     & > div {
+                         & > div {
+                            height: 356px !important;
+                               & >  div {
+                                    &:first-child {
+                                         height: 255px !important;
+                                    }
+                               
+
+                            }
+                         }
+                     }
+               }
+            }
+        }
+
+    }
+	
+} /* This query for Ipad Landscape  resolution*/
+
+@media screen and (min-width: 1201px) {
+	.bam-manage .bamPanel .topbar-profile{
+            margin-left: 240px;
+        }
+
+     .bam-manage .bamPanel .topbar-compare{
+            margin-left: 240px;
+        }
+}
+
+
+// function css3
+.func_transition (@times: 1s)  {
+      -webkit-transition: all @times ease-in-out;
+      -moz-transition: all @times ease-in-out;
+      -o-transition: all @times ease-in-out;
+      transition: all @times ease-in-out;
+}
+
+.func_transition_height (@times: 1s)  {
+      -webkit-transition: height  @times ease-in-out;
+      -moz-transition: height  @times ease-in-out;
+      -o-transition: height  @times ease-in-out;
+      transition: height  @times ease-in-out;
+}
+
+.func_bam_dropdown_menu_smaller() {
+       &  > div {
+            display: block;
+            & > div {
+                &.divdashboard  {
+                    min-width: inherit;
+                    min-height: inherit  !important;
+                    padding-top: 10px;
+                    span {
+                        display: inline-block;
+                        &.groupName {
+                            width: 100%;
+                        }
+                    }
+                    ul {
+                        padding-top: 15px;
+                        li {
+                            &:last-child {
+                                padding-bottom: 0;
+                                margin-bottom: 0px !important;
+                            }
+                        }
+                    }
+                    & > div {
+                        margin: 20px  0px 0px 0px !important;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 20px;
+                         & > div {
+                           display: none;
+                        }
+                    }
+                }
+            }
+        }
+}
+// END :: function css3}
+.mobi_datebox {
+	width: 90% !important;
+}
+.table-empty{
+		background-color: #fff;
+		/*height: 50px;*/
+		padding: 25px 15px;
+		margin-top: 7px;
+		color: #666;
+		text-align: center;
+		vertical-align: middle;
+		font-weight: bold;
+		font-size: 18px;
+
+		i {
+			font-size: 60px
+		}
+	}

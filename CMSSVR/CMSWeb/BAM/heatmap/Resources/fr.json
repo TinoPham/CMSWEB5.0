@@ -1,0 +1,25 @@
+﻿{
+	"ADD_NEW_SCHEDULE_TASK":"Ajouter Une Nouvelle Tâche Planifiée",
+	"LOCATION_STRING":"Région",
+	"MANUALLY":"Manuellement",
+	"MANUALLY_UPLOAD":"MANUEL UPLOAD",
+	"MSGDVRVIRTUAL":"Pas d'image sur le DVR virtuel",
+	"MSGCLICK":"Cliquez ici ou faites glisser l'image ici pour télécharger",
+	"NO_DATA_STRING": "Il n’y a pas de données.",
+	"PERIOD_STRING": "Période ",
+	"SUMMARY_STRING": "Summary",
+	"WEEK_STRING": "Semaine ",
+	"SCHEDULE_SETTING":"Paramètres De Planification",
+	"SESSIONNAME":"Nom de la session",
+	
+	"SELECTDVR_MSG":"s'il vous plaît, sélectionnez DVR",
+	"SELECTCHANNEL_MSG":"S'il vous plaît, sélectionnez Canal",
+	"EMPTRYNAME_MSG":"Nom de la session pas vide",
+	"ERRENDTIME_MSG":"Heure de fin doit être supérieure à heure de départ",
+	"REGION_CHOSEN": "This region has been chosen _EN",
+	"REGION_MAXIMUM": "Cannot add more than maximum region number! _EN",
+	"HEATMAP_CONFIRM_HEADER":"Passer Outre",
+	"HEATMAP_CONFIRM_IMAGE_EXISTS_MSG":"Image existe déjà. Voulez-vous le remplacer?",
+	"SCHEDULE_DELETE_HEADER":"Confirmer Horaire Supprimer",
+	"SCHEDULE_DELETE_MSG":"Etes-vous sûr de vouloir supprimer cette annexe?"
+}

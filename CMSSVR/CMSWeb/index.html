@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html ng-cloak>
+<head>
+	<meta name="google" value="notranslate">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<title ng-if="!title">CMS Web 5.0</title>
+    <title ng-if="title">{{title |translate}}</title>
+
+	<!--Base CSS, start-->
+	<!--<link href="../Content/libs/jquery-ui/css/jquery-ui-1.11.4.custom.min.css" rel="stylesheet" />-->
+	<link href="../Content/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../Content/libs/font/css/font-optimize.css" rel="stylesheet" /> <!-- Optimize fonts -->
+	<!--Base CSS, end-->
+    
+	<!--Components CSS, START-->
+	<link href="../Content/libs/angular-ui/angular-ui-ng-grid/css/ng-grid.min.css" rel="stylesheet" />
+	<link href="../Content/libs/jquery-toastr/css/toastr.min.css" rel="stylesheet" />
+	<link href="../Content/libs/angular-color-picker/css/spectrum.min.css" rel="stylesheet" />
+	<link href="../Content/libs/angular-tree/css/angular-ui-tree.min.css" rel="stylesheet" />
+	<link href="../Content/libs/angular-select/css/angular-select.min.css" rel="stylesheet" />
+	<link href="../Content/libs/jquery-scrollbar/css/scrollbar.css" rel="stylesheet" />
+	<link href="../Content/libs/load-awesome/css/ball-scale-multiple.css" rel="stylesheet" />
+	<link href="../Content/libs/animations/css/animate.min.css" rel="stylesheet" />
+	<link href="../Content/libs/angular-reset-field/css/reset-field.min.css" rel="stylesheet" />
+	<link href="../Content/libs/angular-autocomplete/css/angucomplete-alt.min.css" rel="stylesheet" />
+	<link href="../Content/libs/magnific-popup/magnific-popup.css" rel="stylesheet"> <!-- CSS popup image -->
+	<link href="../Content/libs/angular-select-serial/css/angular-select-serial.css" rel="stylesheet" />
+	<link href="../Content/libs/angular-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+	<!--Components CSS, END-->
+
+	<!--CMS Web CSS , start-->
+	<!--For Release-->
+	<!--<link href="Styles/app.min.css" rel="stylesheet" />-->
+	<!--For Debug-->
+
+	<link href="Styles/app.less" rel="stylesheet/less" />
+	<script src="../Scripts/less.min.js"></script>
+	<!--CMS Web CSS , end-->
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="Content/libs/html5/html5shiv-printshiv.min.js"></script>
+		<script src="Content/libs/html5/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body class="fixed-left skin-default" cms-body>
+	<!-- Shell View -->
+	<div id="wrapper" data-ng-include="'../CMSWeb/Layout/main.html'"></div>
+
+	<div ngplus-overlay
+		 ngplus-overlay-delay-in="50"
+		 ngplus-overlay-delay-out="700"
+		 ngplus-overlay-animation="dissolve-animation">
+		<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+	</div>
+
+
+	<!--JQUERY JS-->
+	<script src="../Content/libs/jquery/jquery-2.1.1.min.js"></script>
+	<script src="../Scripts/React/react.min.js"></script>
+	<script src="../Content/libs/jquery-ui/js/jquery-ui-1.11.4.custom.min.js"></script>
+	<script src="../Content/libs/jquery-linq/linq.min.js"></script>
+	<script src="../Content/libs/jquery-cookie/jquery.cookie.min.js"></script>
+	<script src="../Content/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../Content/libs/jquery-detectmobile/detect.min.js"></script>
+	<script src="../Content/libs/jquery-cryptojs/aes.min.js"></script>
+	<script src="../Content/libs/jquery-toastr/js/toastr.min.js"></script>
+	<script src="../Content/libs/angular-datetimepicker/js/moment.min.js"></script>
+
+	<!--BOOTSTRAP JS-->
+	<script src="../Content/libs/bootstrap/js/bootstrap.min.js"></script>
+	<!--<script src="../Content/libs/bootstrap-hover-dropdown/js/bootstrap-hover-dropdown.min.js"></script>-->
+	<!--<script src="../Content/libs/bootstrap-treeview/js/bootstrap-treeview.min.js"></script>-->
+	<!--<script src="../Content/libs/bootstrap-tooltip/js/bootstrap-tooltip.min.js"></script>-->
+	<!--<script src="../Content/libs/bootstrap-popover/js/bootstrap-popover.min.js"></script>-->
+	<script src="../Content/libs/bootstrap-show-password/js/bootstrap-show-password.min.js"></script>
+	<script src="../Content/libs/angular-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+
+	<!--ANGULAR JS, START-->
+	<script src="../Content/libs/angular/js/angular.min.js"></script>
+	<script src="../Content/libs/angular/js/angular-resource.min.js"></script>
+	<script src="../Content/libs/angular/js/angular-animate.min.js"></script>
+	<script src="../Content/libs/angular/js/angular-cookies.min.js"></script>
+	<script src="../Content/libs/angular-local-storage/angular-local-storage.min.js"></script>
+	<script src="../Content/libs/angular-ui/angular-ui-until/ui-utils.min.js"></script>
+	<script src="../Content/libs/angular-ui/angular-ui-ng-grid/js/ng-grid.min.js"></script>
+	<script src="../Content/libs/angular-ui/angular-ui-router/angular-ui-router.min.js"></script>
+	<script src="../Content/libs/angular-translate/angular-translate.min.js"></script>
+	<script src="../Content/libs/angular-translate/angular-translate-loader-partial.min.js"></script>
+	<script src="../Content/libs/angular-translate/angular-translate-storage-local.min.js"></script>
+	<script src="../Content/libs/angular-translate/angular-translate-storage-cookie.min.js"></script>
+	<script src="../Content/libs/angular-ui/angular-ui-bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
+	<script src="../Content/libs/angular-bootstrap-checkbox/angular-bootstrap-checkbox.min.js"></script>
+	<script src="../Content/libs/angular-plus-overlay/ngplus-overlay.js"></script>
+	<script src="../Content/libs/angular-tree/js/angular-ui-tree.min.js"></script>
+	<script src="../Content/libs/angular-validator/js/angular-validator.min.js"></script>
+	<script src="../Content/libs/angular-color-picker/js/spectrum.min.js"></script>
+	<script src="../Content/libs/angular-color-picker/js/angular-spectrum-colorpicker.min.js"></script>
+	<script src="../Content/libs/angular-file-upload/angular-file-upload.min.js"></script>
+	<script type="text/javascript" src="../Content/libs/fusioncharts/fusioncharts.js"></script>
+	<script type="text/javascript" src="../Content/libs/fusioncharts/fusioncharts.maps.js"></script>
+	<script type="text/javascript" src="../Content/libs/fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+	<script type="text/javascript" src="../Content/libs/fusioncharts/angular-fusioncharts.min.js"></script>
+	<script src="../Content/libs/angular-select/js/angular-select-tpls.js"></script>
+	<script src="../Content/libs/jquery-scrollbar/js/jquery.scrollbar.js"></script>
+	<script src="../Content/libs/angular-timepicker-popup/js/timepickerpop.js"></script>
+	<script src="../Content/libs/angular-reset-field/js/resetField.min.js"></script>
+	<script src="../Content/libs/angular-autocomplete/js/angucomplete-alt.js"></script>
+	<script src="../Content/libs/angular-ui-sortable/js/sortable.js"></script>
+
+	<!--ANGULAR JS, END-->
+
+
+	<!--JS: APP BASE JS, START-->
+	<!--<script src="Scripts/Directives/datepicker.js"></script>-->
+	<script src="Scripts/Directives/fullcalendar.js"></script>
+	<script src="Scripts/Directives/ui-calendar.js"></script>
+	<script src="../Scripts/require.min.js" data-main="index"></script>
+
+
+	<!-- JS for popup slide gallery -->
+	<script src="../Content/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+
+
+
+</body>
+</html>

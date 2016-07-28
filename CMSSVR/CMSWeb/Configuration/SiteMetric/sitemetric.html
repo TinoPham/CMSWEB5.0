@@ -1,0 +1,21 @@
+<div class="panel site-metric-manages" ng-controller="sitemetricCtrl as vm" ng-cloak>
+	<func-header
+		listview='vm.listView'
+		query='vm.query'
+		add-fn='vm.addMetric()'
+		edit-fn='vm.editMetric(vm.selectedRows)'
+		del-fn='vm.deleteMetric(vm.selectedRows)'
+		refresh-fn='vm.ReloadData()'
+		import-fn='false'
+		show-view-mode="true"></func-header>
+
+	<!--<!--GRID VIEW-->
+	<div ng-if="vm.listView === false" class="panel-content">
+		<div class="gridview" ng-grid="vm.gridOptions"></div>
+	</div>
+	<!--LIST VIEW-->
+	<div ng-if="vm.listView === true" class="panel-content">
+		<div class="listview" ng-grid="vm.listOptions"></div>
+	</div>
+</div>
+

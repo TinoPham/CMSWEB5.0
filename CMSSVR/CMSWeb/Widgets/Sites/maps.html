@@ -1,0 +1,92 @@
+<div class='container'>
+  <div class="row  maps-tab-panel" id="maintab">
+    <div class="dvr-id-box col-md-12" >
+      <summary>
+        <i class="icon-store-3"></i>
+        <strong>  {{header()}} </strong>
+      </summary>
+      <div  id="trashbox"  class="Sitemaps_Recycle_bin"  ng-draggable ng-show="showtrashbox">
+          <i class=" icon-trash-3"></i>
+          Drag here to delete
+      </div>
+    </div>
+    <!-- END :: dvr-id-box -->
+    <div class="col-md-4 site-map-box-parent" ng-show="(viewS==1 && mapmodels.mapImage.length>0)">
+      <div class=" site-map-box uploadbox">
+        <div>
+             <i class="icon-upload-3 btn-file">
+              <input input-upload id="File1" type="file" multiple="true" accept="image/*" />
+            </i>           
+        </div>
+      </div>
+    </div>
+    <!-- END :: Site map box UPLOAD-->
+
+    <div class="col-md-4 site-map-box-parent" ng-repeat="image in mapmodels.mapImage" id="firstFrame" ng-show="(viewS==1 && mapmodels.mapImage.length>0)">
+      <div class=" site-map-box">
+        <div>
+             <div class="mask">
+              <i class="icon-search-3" ng-click="imgClick(this,$event)" ></i>
+              <i class="icon-cancel-1" ng-click="xClick(image,$event)" id="{{image.ImageID}}"></i>
+            </div>
+            <label>
+              <i class="icon-pencil-1"></i>
+              <input type="text" ng-value="image.Title" ng-model="image.Title" placeholder="Caption here..." maxlength="255" ng-keyup="KeyEnter($event)" ng-change="isChangInput($event)" ng-blur="KeyEnter($event)">
+            </label>
+            <img  ng-src="{{image.ImageURL}}" alt="Site map">
+        </div>
+       
+      </div>
+    </div>
+    <!-- END :: site-map-box --
+hơ>    <!-- =================================================== -->
+
+    <div class='col-md-12'  ng-show="(viewS==1 && mapmodels.mapImage.length==0) ||(viewS==1 && mapmodels.mapImage == undefined) ">
+      <div class='map-no-data'>           
+           <span >
+					<i class="icon-boxes6"></i>
+					<br />
+					<span>{{'NO_DATA_FOUND_MSG'|translate}}</span>
+					<span class="btn-file">
+						<input input-upload id="File1" type="file" multiple="true" accept="image/*" />
+						<strong>{{'UPLOAD_SITE_MAPS' | translate}}</strong>
+					</span>
+          </span>
+      </div>
+    </div>
+    <!-- END :: map-no-data -->
+
+    <div class="view-map-detail col-lg-12 col-md-12 col-sm-12" ng-show="(viewS==3)"  style="margin-top:15px;">
+      <div id="Div1" ng-resize on-resize ="onresize">
+        <img ng-src="{{imagemodels.ImageURL}}" class="img-thumbnail" imageonload  draggable="false"  id="c_maps" style="width:100%; height:100%;max-height:650px;" ng-model="imagemodels" droppable>
+        <span ng-repeat="cn in imagemodels.Channels" id="{{cn.ChannelID}}"
+        draggable="true" ddraggable on-up="onUp"       
+        class="draggableChannel" parentid="c_maps">             
+               <i class="{{iconChannelStatusClass(cn) }} icon-for-channel-status"></i>
+               <i class="icon-location"></i>                        
+             <!--  <p><span>{{cn.ChannelName}}</span></p>-->
+              <p>{{cn.ChannelName}}</p>
+        </span>
+      </div>
+    </div>
+    <!-- Detail a map  -->
+    <!-- =================================================== -->
+    <div class="col-lg-12" ng-show="progressbar>0 && progressbar<=100">
+      <progressbar  class="progress-striped active" type="info" value ="progressbar" max ="100">
+      {{caculatepercent(progressbar)+" %"}}</progressbar>
+    </div>
+    <!-- END :: progressbar -->
+    <div ng-show="viewS == 3"  class="col-lg-12 btn-list-map">
+      <div>
+        <div class="btn-group pull-right" role="group" aria-label="...">
+					<button type="button" class="btn btn-danger" ng-click="Cancel(viewS,'BACK_ACTION')">{{'BTN_CLOSE'|translate}}</button>
+				<!--	<button type="button" class="btn btn-warning" ng-click="clear()">{{clearlabel()|translate}}</button-->
+					<button type="button" class="btn btn-success" ng-click="submit()">{{'BTN_SAVE'|translate}}</button>
+        </div>
+      </div>
+    </div>
+    <!-- END :: col-md 12  - btn list map -->
+    <!-- =================================================== -->
+	</div>
+	<!-- END :: row -->
+  </div>     

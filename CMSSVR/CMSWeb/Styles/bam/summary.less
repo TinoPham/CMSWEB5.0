@@ -1,0 +1,112 @@
+﻿.bam-dashboard {
+    margin-left: 10px;
+    margin-right: 10px;
+
+    .bam-dashboard-summary {
+        margin-top: 20px;
+    }
+
+    .title-summary {
+        margin-bottom: 7px;
+    }
+
+    .bam-dashboard-body {
+        margin-bottom: 7px;
+    }
+
+    .table {
+        thead {
+            th {
+                text-align: center;
+                align-content: center;
+                vertical-align: middle;
+                background: #89a9c2;
+                color: #FFF;
+                border-right: 1px solid #FFF;
+                border-bottom: none;
+                font-size: 13px;
+                font-weight: 100;
+                // font-family: 'Open Sans Bold'  !important;
+            }
+
+            .first-col {
+                background: #426d8f;
+                color: #FFF;
+                font-size: 14px;
+                min-width: 200px;
+                // font-family: 'Open Sans Bold'  !important;
+                .sum-controls {
+                    /*max-width: 70px;
+                    float: right;*/
+                    padding: 0;
+                    margin: 0;
+                }
+                & > div {
+                    // font-family: 'Open Sans Bold'  !important;
+                }
+            }
+
+            .end-col {
+                background: #434955;
+                color: #FFF;
+            }
+        }
+
+        tbody {
+
+
+            > tr {
+                font-size: 13px;
+
+                > th {
+                    text-align: center;
+                    align-content: center;
+                    vertical-align: middle;
+                    border: none;
+                    color: #000;
+                    // font-family: 'Open Sans Bold'  !important;
+                }
+
+                td {
+                    position: relative;
+                    text-align: center;
+                    align-content: center;
+                    vertical-align: middle;
+                    border: 1px solid transparent;
+                    border-right: 1px solid #E2E0E1;
+                    border-left: 1px solid #E2E0E1;
+
+                    .bam-head-coner {
+                        position: absolute;
+                        border-style: solid;
+                        border-width: 0 0 15px 15px;
+                        border-color: transparent transparent transparent transparent;
+                        bottom: 0;
+                        right: 0;
+
+                        &.bam-value-above {
+                            border-bottom-color: #0DA96B;
+                        }
+
+                        &.bam-value-low {
+                            border-bottom-color: #E85D57;
+                        }
+
+                        &.bam-value-middle {
+                            border-bottom-color: #E4AC54;
+                        }
+                    }
+                }
+
+
+                &:nth-of-type(odd) {
+                    background-color: #FBFBFB;
+                }
+
+                &:nth-of-type(even) {
+                    background-color: #F5F5F5;
+                }
+            }
+        }
+    }
+}

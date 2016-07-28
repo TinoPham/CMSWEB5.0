@@ -1,0 +1,15 @@
+
+        <configuration_id>18</configuration_id>
+        <configuration_name>log_record</configuration_name>
+    <log_record>
+      <years size="1">
+        <year value="2012" size="2" id="0">
+          <month value="9" size="22" id="0">
+            <days>0000000111111011111111111111110</days>
+          </month>
+          <month value="10" size="6" id="1">
+            <days>1011111000000000000000000000000</days>
+          </month>
+        </year>
+      </years>
+    </log_record>

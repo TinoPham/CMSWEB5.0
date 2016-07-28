@@ -1,0 +1,15 @@
+﻿{
+"JOB_NAME":"Job Name"
+, "JOB_DESCRIPTION":"Description"
+, "JOB_COLOR":"Color"
+, "JOB_ADD_HEADER":"Add Job Title"
+, "JOB_EDIT_HEADER":"Edit Job Title"
+, "JOB_DELETE_HEADER":"Delete Job Title"
+
+, "JOB_NAME_EXIST_MSG":"Job Title name already exists."
+, "JOB_NAME_REQUIRED":"The Job Title name field cannot be empty."
+, "JOB_CONFIRM_BODY":"Please select a Job Title."
+, "JOB_IS_USED":"Unable to delete. This Job Title is currently in use: {0}."
+, "DELETE_JOB_CONFIRM_MSG":"Are you sure you want to delete this Job Title?"
+, "DELETE_JOB_CONFIRM_MSGS":"Are you sure you want to delete these Job Titles?"
+}

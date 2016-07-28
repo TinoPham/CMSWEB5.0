@@ -1,0 +1,10 @@
+﻿<div ng-controller="sensortoolCtrl" class="alert-sensors-content" ng-cloak>
+    <div class="box-sensor-snapshot col-xs-6">
+        <div ng-if="model.SnapShot.length > 0">
+            <img class="sensor-image-thumb" ng-src="{{sensorSnapshotUrl + '?filename=' + model.SnapShot[0] + '&kdvr='+ parentModel.Kdvr}}" alt="" /> 
+        </div>
+    </div>    
+    <span class="box-sensor-info">
+        {{$parent.model.ChannelName}}
+    </span>                      
+</div>

@@ -1,0 +1,18 @@
+﻿{
+"RECIPIENT_NAME":"Recipient Name"
+, "RECIPIENT_FIRST_NAME":"First Name"
+, "RECIPIENT_LAST_NAME":"Last Name"
+, "RECIPIENT_EMAIL":"Email"
+, "RECIPIENT_CREATE_BY":"Created By"
+, "RECIPIENT_CREATE_DATE":"Created Date"
+, "RECIPIENT_DELETE_TITLE":"Delete Recipient"
+
+, "RECIPIENT_EMAIL_EXIST":"This Email address already exists."
+, "RECIPIENT_EMAIL_INVALID":"Please input an email."
+, "RECIPIENT_EMAIL_REQUIRED":"Email field cannot be empty."
+, "RECIPIENT_FIRSTNAME_REQUIRED":"First Name cannot be empty."
+, "RECIPIENT_LASTNAME_REQUIRED":"Last Name cannot be empty."
+, "RECIPIENT_DELETE_CONFIRM_MSG":"Are you sure you want to delete this Recipient?"
+, "RECIPIENT_DELETE_CONFIRM_MSGS":"Are you sure you want to delete these Recipients?"
+, "RECIPIENT_CONFIRM_BODY":"Please select a Recipient."
+}

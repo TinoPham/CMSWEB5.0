@@ -1,0 +1,7 @@
+
+        <configuration_id>11</configuration_id>
+        <configuration_name>intelli_zone</configuration_name>
+        <intelli_zone>
+            <channels size="0" />
+        </intelli_zone>
+       

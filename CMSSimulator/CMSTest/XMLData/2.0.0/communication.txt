@@ -1,0 +1,18 @@
+
+        <time_change>0</time_change>
+        <configuration_id>16</configuration_id>
+        <configuration_name>communication</configuration_name>
+        <networking>
+            <network_type>1</network_type>
+            <band_width>7</band_width>
+            <control_port>17221</control_port>
+            <text_overlay_port>6111</text_overlay_port>
+            <live_search_port>17222</live_search_port>
+            <pac_db_port>7500</pac_db_port>
+            <backup_port1>48021</backup_port1>
+            <backup_port2>48022</backup_port2>
+            <backup_port3>48023</backup_port3>
+            <dvr_public_ip>{0}</dvr_public_ip>
+      <mobile_setting mobileMainPort="0" mobileVideoPort="0" mobileKeepEventLog="0" />
+        </networking>
+       

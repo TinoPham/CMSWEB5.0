@@ -1,0 +1,114 @@
+/* COMMON, START */
+/* COMMON, END */
+/** TOP BAR **/
+/** LEFT BAR **/
+/** FOOTER **/
+.fa-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/*
+ * Customize: Forms (bootstrap)
+ * -----------
+ */
+.form-control {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  height: 30px;
+}
+.form-control.input-search:focus::-webkit-input-placeholder {
+  color: transparent!important;
+}
+.form-control.input-search:focus::-moz-placeholder {
+  color: transparent!important;
+}
+.form-control.input-search:focus:-moz-placeholder {
+  color: transparent!important;
+}
+.input-group .btn {
+  height: 30px;
+}
+.input-group .file-caption {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: -125px;
+}
+.input-group .file-caption:hover {
+  cursor: pointer;
+}
+.required {
+  color: red;
+  font-size: 12px;
+}
+.form-horizontal .has-error,
+form .has-error {
+  text-align: left;
+  font-size: 12px;
+}
+.form-horizontal .has-error label.has-error,
+form .has-error label.has-error {
+  text-align: left;
+  font-size: 12px;
+}
+.form-group {
+  /*.clear-x {
+		position: absolute;
+		top: 50%;
+		right: 6px;
+		opacity: 0.6;
+		margin-top: -10px;
+	}*/
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type="number"]:focus::-webkit-input-placeholder,
+input[type="text"]:focus::-webkit-input-placeholder,
+input[type="search"]:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: transparent!important;
+}
+input[type="number"]:focus::-moz-placeholder,
+input[type="text"]:focus::-moz-placeholder,
+input[type="search"]:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+  color: transparent!important;
+}
+input[type="number"]:focus:-moz-placeholder,
+input[type="text"]:focus:-moz-placeholder,
+input[type="search"]:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder {
+  color: transparent!important;
+}
+.noresize {
+  resize: none;
+}
+.vresize {
+  resize: vertical;
+  max-height: 300px;
+}
+.hresize {
+  resize: horizontal;
+  max-width: 300px;
+}
+::-ms-reveal {
+  display: none;
+}
+::-ms-clear {
+  display: none;
+}

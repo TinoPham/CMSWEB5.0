@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+	<Object table="Transact" src="AccessTransPOS" des="Transact">
+		<Item src="TransactKey" des="TransactKey" ConvertBase=""/>
+		<Item src="T_0TransNB" des="T_0TransNB" ConvertBase=""/>
+		<Item src="T_6TotalAmount" des="T_6TotalAmount" ConvertBase=""/>
+		<Item src="T_1SubTotal" des="T_1SubTotal" ConvertBase=""/>
+		<Item src="T_8ChangeAmount" des="T_8ChangeAmount" ConvertBase=""/>
+		<Item src="TransDateTime" des="TransDate" ConvertBase=""/>
+		<Item src="DVRDateTime" des="DVRDate" ConvertBase=""/>
+		<Item src="T_9RecItemCount" des="T_9RecItemCount" ConvertBase=""/>
+		<Item src="T_CameraNB" des="T_CameraNB" ConvertBase=""/>
+		<Item src="T_OperatorID" des="T_OperatorID" ConvertBase=""/>
+		<Item src="T_StoreID" des="T_StoreID" ConvertBase=""/>
+		<Item src="T_TerminalID" des="T_TerminalID" ConvertBase=""/>
+		<Item src="T_RegisterID" des="T_RegisterID" ConvertBase=""/>
+		<Item src="T_ShiftID" des="T_ShiftID" ConvertBase=""/>
+		<Item src="T_CheckID" des="T_CheckID" ConvertBase=""/>
+		<Item src="T_CardID" des="T_CardID" ConvertBase=""/>
+		<Item src="T_00TransNBText" des="T_00TransNBText" ConvertBase=""/>
+		<Item src="T_MethOfPaymID" des="Payments" ConvertBase="ConvertItemPOSPayment"/>
+		<Item src="T_2Tax1Amount" des="Taxes" ConvertBase="ConvertItemPOSTax"/>
+		<Item src="T_3Tax2Amount" des="Taxes" ConvertBase="ConvertItemPOSTax"/>
+		<Item src="T_4Tax3Amount" des="Taxes" ConvertBase="ConvertItemPOSTax"/>
+		<Item src="T_5Tax4Amount" des="Taxes" ConvertBase="ConvertItemPOSTax"/>
+		<Item src="T_TransXNbInt" des="ExNumbers" ConvertBase="ConvertItemPOSTransNumber"/>
+		<Item src="T_TransXNbFloat" des="ExNumbers" ConvertBase="ConvertItemPOSTransNumber"/>
+		<Item src="T_TransXString1" des="ExStrings" ConvertBase="ConvertItemPOSTransNumber"/>
+		<Item src="T_TransXString2" des="ExStrings" ConvertBase="ConvertItemPOSTransNumber"/>
+	</Object>
+
+	<Object table="Retail" src="Retail" des="Retail">
+		<Item src="RetailKey" des="RetailKey" ConvertBase=""/>
+		<Item src="R_2ItemLineNb" des="R_2ItemLineNb" ConvertBase=""/>
+		<Item src="R_1Qty" des="R_1Qty" ConvertBase=""/>
+		<Item src="R_0Amount" des="R_0Amount" ConvertBase=""/>
+		<Item src="R_Description" des="R_Description" ConvertBase=""/>
+		<Item src="R_ItemCode" des="R_ItemCode" ConvertBase=""/>
+		<Item src="R_DVRDateTime" des="R_DVRDate" ConvertBase=""/>
+		<Item src="R_RetailXNbInt" des="ExNumbers" ConvertBase=""/>
+		<Item src="R_RetailXNbFloat" des="ExNumbers" ConvertBase=""/>
+		<Item src="R_RetailXString1" des="ExStrings" ConvertBase=""/>
+		<Item src="R_RetailXString2" des="ExStrings" ConvertBase=""/>
+	</Object>
+	<Object  table="SubRetail" src="SubRetail" des="SubRetail">
+		<Item src="SR_2SubItemLineNb" des="SR_2SubItemLineNb" ConvertBase=""/>
+		<Item src="SR_1Qty" des="SR_1Qty" ConvertBase=""/>
+		<Item src="SR_0Amount" des="SR_0Amount" ConvertBase=""/>
+		<Item src="SR_Description" des="SR_Description" ConvertBase=""/>
+	</Object>
+	<Object table="Sensor" src="AccessTransSensor" des="Sensor">
+		<Item src="OT_StartDate" des="OT_Start" />
+		<Item src="OT_Endate" des="OT_End" />
+		<Item src="GT_StartDate" des="GT_Start" />
+		<Item src="DT_EndDate" des="GT_End" />
+		<Item src="PU_StartDate" des="PU_Start" />
+		<Item src="PU_EndDate" des="PU_End" />
+		<Item src="S_ID" des="S_ID" />
+		<Item src="DVRDate" des="DVRDate" />
+		
+	</Object>
+
+	<ItemKey>
+		<Item Column="T_CameraNB" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB"/>
+		<Item Column="T_OperatorID" SqlTable="tbl_POS_OperatorList" ContextType="POSOperator"/>
+		<Item Column="T_StoreID" SqlTable="tbl_POS_StoreList" ContextType="POSStore"/>
+		<Item Column="T_TerminalID" SqlTable="tbl_POS_TerminalList" ContextType="POSTerminal"/>
+		<Item Column="T_RegisterID" SqlTable="tbl_POS_RegisterList" ContextType="POSRegister"/>
+		<Item Column="T_ShiftID" SqlTable="tbl_POS_ShiftList" ContextType="POSShift"/>
+		<Item Column="T_CheckID" SqlTable="tbl_POS_CheckIDList" ContextType="POSCheckID"/>
+		<Item Column="T_CardID" SqlTable="tbl_POS_CardIDList" ContextType="POSCardID"/>
+		<Item Column="R_Description" SqlTable="tbl_POS_DescriptionList" ContextType="POSDescription" />
+		<Item Column="R_ItemCode" SqlTable="tbl_POS_ItemCodeList" ContextType="POSItemCode" />
+		<Item Column="SR_Description" SqlTable="tbl_POS_DescriptionList" ContextType="POSDescription" />
+		<Item Column="T_MethOfPaymID" SqlTable="tbl_POS_PaymentList" ContextType="POSPayment" ConvertBase="ConvertItemPOSPayment"/>
+		<Item Column="T_2Tax1Amount" SqlTable="tbl_POS_TaxesList" ContextType="POSTaxes"  ConvertBase="ConvertItemPOSTax"/>
+		<Item Column="T_3Tax2Amount" SqlTable="tbl_POS_TaxesList" ContextType="POSTaxes"  ConvertBase="ConvertItemPOSTax"/>
+		<Item Column="T_4Tax3Amount" SqlTable="tbl_POS_TaxesList" ContextType="POSTaxes"  ConvertBase="ConvertItemPOSTax"/>
+		<Item Column="T_5Tax4Amount" SqlTable="tbl_POS_TaxesList" ContextType="POSTaxes"  ConvertBase="ConvertItemPOSTax"/>
+		<Item Column="T_TransXNbInt" SqlTable="tbl_POS_ExtraName" ContextType="POSExtraName" ConvertBase="ConvertItemPOSTransNumber"/>
+		<Item Column="T_TransXNbFloat" SqlTable="tbl_POS_ExtraName" ContextType="POSExtraName" ConvertBase="ConvertItemPOSTransNumber"/>
+		<Item Column="T_TransXString1" SqlTable="tbl_POS_ExtraName" ContextType="POSExtraName" ConvertBase="ConvertItemPOSTransXString"/>
+		<Item Column="T_TransXString2" SqlTable="tbl_POS_ExtraName" ContextType="POSExtraName" ConvertBase="ConvertItemPOSTransXString"/>
+		<Item Column="R_RetailXNbInt" SqlTable="tbl_POS_ExtraName" ContextType="POSExtraName" ConvertBase="ConvertItemPOSRetailNumber"/>
+		<Item Column="R_RetailXNbFloat" SqlTable="tbl_POS_ExtraName" ContextType="POSExtraName" ConvertBase="ConvertItemPOSRetailNumber"/>
+		<Item Column="R_RetailXString1" SqlTable="tbl_POS_ExtraName" ContextType="POSExtraName" ConvertBase="ConvertItemPOSRetailXString"/>
+		<Item Column="R_RetailXString2" SqlTable="tbl_POS_ExtraName" ContextType="POSExtraName" ConvertBase="ConvertItemPOSRetailXString"/>
+	</ItemKey>
+</Config>

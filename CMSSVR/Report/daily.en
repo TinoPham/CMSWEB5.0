@@ -1,0 +1,21 @@
+[
+{"NameField":"rpt_Title", "ValueField":"Daily Performance Indicators"},
+{"NameField":"rpt_Period", "ValueField":"Report Period:"},
+{"NameField":"footer", "ValueField":"Prepared under contract for the exclusive use of i3 International. Reproduction of this report is prohibited."},
+{"NameField":"header_Day", "ValueField":"Day of Week"},
+{"NameField":"header_Traffic", "ValueField":"Traffic"},
+{"NameField":"rpt_To", "ValueField":"To"},
+{"NameField":"header_Trans", "ValueField":"Trans"},
+{"NameField":"header_Sales", "ValueField":"Sales"},
+{"NameField":"header_PTraffic", "ValueField":"%Traffic"},
+{"NameField":"header_PTrans", "ValueField":"%Trans"},
+{"NameField":"header_PSales", "ValueField":"%Sales"},
+{"NameField":"header_PConv", "ValueField":"Conv%"},
+{"NameField":"header_ADS", "ValueField":"ADS"},
+{"NameField":"rpt_FromDatePeriod", "ValueField":"rpt_FromDatePeriod"},
+{"NameField":"header_WH", "ValueField":"WH"},
+{"NameField":"header_Total", "ValueField":"Total"},
+{"NameField":"rpt_ForDay", "ValueField":"For Days: All"},
+{"NameField":"header_Average", "ValueField":"Average"},
+{"NameField":"rpt_NODATA", "ValueField":"Data is not available"}
+]

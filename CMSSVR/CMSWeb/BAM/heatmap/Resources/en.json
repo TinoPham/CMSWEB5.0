@@ -1,0 +1,25 @@
+﻿{
+	"ADD_NEW_SCHEDULE_TASK":"Add New Schedule Task",
+	"LOCATION_STRING": "Region",
+	"MANUALLY":"Manual",
+	"MANUALLY_UPLOAD":"MANUAL UPLOAD",
+	"MSGDVRVIRTUAL":"No image on virtual DVR",
+	"MSGCLICK":"Click here or drag image here to upload",
+	"NO_DATA_STRING": "There is no data",
+	"PERIOD_STRING": "Period ",
+	"SUMMARY_STRING": "Summary",
+	"WEEK_STRING": "Week ",
+	"SCHEDULE_SETTING":"Schedule Settings",
+	"SESSIONNAME":"Session name",
+	
+	"SELECTDVR_MSG":"Please, select DVR",
+	"SELECTCHANNEL_MSG":"Please, select Channel",
+	"EMPTRYNAME_MSG":"Session Name No Empty",
+	"ERRENDTIME_MSG":"End Time should be greater than Start Time",
+	"REGION_CHOSEN": "This region has been chosen",
+	"REGION_MAXIMUM": "Cannot add more than maximum region number!",
+	"HEATMAP_CONFIRM_HEADER":"Override",
+	"HEATMAP_CONFIRM_IMAGE_EXISTS_MSG":"Image already exists. Do you want to replace it?",
+	"SCHEDULE_DELETE_HEADER":"Confirm Schedule Delete",
+	"SCHEDULE_DELETE_MSG":"Are you sure you want to delete this Schedule?"
+}

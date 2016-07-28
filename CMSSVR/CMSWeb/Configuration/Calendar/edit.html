@@ -1,0 +1,167 @@
+﻿<div>
+	<div class="modal-header">
+		<span class="close" data-ng-click="vm.Close()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{btn_Type|translate}} {{'CALENDAR_INFO'|translate}}</h3>
+		<!--<span class="modal-title">{{'CALENDAR_INFO'|translate}}</span>-->
+	</div>
+
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-md-2">{{'CAL_EVENTNAME'|translate}}</div>
+			<div class="col-md-10"><input type="text" class="form-control" ng-model="calData.Name" required></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">{{'CAL_FROM'|translate}}</div>
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-7">
+						<p class="input-group">
+							<input type="text" class="form-control" datepicker-popup="MM/dd/yyyy" ng-model="calData.StartDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open($event, 0)"><i class="icon-calendar"></i></button>
+							</span>
+						</p>
+					</div>
+					<div class="col-md-5">
+						<div class="input-group">
+							<input type="text" class="form-control cms-form-control" value="{{STime.mytime|date:'HH:mm'}}" readonly>
+							<span class="input-group-addon" cms-popover templatelink="'Widgets/Templates/timepicker.html'" pop-data="STime" trigger="click">
+								<i class="glyphicon glyphicon-time"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2">{{'CAL_TO'|translate}}</div>
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-7">
+						<p class="input-group">
+							<input type="text" class="form-control" datepicker-popup="MM/dd/yyyy" ng-model="calData.EndDate" is-open="opened2" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open($event, 1)"><i class="icon-calendar"></i></button>
+							</span>
+						</p>
+					</div>
+					<div class="col-md-5">
+						<div class="input-group">
+							<input type="text" class="form-control cms-form-control" value="{{ETime.mytime|date:'HH:mm'}}" readonly>
+							<span class="input-group-addon" cms-popover templatelink="'Widgets/Templates/timepicker.html'" pop-data="ETime" trigger="click">
+								<i class="icon-clock"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">{{'CAL_WHERE'|translate}}</div>
+			<div class="col-md-10">
+				<div class="grid fluid">
+					<div class="row">
+						<div class="col-md-7">
+							<div class="panel">
+								<div style="margin-bottom:10px;">
+									<div class="input-group">
+										<input type="text" ng-model="vm.querySite" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+									</div>
+								</div>
+								<div class="scroll-body" slimscroll="{height: '250px'}">
+									<div class="tree-site-addmin">
+										<tree-component class="cms-tree" ng-if="vm.treeSiteFilter" model="vm.treeSiteFilter" filter-text="vm.querySite" def-col="vm.treeDef" options="vm.treeOptions"></tree-component>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="panel">
+								<input type="checkbox" name="chkDisableNormalization" /> {{'CAL_DISNORMAL'|translate}}
+								<div class="panel" style="margin: 5px; padding: 5px; line-height: 30px;">
+									<input type="radio" name="ScheduleType" ng-model="calData.ScheduleType" ng-value="1" /> {{'CAL_ONETIME'|translate}} <br />
+									<input type="radio" name="ScheduleType" ng-model="calData.ScheduleType" ng-value="2" /> {{'CAL_WEEKLY'|translate}} <br />
+									<input type="radio" name="ScheduleType" ng-model="calData.ScheduleType" ng-value="3" /> {{'CAL_YEARLY'|translate}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">{{'CAL_DESC'|translate}}</div>
+			<div class="col-md-10"><textarea class="form-control" name="Description" ng-model="calData.Description" rows="5"></textarea></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">{{'CAL_COLOR'|translate}}</div>
+			<div class="col-md-10">
+				<spectrum-colorpicker
+					trigger-id="{{trigger}}"
+					ng-model="Color"
+					format="'hex'"
+					options="{
+						showPalette: true,
+						showSelectionPalette: true,
+						togglePaletteOnly: true,
+						togglePaletteMoreText: 'more',
+						togglePaletteLessText: 'less',
+						palette: [
+							['#000000','#444444','#666666','#999999','#cccccc','#eeeeee','#f3f3f3','#ffffff'],
+							['#ff0000','#ff9900','#ffff00','#00ff00','#00ffff','#0000ff','#9900ff','#ff00ff'],
+							['#f4cccc','#fce5cd','#fff2cc','#d9ead3','#d0e0e3','#cfe2f3','#d9d2e9','#ead1dc'],
+							['#ea9999','#f9cb9c','#ffe599','#b6d7a8','#a2c4c9','#9fc5e8','#b4a7d6','#d5a6bd'],
+							['#e06666','#f6b26b','#ffd966','#93c47d','#76a5af','#6fa8dc','#8e7cc3','#c27ba0'],
+							['#cc0000','#e69138','#f1c232','#6aa84f','#45818e','#3d85c6','#674ea7','#a64d79'],
+							['#990000','#b45f06','#bf9000','#38761d','#134f5c','#0b5394','#351c75','#741b47'],
+							['#660000','#783f04','#7f6000','#274e13','#0c343d','#073763','#20124d','#4c1130']
+						]
+					}">
+				</spectrum-colorpicker>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">{{'CAL_REMINDER'|translate}}</div>
+			<div class="col-md-2">
+				<select name="RemindID" ng-model="calData.RemindID">
+					<option value="0">{{'CAL_EMAIL'|translate}}</option>
+				</select> 
+			</div>
+			<div class="col-md-4">{{'CAL_BEFORE'|translate}} <input type="text" name="RemindBefore" style="width: 40px;" ng-model="calData.RemindBefore" /> {{'CAL_DAYS'|translate}} </div>
+			<div class="col-md-4">
+				<div class="panel panel-info">
+				<div slimscroll="{ height: '150px'}">
+					<ul class="list-group user-list">
+						<li ng-class="{'active': user.Checked}" class="list-group-item" ng-repeat="user in recipientList | filter: vm.searchUses track by $index">
+							<div class="item-info" ng-dblclick="vm.openUsers(user)" ng-click="vm.checkUser(user)">
+								<span class="i-image">
+									<img src="../../../Content/Images/img_user_blank.png" alt="" ng-style="{'display': 'inline-block', 'border': '2px solid ', 'border-color': '#999999'}"/>
+									<span ng-show="user.Checked" class="icon-checked"><i class=" icon-ok-1"></i></span>
+								</span>
+								<div class="i-name">{{user.FirstName}} {{user.LastName}}</div>
+								<div class="i-pos">{{user.Email}}</div>
+								<div class="clearfix"></div>
+							</div>
+						</li>
+					</ul>
+					<!--
+					<div class="list-group bg-white">
+						<div class="list-group-item" ng-repeat="recipt in recipientList">
+							<span class="sitenew-user">
+								<label class="i-checks"><input type="checkbox" ng-click="toggleSelection(recipt)"> <i class="glyphicon" ng-class="{'check_ok': recipt.checked == true, 'uncheck':recipt.checked == false}"></i></label>
+							</span>
+							<div>
+								<i class="glyphicon glyphicon-user"></i> {{recipt.FirstName}} {{recipt.LastName}}
+							</div>
+						</div>
+					</div>
+					-->
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="vm.Close()">{{"BTN_CANCEL"|translate}}</button>
+		<button type="submit" class="btn btn-primary" ng-click="vm.Save()" >{{"BTN_SAVE"|translate}}</button>
+	</div>
+</div>

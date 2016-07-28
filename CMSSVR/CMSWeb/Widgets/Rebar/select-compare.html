@@ -1,0 +1,100 @@
+﻿<div class="panel modal-transaction modal-select-compare col-md-12">     
+
+    <div class="panel-header">
+        <span class="btn pull-right">
+            <span  data-ng-click="cancel()"><i class="icon-cancel-1"></i></span>
+        </span>
+        <h3 class="title">  {{'SELECT_TRAN_COMPARE' | translate}}</h3>      
+    </div>
+
+
+<!--     <div class="row">
+        <h4 class="title"> {{'SELECT_TRAN_COMPARE' | translate}}</h4>
+        <i class="icon-cancel-3 pull-right"></i>
+    </div> -->
+    
+    <div class="panel-body modal-transaction-body">
+        <div class="col-md-12 select-compare-header">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <!--<span class="input-group-addon" id="sizing-addon2">@</span>-->
+                    <input type="text" cms-interger="{maxlength: 15}" class="form-control" placeholder="{{'TranId' | translate}}"  ng-model="transacfitler" aria-describedby="sizing-addon2">
+                </div> 
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <!--<span class="input-group-addon" id="Span1">@</span>-->
+                    <input type="text" maxlength="50" class="form-control" placeholder="{{'EmployeeName' | translate}}"  ng-model="employfilter" aria-describedby="sizing-addon2">
+                </div>   
+            </div>
+            <div class="col-md-3">
+				<div class="input-group" options="{{dateOptions}}" cmsdatetimepicker ng-model="filterdate.startdate">
+					<input type="text" name="DateFrom" class="form-control input-sm" readonly />
+					<span class="input-group-addon"><i class="icon-calendar"></i></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+				<div class="input-group" options="{{dateOptions}}" cmsdatetimepicker ng-model="filterdate.enddate">
+					<input type="text" name="DateTo" class="form-control input-sm" readonly />
+					<span class="input-group-addon"><i class="icon-calendar"></i></span>
+                </div>
+            </div>
+        </div> 
+        <div class="col-md-12 select-compare-table">
+            <div class="table-responsive table-hover">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>{{'TranNo' | translate}}</th>
+                            <th>{{'EMPLOYEE_STRING' | translate}}</th>
+                            <th>{{'DATE_TIME' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="t in data.Data" ng-click="selectTransactionToCompair(t)" ng-class="{'item-active':selectTransac.TranId === t.TranId }">
+                            <td>{{t.TranNo}}</td>
+                            <td>{{t.EmployeeName}} ({{t.StoreName}})</td>
+                            <td>{{t.TranDate | date:'MM/dd/yyyy':'UTC'}} <span style="font-weight: bold;">{{t.TranDate | date:'HH:mm:ss':'UTC'}}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel-footer">
+        <div class="col-md-8 select-compare-footer">
+               <nav style="text-align: center;" class="pull-left">
+                    <ul class="pagination" style="margin: 0;">
+                        <li ng-click="prevPage()" ng-disabled="currPage < 2">
+                            <a aria-label="Previous">
+                                <span aria-hidden="true">
+                                    <i class=" icon-left-open"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li ng-click="prevPage(1)"><a>1</a></li>
+                        <li><a class="input-page"><input type="number" class="form-control" ng-model="currPage" style="max-width: 50px;"></a></li>
+                        <li ng-click="gotoPage()"><a>{{'GO' | translate}}</a></li>
+                        <li ng-click="nextPage(data.TotalPages)"><a>{{data.TotalPages ? data.TotalPages : 0}}</a></li>
+                        <li ng-click="nextPage()" ng-disabled="currPage >= data.TotalPages">
+                            <a aria-label="Next">
+                                <span aria-hidden="true">
+                                    <i class=" icon-right-open"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>    
+        </div>
+        <div class="col-md-4">
+            <span class="btn btn-primary pull-right" ng-disabled="!selectTransac" data-ng-click="showComparition()">
+				<i aria-hidden="true" class="icon-book-open"></i> {{'VIEW_STRING' | translate}}
+			</span>
+        </div>
+              
+    </div>
+       
+    
+</div>

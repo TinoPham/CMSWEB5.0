@@ -1,0 +1,110 @@
+
+        <time_change>0</time_change>
+        <configuration_id>8</configuration_id>
+        <configuration_name>recording_display</configuration_name>
+    <recording_display>
+      <channels size="16">
+        <channel id="0">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="1">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="2">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="3">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="4">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="5">
+          <record_frame>13</record_frame>
+          <emergency>13</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="6">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="7">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="8">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="9">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="10">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="11">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="12">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="13">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="14">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+        <channel id="15">
+          <record_frame>15</record_frame>
+          <emergency>15</emergency>
+          <resolution_width>360</resolution_width>
+          <resolution_height>240</resolution_height>
+        </channel>
+      </channels>
+      <resolutions size="3">
+        <resolution id="18" total_frame="480">360x240</resolution>
+        <resolution id="10" total_frame="240">720x240</resolution>
+        <resolution id="3" total_frame="120">720x480</resolution>
+      </resolutions>
+    </recording_display>
+     

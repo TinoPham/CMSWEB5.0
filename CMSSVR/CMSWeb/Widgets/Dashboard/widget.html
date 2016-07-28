@@ -1,0 +1,25 @@
+﻿<div cms-widget-id="{{column.Id}}" cms-column-id="{{currentColumn.Id}}" ng-class="{'maximized': isMax && !editMode,'col-md-{{column.TypeSize}}':currentColumn.Group.Name === 'FULL' }">
+	<div ng-if="isLoading=== true" class="la-ball-scale-multiple la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+	<div ng-class="getWidgetClass()" class="widget-content"> <!--ng-click="stopAnimation(column.Id)"-->
+		<div ng-show="editMode === true || column.Group.IsHeader === true" ng-class="{'widget-drag-handle': editMode === true && currentColumn.IsLock === false, 'panel-header dashboard-panel-header': column.Group.IsHeader === true, 'header-transparent': column.Group.IsHeader === false}">
+                <h2 ng-if="column.Group.IsHeader === true"><i class="icon-chart-pie-1" style="display: none;"></i>{{column.Name | translate}}</h2>
+                <div class="additional-btn" ng-show="currentColumn.IsLock === false">
+					<a ng-if="!editMode" ng-click="refresh()" tooltip="{{'TOOLTIP_REFRESH_WIDGET'|translate}}" tooltip-placement="left"><i class="icon-ccw-1"></i></a>
+					<a class="js-edit" ng-click="edit()" ng-if="editMode" tooltip="{{'TOOLTIP_CHANGE_WIDGET'|translate}}" tooltip-placement="left" draggable="false"><i ng-class="column.Group.IsHeader? 'icon-pencil-1':'icon-pencil-circled'"></i></a>
+                    <a ng-if="!editMode" ng-click="fullSize()" tooltip="{{isMax ? 'RESTORE' : 'MAXIMIZE'|translate}}" tooltip-placement="left">
+                        <i ng-class="{'icon-resize-full-1': !isMax, 'icon-resize-small-1': isMax}"></i>
+                    </a>
+					<a ng-show="!editMode && !isMax" class="collapse-btn" ng-click="isCollapsed = !isCollapsed" tooltip="{{isCollapsed ? 'EXPAND' : 'COLLAPSE'|translate}}" tooltip-placement="left"><i class="icon-down-open-2"></i></a>
+					<a class="js-remove" ng-if="editMode" tooltip="{{'TOOLTIP_REMOVE_WIDGET'|translate}}" tooltip-placement="left" draggable="false"><i ng-class="column.Group.IsHeader? 'icon-cancel-3':'icon-cancel-circle'"></i></a>
+					<span ng-show="isMax">&nbsp;&nbsp;</span>
+                </div>
+            </div>
+            <div collapse="isCollapsed">
+			<widget ng-class="{'widget-drag-handle': editMode === true && currentColumn.IsLock === false, 'panel-content padding': column.Group.IsHeader === true}" widget-model="column" is-loading="isLoading"></widget>
+            </div>
+        </div>
+    </div>

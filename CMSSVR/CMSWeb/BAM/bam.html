@@ -1,0 +1,296 @@
+<div class="bam-manage sites-manage sites-manage resizer-position col-xs-12 col-sm-12"
+	 ng-class="{ 'forCustomreport' :  vm.currentState === vm.stateList.CUSTOMREPORT  }"
+	 data-ng-controller="bamCtrl as vm">
+	<div class="tree-content" id="resizer-scope">
+		<div class="col-xs-12" id="sidebar" ng-show="isBusy === false">
+			<div class="bamPanel_small panel bamPanel" scroll ng-class="boolChangeClass? 'min': ''">
+				<div class="dropdown row-resizerhead topbar-profile  resizer-position col-xs-8 col-sm-8 topbar-profile-bam topbar-profile_small">
+					<div class="report_names">
+						<h5 class="report_name">{{'REPORT_NAME' | translate}}</h5>
+						<a class="show_report_name"
+						   ng-mouseenter="triggerOpenmenu();"
+						   data-target="#bam-dropdown-menu" data-toggle="collapse">
+							<span ng-click="maskBamMenu=true" class="dashboard" data-target="#bam-dropdown-menu" data-toggle="collapse">
+								{{getMenuName() | translate}}<i class="icon-down-open-mini"></i>
+							</span>
+						</a>
+						<div ng-show="maskBamMenu" ng-click="offmaskBamMenu($event)" data-target="#bam-dropdown-menu" data-toggle="collapse" id="mask-bam-menu"></div>
+						<div id="bam-dropdown-menu" ng-class="isiPad === true ? 'forIpad ' : ' '; isScroll === true ? 'dropdown-menu_scrolldisplay' : 'dropdown-menu_initdisplay'" class="row dropdown-menu collapse">
+							<div id="sub_menu_bam">
+								<div onclick="" data-ng-repeat="x in vm.Menus" class="col-xs-12 col-md-4 divdashboard">
+									<span class="{{x.GroupName}} icon-head"></span>
+									<span data-parent="#sub_menu_bam"
+										  data-toggle="collapse" data-target="#sub_{{$index}}"
+										  class="groupName">{{x.GroupName | translate}}</span>
+									<div style="border-bottom:1px solid #88a9c2;height:1px; margin:20px 0px;"></div>
+									<ul id="sub_{{$index}}" class="collapse sub_{{$index}}" ng-class="customMenuBam() === true? '' : 'in'">
+										<li data-ng-repeat="xx in x.Childs" class="liName" data-toggle="tooltip" title="{{xx.Translate | translate}}">
+											<a href="#" class="linkName"
+											   data-target="#bam-dropdown-menu"
+											   ng-mouseenter="triggerChildmenu($event);"
+											   data-toggle="collapse"
+											   ng-click="offmaskBamMenu($event, xx)"
+											   ui-sref="{{xx.State}}">
+												<i class="{{xx.Classstyle}} icon-bam"></i> {{xx.Translate | translate}}
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div onclick="" ng-if="vm.CustomMenus.length > 0" class="col-xs-12 col-md-4 divdashboard">
+									<span class="Custom Reports icon-head"></span>
+									<span data-parent="#sub_menu_bam"
+										  data-toggle="collapse" data-target="#sub_{{vm.Menus.length}}"
+										  class="groupName">{{'CUSTOM_REPORTS' | translate}}</span>
+									<div style="border-bottom:1px solid #88a9c2;height:1px; margin:20px 0px;"></div>
+									<ul id="sub_{{vm.Menus.length}}" class="collapse sub_{{vm.Menus.length}}" ng-class="customMenuBam() === true? '' : 'in'">
+										<li data-ng-repeat="xx in vm.CustomMenus" class="liName" data-toggle="tooltip" title="{{xx.Name | translate}}">
+											<a class="linkName"
+											   data-target="#bam-dropdown-menu"
+											   ng-mouseenter="triggerChildmenu($event);"
+											   data-toggle="collapse"
+											   ng-click="offmaskBamMenu($event, xx)"
+											   href="#/bam/customreport/{{xx.ReportId}}">
+												<i class="icon-equalizer icon-bam"></i> {{xx.Name | translate}}
+											</a>
+										</li>
+
+									</ul>
+								</div>
+								<!-- onclick="alert('Hi')" -->
+							</div>
+						</div>
+					</div>
+
+					<div class="infos">
+						<div ng-show="isScroll" class="pull-right">
+							<label ng-if="(vm.currentState === vm.stateList.SALEREPORTS || vm.currentState === vm.stateList.DRIVETHROUGH || vm.currentState === vm.stateList.DISTRIBUTION || vm.currentState === vm.stateList.HEATMAP) && vm.selectedRptType.ID === 2" for="CloseDate">{{'FROM_STRING' | translate}}&nbsp;</label>
+							<div ng-if="(vm.currentState === vm.stateList.SALEREPORTS || vm.currentState === vm.stateList.DRIVETHROUGH || vm.currentState === vm.stateList.DISTRIBUTION || vm.currentState === vm.stateList.HEATMAP) && vm.selectedRptType.ID === 2" class="dateReportHead form-group" ng-class="title === 'Sales Reports' ? 'dateReportHead-From' : ''">
+								<input type="text" class="form-control"
+									   datepicker-popup="MM/dd/yyyy"
+									   name="OpenDate2"
+									   ng-model="BamFilter.startdateReport" datepicker-options="dateOptions"
+									   is-open="datestatus.startopened" readonly="true" max-date="maxdate" />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default btn-sm" ng-click="startopen($event, 'startopened', 'endopened')"><i class="icon-calendar"></i></button>
+								</span>
+							</div>
+							<label ng-if="(vm.currentState === vm.stateList.SALEREPORTS || vm.currentState === vm.stateList.DRIVETHROUGH || vm.currentState === vm.stateList.DISTRIBUTION) && vm.selectedRptType.ID === 2" for="CloseDate">{{'TO_FIELD' | translate}}&nbsp;</label>
+							<div ng-hide="(vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION)
+                        || (vm.currentCustomReports === vm.stateList.BAM_KEYPERFORMANCEINDICATORS &&  vm.selectedRptTypeCustom.Name === TypesCustom[1].Name)" class="dateReportHead form-group">
+								<input type="text" class="form-control"
+									   datepicker-popup="MM/dd/yyyy"
+									   name="OpenDate2"
+									   ng-model="BamFilter.dateReport" datepicker-options="dateOptions"
+									   is-open="datestatus.endopened" readonly max-date="maxdate" />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default btn-sm" ng-click="endopen($event,'endopened', 'startopened')"><i class="icon-calendar"></i></button>
+								</span>
+							</div>
+
+							<span class="show-type" ng-if="vm.currentState === vm.stateList.SALEREPORTS || vm.currentState === vm.stateList.DRIVETHROUGH || vm.currentState === vm.stateList.DISTRIBUTION || vm.currentState === vm.stateList.HEATMAP">
+								<select class="form-control" ng-model="vm.selectedRptType" ng-change="vm.RptTypeChanged()" ng-options="item as item.Name for item in Types"></select>
+							</span>
+
+							<label ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION
+                                        || (vm.currentCustomReports === vm.stateList.BAM_KEYPERFORMANCEINDICATORS &&  vm.selectedRptTypeCustom.Name === TypesCustom[1].Name)">{{'DATE' | translate}}</label>
+							<div ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION
+                                        || (vm.currentCustomReports === vm.stateList.BAM_KEYPERFORMANCEINDICATORS &&  vm.selectedRptTypeCustom.Name === TypesCustom[1].Name)" class="dateReportHead form-group">
+								<select class="form-control" ng-model="vm.StartWeek" ng-change="" ng-options="item as item.text for item in ListPeriod | orderBy : '-date'"></select>
+							</div>
+
+							<label ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION">{{'Compare_Date' | translate}}</label>
+							<div ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION" class="dateReportHead form-group">
+								<select class="form-control" ng-model="vm.StartWeekCompare" ng-change="" ng-options="item as item.text for item in ListPeriod | orderBy : '-date'"></select>
+							</div>
+
+							<span class="show-type" ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_KEYPERFORMANCEINDICATORS">
+								<select class="form-control" ng-model="vm.selectedRptTypeCustom" ng-change="vm.RptTypeCustomChanged()" ng-options="item as item.Name for item in TypesCustom"></select>
+							</span>
+
+							<span ng-click="EventRefresh()" class="btn btn-default btn-sm"><i class="icon-cw-2"></i>{{'FUNC_HEADER_BTN_REFRESH'| translate}}</span>
+
+							<div class="btn-group more-info-button">
+								<a class="btn btn-only-icon  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<i class=" icon-info-circled"></i>
+								</a>
+								<div class="dropdown-menu pull-right dropdown-content" role="menu">
+									<div class="left-box">
+
+										<div class="number-box">
+											<h2>{{HeaderData.Caculate}}</h2>
+											<p>{{'HEADER_CALCULATE' | translate}}</p>
+										</div>   <!-- END :: number-box -->
+
+										<div class="number-box">
+											<h2>{{HeaderData.POSdata}}</h2>
+											<p>{{'HEADER_POSDATA' | translate}}</p>
+										</div>   <!-- END :: number-box -->
+										<div class="number-box">
+											<h2>{{HeaderData.Trafficdata}}</h2>
+											<p>{{'HEADER_TRAFFICDATA' | translate}}</p>
+										</div>   <!-- END :: number-box -->
+										<div class="number-box">
+											<h2>{{HeaderData.Normalized}}</h2>
+											<p>{{'HEADER_NORMSLIZED' | translate}}</p>
+										</div>   <!-- END :: number-box -->
+
+									</div>
+									<!-- 2016-03-2 Tri: not suport yet -->
+									<!--
+									<div class="right-box">
+										<div class="temp-box {{vm.currentState === vm.stateList.DISTRIBUTION ? 'big ' : '' }}" >
+											<a ng-click="ChangeView(vm.subViews[3])"  ng-show="vm.currentState === vm.stateList.DISTRIBUTION" class="btn btn-default">Distribution</a>
+											<a ng-click="ChangeView(vm.subViews[1])" ng-show="vm.currentState === vm.stateList.DISTRIBUTION" class="btn btn-default">Heat map</a>
+											<a ng-click="ChangeView(vm.subViews[2])" ng-show="vm.currentState === vm.stateList.DISTRIBUTION" class="btn btn-default">Direction</a>
+										</div>
+
+									  <button ng-click="ExportTo(ExportFormat.PDF)" class="btn btn-red-1">
+										  <i class='icon-file-pdf'></i> Export PDF
+									  </button>
+									  <button ng-click="ExportTo(ExportFormat.Excel)" class="btn  btn-blue-3">
+										  <i class="icon-file-excel">
+										  </i>Export Excel
+									  </button>
+
+
+
+									</div>
+									  -->
+
+								</div>
+
+
+							</div>
+
+							<span ng-if="checkShowExportButton()" class="btn-group dropdown bam-btn-export-header" dropdown ng-click="ExportTo(ExportFormat.Excel)"
+								  data-toggle="tooltip" data-placement="bottom" title="{{'EXPORT_TO_EXCEL' | translate}}">
+								<span class="btn btn-only-icon dropdown-toggle" dropdown-toggle>
+									<i class="icon-download-3"></i>
+								</span>
+								<!--<ul class="dropdown-menu pull-right">
+									<li><div class="btn pull-left" ng-click="ExportTo(ExportFormat.CSV)">{{'EXPORT_TO_CSV' | translate}}</div></li>
+									<li><div class="btn pull-left" ng-click="ExportTo(ExportFormat.Excel)">{{'EXPORT_TO_EXCEL' | translate}}</div></li>
+									<li><div class="btn pull-left" ng-click="ExportTo(ExportFormat.PDF)">{{'EXPORT_TO_PDF' | translate}}</div></li>
+								</ul>-->
+							</span>
+						</div>
+					</div>
+
+				</div>
+
+				<div ng-show="!isScroll" class="horizontal"></div>
+				<div ng-show="!isScroll" class="row-resizersecond topbar-compare  resizer-position col-xs-8 col-sm-8">
+					<div class="pull-left">
+						<label ng-if="(vm.currentState === vm.stateList.SALEREPORTS || vm.currentState === vm.stateList.DRIVETHROUGH || vm.currentState === vm.stateList.DISTRIBUTION || vm.currentState === vm.stateList.HEATMAP) && vm.selectedRptType.ID === 2" for="CloseDate">{{'FROM_STRING' | translate}}&nbsp;</label>
+						<div ng-if="(vm.currentState === vm.stateList.SALEREPORTS || vm.currentState === vm.stateList.DRIVETHROUGH || vm.currentState === vm.stateList.DISTRIBUTION || vm.currentState === vm.stateList.HEATMAP) && vm.selectedRptType.ID === 2" class="dateReport form-group">
+							<input type="text" class="form-control"
+								   datepicker-popup="MM/dd/yyyy"
+								   name="OpenDate"
+								   ng-model="BamFilter.startdateReport" datepicker-options="dateOptions"
+								   is-open="datestatus.startopened" readonly max-date="maxdate" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default btn-sm" ng-click="startopen($event, 'startopened', 'endopened')"><i class="icon-calendar"></i></button>
+							</span>
+						</div>
+						<label ng-if="(vm.currentState === vm.stateList.SALEREPORTS || vm.currentState === vm.stateList.DRIVETHROUGH || vm.currentState === vm.stateList.DISTRIBUTION || vm.currentState === vm.stateList.HEATMAP) && vm.selectedRptType.ID === 2" for="CloseDate">{{'TO_FIELD' | translate}}&nbsp;</label>
+						<div ng-hide="(vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION)
+                        || (vm.currentCustomReports === vm.stateList.BAM_KEYPERFORMANCEINDICATORS &&  vm.selectedRptTypeCustom.Name === TypesCustom[1].Name)" class="dateReport form-group">
+							<input type="text" class="form-control"
+								   datepicker-popup="MM/dd/yyyy"
+								   name="OpenDate2"
+								   ng-model="BamFilter.dateReport" datepicker-options="dateOptions"
+								   is-open="datestatus.endopened" readonly="true" max-date="maxdate" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default btn-sm" ng-click="endopen($event,'endopened', 'startopened')"><i class="icon-calendar"></i></button>
+							</span>
+						</div>
+
+						<label ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION
+                            || (vm.currentCustomReports === vm.stateList.BAM_KEYPERFORMANCEINDICATORS &&  vm.selectedRptTypeCustom.Name === TypesCustom[1].Name)">{{'DATE' | translate}}</label>
+						<div ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION
+                            || (vm.currentCustomReports === vm.stateList.BAM_KEYPERFORMANCEINDICATORS &&  vm.selectedRptTypeCustom.Name === TypesCustom[1].Name)" class="dateReport form-group">
+							<select class="form-control" ng-model="vm.StartWeek" ng-change="" ng-options="item as item.text for item in ListPeriod | orderBy : '-date'"></select>
+						</div>
+
+						<label ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION">{{'Compare_Date' | translate}}</label>
+						<div ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_PERFORMANCECOMPARISION" class="dateReport form-group">
+							<select class="form-control" ng-model="vm.StartWeekCompare" ng-change="" ng-options="item as item.text for item in ListPeriod | orderBy : '-date'"></select>
+						</div>
+					</div>
+
+					<div class="pull-right">
+
+						<!--<span class="dropdown" dropdown>
+							<span>Compare To&nbsp;</span>
+								  <select class="form-control">
+							  <option>Please choose</option>
+							  <option>Last year</option>
+							  <option>Last week</option>
+							  <option>Region</option>
+							  <option>Store</option>
+							</select>
+						</span>-->
+						<span ng-if="vm.currentState === vm.stateList.SALEREPORTS || vm.currentState === vm.stateList.DRIVETHROUGH || vm.currentState === vm.stateList.DISTRIBUTION || vm.currentState === vm.stateList.HEATMAP">
+							<span>Type&nbsp;</span>
+							<select class="form-control" ng-model="vm.selectedRptType" ng-change="vm.RptTypeChanged()" ng-options="item as item.Name for item in Types"></select>
+						</span>
+
+						<span ng-if="vm.currentState === vm.stateList.CUSTOMREPORT && vm.currentCustomReports === vm.stateList.BAM_KEYPERFORMANCEINDICATORS">
+							<span>Type&nbsp;</span>
+							<select class="form-control" ng-model="vm.selectedRptTypeCustom" ng-change="vm.RptTypeCustomChanged()" ng-options="item as item.Name for item in TypesCustom"></select>
+						</span>
+						<span ng-click="EventRefresh()" class="btn btn-default btn-sm"><i class="icon-cw-2"></i>{{'FUNC_HEADER_BTN_REFRESH'| translate}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="panelContent" ui-view=""></div>
+			<!-- End left content -->
+
+			<div class="tree-right scalable" scalex='0.1' id="content">
+				<div ng-class="fixTreesitemobile ? 'tree-site-mobile':  ''"
+					 class="tree_site_fix">
+					<div class="head_tree_site">
+						<div class="search_box">
+							<div>{{countSite()}}</div>
+							<input ng-model="filterText"
+								   ng-click="selectSearch()"
+								   ng-blur="lostFocusSearch()"
+								   placeholder="{{'Search'| translate}}"
+								   type="text">
+							<i class="icon-search-3"></i>
+							<div class="btn-mobile-close"
+								 ng-click="fixTreesitemobile = !fixTreesitemobile;SHOW_HIDE_TREESITE_LOCAl()">
+								<i class="icon-cancel-2"></i>
+							</div>
+						</div>
+
+					</div>
+					<!-- End :: head tree site -->
+
+					<div id="sidebar-resizer"
+						 resizer="vertical"
+						 resizer-scope="#resizer-scope"
+						 resizer-left="#sidebar"
+						 resizer-right="#content"
+						 resizer-hide="fusioncharts"
+						 resizer-min="150"
+						 resizer-max="600">
+						<div ng-click="showhideTreeBAM(this, $event)">
+							<div></div>
+						</div>
+					</div>
+					<div class="tree-right-side">
+						<div class="search">
+						</div>
+						<div class="tree-site-addmin tree-panel scrollbar-dynamic" data-jquery-scrollbar="jqueryScrollbarOptions">
+							<tree-component class="cms-tree" ng-if="treeSiteFilter" model="treeSiteFilter" filter-text="filterText" def-col="def" options="treeOptions"></tree-component>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End tree site -->
+
+
+		</div>
+	</div>
+</div>

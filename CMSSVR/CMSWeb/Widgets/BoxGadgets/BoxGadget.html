@@ -1,0 +1,21 @@
+﻿<div ng-controller="boxgadgetCtrl" class=" top-summary" ng-class="{'mouse-over':(ResxName=='NUMBER_DVROFF'||ResxName=='NUMBER_SENSOR'||ResxName=='NUMBER_DVRRECORDLESS') && moduleSite}" ng-click="moduleSite?redirectURL():null" ng-init="init(box)">
+	<div class="panel dashboard-panel animated fadeInDown {{widgetClass}}">
+		<div class="panel-content padding-box">
+			<div class="panel-icon" style="display: none;">
+				<i class="{{icon}}"></i>
+			</div>
+			<div class="text-box">
+				<p class="maindata" tooltip="{{Title}}: {{model.Value}}" tooltip-placement="bottom"><strong>{{Title}}</strong></p>
+				<h2><span class="animate-number" data-duration="3000">{{model.Value}}</span></h2>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="panel-footer" ng-class="{'transparent': !showTranding}">
+			<div class="row">
+				<div ng-if="showTranding" class="col-sm-12 tranding" tooltip="{{model.CmpValue}}{{percent}} {{TrandLabel|translate}} {{Label|translate}}"><i class="{{iconCmpValue}}"></i><b>{{model.CmpValue}}{{percent}} {{TrandLabel|translate}} {{Label|translate}}</b></div>
+				<div ng-if="!showTranding" class="col-sm-12"><i></i><b></b></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+﻿/*
+ * Customize: Navs (bootstrap)
+ * -----------
+ */
+
+.nav {
+	&.navbar-nav {
+		&.top-navbar {
+			.dropdown-menu {
+				> li {
+					position: relative;
+
+					a {
+						cursor: pointer;
+						color: #4C5264;
+					}
+				}
+			}
+
+			> li span.absolute {
+				position: absolute;
+				top: 5px;
+				left: 25px;
+				font-size: 10px;
+				line-height: 7px !important;
+				font-weight: 400 !important;
+				-moz-border-radius: 15px;
+				-webkit-border-radius: 15px;
+				border-radius: 15px;
+				padding: 4px;
+				z-index: 4;
+			}
+		}
+	}
+
+	.dropdown-menu {
+		z-index: 8;
+	}
+}

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+	<POS>
+	<Item Column="T_MethOfPaymID" SqlTable="tbl_POS_PaymentList" ContextType="POSPayment"/>
+	<Item Column="T_CameraNB" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB"/>
+	<Item Column="T_OperatorID" SqlTable="tbl_POS_OperatorList" ContextType="POSOperator"/>
+	<Item Column="T_StoreID" SqlTable="tbl_POS_StoreList" ContextType="POSStore"/>
+	<Item Column="T_TerminalID" SqlTable="tbl_POS_TerminalList" ContextType="POSTerminal"/>
+	<Item Column="T_RegisterID" SqlTable="tbl_POS_RegisterList" ContextType="POSRegister"/>
+	<Item Column="T_ShiftID" SqlTable="tbl_POS_ShiftList" ContextType="POSShift"/>
+	<Item Column="T_CheckID" SqlTable="tbl_POS_CheckIDList" ContextType="POSCheckID"/>
+	<Item Column="T_CardID" SqlTable="tbl_POS_CardIDList" ContextType="POSCardID"/>
+	<Item Column="T_TransXString1" SqlTable="tbl_POS_ExtraStringValue" ContextType="POSExtraStringValue"/>
+	<Item Column="T_TransXString2" SqlTable="tbl_POS_ExtraStringValue" ContextType="POSExtraStringValue"/>
+	<Item Column="R_Description" SqlTable="tbl_POS_DescriptionList" ContextType="POSDescription" />
+	<Item Column="R_ItemCode" SqlTable="tbl_POS_ItemCodeList" ContextType="POSItemCode" />
+	<Item Column="R_RetailXString1" SqlTable="tbl_POS_ExtraStringValue" ContextType="POSExtraStringValue" />
+	<Item Column="R_RetailXString2" SqlTable="tbl_POS_ExtraStringValue" ContextType="POSExtraStringValue" />
+	<Item Column="SR_Description" SqlTable="tbl_POS_DescriptionList" ContextType="POSDescription" />
+	</POS>
+	<CA>
+	<Item Column="T_TranType" SqlTable="tbl_CA_TranTypeList" ContextType="CATranType" />
+	<Item Column="T_UnitID" SqlTable="tbl_CA_UnitIDList" ContextType="CAUnitID" />
+	<Item Column="T_SiteID" SqlTable="tbl_CA_SiteIDList" ContextType="CASiteID" />
+	<Item Column="T_DevName" SqlTable="tbl_CA_DevNameList" ContextType="CADevName" />
+	<Item Column="T_Batch" SqlTable="tbl_CA_BatchList" ContextType="CABatch" />
+	<Item Column="T_Card" SqlTable="tbl_CA_CardList" ContextType="CACard" />
+	<Item Column="T_XString1" SqlTable="tbl_CA_XStringList" ContextType="CAXString" />
+	<Item Column="T_XString2" SqlTable="tbl_CA_XStringList" ContextType="CAXString" />
+	</CA>
+	<ATM>
+		<Item Column="T_TransCode" SqlTable="tbl_ATM_TransCodeList" ContextType="ATMTransCode" />
+		<Item Column="T_TransType" SqlTable="tbl_ATM_TransTypeList" ContextType="ATMTransType" />
+		<Item Column="T_CardNB" SqlTable="tbl_ATM_CardNBList" ContextType="ATMCardNB" />
+		<Item Column="T_TransXString1" SqlTable="tbl_ATM_XStringList" ContextType="ATMXString" />
+		<Item Column="T_TransXString2" SqlTable="tbl_ATM_XStringList" ContextType="ATMXString" />
+	</ATM>
+	<LPR>
+		<Item Column="LPR_CamNo" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB" />
+		<Item Column="LPR_JPEG_FILE_NAME"/>
+	</LPR>
+</Items> 

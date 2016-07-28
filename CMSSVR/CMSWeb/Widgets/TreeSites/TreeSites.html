@@ -1,0 +1,8 @@
+﻿<div class="angular-ui-tree" ng-controller="TreeSiteCtrl" ng-init="GetSites()">
+        <div ui-tree  data-drag-enabled="DragEnable" data-drag-delay="200" callbacks="treeOptions">
+            <ol ui-tree-nodes ng-model="Sites" id="tree-root" >
+                <li ng-repeat="site in Sites" ui-tree-node ng-include="'Widgets/TreeSites/TreeNode.html'"></li>
+            </ol>
+        </div>
+
+      </div>

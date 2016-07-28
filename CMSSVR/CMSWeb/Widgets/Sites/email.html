@@ -1,0 +1,105 @@
+﻿ 
+<div class="panel panel-default">
+
+<div class="panel-heading">
+     <h2 class="panel-title" >
+        <button  class="btn btn-default " ng-click="openAddForm()">
+            <i class="icon-doc-new" ></i>{{ 'ADD_EMAIL_SETTING' | translate }}
+        </button>
+        
+    </h2>
+
+     <div class="additional-btn">
+
+            <span><i class="icon-filter"></i> {{ 'FILTER_EMAIL' | translate }}</span> 
+
+              <div class="radio-btn-list">
+               <ul class="custom-radio-singleselect  col-md-12">
+                    <li>
+                       <input type="radio" 
+                       checked="checked"
+                       name="chk" ng-model="filter" value ="0" ng-checked="filter == 0" >
+                        <span class="ng-binding">{{ 'ALL_STRING' | translate }}</span>
+                    </li>
+                    
+                    <li>
+                      <input type="radio" name="chk" ng-model="filter" value ="1" ng-checked="filter == 1" > 
+                        <span class="ng-binding">{{'HOURLY' | translate}}</span>
+                    </li>
+
+                    <li>
+                      <input type="radio" name="chk" ng-model="filter" value ="2" ng-checked="filter == 2" >
+                        <span class="ng-binding">{{'DAILY' | translate}}</span>
+                    </li>
+                </ul>
+            </div>
+
+
+    </div>
+      
+                 
+</div>
+<!-- END :: Heading -->
+
+
+
+ <div class='panel-body' > 
+   
+         <table class="cms-table-summary table-hover-tr ">
+              <thead>
+                    <tr>
+                        <th>
+                            {{'EMAIL_SUBJECT' | translate}}
+                        </th>
+                        <th>
+                            {{'FREQUENCY' | translate}}
+                        </th>
+                        <th>
+                            {{'RECIPIENTS' | translate}}
+                        </th>
+                        <th>
+                            {{'MODIFY' | translate}}
+                        </th>
+                        <th>
+                            {{'ACTIVE' | translate}}
+                        </th>
+                    </tr>
+              </thead>
+             <tbody>
+                  <tr ng-if =" data == undefined || data == null  ||data.length == 0 " >
+                      <td colspan ="5"> {{'NO_DATA_FOUND_MSG' | translate}} </td> 
+                  </tr>
+                 <tr ng-if ="data.length > 0" ng-repeat ="r in data | filter: (filter == 0 ? undefined : { FreqTypeID : filter }) "> 
+                  
+                     <td  ng-dblclick="showEmailSetting(r)">
+                         {{r.ReportName}}
+                     </td>
+                     <td ng-dblclick="showEmailSetting(r)" >
+                         {{(r.FreqTypeID == 1 ? 'HOURLY':'DAILY') | translate}}
+                     </td>
+                     <td  ng-dblclick="showEmailSetting(r)">
+                         {{ EmailList(r.EmailList);}}
+                     </td>
+                     <td>                         
+                         <i ng-click="DeleteEmailSettings(r)" class="icon-trash"></i>                  
+                         <i ng-click="showEmailSetting(r)"  class="icon-pencil"></i>
+                     </td>
+                     <td>                         
+                          <div class="checkbox checkbox-default">
+                             <input type="checkbox" name="chk" ng-model="r.EnableEmailReporting" value ="1" ng-checked="r.EnableEmailReporting" ng-click ="Save(r)">
+                             <label ></label>
+                         </div>                         
+                     </td>
+                 </tr>
+             </tbody>
+         </table>  
+</div>
+<!-- END :: panel-body -->
+
+
+
+</div>
+<!-- END :: panel -->
+
+
+

@@ -1,0 +1,141 @@
+﻿/*Large Desktop*/
+@media (min-width: 1200px) {
+	.list-tooltip{
+		left: 30% !important;
+	}
+}
+
+/*Desktop*/
+@media (min-width: 992px) and (max-width: 1199px) {
+	.list-tooltip{
+		left: 40% !important;
+	}
+}
+
+/*Small desktop or tablet*/
+@media (min-width: 768px) and (max-width: 991px) {
+	body{overflow-x: hidden;}
+	.button-menu-mobile{display: block; color: #eee;}
+	.navbar{margin: 0 0 0 40px;}
+	.user-profile-sidebar{text-align: center;}
+	.list-tooltip{
+		left: 25% !important;
+	}
+
+	//.hidden-leftbar();
+}
+
+/*Phone*/
+@media (max-width: 767px) {
+	body{overflow-x: hidden;}
+	.nav.navbar-nav.top-navbar li span.absolute {left: 25px;}
+	footer{text-align: center;}
+	.navbar-nav{
+		float:left;
+		margin:0px;
+	}
+	.navbar{
+		border:none;
+	}
+
+	.navbar-nav .open .dropdown-menu{
+		float:left;
+		position: absolute;
+		background:#fff;
+		right:0px;
+		left:auto;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.navbar-nav.navbar-right:last-child {
+	    margin-right: -15px;
+	    height:50px;
+	}
+
+	.open > .dropdown-menu {
+	    display: block;
+	}
+
+	.nav-tabs.nav-justified > li {
+	    display: table-cell;
+	    width: 1%;
+	}
+
+	.navbar-nav > li > a{
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	.navbar-right{
+		float: right;
+	}
+	.navbar-nav > li{
+		display: inline-block;
+	}
+	.profile-actions{
+		bottom:auto;
+		top:60px;
+	}
+	.user-profile-sidebar{text-align: center;}
+
+	.hidden-leftbar();
+}
+
+@media (max-width: 480px){
+	.box-info .icon-box{
+		width: 100%;
+		display: block;
+	}
+	.box-info .icon-box,.box-info .text-box{text-align: center;}
+	.navbar-default {
+	  border: none;
+	}	
+	#wrapper:not(.enlarged) .topbar-profile,#wrapper:not(.enlarged) .hide-phone{
+		display: none;
+	}
+	.open-right-sidebar .content-page > .content{
+		opacity: 0;
+	}
+	.side-menu{
+		z-index: 4 !important;
+	}
+	.button-menu-mobile{display: block;}
+}
+
+@media (max-width: 420px){
+	.hide-phone{
+		display: none !important;
+	}
+}
+
+@media (max-width: 360px){
+	
+}
+
+@media (max-width: 320px){
+	
+}
+
+@media (max-height: 420px) {
+	//.hidden-leftbar();
+}
+
+//ThangPham, function css, July 07 2015
+.hidden-leftbar() {
+	#wrapper.enlarged .left.side-menu {
+		//display: none;
+		visibility: hidden;
+		opacity: 0;
+		-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+		-o-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+		-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+		transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	}
+
+	#wrapper .content-page{
+		margin-left:0px !important;
+		padding-left: 0px;
+		width:100%;
+		display: inline-block;
+	}
+}
+

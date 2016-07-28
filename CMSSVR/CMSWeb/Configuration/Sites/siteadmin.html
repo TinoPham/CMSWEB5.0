@@ -1,0 +1,38 @@
+<div class="panel sites-config" ng-controller="sitesCtrl as vm">
+    <func-header 
+        query='filterText'
+				 title="title()"
+				 titlecount="titlecount()"
+				 add-fn='false'
+				 edit-fn='false'
+				 del-fn='false'
+				 refresh-fn='false'
+				 import-fn='false'
+				 show-view-mode="false"></func-header>
+	<div class="panel-content">
+		<div class="site-controls">
+			<span class="dropdown" dropdown>
+				<span class="btn btn-sm dropdown-toggle" dropdown-toggle>
+					<i class="icon-doc-new"></i>
+					<span>{{'Add'| translate}}</span>
+				</span>
+				<ul class="dropdown-menu">
+					<li><a class="btn dropdown-site-li" ng-click="addRegion(true)" ng-disabled="addRegionDisabled">{{'BTN_ADD_REGION' | translate}}</a></li>
+					<li><a class="btn dropdown-site-li" ng-click="addSite(true)" ng-disabled="addSiteDisabled">{{'BTN_ADD_SITE' | translate}}</a></li>
+				</ul>
+			</span>
+			<span class="btn btn-sm" ng-click="editNodeFn()" ng-disabled="editDisabled"><i class="icon-pencil"></i><span>{{'Edit'| translate}}</span></span>
+			<span class="btn btn-sm trash" ng-click="deleteNodeFn()" ng-disabled="deleteDisabled || selected.Type === nodeType.DVR"><i class="icon-trash"></i><span>{{'Delete'| translate}}</span></span>
+			<span class="btn btn-sm" ng-click="refreshTree()"><i class="icon-cw-2"></i><span>{{'FUNC_HEADER_BTN_REFRESH'| translate}}</span></span>
+			<!--    <span class="btn btn-sm" ng-click="expandAll()"><i class="icon-resize-full-2"></i><span>{{'EXPAND_ALL'| translate}}</span></span>
+			   <span class="btn btn-sm" ng-click="collapsedAll()"><i class=" icon-resize-small-2"></i><span>{{'COLLAPSED_ALL'| translate}}</span></span>
+			   <span class="btn btn-sm" ng-click="refreshTree()"><i class=" icon-arrows-cw"></i><span>{{'TOOLTIP_REFRESH_WIDGET'| translate}}</span></span>-->
+		</div>
+		<div class="site-content">
+			<tree-component class="cms-tree" ng-if="treeSiteFilter" model="treeSiteFilter" filter-text="filterText" def-col="def" options="options"></tree-component>
+		</div>
+	</div>
+	<div ng-if="isEditSite === true" ng-class="{'col-md-4': isEditSite === true}">
+		<div ng-include="'configuration/general/sitenew.html'" ng-controller="addsiteCtrl as vm" ng-init="vm.init(selected, false)"></div>
+	</div>
+</div>

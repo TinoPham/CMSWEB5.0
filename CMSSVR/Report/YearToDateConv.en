@@ -1,0 +1,14 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Year To Date Roll Up"},
+{"NameField":"footer", "ValueField":"Prepared under contract for the exclusive use of i3 International. Reproduction of this report is prohibited."},
+{"NameField":"header_Traffic", "ValueField":"Traffic"},
+{"NameField":"header_Trans", "ValueField":"Trans"},
+{"NameField":"header_Sales", "ValueField":"Sales"},
+{"NameField":"header_Conv", "ValueField":"Conv%"},
+{"NameField":"header_ATV", "ValueField":"ATV"},
+{"NameField":"header_DPO", "ValueField":"DPO"},
+{"NameField":"header_Region", "ValueField":"Region"},
+{"NameField":"header_Total", "ValueField":"Total"},
+{"NameField":"header_CompanyTotal", "ValueField":"Company Total:"},
+{"NameField":"rpt_NODATA", "ValueField":"Data is not available"}
+]

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SVRDatabase.Model.DVRInfo>
+
+@{
+    ViewBag.Title = "DVR Information List";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DVR Information List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null,new{@class = "btn btn-warning"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            KDVR
+        </th>
+        <th>
+            Last Convert
+        </th>
+        <th>
+            Last DVR Message
+        </th>
+        <th>
+            Created Date
+        </th>
+        <th>
+            Force Stop
+        </th>
+        <th>
+            Converter Interval
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KDVR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastConvert)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastDvrMessage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ForceStop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConverterInterval)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KDVR }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KDVR }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KDVR })
+        </td>
+    </tr>
+}
+
+</table>

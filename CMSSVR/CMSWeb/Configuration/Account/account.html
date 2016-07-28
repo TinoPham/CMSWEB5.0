@@ -1,0 +1,36 @@
+﻿<div class="" data-ng-controller="accountCtrl as vm" ng-cloak>
+	<hr />
+	<div class="tab-panel-group">
+		<div class="tab-group-content">
+			<button class="fluent-big-button"><span class="icon-plus"></span><span class="button-label">New</span> </button>
+			<button class="fluent-big-button"><span class="icon-pencil"></span><span class="button-label">Eit</span> </button>
+			<button class="fluent-big-button" ng-click="vm.deletedata($event)"><span class="icon-cancel"></span><span class="button-label">Delete</span> </button>
+		</div>
+	</div>
+	<hr />
+
+	<cms-grid data="data" action-list="actionList" call="call(fun, row)"></cms-grid>
+
+
+	<div class="grid ">
+		<div class="row">
+			<div class="span5">
+				<div class="listview small" data-ng-repeat="user in vm.users">
+					<a class="list" ng-click="vm.showLoginDialog(user)">
+						<div class="list-content">
+							<div class="data">
+								<span class="list-title">{{user.username}}</span>
+								<div class="rating small no-margin" data-role="rating" data-stars="5"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="span4">
+			</div>
+
+		</div>
+	</div>
+</div>
+

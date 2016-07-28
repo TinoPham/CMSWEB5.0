@@ -1,0 +1,17 @@
+﻿<div ng-controller="ConversionCompCtrl" style="align-content:center;width:100%;text-align:center; padding-left:10px;">
+    <div class="row">
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" style="text-align:left">
+               <span class="btn btn-default btn-sm ng-binding" ng-click="vm.navigatePrevious()">◄</span>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" style="text-align:center">
+             <a>{{vm.currentImagesIndex+1}}/{{vm.images.length}}</a>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" style="text-align:right">
+             <span class="btn btn-default btn-sm ng-binding" ng-click="vm.navigateNext()">►</span>
+        </div> 
+    </div>
+    <div id="ImageBox" ng-show="vm.isCurrentImgVisible">
+        <a><img style="width:100%;" src="{{vm.currentImgSrc}}" class="img-thumbnail" /></a>
+    </div>
+  
+</div>

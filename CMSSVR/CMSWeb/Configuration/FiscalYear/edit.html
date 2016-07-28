@@ -1,0 +1,116 @@
+﻿<form name="myForm" class="edit_fiscalyear_form">
+
+	<div class="modal-header">
+		<span class="close" data-ng-click="closePopup()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{"FISCALYEAR_TITLE"|translate}}</h3>
+	</div>
+
+
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-xs-12 col-md-4">
+
+				<div class="form-group">
+					<div class="row">
+						<legend class="scheduler-border">{{"LABEL_OPTIONS"|translate}}</legend>
+						<div class="radio" style="display: none;"></div>
+						<div class="radio">
+                                <label class="i-checks"><input type="radio" name="a" ng-model="FYModel.FYTypesID" value ="1" ng-checked="FYModel.FYTypesID == 1" ng-click="changeOptions(FYModel.FYTypesID)"> <i></i>{{"RADIO_OPTION_LABEL_1_CALENDAR"|translate}}<small>{{"RADIO_OPTION_SUBLABEL_1_CALENDAR"|translate}}</small></label>
+						</div>
+						<div class="radio">
+                                <label class="i-checks"> <input type="radio" name="a" ng-model="FYModel.FYTypesID" value ="2" ng-checked="FYModel.FYTypesID == 2" ng-click="changeOptions(FYModel.FYTypesID)"> <i></i>{{"RADIO_OPTION_LABEL_2_FISCALYEAR"|translate}}</label>
+						</div>
+						<div class="radio">
+                                <label class="i-checks"> <input type="radio" name="a" ng-model="FYModel.FYTypesID" value ="3" ng-checked="FYModel.FYTypesID == 3" ng-click="changeOptions(FYModel.FYTypesID)"> <i></i>{{"RADIO_OPTION_LABEL_3_52WEEKS"|translate}} </label>
+						</div>
+						<div class="radio">
+                                <label class="i-checks"> <input type="radio" id="4" name="a" ng-model="FYModel.FYTypesID" value ="4" ng-checked="FYModel.FYTypesID == 4" ng-click="changeOptions(FYModel.FYTypesID)"><i></i>{{"RADIO_OPTION_LABEL_4_53WEEKS"|translate}} </label>
+						</div>
+						<div class="radio">
+                                <label class="i-checks"> <input type="radio" id="5" name="a" ng-model="FYModel.FYTypesID"  value ="5" ng-checked="FYModel.FYTypesID == 5" ng-click="changeOptions(FYModel.FYTypesID)"><i></i>{{"RADIO_OPTION_LABEL_5_52OR53WEEKS"|translate}} </label>
+						</div>
+
+					</div>
+
+					<div class="row">
+						<select class="form-control" name="D1" ng-disabled="isDisable('5')" ng-model="FYModel.FYClosest" ng-change="changeOptions(FYModel.FYTypesID)">
+							<option value="0">{{"SUN_DAY"|translate}}</option>
+							<option value="1">{{"MON_DAY"|translate}}</option>
+							<option value="2">{{"TUE_DAY"|translate}}</option>
+							<option value="3">{{"WED_DAY"|translate}}</option>
+							<option value="4">{{"THU_DAY"|translate}}</option>
+							<option value="5">{{"FRI_DAY"|translate}}</option>
+							<option value="6">{{"SAT_DAY"|translate}}</option>
+						</select>
+					</div>
+
+					<div class="row">
+						<label>{{'TO_FIELD'|translate}}</label>
+						<p class="input-group">
+							<input type="text" class="form-control" datepicker-popup="{{'MM/dd/yyyy'}}" ng-model="FYModel.FYDate" is-open="opened" datepicker-options="dateOptions" show-button-bar="false" ng-disabled="isDisable('5')" ng-change="changeOptions(FYModel.FYTypesID)" current-text="''" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open($event)" ng-disabled="isDisable('5')"><i class="icon-calendar"></i></button>
+							</span>
+						</p>
+					</div>
+
+
+				</div>
+				<!-- END :: Form group  fieldset class ="scheduler-border"  -->
+
+
+				<div class="form-group">
+					<div class="row">
+						<legend class="scheduler-border">{{"LABEL_QUARTER_STYLE"|translate}}</legend>
+						<div class="radio" style="display: none;"></div>
+						<div class="radio col-xs-4 col-md-4">
+                                 <label  class="i-checks"> <input type="radio" name="b" value="445" ng-model="FYModel.CalendarStyle" ng-checked="(FYModel.CalendarStyle === '445')"><i></i>445</label>
+						</div>
+						<div class="radio col-xs-4 col-md-4">
+                                <label class="i-checks"> <input type="radio" name="b" value="454" ng-model="FYModel.CalendarStyle" ng-checked="(FYModel.CalendarStyle  === '454')"><i></i>454</label>
+						</div>
+						<div class="radio col-xs-4 col-md-4">
+                                <label class="i-checks"> <input type="radio" name="b" value="544" ng-model="FYModel.CalendarStyle" ng-checked="(FYModel.CalendarStyle  === '544')"><i></i></label>544</label>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+			<!-- End a column -->
+
+
+
+			<div class="col-xs-12 col-md-4">
+				<div class="row">
+					<label class="control-label"><i class="icon-calendar"></i>{{"LABEL_STARTDATE"|translate}}</label>
+					<div style="display: inline-table;" class="fc-calendar" disabled>
+						<datepicker ng-model="FYModel.FYDateStart" min-date="minDatestart" class="well well-sm" show-weeks="false" show-button-bar="false" date-disabled="disabledNonefirstday(date,mode)" ng-change="changeOptions(FYModel.FYTypesID)"></datepicker>
+					</div>
+				</div>
+			</div>
+			<!-- End a column -->
+
+			<div class="col-xs-12 col-md-4">
+				<div class="row">
+					<label class="control-label"><i class="icon-calendar"></i>{{"LABEL_ENDDATE"|translate}} <small></small></label>
+					<div style="display: inline-table">
+						<datepicker ng-model="FYModel.FYDateEnd" min-date="minDateend" class="well well-sm" show-weeks="false" show-button-bar="false" ng-change="changeOptions(FYModel.FYTypesID)"></datepicker>
+					</div>
+				</div>
+			</div>
+			<!-- End a column -->
+
+        </div>  <!-- END::row -->
+	</div>
+	<!-- End :: container fuild -->
+
+
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="SaveFY()">{{"BTN_SAVE"|translate}}</button>
+		<button class="btn btn-danger" ng-click="closePopup()">{{"BTN_CANCEL"|translate}}</button>
+	</div>
+
+
+</form>

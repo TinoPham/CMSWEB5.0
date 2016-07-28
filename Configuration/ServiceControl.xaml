@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ServiceConfig.ServiceControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" Width="Auto" Height="Auto"
+             d:DesignHeight="200" d:DesignWidth="400">
+    <UserControl.Resources>
+        <sys:Double x:Key="ButtonWidth">120</sys:Double>
+        <sys:Double x:Key="ButtonHeight">60</sys:Double>
+        <Style x:Key="ButtonStyle" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="0,5,5,5"/>
+            <Setter Property="Width" Value="{StaticResource ButtonWidth}"/>
+            <Setter Property="Height" Value="{StaticResource ButtonHeight}"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Width="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--<StackPanel Orientation="Horizontal" Margin="5">-->
+        <Button Grid.Column="0" x:Name="btnStop" Content="Stop" Style="{StaticResource ButtonStyle}" Click="OnButtonClickHandler"/>
+        <Button Grid.Column="1" x:Name="btnStart" Content="Start" Style="{StaticResource ButtonStyle}"  Click="OnButtonClickHandler"/>
+        <Button Grid.Column="2" x:Name="btnRestart" Content="Restart" Style="{StaticResource ButtonStyle}" Click="OnButtonClickHandler"/>
+    <!--</StackPanel>-->
+    </Grid>
+</UserControl>

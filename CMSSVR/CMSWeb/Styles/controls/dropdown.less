@@ -1,0 +1,132 @@
+﻿@import url('../app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * Customize: Dropdown Menu (bootstrap)
+ * -----------
+ */
+
+.dropdown-menu {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-size: 12px;
+	padding: 5px;
+	padding: 0px;
+
+	a, strong {
+		text-decoration: none;
+		border-bottom: none;
+	}
+
+	a {
+		&:hover {
+			color: #4C5264;
+		}
+	}
+
+	.unread {
+		background: #FFFCE0;
+	}
+
+	top: 100%;
+
+	> li {
+		> a {
+			padding: 5px 7px;
+			-webkit-border-radius: 2px;
+			-moz-border-radius: 2px;
+			border-radius: 2px;
+			font-size: 13px;
+			color: #555;
+
+			&:hover {
+				background: #aaa;
+				color: #fff;
+			}
+		}
+	}
+
+	li > a > i{ padding-right: 5px; }
+
+	&.dropdown-message {
+		ul {
+			white-space: inherit;
+		}
+
+		> li {
+			> a {
+				-ms-word-wrap: break-word;
+				word-wrap: break-word;
+				white-space: inherit;
+				width: 300px;
+				border-bottom: 1px solid #eee;
+			}
+		}
+
+		li {
+			padding: 0px;
+
+			&.dropdown-footer {
+				a {
+					display: block;
+				}
+			}
+
+			p {
+				font-size: 11px;
+				margin-bottom: 5px;
+
+				i {
+					color: #7A868F;
+					font-size: 11px;
+					font-style: normal;
+				}
+			}
+
+			i {
+				&.msg-time {
+					color: #7A868F;
+					font-size: 11px;
+					font-style: normal;
+				}
+			}
+		}
+
+		.dropdown-message-scroll {
+			padding: 0px;
+
+			li {
+				padding: 5px 20px;
+			}
+
+			a, strong {
+				text-decoration: none;
+				border-bottom: none;
+			}
+
+			a {
+				&:hover {
+					color: #4C5264;
+				}
+			}
+
+			.unread {
+				background: #FFFCE0;
+			}
+		}
+	}
+}
+
+.dropdown-header {
+	padding: 5px 10px !important;
+	a > i{ margin-top: 1em; }
+
+	&.notif-header {
+		font-size: 14px;
+		padding: 6px 8px 5px;
+
+		.pull-right {
+			margin-top: -10px;
+		}
+	}
+}

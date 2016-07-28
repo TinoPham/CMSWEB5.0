@@ -1,0 +1,60 @@
+﻿<div class="select-widget">
+	<div class="modal-header">
+		<span class="close" data-ng-click="CloseRegion()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'SELECT_WIDGET_HEADER'| translate}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-sm-8 col-xs-12 col-left" ng-class="{'content-full': isHeader}">
+				<div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+					<!--Widgets Header-->
+					<div class="box_widget" ng-if="isHeader || showAllWidgets" ng-class="{'widget-header': isHeader }">
+						<h5 class="widget-group-header">{{'WIDGET_HEADER_STRING'|translate}}</h5>
+						<div class="row">						
+							<div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="widget in widgetHeaders">
+								<div class="widget-selection {{widget.Param.WidgetSelectClass}}" tooltip="{{widget.Title}}" ng-click="selectWd(widget)" ng-class="{'active': widget.Id === selected.Id}">
+									<span class="selected-icon"></span>
+									<span class="widget-name">{{widget.Title}}</span>
+									<!-- widget.Name | translate-->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
+					<!--Widgets Charts-->
+					<div ng-if="!isHeader" class="col-left-content">
+						<h5 class="widget-group-header">{{'WIDGET_CHART_STRING'|translate}}</h5>
+						<div class="row">
+							<div class="col-xs-12 col-sm-4 col-md-4" ng-repeat="widget in widgetCharts">
+								<div class="widget-item {{widget.Param.WidgetSelectClass}}" tooltip="{{widget.Name | translate}}" ng-click="selectWd(widget)" ng-class="{'active': widget.Id === selected.Id}">
+									<img ng-src="../Content/Images/{{widget.Image}}" />
+									<span ng-class="{textOverflow: isOverFlow}" class="widget-name">{{widget.Title}}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div ng-if="!isHeader" class="col-sm-4 col-xs-12 col-right">
+				<!--Widgets Extra-->
+				<div class="col-right-content">
+					<h5 class="widget-group-header">{{'WIDGET_EXTRA_STRING'|translate}}</h5>
+					<div class="row">
+						<div class="col-md-12" ng-repeat="widget in widgetExtras">
+							<div class="widget-selection {{widget.Param.WidgetSelectClass}}" tooltip="{{widget.Name | translate}}" ng-click="selectWd(widget)" ng-class="{'active': widget.Id ===selected.Id}">
+								<span class="selected-icon"></span>
+								<span class="widget-name">{{widget.Name | translate}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-default" ng-click="CloseRegion()">{{"BTN_CANCEL"|translate}}</button>
+		<button class="btn btn-primary" ng-disabled="selected == null || selected == undefined" ng-click="SaveRegion()" >{{"BTN_OK"|translate}}</button>
+	</div>
+</div>

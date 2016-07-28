@@ -1,0 +1,66 @@
+
+        <configuration_id>17</configuration_id>
+        <configuration_name>storage</configuration_name>
+    <storage>
+      <over_write>1</over_write>
+      <drivers size="3">
+        <driver id="0">
+          <name>E:</name>
+          <volume_name>New Volume</volume_name>
+          <use_for_recording>149</use_for_recording>
+          <total_space>305242</total_space>
+          <free_space>159</free_space>
+          <recorded_time>
+            <begin>
+              <day>25</day>
+              <month>9</month>
+              <year>2012</year>
+            </begin>
+            <end>
+              <day>3</day>
+              <month>10</month>
+              <year>2012</year>
+            </end>
+          </recorded_time>
+        </driver>
+        <driver id="1">
+          <name>F:</name>
+          <volume_name>Local Disk</volume_name>
+          <use_for_recording>149</use_for_recording>
+          <total_space>99998</total_space>
+          <free_space>136</free_space>
+          <recorded_time>
+            <begin>
+              <day>5</day>
+              <month>10</month>
+              <year>2012</year>
+            </begin>
+            <end>
+              <day>7</day>
+              <month>10</month>
+              <year>2012</year>
+            </end>
+          </recorded_time>
+        </driver>
+        <driver id="2">
+          <name>G:</name>
+          <volume_name>New Volume</volume_name>
+          <use_for_recording>149</use_for_recording>
+          <total_space>165246</total_space>
+          <free_space>121</free_space>
+          <recorded_time>
+            <begin>
+              <day>20</day>
+              <month>9</month>
+              <year>2012</year>
+            </begin>
+            <end>
+              <day>7</day>
+              <month>10</month>
+              <year>2012</year>
+            </end>
+          </recorded_time>
+        </driver>
+      </drivers>
+    </storage>
+       

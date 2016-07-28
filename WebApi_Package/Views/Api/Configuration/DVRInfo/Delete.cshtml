@@ -1,0 +1,65 @@
+﻿@model SVRDatabase.Model.DVRInfo
+
+@{
+    ViewBag.Title = "Delete";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DVRInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Last Convert
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastConvert)
+        </dd>
+
+        <dt>            
+            Last DVR Message
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastDvrMessage)
+        </dd>
+
+        <dt>
+            CreateDate
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>            
+            ForceStop
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ForceStop)
+        </dd>
+
+        <dt>
+            Converter Interval
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConverterInterval)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

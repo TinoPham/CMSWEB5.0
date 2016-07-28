@@ -1,0 +1,10 @@
+﻿{
+"COMPANY_NAME":"Nom de l'entreprise"
+, "COMPANY_LOGO":"Logo d'entreprise"
+, "COMPANY_IMPORT":"Importer le Logo"
+, "COMPANY_NUMBER_RECORDING":"Nombre de jours d'enregistrement"
+
+, "COMPANY_NAME_REQUIRED":"Le Nom de l'entreprise ne peut pas être vide."
+, "COMPANY_NUMBER_LESS":"Le nombre maximum de jours d'enregistrement est 365."
+, "COMPANY_NAME_NUMBER_RECORDING":"Le Nombre de jours d'enregistrement ne peut pas être vide."
+}

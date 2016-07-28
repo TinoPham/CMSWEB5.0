@@ -1,0 +1,107 @@
+﻿<div class="distribution" ng-controller="HeatMapCtrl as vm" ng-class="viewSelected.Key != 1 ? 'fix-temp-chart-display' : ''">
+    <div class="title-summary">
+    </div>
+    
+    <div ng-class="{'maximized_first': isMax}" class="col-sm-12 temp-box header-Content" style="background-color: #fff;">
+       <div class="tree-site-content">
+			<div class="btn-group drivethrough-dropdown-button" style="padding-left: 10px;" outside-click="clickOutside($event ,'.drivethrough-dropdown-button')">
+				<a id="btn-popMenuConvSitesHM" class="middle btn btn-xs dropdown-toggle btn-site" pop-menu>{{'CHART_SITES'|translate}} <!--<span class="badge">{{vm.selectedSites.length}}</span>--><i class="icon-down-open-2"></i></a>
+				<ul class="dropdown-menu pull-left filter-dlg">
+					<li>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel">
+									<div class="panel-header chart-pop-header" style="height: 32px;">
+										<div class="">
+											<div class="input-group">
+												<input type="text" ng-model="vm.querySiteHeatMap" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+											</div>
+										</div>
+
+									</div>
+									<div class="scroll-body" slimscroll="{height: '300px'}">
+										<div class="tree-site-addmin" ng-if="vm.siteloaded === true">
+											<!--<tree-component class="cms-tree" model="vm.treeSiteFilterHM" def-col="vm.treeDef" options="optionsHM"></tree-component>-->
+                                            <tree-component class="cms-tree" ng-if="vm.isShowHMTree === true" model="vm.treeSiteFilterHM" filter-text="vm.querySiteHeatMap" def-col="vm.treeDef" options="vm.optionsHM"></tree-component>
+										</div>
+									</div>
+									<div class="panel-footer">
+										<div class="btn-group">
+											<span id="Span1" class="btn btn-default btn-sm" ng-click="vm.TreeSiteHMClose()">{{'BTN_DONE'|translate}}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div><!-- END :: btn-group -->
+		</div>
+       <div class=" arrow_right"></div>
+       <div title="{{vm.selectedSiteNameHM}}">
+        <i class='middle icon-store-3'></i>
+            <span>{{vm.selectedSiteNameHM}}</span>
+         </div>
+       <div class=" arrow_right_second"></div>
+       <div title="{{vm.selectedDVRName}}">
+            <i class='middle icon-site-2'></i>
+            <span> {{vm.selectedDVRName}} </span>        
+         </div>
+        <div class="arrow_right_end"></div>
+        <div class="additional-btn">
+				<a ng-if="IsMsgVirtual != true" tooltip="{{'MANUALLY'|translate}}" tooltip-placement="left" ng-click="showMunuallyUpload()" ><i class="icon-upload-1"></i></a>
+                <a ng-if="vm.userLoginHM.IsAdmin === true" tooltip="{{'SCHEDULE_SETTING'|translate}}" tooltip-placement="left" ng-click="showSettingSchedules()"><i class="icon-tools"></i></a>
+                <!--<a><i class="icon-tools"></i></a>-->
+                <a ng-click="fullSize()" tooltip="{{(isMax ? 'RESTORE' : 'MAXIMIZE')|translate}}" tooltip-placement="left"><i ng-class="{'icon-resize-full-1': !isMax, 'icon-resize-small-1': isMax}"></i></a>
+				<a ng-show="!isMax" class="collapse-btn" ng-click="isCollapsed = !isCollapsed" tooltip="{{(isCollapsed ? 'EXPAND' : 'COLLAPSE')|translate }}" tooltip-placement="left"><i class="icon-down-open-2"></i></a>
+				<span>&nbsp;&nbsp;</span>
+            </div>
+    </div>
+    <div collapse="isCollapsed" ng-class="{'maximized_second': isMax}" class="col-sm-12 temp-box body-Content  heatmap-box-content" style="background-color: #fff;">
+        
+       <div ng-show="IsMsgVirtual != true">
+            <ul class="list-image">
+            <li ng-repeat="image in vm.HMImagesData.mapsImage" ng-click="showDetailImage(vm.HMImagesData.mapsImage, image)" >
+                <img  ng-src="{{image.ImageURL}}" alt="Site map">
+                <div><i class="icon-videocam-2"></i><span>{{image.Channels.ChannelName}}</span></div>
+            </li>
+            </ul>
+        </div>
+        <!-- START  :: No data-->
+        <div class="table-empty" ng-show="(vm.HMImagesData.mapsImage.length == 0 || vm.HMImagesData.mapsImage === undefined) && IsMsgVirtual != true">
+		    <i class=" icon-boxes6"></i>
+		    <p>{{'NO_DATA_STRING' | translate}}</p>
+	    </div>
+        <!-- END  :: No data-->
+        <!-- START  :: No data-->
+        <div class="table-empty" ng-show="IsMsgVirtual == true">
+            <i class=" icon-cam-block"></i>
+		    <p>{{'MSGDVRVIRTUAL' | translate}}</p>
+	    </div>
+        <!-- END  :: No data-->
+
+        <div ng-show="TotalPages > 1" class="col-md-12 select-image-footer">
+               <nav style="text-align: center;" class="pull-right">
+                    <ul class="pagination" style="margin: 0;">
+                        <li ng-click="prevPage()" ng-disabled="currPage < 2">
+                            <a aria-label="Previous">
+                                <span aria-hidden="true"><i class=" icon-left-open-big"></i></span>
+                            </a>
+                        </li>
+                        <li ng-click="prevPage(1)"><a>1</a></li>
+                        <li><a class="input-page"><input type="number" class="form-control" ng-model="currPage" style="max-width: 50px;"></a></li>
+                        <li ng-click="gotoPage()"><a>{{'GO' | translate}}</a></li>
+                        <li ng-click="nextPage(TotalPages)"><a>{{TotalPages ? TotalPages : 0}}</a></li>
+                        <li ng-click="nextPage()" ng-disabled="currPage >= TotalPages">
+                            <a aria-label="Next">
+                                  <span aria-hidden="true">
+                                            <i class=" icon-right-open-big"></i>
+                                        </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,109 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using CMSWebApi.ServiceInterfaces;
+using CMSWebApi.DataModels;
+using System.Globalization;
+using PACDMModel.Model;
+using System.IO;
+using CMSWebApi.APIFilters;
+
+namespace CMSWebApi.BusinessServices.Recipient
+{
+	public class RecipientBusinessService : BusinessBase<IRecipientService>
+	{
+		private const string RECIPIENT_EMAIL_EXIST = "RECIPIENT_EMAIL_EXIST";
+		private const string RECIPIENT_REGIST_SUCCESS = "RECIPIENT_REGIST_SUCCESS";
+		private const string RECIPIENT_REGIST_FAIL = "RECIPIENT_REGIST_FAIL";
+
+		public RecipientModel[] GetAllRecipient(UserContext userValue)
+		{
+			int userID = (!userValue.Createdby.HasValue ? userValue.ID : userValue.Createdby.Value);
+			tCMSWebRecipients[] recipient = DataService.SelectAllRecipient(userID);
+			tCMSWeb_UserList user = DataService.SelectUser(userID);
+			RecipientModel[] models = (from item in recipient
+									   select new RecipientModel
+									   {
+										   RecipientID = item.RecipientID,
+										   Email = item.Email,
+										  CreateBy= item.CreateBy, LastName=item.LastName, FirstName= item.FirstName,
+										  UUsername= user.UUsername
+									   }).ToArray();
+			return models;			
+		}
+
+		public bool DeleteRecipient(int reciptientID)
+		{
+			bool result = DataService.DeleteRecipient(reciptientID);
+			return result;
+		}
+
+		public RecipientModel UpdateRecipient(RecipientModel model)
+		{
+			string message = string.Empty;
+			model.ReturnStatus = true;
+			if (CheckRegistExist(model.Email, model.RecipientID))
+			{
+				model.ReturnStatus = false;
+				model.ReturnMessage.Add(RECIPIENT_EMAIL_EXIST);
+			}
+			else
+			{
+				tCMSWebRecipients tRecipient = new tCMSWebRecipients();
+
+				if (model.RecipientID != 0)
+				{
+					tRecipient = DataService.SelectRecipient(model.RecipientID);
+					SetEntityRecipient(ref tRecipient, model);
+					if (DataService.UpdateRecipient(tRecipient) == null)
+					{
+						model.ReturnStatus = false;
+						model.ReturnMessage.Add(RECIPIENT_REGIST_FAIL);
+					}
+				}
+				else
+				{
+					SetEntityRecipient(ref tRecipient, model);
+					if (DataService.AddRecipient(tRecipient) == null)
+					{
+						model.ReturnStatus = false;
+						model.ReturnMessage.Add(RECIPIENT_REGIST_FAIL);
+					}
+				}
+				
+			}
+
+			return model;
+		}
+
+		private bool CheckRegistExist(string email, int recipientID)
+		{
+			tCMSWebRecipients[] tRecipient = DataService.SelectRecipient(email);
+			//check insert
+			if (recipientID == 0)
+				return (tRecipient.Count() > 0) ? true : false;
+			//check update
+			else
+			{
+				var name = from item in tRecipient
+						   where item.RecipientID != recipientID
+						   select item;
+				return name.Count() > 0 ? true : false;
+			}
+		}
+
+		public void SetEntityRecipient(ref tCMSWebRecipients tRecipient, RecipientModel model)
+		{
+			if (tRecipient == null)
+				tRecipient = new tCMSWebRecipients();
+
+			tRecipient.RecipientID = model.RecipientID;
+			tRecipient.Email = model.Email;
+			tRecipient.CreateBy = model.CreateBy;
+			tRecipient.FirstName = model.FirstName;
+			tRecipient.LastName = model.LastName;
+		}		
+	}
+}

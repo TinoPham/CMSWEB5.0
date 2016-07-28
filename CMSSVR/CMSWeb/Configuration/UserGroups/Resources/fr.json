@@ -1,0 +1,21 @@
+﻿{
+"USERGROUP_ADD_HEADER":"AJOUTER UN GROUPE D'UTILISATEUR"
+, "USERGROUP_EDIT_HEADER":"MODIFIER UN GROUPE D'UTILISATEURS"
+, "USERGROUP_DELETE_HEADER":"Supprimer un groupe d'utilisateurs"
+, "USERGROUP_NAME": "Nom du groupe"
+, "USERGROUP_NO_OF_USERS": "Nombre d'utilisateurs"
+, "USERGROUP_DESCRIPTION": "Description"
+, "USERGROUP_MODULE": "Modules"
+, "USERGROUP_GENERAL": "Général"
+, "USER_NUMBERS":"Utilisateurs"
+, "USER_NUMBER":"Utilisateur"
+
+, "USERGROUP_NAME_REQUIRED": "Le Nom du groupe ne peut pas être vide."
+, "USERGROUP_DELETE_CONFIRM_MSG":"Êtes-vous sûr de vouloir supprimer ce groupe d'utilisateurs?"
+, "USERGROUP_DELETE_CONFIRM_MSGS":"Êtes-vous sûr de vouloir supprimer ces groupes d'utilisateur?"
+, "USERGROUP_SELECT_REQUIRED":"Le groupe d'utilisateurs doit être sélectionné."
+, "USERGROUPS_NAME_EXIST":"Ce groupe d'utilisateurs existe déjà."
+, "USERGROUP_CONFIRM_BODY":"Sélectionnez un groupe d'utilisateurs."
+, "USERGROUP_CONFIRM_REPLACE":"Certains utilisateurs ont été retirés du groupe d'utilisateurs '{0}'. Veuillez sélectionner un autre groupe d'utilisateurs pour le remplacer."
+, "UNABLE_TO_DELETE_MULTIPLE_USERGROUP":"Impossible de supprimer plusieurs groupes d'utilisateurs qui sont affectés à l'utilisateur. Veuillez sélectionner un groupe d'utilisateurs à supprimer."
+}

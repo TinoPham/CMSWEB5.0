@@ -1,0 +1,21 @@
+﻿{
+"USERGROUP_ADD_HEADER":"ADD USER GROUP"
+, "USERGROUP_EDIT_HEADER":"EDIT USER GROUP"
+, "USERGROUP_DELETE_HEADER":"Delete User Group"
+, "USERGROUP_NAME": "Group Name"
+, "USERGROUP_NO_OF_USERS": "Number of Users"
+, "USERGROUP_DESCRIPTION": "Description"
+, "USERGROUP_MODULE": "Modules"
+, "USERGROUP_GENERAL": "General"
+, "USER_NUMBERS":"Users"
+, "USER_NUMBER":"User"
+
+, "USERGROUP_NAME_REQUIRED": "Group Name cannot be empty."
+, "USERGROUP_DELETE_CONFIRM_MSG":"Are you sure you want to delete this User Group?"
+, "USERGROUP_DELETE_CONFIRM_MSGS":"Are you sure you want to delete these User Groups?"
+, "USERGROUP_SELECT_REQUIRED":"The user group must be selected."
+, "USERGROUPS_NAME_EXIST":"This User Group already exists."
+, "USERGROUP_CONFIRM_BODY":"Select a User Group."
+, "USERGROUP_CONFIRM_REPLACE":"Some users are removed from user group '{0}'. Please choose another user group to replace."
+, "UNABLE_TO_DELETE_MULTIPLE_USERGROUP":"Unable to delete multiple User Groups that are assigned to user. Please select 1 User Group to delete."
+}

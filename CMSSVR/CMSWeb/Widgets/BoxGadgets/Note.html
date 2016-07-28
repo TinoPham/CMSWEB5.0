@@ -1,0 +1,29 @@
+﻿<div ng-controller="noteCtrl as vm" class="{{vm.saved}}">
+	<div class="notes-line"></div>
+	<div class="notes-view" ng-show="vm.viewMode === vm.state.view">
+		<div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+			<!-- slimscroll="{ height: '{{vm.DivHeight}}px'}"-->
+			<ul class="list-unstyled">
+				<li ng-repeat="note in vm.notes | orderBy: 'Id': true">
+					<a ng-click="vm.selectNote(note)">
+						<div class="notes-trunc">{{note.Content}}</div>
+					</a>
+					<div class="btn-group pull-right">
+						<a class="btn btn-sm btn-link kill-notes" ng-click="vm.deleteNote(note)"><i class="icon-trash"></i></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="notes-view" ng-show="vm.viewMode !== vm.state.view">
+		<form>
+			<textarea id="noteText" class="form-control notes-text scrollbar-dynamic" type="textarea"
+				ng-model="vm.noteSelected.Content" ng-change="vm.change()" autofocus data-jquery-scrollbar></textarea> <!--placeholder="{{'NOTE_HERE'|translate}}"-->
+		</form>
+	</div>
+	<div class="status-indicator">{{'TODO_SAVED_MSG'|translate}}</div>
+	<div class="left-btn btn-group">
+			<a ng-click="vm.addNote()" class="btn btn-sm btn-primary add-notes"><i class="icon-plus"></i></a>
+			<a ng-click="vm.viewNote()" class="btn btn-sm btn-primary back-notes-list"><i class="icon-menu"></i></a>
+	</div>
+</div>

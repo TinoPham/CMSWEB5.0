@@ -1,0 +1,44 @@
+﻿<div data-ng-controller="dvrCountCtrl" ng-init="Init()" class="cms-chart">
+	<div class="container-fluid" ng-if="loading===true">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="toolbar">
+					<div class="pull-left">
+						<div  class="btn-group" ng-repeat="opt in Gui.Opts">
+							<span class="btn btn-default btn-xs" ng-click="GetData(opt)" ng-class="{'active': isActiveOption(opt) === true}" title="{{'LAST'|translate}} {{opt.label|translate}}">{{opt.label|translate}}</span>
+						</div>
+						<!--
+						<div class="btn-group">
+							<a ng-click="Update(1)" ng-class="{'active':vm.Period === 1}" class="btn btn-default btn-xs" title="{{'LAST'|translate}} 24 {{'HOURS'|translate}}">24 {{'HOURS'|translate}}</a>
+							<a ng-click="Update(3)" ng-class="{'active':vm.Period === 3}" class="btn btn-default btn-xs" title="{{'LAST'|translate}} 3 {{'DAYS'|translate}}">3 {{'DAYS'|translate}}</a>
+							<a ng-click="Update(7)" ng-class="{'active':vm.Period === 7}" class="btn btn-default btn-xs">{{'LAST'|translate}} {{'WEEK'|translate}}</a>
+						</div> -->
+					</div>
+					<div class="pull-right">
+						<div class="btn-group">
+							<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{'EXPORT_STRING'|translate}}<i class="icon-down-open-2"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li><a id="exportpdf_dvrc" href="#" onclick="return false;">{{'EXPORT_TO_PDF'|translate}}</a></li>
+								<li><a id="exportcsv_dvrc" href="#" onclick="return false;">{{'EXPORT_TO_CSV'|translate}}</a></li>
+								<li><a id="exportpng_dvrc" href="#" onclick="return false;">{{'EXPORT_TO_PNG'|translate}}</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<fusioncharts 
+					width="100%" 
+					height="300" 
+					type="bar2d"
+					datasource="{{chartDSDVRs}}"
+					events="chartDVREvents">
+				</fusioncharts>
+			</div>
+		</div>
+	</div>
+</div>

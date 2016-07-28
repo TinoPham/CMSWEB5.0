@@ -1,0 +1,44 @@
+﻿<div class="conversion-chart" ng-controller="waagConversionCtrl as conv" ng-init="Init()">
+	<h3 title="{{selectedNode.Name}}"><i class=" icon-store-3"></i> <strong>{{'STORE_NAME' | translate}}{{':'}}</strong> {{selectedNode.Name}}</h3>
+	<div class="col-xs-12 col-sm-12 col-md-4">
+			<div
+			id="conversion-pie-chart"
+			class="diagram">
+		</div>
+	</div>
+				
+	<div class="col-xs-12 col-sm-12 col-md-8">
+		<div class="conversion-info-chart">
+				<div class="head">
+					<div class="small-conversion-chart">
+						<ul>
+							<li ng-repeat="conv in ConvDataWeek track by $index" title="{{conv.label}}: {{conv.conv}}%"><span ng-style="{'height': conv.conv + '%'}"></span></li>
+							<!--
+							<li><span style="height: 70%"></span></li>
+							<li><span style="height: 10%"></span></li>
+							<li><span style="height: 40%"></span></li>
+							<li><span style="height: 50%"></span></li>
+							<li><span style="height: 80%"></span></li>
+							<li><span style="height: 20%"></span></li>
+							<li><span style="height: 45%"></span></li>-->
+						</ul>
+					</div>
+					<div class="compare-box">
+						<h3>{{ConvData.compare}}% <i class="{{ConvData.icon}}"></i></h3>
+						<h4>{{'CHART_ATV_LASTWEEK' | translate}}</h4>
+					</div>
+				</div>
+				<div class="foot">
+					<div class="value-box">
+						<h4>{{'CHART_TRAFFICIN' | translate}}</h4>
+						<h3>{{ConvData.traffic}}</h3>
+					</div>
+					<div class="value-box">
+						<h4>Transaction</h4>
+						<h3>{{ConvData.trans}}</h3>
+					</div>
+				</div>
+		</div>
+	</div>
+	<div style="clear: both"></div>
+</div>

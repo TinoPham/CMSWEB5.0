@@ -1,0 +1,286 @@
+/* COMMON, START */
+/* COMMON, END */
+/** TOP BAR **/
+/** LEFT BAR **/
+/** FOOTER **/
+.fa-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/*
+ * CMS: Grids (customize ng-grid)
+ * -----------
+ */
+.ngGrid {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  color: #4a525f;
+  /*Customize Grid - Listview mode, start*/
+  /*Customize scroll width grid*/
+  /*Customize scroll height grid*/
+}
+.ngGrid .ngTopPanel {
+  background-color: #F9F9F9 !important;
+}
+.ngGrid .ngTopPanel .ngHeaderContainer .ngHeaderScroller {
+  margin-left: 1px;
+}
+.ngGrid .ngTopPanel .ngHeaderContainer .ngHeaderCell .ngHeaderText {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 8px 5px;
+}
+.ngGrid .ngTopPanel .ngHeaderContainer .ngHeaderCell .ngHeaderText .ngSelectionHeader {
+  position: relative;
+  top: -7px;
+  left: -4px;
+}
+.ngGrid .ngTopPanel .ngHeaderContainer .ngHeaderCell .checkbox {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: -10px;
+}
+.ngGrid .ngTopPanel .ngHeaderContainer .ngHeaderCell .checkbox input[type=checkbox] {
+  width: 21px;
+  height: 21px;
+  margin-top: 1px;
+  z-index: 1;
+}
+.ngGrid .ngTopPanel .ngHeaderContainer .ngHeaderCell .checkbox label {
+  font-weight: bold;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.ngGrid .ngTopPanel .ngHeaderContainer .ngHeaderCell .ngHeaderSortColumn {
+  position: relative;
+}
+.ngGrid .ngViewport {
+  width: auto !important;
+  overflow-y: auto;
+  min-height: 200px;
+  overflow-x: hidden;
+}
+.ngGrid .ngViewport .ngRow .ngCell {
+  font-size: 12px;
+}
+.ngGrid .ngViewport .ngRow .ngCell .ngCellText {
+  padding: 10px 5px;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info {
+  font-size: 12px;
+  width: 100%;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-name,
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-pos,
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-mail,
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-des,
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-number,
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-createdby {
+  display: block;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-name {
+  color: #252932;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-pos {
+  color: #38464A;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-mail {
+  color: #7A868F;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-date {
+  font-size: 11px;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .checkbox {
+  margin-top: 0px;
+  margin-left: 5px;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .checkbox input[type=checkbox] {
+  z-index: 0;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-color {
+  border: 2px solid;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  padding: 10px;
+  float: left;
+  margin-left: 7px;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-image {
+  float: left;
+  margin-top: -8px;
+}
+.ngGrid .ngViewport .ngRow .ngCell .item-info .i-image img {
+  width: 35px;
+  height: 35px;
+  max-width: 35px;
+  max-height: 35px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+.ngGrid .ngViewport .ngRow .i-expired {
+  height: 100%;
+  background-color: rgba(255, 224, 224, 0.8);
+}
+.ngGrid .ngViewport .ngRow .i-expired .i-date {
+  color: #f11b1b;
+}
+.ngGrid .ngViewport .ngRow.selected {
+  background: rgba(180, 220, 240, 0.4) !important;
+}
+.ngGrid .ngViewport .ngRow.selected .i-expired {
+  background-color: rgba(180, 220, 240, 0.4) !important;
+}
+.ngGrid .ngViewport .ngRow.even {
+  background-color: #f9f9f9;
+}
+.ngGrid.listview .ngTopPanel {
+  visibility: hidden;
+  height: 0 !important;
+}
+.ngGrid.listview .ngRow .ngCell .item-info {
+  padding-left: 5px;
+}
+.ngGrid.listview .ngRow .ngCell .item-info .i-name {
+  font-weight: bold;
+}
+.ngGrid.listview .ngRow .ngCell .item-info .i-image {
+  margin-top: 0;
+  margin-right: 10px;
+}
+.ngGrid.listview .ngRow .ngCell .item-info .i-image img {
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+.ngGrid.listview .ngRow .ngCell .item-info .checkbox {
+  margin-top: 5px;
+}
+.ngGrid.listview .ngRow .ngCell .item-info .i-color {
+  margin-left: 0;
+  margin-right: 10px;
+}
+@media screen and (max-width: 768px) {
+  .ngGrid .ngViewport {
+    overflow-x: auto !important;
+  }
+}
+@media screen and (max-height: 768px) {
+  .ngGrid {
+    height: 600px;
+    /*.gridStyle {
+			height: 550px;
+
+			/*&.user-admin-list {
+				.ngViewport {
+					height: 550px !important;
+				}
+			}
+		}*/
+  }
+}
+@media screen and (min-height: 769px) and (max-height: 864px) {
+  .ngGrid {
+    height: 580px;
+    /*.gridStyle {
+			height: 580px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 580px !important;
+				}
+			}
+		}*/
+  }
+}
+@media screen and (min-height: 865px) and (max-height: 900px) {
+  .ngGrid {
+    height: 650px;
+    /*.gridStyle {
+			height: 650px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 650px !important;
+				}
+			}
+		}*/
+  }
+}
+@media screen and (min-height: 901px) and (max-height: 950px) {
+  .ngGrid {
+    height: 680px;
+    /*.gridStyle {
+			height: 680px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 680px !important;
+				}
+			}
+		}*/
+  }
+}
+@media screen and (min-height: 951px) and (max-height: 1000px) {
+  .ngGrid {
+    height: 800px;
+    /*.gridStyle {
+			height: 730px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 730px !important;
+				}
+			}
+		}*/
+  }
+}
+@media screen and (min-height: 1001px) and (max-height: 1200px) {
+  .ngGrid {
+    height: 930px;
+    /*.gridStyle {
+			height: 780px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 780px !important;
+				}
+			}
+		}*/
+  }
+}
+@media screen and (min-height: 1201px) {
+  .ngGrid {
+    height: 970px;
+    max-height: 970px;
+    overflow: auto;
+    /*.gridStyle {
+			height: 970px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 970px !important;
+				}
+			}
+		}*/
+  }
+}

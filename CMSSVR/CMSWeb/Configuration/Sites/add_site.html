@@ -1,0 +1,525 @@
+﻿<form class="form-add-site-config" ng-if="vm.isActived === true" name="formsite" angular-validator-submit="vm.saveSite()" novalidate angular-validator>
+    <div class="row">
+        <input type="submit" ng-hide="true"/>
+        <div class="col-md-7 panel-left">
+            <div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+                <accordion close-others="vm.status.isCloseOther">
+                    <!--INFORAMTION GROUP-->
+                    <accordion-group is-open="vm.status.isInfoOpen">
+                        <accordion-heading>
+                            <i class="fa" ng-class="{'fa-caret-right': !vm.status.isInfoOpen, 'fa-caret-down': vm.status.isInfoOpen}"></i>
+                            <span ng-class="{'text-muted': isDisabled}"  class="text-uppercase">{{'INFORMATION'|translate}}</span>
+                        </accordion-heading>
+                        <div class="form-group"> <!--ng-class="{'site-name-padding': vm.site.Macs.length > 1}"-->
+                            <label for="sitename" class="control-label"><span class="required">{{'SITE_NAME'|translate}}</span></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="sitename" autocomplete="off" 
+                                       name ="ServerId" 
+                                       maxlength="50"
+                                       validate-on="dirty"
+                                       ng-model="vm.site.ServerId" 
+                                       required-message="'{{'SEVERID_REQUIRED_FIELD' | translate}}'"
+                                       required autofocus="autofocus" />
+                                <span class="input-group-addon site-mac-image" html-url="Widgets/ImageUpload.html" js-url="widgets/ImageUpload.js" 
+                                      ng-class="{'open': vm.site.ServerId}" is-valid="vm.site.ServerId"
+                                      model="vm.site.Files" parent-model="vm.site" placement="left" popover-html><i class="icon-picture"></i></span>
+                            </div>
+                        </div>
+				<!--		<div class="form-group" ng-repeat="mac in vm.site.Macs">
+                            <label for="MacAddress{{$index}}"><span class="required">{{vm.GenerateMACAddressLabel($index + 1)}}</span></label>
+                            <div class="input-group input-mac-group">
+                                <input type="text" id="MacAddress{{$index}}" class="form-control" name="MacAddress{{$index}}" ui-mask="**-**-**-**-**-**" 
+                                       ng-model="mac.MacAddress"
+                                       validate-on="dirty"
+                                       validator="vm.checkMacExisted(vm.site.Macs, {{$index}}) === true"
+                                       invalid-message="vm.checkMacExisted(vm.site.Macs, {{$index}})"
+                                       required-message="'{{'MAC_ADDRESS_REQUIRED' | translate}}'"
+                                       required />
+                                <span ng-hide="vm.site.Macs.length <= 1" class="input-group-addon btn-remove-mac" ng-click="vm.removeMacFn(mac)"><i class="icon-trash"></i></span>
+                            </div>
+						</div>-->
+						<!--<label class="btn btn-default" ng-click="vm.addMacMore()"><i class="icon-plus-circled-1 fa-lg"></i><span class="mac-addmore">{{'BTN_ADD_MORE' | translate}}</span></label>-->
+						
+						<div class="form-group" ng-class="{'has-error' : vm.isWrongHaspKey && vm.isWrongHaspKey === true && vm.serialListToRender.length <= 0}">
+							<label class="control-label"><span>{{'SERIAL_NUMBER'|translate}}</span></label>
+							<multiselect-serial name="ddlSerial" ng-model="vm.site.HaspLicense" 
+								options="serialNumber as hasp.SerialNumber for hasp in vm.HaspLicenseData" 
+								multiple="true" HideSelectAllBtn="true">
+							</multiselect-serial>
+                        </div>
+						<!--Generate Serial Number-->
+                        <div class="form-group">
+                            <label class="control-label has-error" ng-if="vm.isWrongHaspKey && vm.isWrongHaspKey === true && vm.serialListToRender.length <= 0">{{'SERIAL_REQUIRE'| translate}}</label>                 
+                            <div class="serial-group col-md-6" ng-repeat="serial in vm.serialListToRender">
+                                <div class="input-group">
+                                    <span class="input-group-addon addon-index">#{{$index + 1}}</span>
+                                    <div class="serial-info">
+                                        <div class="serial-number"><span>{{serial.SerialNumber}}</span></div>
+                                        <div class="server-id-serial"><span class="icon-dvr-2"></span><span>{{serial.ServerID}}</span></div>
+                                    </div>
+                                    <span class="input-group-addon addon-remove" ng-click="vm.removeSerial(serial)"><span class="icon-trash"></span></span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+			<!--<div class="form-group">
+                            <label for="sitelicense" class="control-label"><span>{{'LICENSE_ID'|translate}}</span></label>
+                            <input id="sitelicense" type="text" class="form-control" ng-model="vm.site.HaspkeyId" cms-interger="{maxlength: 25}">
+						</div>-->
+                        <div class="form-group">
+                            <label class="control-label"><span>{{'GOALTYPE_NAME'|translate}}</span></label>
+                            <div class="input-group">
+                                <multiselect name="ddlGoals" class="form-control" ng-model="vm.goalSelected" 
+                                             options="goal as goal.GoalName for goal in vm.goals" 
+                                             change="vm.ddlGoalsChanged()">
+                                </multiselect>
+                                <span class="input-group-addon" ng-click="vm.refeshGoads()"><span class="icon-ccw-1"></span></span>
+                                <span class="input-group-addon" ng-click="vm.addGoad()"><span class="icon-plus-circled-1"></span></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"><span>{{'GOAL_CALENDAR_EVENT'|translate}}</span></label>
+                            <div class="input-group">
+                                <multiselect name="ddlCalEvent" class="form-control" 
+                                             ng-model="vm.CalEventSelected" 
+                                             options="cal as cal.Name for cal in vm.calenderEventsDB" 
+                                             change="vm.ddlCalEventChanged()" multiple="true">
+                                </multiselect>
+                                <span class="input-group-addon" ng-click="vm.refeshCalendarEvent()"><span class="icon-ccw-1"></span></span>
+                                <!--<span class="input-group-addon" ng-click="vm.addCalendarEvent()"><span class="icon-plus-circled-1"></span></span>-->
+                            </div>
+                        </div>
+                    </accordion-group>
+                    <!--SITE METRIC GROUP-->
+                    <accordion-group is-open="vm.status.isSiteMetricOpen">
+                        <accordion-heading>
+                            <div class="border-top"></div>
+                            <i class="fa" ng-class="{'fa-caret-right': !vm.status.isSiteMetricOpen, 'fa-caret-down': vm.status.isSiteMetricOpen}"></i>
+                            <span ng-class="{'text-muted': isDisabled}" class="text-uppercase">{{'DVR_METRIX'|translate}}</span>
+                            <span class="siteadmin-reload-btn">
+                                <label class="cursor-pointer" ng-click="vm.refeshMetric($event)"><i class="icon-ccw-1"></i></label>
+                            </span>
+                        </accordion-heading>   
+                        <div ng-if="vm.status.isSiteMetricOpen">
+                            <metric-component class="cms-tree" ng-if="vm.treeMectric" model="vm.treeMectric" filter-text="vm.filterText" select="vm.selectMetricFn" def-col="def"></metric-component>
+                        </div>
+                    </accordion-group>
+                    <!--ADDRESS GROUP-->
+                    <accordion-group is-open="vm.status.isAddressOpen">
+                        <accordion-heading>
+                            <div class="border-top"></div>
+                            <i class="fa" ng-class="{'fa-caret-right': !vm.status.isAddressOpen, 'fa-caret-down': vm.status.isAddressOpen}"></i>
+                            <span ng-class="{'text-muted': isDisabled}" class="text-uppercase">{{'SITES_DETAILS'|translate}}</span>
+                        </accordion-heading>    
+                        <div ng-if="vm.status.isAddressOpen">
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'ADDRESS_LINE_1'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.AddressLine1" maxlength="50"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'ADDRESS_LINE_2'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.AddressLine2" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'CITY'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.City" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'COUNTRY'|translate}}</span></label>
+                                <div class="input-group">
+                                    <multiselect name="ddlCountries" class="form-control" ng-model="vm.countrySelected" 
+                                                 options="country as country.Name for country in vm.countries | orderBy:'Sort'" 
+                                                 change="vm.ddlCountriesChanged()">
+                                    </multiselect>
+                                    <span class="input-group-addon" ng-click="vm.refeshCountries()"><span class="icon-ccw-1"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'STATE'|translate}}</span></label>
+                                <div class="input-group">
+                                    <multiselect name="ddlStates" class="form-control" ng-model="vm.stateSelected" 
+                                                 options="state as state.Name for state in vm.states" 
+                                                 change="vm.ddlStatesChanged()">
+                                    </multiselect>
+                                    <span class="input-group-addon" ng-click="vm.refeshStates()"><span class="icon-ccw-1"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'ZIP_CODE'|translate}}</span></label>
+                                <div class="zipcode-input" ng-class="{'has-error': hasError}">
+                                    <angucomplete-alt id="zipcode"
+                                                      placeholder=""
+                                                      pause="100"
+                                                      initial-value="vm.site.PostalZipCode"
+                                                      selected-object="vm.ZipCodeSelectedFn"
+                                                      input-changed="vm.ZipCodeChangedFn"
+                                                      remote-url="{{vm.filterZipCodeUrl}}"
+                                                      remote-url-request-formatter="vm.filterZipCodeFormatFn" 
+                                                      remote-url-data-field="Data"
+                                                      title-field="ZipCode"
+                                                      minlength="1"
+                                                      maxlength="10"
+                                                      input-name="ZipcodeID"
+                                                      text-searching="{{'SEARCH_PLACE_HOLDER'|translate}}"
+                                                      text-no-results="{{'SEARCH_NOT_FOUND'|translate}}"
+                                                      input-class="form-control form-control-small" match-class="highlight"/>
+                                </div>
+                                <label ng-show="hasError" class="has-error">{{'INVALID_ZIPCODE_FORMAT' | translate}}</label>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'LANDLORD_CODE'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.LandlordCode" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'LANDLORD_PHONE'|translate}}</span></label>
+                                <input type="text" class="form-control" ui-mask="{{'(999) 999-9999'}}" name="LandlordPhone" 
+                                       ng-pattern="vm.RegExp.PhoneRestriction" 
+                                       validate-on="dirty" invalid-message="'{{'PHONE_INVALID_FORMAT' | translate}}'" 
+                                       ng-model="vm.site.LandlordPhone" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'ADDRESS'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.Address3" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'MALL_CODE'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.MallCode" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'MANAGEMENT'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.Management" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'MGT_PHONE'|translate}}</span></label>
+                                <input type="text" class="form-control" ui-mask="{{'(999) 999-9999'}}" name="MgtPhone" 
+                                       ng-pattern="vm.RegExp.PhoneRestriction" 
+                                       validate-on="dirty" invalid-message="'{{'PHONE_INVALID_FORMAT' | translate}}'" 
+                                       ng-model="vm.site.MgtPhone" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'MGT_ADDRESS'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.MgtAdress" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SITE_CATEGORY'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.StoreCategory" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SITE_TYPE'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.StoreType" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'DESCRIPTION'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.StoreDes" maxlength="500">
+                            </div>  
+                        </div>
+                    </accordion-group>
+                    <!--MANAGER GROUP-->
+                    <accordion-group is-open="vm.status.isManagerOpen">
+                        <accordion-heading>
+                            <div class="border-top"></div>
+                            <i class="fa" ng-class="{'fa-caret-right': !vm.status.isManagerOpen, 'fa-caret-down': vm.status.isManagerOpen}"></i>
+                            <span ng-class="{'text-muted': isDisabled}" class="text-uppercase"><span>{{'SITES_CONFIG_POLICY'|translate}}</span></span>
+                        </accordion-heading>
+                        <div ng-if="vm.status.isManagerOpen">
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'OPEN_DATE'|translate}}</span></label>
+                                <div class="input-group start-date">
+                                    <input type="text" class="form-control" 
+                                           datepicker-popup="dd/MM/yyyy" 
+                                           name="OpenDate" 
+                                           ng-model="vm.site.OpenDate" datepicker-options="vm.dateOptions" 
+                                           is-open="vm.datepickerStatus.opencloseStart.value"/>
+                                    <span class="input-group-addon" ng-click="vm.pickupdateFn($event, vm.datepickerStatus.opencloseStart.index)"><span class="icon-calendar"></span></span>
+                                </div>
+                                <div class="input-group end-date">
+                                    <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" 
+                                           name="CloseDate" 
+                                           validate-on="dirty"
+                                           validator = "vm.validationDatePicker(vm.site.OpenDate,vm.site.CloseDate) === true" 
+                                           invalid-message = "vm.validationDatePickerMsg(vm.site.OpenDate,vm.site.CloseDate)"
+                                           ng-model="vm.site.CloseDate" datepicker-options="vm.dateOptions" is-open="vm.datepickerStatus.openClaseEnd.value"/>
+                                    <span class="input-group-addon" ng-click="vm.pickupdateFn($event, vm.datepickerStatus.openClaseEnd.index)"><span class="icon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SITE_HOURS'|translate}}</span></label>
+                                <button type="button" class="btn btn-default form-control" ng-click="vm.addworkinghoursFn(vm.site.WorkingHours)">
+                                    <i class="icon-plus-circled-1 fa-lg"></i>&nbsp;<b><span>{{'BTN_ADD_WORKING_HOURS'|translate}}</span></b>
+                                </button>
+                                <div class="site-hour-header">
+                                    <label class="col-xs-3">{{'DAY' | translate}}</label>
+                                    <label class="col-xs-9">{{'OPEN_CLOSE_TIME' | translate}}</label>
+                                </div>
+                                <div class="site-hour-body scrollbar-dynamic" ng-class="{'has-data': vm.site.WorkingHours.length > 0}" data-jquery-scrollbar>
+                                    <div class="site-hour-item" ng-repeat="wk in vm.site.WorkingHours">
+                                        <span class="col-xs-3">{{wk.ScheduleId | workday}}</span>
+                                        <span class="col-xs-9">{{wk.OpenTime | date:"h:mma"}} - {{wk.CloseTime | date:"h:mma"}}</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'REMODELING'|translate}}</span></label>
+                                <div class="input-group start-date">
+                                    <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy"  
+                                           name="RemodellingOpenDate"  
+                                           ng-model="vm.site.RemodellingOpenDate" datepicker-options="vm.dateOptions"  is-open="vm.datepickerStatus.remodelStart.value"/>
+                                    <span class="input-group-addon" ng-click="vm.pickupdateFn($event, vm.datepickerStatus.remodelStart.index)"><span class="icon-calendar"></span></span>
+                                </div>
+                                <div class="input-group end-date">
+                                    <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy"  
+                                           name="RemodellingCloseDate" 
+                                           validate-on="dirty"
+                                           validator = "vm.validationDatePicker(vm.site.RemodellingOpenDate,vm.site.RemodellingCloseDate) === true" 
+                                           invalid-message = "vm.validationDatePickerMsg(vm.site.RemodellingOpenDate,vm.site.RemodellingCloseDate)"
+                                           ng-model="vm.site.RemodellingCloseDate" datepicker-options="vm.dateOptions"  is-open="vm.datepickerStatus.remodelEnd.value"/>
+                                    <span class="input-group-addon" ng-click="vm.pickupdateFn($event, vm.datepickerStatus.remodelEnd.index)"><span class="icon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'OPEN_CLOSE_DATE'|translate}}</span></label>
+                                <div class="input-group start-date">
+                                    <input type="text" class="form-control" 
+                                           datepicker-popup="dd/MM/yyyy" 
+                                           name="LeaseStartDate"
+                                           ng-model="vm.site.LeaseStartDate" datepicker-options="vm.dateOptions" is-open="vm.datepickerStatus.leaseStart.value"/>
+                                    <span class="input-group-addon" ng-click="vm.pickupdateFn($event, vm.datepickerStatus.leaseStart.index)"><span class="icon-calendar"></span></span>
+                                </div>
+                                <div class="input-group end-date">
+                                    <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy"
+                                           name="LeaseEndDate" 
+                                           validate-on="dirty"
+                                           validator = "vm.validationDatePicker(vm.site.LeaseStartDate,vm.site.LeaseEndDate) === true" 
+                                           invalid-message = "vm.validationDatePickerMsg(vm.site.LeaseStartDate,vm.site.LeaseEndDate)"
+                                           ng-model="vm.site.LeaseEndDate"
+                                           datepicker-options="vm.dateOptions" is-open="vm.datepickerStatus.leaseEnd.value"/>
+                                    <span class="input-group-addon" ng-click="vm.pickupdateFn($event, vm.datepickerStatus.leaseEnd.index)"><span class="icon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'FINANCIAL_INSTITUTATION'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.FinancialIns" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'POLICY'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.PolicyNo" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'ACCOUNT'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.AccountNo" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'BRANCH'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.BranchNo" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'ADDRESS'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.Address4" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'PHONE'|translate}}</span></label>
+                                <input type="text" class="form-control" ui-mask="{{'(999) 999-9999'}}" name="PhoneSite" 
+                                       ng-pattern="vm.RegExp.PhoneRestriction" validate-on="dirty" 
+                                       invalid-message="'{{'PHONE_INVALID_FORMAT' | translate}}'" ng-model="vm.site.PhoneSite">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'FAX'|translate}}</span></label>
+                                <input type="text" class="form-control" ui-mask="{{'(999) 999-9999'}}" name="FaxSite" 
+                                       ng-pattern="vm.RegExp.PhoneRestriction"
+                                       validate-on="dirty" invalid-message="'{{'FAX_INVALID_FORMAT' | translate}}'" 
+                                       ng-model="vm.site.FaxSite">
+                            </div>   
+                        </div>
+                    </accordion-group>
+                    <!--FINACIAL GROUP-->
+                    <accordion-group is-open="vm.status.isFinacialOpen">
+                        <accordion-heading>
+                            <div class="border-top"></div>
+                            <i class="fa" ng-class="{'fa-caret-right': !vm.status.isFinacialOpen, 'fa-caret-down': vm.status.isFinacialOpen}"></i>
+                            <span ng-class="{'text-muted': isDisabled}" class="text-uppercase">
+                                <span>{{'SITES_CONFIG_INFO'|translate}}</span></span>
+                        </accordion-heading>  
+                        <div ng-if="vm.status.isFinacialOpen">
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'TLOG_VERSION'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.TlogVersion" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SQUARE_FEET'|translate}}</span></label>
+                                <input type="number" class="form-control" ng-model="vm.site.SquareFeet"
+                                       name="SquareFeet" min="0" placeholder="0"
+                                       invalid-message="'{{'IS_NUMBER_REQUIRED' | translate}}'"
+                                       validate-on="dirty" cms-decimal="{maxlength: 12, digits: 4}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SITE_SELING_SQ_FT'|translate}}</span></label>
+                                <input type="number" class="form-control" ng-model="vm.site.StoreSellingSquareFeet"
+                                       name="StoreSellingSquareFeet" min="0" placeholder="0"
+                                       invalid-message="'{{'IS_NUMBER_REQUIRED' | translate}}'"
+                                       validate-on="dirty" cms-decimal="{maxlength: 12, digits: 4}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'ANNUAL_BUDGET'|translate}}</span></label>
+                                <input type="number" class="form-control" ng-model="vm.site.AnnualBudget"
+                                       name="AnnualBudget" min="0" placeholder="0"
+                                       invalid-message="'{{'IS_NUMBER_REQUIRED' | translate}}'"
+                                       validate-on="dirty" cms-decimal="{maxlength: 14, digits: 4}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'ACTUAL_BUDGET'|translate}}</span></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control file-caption" ng-model="vm.siteFieldAs.ActualBudgetAs" readonly ng-click="vm.openUrl(vm.siteFieldAs.ActualBudgetUrl)" />
+                                    <span ng-show="vm.site.ActualBudget.length > 0" class="input-group-addon btn-danger" ng-click="vm.removeFileFn(vm.defField.ActualBudget)"><i class="icon-trash"></i></span>
+                                    <div class="input-group-btn">
+                                        <div class="btn btn-default btn-file">
+                                            <i class="icon-attach"></i><span>{{'CHOOSE_FILE' | translate}}</span>
+                                            <input type="file" accept="{{vm.defUpload.ActualBudgetAccept}}" file-upload="{{vm.defUpload.ActualBudgetOption}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'TOTAL_BUDGET_HOURS'|translate}}</span></label>
+                                <input type="number" class="form-control" ng-model="vm.site.TotalBugetHour"
+                                       name="TotalBugetHour" min="0" placeholder="0"
+                                       invalid-message="'{{'IS_NUMBER_REQUIRED' | translate}}'"
+                                       validate-on="dirty" cms-decimal="{maxlength: 12, digits: 4}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'TOTAL_STAFF_HOURS'|translate}}</span></label>
+                                <input type="number" class="form-control" ng-model="vm.site.TotalStaffHour"
+                                       name="TotalStaffHour" min="0" placeholder="0"
+                                       invalid-message="'{{'IS_NUMBER_REQUIRED' | translate}}'"
+                                       validate-on="dirty" cms-decimal="{maxlength: 12, digits: 4}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SALES_PER_SQ_FEET'|translate}}</span></label>
+                                <input type="number" class="form-control" ng-model="vm.site.SalePerSquareFeet"
+                                       name="SalePerSquareFeet" min="0" placeholder="0"
+                                       invalid-message="'{{'IS_NUMBER_REQUIRED' | translate}}'"
+                                       validate-on="dirty" cms-decimal="{maxlength: 14, digits: 4}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'TOTAL_HOURS_USED'|translate}}</span></label>
+                                <input type="number" class="form-control" ng-model="vm.site.TotalHourUsed"
+                                       name="TotalHourUsed" min="0" placeholder="0"
+                                       invalid-message="'{{'IS_NUMBER_REQUIRED' | translate}}'"
+                                       validate-on="dirty" cms-decimal="{maxlength: 12, digits: 4}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'MANAGER_ASM'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.ManagerAsm" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'LAYOUT'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.Layout" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'FIXTURE_PLAN'|translate}}</span></label>
+                                <div class="input-group">
+                                    <!--<a type="text" class="form-control file-caption" href="{{ (!vm.site.FixturePlan || vm.site.SiteKey===0)? '' : vm.urlForDownloadSite + '?fileName=' + vm.site.FixturePlan +'&siteKey=' + vm.site.SiteKey}}" readonly target="_blank"><span>{{vm.site.FixturePlan}}</span></a>-->
+                                    <input type="text" class="form-control file-caption" ng-model="vm.siteFieldAs.FixturePlanAs" readonly ng-click="vm.openUrl(vm.siteFieldAs.FixturePlanUrl)" />
+                                    <span ng-show="vm.site.FixturePlan.length > 0" class="input-group-addon btn-danger" ng-click="vm.removeFileFn(vm.defField.FixturePlan)"><i class="icon-trash"></i></span>
+                                    <div class="input-group-btn">
+                                        <div class="btn btn-default btn-file">
+                                            <i class="glyphicon glyphicon-folder-open"></i><span>{{'CHOOSE_FILE' | translate}}</span>
+                                            <input type="file" accept="{{vm.defUpload.FixturePlanAccept}}" file-upload="{{vm.defUpload.FixturePlanOption}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SITE_IMAGES'|translate}}</span></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control file-caption" ng-model="vm.siteFieldAs.ImageSiteAs" readonly ng-click="vm.openUrl(vm.siteFieldAs.ImageSiteUrl)" />
+                                    <span ng-show="vm.site.ImageSite.length > 0" class="input-group-addon btn-danger" ng-click="vm.removeFileFn(vm.defField.ImageSite)"><i class="icon-trash"></i></span>
+                                    <div class="input-group-btn">
+                                        <div class="btn btn-default btn-file">
+                                            <i class="glyphicon glyphicon-folder-open"></i><span>{{'CHOOSE_FILE' | translate}}</span>
+                                            <input type="file" accept="{{vm.defUpload.ImageSiteAccept}}" file-upload="{{vm.defUpload.ImageSiteOption}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </accordion-group>
+                    <!--SECURITY GROUP-->
+                    <accordion-group is-open="vm.status.isSecurityOpen">
+                        <accordion-heading>
+                            <div class="border-top"></div>
+                            <i class="fa" ng-class="{'fa-caret-right': !vm.status.isSecurityOpen, 'fa-caret-down': vm.status.isSecurityOpen}"></i>
+                            <span ng-class="{'text-muted': isDisabled}" class="text-uppercase"><span>{{'SITE_SECURITY'|translate}}</span></span>
+                        </accordion-heading>      
+                        <div ng-if="vm.status.isSecurityOpen">
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SECURITY_SYSTEM_CODE'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.SecuritySystemCode" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'INSTALL_REMOVE_DATE'|translate}}</span></label>
+                                <div class="input-group start-date">
+                                    <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" name="InstallRemoveDate" 
+                                           ng-model="vm.site.InstallRemoveDate" datepicker-options="vm.dateOptions" is-open="vm.datepickerStatus.install.value" />
+                                    <span class="input-group-addon" ng-click="vm.pickupdateFn($event, vm.datepickerStatus.install.index)"><span class="icon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SECURITY_SERVICE_CODE'|translate}}</span></label>
+                                <input type="text" class="form-control" ng-model="vm.site.SecurityServiceCode" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"><span>{{'SERVICE_START_STOPDATE'|translate}}</span></label>
+                                <div class="input-group start-date">
+                                    <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" name="ServiceStartDate" 
+                                           ng-model="vm.site.ServiceStartDate" datepicker-options="vm.dateOptions" is-open="vm.datepickerStatus.serviceStart.value" />
+                                    <span class="input-group-addon"  ng-click="vm.pickupdateFn($event, vm.datepickerStatus.serviceStart.index)"><i class="icon-calendar"></i></span>
+                                </div>
+                                <div class="input-group end-date">
+                                    <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy"  
+                                           name="ServiceEndDate" 
+                                           validate-on="dirty"
+                                           validator = "vm.validationDatePicker(vm.site.ServiceStartDate,vm.site.ServiceEndDate) === true" 
+                                           invalid-message = "vm.validationDatePickerMsg(vm.site.ServiceStartDate,vm.site.ServiceEndDate)"
+                                           ng-model="vm.site.ServiceEndDate" datepicker-options="vm.dateOptions" is-open="vm.datepickerStatus.serviceEnd.value"/>
+                                    <span class="input-group-addon" ng-click="vm.pickupdateFn($event, vm.datepickerStatus.serviceEnd.index)"><i class="icon-calendar"></i></span>
+                                </div>
+                            </div>     
+                        </div>
+                    </accordion-group>
+                </accordion>
+            </div>
+        </div>
+        <div class="col-md-5 panel-right">
+            <accordion>
+                <accordion-group is-open="vm.status.isUsersOpen">
+                    <accordion-heading>
+                        <i class="fa" ng-class="{'fa-caret-right': !vm.status.isUsersOpen, 'fa-caret-down': vm.status.isUsersOpen}"></i>
+                        <span class="text-uppercase"><span>{{'DVRUSER_PERMISSIONS'|translate}}</span></span>
+                        <span ng-click="vm.refeshUsers($event)" class="siteadmin-reload-btn"><i class="icon-ccw-1"></i></span>
+                    </accordion-heading>
+                    <div class="form-group search-group">
+                        <input type="text" ng-model="vm.userquery" class="form-control no-border" placeholder="{{'SEARCH_PLACE_HOLDER' | translate}}" />
+                    </div>
+                    <div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+                        <ul class="list-group user-list">
+                            <li ng-class="{'active': user.Checked}" class="list-group-item" ng-repeat="user in vm.user | filter: vm.searchUses track by $index">
+                                <div class="item-info" ng-dblclick="vm.openUsers(user)" ng-click="vm.checkUser(user)">
+                                    <span class="i-image">
+                                        <img ng-show="user.UPhoto!=null" ng-src="{{vm.ApiImageUrl(user.UID, user.UPhoto)}}" alt="" ng-style="{'display': 'inline-block', 'border': '2px solid ', 'border-color': vm.convertColor(user.PosColor)}"/>
+                                        <img ng-show="user.UPhoto==null" src="../Content/Images/img_user_blank.png" alt="" ng-style="{'display': 'inline-block', 'border': '2px solid ', 'border-color': vm.convertColor(user.PosColor)}"/>
+                                        <span ng-show="user.Checked" class="icon-checked"><i class=" icon-ok-1"></i></span>
+                                    </span>
+                                    <div class="i-name">{{user.FName}} {{user.LName}}</div>
+                                    <div class="i-pos">{{user.PosName}}</div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>        
+</form>

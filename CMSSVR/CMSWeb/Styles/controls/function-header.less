@@ -1,0 +1,89 @@
+﻿/*Header Fucntion, start*/
+.function-header {
+	background: rgba(0, 0, 0, 0.06);
+	border: 1px solid rgba(0, 0, 0, 0.14);
+	border-bottom: none !important;
+
+	&.panel-header, &.panel-heading {
+		height: auto;
+		display: inline-block;
+	}
+
+	.pull-right {
+		.btn-group-mode {
+			float: left;
+			margin-top: 3px;
+			padding-left: 5px;
+		}
+
+		form {
+			float: left;
+			margin: 2px 4px;
+			margin-left: 10px;
+			border: 1px solid #eee;
+			background: #fff;
+
+			.input-search {
+				width: auto;
+				height: 34px;
+
+				&:focus {
+					&::-webkit-input-placeholder {
+						color: transparent!important;
+					}
+
+					&::-moz-placeholder {
+						color: transparent!important;
+					}
+
+					&:-moz-placeholder {
+						color: transparent!important;
+					}
+				}
+			}
+		}
+	}
+
+	.pull-left {
+		margin: 10px;
+
+		> span {
+			padding: 0 5px;
+			font-size: 15px;
+
+			&.delete-item {
+				i {
+					color: red;
+				}
+			}
+
+			&:hover, &:focus {
+				cursor: pointer;
+				color: #999;
+			}
+
+			> span {
+				padding: 0 3px;
+				font-size: 15px;
+			}
+		}
+
+		span{
+			&.disabled{
+				//color: #eee;
+				cursor: not-allowed;
+				opacity: 0.2;
+
+				.delete-item{ 
+					i { opacity: 0.2; }
+				}
+			}
+		}
+
+		> .btn {
+			margin: 4px 2px;
+		}
+	}
+}
+
+/*Header Fucntion, end*/

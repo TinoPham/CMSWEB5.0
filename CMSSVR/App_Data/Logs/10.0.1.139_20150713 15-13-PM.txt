@@ -1,0 +1,1 @@
+{"GoalName":"test","GoalID":0,"MapValue":[{"GoalTypeID":1,"MinValue":"4","MaxValue":"4","GoalTypeName":"Conversion rate %"}],"GoalLastUpdated":"2015-07-13T08:29:13.250Z","GoalCreateBy":70}

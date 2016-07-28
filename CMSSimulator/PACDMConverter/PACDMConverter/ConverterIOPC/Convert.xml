@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+	<Object table="Alarm" src="AccessTransAlarm" des="Alarm">
+		<Item src="DVRDateTime" des="DVRDate"/>
+		<Item src="A_CameraNumber" des="A_CameraNumber"/>
+		<Item src="A_AreaName" des="AreaID"/>
+		<Item src="A_ObjectType" des="ObjectTypeID"/>
+		<Item src="A_AlarmType" des="AlarmTypeID"/>
+	</Object>
+
+	<Object table="Count" src="AccessTransCount" des="Count" >
+	<Item src="C_CameraNumber" des="C_CameraNumber"/>
+	<Item src="C_AreaName" des="C_AreaNameID"/>
+	<Item src="C_ObjectType" des="C_ObjectTypeID"/>
+	<Item src="C_Count" des="C_Count"/>
+	<Item src="DVRDateTime" des="DVRDate"/>
+	</Object>
+
+	<Object table="TrafficCountRegion" src="TrafficCountRegion" des="TrafficCountRegion" >
+	<Item src="RegionID" des="RegionID"/>
+	<Item src="RegionName" des="RegionNameID"/>
+	<Item src="InternalChannel" des="InternalChannel"/>
+	<Item src="ExternalChannel" des="ExternalChannel"/>
+	<Item src="DVRDateTime" des="DVRDate"/>
+	</Object>
+
+	<Object table="TrafficCount" src="AccessTransTrafficCount" des="TrafficCount" >
+	<Item src="EventID" des="EventID"/>
+	<Item src="PersonID" des="PersonID"/>
+	<Item src="RegionIndex" des="RegionIndex"/>
+	<Item src="EnterDateTime" des="RegionEnterTime"/>
+	<Item src="ExitDateTime" des="RegionExitTime"/>
+	</Object>
+
+	<Object table="DriveThrough" src="AccessTransDriveThrough" des="DriveThrough" >
+		<Item src="ExternalCamera" des="ExternalCamera"/>
+		<Item src="InternalCamera" des="InternalCamera"/>
+		<Item src="Function" des="Function"/>
+		<Item src="StartDateTime" des="StartDate"/>
+		<Item src="EndDateTime" des="EndDate"/>
+	</Object>
+
+
+	<ItemKey>
+		<Item Column="A_CameraNumber" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB"/>
+		<Item Column="C_CameraNumber" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB"/>
+		<Item Column="A_AreaName" SqlTable="tbl_IOPC_AlarmArea" ContextType="IOPCAlarmArea"/>
+		<Item Column="A_ObjectType" SqlTable="tbl_IOPC_AlarmObjectType" ContextType="IOPCAlarmObjectType"/>
+		<Item Column="A_AlarmType" SqlTable="tbl_IOPC_AlarmAlarmType" ContextType="IOPCAlarmAlarmType"/>
+		<Item Column="C_AreaName" SqlTable="tbl_IOPC_Count_Area" ContextType="IOPCCountArea"/>
+		<Item Column="C_ObjectType" SqlTable="tbl_IOPC_Count_ObjectType" ContextType="IOPCCountObjectType"/>
+		<Item Column="InternalChannel" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB"/>
+		<Item Column="ExternalChannel" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB"/>
+		<Item Column="RegionName" SqlTable="tbl_IOPC_TrafficCountRegionName" ContextType="IOPCTrafficCountRegionName"/>
+		
+	</ItemKey>
+</Config>

@@ -1,0 +1,128 @@
+﻿<div class='row row_site_detail'>
+    <div class="col-xs-12  col-md-7">
+        <ul>
+            <li>
+                <i class="icon-store-3"></i>
+				<strong>{{'SITE_NAME'|translate}}: </strong>{{SiteModel.ServerId}}
+            </li>
+			<li ng-repeat="mac in SiteModel.Macs">
+                <i class=" icon-window-1"></i>
+                <strong>{{GenerateMACAddressLabel($index + 1)}}: </strong> {{mac.MacAddress}}
+            </li>
+             <li>
+                <i class="icon-pin56"></i>
+				<strong>{{'ADDRESS_LINE_1'|translate}}: </strong>{{SiteModel.AddressLine1}}
+            </li>
+              <li>
+                <i class="icon-pin56"></i>
+				<strong>{{'ADDRESS_LINE_2'|translate}}: </strong>{{SiteModel.AddressLine2}} 
+            </li>
+              <li>
+                <i class="icon-building-1"></i>
+				<strong>{{'CITY'|translate}}: </strong>{{SiteModel.City}}
+            </li>
+              <li>
+                <i class="icon-map-pointer2"></i>
+				<strong>{{'COUNTRY'|translate}}: </strong>{{countryName}}
+            </li>
+              <li>
+                <i class="icon-state"></i>
+				<strong>{{'STATE'|translate}}:</strong> {{stateName}} 
+            </li>
+              <li>
+                <i class="icon-zipcode"></i>
+				<strong>{{'ZIP_CODE'|translate}}:</strong> {{SiteModel.PostalZipCode}}
+            </li>
+              <li>
+                <i class="icon-phone"></i>
+				<strong>{{'LANDLORD_PHONE'|translate}}: </strong>{{SiteModel.LandlordPhone | PhoneFilter}} 
+            </li>
+              <li>
+                <i class="icon-pin56"></i>
+				<strong>{{'ADDRESS'|translate}}: </strong>{{SiteModel.Address3}}
+            </li>
+              <li>
+                <i class="icon-building33"></i>
+				<strong>{{'MALL_CODE'|translate}}:</strong> {{SiteModel.MallCode}}
+            </li>
+              <li>
+                <i class="icon-configuration28"></i>
+				<strong>{{'MANAGEMENT'|translate}}:</strong>  {{SiteModel.Management}}
+            </li>
+
+            <li>
+                <i class="icon-phone"></i>
+				<strong>{{'MGT_PHONE'|translate}}:</strong> {{SiteModel.MgtPhone | PhoneFilter}}
+            </li>
+              <li>
+                <i class="icon-pin56"></i>
+				<strong>{{'MGT_ADDRESS'|translate}}: </strong>{{SiteModel.MgtAdress}}
+            </li>
+
+             <li>
+                <i class="icon-folder-3"></i>
+				<strong>{{'SITE_CATEGORY'|translate}}: </strong>{{SiteModel.StoreCategory}}
+            </li>
+              <li>
+                <i class="icon-store-3"></i>
+				<strong>{{'SITE_TYPE'|translate}}: </strong>{{SiteModel.StoreType}}
+            </li>
+            <li>
+                <i class="icon-doc-text"></i>
+				<strong>{{'DESCRIPTION'|translate}}: </strong>{{SiteModel.StoreDes}}
+            </li>
+             <li>
+                <i class="icon-doc-text"></i>
+				<strong>{{'LAYOUT'|translate}}: </strong>{{SiteModel.Layout}}
+            </li>
+            <li>
+                <i class="icon-doc-text"></i>
+				<strong >{{'FIXTURE_PLAN'|translate}}: </strong><a ng-click="openUrl(FixturePlanUrl)">{{SiteModel.FixturePlan}}</a>  
+            </li>
+            <li>
+                <i class="icon-doc-text"></i>
+				<strong >{{'SITE_IMAGES'|translate}}: </strong><a ng-click="openUrl(ImageSiteUrl)">{{SiteModel.ImageSite}}</a>  
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-12 col-md-5"> 
+        <div class="row">
+            <div class="col-md-12">
+                <i class="icon-store-3"></i>
+				<strong>{{'STORE_IMAGES'|translate}}</strong>
+            </div>
+            <div   class="col-md-12" >
+                    <carousel>
+					<slide ng-repeat="image in storeImages">
+						<img ng-src="{{image.Source}}" style="margin:auto;" width="300" height="200">
+						<div class="carousel-caption"><p>{{image.Text}} {{'OF_STRING'|translate}} {{storeImages.length}}</p></div>
+                      </slide>
+                      <figcaption></figcaption>
+                      <!-- footer element show image title -->
+                    </carousel>
+			</div>
+			<!-- END :: Slideshow -->
+            <div class="col-md-12">
+                  <table class="table table-striped">
+					<caption>{{'TITLE_WORKING_HOURS'|translate}}</caption>
+                    <thead>
+                        <tr>
+							<th class="col-md-4">{{'DAY'|translate}}</th>
+							<th class="col-md-12">{{'TIME'|translate}}</th>
+                        </tr>                       
+                    </thead>
+                    <tbody>
+						<tr ng-repeat="wk in SiteModel.WorkingHours">
+                            <td>{{wk.ScheduleId | workday}}</td>
+							<td>{{wk.OpenTime | date:"h:mma"}} - {{wk.CloseTime | date:"h:mma"}}</td>
+                        </tr>
+						<tr ng-if="!SiteModel.WorkingHours || SiteModel.WorkingHours.length === 0">
+							<td colspan="3"><i class=" icon-boxes6"></i>{{'NO_DATA_FOUND_MSG'|translate}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+			<!-- END ::  working date -->
+		</div>
+    </div>
+</div>

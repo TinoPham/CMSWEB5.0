@@ -1,0 +1,5 @@
+﻿<div ng-controller="customreportCtrl as vm" class="report-custom-frame">
+    <div style="width: 100%; height: 100%; background: #FFF;">
+        <report-frame ng-if="vm.isfilter === false" report-id="vm.params.reportId" type="vm.params.type" request-obj="vm.params.options" style="{'min-height':''}"></report-frame>
+    </div>
+</div>

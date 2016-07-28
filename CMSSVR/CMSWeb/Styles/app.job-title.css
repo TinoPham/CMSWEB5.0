@@ -1,0 +1,72 @@
+.fa-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* COMMON, START */
+/* COMMON, END */
+/** TOP BAR **/
+/** LEFT BAR **/
+/** FOOTER **/
+.job-title-manages .remove-view .listview .ngRow .ngCell .item-info {
+  text-align: left;
+}
+.job-title-manages .remove-view .listview .ngRow .ngCell .item-info .i-name {
+  padding-left: 0px;
+}
+.job-title-manages .remove-view .listview .ngRow .ngCell .item-info .checkbox {
+  margin-top: -7px;
+}
+.job-title-manages .remove-view .listview .ngRow .ngCell .item-info .i-color {
+  margin-right: 10px;
+}
+.job-title-manages .remove-view .item-info {
+  text-align: left;
+}
+.job-title-manages .remove-view .item-info .i-name {
+  padding-left: 10px;
+}
+.job-title-manages .panel-content,
+.job-title-manages .panel-body {
+  margin-top: -5px;
+}
+.job-title-body .form-horizontal {
+  color: #898f97;
+  /*Custom color picker*/
+  /*END :: Custom color picker*/
+}
+.job-title-body .form-horizontal .form-group {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.job-title-body .form-horizontal .form-group label {
+  font-weight: 100;
+}
+.job-title-body .form-horizontal .sp-replacer {
+  width: 100%;
+  height: 35px;
+}
+.job-title-body .form-horizontal .sp-replacer .sp-preview {
+  width: 87%;
+  height: 25px;
+  border: none !important;
+  -moz-box-shadow: #cccccc 0px 2px 2px;
+  -webkit-box-shadow: #cccccc 0px 2px 2px;
+  box-shadow: #cccccc 0px 2px 2px;
+}
+.job-title-body .form-horizontal .sp-replacer .sp-dd {
+  background: #fff;
+  height: 25px;
+  width: 10%;
+  text-align: center;
+  padding-top: 6px;
+}
+.job-title-body .form-horizontal .sp-replacer .sp-dd:active {
+  opacity: 0.5;
+}
+.job-title-body .form-horizontal .sp-replacer .mobile-picker.sp-container {
+  max-width: 408px !important;
+}

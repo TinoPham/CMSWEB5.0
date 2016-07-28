@@ -1,0 +1,17 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Comparaison de la conversion"},
+{"NameField":"footer", "ValueField":"Préparé sous contrat pour l'usage exclusif d’i3 International. La reproduction de ce rapport est interdite."},
+{"NameField":"header_Traffic", "ValueField":"Trafic"},
+{"NameField":"header_Trans", "ValueField":"Trans."},
+{"NameField":"header_Conv", "ValueField":"% conv."},
+{"NameField":"header_Region", "ValueField":"Région / magasin"},
+{"NameField":"header_Total", "ValueField":"Total"},
+{"NameField":"header_CompanyTotal", "ValueField":"Total pour l’entreprise :"},
+{"NameField":"header_ThisYearMTD", "ValueField":"Cumul mensuel cette année"},
+{"NameField":"header_LastYearMTD", "ValueField":"Cumul mensuel l’année dernière"},
+{"NameField":"header_ThisYearYTD", "ValueField":"Cumul annuel cette année"},
+{"NameField":"header_LastYearYTD", "ValueField":"Cumul annuel l’année dernière"},
+{"NameField":"header_MTDDiff", "ValueField":"% cumul mensuel"},
+{"NameField":"header_YTDDiff", "ValueField":"% cumul annuel"},
+{"NameField":"rpt_NODATA", "ValueField":"Données de ne sont pas disponibles"}
+]

@@ -1,0 +1,131 @@
+@import url('../app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('../app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * Customize: Forms (bootstrap)
+ * -----------
+ */
+
+.form-control {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	height: 30px;
+
+	&.input-search {
+		&:focus {
+			&::-webkit-input-placeholder {
+				color: transparent!important;
+			}
+
+			&::-moz-placeholder {
+				color: transparent!important;
+			}
+
+			&:-moz-placeholder {
+				color: transparent!important;
+			}
+		}
+	}
+}
+.back-white {
+	background-color: #ffffff !important;
+}
+.input-group {
+	.btn {
+		height: 30px;
+	}
+
+	.file-caption {
+		overflow: hidden;
+		-ms-text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-right: -125px;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
+
+.required{
+	color: #eb5055;
+	font-size: 12px;
+}
+
+.form-horizontal, form{
+	.has-error{
+		text-align: left;
+		font-size: 12px;
+		label{
+			&.has-error{
+				text-align: left;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+.form-group {
+	/*.clear-x {
+		position: absolute;
+		top: 50%;
+		right: 6px;
+		opacity: 0.6;
+		margin-top: -10px;
+	}*/
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"], 
+input[type="text"],
+input[type="search"],
+textarea {
+	&:focus {
+		&::-webkit-input-placeholder {
+			color: transparent!important;
+		}
+
+		&::-moz-placeholder {
+			color: transparent!important;
+		}
+
+		&:-moz-placeholder {
+			color: transparent!important;
+		}
+	}
+}
+
+//Thang Pham, Textarea resize, July 17 2015
+// It's not work on: IE and mobile browser
+.noresize {
+	resize: none;
+}
+
+.vresize {
+	resize: vertical;
+	max-height: 300px;
+}
+
+.hresize {
+	resize: horizontal;
+	max-width: 300px;
+}
+
+//ThangPham, Remove eye and x of Input on IE
+::-ms-reveal {
+	display: none;
+}
+::-ms-clear {
+	display: none;
+}

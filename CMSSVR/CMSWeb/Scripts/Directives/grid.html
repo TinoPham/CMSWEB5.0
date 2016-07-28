@@ -1,0 +1,62 @@
+﻿<section class="panel panel-default table-dynamic">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Bordered table</strong></div>
+   
+    <table  class="table table-bordered table-striped table-responsive scrollable" fixed-header>
+        <thead>
+            <tr class="bg-blue">
+                 <th><input type="checkbox" ng-model="checked"> </th>
+                <th ng-repeat="(key, value) in data[0]">
+                    <div 
+                        ng-click="sortBy(key);"
+                     >
+                        {{key}}
+                        <i class="glyphicon glyphicon-sort"></i>
+                    </div>
+                </th>
+
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in filtered = (data | filter: search | orderBy : predicate: reverse)">
+                <td><input type="checkbox" ng-model="checked[$index]"></td>
+                  <td ng-repeat="(key, value) in row">{{value}}</td>
+                <!--<td>{{row.id}}</td>
+                <td>{{row.name}}</td>-->
+                <td>
+                    <span ng-repeat="action in actionList">
+                        <a title="{{action.title}}" data-ng-click="usergroupDetail(row)">{{action.label}}</a>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr/>
+    <div class="table-footer">
+        <div class="row">
+            <div class="col-md-6 page-num-info">
+                <span>
+                    Show 
+                    <select data-ng-model="numPerPage"
+                            data-ng-options="num for num in numPerPageOpt"
+                            data-ng-change="onNumPerPageChange()">
+                    </select> 
+                    entries per page
+                </span>
+            </div>
+            <div class="col-md-6 text-right pagination-container">
+                <pagination class="pagination-sm"
+                            ng-model="currentPage"
+                            total-items="filteredStores.length"
+                            max-size="4"
+                            ng-change="select(currentPage)"
+                            items-per-page="numPerPage"
+                            rotate="false"
+                            previous-text="&lsaquo;" next-text="&rsaquo;"
+                            boundary-links="true"></pagination>
+            </div>
+        </div>
+    </div>
+</section>
+

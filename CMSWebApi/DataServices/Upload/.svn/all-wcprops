@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/cmsweb/!svn/ver/4529/5.0.0/CMSService/CMSWebApi/DataServices/Upload
+END
+FileMultipartFormDataStreamProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cmsweb/!svn/ver/4529/5.0.0/CMSService/CMSWebApi/DataServices/Upload/FileMultipartFormDataStreamProvider.cs
+END
+FileManager.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/cmsweb/!svn/ver/4529/5.0.0/CMSService/CMSWebApi/DataServices/Upload/FileManager.cs
+END

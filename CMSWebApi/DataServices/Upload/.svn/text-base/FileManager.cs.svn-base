@@ -1,0 +1,99 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using CMSWebApi.APIFilters;
+using CMSWebApi.DataModels;
+using CMSWebApi.ServiceInterfaces;
+
+namespace CMSWebApi.DataServices.Upload
+{
+	public class FileManager : IFileManager
+	{
+		private string _workingFolder;
+		private readonly string[] _fileExt = { ".jpg", ".bmp", ".png", ".gif" };
+
+	public FileManager(string workingFolder)
+		{
+			_workingFolder = workingFolder;
+
+			CheckTargetDirectory();
+		}
+
+		public async Task<IEnumerable<FileModel>> Get()
+		{
+			var files = new List<FileModel>();
+			var fileFolder = new DirectoryInfo(this._workingFolder);
+			await Task.Factory.StartNew(() =>
+			{
+				files = fileFolder.EnumerateFiles().Where(fi => _fileExt.Contains(fi.Extension.ToLower()))
+					.Select(fi => new FileModel()
+					{
+						Name = fi.Name,
+						CreatedOn = fi.CreationTime,
+						Modified = fi.LastWriteTime,
+						Size = fi.Length/1024
+					}).ToList();
+			});
+			return files;
+		}
+
+		public async void Delete(string fileName)
+		{
+			try
+			{
+				var filePath = Directory.GetFiles(this._workingFolder, fileName).FirstOrDefault();
+				await Task.Factory.StartNew(() =>
+				{
+					if (filePath == null)
+					{
+						throw new ArgumentException("the destination path " + this._workingFolder + " could not be found");
+					}
+
+					File.Delete(filePath); 
+					
+				});
+
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Delete " + this._workingFolder + " failed");
+			}
+		}
+
+		public async Task<IEnumerable<FileModel>> Add(HttpRequestMessage request)
+		{
+			var provider = new FileMultipartFormDataStreamProvider(this._workingFolder);
+
+			await request.Content.ReadAsMultipartAsync(provider);
+
+			var files = new List<FileModel>();
+
+			foreach (var multipartFileData in provider.FileData)
+			{
+				var fileInfo = new FileInfo(multipartFileData.LocalFileName);
+
+				files.Add(new FileModel()
+				{
+					Name = fileInfo.Name,
+					CreatedOn = fileInfo.CreationTime,
+					Modified = fileInfo.LastWriteTime,
+					Size = fileInfo.Length /1024
+				});
+			}
+
+			return files;
+		}
+
+		private void CheckTargetDirectory()
+		{
+			if (!Directory.Exists(this._workingFolder))
+			{
+				throw new ArgumentException("the destination path " + this._workingFolder + " could not be found");
+			}
+		}
+	}
+}

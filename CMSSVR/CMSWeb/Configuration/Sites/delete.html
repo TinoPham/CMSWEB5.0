@@ -1,0 +1,22 @@
+﻿<form name="deleNode" class="form-horizontal user-group-manages form-delete">
+	<div class="modal-header">
+		<span class="close" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'DELETE_HEADER'|translate}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="remove-view">
+			<span class="node-content">
+                <span title="{{node.Name}}" class="msg-delete">
+                    <i ng-class="{' icon-home': node.Type === 1, 'icon-folder': node.Type === 0 }" ></i>
+                    <span class="node-name">{{node.Name}}</span>
+                </span>
+			</span>
+		</div>
+		<div ng-if="msgConfirm" class="msg-delete-warning">{{msgConfirm|translate}}</div>
+		<div class="msg-delete">{{delMsg|translate}}</div>
+	</div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-ng-click="cancel()">{{"BTN_CANCEL"|translate}}</button>
+        <button type="button" class="btn btn-primary" data-ng-click="save(node)">{{"BTN_OK"|translate}}</button>
+    </div>
+</form>

@@ -1,0 +1,128 @@
+﻿<div class="panel site-monitor" ng-class="{'maximized': isMax}">
+    <div class="panel-header">
+        <h2>{{'SITE_MONITOR' | translate}}</h2>
+        <div class="additional-btn">
+            <a tooltip="{{'TOOLTIP_REFRESH_WIDGET'|translate}}" ng-click="refesh()" tooltip-placement="left"><i class="icon-ccw-1"></i></a>
+            <a ng-click="fullSize()" tooltip="{{'MAXIMIZE'|translate}}" tooltip-placement="left"><i ng-class="{'icon-resize-full-1': !isMax, 'icon-resize-small-1': isMax}"></i></a>
+            <a ng-show="!isMax" class="collapse-btn" ng-click="isCollapsed = !isCollapsed" tooltip="{{'EXPAND'|translate}}" tooltip-placement="left"><i class="icon-down-open-2"></i></a>
+        </div>
+    </div>
+    <div  collapse="isCollapsed">
+        <div class="site-alert-controls">
+            <div class="pull-left">
+                <span class="dropdown pull-left" dropdown>
+					<span class="btn btn-default btn-sm dropdown-toggle" dropdown-toggle>
+                        <i class=" icon-filter"></i>
+                        <span ng-if="takeAlert !== maxRowAlert">{{'TOP_STRING'| translate}} {{takeAlert}}</span>
+                        <span ng-if="takeAlert === maxRowAlert">{{'ALL_STRING'| translate}}</span>
+                        <span class="icon-down-dir"></span>
+                    </span>
+                    <ul class="dropdown-menu">
+						<li ng-repeat="top in topList"><a class="btn pull-right" ng-click="setTop(top)">{{'TOP_STRING' | translate}} {{top}}</a></li>
+						<li><a class="btn pull-right" ng-click="setTop()">{{'ALL_STRING' | translate}}</a></li>
+                    </ul>
+                </span>
+            </div>
+			<div class="col-sm-9 no-padding pull-left">
+				<div class="form-group col-sm-4 no-padding">
+                    <div class="pull-left date-site-alert">{{'FROM_STRING' | translate}}</div>              
+                    <span class="input-group">                                              
+                        <input type="text" class="form-control"
+                               datepicker-popup="dd/MM/yyyy" 
+                               name="OpenDate" 
+                               ng-model="dateAlert.startDate" datepicker-options="dateOptions" 
+                               is-open="datestatus.startopened" readonly="true"/>
+                        <span class="input-group-btn">
+							<button type="button" class="btn btn-default btn-sm" ng-click="startopen($event, 'startopened')"><i class="icon-calendar"></i></button>
+                        </span>
+                    </span>
+                </div>
+				<div class="form-group col-sm-4 no-padding">
+                    <span class="pull-left date-site-alert">{{'TO_FIELD' | translate}}</span>
+                    <span class="input-group">                        
+                        <input type="text" class="form-control"
+                               min-date="startDate" 
+                               datepicker-popup="dd/MM/yyyy" 
+                               name="OpenDate" 
+                               ng-model="dateAlert.endDate" datepicker-options="dateOptions" 
+                               is-open="datestatus.endopened" readonly="true"/>
+                        <span class="input-group-btn">
+							<button type="button" class="btn btn-default btn-sm" ng-click="endopen($event,'endopened')"><i class="icon-calendar"></i></button>
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <span class="input-group">
+						<button class="btn btn-default btn-sm" ng-click="searchFn()">{{'BTN_SEARCH' | translate}}</button>
+                    </span>
+                </div>
+            </div>
+            <div class="pull-right">
+                <span class="dropdown pull-right" dropdown>
+					<span class="btn btn-default btn-sm dropdown-toggle" dropdown-toggle>
+                        <i class=" icon-doc"></i>
+                        <span>{{'EXPORT_STRING'| translate}}</span>
+                        <span class="icon-down-dir"></span>
+                    </span>
+                    <ul class="dropdown-menu">
+						<li><a class="btn pull-right" ng-click="addRegion(true)">{{'EXPORT_TO_EXCEL' | translate}}</a></li>
+						<li><a class="btn pull-right" ng-click="addSite(true)">{{'EXPORT_TO_PDF' | translate}}</a></li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div ng-if="isNoData === true" style="text-align: center;">{{'NO_DATA_FOUND_MSG' | translate}} </div>
+			<div ng-if="isNoData === false" class="site-monitor-content scrollbar-dynamic" data-jquery-scrollbar>
+				<table class="site-monitor-table table table-rotated">
+                    <thead>
+                        <tr class="header-top">
+                            <th colspan="3"></th>                            
+							<th class="rotate" ng-repeat="title in HeaderTitle | orderBy:'Title.Id' track by $index">
+								<div>
+									<span>
+									<div>{{title.Title.Name}}</div>
+									</span>
+								</div>
+							</th>
+                        </tr> 
+                        <tr class="header-center">
+							<th class="merge-right count-dvr" colspan="3">
+								<div><span>{{'TOTAL_DVR_COUNT' | translate}} <span>{{countDVR()}} </span></span></div>
+							</th>
+							<th ng-repeat="title in HeaderTitle | orderBy:'Title.Id' track by $index">
+								<div><span>{{title.Total}}</span></div>
+							</th>
+                        </tr>
+                        <tr class="header-footer">
+							<th>
+								<div class="title-site-alert" ng-click="order('Info.SiteName')">{{'SITE_NAME' | translate}} 
+									<span ng-show="predicate === 'Info.SiteName'" ng-class="{'icon-up-dir':reverse=== false, 'icon-down-dir': reverse ===true }"></span>
+								</div>
+							</th>
+                            <th>
+								<div class="title-site-alert" ng-click="order('Info.Name')">{{'DVR_NAME' | translate}} 
+									<span ng-show="predicate === 'Info.Name'" ng-class="{'icon-up-dir':reverse=== false, 'icon-down-dir': reverse ===true }"></span>
+								</div>
+                            </th>
+                            <th>
+								<div class="title-site-alert" ng-click="order('TypeAlerts.Total')">{{'Total' | translate}} 
+									<span ng-show="predicate === 'TypeAlerts.Total'" ng-class="{'icon-up-dir':reverse=== false, 'icon-down-dir': reverse ===true }"></span>
+								</div>
+							</th>
+                            <th ng-repeat="title in HeaderTitle | orderBy:'Title.Id' track by $index"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="bAlert in BodyAlert | orderBy:predicate:reverse">
+							<td class="col-header">{{bAlert.Info.SiteName}}</td>
+							<td class="col-header">{{bAlert.Info.Name}}</td>
+							<td class="col-header">{{bAlert.TypeAlerts.Total}}</td>
+                            <td ng-repeat="title in HeaderTitle | orderBy:'Title.Id' track by $index">{{getNumAlert(title.Title.Id,bAlert.TypeAlerts.Alert)}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

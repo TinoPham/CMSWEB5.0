@@ -1,0 +1,722 @@
+<!-- START :: panel Incident info -->
+<div id="Incident-Info" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	
+  	<h2>Incident info</h2>
+
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+
+  </div>
+  <!-- END :: heading -->
+
+
+  <div class="panel-body">
+  		
+
+  		<div id="Incident-Info--General-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		 <h4>General info</h4>
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Report by</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Approved By
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Case status
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">				      
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form -->
+
+
+		<div id="Incident-Info--Event-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		 <h4>Event info</h4>
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Location</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Date time
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+						 <div class="input-group" options="{{vm.optionsDate}}" cmsdatetimepicker 
+						 ng-model="vm.dateIncident">
+		                    <input type="text" name="dateIncident" class="form-control input-sm" readonly />
+		                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+			            </div>  
+				    </div>
+				  </div>
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form  Event info-->
+
+
+
+
+		<div id='Incident-Info--Contact-Info' class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		<h4>Contact info</h4>
+
+				<div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Name</label>
+				    <div class="col-sm-2 span-left">
+				      <input type="text" class="form-control" id="" placeholder="First name">
+				    </div>
+				    <div class="col-sm-2 span-center">
+				      <input type="text" class="form-control" id="" placeholder="Last name">
+				    </div>
+				    <div class="col-sm-2 span-right">
+				      <input type="text" class="form-control" id="" placeholder="Middle name">
+				    </div>
+				</div>
+
+				<div class="form-group have-bottom-line">
+				    <label for="" class="col-sm-4 control-label">Phone</label>
+				    <div class="col-sm-3 span-left">
+				      <input type="number" class="form-control" id="" placeholder="Cell phone">
+				    </div>				   
+				    <div class="col-sm-3 span-right">
+				      <input type="number" class="form-control" id="" placeholder="Home phone">
+				    </div>
+				</div>
+
+
+				<div class="form-group have-bottom-line">
+				    <label for="" class="col-sm-4 control-label">Address</label>
+				    <div class="col-sm-6 ">
+				      <input type="text" class="form-control" id="" placeholder="Street">
+				    </div>
+
+				    <div class="col-md-offset-4 col-sm-3 span-left margin_top_15">
+				      <input type="text" class="form-control" id="" placeholder="City">
+				    </div>
+
+				    <div class="col-sm-3 span-right margin_top_15">
+				        <select class="form-control">
+				      	<option value="">Choose country</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+
+
+				     <div class="col-md-offset-4 col-sm-3 span-left margin_top_15">
+					      <select class="form-control">
+					      	<option value="">Choose state/Prov</option>
+					      	<option value="">1</option>
+					      	<option value="">2</option>				      	
+					      </select>
+				    </div>
+				    <div class="col-sm-3 span-right margin_top_15">
+				        <input type="text" class="form-control" id="" placeholder="Zip Code">
+				    </div>
+
+				</div>	
+
+				<div class="form-group ">
+				    <label for="" class="col-sm-4 control-label">Email</label>
+				    <div class="col-sm-6 ">
+				      <input type="email" class="form-control" id="" placeholder="E-mail">
+				    </div>
+				  
+				</div>	
+
+				<div class="form-group ">
+				    <label for="" class="col-sm-4 control-label">Orther info</label>				
+
+				    <div class="col-sm-6 margin_top_15">
+				     <textarea class="form-control"></textarea>
+				    </div>
+				</div>		
+
+
+				
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form  Contact info-->
+
+
+
+
+
+  </div>
+    <!-- END :: panel - body -->
+
+</div>
+<!-- END :: panel Incident info -->
+
+
+<div id="Subject-Info" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	<h2>Subject info</h2>
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+  	
+  </div>
+   <!-- END :: panel - heading of Subject info  -->
+
+  <div class="panel-body">
+    	
+		<div id="Subject-Info--General-Info" class="panel panel-child">
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<h4>General info</h4>
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">Withness</label>
+						<div class="col-sm-6">
+							<div class="radio-btn-list">
+				               <ul class="custom-radio-singleselect  col-md-12">
+				                    <li>
+				                       <input type="radio" checked="checked" name="chk" ng-model="filter" value="0" ng-checked="filter == 0" class="ng-pristine ng-valid ng-touched">
+				                        <span class="ng-binding">No</span>
+				                    </li>
+
+				                    <li>
+				                      <input type="radio" name="chk" ng-model="filter" value="2" ng-checked="filter == 2" class="ng-pristine ng-untouched ng-valid">
+				                        <span class="ng-binding">Yes</span>
+				                    </li>
+				                </ul>
+				            </div>
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+					<div class="form-group have-bottom-line">
+						<label for="" class="col-sm-4 control-label">
+							Contact info
+							<span class="require">*</span>
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="Contact info">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">Age Classificatoin</label>
+						<div class="col-sm-6">
+							<div class="radio-btn-list">
+				               <ul class="custom-radio-singleselect  col-md-12">
+				                    <li>
+				                       <input type="radio" checked="checked" name="chk" ng-model="filter" value="0" ng-checked="filter == 0" class="ng-pristine ng-valid ng-touched">
+				                        <span class="ng-binding">No</span>
+				                    </li>
+
+				                    <li>
+				                      <input type="radio" name="chk" ng-model="filter" value="2" ng-checked="filter == 2" class="ng-pristine ng-untouched ng-valid">
+				                        <span class="ng-binding">Yes</span>
+				                    </li>
+				                </ul>
+				            </div>
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+
+					<div class="form-group have-bottom-line">
+						<label for="" class="col-sm-4 control-label">
+							Guardian
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="Contact info">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Employee #
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="Social Security #">
+						</div>
+					</div>
+					<!-- END : form-group -->
+				
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Additional info
+						</label>
+						<div class="col-sm-6">
+							  <textarea class="form-control"></textarea>
+						</div>
+					</div>
+					<!-- END : form-group -->
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							ID Type #
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="ID Type #">
+						</div>
+					</div>
+					<!-- END : form-group -->
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							ID #
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="ID #">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							State ID #
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="State ID #">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+					
+
+				</form>
+			</div> <!-- END :: 	  <div class="panel-body">	of  panel-child -->
+
+				
+		</div>
+		<!-- END :: A child form -->
+
+        
+		<div id="Subject-Info--Contact-Info"  class="panel panel-child">
+			<div class="panel-body">
+				<form class="form-horizontal">
+		  		<h4>Contact info</h4>
+
+				<div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Name</label>
+				    <div class="col-sm-2 span-left">
+				      <input type="text" class="form-control" id="" placeholder="First name">
+				    </div>
+				    <div class="col-sm-2 span-center">
+				      <input type="text" class="form-control" id="" placeholder="Last name">
+				    </div>
+				    <div class="col-sm-2 span-right">
+				      <input type="text" class="form-control" id="" placeholder="Middle name">
+				    </div>
+				</div>
+
+				<div class="form-group have-bottom-line">
+				    <label for="" class="col-sm-4 control-label">Phone</label>
+				    <div class="col-sm-3 span-left">
+				      <input type="number" class="form-control" id="" placeholder="Cell phone">
+				    </div>				   
+				    <div class="col-sm-3 span-right">
+				      <input type="number" class="form-control" id="" placeholder="Home phone">
+				    </div>
+				</div>
+
+
+				<div class="form-group have-bottom-line">
+				    <label for="" class="col-sm-4 control-label">Address</label>
+				    <div class="col-sm-6 ">
+				      <input type="text" class="form-control" id="" placeholder="Street">
+				    </div>
+
+				    <div class="col-md-offset-4 col-sm-3 span-left margin_top_15">
+				      <input type="text" class="form-control" id="" placeholder="City">
+				    </div>
+
+				    <div class="col-sm-3 span-right margin_top_15">
+				        <select class="form-control">
+				      	<option value="">Choose country</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+
+
+				     <div class="col-md-offset-4 col-sm-3 span-left margin_top_15">
+					      <select class="form-control">
+					      	<option value="">Choose state/Prov</option>
+					      	<option value="">1</option>
+					      	<option value="">2</option>				      	
+					      </select>
+				    </div>
+				    <div class="col-sm-3 span-right margin_top_15">
+				        <input type="text" class="form-control" id="" placeholder="Zip Code">
+				    </div>
+
+				</div>	
+
+				<div class="form-group ">
+				    <label for="" class="col-sm-4 control-label">Email</label>
+				    <div class="col-sm-6 ">
+				      <input type="email" class="form-control" id="" placeholder="E-mail">
+				    </div>
+				  
+				</div>	
+
+				<div class="form-group ">
+				    <label for="" class="col-sm-4 control-label">Orther info</label>				
+
+				    <div class="col-sm-6 margin_top_15">
+				     <textarea class="form-control"></textarea>
+				    </div>
+				</div>		
+
+				
+			</form>	
+			</div>
+		</div>
+		<!-- END :: A child form  :: Contact info-->
+
+		<div id="Subject-Info--Biological-Info"  class="panel panel-child">
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<h4>Biological Info</h4>
+
+					<div class="form-group">
+					    <label for="" class="col-sm-4 control-label">
+					    	Date Of Birth
+					    	
+					    </label>
+					    <div class="col-sm-6">
+							 <div class="input-group" options="{{vm.optionsDate}}" cmsdatetimepicker 
+							 ng-model="vm.dateIncident">
+			                    <input type="text" name="dateIncident" class="form-control input-sm" readonly />
+			                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+				            </div>  
+					    </div>
+					</div>
+					<!-- END :: form-group -->
+
+					<div class="form-group">
+					    <label for="" class="col-sm-4 control-label">
+					    	Hair Color
+					    	
+					    </label>
+					    <div class="col-sm-6">
+							<select class="form-control">
+								<option value="">Please choose</option>
+								<option value="">Please choose</option>
+								<option value="">Please choose</option>								
+							</select>
+					    </div>
+					</div>
+					<!-- END :: form-group -->
+
+					<div class="form-group">
+					    <label for="" class="col-sm-4 control-label">
+					    	Ethnicity
+					    	
+					    </label>
+					    <div class="col-sm-6">
+							<select class="form-control">
+								<option value="">Please choose</option>
+								<option value="">Please choose</option>
+								<option value="">Please choose</option>								
+							</select>
+					    </div>
+					</div>
+					<!-- END :: form-group -->
+
+					<div class="form-group">
+					    <label for="" class="col-sm-4 control-label">
+					    	Eye color
+					    	
+					    </label>
+					    <div class="col-sm-6">
+							<select class="form-control">
+								<option value="">Please choose</option>
+								<option value="">Please choose</option>
+								<option value="">Please choose</option>								
+							</select>
+					    </div>
+					</div>
+					<!-- END :: form-group -->
+
+					<div class="form-group">
+					    <label for="" class="col-sm-4 control-label">Weight</label>					  
+
+					    <div class="col-sm-4 span-left ">
+					      <input type="text" class="form-control" id="" placeholder="City">
+					    </div>
+
+					    <div class="col-sm-2 span-right ">
+					     	<select class="form-control">
+								<option value="">Pounds</option>
+								<option value="">Please choose</option>
+								<option value="">Please choose</option>								
+							</select>
+					    </div>
+					</div>	
+					<!-- END :: form-group -->
+
+
+					<div class="form-group">
+					    <label for="" class="col-sm-4 control-label">Height</label>					  
+
+					    <div class="col-sm-4 span-left ">
+					      <input type="text" class="form-control" id="" placeholder="City">
+					    </div>
+
+					    <div class="col-sm-2 span-right ">
+					     	<select class="form-control">
+								<option value="">Inch</option>
+								<option value="">Please choose</option>
+								<option value="">Please choose</option>								
+							</select>
+					    </div>
+					</div>	
+					<!-- END :: form-group -->
+
+					<div class="form-group">
+					    <label for="" class="col-sm-4 control-label">Gender</label>	
+					    <div class="col-sm-6 ">
+					     	<select class="form-control">
+								<option value="">Please choose</option>
+								<option value="">Please choose</option>								
+							</select>
+					    </div>
+					</div>	
+					<!-- END :: form-group -->
+
+
+				</form>
+				
+			</div><!-- END :: panel-body-->
+		</div>
+		<!-- END :: A child form Event info -->
+
+
+
+  </div>
+    <!-- END :: panel - body of Subject info  -->
+</div>
+<!-- END :: panel Subject info -->
+
+
+
+<div id="Injury-Info" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	<h2>Injury info</h2> 
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+ 	
+  </div>
+   <!-- END :: panel - heading of Subject info  -->
+
+  <div class="panel-body">
+    	
+		<div class="panel panel-child">
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<h4>Injury info</h4>
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">Injury Type</label>
+						<div class="col-sm-6">
+							<select class="form-control">
+						      	<option value="">Choose country</option>
+						      	<option value="">1</option>
+						      	<option value="">2</option>				      	
+						    </select>
+						</div>
+					</div>
+					<!-- END : form-group -->
+					
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">Medical Treatment Provided</label>
+						<div class="col-sm-6">
+							<div class="radio-btn-list">
+				               <ul class="custom-radio-singleselect  col-md-12">
+				                    <li>
+				                       <input type="radio" checked="checked" name="chk" ng-model="filter" value="0" ng-checked="filter == 0" class="ng-pristine ng-valid ng-touched">
+				                        <span class="ng-binding">No</span>
+				                    </li>
+
+				                    <li>
+				                      <input type="radio" name="chk" ng-model="filter" value="2" ng-checked="filter == 2" class="ng-pristine ng-untouched ng-valid">
+				                        <span class="ng-binding">Yes</span>
+				                    </li>
+				                </ul>
+				            </div>
+						</div>
+
+						<div class="col-md-offset-4 col-sm-6 margin_top_15">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+
+					</div>
+					<!-- END : form-group -->
+
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Body Part Affected
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="Body Part Affected">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Employee On The Scene
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="Employee On The Scene">
+						</div>
+					</div>
+					<!-- END : form-group -->
+				
+				
+
+					
+
+				</form>
+			</div> <!-- END :: 	  <div class="panel-body">	of  panel-child -->
+
+				
+		</div>
+		<!-- END :: A child form -->
+
+
+
+  </div>
+    <!-- END :: panel - body of Subject info  -->
+</div>
+<!-- END :: panel injury info-->
+
+
+
+
+<div id="Environment-Info" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	<h2>Environment Info</h2> 
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+ 	
+  </div>
+   <!-- END :: panel - heading of Subject info  -->
+
+  <div class="panel-body">
+    	
+		<div class="panel panel-child">
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<h4>Environment info</h4>
+
+					
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Weather
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="Environment Info">
+						</div>
+					</div>
+					<!-- END : form-group -->
+				
+				
+
+					
+
+				</form>
+			</div> <!-- END :: 	  <div class="panel-body">	of  panel-child -->
+
+				
+		</div>
+		<!-- END :: A child form -->
+
+	
+
+  </div>
+    <!-- END :: panel - body of Subject info  -->
+</div>
+<!-- END :: panel injury info-->
+
+
+<!-- 
+<div class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">Panel heading without title</div>
+
+  <div class="panel-body">
+    Panel content
+  </div>
+
+</div>
+
+
+
+
+
+<div class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">Panel heading without title</div>
+
+  <div class="panel-body">
+    Panel content
+  </div>
+
+</div>
+
+ -->
+

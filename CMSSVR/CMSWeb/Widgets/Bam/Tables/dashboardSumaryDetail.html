@@ -1,0 +1,42 @@
+﻿<div class="table-responsive table-hover bam-dashboard-tabledetail bam-dashboard-summary">
+	<table class="table">
+		<thead>
+			<tr>
+				<th class="first-col">
+					<div>{{'METRIC' | translate}}</div>
+					<div class="sum-controls">
+						<span class="btn btn-xs" ng-click="vm.showMetricPopup()">
+							<i class="icon-doc-new"></i>
+						</span>
+						<span class="btn btn-xs" ng-click="vm.refreshMetricDetailHeader()">
+							<i class="icon-arrows-ccw-1"></i>
+						</span>
+					</div>
+				</th>
+				<th ng-show="TableSumaryDetail[0].Details !== undefined" ng-repeat="colDate in TableSumaryDetail[0].Details">
+					<div>{{colDate.Date | date: 'MM/dd'}}</div>
+				</th>
+				<th ng-show="TableSumaryDetail[0].Details === undefined" ng-repeat="date in dayofweek">
+					<div>{{date | date: 'MM/dd'}}</div>
+				</th>
+				<th class="end-col">
+					<div>{{'WEEK' | translate}}</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="rowData in TableSumaryDetail">
+				<th scope="row" class="start-col-row"><div>{{ rowData.ResourceKey !== ""?  (rowData.ResourceKey | translate) : rowData.Name  }}</div></th>
+				<td ng-repeat="colData in rowData.Details">
+					<!--TypeFormat is 0 display number -->
+					<div class="bam-head-coner" ng-class="vm.getComprateGoal(rowData, colData.Value)"></div>
+					{{rowData.IsPrefix === true ? rowData.UnitName : ''}}{{colData.Value | number:rowData.UnitRound}}{{rowData.IsPrefix === false ? rowData.UnitName : ''}}
+				</td>
+				<th class="end-col-row">
+					<div>{{rowData.IsPrefix === true ? rowData.UnitName : ''}}{{rowData.TotalWeek | number:rowData.UnitRound}}{{rowData.IsPrefix === false ? rowData.UnitName : ''}}</div>
+				</th>
+			</tr>
+		</tbody>
+	</table>
+</div>
+

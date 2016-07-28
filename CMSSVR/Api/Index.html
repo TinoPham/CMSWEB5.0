@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{{title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+	<script src="/Scripts/Jquery/jquery-2.1.1.js"></script>
+
+
+
+	<script src="/Scripts/Metro/jquery/jquery.widget.min.js"></script>
+	<script src="/Scripts/Metro/jquery/jquery.mousewheel.js"></script>
+	<script src="/Scripts/metro/metro.js"></script>
+
+	<script src="/Scripts/Metro/metro/metro-calendar.js"></script>
+	<script src="/Scripts/Metro/metro/metro-datepicker.js"></script>
+
+	<script src="/Scripts/Jquery/jquery.cookie.js"></script>
+
+
+
+
+	<!--<script src="/Scripts/Angular/angular.js"></script>
+	 <script src="/Scripts/Angular/angular-ui-router.js"></script>
+
+	<script src="/Scripts/Angular/angular-mocks.js"></script>
+	 <script src="/Scripts/Angular/angular-animate.js"></script>
+	 <script src="/Scripts/Angular/angular-ui/ui-bootstrap.js"></script>
+	 <script src="/Scripts/Angular/angular-ui/ui-bootstrap-tpls.js"></script>
+	 <script src="/Scripts/Angular/angular-sanitize.js"></script>
+	 <script src="/Scripts/Angular/angular-ui/ng-grid.js"></script>
+	 <script src="/Scripts/Angular/angular-ui/ng-grid-flexible-height.js"></script>
+	 <script src="/Scripts/Angular/angular-ui/angular-scrollable-table.js"></script>-->
+	<!--    <script src="/Scripts/Apps/Utils/UtilsModule.js"></script>
+		<script src="/Scripts/Apps/Utils/CookiesUtil.js"></script>
+		<script src="/Scripts/Apps/Utils/Base64.js"></script>
+		<script src="/Scripts/Apps/Utils/Dialogs.js"></script>
+		<script src="/Scripts/Apps/Utils/spinnerloading.js"></script>
+
+		<script src="/Scripts/Apps/Configuration/ConfigModule.js"></script>
+		<script src="/Scripts/Apps/Configuration/ApiService.js"></script>
+		<script src="/Scripts/Apps/Configuration/DBController.js"></script>
+		<script src="/Scripts/Apps/Configuration/AccountController.js"></script>
+		<script src="/Scripts/Apps/Configuration/ServiceConfigController.js"></script>
+		<script src="/Scripts/Apps/Configuration/LogsController.js"></script>
+		<script src="/Scripts/Apps/Configuration/DVRInfoController.js"></script>-->
+
+	<link href="/Content/Metro/metro-bootstrap.css" rel="stylesheet" />
+	<link href="/Content/Metro/metro-bootstrap-responsive.css" rel="stylesheet" />
+	<link href="/Content/Metro/iconFont.css" rel="stylesheet" />
+	<link href="/Content/bootstrap/bootstrap.css" rel="stylesheet" />
+	<link href="/Content/Components/ng-grid.css" rel="stylesheet" />
+
+	<script data-main="index.js" src="/Scripts/require.js"></script>
+
+</head>
+<body class="metro">
+	<div loading-pane="isPaneShown" id="_loading">
+		<div class="container" ng-controller="AccountController">
+
+			<div class="navigation-bar fixed-top light">
+				<div class="navigation-bar-content container">
+					<div class="col-md-9" ng-include src="'/api/Shared/Header.html'"></div>
+					<div class="col-md-3" ng-include src="'/api/Shared/userinfo.html'"></div>
+				</div>
+			</div>
+
+			<div class="row" style="padding-top:50px">
+
+				<!--<div class="col-md-9" id="_menu" ng-show="UserInfo.authenticated && edit == false" style="padding:0px">-->
+				<!--<div ng-include src="'/views/api/Shared/LeftMenu.html'"></div>-->
+				<!--                    <div ui-view="leftmenu"></div>
+								</div>-->
+				<div class="col-md-12" id="_content">
+					<div class="slide-animation-container">
+
+						<!--<div ng-view id="ng-view" class="slide-animation"></div>-->
+						<div ui-view></div>
+
+
+					</div>
+				</div>
+
+			</div><!--row-->
+
+
+		</div>
+	</div>
+</body>
+</html>

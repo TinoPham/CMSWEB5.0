@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EmailSetting>
+  <Subject>CMS Web: Reset password information</Subject>
+  <PasswordLength>8</PasswordLength>
+  <NumberNonOfAlpha>0</NumberNonOfAlpha>
+  <IsHtml>1</IsHtml>
+  <Content>
+    <![CDATA[<div>
+    <div> Dear {0}, </div> 
+    <p>Here is your new password that you requested, Please use it to login then you can change to another password as you want.</p>
+      <div style="margin-left: 30px;">
+        UserName: <span  style="color: red; font-weight: bold;"> {1}</span></div>
+      <div style="margin-left: 30px;">
+        Password: <span  style="color: red; font-weight: bold;"> {2}</span>
+      </div>
+      <div>Thanks,</div>
+      <div>CMS Web</div>
+    </div>
+     ]]>
+  </Content>
+</EmailSetting>

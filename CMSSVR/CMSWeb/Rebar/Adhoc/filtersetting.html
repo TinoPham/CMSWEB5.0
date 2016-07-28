@@ -1,0 +1,81 @@
+﻿<div class="panel col-md-12 custom-filter-block adhoc-custom-filter " ng-cloak>               
+    <div class="row">
+        <div class="panel" style="margin-bottom: 0">
+            <div class="panel-header">
+                <span class="btn pull-right"> 
+                    <span  data-ng-click="cancel()"><i class="icon-cancel-1"></i></span>
+                </span>
+                <h3 class="title"> {{'CUSTOM_FILTER' | translate}}</h3>      
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+
+                            <div class="row btn-group" role="group">
+                                <button type="button"  ng-hide="hideOr(fieldSelected)" ng-click="SelectAnd = false" class="col-xs-6 btn btn-sm btn-default" ng-class="{'active' : SelectAnd === false }">{{'OR_STRING' | translate}}</button>
+                                <button type="button" 
+                                        ng-click="SelectAnd = true" class="btn btn-sm btn-default" 
+                                        ng-class="{'active' : SelectAnd === true,
+                                          'col-xs-12': hideOr(fieldSelected),
+                                          'col-xs-6': !hideOr(fieldSelected)
+                                     }">
+                                    {{'AND_STRING' | translate}}
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">    
+                            <div class="form-group no-margin">
+                                <div class="input-group col-sm-12">
+                                    <multiselect name="Group" class="form-control custom-radio-multiselect" ng-model="fieldSelected" 
+                                                 options="g as g.DataField for g in filterNotAssign">
+                                    </multiselect>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <button type="button" ng-show="fieldSelected.DataType === 'childid' || fieldSelected.DataType === 'list'" class=" col-xs-12 btn btn-sm btn-default  dropdown-toggle">{{'CONTAINS_STRING' | translate}}</button>
+                            <button type="button" ng-show="fieldSelected.DataType !== 'childid' && fieldSelected.DataType !== 'list'" class=" col-xs-12 btn btn-sm btn-default  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{selectfirst.symbol | translate}}</button>
+                            <ul class="dropdown-menu" ng-show="fieldSelected.DataType !== 'childid'">
+                                <li ng-repeat="d in filterDef"><a ng-click="selectCondition(d)">{{d.symbol | translate}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4" ng-show="!fieldSelected">
+                            <input type="datetime" class="form-control" ng-disabled="true" aria-label="...">
+                        </div>
+                        <div class="col-sm-4" ng-show="fieldSelected">
+                            <div  class="input-group" ng-if="fieldSelected.DataType === 'datetime'" ng-model="vm.firstvalue" options="{{dateOptions}}" cmsdatetimepicker>
+								<input type="text" class="form-control" aria-label="..." required readonly />
+                                   <span class="input-group-addon"><i class="icon-calendar"></i></span>
+                            </div>
+							<input ng-if="fieldSelected.DataType === 'string'" ng-model="vm.firstvalue" type="text" class="form-control" aria-label="..." required />
+							<input ng-if="fieldSelected.DataType === 'number'" ng-model="vm.firstvalue" type="number" class="form-control" aria-label="..." required />
+							<input ng-if="fieldSelected.DataType === 'money'" ng-model="vm.firstvalue" type="number" class="form-control" aria-label="..." required />
+							<div class="form-group no-margin">
+								<div class="input-group col-sm-12">
+                            <multiselect ng-show="vm.selectedItem" name="{{fieldSelected.DisplayField}}" class="form-control multiple-select" ng-model="Selected"
+                                     options="rowName as row.Name for row in vm.datalist"
+                                     ms-header="{{'ANY_STRING'|translate}}" multiple="true" change="ddlChanged(fieldSelected.DisplayField)" autocomplete>
+                        </multiselect>
+                        </div>
+                    </div>
+                </div>
+					</div>
+				</div>
+                <div class="row" ng-if="errorMsg">
+                    <div class="col-sm-12"><p style="color: red">{{errorMsg | translate}}</p></div>
+                </div>
+            </div>
+            <div class="panel-footer text-align-right">
+              
+                <span class="btn btn-default pull-left" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i>{{'BTN_CLOSE' | translate}}</span>
+                
+                <!--<span class="btn btn-danger" data-ng-click="clearFilter()"><i aria-hidden="true" class="icon-erase"></i>{{'BTN_CLEAR' | translate}}</span>-->
+                  
+                <span class="btn btn-info " data-ng-click="save()"><i aria-hidden="true" class="icon-ok-circled2"></i>{{'BTN_DONE' | translate}}</span>
+            </div>
+        </div>
+    </div>
+</div>

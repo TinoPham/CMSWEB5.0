@@ -1,0 +1,82 @@
+﻿@model SVRDatabase.Model.DVRInfo
+
+@{
+    ViewBag.Title = "Create";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>DVRInfo</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <!--Html.LabelFor(model => model.KDVR, new { class = "control-label col-md-2" }) -->
+            <label class="control-label col-md-3">KDVR</label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.KDVR)
+                @Html.ValidationMessageFor(model => model.KDVR)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Last Convert</label>
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.LastConvert,String.Format("{0:yyyy-MM-dd}", DateTime.Today),new { @class = "form-control", type="date"})
+                @Html.ValidationMessageFor(model => model.LastConvert)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Last DVR Message</label>
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.LastDvrMessage,String.Format("{0:yyyy-MM-dd}", DateTime.Today),new { @class = "form-control", type="date"})
+                @Html.ValidationMessageFor(model => model.LastDvrMessage)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Created Date</label>
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.CreateDate,String.Format("{0:yyyy-MM-dd}", DateTime.Today),new { @class = "form-control", type="date"})
+                @Html.ValidationMessageFor(model => model.CreateDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Force Stop</label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.ForceStop)
+                @Html.ValidationMessageFor(model => model.ForceStop)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Converter Interval</label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.ConverterInterval)
+                @Html.ValidationMessageFor(model => model.ConverterInterval)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-10">
+                <input type="submit" value="Create" class="btn btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

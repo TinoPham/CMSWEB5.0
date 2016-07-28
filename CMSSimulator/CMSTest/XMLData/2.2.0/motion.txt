@@ -1,0 +1,1608 @@
+
+        <time_change>0</time_change>
+        <configuration_id>10</configuration_id>
+        <configuration_name>motion</configuration_name>
+    <motion_config>
+      <is_green>0</is_green>
+      <rotate_dwell_time>10</rotate_dwell_time>
+      <is_display_motion>1</is_display_motion>
+      <channels size="64">
+        <channel id="0">
+          <motions size="4">
+            <motion id="0">
+              <left>359</left>
+              <top>0</top>
+              <width>641</width>
+              <height>566</height>
+              <sensitivity>20</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>1</enable_alarm>
+              <enable_control>1</enable_control>
+              <alarm_end_hour>3</alarm_end_hour>
+              <alarm_end_minute>40</alarm_end_minute>
+              <alarm_start_hour>3</alarm_start_hour>
+              <alarm_start_minute>20</alarm_start_minute>
+              <control_hour>2</control_hour>
+              <control_minute>40</control_minute>
+              <control_second>10</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+            <motion id="1">
+              <left>366</left>
+              <top>101</top>
+              <width>280</width>
+              <height>281</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+            <motion id="2">
+              <left>310</left>
+              <top>139</top>
+              <width>282</width>
+              <height>330</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+            <motion id="3">
+              <left>310</left>
+              <top>139</top>
+              <width>282</width>
+              <height>330</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="1">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="2">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="3">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="4">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="5">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="6">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="7">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="8">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="9">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="10">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="11">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="12">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="13">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="14">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="15">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="16">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="17">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="18">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="19">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="20">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="21">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="22">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="23">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="24">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="25">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="26">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="27">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="28">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="29">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="30">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="31">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="32">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="33">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="34">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="35">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="36">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="37">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="38">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="39">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="40">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="41">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="42">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="43">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="44">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="45">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="46">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="47">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="48">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="49">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="50">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="51">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="52">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="53">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="54">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="55">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="56">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="57">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="58">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="59">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="60">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="61">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="62">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+        <channel id="63">
+          <motions size="1">
+            <motion id="0">
+              <left>0</left>
+              <top>0</top>
+              <width>1000</width>
+              <height>1000</height>
+              <sensitivity>50</sensitivity>
+              <control_number>0</control_number>
+              <enable_alarm>0</enable_alarm>
+              <enable_control>0</enable_control>
+              <alarm_end_hour>0</alarm_end_hour>
+              <alarm_end_minute>0</alarm_end_minute>
+              <alarm_start_hour>0</alarm_start_hour>
+              <alarm_start_minute>0</alarm_start_minute>
+              <control_hour>0</control_hour>
+              <control_minute>0</control_minute>
+              <control_second>0</control_second>
+              <enable_full_screen>0</enable_full_screen>
+              <full_screen_channel_no>0</full_screen_channel_no>
+              <dwell_time>5</dwell_time>
+            </motion>
+          </motions>
+        </channel>
+      </channels>
+    </motion_config>
+        

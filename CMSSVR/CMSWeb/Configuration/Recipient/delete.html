@@ -1,0 +1,26 @@
+﻿<form name="myForm" class="form-horizontal recipient-manages form-delete" novalidate angular-validator angular-validator-submit="vm.deleteRecipient()">
+	<div class="modal-header">
+		<span class="close" data-ng-click="vm.cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'RECIPIENT_DELETE_TITLE'|translate}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="remove-view" ng-class="{'remove-multiple': !vm.isSingleItem}">
+			<!--Multiple item delete-->
+			<div ng-if="!vm.isSingleItem"> <!--slimscroll="{height: '200px'}"-->
+				<div class="listview" ng-grid="vm.listOptions"></div>
+			</div>
+
+			<!--Single item delete-->
+			<div class="rep-info" ng-if="vm.isSingleItem" ng-repeat="item in vm.itemSelecteds">
+				<div class="rep-name">{{item.FirstName}} {{item.FirstName}}</div>
+				<div class="rep-email">{{item.Email}}</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="msg-delete">{{vm.msgDelete|translate}}</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" data-ng-click="vm.cancel()">{{"BTN_CANCEL"|translate}}</button>
+		<button type="submit" class="btn btn-primary">{{"BTN_OK"|translate}}</button>
+	</div>
+</form>

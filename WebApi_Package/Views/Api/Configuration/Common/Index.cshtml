@@ -1,0 +1,21 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    ViewBag.Title = "Error View";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page not-found-page">
+    <div class="page-title">
+        <h1>Error View</h1>
+    </div>
+  <h2>Exception details</h2>
+<p>
+    Controller: @Model.ControllerName <br>
+    Action: @Model.ActionName
+    Exception: Unknow error please contact with administrator
+</p>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

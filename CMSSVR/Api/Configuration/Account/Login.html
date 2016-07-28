@@ -1,0 +1,39 @@
+﻿<div class="tile-area">
+<div style="margin:0 auto; width:400px">
+<form name="loginForm"  novalidate >
+    <div class="panel" ng-init ="InitLogin(this)">
+        <div class="panel-header bg-lightBlue fg-white">
+           Login
+        </div>
+        <div class="panel-content"> 
+               
+               <div class="input-control text" ClearInput>
+                    <input type="text" name="UserName" ng-model="User.UserName" placeholder="User Name" required tabindex ="0" />
+                    <button class="btn-clear"></button>
+                    <span class="errorMessage" ng-show="loginForm.UserName.$dirty && loginForm.UserName.$invalid">
+                            User Name is required
+                        </span>
+                </div>
+               
+               <div class="input-control password" TogglePassword>
+                    <input type="password" name="Password" ng-model="User.Password" placeholder="Password" required tabindex ="1"/>
+                    <button class="btn-reveal"></button>
+                        <span class="errorMessage" ng-show="loginForm.Password.$dirty && loginForm.Password.$invalid">
+                            Password is required
+                        </span>
+               </div>
+    <div style="margin-top:10px;width:100%; height:25px">
+        
+            <div class="place-right">
+                <input type="submit" value="Login" class="info" ng-disabled="loginForm.$invalid"  ng-click="login($event)" tabindex ="2"/>
+                <!--<a  id="_Register" class="button info" style="text-decoration:none;" href="#/register">Add Account</a>-->
+            </div>
+         </div>
+
+<!--        <div class="editor-label" style="margin-top:10px">User name, Password are the same to login.</div>-->
+    </div>
+        
+    </div>
+</form>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+{"ReportId":1,"Metrics":[{"MetricId":1,"Name":"Opportunities(traffic)","ResourceKey":"METRIC_OPPORTUNITIES","Order":0,"Active":true},{"MetricId":3,"Name":"Sales","ResourceKey":"METRIC_SALES","Order":0,"Active":true},{"MetricId":4,"Name":"Labour hours","ResourceKey":"METRIC_LABOUR_HOURS","Order":0,"Active":true}]}

@@ -1,0 +1,1 @@
+{"GroupId":240,"GroupName":"Administration","Description":"","CreatedBy":70,"GroupLevel":null,"NumberUser":1,"Users":[578],"FuncLevels":[{"FunctionID":8,"LevelID":0}]}

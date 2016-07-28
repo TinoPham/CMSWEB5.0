@@ -1,0 +1,22 @@
+﻿<form name="deleNode" class="form-horizontal user-group-manages form-delete">
+	<div class="modal-header">
+		<span class="close" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'Images slider'|translate}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="slide-content scrollbar-dynamic" data-jquery-scrollbar>
+			<carousel interval="Interval">
+                <slide ng-repeat="file in model track by $index" active="slide.active">
+                    <img class="site-slider-image" ng-show="file.Name!=null" ng-src="{{ file.Data != null? 'data:image/png;base64,' + file.Data : url+ '?skey=' + file.SiteKey + '&fname=' + file.Name + '&fdname='+ file.KDVR.toString()}}" /> 
+                    <!--<div class="carousel-caption">
+                        <h4>Slide {{$index}}</h4>
+                        <p>{{file.text}}</p>
+                    </div>-->
+                </slide>
+            </carousel>
+		</div>
+	</div>
+	<!--<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-ng-click="cancel()">{{"CLOSE"|translate}}</button>
+	</div>-->
+</form>

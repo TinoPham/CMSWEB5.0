@@ -1,0 +1,140 @@
+﻿<div class="panel-body">
+    <div class="box-nodata" ng-show ="vmd.Nodata !== ''">
+        <i class=" icon-boxes6"></i>
+        <h3>{{vmd.Nodata | translate}}</h3>
+    </div>  
+   
+    <div  class="box-data-nomal" ng-if="!vmd.groupSite" ng-show ="vmd.Nodata === ''">
+        <div class="row" ng-repeat="r in vmd.AhocData" ng-style="{'border': vmd.selectIndex === $index? '2px solid #DDD': '1px solid #DDD'}" >
+            <div class="col-sm-12" ng-click="vmd.SelectRow($index,r)"  style="height: 40px;cursor: pointer;padding-top: 10px;padding-bottom: 10px" ng-style="{'background': vmd.selectIndex === $index? '#DDD': '#FFF'}">
+                <span class="pull-left">
+                    <span><i ng-class="{'icon-right-open-big': vmd.selectIndex !== $index, 'icon-down-open-big': vmd.selectIndex === $index}"></i></span>
+                    <span style="font-weight: bold;">
+                        <span ng-if="vmd.GroupProperty">
+							<span ng-if="vmd.GroupProperty ==='TranDate' && vmd.GroupFieldSelected.ColWidth <4">
+                              <span>{{vmd.RowHeaderGroup(r)}}</span>
+                            </span>
+							<span ng-if="vmd.GroupProperty ==='TranDate' && vmd.GroupFieldSelected.ColWidth===4">
+                                {{ 'MONTH_' + vmd.AppDefine.monthNamesShort[r.Data.Month -1] | translate}}{{' ' + r.Data['Year']  }} ({{r.SiteName }})
+                            </span>
+							<span ng-if="vmd.GroupProperty !=='TranDate'">
+                                 {{ r.Data[vmd.GroupProperty]?r.Data[vmd.GroupProperty] : 'Undefined'}} ({{r.SiteName }})
+                            </span>
+                            <!--<span ng-if="vmd.GroupProperty ==='TranDate' && vmd.GroupFieldSelected.ColWidth===1">
+                                {{r['Month'] + '/' + r['Day'] + '/' + r['Year']  + ':' + r['Hour']  }}({{r.SiteName }})
+                            </span>
+                            <span ng-if="vmd.GroupProperty ==='TranDate' && vmd.GroupFieldSelected.ColWidth===2">
+                                {{r['Month'] + '/' + r['Day'] + '/' + r['Year']  }}({{r.SiteName }})
+                            </span>
+                            <span ng-if="vmd.GroupProperty ==='TranDate' && vmd.GroupFieldSelected.ColWidth===3">
+                                {{r['Week'] + '-' + r['Year']  }}({{r.SiteName }})
+                            </span>
+                            <span ng-if="vmd.GroupProperty ==='TranDate' && vmd.GroupFieldSelected.ColWidth===4">
+                                {{r['Month'] + '/' + r['Year']  }}({{r.SiteName }})
+                            </span>
+                            <span ng-if="vmd.GroupProperty !=='TranDate'">
+                                 {{ r[vmd.GroupProperty]?r[vmd.GroupProperty] : 'Undefined'}}({{r.SiteName }})
+                            </span>-->
+                        </span>
+                        <span ng-if="!vmd.GroupProperty">{{r.SiteName}}</span>
+                    </span>: 
+                    <span>{{r.TotalTran | number : 2}}$</span>
+                </span>
+                <span class="pull-right" ng-if="vmd.selectIndex === $index">
+                    <span>{{'COUNT_STRING' | translate}}</span>: <span style="font-weight: bold">{{vmd.itemTotalRecord}}</span><!--ForTesiting:{{r.CountTran}}-->
+                </span>
+            </div>
+            <div class="col-sm-12" ng-if="vmd.selectIndex === $index" ng-show="vmd.showContent">
+                <div  ng-if="vmd.selectIndex === $index" class="panel" ng-include="'widgets/rebar/rebar-transact-viewer.html'" ng-controller="rebarTransactViewerCtrl as rvm" ng-init="initCtrl(vmd.paramTran, vmd.callback, vmd.definefield, vmd.rebartransactviewerProperty)"></div>
+            </div>
+        </div>
+             
+        <div class="row">
+            <div class="col-sm-12">
+                <span style="float: right" ng-show="vmd.totalPages > 1">
+                    <nav style="text-align: center;">
+                        <ul class="pagination">
+                            <li ng-click="vmd.prevPage()" ng-disabled="vmd.currentPage < 2">
+                                <a aria-label="Previous">
+                                     <span aria-hidden="true">
+                                            <i class=" icon-left-open-big"></i>
+                                        </span>
+                                </a>
+                            </li>
+                            <li ng-click="vmd.prevPage(1)"><a>1</a></li>
+							<li>
+								<a class="input-page">
+									<input type="number" class="form-control" ng-model="vmd.currentPage" style="max-width: 50px;">
+								</a>
+							</li>
+                            <li ng-click="vmd.gotoPage()"><a>{{'GO' | translate}}</a></li>
+                            <li ng-click="vmd.nextPage(vmd.totalPages)"><a>{{vmd.totalPages ? vmd.totalPages : 0}}</a></li>
+                            <li ng-click="vmd.nextPage()" ng-disabled="vmd.currentPage >= vmd.totalPages">
+                                <a aria-label="Next">
+                                    <span aria-hidden="true">
+                                            <i class=" icon-right-open-big"></i>
+                                        </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div ng-if="vmd.groupSite" class="box-data-group-by-site" ng-show ="vmd.Nodata === ''">
+        <div ng-repeat="g in vmd.GroupData" ng-init="groupIndex = $index" >
+
+            <div class="row parent"
+                 ng-click="vmd.parentsetIndex = groupIndex; vmd.selectIndex = null; collaped = !collaped">
+
+                <h4>
+                    <i class="icon-store-3"></i>
+                    {{g.SiteName ? g.SiteName : 'No Name'}}
+                </h4>
+
+                <span class="count"><span>{{'COUNT_STRING' | translate}}</span>: <span style="font-weight: bold">{{g.Count}}</span></span>
+                <span class="total"><span>{{'Total' | translate}} :</span> <span style="font-weight: bold">{{g.Total | number: 2}}$</span></span>
+            </div>
+
+            <div ng-show="collaped" ng-if="vmd.parentsetIndex === groupIndex" class="row child" ng-repeat="r in g.DataResult"  ng-init="index = $index" ng-style="{'border': vmd.parentsetIndex === groupIndex && vmd.selectIndex === index? '2px solid #DDD': '1px solid #DDD'}" style="margin-left:15px; margin-bottom: 5px;">
+                <div class="col-sm-12" ng-click="vmd.SelectRow(index,r)"  style="cursor: pointer;padding-top: 10px;height: 40px;padding-bottom: 10px" ng-style="{'background':vmd.parentsetIndex === groupIndex && vmd.selectIndex === index? '#DDD': '#FFF'}">
+                    <span class="pull-left">
+                        <span><i ng-class="{'icon-right-open-big': vmd.parentsetIndex === groupIndex && vmd.selectIndex !== index, 'icon-down-open-big':vmd.parentsetIndex === groupIndex && vmd.selectIndex === index}"></i></span>
+                         <span style="font-weight: bold;">
+                        <span ng-if="vmd.GroupProperty">
+                            <span ng-if="vmd.GroupProperty ==='TranDate' && vmd.GroupFieldSelected.ColWidth <4">
+                              <span>{{vmd.RowHeaderGroup(r)}}</span>
+                            </span>
+							<span ng-if="vmd.GroupProperty ==='TranDate' && vmd.GroupFieldSelected.ColWidth===4">
+                                {{ 'MONTH_' + vmd.AppDefine.monthNamesShort[r.Data.Month-1] | translate}}{{' ' + r.Data['Year']  }} ({{r.SiteName }})
+                            </span>
+							<span ng-if="vmd.GroupProperty !=='TranDate'">
+                                 {{ r.Data[vmd.GroupProperty]?r.Data[vmd.GroupProperty] : 'Undefined'}} ({{r.SiteName }})
+                            </span>
+                        </span>
+                        <span ng-if="!vmd.GroupProperty">{{r.SiteName}}</span>
+                    </span>: 
+                        <span>{{r.TotalTran | number: 2}}$</span>
+                    </span>
+                    <span class="pull-right"  ng-if="vmd.selectIndex === $index">
+                        <span>{{'COUNT_STRING' | translate}}</span>: <span style="font-weight: bold">{{vmd.itemTotalRecord}}</span>
+                    </span>
+                </div>
+                <div class="col-sm-12" ng-if="vmd.parentsetIndex === groupIndex && vmd.selectIndex === index" ng-show="vmd.showContent">
+                    <div  ng-if="vmd.parentsetIndex === groupIndex && vmd.selectIndex === index" class="panel" ng-include="'widgets/rebar/rebar-transact-viewer.html'" ng-controller="rebarTransactViewerCtrl as rvm" ng-init="initCtrl(vmd.paramTran, vmd.callback, vmd.definefield, vmd.rebartransactviewerProperty)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     <div class="row total"  ng-show ="vmd.Nodata === ''">
+         <div class="col-sm-6">
+            <h5 style="float: left;">{{'TOTAL_AMOUNT'| translate}}{{': '}} 
+                <span style="font-weight: bold">{{vmd.SumOfTotal | number: 2}}$</span>
+            </h5>
+         </div>
+        <div class="col-sm-6"><h5 style="float: right;">{{'TOTAL_COUNT' | translate}}{{': '}} <span style="font-weight: bold">{{ (vmd.groupSite === true ? vmd.SumOfCountGroup : vmd.SumOfCount) | number}}</span></h5></div>
+    </div>
+</div>

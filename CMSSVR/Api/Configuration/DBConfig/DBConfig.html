@@ -1,0 +1,69 @@
+﻿<form name="DBConfig" novalidate >
+    <div ng-init="loadconfig()">
+     <div class="form-horizontal">
+        <div class="form-group">
+            <div class="control-label col-md-2">Server</div>
+            <div class="col-md-5">
+                <div ng-class="{false:'input-control text', true: 'input-control text error-state'}[DBConfig.Server.$invalid && DBConfig.Server.$dirty]">
+                <input type="text" name="Server" ng-model="model.Server" ng-disabled="isDisabled"  required/>
+                  <p class="has-error" ng-if="DBConfig.Server.$invalid && DBConfig.Server.$dirty">The server's name is required</p>
+                    </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Database</div>
+            
+            <div class="col-md-5">
+                <div ng-class="{false:'input-control text', true: 'input-control text error-state'}[DBConfig.DBName.$invalid && DBConfig.DBName.$dirty]">
+                    <input type="text" name="DBName" ng-model="model.DBName" ng-disabled="isDisabled" required/>
+                    <p class="has-error" ng-if="DBConfig.DBName.$invalid && DBConfig.DBName.$dirty">The database's name is required</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">User Name</div>
+            
+            <div class="col-md-5">
+                <div ng-class="{false:'input-control text', true: 'input-control text error-state'}[DBConfig.UserID.$invalid && DBConfig.UserID.$dirty]">
+                    <input type="text"  name="UserID" ng-model="model.UserID"  ng-disabled="isDisabled" required/>
+                    <p class="has-error" ng-if="DBConfig.UserID.$invalid && DBConfig.UserID.$dirty">The user's name is required</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Password</div>
+            
+            <div class="col-md-5">
+                <div class="input-control password">
+                <input type="password" name="Password" name="model.Password" ng-model="model.Password" ng-disabled="isDisabled"/>
+                    </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Trusted</div>
+            <div class="col-md-3">
+                <div class="input-control checkbox" style="padding-left:2px; margin:0px">
+                                    <label style="height:100%">
+                                        <input type="checkbox" class="checkbox" style="margin:0px"  name="Trusted" ng-model ="model.Trusted" ng-disabled="isDisabled" />
+                                        <span class="check" style="margin:0px"></span>
+                                    </label>
+                                </div>
+
+            <!--<input type="checkbox" class="checkbox"  name="Trusted" ng-model ="model.Trusted" ng-disabled="isDisabled" />-->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="btnSave" ng-value="str_Save" ng-disabled="isDisabled || DBConfig.$invalid" class="btn info" ng-click="save()"/>
+                <input type="button" id="btnEdit" ng-value="str_Edit" class="btn info" ng-click="edit()"/>
+                <input type="button" id="btnTestConection" ng-value="str_TestConnection" class="info" ng-click="testconnection(model)"/>
+            </div>
+        </div>
+    </div>
+    </div>
+</form>

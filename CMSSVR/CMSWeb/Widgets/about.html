@@ -1,0 +1,41 @@
+﻿<div class="about-widget">
+	<div class="modal-header">
+		<p> {{about.title | translate}}
+			<i ng-click="Close()" class="icon-cancel-1 pull-right"></i>
+		</p>
+	</div>
+	<div class="modal-body">
+	    <div class="row header">
+
+	    <!-- 	<div class="col-xs-4 col-md-4">
+	    		CMS
+	    	</div>
+	    	<div class=" col-xs-8 col-md-8">
+	    		<div>{{about.fullName | translate}}</div>              
+	    	    <div  style="font-size: 10px">{{about.name}}  {{about.version}}</div>
+                <div  style="font-size: 10px">{{'BUILD' | translate}} {{about.buildDate}}</div>
+	    	</div>  -->
+
+	        
+            <span>
+            	<h3>What is Cloud Managed Services (CMS)?</h3>            
+            </span>
+           
+	    </div>           
+	    <div class="row about-content">
+	    	  	<div>Glad you asked! CMS is a powerful engine designed to bring relevant business insights and Smart-ER to your fingertips.  CMS is an invaluable source of real-time information that supports leaders in their daily tasks and help them be more informed and make better decisions to grow their business and reduces losses. 
+				</div>	
+		      <div ng-include="about.url"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="modal-footer">
+		<!-- <div class="col-md-3">
+			<h3>Want to add more CMS modules ?</h3>
+		</div> -->
+		<div class="col-md-12">
+			<h3>Want to add more CMS modules?</h3>
+			There is nothing easier!  Be more protected against risk and liability with our Incident report module and enjoy more peace of mind while keeping track on your staff’s performance with Site Audit.  Just speak with your Sales representative and we will out together the best solution to suit your business needs in just a few minutes!</div>
+		<!-- <button id="about-accepted" class="btn btn-default" ng-click="Close()">Close</button> -->
+	</div>
+</div>                     

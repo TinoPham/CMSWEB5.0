@@ -1,0 +1,16 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Détail horaire par emplacement"},
+{"NameField":"footer", "ValueField":"Préparé sous contrat pour l'usage exclusif d’i3 International. La reproduction de ce rapport est interdite."},
+{"NameField":"header_Day", "ValueField":"Jour"},
+{"NameField":"header_Time", "ValueField":"Heure"},
+{"NameField":"header_Traffic", "ValueField":"Trafic"},
+{"NameField":"header_Trans", "ValueField":"Trans."},
+{"NameField":"header_Sales", "ValueField":"Ventes"},
+{"NameField":"header_Conv", "ValueField":"% conv."},
+{"NameField":"header_ATV", "ValueField":"VMT"},
+{"NameField":"header_SalesShopper", "ValueField":"Ventes par client"},
+{"NameField":"header_SubTotal", "ValueField":"Sous-Total"},
+{"NameField":"header_WH", "ValueField":"HT en-tête"},
+{"NameField":"b_hideWH", "ValueField":"true"},
+{"NameField":"rpt_NODATA", "ValueField":"Données de ne sont pas disponibles"}
+]

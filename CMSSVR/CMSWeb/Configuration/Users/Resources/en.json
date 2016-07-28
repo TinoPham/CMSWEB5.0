@@ -1,0 +1,23 @@
+﻿{
+  "BTN_UPLOAD_IMAGE":"Change Photo"
+, "DETAILS":"Details"
+, "EMPLOYEE_ID":"Employee ID"
+, "EXPIRED_DATE":"Expired Date"
+, "EXPIRE_DATE":"Expire Date"
+, "EMAIL_DAILY":"Email Week-at-a-Glance dashboard daily."
+, "HEADER_USER_DELETE":"Delete User"
+, "IS_ADMIN":"Administrator"
+, "POSITION_NAME":"Job Name"
+, "SELECT_JOB_TITLE_STR":"Select the Job Title"
+, "SELECT_USER_GROUP_STR":"Select the User Group(s)"
+, "TELEPHONE":"Tel"
+, "USER_EDIT_HEADER":"EDIT USER"
+, "USER_ADD_HEADER":"ADD USER"
+
+, "EMPLOYEE_ID_REQUIRED":"The Employee ID field cannot be empty."
+, "PHONE_VALID_FORMAT":"Invalid Phone Number format."
+, "USER_NAME_EXIST":"This User Name already exists."
+, "USER_EMPLOYEE_EXIST":"This Employee ID already exists."
+, "USER_DELETE_CONFIRM_MSG":"Are you sure you want to delete this user?"
+, "USER_DELETE_CONFIRM_MSGS":"Are you sure you want to delete these users?"
+}

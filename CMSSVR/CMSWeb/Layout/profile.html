@@ -1,0 +1,58 @@
+﻿<form name="myForm" novalidate angular-validator angular-validator-submit="vm.SaveProfile()" class="form-horizontal user-profile">
+	<div class="modal-header">
+		<span class="close" data-ng-click="vm.CloseProfile()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'MY_PROFILE'|translate}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="form-horizontal">
+			<div class="form-group">
+				<div class="col-sm-3 col-xs-5">
+					<label>{{"USER_IMAGE"|translate}}</label>
+					<div class="img-profile">
+						<img ng-show="vm.picSource!=null" ng-src="{{vm.picSource}}" />
+						<img ng-show="vm.picSource == null" ng-src="{{vm.avatarurl}}" />
+					</div>
+				</div>
+				<div class="col-sm-9 col-xs-7 user-upload">
+					<div class="btn-group">
+						<span ng-show="vm.picSource != null" class="btn btn-danger" ng-click="vm.removeFileFn()"><i class="icon-trash"></i></span>
+						<div class="btn btn-primary btn-file">
+							<i class="icon-picture"></i><span class="btn-file-text">{{'UPLOAD_IMAGE'|translate}}</span>
+							<input type="file" accept="{{vm.defUpload.UImageAccept}}" file-upload="{{vm.defUpload.UImageOption}}">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="jobname" class="col-sm-3 control-label">{{'FIRST_NAME'|translate}}</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="txtFirstName" ng-model="vm.myProfile.FName" autocomplete="off"
+						required-message="'{{'FIRST_NAME_REQUIRED'|translate}}'" required
+						validate-on="dirty" maxlength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">{{'LAST_NAME'|translate}}</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="txtLastName" ng-model="vm.myProfile.LName" autocomplete="off"
+						required-message="'{{'LAST_NAME_REQUIRED'|translate}}'" required
+						validate-on="dirty" maxlength="20" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="jobdescription" class="col-sm-3 control-label">{{'EMAIL'|translate}}</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="txtEmail" ng-model="vm.myProfile.Email" autocomplete="off"
+						required-message="'{{'EMAIL_REQUIRED'|translate}}'" required
+                        validator="vm.EmailValidFunc(vm.myProfile.Email) === true"
+						invalid-message="vm.EmailValidFunc(vm.myProfile.Email)"
+                        validate-on="dirty" maxlength="50" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="vm.CloseProfile()">{{'BTN_CANCEL'|translate}}</button>
+		<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">{{'BTN_SAVE'|translate}}</button>
+	</div>
+</form>

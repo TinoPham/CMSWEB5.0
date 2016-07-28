@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+	<Object table="Transact" src="AccessTransCA" des="Transact">
+		<Item src="DVRDateTime" des="DVRDate"/>
+		<Item src="TransDateTime" des="TransDate"/>
+		<Item src="T_CameraNB" des="T_CameraNB"/>
+		<Item src="T_TranType" des="T_TranType"/>
+		<Item src="T_UnitID" des="T_UnitID"/>
+		<Item src="T_SiteID" des="T_SiteID"/>
+		<Item src="T_DevName" des="T_DevName"/>
+		<Item src="T_Batch" des="T_Batch"/>
+		<Item src="T_Card" des="T_Card"/>
+		<Item src="T_FirstName" des="T_FullName"/>
+		<Item src="T_XString1" des="ExStrings"/>
+		<Item src="T_XString2" des="ExStrings"/>
+	</Object>
+
+	<ItemKey>
+		<Item Column="T_CameraNB" SqlTable="tbl_POS_CameraNBList" ContextType="POSCameraNB"/>
+		<Item Column="T_TranType" SqlTable="tbl_CA_TranTypeList" ContextType="CATranType"/>
+		<Item Column="T_UnitID" SqlTable="tbl_CA_UnitIDList" ContextType="CAUnitID"/>
+		<Item Column="T_SiteID" SqlTable="tbl_CA_SiteIDList" ContextType="CASiteID"/>
+		<Item Column="T_DevName" SqlTable="tbl_CA_DevNameList" ContextType="CADevName"/>
+		<Item Column="T_Batch" SqlTable="tbl_CA_BatchList" ContextType="CABatch"/>
+		<Item Column="T_Card" SqlTable="tbl_CA_CardList" ContextType="CACard"/>
+		<Item Column="T_FirstName" SqlTable="tbl_CA_FullNameList" ContextType="CAFullName" ConvertBase="ConvertItemCAFullName"/>
+		<Item Column="T_XString1" SqlTable="tbl_CA_ExtraName" ContextType="CAExtraName" ConvertBase="ConvertItemCAXString"/>
+		<Item Column="T_XString2" SqlTable="tbl_CA_ExtraName" ContextType="CAExtraName" ConvertBase="ConvertItemCAXString"/>
+	</ItemKey>
+</Config>

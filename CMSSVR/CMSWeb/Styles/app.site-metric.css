@@ -1,0 +1,56 @@
+.fa-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* COMMON, START */
+/* COMMON, END */
+/** TOP BAR **/
+/** LEFT BAR **/
+/** FOOTER **/
+.site-metric-manages .listview .ngRow .ngCell .item-info .i-createdby,
+.site-metric-manages .listview .ngRow .ngCell .item-info .i-date {
+  float: left;
+}
+.site-metric-manages .listview .ngRow .ngCell .item-info .i-date {
+  padding-left: 3px;
+}
+.site-metric-manages .listview .ngRow .ngCell .item-info .checkbox {
+  margin-top: 10px;
+}
+.site-metric-manages .remove-view .listview .ngRow .ngCell .item-info .checkbox {
+  margin-top: -7px;
+}
+.site-metric-manages.form-edit .metric-name-label {
+  padding-right: 0;
+}
+.site-metric-manages.form-edit .table-body .form-group {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+.site-metric-manages.form-edit .table-body .form-group .required {
+  float: left;
+  padding-right: 3px;
+  padding-top: 5px;
+}
+.site-metric-manages.form-edit .table-body .form-group .form-control {
+  width: 90%;
+}
+.site-metric-manages.form-edit .table-body.scroll-body {
+  max-height: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.site-metric-manages.form-edit .cms-table {
+  width: 98%;
+}
+.site-metric-manages.form-edit .cms-table .col-action {
+  width: 15.4%;
+}
+.site-metric-manages .panel-content,
+.site-metric-manages .panel-body {
+  margin-top: -5px;
+}

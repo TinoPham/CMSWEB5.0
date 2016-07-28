@@ -1,0 +1,76 @@
+﻿<div class="bam-dashboard" ng-controller="dashboardCtrl as vm">
+	<!--<div class="title-summary">
+		<div class="bam_report_header dashboard_header" ng-include="'widgets/bam/tables/headerBam.html'"></div>
+	</div>-->
+	<div class="dashboard_chart">
+		<!-- ng-show="$root.BamHeader.ChartChecked === true" -->
+		<div class="col-sm-12 col-md-6 panelConversion">
+			<div ng-include="'widgets/bam/charts/convRegion.html'"></div>
+		</div>
+
+		<div class="col-sm-12  col-md-6 panelDPO">
+			<div ng-include="'widgets/bam/charts/bamTraffic.html'"></div>
+		</div>
+	</div>
+
+	<div class="panel bam-dashboard-body scrollbar-dynamic" ng-class="{'mobile': isMobile}">
+		<!-- ng-show="$root.BamHeader.TableChecked === true" -->
+		<div class="col-sm-12 ">
+			<div class="table-responsive table-hover bam-dashboard-summary">
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="first-col">
+								<div>{{'METRIC' | translate}}</div>
+								<div class="sum-controls">
+									<span class="btn btn-xs" ng-click="vm.showMetricPopup()">
+										<i class="icon-doc-new"></i>
+									</span>
+									<span class="btn btn-xs" ng-click="vm.refreshMetricHeader()">
+										<i class="icon-arrows-ccw-1"></i>
+									</span>
+								</div>
+							</th>
+							<th>{{'FORECAST_FOR' | translate}}<div>{{ReportDate | date: BAMDateFormat}}</div></th>
+							<th>{{'ACTUAL_FOR' | translate}}<div>{{ReportDate | date: BAMDateFormat}}</div></th>
+							<th>{{'WEEK_TO_DATE' | translate}}</th>
+							<th>{{'PERIOD_TO_DATE' | translate}}</th>
+							<th class="end-col">{{'STORE_GOAL' | translate}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-if="!vm.headSummary || vm.headSummary.length === 0" class="no-row-data">
+							<th colspan="6">{{'NO_DATA_MSG' | translate}}</th>
+						</tr>
+						<tr ng-if="vm.headSummary && vm.headSummary.length > 0" ng-repeat="sum in vm.headSummary">
+							<th scope="row" class="start-col-row">{{ sum.ResourceKey !== ""?  (sum.ResourceKey | translate) : sum.Name  }}</th>
+							<td>{{ sum.IsPrefix === true ? sum.UnitName +  ((sum.Forcecast) | number:sum.UnitRound) : ((sum.Forcecast) | number:sum.UnitRound) + sum.UnitName }}</td>
+							<td>
+								<div class="bam-head-coner" ng-class="vm.getComprateGoal(sum, sum.Actualy)"></div>
+								{{ sum.IsPrefix === true ? sum.UnitName +  ((sum.Actualy) | number: sum.UnitRound) : ((sum.Actualy) | number: sum.UnitRound) + sum.UnitName }}</td>
+							<td>
+								<div class="bam-head-coner" ng-class="vm.getComprateGoal(sum, sum.TotalWeekToDate)"></div>
+								{{ sum.IsPrefix === true ? sum.UnitName +  ((sum.TotalWeekToDate) | number:sum.UnitRound) : ((sum.TotalWeekToDate) | number:sum.UnitRound) + sum.UnitName }}</td>
+							<td>
+								<div class="bam-head-coner" ng-class="vm.getComprateGoal(sum, sum.TotalPeridToDate)"></div>
+								{{ sum.IsPrefix === true ? sum.UnitName +  ((sum.TotalPeridToDate) | number:sum.UnitRound) : ((sum.TotalPeridToDate) | number:sum.UnitRound) + sum.UnitName }}</td>
+							<th scope="row" class="end-col-row">{{ sum.IsPrefix === true ? sum.UnitName +  ((sum.Goal) | number:sum.UnitRound) : ((sum.Goal) | number:sum.UnitRound) + sum.UnitName }}</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="dashboard_sumaryDetail" ng-include="'widgets/bam/tables/dashboardSumaryDetail.html'"></div>
+		</div>
+	</div>
+
+	<!--  <div class="dashboard_chart" > 
+
+		<div class="col-sm-12 col-md-6 panelConversion">
+			<div ng-include="'widgets/bam/charts/convRegion.html'"></div>
+		</div>
+		<div class="col-sm-12  col-md-6 panelDPO">
+			<div ng-include="'widgets/bam/charts/bamTraffic.html'"></div>
+
+		</div>
+	</div> -->
+</div>

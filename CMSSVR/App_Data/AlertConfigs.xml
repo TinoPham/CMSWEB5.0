@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Alerts>
+	<Alert alt="2" altfix="1" handler="AlertEvent" message=""/>
+	<Alert alt="3" altfix="7" handler="BackupEvent" message=""/>
+	<Alert alt="6" altfix="7" handler="BackupEvent" message=""/>
+	<Alert alt="5" altfix="35" handler="VideoEvent" message=""/>
+	<Alert alt="11" altfix="12" handler="AlertEvent" message=""/>
+	<Alert alt="18" altfix="" handler="AlertEvent" message=""/>
+	<Alert alt="19" altfix="" handler="AlertEvent" message=""/>
+	<Alert alt="20" altfix="" handler="AlertEvent" message="RawKeepAlive" msghandler="DVRKeepAliveMessage"/>
+	<Alert alt="22" altfix="" handler="AlertEvent" message=""/>
+  <EmailAlerts>
+    <Alert alt ="2" included="1" name ="DVR System Shutdown"/>
+    <Alert alt ="3" included="1" name ="Insufficient Disk Space for Backup"/>
+    <Alert alt ="5" included="0" name ="DVR Video Loss"/>
+    <Alert alt ="6" included="1" name ="DVR Backup Started"/>
+    <Alert alt ="9" included="1" name ="DVR Sensor Triggered"/>
+    <Alert alt ="10" included="1" name ="DVR Control Activated"/>
+    <Alert alt ="11" included="1" name ="DVR HDD Format Started"/>
+    <Alert alt ="18" included="0" name ="DVR Storage Setup Changed"/>
+    <Alert alt ="19" included="0" name ="DVR Video Recycling Began"/>
+    <Alert alt ="20" included="1" name ="DVR Not recording"/>
+    <Alert alt ="21" included="0" name ="Setup Configuration Changed"/>
+    <Alert alt ="22" included="1" name ="DVR Partition Dropped"/>
+    <Alert alt ="32" included="1" name ="DVR offline"/>
+    <Alert alt ="34" included="0" name ="Unstable Video Signal"/>
+  </EmailAlerts>
+</Alerts>

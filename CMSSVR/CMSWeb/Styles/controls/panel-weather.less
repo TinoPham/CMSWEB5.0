@@ -1,0 +1,692 @@
+﻿@import url('../app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('../app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * CMS: WEATHER CSS
+ * -----------
+ */
+
+.weather
+{
+   
+        background: #3C989E;    
+        background: -webkit-linear-gradient(top, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+        background: -o-linear-gradient(top, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+        background: -ms-linear-gradient(top, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+        background: -moz-linear-gradient(top, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+        background: linear-gradient(to bottom, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+
+        padding: 0 !important;
+    >.panel-header
+    {
+        background-color: transparent;
+        opacity: 1;
+        border: 0px !important;
+        box-shadow:none;
+
+        h2{
+            opacity:0;
+        }
+
+    }
+
+    .in{
+
+        .panel-content{
+            padding: 0px !important;
+        }
+    }
+    
+    ul {
+        li {
+            .info {
+                & > div {
+                    &:first-child {
+                        font-weight: bold !important;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .panel-content
+    {
+        padding: 0px;
+    }
+
+
+    .weather-view
+    {
+        
+        i
+        {
+            color: #fff;
+            font-size: 170px;
+            font-weight: normal;
+            font-style: normal;
+            line-height: 0.5px;
+            display: table;
+            margin: 0 auto;
+        }
+
+        .icon-0:before
+        {
+            content: "\ec63";
+        }
+
+        .icon-1:before
+        {
+            content: "\ec4b";
+        }
+
+        .icon-2:before
+        {
+            content: "\ec34";
+        }
+
+        .icon-3:before
+        {
+            content: "\ec32";
+        }
+
+        .icon-4:before
+        {
+            content: "\ec34";
+        }
+
+        .icon-5:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-6:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-7:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-8:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-9:before
+        {
+            content: "\ec2a";
+        }
+
+        .icon-10:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-11:before
+        {
+            content: "\ec2a";
+        }
+
+        .icon-12:before
+        {
+            content: "\ec2a";
+        }
+
+        .icon-13:before
+        {
+            content: "\ec2a";
+        }
+
+        .icon-14:before
+        {
+            content: "\ec2a";
+        }
+
+        .icon-15:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-16:before
+        {
+            content: "\ec2a";
+        }
+
+        .icon-17:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-18:before
+        {
+            content: "\ec36";
+        }
+
+        .icon-19:before
+        {
+            content: "\ec3b";
+        }
+
+        .icon-20:before
+        {
+            content: "\ec3b";
+        }
+
+        .icon-21:before
+        {
+            content: "\ec3b";
+        }
+
+        .icon-22:before
+        {
+            content: "\ec3b";
+        }
+
+        .icon-23:before
+        {
+            content: "\ec3b";
+        }
+
+        .icon-24:before
+        {
+            content: "\ec26";
+        }
+
+        .icon-25:before
+        {
+            content: "\ec26";
+        }
+
+        .icon-26:before
+        {
+            content: "\ec59";
+        }
+
+        .icon-27:before
+        {
+            content: "\ec3c";
+        }
+
+        .icon-28:before
+        {
+            content: "\ec7f";
+        }
+
+        .icon-29:before
+        {
+            content: "\ec3c";
+        }
+
+        .icon-30:before
+        {
+            content: "\ec7f";
+        }
+
+        .icon-31:before
+        {
+            content: "\ec5c";
+        }
+
+        .icon-32:before
+        {
+            content: "\ec57";
+        }
+
+        .icon-33:before
+        {
+            content: "\ec5c";
+        }
+
+        .icon-34:before
+        {
+            content: "\ec57";
+        }
+
+        .icon-35:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-36:before
+        {
+            content: "\ec57";
+        }
+
+        .icon-37:before
+        {
+            content: "\ec34";
+        }
+
+        .icon-38:before
+        {
+            content: "\ec34";
+        }
+
+        .icon-39:before
+        {
+            content: "\ec34";
+        }
+
+        .icon-40:before
+        {
+            content: "\ec2e";
+        }
+
+        .icon-41:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-42:before
+        {
+            content: "\ec2a";
+        }
+
+        .icon-43:before
+        {
+            content: "\ec38";
+        }
+
+        .icon-44:before
+        {
+            content: "\ec3c";
+        }
+
+        .icon-45:before
+        {
+            content: "\ec34";
+        }
+
+        .icon-46:before
+        {
+            content: "\ec36";
+        }
+
+        .icon-47:before
+        {
+            content: "\ec34";
+        }
+
+        .icon-high:before
+        {
+            content: "\e8f8";
+        }
+
+        .icon-low:before
+        {
+            content: "\e8f7";
+        }
+
+        
+
+        .icon-manua:before
+        {
+            content: "\ec7b";
+            font-size:35px;
+             margin:0px;
+            padding:0px;
+        }
+
+        .icon-manua
+        {
+           vertical-align:bottom;
+            display:inline-block;
+            
+        }
+
+        ul
+        {
+            list-style-type: none;
+            width: 100%;
+            height: 310px;
+            padding: 0px;
+
+            li
+            {
+                width: 100%;
+
+                span
+                {
+                }
+
+                ul
+                {
+                    padding: 0px;
+                    list-style-type: none;
+
+                }
+
+
+                div
+                {
+                    text-align: center;
+                    color: #fff;
+                }
+            }
+
+            .weather-up
+            {
+                /*height: 170px;*/
+                height: 170px;
+                display: table;
+
+                .main-city
+                {
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 100;
+                    font-style: normal;
+                }
+
+                .main-icon
+                {
+                    width: 100%;
+                    margin-top: 50px;
+                    height: 150px;
+
+                    ul
+                    {
+                        list-style-type:none;
+                        padding:0px; 
+                        position:absolute;
+                        li
+                        {
+                            
+                            text-align:left;
+                            display:block;
+                            width:auto;
+                            display:inline;
+                            i{
+                                height:108px !important;
+                            }
+                            i:before
+                            {
+                                width: 150px;
+                                height: 50px;
+                                line-height:0.5px;
+                            }
+                            div
+                            {
+                                width:100%;
+                                text-align:center;
+                                font-size:14px;
+                                font-weight:300;
+                                opacity: 1 !important;
+                            }
+                            
+                            .icon-high{
+                                font-size:14px;
+                                display:inline-block;
+                                width:100px;
+                                height:20px;
+                                text-align:right;
+                                padding-right:5px;
+                            }
+                            .icon-high:before{
+                                font-size:14px;
+                                display:inline;
+                            }
+                            .icon-low{
+                                font-size:14px;
+                                display:inline-block;
+                                width:100px;
+                                height:20px;
+                                text-align:left;
+                                padding-left:5px;
+                            }
+                            .icon-low:before{
+                                font-size:14px;
+                                display:inline;
+                            }
+                        }
+                    }
+                    
+                }
+
+                .main-info
+                {
+                    /*height: 45px;*/
+                    width:100%;
+                    padding: 0px 25px 5px;
+                    position:absolute;
+                    color: #fff;
+                    font-size: 12px;
+                    font-weight: 200;
+                    text-align:left !important;
+                    z-index:1;
+                    
+                    display: table-caption;
+                    //border: 1px solid #212121;
+                    //opacity:0.4;
+                   
+                    div
+                    {
+                        display: inline-block;
+                        vertical-align:top;
+                    }
+
+                    .main-temp
+                    {
+                        color: #fff;
+                        font-size: 36px;
+                        font-weight: 200;
+                        font-style: normal;
+                        margin: 0 auto;
+                        line-height:0.6;
+                    }
+
+                    .butonUnitsGroup{
+                        font-size:14px;
+                        font-weight:300;
+                        margin: -2px 10px 0px;
+
+                        .butonUnits{
+                            width: 40px;
+                            height: 20px;
+                            border-radius: 10px;
+                            -webkit-border-radius: 10px;
+                            -moz-border-radius: 10px;
+                            background: rgba(24, 27, 29, 0.5);
+                            margin: 0px;
+
+                            .point{
+                                width: 18px;
+                                height: 18px;
+                                border-radius: 50%;
+                                background: #fff;
+                                margin-top: 1px;
+                                position:relative;
+
+                                transition: left .2s ease-in-out;
+                                -webkit-transition: left .2s ease-in-out;
+                                -moz-transition: left .2s ease-in-out;
+                                -o-transition: left .2s ease-in-out;
+                              }
+
+                              .metric{
+                                  //float:right;
+                                  left: 10px;
+                              }
+
+                              .imperial{
+                                  //float:left;
+                                  left: -10px;
+                              }
+                          }
+                    }
+                    
+
+                      .info{
+                          float:right;
+                          
+                          div{
+                              display:block;
+                              text-align:right;
+                              font-size:12px;
+                              font-weight:200;
+                              
+                          }
+
+                          div:first-child{
+                              font-size:18px;
+                              color: rgba(67, 74, 85, 0.8);
+                              line-height:0.5;
+                              margin-right: 0px 20px 5px;
+                          }
+
+                          div:nth-child(2){
+                              margin-top:5px;
+                          }
+                      }
+                      
+                }
+            }
+
+            .weather-down
+            {
+                height: 120px;
+                text-align: center;
+                margin-top:10px;
+                ul
+                {
+                    width:auto;
+                    height: 100%;
+                    padding-top: 5px;
+                    //display:inline-block;
+
+                    li
+                    {
+                        max-width: 100px;
+                        width:auto;
+                        height:90px;
+                        display:inline-block;
+                        margin: 0 auto;
+                        border-right: 1px solid #fff;
+
+                       
+
+                        div
+                        {
+                             font-size: 10px;
+                        }
+                    }
+                    li:last-child{
+                        border-right:0;
+                    }
+
+                    
+
+                }
+
+                i
+                {
+                    font-size: 45px;
+                    font-weight: 100;
+                    font-style: normal;
+                    line-height: 0.8;
+                }
+
+                    i:before
+                    {
+                        line-height: 0.5;
+                    }
+
+                .weather-down-high-low
+                {
+                    //display: inline;
+                     margin-top: 20px;
+                    
+                     span
+                    {
+                        width: 90%;
+                        font-size: 11px;
+                        margin: 5px 0px;
+                        text-align: center;
+                        min-width:35px;
+                        display: inline;
+                    }
+
+                    span:first-child{
+                        padding-right:5px;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}
+
+.weather-error{
+    text-align:center;
+    background: #3C989E;    
+    background: -webkit-linear-gradient(top, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+    background: -o-linear-gradient(top, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+    background: -ms-linear-gradient(top, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+    background: -moz-linear-gradient(top, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+    background: linear-gradient(to bottom, rgba(85, 128, 128, 0.75) 0%, rgba(69, 131, 147, 0.93) 1%, rgba(104, 161, 160, 0.93) 61%, rgba(92, 149, 149, 0.75) 99%, rgba(93, 149, 149, 0.75) 100%);
+    height: 320px;
+    padding:20px;
+    color:#fff;
+    font-size:14px;
+    font-weight:200;
+
+    .btn
+    {
+        color: #fff;
+        box-shadow:none;
+        -moz-box-shadow:none;
+        -webkit-box-shadow:none;
+    }
+    .btn:hover
+    {
+        color: #95b9f8;
+    }
+}
+
+         
+
+
+@media screen and (max-height: 320px) {
+    
+}
+
+@media screen and (min-height: 321px) and (max-height: 375px) {
+	
+}
+
+@media screen and (min-height: 376px) and (max-height: 480px) {
+	
+}
+
+@media screen and (min-height: 481px) and (max-height: 768px) {
+	
+}
+
+@media screen and (min-height: 769px) and (max-height: 864px) {
+	
+}
+
+@media screen and (min-height: 865px) and (max-height: 900px) {
+	
+}
+
+@media screen and (min-height: 901px) and (max-height: 950px) {
+	
+}
+
+@media screen and (min-height: 951px) and (max-height: 1000px) {
+	
+}
+
+@media screen and (min-height: 1001px) and (max-height: 1200px) {
+	
+}
+
+@media screen and (min-height: 1201px) {
+	
+}
+

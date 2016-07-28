@@ -1,0 +1,34 @@
+﻿<div class="tree-node tree-handle" ng-class="{'select': node.ID === rSelect.ID && node.Type === rSelect.Type}" nodrag>  <!--ui-tree-handle-->
+        
+     <div  class="tree-node-content" nodrag>
+            
+         <a class="btn btn-xs font-style-node" nodrag ng-click="toggle(this)">
+             <i 
+                 class="glyphicon tree-node-toggle cms-tree-node-toggle" 
+                 ng-class="{'glyphicon-triangle-right': collapsed && node.Type === 0, 'glyphicon-triangle-right cms-tree_expand': !collapsed && node.Type === 0, 'icon-null': node.Type === 1}">
+             </i>
+         </a>
+         <span>
+             <label ng-if="siteOption.CheckEnable === true" class="i-checks">
+                 <div class="checkbox checkbox-default">
+                     <input  type="checkbox" ng-click="checklist(node)" ng-model="node.Checked" ng-class="{'check_ok': node.Checked == true, 'uncheck':node.Checked == false, 'checkintermin':node.Checked == null}">
+                     <label><i class="glyphicon" ng-class="{'check_ok': node.Checked == true, 'uncheck':node.Checked == false, 'checkintermin':node.Checked == null}"></i></label>
+                 </div>                                         
+                 <!--<input  type="checkbox" ng-click="checklist(node)" ng-model="node.Checked" ng-class="{'check_ok': node.Checked == true, 'uncheck':node.Checked == false, 'checkintermin':node.Checked == null}">
+                 <i class="glyphicon" ng-class="{'check_ok': node.Checked == true, 'uncheck':node.Checked == false, 'checkintermin':node.Checked == null}"></i>-->
+             </label> 
+             <a class="btn btn-xs font-style-node" nodrag ng-click="selectfn(node)"> <!--ng-dblclick="toggle(this)">-->
+                 <i 
+                     class="glyphicon tree-node-toggle cms-tree-node-toggle" 
+                     ng-class="{'glyphicon-folder-close': collapsed && node.ParentKey !== null && node.Type === 0, 'glyphicon-folder-open': !collapsed && node.ParentKey !== null && node.Type === 0, 'glyphicon-home': node.ParentKey === null && node.Type === 0, 'glyphicon-facetime-video':node.Type === 1}">
+                 </i>
+                  <span ng-bind-html="node.Name | cmshighlight:searchTree"></span>
+             </a>
+             <b class="badge pull-right" ng-if="node.Type === 0 && siteOption.HasMenu">{{node.SiteCount}}</b>
+         </span>
+     </div>
+ </div>
+<ol ui-tree-nodes="" ng-model="node.Sites" ng-class="{hidden: collapsed}"> <!-- ng-class="{hidden: collapsed}">  ng-if="collapsed"  scroll-body" slimscroll="{height: '500px'}"-->
+    <li ng-repeat="node in node.Sites" ui-tree-node ng-include="'Widgets/cmsTreeViewNode.html'">
+    </li>
+</ol>

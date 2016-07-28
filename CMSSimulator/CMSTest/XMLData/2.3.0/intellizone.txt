@@ -1,0 +1,44 @@
+
+        <configuration_id>11</configuration_id>
+        <configuration_name>intelli_zone</configuration_name>
+    <intelli_zone>
+      <channels size="1">
+        <channel id="2">
+          <activate_time_start>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </activate_time_start>
+          <activate_time_end>
+            <hour>0</hour>
+            <minute>0</minute>
+            <second>0</second>
+          </activate_time_end>
+          <is_24hour>0</is_24hour>
+          <is_adjust_all_camera>0</is_adjust_all_camera>
+          <dwell_time_move_preset>0</dwell_time_move_preset>
+          <enable>0</enable>
+          <fresh_time>15</fresh_time>
+          <first_preset_position>0</first_preset_position>
+          <sensitivity>10</sensitivity>
+          <trackers size="1">
+            <tracker id="0">
+              <position_x>222</position_x>
+              <position_y>170</position_y>
+              <width>699</width>
+              <height>726</height>
+              <percent_of_changes>10</percent_of_changes>
+              <preset_name>
+              </preset_name>
+              <preset_id>-1</preset_id>
+              <dwell_time>5</dwell_time>
+              <priority>0</priority>
+              <control_output>0</control_output>
+              <relative_camera_id>-1</relative_camera_id>
+              <relative_preset_id>-1</relative_preset_id>
+            </tracker>
+          </trackers>
+        </channel>
+      </channels>
+    </intelli_zone>
+       

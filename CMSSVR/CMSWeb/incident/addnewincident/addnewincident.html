@@ -1,0 +1,227 @@
+<div ng-controller="addnewincidentCtrl as vm" class="incident-add-new-page">  
+
+<div class="col-md-12 head-panel">
+  	
+  	<div class="incident-type">
+  		<div class="dropdown">
+  		 <label>incident type</label>  	
+
+		  <button class="btn btn-default dropdown-toggle" 
+		  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+		    <span ng-if="vm.demoMenu==1" class="text"> Customer Accident </span>
+        <span ng-if="vm.demoMenu==2" class="text"> Employee Accident </span>
+        <span ng-if="vm.demoMenu==3" class="text"> Shoplifting </span>
+        <span ng-if="vm.demoMenu==4" class="text"> Dishonest Employee </span>
+        <span ng-if="vm.demoMenu==5" class="text"> Fraud </span>
+        <span ng-if="vm.demoMenu==6" class="text"> Business Interruption  </span>
+        <span ng-if="vm.demoMenu==7" class="text"> Alarm Condition </span>
+        <span ng-if="vm.demoMenu==8" class="text"> Burglary </span>
+        <span ng-if="vm.demoMenu==9" class="text"> General Incident </span>
+        <span ng-if="vm.demoMenu==10" class="text"> Accident-Injury </span>
+        <span ng-if="vm.demoMenu==11" class="text"> IT Security Incident </span>
+        <span ng-if="vm.demoMenu==12" class="text"> Customer Service Incident </span>
+        <span ng-if="vm.demoMenu==13" class="text"> Loss-Injury </span>
+
+
+		    <span class="icon-down-open-mini"></span>
+		  </button>
+
+		  <div 
+		   ng-include="'incident/addnewincident/incident-add-main-menu.html'"
+		   class="dropdown-menu list-menu-box" aria-labelledby="dropdownMenu2">		  
+		  </div>
+
+		</div>
+  	</div><!-- END :: incident-type -->
+
+
+  	<div class="icon-nav-list">
+		<ul>
+		    <li  ng-click="vm.showVideoDialog()">
+		    	<i class="icon-video-chat"></i>
+		    	<p><small>Video</small></p>
+		    	
+		    </li>
+
+		    <li  ng-click="vm.showNarrativeDialog()">
+		    	<i class="icon-clipboard"></i>
+		    	<p><small>Narrative</small></p>
+		    	
+		    </li>
+
+		    <li ng-click="vm.showNoteDialog()">
+		    	<i class="icon-edit-alt"></i>
+		    	<p><small>Note</small></p>
+		    	
+		    </li>
+
+		    <li ng-click="vm.showLinkDialog()">
+		    	<i class=" icon-link-2"></i>
+		    	<p><small>Link</small></p>
+		    	
+		    </li>
+
+         <li class="hidden-sm-up ">
+          <i class="icon-list-1"></i>
+          <p><small>Link</small></p>          
+        </li>
+		   
+		</ul>
+		
+  	</div>
+  </div>
+  <!-- END :: head-panel -->
+
+  <!-- START :: left-panel -->
+  <div 
+  ng-if="vm.demoMenu==1"
+  ng-include="'incident/addnewincident/form-customer-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+
+   <div 
+  ng-if="vm.demoMenu==2"
+  ng-include="'incident/addnewincident/form-employee-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+   <div 
+  ng-if="vm.demoMenu==3"
+  ng-include="'incident/addnewincident/form-shoplifting-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+   <div 
+  ng-if="vm.demoMenu==4"
+  ng-include="'incident/addnewincident/form-dishonest-employee-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+
+   <div 
+  ng-if="vm.demoMenu==5"
+  ng-include="'incident/addnewincident/form-fraud-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+  
+   <div 
+  ng-if="vm.demoMenu==6"
+  ng-include="'incident/addnewincident/form-business-interruption-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+   <div 
+  ng-if="vm.demoMenu==7"
+  ng-include="'incident/addnewincident/form-alarm-condition-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+   <div 
+  ng-if="vm.demoMenu==8"
+  ng-include="'incident/addnewincident/form-burglary-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+   <div 
+  ng-if="vm.demoMenu==9"
+  ng-include="'incident/addnewincident/form-general-incident-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+   <div 
+  ng-if="vm.demoMenu==10"
+  ng-include="'incident/addnewincident/form-accident-injury-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+
+   <div 
+  ng-if="vm.demoMenu==11"
+  ng-include="'incident/addnewincident/form-it-security-incident-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+
+
+ <div 
+  ng-if="vm.demoMenu==12"
+  ng-include="'incident/addnewincident/form-customer-service-incident-accident.html'"
+  class="col-md-8 left-panel">
+  </div> 
+
+
+ <div 
+  ng-if="vm.demoMenu==13"
+  ng-include="'incident/addnewincident/form-loss-injuy-accident.html'"
+  class="col-md-8 left-panel">
+  </div>
+
+
+  <!-- END :: left-panel -->
+
+
+<!-- START :: right-panel -->
+  <div  ng-if="vm.demoMenu==1"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-customer-accident.html'">	
+  </div>
+
+  <div  ng-if="vm.demoMenu==2"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-employee-accident.html'">	
+  </div>
+
+
+  <div  ng-if="vm.demoMenu==3"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-shoplifting-accident.html'">	
+  </div>
+
+
+  <div  ng-if="vm.demoMenu==4"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-dishonest-employee-accident.html'">	
+  </div>
+
+
+  <div  ng-if="vm.demoMenu==5"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-fraud-accident.html'">	
+  </div>
+
+  <div  ng-if="vm.demoMenu==6"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-business-interruption-accident.html'">	
+  </div>
+
+  <div  ng-if="vm.demoMenu==7"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-alarm-condition-accident.html'">	
+  </div>
+
+  <div  ng-if="vm.demoMenu==8"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-burglary-accident.html'">	
+  </div>
+
+  <div  ng-if="vm.demoMenu==9"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-general-incident-accident.html'">	
+  </div>
+
+  <div  ng-if="vm.demoMenu==10"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-accident-injury-accident.html'">	
+  </div>
+
+  <div  ng-if="vm.demoMenu==11"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-it-security-incident-accident.html'">	
+  </div>
+
+  <div  ng-if="vm.demoMenu==12"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-customer-service-incident-accident.html'">	
+  </div>
+
+  <div  ng-if="vm.demoMenu==13"
+   class="col-md-4 right-panel" 
+   ng-include="'incident/addnewincident/menu/menu-loss-injuy-accident.html'">	
+  </div>
+  <!-- END :: right-panel  form-shoplifting-accident-->
+
+  
+
+</div>

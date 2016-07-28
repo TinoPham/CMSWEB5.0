@@ -1,0 +1,1 @@
+{"siteKey":7,"mapImage":[{"ImageID":12,"ImageURL":"","ImageByte":[],"Channels":[],"Caption":"6e0d50eb-8e16-436b-9b64-9d9676261115.png","Title":"heatmap_ntdemo_2231452569981056.png","Flag":1}]}

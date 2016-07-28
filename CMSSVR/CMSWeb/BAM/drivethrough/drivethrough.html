@@ -1,0 +1,214 @@
+﻿<div ng-controller="DriveThroughCtrl as vm" class="drivethrough-reports" style="width:97%">
+	<!-- 	<div class="title-summary">
+			<div class="bam_report_header dashboard_header" ng-include="'widgets/bam/tables/headerBam.html'"></div>
+		</div> -->
+	<div class="drivethrough-reports-chart">
+		<div class="tree-site-content">
+			<div class="btn-group drivethrough-dropdown-button" style="padding-left: 10px;" outside-click="clickOutside($event ,'.drivethrough-dropdown-button')">
+				<a id="btn-popMenuConvSites" class="btn btn-xs dropdown-toggle btn-site" pop-menu>{{'CHART_SITES'|translate}} <span class="badge">{{vm.selectedSites.length}}</span><i class="icon-down-open-2"></i></a>
+				<ul class="dropdown-menu pull-left filter-dlg">
+					<li>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel">
+									<div class="panel-header chart-pop-header" style="height: 32px;">
+										<div class="">
+											<div class="input-group">
+												<input type="text" ng-model="vm.querySite" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+											</div>
+										</div>
+
+									</div>
+									<div class="scroll-body" slimscroll="{height: '300px'}">
+										<div class="tree-site-addmin" ng-if="vm.siteloaded === true">
+											<tree-component class="cms-tree" model="vm.treeSiteFilterS" def-col="vm.treeDef" filter-text="vm.querySite" options="vm.treeOptions"></tree-component>
+										</div>
+									</div>
+									<div class="panel-footer">
+										<div class="btn-group">
+											<span id="closeConvSites" class="btn btn-default btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div><!-- END :: btn-group -->
+			<div class="switch-for-chart" ng-if="vm.DataDriveThrough.DTData.length > 0">
+				<div class="switch-ios-button">
+					<label>
+						<span>{{'Regions_STRING'|translate}}</span>
+						<input type="checkbox" ng-model="vm.showSiteChart" class="ios-switch blue tinyswitch" />
+						<div>
+							<div></div>
+						</div>
+						<span>{{'SITES_TREE_STRING'|translate}}</span>
+					</label>
+				</div>
+			</div>
+
+		</div>
+		<div class="show-chart" ng-include="'widgets/bam/charts/saleCharts.html'"></div>
+	</div>
+	<!-- END :: title  -->
+	<div ng-if="vm.DataDriveThrough.DTData.length > 0" class="drivethrough-reports-tables" ng-show="isMobile === false">
+		<div class="top-table">
+			<div class="tool-bar">
+				<div class="radio radio-primary" ng-repeat="showType in vm.showDataTypes track by $index" ng-click="vm.rdbShowTypeClick(showType)">
+					<input type="radio" name="rdbShowType" ng-model="vm.showTypeSelected" ng-checked="vm.showTypeSelected === showType.Key">
+					<label>{{showType.Name | translate}}</label>
+				</div>
+				<!--<div class="clearfix"></div>-->
+			</div>
+		</div>
+		<div class="wrapper-bam-table {{rptTypeName}}  {{vm.detechBrowser}}" 
+			 ng-class="vm.showTypeSelected != vm.showTypeList.showAll ? 'bam-table-single-data' : ''">
+			<div class="bam-table bam-table-column">
+				<div class="tb-header">
+					<div class="tb-row">
+						<div class="tb-col col-fixed-header col-left col-location">{{'LOCATION_STRING' | translate}}</div>
+					</div>
+				</div>
+				<div class="tb-body">
+					<div class="tb-row  parents-row {{ vm.orderRow($index) }} border" 
+						 ng-repeat-start="region in vm.DataDriveThrough.DTData track by $index" 
+						 ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}">
+						<div class="tb-col col-fixed col-rg-name col-left color-{{$index+1}} " ng-click="vm.showSite(region)">
+							<span tooltip={{region.Name}} class="expand">{{region.Name}}</span>
+							<i ng-class="region.checked? 'icon-down-open-mini':'icon-right-open-mini'" class="icon-expand"></i>
+							<span class="arrow color-{{$index+1}}"></span>
+						</div>
+					</div>
+					<div ng-show="region && region.checked === true" 
+						 ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}" class="tb-row border" 
+						 ng-repeat="site in region.Sites track by $index">
+						<div tooltip={{site.Name}} class="tb-col col-fixed col-si-name col-left color-{{$parent.$index+1}} siteExpand ">{{site.Name}}</div>
+					</div>
+					<div ng-repeat-end></div>
+				</div>
+			</div>
+			<!-- END firts column of table  \ scrollbar-dynami \-->
+			<div class="bam-tb-scroll scrollbar-dynamic bam-table-column" data-jquery-scrollbar="vm.tbScrollOptions">
+				<div class="bam-table">
+					<div class="tb-header">
+						<div class="tb-row">
+							<div class="tb-col" ng-repeat="date in dateSearchList track by $index">
+								<div class="col-date">
+									<span>{{date}}</span>
+									<!--<div ng-if="rptType === rptdriveThroughList.Weekly">
+										<span>{{date.WeekIndex}}</span>
+										<span>{{date.sDate}}</span>
+										<span>{{date.eDate}}</span>
+									</div>-->
+								</div>
+								<div ng-show="vm.hasShowTypes.showCount" class="col-in">{{'COUNT' | translate}}</div>
+								<div ng-show="vm.hasShowTypes.showDwell" class="col-out">{{'DWELL' | translate}}</div>
+							</div>
+							<div class="tb-col col-fixed-header col-right">
+								<div class="col-date">{{'SUMMARY_STRING'|translate}}</div>
+								<div ng-show="vm.hasShowTypes.showCount" class="col-in">{{'COUNT' | translate}}</div>
+								<div ng-show="vm.hasShowTypes.showDwell" class="col-out">{{'DWELL' | translate}}</div>
+							</div>
+						</div>
+					</div>
+					<div class="tb-body">
+						<div class="tb-row  parents-row {{ vm.orderRow($index) }}" 
+							 ng-repeat-start="region in vm.DataDriveThrough.DTData track by $index" 
+							 ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}">
+							<div class="tb-col" ng-repeat="regionDate in region.DetailData track by $index">
+								<!--region loop by date data-->
+								<div ng-show="vm.hasShowTypes.showCount"
+									 class="col-in">{{regionDate.Count | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && regionDate.Count >= DRIVETHROUGH_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showDwell"
+									 class="col-out">{{regionDate.Dwell | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && regionDate.Dwell >= DRIVETHROUGH_NUM_ROUND ? '0 a':'0,0'}}</div>
+							</div>
+							<div class="tb-col col-fixed col-right">
+								<div ng-show="vm.hasShowTypes.showCount"
+									 class="col-in">{{region.Count | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && region.Count >= DRIVETHROUGH_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showDwell" class="col-out">
+									{{region.Dwell | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && region.Dwell >= DRIVETHROUGH_NUM_ROUND ? '0 a':'0,0'}}
+								</div>
+							</div>
+						</div>
+						<div ng-show="region && region.checked === true" class="tb-row site-row" 
+							 ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}" 
+							 ng-repeat="site in region.Sites track by $index">
+							<div class="tb-col" ng-repeat="siteDate in site.DetailData">
+								<!--site loop by date data-->
+								<div ng-show="vm.hasShowTypes.showCount"
+									 class="col-in">{{siteDate.Count | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && siteDate.Count >= DRIVETHROUGH_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showDwell"
+									 class="col-out">{{siteDate.Dwell | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && siteDate.Dwell >= DRIVETHROUGH_NUM_ROUND ? '0 a':'0,0'}}</div>
+							</div>
+
+							<div ng-show="region && region.checked === true" class="tb-row sumRow" 
+								 ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}">
+								<div class="tb-col col-fixed col-right">
+									<div ng-show="vm.hasShowTypes.showCount"
+										 class="col-in">{{site.Count | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && site.Count >= DRIVETHROUGH_NUM_ROUND ? '0 a':'0,0'}}</div>
+									<div ng-show="vm.hasShowTypes.showDwell"
+										 class="col-out">{{site.Dwell | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && site.Dwell >= DRIVETHROUGH_NUM_ROUND ? '0 a':'0,0'}}</div>
+								</div>
+							</div>
+						</div>
+						<div ng-repeat-end></div>
+					</div>
+				</div>
+			</div>
+			<!-- END Content have scroll of table -->
+			
+			<!-- END Summary of table -->
+			<div class="clear"></div>
+		</div>
+		<!-- END wrapper-bam-table of table -->
+	</div>
+	<!-- Start :: No data -->
+	<!--<div ng-if="vm.DataDriveThrough.DTData.length == 0" class="table-empty">{{'NO_DATA_STRING' | translate}}</div>-->
+	<!-- END :: No data -->
+	<!-- Start :: Show table mobile view -->
+	<!-- Not Suport This version  -->
+	<!--<div ng-show="isMobile === true && $root.BamHeader.TableChecked === true " class="box-on-small-devices">-->
+	<div ng-show="isMobile === true" class="box-on-small-devices">
+		<div class="bam-table-small-devices">
+			<!-- Start colapse -->
+			<div class="panel-group list-date" id="Datetime" role="tablist" aria-multiselectable="true">
+
+				<div class="panel panel-default" ng-repeat="date in dateSearchList track by $index">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title mobi_datebox">
+							<a role="button" data-toggle="collapse" data-parent="#Datetime" href="#collapseOne_{{$index}}" aria-expanded="true" aria-controls="collapseOne_{{$index}}">
+								<i class="icon-calendar-inv"></i>
+								Date :  {{date}}
+							</a>
+						</h4>
+					</div>
+					<div id="collapseOne_{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+							<div class="tb-header" ng-repeat="Detail in vm.DataDriveThrough.DTData">
+								<table ng-repeat="Details in vm.DataDriveThrough.DTData[$index].Sites">
+									<caption> {{Detail.Name}} <i class=" icon-angle-double-right"></i>  {{Details.Name}} </caption>
+									<tbody>
+										<tr>
+											<td>{{'COUNT' | translate}}</td>
+											<td>{{'DWELL' | translate}}</td>
+										</tr>
+										<tr>
+											<td>{{ vm.getDataTableMobile(Details, $parent.$parent.$index, 'COUNT') }}</td>
+											<td>{{ vm.getDataTableMobile(Details, $parent.$parent.$index, 'DWELL') }}</td>
+										</tr>
+
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- END :: Colapse -->
+			</div>
+		</div>
+	</div>
+	<!-- END  :: Show table mobile view -->
+</div>

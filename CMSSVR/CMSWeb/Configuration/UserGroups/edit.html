@@ -1,0 +1,103 @@
+﻿<form angular-validator-submit="vm.SaveUserGroup()" name="myForm" class="user-group-manages" novalidate angular-validator>
+    <div class="modal-header">
+		<span class="close" data-ng-click="vm.CloseEdit()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{vm.frmTitle|translate}}</h3>
+	</div>
+	<div class="modal-body form-edit">
+		<div class="row">
+			<div class="col-sm-6 panel-left">
+				<accordion close-others="vm.status.isCloseOther">
+					<accordion-group is-open="vm.status.isGeneralOpen">
+						<accordion-heading>
+							<i class="fa" ng-class="{'fa-caret-right': !vm.status.isGeneralOpen, 'fa-caret-down': vm.status.isGeneralOpen}"></i>
+							<span><strong>{{'USERGROUP_GENERAL'|translate}}</strong></span>
+						</accordion-heading>
+                           <div class="form-group">   
+							<label class="required">*</label><label>{{"USERGROUP_NAME"|translate}}</label>
+				                <input type="text" class="form-control" name="txtFirstName" ng-model="vm.valueGroup.GroupName" autocomplete="off" title={{vm.valueGroup.GroupNam}}
+								required-message="'{{'USERGROUP_NAME_REQUIRED'|translate}}'" required
+							        validate-on="dirty" maxlength="50" autofocus/>
+                            </div>                        				
+						    <div class="form-group no-margin">
+                                <label>{{"USERGROUP_DESCRIPTION"|translate}}</label>
+				                <textarea name="usergroupDesc" class="form-control vresize" ng-model="vm.valueGroup.Description" maxlength="50" rows="3"></textarea>
+							<label class="required">{{'MAXLENGTH_DESCRIPTION_MSG'|translate}}</label>
+                            </div>
+					</accordion-group>
+				<accordion-group is-open="vm.status.isModulesOpen">
+					<accordion-heading>
+							<div class="border-top"></div>
+						<i class="fa" ng-class="{'fa-caret-right': !vm.status.isModulesOpen, 'fa-caret-down': vm.status.isModulesOpen}"></i>
+						<span><strong>{{'USERGROUP_MODULE'|translate}}</strong></span>
+					</accordion-heading>
+						<div class="form-group no-margin panel-full">
+							<ul class="list-group">
+								<li class="list-group-item select-all">
+									<div class="checkbox checkbox-default">
+										<input id="checkAllModule" type="checkbox" class="btn-primary" ng-click="vm.CheckAllModule()" ng-model="vm.checkModules" />
+										<label ng-click="vm.SelectAllModule()">{{'SELECT_ALL'|translate}}</label> 
+									</div> 		
+								</li>
+								<li class="list-group-item" ng-repeat="item in vm.functions">
+                                                        <div class="checkbox checkbox-default" > 
+										<input id="{{item.FunctionID}}" type="checkbox" class="btn-primary" ng-checked="vm.functionSelections.indexOf(item.FunctionID) > -1"
+											ng-click="vm.getFunction(item.FunctionID)" />
+														    <label ng-click="vm.getFunction(item.FunctionID)" style="text-transform:uppercase">{{item.FunctionName|translate}}</label> 
+													    </div> 		
+									<div class="funcLevel" ng-if="vm.checkDisplayLevel(item.FunctionID)">
+										<select class="form-control" ng-options="lvel as lvel.LevelName for lvel in vm.levels"
+											ng-model="vm.levelModel" ng-change="vm.ddLevelChange()" ng-disabled="!vm.inciSelected">
+										</select>
+                                                    </div>                                                    			           
+                                                </li>
+                                            </ul>
+                                        </div>
+				</accordion-group>
+				</accordion>
+			</div>
+			<div class="col-sm-6 panel-right">
+                <accordion close-others="vm.status.isCloseOther">
+					<accordion-group is-open="vm.status.isUsersOpen">
+						<accordion-heading>
+							<i class="fa" ng-class="{'fa-caret-right': !vm.status.isUsersOpen, 'fa-caret-down': vm.status.isUsersOpen}"></i>
+							<span><strong>{{'USER_NUMBERS'|translate}}</strong></span>
+						</accordion-heading>
+					        <div class="panel-header search-user">
+						        <div class="input-group">
+							<input type="text" ng-model="vm.userFilter" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+							        <span class="search-button">
+								        <i class="icon-search"></i>
+							        </span>
+						        </div>
+					        </div>
+					        <div class="panel-content">
+						        <div class="form-group no-margin">
+							<div class="scroll-body" slimscroll="{height: '420px'}">
+							            <ul class="list-group">
+								            <li class="list-group-item select-all">
+									            <div class="checkbox checkbox-default">
+										            <input id="checkUserAll" type="checkbox" class="btn-primary" ng-click="vm.CheckAllUsers()" ng-model="vm.checkUsers" />
+										            <label ng-click="vm.SelectAllUser()">{{'SELECT_ALL'|translate}}</label> 
+									            </div> 		
+								            </li>
+								            <li class="list-group-item" ng-repeat="item in vm.userList| filter:vm.filterFunction | orderBy: 'FName'">
+                                                <div class="checkbox checkbox-default" > 
+							                        <input type="checkbox" class="btn-primary" ng-checked="vm.userSelections.indexOf(item.UserID) > -1"
+								                        ng-click="vm.getUser(item.UserID)" ng-model="item.selected" />
+										            <label ng-click="vm.getUser(item.UserID)">{{item.FName}} {{item.LName}}</label> 
+									            </div> 
+                                            </li>
+                                        </ul>
+                                    </div>
+						        </div>
+					        </div>
+					</accordion-group>
+                </accordion>
+				
+            </div>                        				
+				            </div>			         
+    <div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="vm.CloseEdit()">{{"BTN_CANCEL"|translate}}</button>
+		<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">{{"BTN_SAVE"|translate}}</button>
+	</div>
+</form>

@@ -1,0 +1,23 @@
+﻿<div class="select-dashboard">
+	<div class="modal-header">
+		<span class="close" data-ng-click="CloseRegion()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'SELECT_DASHBOARD_HEADER'| translate}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div ng-repeat="layout in Layouts" ng-class="{'active': layout.Id === selected.Id}" class="layout-item" ng-click="selectWd(layout)">
+				<div class="layout">
+					<div class="row" ng-repeat="row in layout.Rows" ng-class="{'twins': (row.Columns.length == 2 && row.Columns[0].WidthSize == 6)}">
+						<div ng-repeat="col in row.Columns" ng-class="{'box': row.Columns.length == 4, 'content-row': row.Columns.length == 1, 'col-left': (row.Columns.length == 2 && col.WidthSize > 6), 'col-right': row.Columns.length == 3 || (row.Columns.length == 2 && col.WidthSize <= 6)}"></div>
+					</div>
+				</div>
+				<!--<div ng-include="'./Widgets/Templates/' + layout.Image + '.html'"></div>-->
+				<span class="layout-name">{{layout.Name}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-default" ng-click="CloseRegion()">{{"BTN_CANCEL"|translate}}</button>
+		<button class="btn btn-primary" ng-disabled="selected == null || selected == undefined" ng-click="SaveRegion()">{{"BTN_CREATE"|translate}}</button>
+	</div>
+</div>

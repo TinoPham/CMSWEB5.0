@@ -1,0 +1,16 @@
+﻿{
+	"SITE_SELECTED_EMPTY_MSG":"Please select a Site.",
+	"CAR_WOT8": "Car W/O Trans.",
+	"CUSTOMER_WOT9":"Customer W/O Trans.",
+	"EMPLOYEE_NAME":"Employee Name",
+	"REFUND1":"Exception w/o customer", 
+	"SMART_EXCEPTION": "Smart Exception",
+	"RATIO_TO_SALE": "Ratio To Sale",
+	"RISK_FACTOR":"Risk Factor",
+	"PERCENTAGE_TO_SALE":"Percentage to sale",
+	"NO":"No.",
+	"TOTAL":"Total",
+	"TOTAL_RISKFACTOR":"Total risk factor",
+	"TOTAL_TRANSACTION":"Total Transaction"
+
+}

@@ -1,0 +1,15 @@
+﻿{
+"JOB_NAME":"Nom du poste"
+, "JOB_DESCRIPTION":"Description"
+, "JOB_COLOR":"Couleur"
+, "JOB_ADD_HEADER":"Ajouter le titre du poste"
+, "JOB_EDIT_HEADER":"Modifier le titre du poste"
+, "JOB_DELETE_HEADER":"Supprimer le titre du poste"
+
+, "JOB_NAME_EXIST_MSG":"Ce nom de titre du poste existe déjà."
+, "JOB_NAME_REQUIRED":"Le champ du nom de titre du poste ne peut pas être vide."
+, "JOB_CONFIRM_BODY":"Veuillez sélectionner un titre de poste."
+, "JOB_IS_USED":"Impossible de supprimer. Ce titre de poste est en cours d'utilisation : {0}."
+, "DELETE_JOB_CONFIRM_MSG":"Êtes-vous sûr de vouloir supprimer ce titre de poste?"
+, "DELETE_JOB_CONFIRM_MSGS":"Êtes-vous sûr de vouloir supprimer ces titres de poste?"
+}

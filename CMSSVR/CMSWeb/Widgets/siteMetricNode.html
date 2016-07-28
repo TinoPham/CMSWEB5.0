@@ -1,0 +1,29 @@
+﻿ <div class="tree-node tree-handle" nodrag>
+        
+     <div  class="tree-node-content" nodrag>
+
+         <a class="btn btn-xs font-style-node" nodrag ng-click="toggle(this)">
+             <i 
+                 class="glyphicon tree-node-toggle cms-tree-node-toggle" 
+                 ng-class="{'glyphicon-triangle-right': !collapsed, 'glyphicon-triangle-right cms-tree_expand': collapsed, 'icon-null': node.Childs.length === 0}">
+             </i>
+         </a>
+         <span>
+             <label ng-if="SiteOption.CheckEnable === true" class="i-checks">
+                 <input  type="checkbox" ng-click="checklist(node)" ng-class="{'check_ok': node.Checked == true, 'uncheck':node.Checked == false, 'checkintermin':node.Checked == null}">
+                 <i class="glyphicon" ng-class="{'check_ok': node.Checked == true, 'uncheck':node.Checked == false, 'checkintermin':node.Checked == null}"></i>
+             </label> 
+             <a class="btn btn-xs font-style-node" nodrag ng-click="selectfn(node)">
+                 <i 
+                     class="glyphicon tree-node-toggle cms-tree-node-toggle" 
+                     ng-class="{'glyphicon-folder-close': !collapsed && node.Childs.length > 0, 'glyphicon-folder-open': collapsed && node.Childs.length > 0}">
+                 </i>
+                 <span ng-bind-html="node.Name | cmshighlight:vm.query"></span><!--{{node.Name}}-->
+             </a>
+         </span>
+     </div>
+ </div>
+<ol ui-tree-nodes="" ng-model="node.Childs"  ng-if="collapsed" nodrag>
+    <li ng-repeat="node in node.Childs" ui-tree-node ng-include="'Widgets/siteMetricNode.html'">
+    </li>
+</ol>

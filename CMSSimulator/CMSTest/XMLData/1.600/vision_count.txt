@@ -1,0 +1,8 @@
+
+        <time_change>15346</time_change>
+        <configuration_id>23</configuration_id>
+        <configuration_name>vision_count</configuration_name>
+        <vision_count>
+            <channels size="0" />
+        </vision_count>
+       

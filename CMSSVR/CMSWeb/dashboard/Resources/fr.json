@@ -1,0 +1,26 @@
+﻿{
+  "DASHBOARD_LIST":"Liste du tableau de bord"
+, "DASHBOARD_TECHNICAL": "Tableau de bord technique"
+, "DASHBOARD_STORE": "Tableau de bord au niveau du site"
+, "DASHBOARD_BUSINESS": "Tableau de bord de l'entreprise"
+, "HIGH_PRIORITY": "Haute Priorité"
+, "LOW_PRIORITY": "Priorité Basse"
+, "MEDIUM_PRIORITY": "Priorité Moyenne"
+, "NOTE_FIELD":"Remarques"
+, "NONE": "Aucun"
+
+, "REMOVE_WIDGET_CONFIRM":"Êtes-vous sûr de vouloir supprimer ce widget?"
+, "SELECT_WIDGET_HEADER": "Sélectionner Widget"
+, "SELECT_DASHBOARD_HEADER": "Sélectionner tableau de bord"
+, "TOOLTIP_ADD_WIDGET": "Cliquer pour ajouter un nouveau widget"
+, "TOOLTIP_CHANGE_WIDGET": "Modifier"
+, "TOOLTIP_ADD_DASHBOARD": "Créer un tableau de bord"
+, "TOOLTIP_EDIT_DASHBOARD": "Modifier le tableau de bord"
+, "TOOLTIP_SAVE_DASHBOARD": "Enregistrer le tableau de bord"
+, "TODO_DEFAULT_VALUE": "À faire ici..."
+, "WIDGET_CHART_STRING": "Graphiques Widget"
+, "WIDGET_HEADER_STRING": "En-têtes Widget"
+, "WIDGET_EXTRA_STRING": "Widget supplémentaire"
+, "WIDGET_EXIST_MSG":"Ce widget existe déjà dans ce tableau de bord."
+
+}

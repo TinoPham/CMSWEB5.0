@@ -1,0 +1,142 @@
+﻿<form  name="myForm" class="user-group-manages" angular-validator-submit="SaveEmailSettings()" novalidate angular-validator ng-init="init()">
+    <div class="modal-header">
+		<span class="close" data-ng-click="Close()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'EMAIL_SETTINGS' | translate}}</h3>
+	</div>
+	<div class="modal-body form-edit">
+		<div class="row">
+			<div class="col-sm-6 panel-left">
+				<accordion close-others="false">
+					<accordion-group is-open="true">
+						<accordion-heading>
+							<!--<i class="fa" ng-class="{'fa-caret-right': !vm.status.isGeneralOpen, 'fa-caret-down': vm.status.isGeneralOpen}"></i>-->
+                            <i class="fa" class="fa-caret-right"></i>
+							<span><strong>{{'INFORMATION' | translate}}</strong></span>
+						</accordion-heading>
+                           <div class="form-group">   
+							<label class="required">*</label><label>{{ 'EMAIL_SUBJECT' | translate }}</label>
+				                <input type="text" class="form-control" name="txtFirstName" ng-model="data.EmailSubject" autocomplete="off" 
+								required-message="'{{'REQUIRED_FIELD'|translate}}'" required
+							    validate-on="dirty" maxlength="50" autofocus/>
+                            </div>                        				
+						    <div class="form-group no-margin email-setting-frequency-box">
+                                <label>{{'FREQUENCY' | translate}}</label>
+				                <div class="row">
+                                    <div class="radio col-md-4 col-sm-4 col-xs-12 col-lg-4" style="margin-top:10px;">
+                                        <div class="col-xs-4"></div>
+                                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-8">                
+                                         <label class="i-checks"> <input type="radio" name="chk" ng-model="data.FreqTypeID" value ="1" ng-checked="data.FreqTypeID== 1" > <i></i> {{ 'HOURLY' | translate}} </label></div>
+
+                                    </div>
+                                    <div class="radio col-md-4 col-sm-4 col-xs-12 col-lg-4" style="margin-top:10px;">
+                                            <div class="col-xs-4"></div>
+                                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-8"><label class="i-checks"> <input type="radio" name="chk" ng-model="data.FreqTypeID" value ="2" ng-checked="data.FreqTypeID == 2" ng-click="data.FreqTypeID = 2"> <i></i>{{'DAILY' | translate}} </label></div>
+                                    </div>
+                                    <div class="input-group col-md-4 col-sm-4 col-xs-12 col-lg-4" options="{{optionsDate}}" cmsdatetimepicker ng-model="data.StartRunDate"  >
+				                                    <input type="text" name="DateFrom" class="form-control input-sm" />
+				                                    <span class="input-group-addon" ><i class="glyphicon glyphicon-time"></i></span >
+			                        </div>
+				                </div>
+							<!--<label class="required">{{'MAXLENGTH_DESCRIPTION_MSG'|translate}}</label>-->
+                            </div>
+                            <div class="form-group email-setting-alert-box" >   
+							<label ></label><label>{{'ALERT_TYPE' | translate}}</label>
+				                <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title" style="cursor:pointer;" ng-click="openAlerts()"><i class="icon-plus" ></i>{{'BTN_ADD'|translate}}</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                  <div class=" list-group scroll-body scrollbar-dynamic" data-jquery-scrollbar  slimscroll="{height: '100px'}">
+                                        <a href="#" class="list-group-item " ng-repeat="a in data.Alerts">
+                                            {{a.Name}}
+                                            <i class="icon-trash" ng-click="data.Alerts.splice($index,1)"></i>
+                                        </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>  
+
+					
+
+					</accordion-group>
+				</accordion>
+
+				<!-- START ::  accordion Site Metric -->
+				<accordion class="email-setting-sitemetric-box " close-others="false">
+					<accordion-group is-open="true">
+
+						<accordion-heading>
+							<i class="fa" class="fa-caret-right"></i>
+							<span><strong>{{'LAYOUT_CONFIG_SITEMETRIC' | translate}}</strong></span>
+						</accordion-heading>
+
+						<div class="form-group">
+							
+							<div class="panel">
+									<div class="panel-header">
+										<div class="input-group">
+											<input type="text" ng-model="query" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+											<span class="search-button">
+												<i class="icon-search"></i>
+											</span>
+										</div>
+									</div>
+									<div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar  slimscroll="{height: '200px'}">
+										<div class="tree-site-addmin">
+										<tree-component class="cms-tree" ng-if="treeSites" model="treeSites" filter-text="query" def-col="def" options="options"></tree-component>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</accordion-group>
+				</accordion>	
+				<!-- END ::  accordion Site Metric -->
+
+			</div>
+			<div class="col-sm-6 panel-right">
+                <accordion close-others="true">
+					<accordion-group is-open="true">
+						<accordion-heading>
+							<i class="fa" ng-class="fa-caret-right"></i>
+							<span><strong>{{'RECIPIENTS' | translate}}</strong></span>
+						</accordion-heading>
+					        <div class="panel-header search-user">
+						        <div class="input-group">
+						        	<input type="text"  ng-model="uquery"  class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+							        <span class="search-button">
+								        <i class="icon-search"></i>
+							        </span>
+						        </div>
+					        </div>
+					        <div class="panel-content">
+						       <div class="form-group no-margin">
+									<div class="scroll-body">
+							            <ul class="list-group user-list">
+							            	 <li ng-class="{'active': item.Active}" class="list-group-item" ng-repeat="item in userList | filter : filter(uquery)">
+			                                    <!--<div class="item-info" ng-dblclick="vm.openUsers(user)" ng-click="vm.checkUser(user)">-->
+		                                        <div class="item-info" ng-click="item.Active = !item.Active">
+			                                        <span class="i-image">
+			                                            <img  ng-src="{{ApiImageUrl(item.UserID, '')}}" alt="" ng-style="{'display': 'inline-block', 'border': '2px solid ', 'border-color': vm.convertColor(item.PosColor)}"/>
+			                                            <!--<img ng-show="item.UPhoto==null" src="../Content/Images/img_user_blank.png" alt="" ng-style="{'display': 'inline-block', 'border': '2px solid ', 'border-color': vm.convertColor(item.PosColor)}"/>-->
+			                                            <span ng-show="item.Active" class="icon-checked"><i class=" icon-ok-1"></i></span>
+			                                        </span>
+			                                        <div class="i-name">{{item.FName}} {{item.LName}}</div>
+			                                        <div class="i-pos">{{item.PosName}}</div>
+			                                        <div class="clearfix"></div>
+			                                    </div>
+			                                </li>
+                                        </ul>
+                                    </div>
+						        </div>
+					        </div>
+					</accordion-group>
+                </accordion>
+				
+            </div>                        				
+				            </div>			         
+    <div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="Close()">{{"BTN_CANCEL"|translate}}</button>
+		<button type="submit" class="btn btn-primary" >{{"BTN_SAVE"|translate}}</button>
+	</div>
+</form>

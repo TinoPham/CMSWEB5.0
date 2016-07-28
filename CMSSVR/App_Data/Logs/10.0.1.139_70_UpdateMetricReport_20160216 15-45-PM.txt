@@ -1,0 +1,1 @@
+{"ReportId":2,"Metrics":[{"MetricId":4,"Name":"Labour hours","ResourceKey":"METRIC_LABOUR_HOURS","Order":0,"Active":true},{"MetricId":7,"Name":"Dollar per opportunity","ResourceKey":"METRIC_DPO","Order":0,"Active":true},{"MetricId":8,"Name":"Unconverted potential dollar","ResourceKey":"METRIC_UPD","Order":0,"Active":true}]}

@@ -1,0 +1,125 @@
+﻿<div class="panel" style="margin-bottom: 0">
+<div class="rebar-transact-viewer rebar-transact-viewer-table panel-heading custom-panel-heading">
+    <div class="additional-btn"  >
+		<a ng-click="vm.reloadEmployerSumTable()" tooltip="Refresh" tooltip-placement="left" class="ng-scope">
+            <i class="icon-ccw-1"></i>
+        </a>
+		<a ng-click="vm.employeedatatableProperty.Max = !vm.employeedatatableProperty.Max; vm.employeedatatableProperty.Collapse = false"
+		   tooltip="{{(vm.employeedatatableProperty.Max ? 'RESTORE' : 'MAXIMIZE')|translate}}" tooltip-placement="left">
+			<i ng-class="{'icon-resize-full-1': !vm.employeedatatableProperty.Max, 'icon-resize-small-1': vm.employeedatatableProperty.Max}" class="icon-resize-full-1"></i>
+        </a>
+		<a ng-show="!vm.employeedatatableProperty.Max" ng-click="vm.employeedatatableProperty.Collapse = !vm.employeedatatableProperty.Collapse" class="collapse-btn"
+		   tooltip="{{(vm.employeedatatableProperty.Collapse ? 'EXPAND' : 'COLLAPSE')|translate }}" tooltip-placement="left"><i class="icon-down-open-2"></i></a>
+		<span ng-show="vm.employeedatatableProperty.Max" class="ng-hide">&nbsp;&nbsp;</span>
+    </div>
+    <!--<h3 class="title" style="margin-right:-15px;line-height:15px; cursor:pointer;" ng-show = "state != 0" ng-click="GetBackData()">
+        <i class="icon-left-1" style="font-size:14px;"></i>  {{'BACK' | translate}}
+    </h3> -->
+
+    <div class="panel-heading-title">
+        <div ng-if="currentSelect.TypeReport" ng-click="GetBackData()" style="cursor: pointer;">
+            <i class="icon-doc" />
+            <span>{{currentSelect.TypeReport | translate}}</span>
+            </div>
+        <div ng-if="currentSelect.Site"><i class="icon-right-open-big" /></div>
+        <div ng-if="currentSelect.Site" ng-click="state > states.Site && GetBackData()" ng-style="{cursor: state > states.Site ? 'pointer' : 'default'}">
+            <i class="icon-store-3" />
+            {{'SITE_NAME_STRING' | translate}}{{':'}} <span>{{currentSelect.Site}}</span>
+        </div>
+        <div ng-if="currentSelect.DateTime"><i class="icon-right-open-big" /></div>
+        <div ng-if="currentSelect.DateTime" >
+            <i class="icon-calendar" />
+            <span>{{currentSelect.DateTime | date: 'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+</div>
+<div class="panel-body" ng-show ="vm.employeedatatableProperty.Collapse === false">
+    <div class="table-responsive table-hover" ng-if="vm.GridDataInfoType === 1"><!-- Customer info -->
+        <table class="cms-table-summary">
+            <thead>
+                <tr>
+                    <th>{{'PERSON_ID' | translate}}</th>
+					<th>{{'REGION_NAME' | translate}}</th>
+                    <th>{{'ENTER_TIME' | translate}}</th>
+                    <th>{{'EXIT_TIME' | translate}}</th>
+                    <th>{{'DVRDATE' | translate}}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="!vm.iopcData || vm.iopcData.Data.length === 0" class="no-row-data">
+                    <th colspan="4">
+                        <i class="icon-boxes6"></i>
+                        {{'NO_DATA_STRING' | translate}}
+                    </th>
+                </tr>
+                <tr ng-if="vm.iopcData && vm.iopcData.Data.length > 0" ng-repeat="sum in vm.iopcData.Data">
+                    <th>{{ sum.PersonID }}</th>
+					<th>{{ sum.RegionName }}</th>
+                    <td>{{ sum.StartDate | date: 'HH:mm:ss' }}</td>
+                    <td>{{ sum.EndDate | date: 'HH:mm:ss' }}</td>
+                    <td>{{ sum.DVRDate | date: 'yyyy/MM/dd' }}</td>
+                    <td class="button-video" ng-click="showVPCFn(sum)">
+                        <i class="icon-vpc" />
+                        <span>{{'WATCH_VIDEO' | translate}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<div class="table-responsive table-hover" ng-if="vm.GridDataInfoType === 2"><!-- Car info -->
+        <table class="cms-table-summary">
+            <thead>
+                <tr>
+                    <!--<th>{{'PACID' | translate}}</th>-->
+                    <th>{{'START_TIME' | translate}}</th>
+                    <th>{{'END_TIME' | translate}}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="!vm.iopcData || vm.iopcData.Data.length === 0" class="no-row-data">
+                    <th colspan="3">
+                        <i class="icon-boxes6"></i>
+                        {{'NO_DATA_STRING' | translate}}
+                    </th>
+                </tr>
+                <tr ng-if="vm.iopcData && vm.iopcData.Data.length > 0" ng-repeat="sum in vm.iopcData.Data">
+                    <!--<th>{{ sum.PACID }}</th>-->
+                    <td>{{ sum.StartDate | date: 'HH:mm:ss' }}</td>
+                    <td>{{ sum.EndDate | date: 'HH:mm:ss' }}</td>
+                    <td class="button-video" ng-click="showVPCFn(sum)">
+                        <i class="icon-vpc" />
+                        <span>{{'WATCH_VIDEO' | translate}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <span style="float: right" ng-if="vm.iopcData.TotalPages > 1">
+            <nav style="text-align: center;">
+                <ul class="pagination">
+                    <li ng-click="vm.prevPage()" ng-disabled="vm.currPage < 2">
+                        <a aria-label="Previous">
+                            <span aria-hidden="true">
+                                  <i class=" icon-left-open-big"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li ng-click="vm.prevPage(1)"><a>1</a></li>
+                    <li><a class="input-page"><input type="text"  maxlength="10"  class="form-control" ng-model="vm.currPage" style="max-width: 50px;" ng-keypress="PreventLetter($event,inputRex)" ng-paste ="PreventPaste($event,pasteRegx)"> </a></li>
+                    <li ng-click="vm.gotoPage()"><a>{{'GO' | translate}}</a></li>
+                    <li ng-click="vm.nextPage(vm.iopcData.TotalPages)"><a>{{vm.iopcData.TotalPages ? vm.iopcData.TotalPages : 0}}</a></li>
+                    <li ng-click="vm.nextPage()" ng-disabled="vm.currPage >= vm.iopcData.TotalPages">
+                        <a aria-label="Next">
+                            <span aria-hidden="true">
+                               <i class=" icon-right-open-big"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </span>
+    </div>
+</div></div>

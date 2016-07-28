@@ -1,0 +1,515 @@
+<!-- START :: panel Incident info -->
+<div id="Incident-Info" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	
+  	<h2>Incident info</h2>
+
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+
+  </div>
+  <!-- END :: heading -->
+
+
+  <div class="panel-body">
+  		
+
+  		<div id="Incident-Info--General-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		 <h4>General info</h4>
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Report by</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Approved By
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Case status
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">				      
+				      <select class="form-control">
+				      	<option value="">Please choose</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+				  </div>
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form -->
+
+
+		<div id="Incident-Info--Event-Info" class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		 <h4>Event info</h4>
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Location</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" id="" placeholder="Report by">
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="" class="col-sm-4 control-label">
+				    	Date time
+				    	<span class="require">*</span>
+				    </label>
+				    <div class="col-sm-6">
+						 <div class="input-group" options="{{vm.optionsDate}}" cmsdatetimepicker 
+						 ng-model="vm.dateIncident">
+		                    <input type="text" name="dateIncident" class="form-control input-sm" readonly />
+		                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+			            </div>  
+				    </div>
+				  </div>
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form  Event info-->
+
+
+
+
+		<div id='Incident-Info--Contact-Info' class="panel panel-child">  		  
+		  <div class="panel-body">				
+
+		  	<form class="form-horizontal">
+		  		<h4>Contact info</h4>
+
+				<div class="form-group">
+				    <label for="" class="col-sm-4 control-label">Name</label>
+				    <div class="col-sm-2 span-left">
+				      <input type="text" class="form-control" id="" placeholder="First name">
+				    </div>
+				    <div class="col-sm-2 span-center">
+				      <input type="text" class="form-control" id="" placeholder="Last name">
+				    </div>
+				    <div class="col-sm-2 span-right">
+				      <input type="text" class="form-control" id="" placeholder="Middle name">
+				    </div>
+				</div>
+
+				<div class="form-group have-bottom-line">
+				    <label for="" class="col-sm-4 control-label">Phone</label>
+				    <div class="col-sm-3 span-left">
+				      <input type="number" class="form-control" id="" placeholder="Cell phone">
+				    </div>				   
+				    <div class="col-sm-3 span-right">
+				      <input type="number" class="form-control" id="" placeholder="Home phone">
+				    </div>
+				</div>
+
+
+				<div class="form-group have-bottom-line">
+				    <label for="" class="col-sm-4 control-label">Address</label>
+				    <div class="col-sm-6 ">
+				      <input type="text" class="form-control" id="" placeholder="Street">
+				    </div>
+
+				    <div class="col-md-offset-4 col-sm-3 span-left margin_top_15">
+				      <input type="text" class="form-control" id="" placeholder="City">
+				    </div>
+
+				    <div class="col-sm-3 span-right margin_top_15">
+				        <select class="form-control">
+				      	<option value="">Choose country</option>
+				      	<option value="">1</option>
+				      	<option value="">2</option>				      	
+				      </select>
+				    </div>
+
+
+				     <div class="col-md-offset-4 col-sm-3 span-left margin_top_15">
+					      <select class="form-control">
+					      	<option value="">Choose state/Prov</option>
+					      	<option value="">1</option>
+					      	<option value="">2</option>				      	
+					      </select>
+				    </div>
+				    <div class="col-sm-3 span-right margin_top_15">
+				        <input type="text" class="form-control" id="" placeholder="Zip Code">
+				    </div>
+
+				</div>	
+
+				<div class="form-group ">
+				    <label for="" class="col-sm-4 control-label">Email</label>
+				    <div class="col-sm-6 ">
+				      <input type="email" class="form-control" id="" placeholder="E-mail">
+				    </div>
+				  
+				</div>	
+
+				<div class="form-group ">
+				    <label for="" class="col-sm-4 control-label">Orther info</label>				
+
+				    <div class="col-sm-6 margin_top_15">
+				     <textarea class="form-control"></textarea>
+				    </div>
+				</div>		
+
+
+				
+			</form>		
+
+		  </div> <!-- END :: 	  <div class="panel-body">	of  panel-child --> 
+
+		</div>
+		<!-- END :: A child form  Contact info-->
+
+
+
+
+  </div>
+    <!-- END :: panel - body -->
+
+</div>
+<!-- END :: panel Incident info -->
+
+
+
+
+
+<div id="Description-for-loss-damages" class="panel add-new-incident-form-box">
+
+  <div class="panel-heading">
+  	<h2>Description for loss/damages</h2> 
+  	<div class="additional-btn">		
+		<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+	</div>
+ 	
+  </div>
+   <!-- END :: panel - heading of Subject info  -->
+
+  <div class="panel-body">
+    	
+		<div id="Incident-Detail--Shoplifting" class="panel panel-child">
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<!-- <h4>Shoplifting</h4> -->
+
+						
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							School
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Name
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							 Date time of occurrence
+							<span class="require">*</span>
+						</label>
+						<div class="col-sm-6">
+							<div class="input-group" options="{{vm.optionsDatetime}}" cmsdatetimepicker
+								ng-model="vm.dateIncident">
+								<input type="text" name="dateIncident" class="form-control input-sm" readonly />
+								<span class="input-group-addon"><i class="icon-calendar"></i></span>
+							</div>
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Type of loss
+						</label>
+						<div class="col-sm-2 span-left">
+							 <select class="form-control">
+						      	<option value="">Please choose</option>
+						      	<option value="">1</option>
+						      	<option value="">2</option>				      	
+						      </select>
+						</div>
+						<div class="col-sm-4 span-right">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Means of Entry
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Description
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+				
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							were police called ?
+						</label>
+						<div class="col-sm-6">
+							 <select class="form-control">
+						      	<option value="">Please choose</option>
+						      	<option value="">1</option>
+						      	<option value="">2</option>				      	
+						      </select>
+						</div>						
+					</div>
+					<!-- END : form-group -->
+
+
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Police name
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Police badge
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					</div>
+					<!-- END : form-group -->
+
+					<div class="form-group">
+						<label for="" class="col-sm-4 control-label">
+							Police Incident
+						</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+					</div>
+					<!-- END : form-group -->
+					
+
+				</form>
+			</div> <!-- END :: 	  <div class="panel-body">	of  panel-child -->
+
+				
+		</div>
+		<!-- END :: A child form Shoplifting-->
+
+
+  </div>
+    <!-- END :: panel - body of Subject info  -->
+</div>
+<!-- END :: panel Description-for-loss-damages -->
+
+
+
+
+
+
+<div id="Claims-for-Loss-damages" class="panel add-new-incident-form-box">
+
+	<div class="panel-heading">
+	  	<h2>Claims for Loss/damages</h2> 
+	  	<div class="additional-btn">		
+			<a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>		
+		</div> 	
+	</div>
+	   <!-- END :: panel - heading of Additional Evidence  -->
+
+	<div class="panel-body">
+
+		<div id="" class="panel panel-child">
+			<div class="panel-body">
+				<form class="form-horizontal">
+						<h4>Claims for Loss/Damage</h4>
+						<table class="cms-table-summary margin_top_15">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>Quantity</th>							
+								<th>Description</th>
+								<th>Requistition</th>
+								<th>Replacement Cost</th>
+							</tr>
+							
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+
+								
+							</tr>
+						
+
+							<tr>
+								<td colspan="5">
+									<button class="btn btn-default"> <i class='icon-plus-4'></i>Add more</button>
+								</td>
+							</tr>
+						
+							
+						</tbody>
+					</table>
+				
+
+
+				</form >	
+			</div>
+		</div>
+		<!-- END :: A panel-child -->
+
+		
+		<div id="" class="panel panel-child">
+			<div class="panel-body">
+				<form class="form-horizontal">
+						<h4>Caretaking and Maintenance</h4>
+						<table class="cms-table-summary margin_top_15">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>Employee Nane</th>							
+								<th>Hours worked</th>
+								<th>Rate</th>
+								<th> Total wage cost </th>
+							</tr>
+							
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+
+								
+							</tr>
+						
+
+							<tr>
+								<td colspan="5">
+									<button class="btn btn-default"> <i class='icon-plus-4'></i>Add more</button>
+								</td>
+							</tr>
+						
+							
+						</tbody>
+					</table>
+				
+
+
+				</form >	
+			</div>
+		</div>
+		<!-- END :: A panel-child -->
+
+
+		<div id="" class="panel panel-child">
+			<div class="panel-body">
+				<form class="form-horizontal">
+						<h4>Contractor Charges</h4>
+						<table class="cms-table-summary margin_top_15">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>Company name</th>							
+								<th>Type of Work Performed</th>
+								<th>Requistion #</th>
+								<th>Total cost</th>
+							</tr>
+							
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+
+								
+							</tr>
+						
+
+							<tr>
+								<td colspan="5">
+									<button class="btn btn-default"> <i class='icon-plus-4'></i>Add more</button>
+								</td>
+							</tr>
+						
+							
+						</tbody>
+					</table>
+				
+
+
+				</form >	
+			</div>
+		</div>
+		<!-- END :: A panel-child -->
+
+	</div>
+	<!-- END :: panel - body of Additional Evidence  -->
+
+</div>
+<!-- END :: panel Claims-for-Loss-damages-->
+
+

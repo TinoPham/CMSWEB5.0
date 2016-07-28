@@ -1,0 +1,74 @@
+[
+  {
+    "outputFileName": "Api/Configuration/Account/AccountController.js",
+    "inputFiles": [
+      "Api/Configuration/Account/AccountController.js"
+    ]
+  },
+  {
+    "outputFileName": "Api/Configuration/ConfigModule.js",
+    "inputFiles": [
+      "Api/Configuration/ConfigModule.js"
+    ]
+  },
+  {
+    "outputFileName": "Api/Configuration/DBConfig/DBController.js",
+    "inputFiles": [
+      "Api/Configuration/DBConfig/DBController.js"
+    ]
+  },
+  {
+    "outputFileName": "Api/Configuration/DVRInfo/DVRInfoController.js",
+    "inputFiles": [
+      "Api/Configuration/DVRInfo/DVRInfoController.js"
+    ]
+  },
+  {
+    "outputFileName": "Api/Configuration/Logs/LogsController.js",
+    "inputFiles": [
+      "Api/Configuration/Logs/LogsController.js"
+    ]
+  },
+  {
+    "outputFileName": "Api/Configuration/ServiceConfig/ServiceConfigController.js",
+    "inputFiles": [
+      "Api/Configuration/ServiceConfig/ServiceConfigController.js"
+    ]
+  },
+  {
+    "outputFileName": "Api/Configuration/Services/ApiService.js",
+    "inputFiles": [
+      "Api/Configuration/Services/ApiService.js"
+    ]
+  },
+  {
+    "outputFileName": "Api/index.js",
+    "inputFiles": [
+      "Api/index.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/libs/angular-select/js/angular-select-tpls.js",
+    "inputFiles": [
+      "Content/libs/angular-select/js/angular-select-tpls.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/libs/angular-timepicker-popup/js/timepickerpop.js",
+    "inputFiles": [
+      "Content/libs/angular-timepicker-popup/js/timepickerpop.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/libs/angular-datepicker/js/moment.js",
+    "inputFiles": [
+      "Content/libs/angular-datepicker/js/moment.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/libs/angular-plus-overlay/ngplus-overlay.js",
+    "inputFiles": [
+      "Content/libs/angular-plus-overlay/ngplus-overlay.js"
+    ]
+  }
+]

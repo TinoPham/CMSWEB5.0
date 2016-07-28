@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+	<Item key="tbl_POS_CameraNBList" entity ="tbl_POS_CameraNBList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="CameraNB_ID"/> 
+		<value src="Name" des="CameraNB_Name"/>
+	</Item>
+
+	<Item key="tbl_POS_CardIDList" entity="tbl_POS_CardIDList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="CardID_ID"/>
+		<value src="Name" des="CardID_Name"/>
+	</Item>
+
+	<Item key="tbl_POS_CheckIDList" entity="tbl_POS_CheckIDList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="CheckID_ID"/>
+		<value src="Name" des="CheckID_Name"/>
+	</Item>
+
+	<Item key="tbl_POS_DescriptionList" entity="tbl_POS_DescriptionList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="Description_ID"/>
+		<value src="Name" des="Description_Name"/>
+	</Item>
+
+	<Item key="tbl_POS_ItemCodeList" entity="tbl_POS_ItemCodeList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="ItemCode_ID"/> 
+		<value src="Name" des="ItemCode_Name"/>
+	</Item>
+	
+	<Item key="tbl_POS_OperatorList" entity="tbl_POS_OperatorList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="Operator_ID"/>
+		<value src="Name" des="Operator_Name"/>
+	</Item>
+
+	<Item key="tbl_POS_RegisterList" entity="tbl_POS_RegisterList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="Register_ID"/>
+		<value src="Name" des="Register_Name"/>
+	</Item>
+	
+	<Item key="tbl_POS_ShiftList" entity="tbl_POS_ShiftList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="Shift_ID"/>
+		<value src="Name" des="Shift_Name"/>
+	</Item>
+	
+	<Item key="tbl_POS_StoreList" entity="tbl_POS_StoreList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="Store_ID"/>
+		<value src="Name" des="Store_Name"/>
+	</Item>
+	
+	<Item key="tbl_POS_TerminalList" entity="tbl_POS_TerminalList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="Terminal_ID"/>
+		<value src="Name" des="Terminal_Name"/>
+	</Item>
+	
+	<Item key="tbl_POS_ExtraStringValue" entity="tbl_POS_ExtraStringValue" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="ExString_ValueID"/>
+		<value src="Name" des="ExString_Value"/>
+	</Item>
+	
+	<Item key="tbl_POS_ExtraName" entity="tbl_POS_ExtraName" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="ExtraID"/>
+		<value src="Name" des="ExtraName"/>
+	</Item>
+
+	<Item key="tbl_POS_TaxesList" entity="tbl_POS_TaxesList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="TaxID"/>
+		<value src="Name" des="TaxName"/>
+	</Item>
+	<Item key="tbl_POS_PaymentList" entity="tbl_POS_PaymentList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="PaymentID"/>
+		<value src="Name" des="PaymentName"/>
+	</Item>
+
+
+
+	<Item key="tbl_ATM_CardNBList" entity ="tbl_ATM_CardNBList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="CardNB_ID"/>
+		<value src="Name" des="CardNB_Name"/>
+	</Item>
+	<Item key="tbl_ATM_TransCodeList" entity ="tbl_ATM_TransCodeList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="TransCode_ID"/>
+		<value src="Name" des="TransCode_Name"/>
+	</Item>
+	<Item key="tbl_ATM_TransTypeList" entity ="tbl_ATM_TransTypeList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="TransType_ID"/>
+		<value src="Name" des="TransType_Name"/>
+	</Item>
+
+	<Item key="tbl_ATM_ExtraName" entity ="tbl_ATM_ExtraName" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="ExtraID"/>
+		<value src="Name" des="ExtraName"/>
+	</Item>
+
+	<Item key="tbl_ATM_XStringList" entity ="tbl_ATM_XStringList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="XString_ID"/>
+		<value src="Name" des="XString_Name"/>
+	</Item>
+	<Item key="tbl_ATM_ExtraName" entity ="tbl_ATM_ExtraName" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="ExtraID"/>
+		<value src="Name" des="ExtraName"/>
+	</Item>
+
+
+	<Item key="tbl_CA_BatchList" entity ="tbl_CA_BatchList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="Batch_ID"/>
+		<value src="Name" des="Batch_Name"/>
+	</Item>
+
+	<Item key="tbl_CA_CardList" entity ="tbl_CA_CardList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="Card_ID"/>
+		<value src="Name" des="Card_Name"/>
+	</Item>
+	<Item key="tbl_CA_DevNameList" entity ="tbl_CA_DevNameList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="DevName_ID"/>
+		<value src="Name" des="DevName_Name"/>
+	</Item>
+	<Item key="tbl_CA_SiteIDList" entity ="tbl_CA_SiteIDList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="SiteID_ID"/>
+		<value src="Name" des="SiteID_Name"/>
+	</Item>
+	<Item key="tbl_CA_TranTypeList" entity ="tbl_CA_TranTypeList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="TranType_ID"/>
+		<value src="Name" des="TranType_Name"/>
+	</Item>
+
+	<Item key="tbl_CA_UnitIDList" entity ="tbl_CA_UnitIDList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="UnitID_ID"/>
+		<value src="Name" des="UnitID_Name"/>
+	</Item>
+	<Item key="tbl_CA_XStringList" entity ="tbl_CA_XStringList" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="XString_ID"/>
+		<value src="Name" des="XString_Name"/>
+	</Item>
+
+	<Item key="tbl_CA_ExtraName" entity ="tbl_CA_ExtraName" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="ExtraID"/>
+		<value src="Name" des="ExtraName"/>
+	</Item>
+
+	<Item key="tbl_CA_FullNameList" entity ="tbl_CA_FullNameList" msgtype="ConvertMessage.MessageItemCAFullName">
+		<value src="ID" des="FullName_ID"/>
+		<value src="Name" des="FirstName_Name"/>
+		<value src="LastName" des="LastName_Name"/>
+	</Item>
+
+	<Item key="tbl_IOPC_AlarmAlarmType" entity ="tbl_IOPC_AlarmAlarmType" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="AlarmTypeID"/>
+		<value src="Name" des="AlarmType"/>
+	</Item>
+	<Item key="tbl_IOPC_AlarmArea" entity ="tbl_IOPC_AlarmArea" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="AreaID"/>
+		<value src="Name" des="AreaName"/>
+	</Item>
+	<Item key="tbl_IOPC_AlarmObjectType" entity ="tbl_IOPC_AlarmObjectType" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="ObjectTypeID"/>
+		<value src="Name" des="ObjectType"/>
+	</Item>
+
+	<Item key="tbl_IOPC_Count_Area" entity ="tbl_IOPC_Count_Area" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="AreaID"/>
+		<value src="Name" des="AreaName"/>
+	</Item>
+
+	<Item key="tbl_IOPC_Count_ObjectType" entity ="tbl_IOPC_Count_ObjectType" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="ObjectTypeID"/>
+		<value src="Name" des="ObjectType"/>
+	</Item>
+
+	<Item key="tbl_IOPC_TrafficCountRegionName" entity ="tbl_IOPC_TrafficCountRegionName" msgtype="ConvertMessage.MessageItemKey">
+		<value src="ID" des="RegionNameID"/>
+		<value src="Name" des="RegionName"/>
+	</Item>
+
+</Items>

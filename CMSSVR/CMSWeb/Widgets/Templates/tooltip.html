@@ -1,0 +1,53 @@
+﻿<div class="tooltip-content">
+	<!-- USER INFO -->
+	<div ng-if="row.entity.FName">
+		<span><strong>{{'USER_NAME'|translate}}</strong>: </span>
+		<span>{{row.entity.FName}} {{row.entity.LName}}</span>
+	</div>
+	<div ng-if="row.entity.PosName">
+		<span><strong>{{'JOB_NAME'|translate}}</strong>: </span>
+		<span>{{row.entity.PosName}}</span>
+	</div>
+	<div ng-if="row.entity.Email">
+		<span><strong>{{'EMAIL'|translate}}</strong>: </span>
+		<span>{{row.entity.Email}}</span>
+	</div>
+	<div ng-if="row.entity.ExDate">
+		<span><strong>{{'EXPIRED_DATE'|translate}}</strong>: </span>
+		<span>{{row.entity.ExDate | date:"MM-dd-yyyy"}}</span>
+	</div>
+	<!-- JOB TITLE INFO -->
+	<div ng-if="row.entity.PositionName">
+		<span><strong>{{'JOB_NAME'|translate}}</strong>: </span>
+		<span>{{row.entity.PositionName}}</span>
+	</div>
+	<!-- USER GROUP INFO -->
+	<div ng-if="row.entity.GroupName">
+		<span><strong>{{'USERGROUP_NAME'|translate}}</strong>: </span>
+		<span>{{row.entity.GroupName}}</span>
+	</div>
+	<div ng-if="row.entity.NumberUser != null">
+		<span><strong>{{'USERGROUP_NO_OF_USERS'|translate}}</strong>: </span>
+		<span>{{row.entity.NumberUser}}</span>
+	</div>
+	<!-- SITE METRIC INFO -->
+	<div ng-if="row.entity.MetricName">
+		<span><strong>{{'SITEMETRIC_NAME'|translate}}</strong>: </span>
+		<span>{{row.entity.MetricName}}</span>
+	</div>
+	<div ng-if="row.entity.MetricMeasure">
+		<span><strong>{{'DESCRIPTION'|translate}}</strong>: </span>
+		<span>{{row.entity.MetricMeasure}}</span>
+	</div>
+	<!-- GOAL TYPE INFO -->
+	<div ng-if="row.entity.GoalName">
+		<span><strong>{{'GOALTYPE_NAME'|translate}}</strong>: </span>
+		<span>{{row.entity.GoalName}}</span>
+	</div>
+
+	<!--Common Info-->
+	<div ng-if="row.entity.Description">
+		<span><strong>{{'DESCRIPTION'|translate}}</strong>: </span>
+		<span>{{row.entity.Description}}</span>
+	</div>
+</div>

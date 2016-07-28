@@ -1,0 +1,22 @@
+﻿({
+    appDir: '..',
+    baseUrl: '../CMSWeb',
+    dir: 'js_build',
+	fileExclusionRegExp: /(app\.less)|(\.less)|(min\.js)|(min\.css)|(_build)|(\.svn)$/,
+	preserveLicenseComments: false,
+	optimizeCss: 'standard',
+	cssImportIgnore: '',
+	paths: {
+          'Scripts': '../CMSWeb/Scripts'
+        , 'AuthServices': '../CMSWeb/Scripts/AuthServices'
+        , 'Core': '../CMSWeb/Scripts/Core'
+        , 'DataServices': '../CMSWeb/Scripts/DataServices'
+        , 'Directives': '../CMSWeb/Scripts/Directives'
+        , 'ExceptionServices': '../CMSWeb/Scripts/ExceptionServices'
+        , 'LanguageServices': '../CMSWeb/Scripts/LanguageServices'
+        , 'LogServices': '../CMSWeb/Scripts/LogServices'
+        , 'RouteServices': '../CMSWeb/Scripts/RouteServices'
+        , 'Services': '../CMSWeb/Scripts/Services'
+    },
+	
+})

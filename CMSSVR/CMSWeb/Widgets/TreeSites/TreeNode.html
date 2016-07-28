@@ -1,0 +1,18 @@
+﻿<div ui-tree-handle class="tree-node">
+            <a class="btn btn-xs tree-node-link-color" ng-if="site.Sites && site.Sites.length > 0" nodrag ng-click="toggle(this)">
+            <span class="glyphicon" ng-class="{'glyphicon glyphicon-triangle-right': collapsed, 'glyphicon glyphicon-triangle-right fa-rotate-45': !collapsed}"></span>
+            </a>
+            
+            <input type="checkbox" treecheckbox ng-show="CheckEnable" indeterminate= false ng-model="site.Checked" ng-click="CheckClick(this)" class="largerCheckbox">
+             
+            <span class="glyphicon" ng-class="{'glyphicon glyphicon-facetime-video site-icon-font-large': site.Type === 1, 'glyphicon-folder-close': collapsed && site.ParentKey != null && site.Type === 0, 'glyphicon-folder-open': !collapsed && site.ParentKey !== null && site.Type === 0, 'glyphicon-home': site.ParentKey === null}"></span>
+            <span class="node-text">
+           {{site.Name}}
+           </span>
+            <span ng-show="{{site.Type}} == 0" class="pull-right badge">{{site.Sites.length}}</span>
+          
+          </div>
+          <ol ui-tree-nodes ng-model="site.Sites" ng-class="{hidden: collapsed}">
+              <li ng-repeat="site in site.Sites" ui-tree-node ng-include="'Widgets/TreeSites/TreeNode.html'">
+              </li>
+          </ol>

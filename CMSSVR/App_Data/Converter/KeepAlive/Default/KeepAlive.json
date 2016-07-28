@@ -1,0 +1,69 @@
+{
+  "LastVersion": "1.0.0.1",
+  "ServerID": "123456789",
+  "TimeOut": 120,
+  "KeepAliveInterval": 5,
+  "DataReset": false,
+  "ConverterInterval": 10,
+  "LogRecyle": 7,
+  "DVRMessageRecycle": 2,
+  "DVRConvert": true,
+  "ConvertInfo": [
+    {
+      "Programset": 2,
+      "TableName": "Transact",
+      "DvrDate": "20150901",
+      "LastKey": "0",
+      "Enable": true
+    },
+    {
+      "Programset": 2,
+      "TableName": "Sensor",
+      "DvrDate": "20150901",
+      "LastKey": "0",
+      "Enable": true
+    },
+    {
+      "Programset": 3,
+      "TableName": "TrafficCount",
+      "DvrDate": "20150901",
+      "LastKey": "0",
+      "Enable": true
+    },
+    {
+      "Programset": 3,
+      "TableName": "Alarm",
+      "DvrDate": "20150901",
+      "LastKey": "0",
+      "Enable": true
+    },
+    {
+      "Programset": 3,
+      "TableName": "DriveThrough",
+      "DvrDate": "20150901",
+      "LastKey": "0",
+      "Enable": true
+    },
+    {
+      "Programset": 3,
+      "TableName": "Count",
+      "DvrDate": "20150901",
+      "LastKey": "0",
+      "Enable": true
+    },
+    {
+      "Programset": 4,
+      "TableName": "Transact",
+      "DvrDate": "20150901",
+      "LastKey": "0",
+      "Enable": true
+    },
+    {
+      "Programset": 5,
+      "TableName": "Transact",
+      "DvrDate": "20150901",
+      "LastKey": "0",
+      "Enable": true
+    }
+  ]
+}

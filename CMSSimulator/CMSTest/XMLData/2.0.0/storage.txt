@@ -1,0 +1,85 @@
+
+        <configuration_id>17</configuration_id>
+        <configuration_name>storage</configuration_name>
+    <storage>
+      <over_write>1</over_write>
+      <drivers size="4">
+        <driver id="0">
+          <name>E:</name>
+          <volume_name>Local Disk</volume_name>
+          <use_for_recording>90</use_for_recording>
+          <total_space>27923</total_space>
+          <free_space>13446</free_space>
+          <recorded_time>
+            <begin>
+              <day>0</day>
+              <month>0</month>
+              <year>0</year>
+            </begin>
+            <end>
+              <day>0</day>
+              <month>0</month>
+              <year>0</year>
+            </end>
+          </recorded_time>
+        </driver>
+        <driver id="1">
+          <name>F:</name>
+          <volume_name>Win 2k8</volume_name>
+          <use_for_recording>90</use_for_recording>
+          <total_space>55842</total_space>
+          <free_space>36776</free_space>
+          <recorded_time>
+            <begin>
+              <day>0</day>
+              <month>0</month>
+              <year>0</year>
+            </begin>
+            <end>
+              <day>0</day>
+              <month>0</month>
+              <year>0</year>
+            </end>
+          </recorded_time>
+        </driver>
+        <driver id="2">
+          <name>G:</name>
+          <volume_name>Local Disk</volume_name>
+          <use_for_recording>90</use_for_recording>
+          <total_space>55706</total_space>
+          <free_space>5992</free_space>
+          <recorded_time>
+            <begin>
+              <day>0</day>
+              <month>0</month>
+              <year>0</year>
+            </begin>
+            <end>
+              <day>0</day>
+              <month>0</month>
+              <year>0</year>
+            </end>
+          </recorded_time>
+        </driver>
+        <driver id="3">
+          <name>I:</name>
+          <volume_name>I3Pro Data</volume_name>
+          <use_for_recording>149</use_for_recording>
+          <total_space>25791</total_space>
+          <free_space>162</free_space>
+          <recorded_time>
+            <begin>
+              <day>26</day>
+              <month>7</month>
+              <year>2012</year>
+            </begin>
+            <end>
+              <day>27</day>
+              <month>7</month>
+              <year>2012</year>
+            </end>
+          </recorded_time>
+        </driver>
+      </drivers>
+    </storage>
+       

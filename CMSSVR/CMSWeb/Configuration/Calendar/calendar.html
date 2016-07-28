@@ -1,0 +1,75 @@
+﻿<div class="panel" ng-controller="cmsCalendarCtrl as vm">
+	<func-header 
+		show-view-mode="true"
+		filter="false"
+		import="true" 
+		listview = 'vm.listView'
+		query ='vm.query'
+		add-fn = 'vm.showDialog(null)'
+		edit-fn  = 'vm.onMode(1)'
+		del-fn  = 'vm.onMode(2)'
+		import-fn  = 'vm.onMode(3)'></func-header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2 none-padding cal-event">
+				<datepicker class="calendar small" data-role="calendar" id="Datepicker1" ng-model="vm.dateime" min-date="minDate" show-weeks="false"></datepicker>
+			</div>
+			<div class="col-md-10">
+				<div data-ng-if="vm.mode == 1" class="table-responsive no-border">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th style="width: 80px;">{{'CAL_TIME'|translate}}</th>
+								<th>{{vm.DateTitle}}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="calDay in DataDay">
+								<td>{{calDay.Time}}</td>
+								<td style="padding: 0px; vertical-align: top;"><div style="width:100%; height: {{(calDay.Days[0].Min * RowHeight)/MinPerHour}}px; background-color: {{calDay.Days[0].Color}}"> </div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div data-ng-if="vm.mode == 2" class="table-responsive no-border">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th style="width: 80px;">{{Resx.CAL_TIME|translate}}</th>
+								<th>{{vm.WeekTitle[0]}}</th>
+								<th>{{vm.WeekTitle[1]}}</th>
+								<th>{{vm.WeekTitle[2]}}</th>
+								<th>{{vm.WeekTitle[3]}}</th>
+								<th>{{vm.WeekTitle[4]}}</th>
+								<th>{{vm.WeekTitle[5]}}</th>
+								<th>{{vm.WeekTitle[6]}}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="calDay in DataWeek">
+								<td>{{calDay.Time}}</td>
+								<td style="padding: 0px; vertical-align: top;"><div style="width:100%; height: {{(calDay.Days[0].Min * RowHeight)/MinPerHour}}px; background-color: {{calDay.Days[0].Color}}"></div></td>
+								<td style="padding: 0px; vertical-align: top;"><div style="width:100%; height: {{(calDay.Days[1].Min * RowHeight)/MinPerHour}}px; background-color: {{calDay.Days[1].Color}}"></div></td>
+								<td style="padding: 0px; vertical-align: top;"><div style="width:100%; height: {{(calDay.Days[2].Min * RowHeight)/MinPerHour}}px; background-color: {{calDay.Days[2].Color}}"></div></td>
+								<td style="padding: 0px; vertical-align: top;"><div style="width:100%; height: {{(calDay.Days[3].Min * RowHeight)/MinPerHour}}px; background-color: {{calDay.Days[3].Color}}"></div></td>
+								<td style="padding: 0px; vertical-align: top;"><div style="width:100%; height: {{(calDay.Days[4].Min * RowHeight)/MinPerHour}}px; background-color: {{calDay.Days[4].Color}}"></div></td>
+								<td style="padding: 0px; vertical-align: top;"><div style="width:100%; height: {{(calDay.Days[5].Min * RowHeight)/MinPerHour}}px; background-color: {{calDay.Days[5].Color}}"></div></td>
+								<td style="padding: 0px; vertical-align: top;"><div style="width:100%; height: {{(calDay.Days[6].Min * RowHeight)/MinPerHour}}px; background-color: {{calDay.Days[6].Color}}"></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div data-ng-if="vm.mode == 3" class="table-responsive no-border">
+					<div class="pannel-body" >
+						<div class="table-responsive no-border">
+							<div class="table table-striped" style="width: 99.95%">
+								<div class="gridStyle" ng-grid="gridCalAgendas" ></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

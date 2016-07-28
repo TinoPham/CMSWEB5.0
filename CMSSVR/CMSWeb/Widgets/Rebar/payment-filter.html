@@ -1,0 +1,24 @@
+﻿<div class="panel col-md-12">
+	<div class="row">
+		<div class="panel" style="margin-bottom: 0">
+			<div class="panel-header">
+				<span class="btn pull-right">
+					<span data-ng-click="cancel()"><i class="icon-cancel-1"></i></span>
+				</span>
+				<h3 class="title"> {{'Select Payment Fitler' | translate}}</h3>
+			</div>
+			<div class="panel-body" style="max-height: 600px; overflow-y: scroll; padding: 0">
+				<div class="list-group">
+					<a class="btn list-group-item" ng-class="{'active': p.Checked === true}" ng-repeat="p in data | orderBy:'Name'" ng-click="p.Checked = !p.Checked">
+						<span>{{p.Name}}</span>
+					</a>
+				</div>
+			</div>
+			<div class="panel-footer">
+				<span class="btn btn-danger pull-right" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i>{{'Close' | translate}}</span>
+				<span class="btn btn-info pull-right" data-ng-click="saveFlags()"><i aria-hidden="true" class="icon-ok-circled2"></i>{{'Done' | translate}}</span>
+				<span class="btn btn-danger pull-right" data-ng-click="clear()"><i aria-hidden="true" class="icon-cancel-1"></i>{{'Clear' | translate}}</span>
+			</div>
+		</div>
+	</div>
+</div>

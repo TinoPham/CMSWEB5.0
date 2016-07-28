@@ -1,0 +1,1 @@
+{"SiteKey":0,"WorkingHours":[],"CalendarEvent":[],"DvrMetrics":[],"DvrUsers":[],"Macs":[{"Id":0,"MacAddress":"","DvrName":"","Image":"","Files":[]}],"Files":[],"HaspLicense":[{"KDVR":3677,"SerialNumber":"1272264405","ServerID":"100-001"},{"KDVR":5256,"SerialNumber":"67694","ServerID":"Virtual DVR"}],"ServerId":"tyu","RegionKey":849}

@@ -1,0 +1,199 @@
+﻿@import url('../app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('../app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * Customize: Navbar (bootstrap)
+ * -----------
+ */
+
+.navbar {
+	margin: 0 0 0 -15px;
+}
+
+.navbar-collapse {
+	padding: 0;
+	margin: 0;
+}
+
+.navbar-nav {
+	> li {
+		> .dropdown-menu {
+			z-index: 8;
+			-moz-border-radius: 2px;
+			-webkit-border-radius: 2px;
+			border-radius: 2px;
+			padding: 0px;
+			border: 0px;
+			-moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+			-webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+			&:before {
+				border-bottom: 6px solid @lightblue-1;
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				right: 18px;
+				content: "";
+				height: 0;
+				margin-right: -3px;
+				pointer-events: none;
+				position: absolute;
+				width: 0;
+				bottom: 100%;
+			}
+
+			> li {
+				> a {
+					-webkit-transition: all 200ms ease-in;
+					-moz-transition: all 200ms ease-in;
+					-ms-transition: all 200ms ease-in;
+					-o-transition: all 200ms ease-in;
+					transition: all 200ms ease-in;
+					-webkit-border-radius: 0px;
+					-moz-border-radius: 0px;
+					border-radius: 0px;
+
+					&:focus, &:hover {
+						background: rgba(0,0,0,0.06);
+					}
+				}
+			}
+
+			.dropdown-header {
+				background: @lightblue-1;
+				color: #fff;
+				-webkit-border-radius: 2px 2px 0 0;
+				-moz-border-radius: 2px 2px 0 0;
+				border-radius: 2px 2px 0 0;
+
+				a {
+					display: inline-block;
+					width: auto;
+					padding: 0px;
+					border: none;
+					margin-right: 7px;
+				}
+			}
+
+			.dropdown-footer {
+				background: @lightblue-1;
+				color: #fff;
+				-webkit-border-radius: 0 0 2px 2px;
+				-moz-border-radius: 0 0 2px 2px;
+				border-radius: 0 0 2px 2px;
+			}
+		}
+
+		&.language_bar {
+			> .dropdown-menu {
+				> li {
+					> a {
+						&:hover, &:focus {
+							background: rgba(0,0,0,0.3);
+						}
+					}
+				}
+
+				&:before {
+					border-bottom: 6px solid #fff;
+				}
+
+				&.grid-dropdown {
+					width: 300px;
+					text-align: center;
+					font-size: 16px;
+					color: @darkblue-1;
+
+					&:before {
+						border-bottom: 6px solid #fff;
+						right: auto;
+						left: 18px;
+					}
+
+					a {
+						font-size: 13px;
+						color: @darkblue-3;
+						width: 100%;
+						padding: 10px;
+						line-height: 30px;
+						display: block;
+						font-weight: 300;
+						font-family: "Open Sans";
+						vertical-align: middle;
+						opacity: 0.7;
+						cursor: default;
+
+						&.clickable {
+							opacity: 1;
+							cursor: pointer;
+
+							&:hover {
+								background: @lightblue-1;
+								color: #fff;
+
+								i {
+									color: #fff;
+								}
+							}
+						}
+
+						i {
+							font-size: 25px;
+							line-height: 30px;
+							height: 30px;
+							display: block;
+							color: darken(@lightblue-1,25%);
+						}
+					}
+				}
+			}
+		}
+
+		&.topbar-profile {
+			> .dropdown-menu {
+				background: @lightblue-2;
+				color: #fff;
+				margin-right: 5px;
+
+				> li {
+					> a {
+						color: #eee !important;
+						padding-left: 10px;
+						padding-right: 10px;
+						font-family: "Open Sans";
+					}
+
+					&.divider {
+						background: rgba(0,0,0,0.1);
+						height: 2px;
+						border-bottom: 1px solid rgba(255,255,255,0.2);
+						margin: 4px 0;
+					}
+
+					&:hover, &:focus {
+						a {
+							color: #fff !important;
+						}
+					}
+				}
+
+				&:before {
+					border-bottom: 6px solid @lightblue-2;
+				}
+			}
+		}
+	}
+}
+
+/* NAVBAR FORM */
+.navbar-form {
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	margin-bottom: 10px;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-bottom: 1px solid rgba(0,0,0,0.03);
+}

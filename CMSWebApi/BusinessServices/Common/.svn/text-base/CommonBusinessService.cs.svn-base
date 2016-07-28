@@ -1,0 +1,32 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using CMSWebApi.DataModels;
+using CMSWebApi.ServiceInterfaces;
+using PACDMModel.Model;
+
+namespace CMSWebApi.BusinessServices.Common
+{
+	public class CommonBusinessService : BusinessBase<ICommonInfoService>
+	{
+		public IQueryable<Country> GetCountries()
+		{
+			return DataService.GetCountries().Select(t => new Country
+			{
+				Id = t.id,
+				Code = t.CODE == null? null : t.CODE.Trim(),
+				Name = t.name.Trim(),
+				Sort = t.sort
+			});
+		}
+
+		public IQueryable<State> GetStateses(string countryCode)
+		{
+			return DataService.GetStateses().Where(t=>t.country.Equals(countryCode.Trim())).Select(t => new State
+			{
+				Id = t.id,
+				Name = t.name,
+				CountryCode = t.country
+			});
+		}
+	}
+}

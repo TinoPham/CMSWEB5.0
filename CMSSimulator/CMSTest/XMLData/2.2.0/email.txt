@@ -1,0 +1,30 @@
+
+        <time_change>0</time_change>
+        <configuration_id>15</configuration_id>
+        <configuration_name>email</configuration_name>
+        <email>
+      <enable>1</enable>
+            <video_loss>1</video_loss>
+            <threshold>100</threshold>
+            <transmission_delay>10</transmission_delay>
+      <to_address>loan@i3dvr.vn;lien@i3dvr.vn;conan_tinhnghich11@yahoo.com;bichlien111@gmail.com</to_address>
+      <from_address>loan@i3dvr.vn</from_address>
+            <from_name></from_name>
+            <smtp>
+        <ip>10.0.0.1</ip>
+        <port>25</port>
+        <login_method>0</login_method>
+        <user_name>
+        </user_name>
+        <password>
+        </password>
+      </smtp>
+      <server_status>
+        <send_email>1</send_email>
+        <channel_image>59</channel_image>
+        <send_email_every>11</send_email_every>
+        <email_title>12222222222222222223211</email_title>
+      </server_status>
+      <sensors size="0" />
+        </email>
+        

@@ -1,0 +1,18 @@
+﻿{
+"GOALTYPE_CREATE_BY":"Créer par"
+, "GOALTYPE_CREATE_DATE":"Date de création"
+, "GOALTYPE_NAME":"Nom de l'objectif"
+, "GOALTYPE_MIN_VALUE":"Valeur min"
+, "GOALTYPE_MAX_VALUE":"Valeur max"
+, "GOALTYPE_DELETE_HEADER":"Supprimer les objectifs"
+
+, "GOALTYPE_DELETE_CONFIRM_MSG":"Êtes-vous sûr de vouloir supprimer ce type d'objectif?"
+, "GOALTYPE_DELETE_CONFIRM_MSGS":"Êtes-vous sûr de vouloir supprimer ces types d'objectif?"
+, "GOALTYPE_CONFIRM_BODY":"Veuillez sélectionner un type d'objectif."
+, "GOALTYPE_NAME_EXIST":"Ce nom de l'objectif existe déjà."
+, "GOALTYPE_NAME_REQUIRED":"Le nom de l'objectif ne peut pas être vide."
+, "GOALTYPE_VALUE_FORMAT_INVALID":"Veuillez entrer un numéro."
+, "GOALTYPE_VALUE_REQUIRED":"Veuillez entrer les valeurs max et min pour ce type d'objectif."
+, "GOALTYPE_VALUE_COMPARE_INVALID":"La valeur min doit être inférieure à la valeur max."
+, "GOALTYPE_IS_USED":"Ce type d'objectif est  en cours d'utilisation : "
+}

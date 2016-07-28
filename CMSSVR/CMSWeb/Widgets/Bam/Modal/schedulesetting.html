@@ -1,0 +1,199 @@
+﻿<form name="deleNode" class="form-horizontal user-group-manages form-delete form-schedulesetting-upload">
+	<div class="leftScheduleType">
+        <span class="Schedule-{{ScheduleType}}"><i class="icon-play-2" ></i></span>
+        <div ng-class="ScheduleType === 1 ? 'active' : ''" ng-click="changeSchType(1)" >
+            <i class="icon-clock-3"></i>
+            <p>{{'HOURLY' | translate}}</p> 
+        </div>
+        <div ng-class="ScheduleType === 2 ? 'active' : ''" ng-click="changeSchType(2)">
+            <i class="icon-calendar"></i>
+            <p>{{'DAILY' | translate}}</p> 
+        </div>
+        <div ng-class="ScheduleType === 3 ? 'active' : ''" ng-click="changeSchType(3)">
+            <i class="icon-calendar-2"></i>
+            <p>{{'WEEKLY' | translate}}</p> 
+        </div>
+	</div>
+    <div class="rightContent">
+        <div class="modal-header">
+		    <span class="close" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		    <h3 ng-if="formshow === 1" class="modal-title">
+                
+                <!--{{'Schedule Setting'|translate}}-->
+                <a class="btn btn-xs" ng-click="Changeform(undefined,$event)"><i class="icon-doc-new"></i><span>{{'ADD_NEW_SCHEDULE_TASK' | translate}}</span></a>
+
+                <!--<div class="pull-right">
+			        <label class="control-label-sch head-item-sch">{{'Group By'|translate}}</label>
+			        <span class="head-item-sch">{{'EMPLOYEE_STRING'|translate}}</span>
+			        <cms-switch-button model="groupByField" class="head-item-sch"></cms-switch-button>
+			        <span class="head-item-sch">{{'Schedule Type'|translate}}</span>
+		        </div>-->
+		    </h3>
+            <h3 ng-if="formshow === 2" class="modal-title">{{'SCHEDULE_SETTING'|translate}}</h3>
+	    </div>
+        <div ng-show="formshow === 1">
+            <div  class="modal-body form_schedules scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+		        <div class="body_content">
+                 <ul>
+                     <li ng-repeat="schedule in vm.DataScheduleTask" ng-click="Changeform(schedule, $event)">
+                         <div class="infoS">
+                             <div title="{{schedule.TaskName}}" >{{schedule.TaskName}}</div>
+                             <div>
+                                 <span ng-if="schedule.paramEndDate !== ''">
+                                     {{schedule.StartDate | date: 'MM/dd/yyyy'}}-{{schedule.EndDate | date: ' MM/dd/yyyy'}}
+                                 </span>
+                                 <span ng-if="schedule.paramEndDate === ''">
+                                     {{schedule.StartDate | date: 'MM/dd/yyyy '}}-{{' '}}{{ 'No end Date' | translate}}
+                                 </span>
+                                 <span ng-if="ScheduleType !== 3">
+                                     {{' (' + schedule.paramStartTime + '-' + schedule.paramEndTime + ')'}}
+                                 </span>
+                             </div>
+                         </div>
+
+                         <!-- Start ver 1 -->
+                         <!--<div class="pull-right controlS">
+                             <div ng-if="showIcon" ng-click="deleteSchedule(schedule)"><i title="{{'BTN_DELETE' | translate}}" class="icon-trash"></i></div>
+                             <div ng-if="showIcon" ng-click="Changeform(schedule)"><i title="{{'BTN_EDIT' | translate}}"  class="icon-pencil"></i></div>
+                             <div ng-click="showIcon = !showIcon"><i title="{{'BTN_OPEN' | translate}}"  class="{{showIcon ? 'icon-right-open-2' : 'icon-dot-verticle'}}"></i></div>
+                         </div>-->
+                         <!-- End ver 1 -->
+                         <!-- Start ver 2 -->
+                         <div class="pull-right controlS">
+                             <div ng-click="deleteSchedule(schedule, $event)"><i title="{{'BTN_DELETE' | translate}}" class="icon-trash"></i></div>
+                         </div>
+                         <!-- End ver 2 -->
+                         <div class="iconS">
+                             <div><i class="icon-site-2"></i><span>{{schedule.CountDvrs}}</span></div>
+                             <div><i class="icon-store-3"></i><span>{{schedule.CountSites}}</span></div>
+                             
+                             <!--<div class="pull-right controlS">
+                                 <div id="field-settings-{{$index}}" data-toggle="dropdown" class="icon-dot-verticle dropdown-toggle"></div>
+								 <ul class="dropdown-menu" >
+								    <li   ng-click="deleteSchedule(schedule)" >
+								        <i title="{{'BTN_DELETE' | translate}}" class=" icon-trash"></i>
+								    </li>
+								    <li  ng-click="Changeform(schedule)" >
+								        <i title="{{'BTN_EDIT' | translate}}"  class="icon-pencil"></i>
+								    </li>  
+								</ul>
+                             </div>-->
+                         </div>
+                         
+                     </li>
+                 </ul>
+             </div>
+            </div>
+        </div>
+        <div ng-show="formshow === 2" >
+            <div class="modal-body form_new_schedule">
+                <div class="new_content">
+                    <div class="left_new_info">
+                        <div class="filter">
+                            <div><input type="text" id="NameSchedule" ng-model="NameSchedule" placeholder="{{'SESSIONNAME' | translate}}" maxlength="100" /></div>
+                            <div class="date-control" ng-if="ScheduleType !== 3">
+                                <!--<div class="date-group pull-left"><input type="text" placeholder="00:00" /><span class="input-group-btn btn btn-xs"><i class="icon-clock-3"></i></span></div>-->
+                                <div class="date-group pull-left">
+						            <div class="input-group">
+							            <input type="text" class="form-control cms-form-control" value="{{STime.mytime|date:'HH:mm'}}" readonly>
+							            <span class="input-group-addon" cms-popover templatelink="'Widgets/Templates/timepicker.html'" pop-data="STime" trigger="click">
+								            <i class="glyphicon glyphicon-time"></i>
+							            </span>
+						            </div>
+					            </div>
+                                <label class="textControl">{{'TO_STRING' | translate}}</label>
+                                <!--<div class="date-group pull-right"><input type="text" placeholder="23:59" /><span class="input-group-btn btn btn-xs"><i class="icon-clock-3"></i></span></div>-->
+                                <div class="date-group pull-right">
+						            <div class="input-group">
+							            <input type="text" class="form-control cms-form-control" value="{{ETime.mytime|date:'HH:mm'}}" readonly>
+							            <span class="input-group-addon" cms-popover templatelink="'Widgets/Templates/timepicker.html'" pop-data="ETime" trigger="click">
+								            <i class="glyphicon glyphicon-time"></i>
+							            </span>
+						            </div>
+					            </div>
+                            </div>
+                            
+                            <div class="activetime-dropdown-button btn-group" style="padding-left: 10px;" outside-click="clickOutside($event ,'.activetime-dropdown-button')">
+                                <input id="selectDate" ng-if="rbTypeActiveTime == 'fromto'" value="Active time: {{ dateFrom | date: 'MM/dd/yyyy '}} - {{ dateTo | date: ' MM/dd/yyyy'}}" type="text" />
+                                <input id="Text1" ng-if="rbTypeActiveTime == 'noenddate'" value="Active time: {{ dateStart | date: 'MM/dd/yyyy'}}" type="text" />
+                                <a id="btn-popMenuConvSites" class="btn btn-xs dropdown-toggle btn-site" pop-menu><i class="icon-down-open-2"></i></a>
+                                <ul class="dropdown-menu pull-left col-md-12">
+                                    <li>
+                                        <div class="content-dropdown">
+                                           <input type="radio" ng-model="rbTypeActiveTime" value="fromto"/>
+                                            <div class="dateFrom form-group">
+			                                    <div class="input-group" options="{{optionsDate}}" cmsdatetimepicker ng-model="dateFrom">
+				                                    <input type="text" name="DateFrom" class="form-control input-sm" readonly />
+				                                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+			                                    </div>
+		                                    </div>
+                                            <label>{{'TO_STRING' | translate}}</label>
+                                            <div class="dateTo form-group">
+			                                    <div class="input-group" options="{{optionsDate}}" cmsdatetimepicker ng-model="dateTo">
+				                                    <input type="text" name="DateFrom" class="form-control input-sm" readonly />
+				                                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+			                                    </div>
+		                                    </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content-dropdown">
+                                           <input type="radio" ng-model="rbTypeActiveTime" value="noenddate" />
+                                            <div class="dateFrom form-group">
+			                                    <div class="input-group" options="{{optionsDate}}" cmsdatetimepicker ng-model="dateStart">
+				                                    <input type="text" name="DateFrom" class="form-control input-sm" readonly />
+				                                    <span class="input-group-addon"><i class="icon-calendar"></i></span>
+			                                    </div>
+		                                    </div>
+                                            <label>{{'TO_STRING' | translate}}</label>
+                                            <div class="dateTo form-group start-date">
+			                                    <label>{{'NO_END_DATE' | translate}}</label>
+		                                    </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                         
+                        </div>
+                        <div class="channels_header">
+                            <div ng-click="vm.CheckAllChannels()"><i class="icon-ok-2"></i><span>{{'CHECK_ALL' | translate}}</span></div>
+                            <div ng-click="vm.UnCheckAllChannels()"><i class="icon-cancel-2"></i><span>{{'UNCHECK_ALL' | translate}}</span></div>
+                        </div>
+                        <div class="channels scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+                            
+                            <ul>
+                                <li ng-repeat="channel in listChannels" ng-click="vm.ChoiceChannel(channel.ChannelNo, !channel.Active)">
+                                    <i class="icon-videocam-2"></i><span>{{'CHANNEL_STRING' | translate}} {{ channel.ChannelNo + 1}}</span>
+                                    <i ng-class="channel.Active == true ? 'icon-ok-2' : ''" ></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right_new_tree">
+						<div class="filter-group">
+							<div class="input-group">
+								<input type="text" ng-model="vm.querySiteSchedule" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+                                <i class="filter-icon icon-search-3" ></i>
+							</div>
+						</div>
+                        <div class="col-md-12">
+								<div class="panel">
+									<div class="scroll-body" slimscroll="{height: '340px'}">
+										<div class="tree-site-addmin">
+                                            <tree-component class="cms-tree" ng-if="vm.isShowTreeOnSchedule === true" model="vm.treeSiteFilterOnSchedule" filter-text="vm.querySiteSchedule" def-col="vm.treeDefSchedule" options="vm.treeOptionsSchedule"></tree-component>
+										</div>
+									</div>
+								</div>
+							</div>
+                    </div>
+                </div>
+                <div class="md-footer">
+		            <button class="btn btn-primary ng-binding pull-right" ng-click="saveSchedule()">{{'BTN_OK' | translate}}</button>
+                    <button class="btn btn-default ng-binding pull-right" ng-click="cancelSchedule()">{{'BTN_CANCEL' | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+	
+</form>

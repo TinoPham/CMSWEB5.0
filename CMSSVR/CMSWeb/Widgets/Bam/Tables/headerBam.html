@@ -1,0 +1,73 @@
+<div class="header_main" ng-controller="headerBamCtrl as vm">
+    <div class="header_icon">
+		<i ng-class="selectedMenu.Classstyle"></i>
+    </div>
+    <div class="header_info">
+		<ul ng-show="stateCurrent === stateList.WEEKATAGLANCE">
+			<!--<li><i class="icon-location">Location:&nbsp; </i><span>{{NameLocation}}</span></li>
+			<li><i class="icon-region">Region:&nbsp;</i><span></span></li>-->
+            <li><i class="icon-week">{{'WEEK' | translate}}:&nbsp;</i><span>{{GWeek + 1}}</span></li>
+        </ul>
+		<ul ng-show="stateCurrent === stateList.BAM_DASHBOARD">
+            <li><i class="icon-week">{{'WEEK' | translate}}:&nbsp;</i><span>{{GWeek + 1}}</span></li>
+        </ul>
+		<ul ng-show="stateCurrent === stateList.SALEREPORTS">
+            <!--<li><i class="icon-location">Location:&nbsp; </i> <span>{{NameLocation}}</span></li>
+            <li><i class="icon-region">Region:&nbsp;</i><span></span></li>-->
+            <li><i class="icon-week">{{'WEEK' | translate}}:&nbsp;</i><span>{{GWeek + 1}}</span></li>
+        </ul>
+		<ul class="distribution_link" ng-show="stateCurrent === stateList.DISTRIBUTION">
+			<!--<li><i class="icon-link-2"></i><span ng-click="ChangeView(vm.subViews[1])">Heat map</span></li>
+			<li><i class="icon-link-2"></i><span ng-click="ChangeView(vm.subViews[2])">Directions</span></li>
+			<li><i class="icon-link-2"></i><span ng-click="ChangeView(vm.subViews[0])">Distribution</span></li>-->
+        </ul>
+    </div>
+    <div class="header_butons">
+        <div class="wrap-flex">
+			<div class="btn-list">
+				<span class="btn btn-default btn-sm">
+					<i class="icon-print"></i>
+					<span>Print </span>
+				</span>
+				<span class="dropdown" dropdown>
+					<span ng-if="checkShowExportButton()" class="btn btn-default btn-xs dropdown-toggle" dropdown-toggle>
+						<i class="icon-download-3"></i>
+						<!--<span>{{'EXPORT_STRING'| translate}}</span>-->
+						<!--<span class="icon-down-dir"></span>-->
+					</span>
+					<ul class="dropdown-menu">
+						<li><span class="btn pull-left" ng-click="ExportTo(ExportFormat.CSV)">{{'EXPORT_TO_CSV' | translate}}</span></li>
+						<li><span class="btn pull-left" ng-click="ExportTo(ExportFormat.Excel)">{{'EXPORT_TO_EXCEL' | translate}}</span></li>
+						<li><span class="btn pull-left" ng-click="ExportTo(ExportFormat.PDF)">{{'EXPORT_TO_PDF' | translate}}</span></li>
+					</ul>
+					<!-- <div>
+                        <input type="checkbox" class="ios-switch ios-switch-info ios-switch-sm" checked />
+                    </div> -->
+				</span>
+				<span ng-show="isShowNormalize" class="btn btn-default btn-sm" ng-click="OpenNormalize()">
+					<i class="icon-normallize"></i>
+					<span>Normalize</span>
+				</span>
+			</div>
+            <div class="switch-ios-button">                
+                <label>
+                    <input type="checkbox" class="ios-switch blue tinyswitch" ng-model="$root.BamHeader.TableChecked" />
+                    <div>
+                        <div></div>
+                    </div>
+                     <span>{{'Tables' | translate}}</span>
+                </label>
+
+                <label>
+                    <input type="checkbox" class="ios-switch blue tinyswitch" ng-model="$root.BamHeader.ChartChecked" />
+                    <div>
+                        <div></div>
+                    </div>
+                     <span>{{'Charts' | translate}}</span>
+                </label>
+
+            </div>   
+        </div>
+    </div>
+ 
+</div>

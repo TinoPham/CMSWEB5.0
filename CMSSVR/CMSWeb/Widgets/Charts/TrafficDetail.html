@@ -1,0 +1,35 @@
+﻿<div class="traffic-detail custom_slider">
+	<div class="modal-header">
+		<span class="close" ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{ headerString | translate }}</h3>
+	</div>
+	<div class="modal-body">
+		<carousel interval="Interval">
+			<slide ng-repeat="channel in modalData.channels">
+				<div class="carousel-caption"><span class="counter">{{$index+1}}/{{modalData.channels.length}}</span><span><b>{{channel.Name}}</b></span></div>
+				<div class="images_box" style="width:100%;max-height:500px;text-align:center;vertical-align:middle;">
+					<img class="site-slider-image img-thumbnail" ng-src="{{ getImages(channel) }}" style="width:100%;" />
+				</div>
+				<figcaption></figcaption>
+			</slide>
+		</carousel>
+		<table class="cms-table blue">
+			<thead>
+				<tr>
+					<th>{{'TRAFFIC_TIME'|translate}}</th>
+					<th>{{'TRAFFIC_IN'|translate}}</th>
+					<th>{{'TRAFFIC_OUT'|translate}}</th>
+					<th>{{'TRAFFIC_FORECAST'|translate}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{modalData.time}}</td>
+					<td>{{modalData.countInValue}}</td>
+					<td>{{modalData.countOutValue}}</td>
+					<td>{{modalData.forcastValue}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,249 @@
+﻿@import url('../app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('../app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * CMS: Grids (customize ng-grid)
+ * -----------
+ */
+
+.ngGrid {
+	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.14);
+	overflow: hidden;
+	color: @darkblue-2;
+
+	.ngTopPanel {
+		background-color: #F9F9F9 !important;
+
+		.ngHeaderContainer {
+			.ngHeaderScroller{
+				margin-left: 1px;
+			}
+
+			.ngHeaderCell {
+				.ngHeaderText {
+					font-size: 12px;
+					color: rgba(0, 0, 0, 0.7);
+						padding: 8px 5px;
+
+					.ngSelectionHeader {
+						position: relative;
+						top: -7px;
+						left: -4px;
+					}
+					}
+
+					.checkbox {
+					margin-top: 5px;
+					margin-left: 10px;
+					margin-right: -10px;
+
+					input[type=checkbox] {
+						width: 21px;
+						height: 21px;
+						margin-top: 1px;
+							z-index: 1;
+						}
+
+						label {
+							font-weight: bold;
+						font-size: 12px;
+						color: rgba(0, 0, 0, 0.7);
+					}
+						}
+
+				.ngHeaderSortColumn{
+					position: relative;
+					}
+				}
+			}
+		}
+
+		.ngViewport {
+		width: auto !important;
+		overflow-y: auto;
+		min-height: 200px;
+		overflow-x: hidden;
+
+		.ngRow {
+			.ngCell {
+					font-size: 12px;
+
+					.ngCellText{
+					padding: 10px 5px;
+				}
+
+				.item-info {
+					.item-info-variant();
+						
+					.i-image {
+						float: left;
+						margin-top: -8px;
+
+						img {
+							.image-circle(35px, 35px);
+						}
+					}
+						}
+					}
+
+			.i-expired {
+				height: 100%;
+				background-color: rgba(255,224,224,.8);
+
+				.i-date {
+					color: #f11b1b;
+				}
+			}
+
+			&.selected {
+				background: @hover-bg-color !important;
+
+				.i-expired {
+					background-color: @hover-bg-color !important;
+				}
+			}
+
+			&.even {
+				background-color: #f9f9f9;
+			}
+		}
+	}
+	/*Customize Grid - Listview mode, start*/
+	&.listview {
+		.ngTopPanel {
+			visibility: hidden;
+			height: 0 !important;
+		}
+
+		.ngRow {
+			.ngCell {
+				.item-info {
+					padding-left: 5px;
+
+					.i-name{ font-weight: bold; }
+
+					.i-image {
+						margin-top: 0;
+						margin-right: 10px;
+
+						img {
+							.image-circle(50px, 50px);
+			}
+					}
+
+					.checkbox{ margin-top: 5px; }
+
+					.i-color{
+						margin-left: 0;
+						margin-right: 10px;
+			}
+		}
+	}
+	}
+	}
+	/*Customize scroll width grid*/
+	@media screen and (max-width: 768px) {
+		.ngViewport {
+			overflow-x: auto !important;
+		}
+	}
+	/*Customize scroll height grid*/
+	@media screen and (max-height: 768px) {
+		height: 600px;
+
+		/*.gridStyle {
+			height: 550px;
+
+			/*&.user-admin-list {
+				.ngViewport {
+					height: 550px !important;
+				}
+			}
+		}*/
+	}
+
+	@media screen and (min-height: 769px) and (max-height: 864px) {
+		height: 580px;
+
+		/*.gridStyle {
+			height: 580px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 580px !important;
+				}
+			}
+		}*/
+	}
+
+	@media screen and (min-height: 865px) and (max-height: 900px) {
+		height: 650px;
+
+		/*.gridStyle {
+			height: 650px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 650px !important;
+				}
+			}
+		}*/
+	}
+
+	@media screen and (min-height: 901px) and (max-height: 950px) {
+		height: 680px;
+
+		/*.gridStyle {
+			height: 680px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 680px !important;
+				}
+			}
+		}*/
+	}
+
+	@media screen and (min-height: 951px) and (max-height: 1000px) {
+		height: 800px;
+
+		/*.gridStyle {
+			height: 730px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 730px !important;
+				}
+			}
+		}*/
+	}
+
+	@media screen and (min-height: 1001px) and (max-height: 1200px) {
+		height: 930px;
+
+		/*.gridStyle {
+			height: 780px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 780px !important;
+				}
+			}
+		}*/
+	}
+
+	@media screen and (min-height: 1201px) {
+		height: 970px;
+
+		/*.gridStyle {
+			height: 970px;
+
+			&.user-admin-list {
+				.ngViewport {
+					height: 970px !important;
+				}
+			}
+		}*/
+	}
+}

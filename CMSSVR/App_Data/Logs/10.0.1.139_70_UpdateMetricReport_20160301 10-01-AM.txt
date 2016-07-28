@@ -1,0 +1,1 @@
+{"ReportId":1,"Metrics":[{"MetricId":1,"Name":"Opportunities(traffic)","ResourceKey":"METRIC_OPPORTUNITIES","Order":0,"Active":true},{"MetricId":6,"Name":"Average transaction value","ResourceKey":"METRIC_ATV","Order":0,"Active":true},{"MetricId":7,"Name":"Dollar per opportunity","ResourceKey":"METRIC_DPO","Order":0,"Active":true}]}

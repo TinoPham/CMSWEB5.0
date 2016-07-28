@@ -1,0 +1,116 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using CMSWebApi.ServiceInterfaces;
+using CMSWebApi.DataModels;
+using System.Globalization;
+using PACDMModel.Model;
+using System.IO;
+using CMSWebApi.APIFilters;
+
+namespace CMSWebApi.BusinessServices.Incident
+{
+	public class IncidentBusinessService : BusinessBase<IIncidentService>
+	{
+		private const string INCIDENT_REGIST_SUCCESS = "INCIDENT_REGIST_SUCCESS";
+		private const string INCIDENT_REGIST_FAIL = "INCIDENT_REGIST_FAIL";
+
+		public CaseTypeModel[] GetCaseType()
+		{
+			CaseTypeModel[] models = (from item in DataService.SelectCaseType()
+									  select new CaseTypeModel
+									  {
+										  CaseTypeID = item.CaseTypeID,
+										  CaseTypeName = item.CaseTypeName}).ToArray();
+			return models;			
+		}
+
+		public IncidentManagementModel GetIncidentManagent(int caseType)
+		{
+			
+			IncidentMandatoryModel[] mandatory = GetMandatoryField(caseType);
+			IncidentModel[] field = GetFieldSelection(caseType);
+			IncidentManagementModel model = new IncidentManagementModel();
+			model.FieldSelection = field;
+			model.MandatoryFields = mandatory;
+			return model;
+		}
+
+		private IncidentMandatoryModel[] GetMandatoryField(int caseType)
+		{
+			tCMSWeb_CM_IncidentField[] icidentField = DataService.SelectIncidentField(caseType).ToArray();
+			tCMSWeb_CM_FieldsGUI[] fieldParent = DataService.SelectFieldGUIParent().ToArray();
+
+			IncidentMandatoryModel[] models = (from item in fieldParent
+											   join incident in icidentField on item.FieldsGUIID equals incident.FieldsGUIID
+											   select new IncidentMandatoryModel
+									  {
+										  FieldsGUIID = item.FieldsGUIID,
+										  FieldsGUIName = item.FieldsGUIName,
+										  ParentFieldID = item.ParentFieldID,
+										  isFixed= item.isFixed,
+										  MandatoryField= item.MandatoryField,
+										  ObjectTypeID=item.ObjectTypeID,
+										  OrderField= item.OrderField,
+										  Status= incident.Status,
+										  ItemChilds = (from child in DataService.SelectFieldGUIChild(item.FieldsGUIID).ToArray()
+														join field in icidentField on child.FieldsGUIID equals field.FieldsGUIID
+														select new IncidentModel
+														{
+															FieldsGUIID = child.FieldsGUIID,
+															FieldsGUIName = child.FieldsGUIName,
+															ParentFieldID = child.ParentFieldID,
+															isFixed = child.isFixed,
+															MandatoryField = child.MandatoryField,
+															ObjectTypeID = child.ObjectTypeID,
+															OrderField = child.OrderField,
+															Status = field.Status
+														}).ToArray()
+									  }).ToArray();
+			return models;
+		}
+
+		private IncidentModel[] GetFieldSelection(int caseType)
+		{
+			tCMSWeb_CM_IncidentField[] icidentField = DataService.SelectIncidentField(caseType).ToArray();
+			tCMSWeb_CM_FieldsGUI[] fields = DataService.SelectFieldsGUI().ToArray();
+
+			IncidentModel[] models = (from item in fields
+												join incident in icidentField on item.FieldsGUIID equals incident.FieldsGUIID
+												select new IncidentMandatoryModel
+									   {
+										   FieldsGUIID = item.FieldsGUIID,
+										   FieldsGUIName = item.FieldsGUIName,
+										   ParentFieldID = item.ParentFieldID,
+										   isFixed = item.isFixed,
+										   MandatoryField = item.MandatoryField,
+										   ObjectTypeID = item.ObjectTypeID,
+										   OrderField = item.OrderField,
+										   Status = incident.Status
+									   }).ToArray();
+
+			return models;
+		}
+
+		public TransactionalInformation UpdateIncidentField(IncidentFieldModel[] models)
+		{
+			TransactionalInformation trans = new TransactionalInformation();
+			trans.ReturnStatus = true;
+			foreach (IncidentFieldModel item in models)
+			{
+				tCMSWeb_CM_IncidentField tField = DataService.SelectIncidentField(item.FieldsGUIID, item.CaseTypeID).FirstOrDefault();
+				tField.Status = item.Status;
+				if (DataService.UpdateIncidentField(tField) == null)
+				{
+					trans.ReturnStatus = false;
+					trans.ReturnMessage.Add(INCIDENT_REGIST_FAIL);
+					return trans;
+				}
+			}
+
+			return trans;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Conversion Comparision"},
+{"NameField":"footer", "ValueField":"Prepared under contract for the exclusive use of i3 International. Reproduction of this report is prohibited."},
+{"NameField":"header_Traffic", "ValueField":"Traffic"},
+{"NameField":"header_Trans", "ValueField":"Trans"},
+{"NameField":"header_Conv", "ValueField":"Conv%"},
+{"NameField":"header_Region", "ValueField":"Region/Store"},
+{"NameField":"header_Total", "ValueField":"Total"},
+{"NameField":"header_CompanyTotal", "ValueField":"Company Total:"},
+{"NameField":"header_ThisYearMTD", "ValueField":"This Year MTD"},
+{"NameField":"header_LastYearMTD", "ValueField":"Last Year MTD"},
+{"NameField":"header_ThisYearYTD", "ValueField":"This Year YTD"},
+{"NameField":"header_LastYearYTD", "ValueField":"Last Year YTD"},
+{"NameField":"header_MTDDiff", "ValueField":"MTD%"},
+{"NameField":"header_YTDDiff", "ValueField":"YTD%"},
+{"NameField":"rpt_NODATA", "ValueField":"Data is not available"}
+]

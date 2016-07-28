@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1086459-C1A1-49E4-8F38-371FB49FC5E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMSWebApi.BusinessServices</RootNamespace>
+    <AssemblyName>CMSWebApi.BusinessServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.3.1, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LinqKit.1.1.3.1\lib\net45\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AccountsBusinessRules.cs" />
+    <Compile Include="Account\AccountsBusinessService.cs" />
+    <Compile Include="Bam\BamHeaderBusinessService.cs" />
+    <Compile Include="Bam\MetricService.cs" />
+    <Compile Include="Caches\Caches.cs" />
+    <Compile Include="CommonPOS\POSCommonBusinessService.cs" />
+    <Compile Include="Distribution\DistributionBusiness.cs" />
+    <Compile Include="DVRBusiness\DVRBusinessService.cs" />
+    <Compile Include="Emailsetting\EmailsettingBusinessService.cs" />
+    <Compile Include="ExportReports\ExportBusiness.cs" />
+    <Compile Include="InternalBusinessService\AlertFixConfig.cs" />
+    <Compile Include="InternalBusinessService\POSBusinessService.cs" />
+    <Compile Include="InternalBusinessService\POSListBusinessService.cs" />
+    <Compile Include="InternalBusinessService\DVRAlertFormat.cs" />
+    <Compile Include="Rebar\AdhocService.cs" />
+    <Compile Include="Rebar\CannedBusinessSevice.cs" />
+    <Compile Include="Rebar\QSearchBusinessSevice.cs" />
+    <Compile Include="License\LicenseBusinessService.cs" />
+    <Compile Include="Rebar\RebarService.cs" />
+    <Compile Include="ReportService\ByHourReportService.cs" />
+    <Compile Include="ReportService\ConversionComparision.cs" />
+    <Compile Include="ReportService\ConversionScenario.cs" />
+    <Compile Include="ReportService\DailyReportService.cs" />
+    <Compile Include="ReportService\HourReportService.cs" />
+    <Compile Include="ReportService\KeyPerformanceIndicators.cs" />
+    <Compile Include="ReportService\MetricByHour.cs" />
+    <Compile Include="ReportService\OpportunityReport.cs" />
+    <Compile Include="ReportService\PerformanceComparisonByPeriod.cs" />
+    <Compile Include="ReportService\QueryReportService.cs" />
+    <Compile Include="ReportService\ReportBamService.cs" />
+    <Compile Include="ReportService\ReportBase.cs" />
+    <Compile Include="ReportService\ReportFactory.cs" />
+    <Compile Include="ReportService\TrafficInsights.cs" />
+    <Compile Include="ReportService\YearToDateConv.cs" />
+    <Compile Include="SaleReports\SaleReportsBusiness.cs" />
+    <Compile Include="FilesManager\FilesManager.cs" />
+    <Compile Include="FilesManager\IFilesManager.cs" />
+    <Compile Include="Map\MapsBusiness.cs" />
+    <Compile Include="ReportBusiness\Alert\AlertBusiness.cs" />
+    <Compile Include="BusinessBase.cs" />
+    <Compile Include="Common\CommonBusinessService.cs" />
+    <Compile Include="Company\CompanyBusinessService.cs" />
+    <Compile Include="Company\CompanyBusinessRules.cs" />
+    <Compile Include="Dashboard\DashboardBusinessService.cs" />
+    <Compile Include="GoalType\GoalTypeBusinessRules.cs" />
+    <Compile Include="Incident\IncidentBusinessService.cs" />
+    <Compile Include="JobTitle\JobTitleBusinessRules.cs" />
+    <Compile Include="MetricSite\MetricSiteBusinessRules.cs" />
+    <Compile Include="Notes\NoteBusinessService.cs" />
+    <Compile Include="ReportBusiness\Interfaces\IAlertBusiness.cs" />
+    <Compile Include="ReportBusiness\Interfaces\IIOPCBusinessService.cs" />
+    <Compile Include="ReportBusiness\IOPC\IOPCBusinessService.cs" />
+    <Compile Include="ReportBusiness\Interfaces\IPOSBusinessService.cs" />
+    <Compile Include="ReportBusiness\POS\POSBusinessService.cs" />
+    <Compile Include="Recipient\RecipientBusinessRules.cs" />
+    <Compile Include="Recipient\RecipientBusinessService.cs" />
+    <Compile Include="Calendar\CalendarBusinessService.cs" />
+    <Compile Include="FiscalYear\FiscalYearBusinessService.cs" />
+    <Compile Include="GoalType\GoalTypeBusinessService.cs" />
+    <Compile Include="JobTitle\JobTitleBusinessService.cs" />
+    <Compile Include="MetricSite\MetricSiteBusinessService.cs" />
+    <Compile Include="ReportBusiness\ReportBusinessService.cs" />
+    <Compile Include="ReportBusiness\ReportExtensions.cs" />
+    <Compile Include="RouteData.cs" />
+    <Compile Include="SiteAlerts\SiteAlertsBusiness.cs" />
+    <Compile Include="Sites\SitesBusinessRules.cs" />
+    <Compile Include="Sites\SitesBusinessService.cs" />
+    <Compile Include="SynUser\SynUserBusinessRules.cs" />
+    <Compile Include="SynUser\SynUserBusinessService.cs" />
+    <Compile Include="Todo\TodoBusinessService.cs" />
+    <Compile Include="UserGroups\UserGroupBusinessRules.cs" />
+    <Compile Include="UserGroups\UserGroupBusinessService.cs" />
+    <Compile Include="Users\UsersBusinessService.cs" />
+    <Compile Include="Users\UsersBussinessRules.cs" />
+    <Compile Include="ValidationRules.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AppSettings\AppSettings.csproj">
+      <Project>{1ad73a91-65c4-4512-8605-dea960d7d7ff}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Commons\Commons.csproj">
+      <Project>{4158702b-07dc-4b34-9cad-586ea4406b2f}</Project>
+      <Name>Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cryptography\Cryptography.csproj">
+      <Project>{5a78f393-c5a1-490d-abb7-91af2722f9e9}</Project>
+      <Name>Cryptography</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\Extensions.csproj">
+      <Project>{d237564a-b94c-4e32-9bb2-86b9209448d8}</Project>
+      <Name>Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LicenseInfo\LicenseInfo.csproj">
+      <Project>{88c1a5b7-46df-4910-8a99-0d37eb913e38}</Project>
+      <Name>LicenseInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PACDMModel\PACDMModel.csproj">
+      <Project>{d8d5d11b-cd70-4801-a427-12bb03ada666}</Project>
+      <Name>PACDMModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SVRDatabase\LogModel\SVRDatabase.csproj">
+      <Project>{6d22e150-4f71-4281-a9df-745569d5a977}</Project>
+      <Name>SVRDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APIFilters\CMSWebApi.APIFilters.csproj">
+      <Project>{e2eb560c-38d5-4298-9501-0e44806df4f1}</Project>
+      <Name>CMSWebApi.APIFilters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cache\CMSWebApi.Cache.csproj">
+      <Project>{7353535c-f028-4a25-b562-7187857190ea}</Project>
+      <Name>CMSWebApi.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebResources\CMSWebApi.Resources.csproj">
+      <Project>{d24ffe0a-c428-4391-9b78-2a2fcb6fddfa}</Project>
+      <Name>CMSWebApi.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configurations\CMSWebApi.Configurations.csproj">
+      <Project>{66301320-34CA-4E88-9F10-F8B17FEF0BAA}</Project>
+      <Name>CMSWebApi.Configurations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataModels\CMSWebApi.DataModels.csproj">
+      <Project>{38141ba5-49f0-4d34-8351-0685dc0ff561}</Project>
+      <Name>CMSWebApi.DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataServices\CMSWebApi.DataServices.csproj">
+      <Project>{51408A9F-A4E9-4D96-9134-400579C4B269}</Project>
+      <Name>CMSWebApi.DataServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emails\CMSWebApi.Email.csproj">
+      <Project>{CE3E3E3A-F68B-43E2-81D8-68CF5DAABA7C}</Project>
+      <Name>CMSWebApi.Email</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceInterfaces\CMSWebApi.ServiceInterfaces.csproj">
+      <Project>{268877c1-eabc-45e3-848f-05ef659e2e92}</Project>
+      <Name>CMSWebApi.ServiceInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\CMSWebApi.Utils.csproj">
+      <Project>{a0cb2ec9-9357-4c0f-8759-502c14c27844}</Project>
+      <Name>CMSWebApi.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

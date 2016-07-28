@@ -1,0 +1,66 @@
+﻿<div class="bam-dashboard" ng-controller="normalizeCtrl as vm">
+	<div class="title-summary">
+		<div class="bam_report_header dashboard_header" ng-include="'widgets/bam/tables/headerBam.html'"></div>
+	</div>
+	<div class="panel bam-dashboard-body">
+		<div class="col-sm-12">
+			<div class="table-responsive table-hover bam-dashboard-summary">
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="first-col" rowspan="2">
+								<div>{{'SITE' | translate}}</div>
+							</th>
+							<th ng-repeat="hour in vm.HourDay">
+								<table>
+									<tr><th colspan="2"><div>{{formatHour(hour)}}</div></th></tr>
+									<tr>
+										<th>
+											<span class="">
+												<i class="icon-normallize"></i>
+											</span>
+										</th>
+										<th>
+											<span class="">
+												<i class="icon-normallize"></i>
+											</span>
+										</th>
+									</tr>
+								</table>
+
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-if="!vm.ModelTableNormalize || vm.ModelTableNormalize.length === 0" class="no-row-data">
+							<th colspan="25">  {{'MANY_STORE_MSG' | translate}}</th>
+						</tr>
+						<tr ng-if="vm.ModelTableNormalize && vm.ModelTableNormalize.length > 0" ng-repeat="data in vm.ModelTableNormalize">
+							<th ng-show="data.Type === 1">{{'POS_DATA' | translate}}</th>
+							<th ng-show="data.Type === 2">{{'DOOR_TRAFFIC' | translate}}</th>
+
+							<td ng-repeat="hour in vm.HourDay">
+
+								<div ng-if="!data.NormalizeTime || data.NormalizeTime.length === 0">N/A</div>
+								<div ng-repeat="colData in  data.NormalizeTime" ng-if="colData.Hour ===  hour" class="switch-ios-button">
+									<label ng-click="saveReportNormalize(colData, data.Date, data.Type)">
+										<span>{{colData.TotalNormalize}}</span>
+										<input type="checkbox" class="ios-switch blue tinyswitch" ng-model="colData.flag" />
+										<div>
+											<div></div>
+										</div>
+										<span>{{colData.TotalActualize}}</span>
+									</label>
+
+								</div>
+
+
+
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

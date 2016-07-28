@@ -1,0 +1,169 @@
+﻿<div class="panel" ng-class="{'panel-full-box' : vm.empboxProperty.Max === true}">
+
+    <div class="panel-header" ng-show="vm.view.employeeTrans === false">
+        <div class="panel-header rebar-panel-header">
+             <h2>
+		        {{'EMP_EXCEP_RAT' | translate}}
+	        </h2>
+             <div class="additional-btn"  >                   
+                    <a  ng-click="vm.refreshEmployerTran()" tooltip="Refresh" tooltip-placement="left" class="ng-scope">
+                        <i class="icon-ccw-1"></i>
+                    </a>
+                    <a  ng-click="vm.empboxProperty.Max = !vm.empboxProperty.Max; vm.empboxProperty.Collapse = false;" tooltip="{{(vm.empboxProperty.Max ? 'RESTORE' : 'MAXIMIZE')|translate}}" tooltip-placement="left">
+                        <i ng-class="{'icon-resize-full-1': !vm.empboxProperty.Max, 'icon-resize-small-1': vm.empboxProperty.Max}" class="icon-resize-full-1"></i>
+                    </a>
+                    <a ng-show="!vm.empboxProperty.Max" ng-click="vm.empboxProperty.Collapse = !vm.empboxProperty.Collapse" class="collapse-btn" tooltip="{{(vm.empboxProperty.Collapse ? 'EXPAND' : 'COLLAPSE')|translate }}" tooltip-placement="left"><i class="icon-down-open-2"></i></a>                
+                    <span ng-show="vm.empboxProperty.Max" class="ng-hide">&nbsp;&nbsp;</span>
+                </div>
+        </div>
+    </div>
+    <!-- END :: Panel header -->
+
+
+    <div class="panel-body" ng-show="vm.view.employeeTrans === false">
+        <div class="drivethrough-reports-chart box-header">
+            <div class="tree-site-content">
+                <div class="btn-group drivethrough-dropdown-button" style="margin-top:0px !important;padding-left: 10px; z-index: 0;" outside-click="clickOutside($event ,'.drivethrough-dropdown-button')">
+                    <a id="btn-popMenuConvSites" class="btn btn-xs dropdown-toggle btn-site" pop-menu>{{'SELECT_REGION_STRING'|translate}} <span class="badge">{{vm.selectedSites.length}}</span><i class="icon-down-open-2"></i></a>
+                    <ul class="dropdown-menu pull-left filter-dlg">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel">
+                                        <div class="panel-header chart-pop-header" style="height: 32px;">
+                                            <div class="">
+                                                <div class="input-group">
+                                                    <input type="text" ng-model="vm.querySite" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="scroll-body" slimscroll="{height: '300px'}">
+                                            <div class="tree-site-addmin">
+                                                <tree-component class="cms-tree" ng-if="vm.rebarTree" model="vm.rebarTree" filter-text="vm.querySite" def-col="vm.treeDef" options="vm.treeOptions"></tree-component>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="btn-group">
+                                                <span id="closeConvSites" class="btn btn-default btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>         
+                <!-- <div style="float: right; cursor: pointer;" ng-click="vm.showChartPanel = !vm.showChartPanel"><div><i class="icon-down-open-big"></i></div></div> -->
+            </div>  
+        </div>      
+        <div  ng-show="vm.empboxProperty.Collapse === false">
+
+            <div class="col-md-8">
+                <div id="rebar-employer-tran"></div>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+
+                    <li class="list-group-item i-checks" style="height: 55px;padding-top: 18px; cursor: pointer;" ng-repeat="ite in vm.EmployerTran.Data" ng-click="vm.filterEmployeeList(ite)">
+                        <i class=" icon-user-1"></i>
+                        <span style="padding-left: 10px;">{{'Emp '| translate}} {{ite.Name ? ite.Name : 'NoName'}} ({{ite.SiteName}}) : {{ite.TotalException}}</span>
+                    </li>
+                        
+                    <li class="list-group-item" ng-if="vm.EmployerTran.TotalPages > 0">
+                        <nav style="text-align: center;">
+                            <ul class="pagination" style="margin: 0;">
+                                <li ng-click="vm.prevPage()" ng-disabled="vm.currPage < 2">
+                                    <a aria-label="Previous">
+                                        <span aria-hidden="true">
+                                            <i class=" icon-left-open"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li ng-click="vm.prevPage(1)"><a>1</a></li>
+                                <li><a class="input-page"><input type="text" maxlength ="10" ng-keypress="PreventLetter($event,inputRex)" ng-paste ="PreventPaste($event,pasteRegx)" class="form-control" ng-model="vm.currPage" style="max-width: 50px;" ></a></li>
+                                <li ng-click="vm.gotoPage()"><a>{{'GO' | translate}}</a></li>
+                                <li ng-click="vm.nextPage(vm.EmployerTran.TotalPages)"><a>{{vm.EmployerTran.TotalPages ? vm.EmployerTran.TotalPages : 0}}</a></li>
+                                <li ng-click="vm.nextPage()" ng-disabled="vm.currPage >= vm.EmployerTran.TotalPages">
+                                    <a aria-label="Next">
+                                        <span aria-hidden="true">
+                                            <i class=" icon-right-open"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </li>
+
+                </ul>
+            </div>
+        </div>      
+    </div>     
+    
+    
+    <div  ng-if="vm.view.employeeTrans" ng-show="vm.empboxProperty.Collapse === false" 
+    class="panel rebar-transact-viewer" ng-include="'widgets/rebar/rebar-transact-viewer.html'" 
+     ng-controller="rebarTransactViewerCtrl as rvm" ng-init="initCtrl(vm.paramShowTran, vm.closeEmployerTranView, vm.definefield, optionsShow)"></div>
+
+   <!-- <div ng-show="vm.view.employeeTrans === true && vm.empboxProperty.Collapse === false">
+        <div class="drivethrough-reports-chart box-header">            
+            <div style="line-height: 35px;">
+
+                <span class="btn-back " ng-click="vm.closeEmployerTranView()" style="cursor: pointer;"> <i class=" icon-left-open-big"></i> {{'Back to chart' | translate}}</span>
+                
+                 <span class="btn-pagination" style="float: right">
+                        <nav style="text-align: center;">
+                            <ul class="pagination" style="margin: 0;">
+                                <li ng-click="vm.prevPageEmploy()" ng-disabled="vm.currPageEmploy < 2">
+                                    <a aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li ng-click="vm.prevPageEmploy(1)"><a>1</a></li>
+                                <li><a class="input-page"><input type="number" class="form-control" ng-model="vm.currPageEmploy" style="max-width: 50px;"></a></li>
+                                <li ng-click="vm.gotoPageEmploy()"><a>{{'Go' | translate}}</a></li>
+                                <li ng-click="vm.nextPageEmploy(vm.EmployeeTransacs.TotalPages)"><a>{{vm.EmployeeTransacs.TotalPages ? vm.EmployeeTransacs.TotalPages : 0}}</a></li>
+                                <li ng-click="vm.nextPageEmploy()" ng-disabled="vm.currPageEmploy >= vm.EmployeeTransacs.TotalPages">
+                                    <a aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+            </span>
+            </div>
+           
+        </div>
+        <div class="panel-body have-table">
+            <div class="table-responsive table-hover bam-dashboard-summary">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="first-col"><div>{{'Transaction No.' | translate}}</div></th>
+                            <th>{{'Time' | translate}}</th>
+                            <th>{{'Payment' | translate}}<span class="pull-right" ng-click="vm.showFilterPayment()" ng-style="{'cursor': 'pointer' ,'color': vm.FilterPayment.length > 0 ? '#F3D710' : '#FFF' }"><i class="icon-filter"></i></span></th>
+                            <th>{{'Total Sales' | translate}}</th>
+                            <th>{{'Types' | translate}}<span class="pull-right" title="{{'Clear filter' | translate}}" ng-click="vm.clearFilterTypes()" ng-show="vm.FilterTypes.length === 1" ng-style="{'cursor': 'pointer' ,'color': vm.FilterTypes.length === 1 ? '#F3D710' : '#FFF' }"><i class="icon-filter"></i></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-if="!vm.EmployeeTransacs || vm.EmployeeTransacs.Data.length === 0" class="no-row-data">
+                            <th colspan="6">{{'NO_DATA_STRING' | translate}}</th>
+                        </tr>  
+                        <tr ng-if="vm.EmployeeTransacs && vm.EmployeeTransacs.Data.length > 0" ng-repeat="sum in vm.EmployeeTransacs.Data">
+                            <th scope="row"  class="start-col-row"><span ng-click="showTransacDetail(sum)"  ng-style="{'padding-left': sum.Notes.length > 0 ? '18px': '0px'}">#{{sum.TranNo}}</span>
+                                <span style="float: right;" ng-click="vm.editTranFlag(sum)"><i style="width: 30px;" ng-class="{'icon-flag-null': sum.ExceptionTypes.length > 0}"></i><span class="rebar-icon-flag-null">{{sum.ExceptionTypes.length}}</span></span>
+                                <span style="float: right;" ng-click="vm.editTranFlag(sum)"><i style="width: 30px;" ng-class="{' icon-chain': sum.ExceptionTypes.length > 0}"></i><span class="rebar-icon-weight-null">{{vm.sumWeight(sum.ExceptionTypes)}}</span></span>
+                                <span style="float: right;" title="{{sum.Notes[0].Note}}"><i style="width: 30px;" ng-class="{'icon-doc-text': sum.Notes.length > 0}"></i></span>
+                            </th>
+                            <td>{{ sum.DateTran | date:'MMM dd, yyyy HH:mm'}}</td>        
+                            <td><span ng-repeat="p in sum.Payments" ng-style="{'cursor': vm.FilterPayment.length === 0 ? 'pointer': 'default', 'font-weight': vm.FilterPayment.length === 0 ? 'normal': 'bold' }" ng-click="vm.selectOneFilter(p)" ng-init="pIndex = $index">{{p.Name}}<span ng-if="(sum.Payments.length > pIndex + 1) && sum.Payments.length > 1">,</span></span> </td>
+                            <td>{{ sum.Total}}</td>
+                            <td><span ng-repeat="e in sum.ExceptionTypes" ng-style="{'cursor': vm.FilterTypes.length !== 1 ? 'pointer': 'default', 'font-weight': vm.FilterTypes.length !== 1 ? 'normal': 'bold' }" ng-click="vm.selectExceptionFilter(e)" ng-init="eIndex = $index">{{e.Name}}<span ng-if="(sum.ExceptionTypes.length > eIndex  + 1) && sum.ExceptionTypes.length > 1">,</span></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>-->
+</div>   

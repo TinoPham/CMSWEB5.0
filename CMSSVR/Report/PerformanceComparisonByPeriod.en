@@ -1,0 +1,74 @@
+﻿[
+	{
+		"NameField": "rpt_Title",
+		"ValueField": "Cross Metrics Comparison by Period"
+	},
+	{
+		"NameField": "rpt_SubTitle",
+		"ValueField": "for Stores by Store"
+	},
+	{
+		"NameField": "footer",
+		"ValueField": "Prepared under contract for the exclusive use of i3 International. Reproduction of this report is prohibited."
+	},
+	{
+		"NameField": "rpt_Average",
+		"ValueField": "Average"
+	},
+	{
+		"NameField": "rpt_Geography",
+		"ValueField": "Geography"
+	},
+	{
+		"NameField": "rpt_Traffic",
+		"ValueField": "Traffic"
+	},
+	{
+		"NameField": "rpt_Current",
+		"ValueField": "Current"
+	},
+	{
+		"NameField": "rpt_Cmpr",
+		"ValueField": "Cmpr"
+	},
+	{
+		"NameField": "rpt_Chg",
+		"ValueField": "%Chg"
+	},
+	{
+		"NameField": "rpt_Conv",
+		"ValueField": "Conv%"
+	},
+	{
+		"NameField": "rpt_Transactions",
+		"ValueField": "Transactions"
+	},
+	{
+		"NameField": "rpt_Sales",
+		"ValueField": "Sales"
+	},
+	{
+		"NameField": "rpt_AvgTransValue",
+		"ValueField": "Avg. Trans Value"
+	},
+	{
+		"NameField": "rpt_Total",
+		"ValueField": "Total"
+	},
+	{
+		"NameField": "rpt_Aggregated",
+		"ValueField": "Aggregated"
+	},
+	{
+		"NameField": "rpt_Period",
+		"ValueField": "Report Period:"
+	},
+	{
+		"NameField": "rpt_ComparePeriod",
+		"ValueField": "Compare Period:"
+	},
+	{
+		"NameField":"rpt_NODATA", 
+		"ValueField":"Data is not available"
+	}
+]

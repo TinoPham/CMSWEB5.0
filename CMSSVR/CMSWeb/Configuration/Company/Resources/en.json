@@ -1,0 +1,10 @@
+﻿{
+"COMPANY_NAME":"Company Name"
+, "COMPANY_LOGO":"Company Logo"
+, "COMPANY_IMPORT":"Import Logo"
+, "COMPANY_NUMBER_RECORDING":"Number of Recording Days"
+
+, "COMPANY_NAME_REQUIRED":"Company name cannot be empty."
+, "COMPANY_NUMBER_LESS":"Maximum number of Recording Days is 365."
+, "COMPANY_NAME_NUMBER_RECORDING":"Number of Recording Days cannot be empty."
+}

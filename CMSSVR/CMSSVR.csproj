@@ -1,0 +1,2188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B2BC7AE-C29C-492D-A405-98E2C9BBC18F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMSSVR</RootNamespace>
+    <AssemblyName>CMSSVR</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Crystal.Reports.13.0.15.1840\lib\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.1\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Converters">
+      <HintPath>ChartExports\Bin\FusionCharts.SharpVectors.Converters.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Core">
+      <HintPath>ChartExports\Bin\FusionCharts.SharpVectors.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Css">
+      <HintPath>ChartExports\Bin\FusionCharts.SharpVectors.Css.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Dom">
+      <HintPath>ChartExports\Bin\FusionCharts.SharpVectors.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Model">
+      <HintPath>ChartExports\Bin\FusionCharts.SharpVectors.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Rendering.Gdi">
+      <HintPath>ChartExports\Bin\FusionCharts.SharpVectors.Rendering.Gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Rendering.Wpf">
+      <HintPath>ChartExports\Bin\FusionCharts.SharpVectors.Rendering.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="FusionCharts.SharpVectors.Runtime">
+      <HintPath>ChartExports\Bin\FusionCharts.SharpVectors.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices.Auth, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Core.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Edm.6.15.0\lib\portable-net45+win+wpa81\Microsoft.OData.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Spatial, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\Microsoft.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Optimization">
+      <HintPath>..\packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8854.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8854.1\lib\net40\System.Data.SqlServerCe.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.5.2.3\lib\net45\System.Web.Http.Tracing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.OData, Version=5.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.OData.5.9.0\lib\net45\System.Web.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20505.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20505.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="Unity.WebApi, Version=5.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.WebAPI.5.2.3\lib\net45\Unity.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Web.Optimization">
+      <HintPath>..\packages\Web.Optimization.0.0.8\lib\net40\Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20505.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20505.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppStart\JsAndCssBundlingAppStart.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Report\ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <None Include="bundleconfig.json" />
+    <None Include="ChartExports\FCExporter.aspx.cs">
+      <DependentUpon>FCExporter.aspx</DependentUpon>
+    </None>
+    <Compile Include="Controllers\Api\Converter\ConvertConfigController.cs" />
+    <Compile Include="Controllers\Api\Converter\ConverterController.cs" />
+    <Compile Include="Extension\HttpRequestMessageExtention.cs" />
+    <Compile Include="Filters\DVRTokenFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HttpUtils.cs" />
+    <Compile Include="Filters\CmsApiHandledExceptionFilter.cs" />
+    <Compile Include="Infrastructure\CmsConfigHelpers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\HMACSHA256.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\KDVRToken.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Api\Configuration\DBConfigModel.cs" />
+    <Compile Include="Models\Api\Configuration\LiteDVRAddressbook.cs" />
+    <Compile Include="Models\Api\Configuration\PagedFilter.cs" />
+    <Compile Include="Models\Api\Configuration\svrConfigmodels.cs" />
+    <Compile Include="Models\Api\Configuration\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Api\Configuration\Account\AccountController.min.js">
+      <DependentUpon>AccountController.js</DependentUpon>
+    </Content>
+    <Content Include="Api\Configuration\Account\Login.html" />
+    <Content Include="Api\Configuration\Account\Register.html" />
+    <Content Include="Api\Configuration\ConfigModule.min.js">
+      <DependentUpon>ConfigModule.js</DependentUpon>
+    </Content>
+    <Content Include="Api\Configuration\DBConfig\DBConfig.html" />
+    <Content Include="Api\Configuration\DBConfig\DBController.min.js">
+      <DependentUpon>DBController.js</DependentUpon>
+    </Content>
+    <Content Include="Api\Configuration\DVRInfo\DVRInfoController.min.js">
+      <DependentUpon>DVRInfoController.js</DependentUpon>
+    </Content>
+    <Content Include="Api\Configuration\DVRInfo\DVRsInfo.html" />
+    <Content Include="Api\Configuration\Logs\LogsController.min.js">
+      <DependentUpon>LogsController.js</DependentUpon>
+    </Content>
+    <Content Include="Api\Configuration\ServiceConfig\ServiceConfigController.min.js">
+      <DependentUpon>ServiceConfigController.js</DependentUpon>
+    </Content>
+    <Content Include="Api\Configuration\Services\ApiService.min.js">
+      <DependentUpon>ApiService.js</DependentUpon>
+    </Content>
+    <Content Include="Api\Home.html" />
+    <Content Include="Api\Index.html" />
+    <Content Include="Api\index.js" />
+    <Content Include="Api\Configuration\Logs\Logs.html" />
+    <Content Include="Api\Configuration\ServiceConfig\ServiceConfig.html" />
+    <Content Include="Api\index.min.js">
+      <DependentUpon>index.js</DependentUpon>
+    </Content>
+    <Content Include="Api\Shared\confirm.html" />
+    <Content Include="Api\Shared\error.html" />
+    <Content Include="Api\Shared\Header.html" />
+    <Content Include="Api\Shared\LeftMenu.html" />
+    <Content Include="Api\Shared\message.html" />
+    <Content Include="Api\Shared\ng_grid\CellDateTime.html" />
+    <Content Include="Api\Shared\ng_grid\CellTextTemplate.html" />
+    <Content Include="Api\Shared\ng_grid\footerTemplate.html" />
+    <Content Include="Api\Shared\ng_grid\headerRowTemplate.html" />
+    <Content Include="Api\Shared\ng_grid\HeaderTemplate.html" />
+    <Content Include="Api\Shared\ng_grid\HeaderTemplateDelete.html" />
+    <Content Include="Api\Shared\ng_grid\rowTemplate.html" />
+    <Content Include="Api\Shared\notify.html" />
+    <Content Include="Api\Shared\UserInfo.html" />
+    <Content Include="Api\Shared\wait.html" />
+    <Content Include="App_Data\AlertConfigs.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\DVRMsgConfig.xml" />
+    <Content Include="App_Data\SVRConfigs.sdf" />
+    <Content Include="App_Data\Users\img_user_blank.png" />
+    <Content Include="ChartExports\Bin\FusionCharts.SharpVectors.Converters.dll" />
+    <Content Include="ChartExports\Bin\FusionCharts.SharpVectors.Core.dll" />
+    <Content Include="ChartExports\Bin\FusionCharts.SharpVectors.Css.dll" />
+    <Content Include="ChartExports\Bin\FusionCharts.SharpVectors.Dom.dll" />
+    <Content Include="ChartExports\Bin\FusionCharts.SharpVectors.Model.dll" />
+    <Content Include="ChartExports\Bin\FusionCharts.SharpVectors.Rendering.Gdi.dll" />
+    <Content Include="ChartExports\Bin\FusionCharts.SharpVectors.Rendering.Wpf.dll" />
+    <Content Include="ChartExports\Bin\FusionCharts.SharpVectors.Runtime.dll" />
+    <Content Include="ChartExports\Bin\System.Web.Optimization.dll" />
+    <Content Include="ChartExports\Bin\System.Web.Optimization.xml" />
+    <None Include="ChartExports\FCExporter.aspx" />
+    <Content Include="App_Data\CMSWeb.Routes\Dashboard.cfg" />
+    <Content Include="CMSWeb\Auth\login.html" />
+    <Content Include="CMSWeb\Auth\login.js" />
+    <Content Include="CMSWeb\Auth\lostpassword.html" />
+    <Content Include="CMSWeb\Auth\lostpassword.js" />
+    <Content Include="CMSWeb\BAM\bam.html" />
+    <Content Include="CMSWeb\BAM\bam.js" />
+    <Content Include="CMSWeb\BAM\ByHour\ByHour.html" />
+    <Content Include="CMSWeb\BAM\ByHour\ByHour.js" />
+    <Content Include="CMSWeb\BAM\conversioncomparision\conversioncomparision.html" />
+    <Content Include="CMSWeb\BAM\conversioncomparision\conversioncomparision.js" />
+    <Content Include="CMSWeb\BAM\customreport\customreport.html" />
+    <Content Include="CMSWeb\BAM\customreport\customreport.js" />
+    <Content Include="CMSWeb\BAM\Dashboard\Dashboard.html" />
+    <Content Include="CMSWeb\BAM\Dashboard\Dashboard.js" />
+    <Content Include="CMSWeb\BAM\distribution\distribution.html" />
+    <Content Include="CMSWeb\BAM\distribution\distribution.js" />
+    <Content Include="CMSWeb\BAM\distribution\queue_define.html" />
+    <Content Include="CMSWeb\BAM\distribution\queue_define.js" />
+    <Content Include="CMSWeb\BAM\drivethrough\drivethrough.html" />
+    <Content Include="CMSWeb\BAM\drivethrough\drivethrough.js" />
+    <Content Include="CMSWeb\BAM\General\general.html" />
+    <Content Include="CMSWeb\BAM\General\general.js" />
+    <Content Include="CMSWeb\BAM\heatmap\heatmap.html" />
+    <Content Include="CMSWeb\BAM\heatmap\heatmap.js" />
+    <Content Include="CMSWeb\BAM\keyperformanceindic\keyperformanceindic.html" />
+    <Content Include="CMSWeb\BAM\keyperformanceindic\keyperformanceindic.js" />
+    <Content Include="CMSWeb\BAM\metric\metric.html" />
+    <Content Include="CMSWeb\BAM\metric\metric.js" />
+    <Content Include="CMSWeb\BAM\Normalize\Normalize.html" />
+    <Content Include="CMSWeb\BAM\Normalize\Normalize.js" />
+    <Content Include="CMSWeb\BAM\Sales\sales.html" />
+    <Content Include="CMSWeb\BAM\Sales\sales.js" />
+    <Content Include="CMSWeb\BAM\totalsales\totalsales.html" />
+    <Content Include="CMSWeb\BAM\totalsales\totalsales.js" />
+    <Content Include="CMSWeb\BAM\trafficinsights\trafficinsights.html" />
+    <Content Include="CMSWeb\BAM\trafficinsights\trafficinsights.js" />
+    <Content Include="CMSWeb\BAM\weekataglance\weekataglance.html" />
+    <Content Include="CMSWeb\BAM\weekataglance\weekataglance.js" />
+    <Content Include="CMSWeb\BAM\ytdconv\ytdconv.html" />
+    <Content Include="CMSWeb\BAM\ytdconv\ytdconv.js" />
+    <Content Include="CMSWeb\cms.js" />
+    <Content Include="CMSWeb\Configuration\Account\account.html" />
+    <Content Include="CMSWeb\Configuration\Account\account.js" />
+    <Content Include="CMSWeb\Configuration\Account\accountDetails.html" />
+    <Content Include="CMSWeb\Configuration\Account\accountDetails.js" />
+    <Content Include="CMSWeb\Configuration\Calendar\calendar.html" />
+    <Content Include="CMSWeb\Configuration\Calendar\calendar.js" />
+    <Content Include="CMSWeb\Configuration\Calendar\edit.html" />
+    <Content Include="CMSWeb\Configuration\Calendar\edit.js" />
+    <Content Include="CMSWeb\Configuration\Company\company.html" />
+    <Content Include="CMSWeb\Configuration\Company\company.js" />
+    <Content Include="CMSWeb\Configuration\configuration.html" />
+    <Content Include="CMSWeb\Configuration\configuration.js" />
+    <Content Include="CMSWeb\Configuration\FiscalYear\edit.html" />
+    <Content Include="CMSWeb\Configuration\FiscalYear\edit.js" />
+    <Content Include="CMSWeb\Configuration\FiscalYear\fiscalyear.html" />
+    <Content Include="CMSWeb\Configuration\FiscalYear\fiscalyear.js" />
+    <Content Include="CMSWeb\Configuration\General\general.html" />
+    <Content Include="CMSWeb\Configuration\General\general.js" />
+    <Content Include="CMSWeb\Configuration\GoalType\delete.html" />
+    <Content Include="CMSWeb\Configuration\GoalType\delete.js" />
+    <Content Include="CMSWeb\Configuration\GoalType\edit.html" />
+    <Content Include="CMSWeb\Configuration\GoalType\edit.js" />
+    <Content Include="CMSWeb\Configuration\GoalType\goaltype.html" />
+    <Content Include="CMSWeb\Configuration\GoalType\goaltype.js" />
+    <Content Include="CMSWeb\Configuration\Incident\incident.html" />
+    <Content Include="CMSWeb\Configuration\Incident\incident.js" />
+    <Content Include="CMSWeb\Configuration\JobTitle\delete.html" />
+    <Content Include="CMSWeb\Configuration\JobTitle\delete.js" />
+    <Content Include="CMSWeb\Configuration\JobTitle\edit.html" />
+    <Content Include="CMSWeb\Configuration\JobTitle\edit.js" />
+    <Content Include="CMSWeb\Configuration\JobTitle\jobtitle.html" />
+    <Content Include="CMSWeb\Configuration\JobTitle\jobtitle.js" />
+    <Content Include="CMSWeb\Configuration\LDAP\edit.html" />
+    <Content Include="CMSWeb\Configuration\LDAP\edit.js" />
+    <Content Include="CMSWeb\Configuration\LDAP\ldapsetting.html" />
+    <Content Include="CMSWeb\Configuration\LDAP\ldapsetting.js" />
+    <Content Include="CMSWeb\Configuration\Recipient\delete.html" />
+    <Content Include="CMSWeb\Configuration\Recipient\delete.js" />
+    <Content Include="CMSWeb\Configuration\Recipient\edit.html" />
+    <Content Include="CMSWeb\Configuration\Recipient\edit.js" />
+    <Content Include="CMSWeb\Configuration\Recipient\recipient.html" />
+    <Content Include="CMSWeb\Configuration\Recipient\recipient.js" />
+    <Content Include="CMSWeb\Configuration\SiteMetric\delete.html" />
+    <Content Include="CMSWeb\Configuration\SiteMetric\delete.js" />
+    <Content Include="CMSWeb\Configuration\SiteMetric\edit.html" />
+    <Content Include="CMSWeb\Configuration\SiteMetric\edit.js" />
+    <Content Include="CMSWeb\Configuration\SiteMetric\sitemetric.html" />
+    <Content Include="CMSWeb\Configuration\SiteMetric\sitemetric.js" />
+    <Content Include="CMSWeb\Configuration\Sites\add_site.html" />
+    <Content Include="CMSWeb\Configuration\Sites\add_site.js" />
+    <Content Include="CMSWeb\Configuration\Sites\delete.html" />
+    <Content Include="CMSWeb\Configuration\Sites\delete.js" />
+    <Content Include="CMSWeb\Configuration\Sites\edit.html" />
+    <Content Include="CMSWeb\Configuration\Sites\edit.js" />
+    <Content Include="CMSWeb\Configuration\Sites\edit_add_region.html" />
+    <Content Include="CMSWeb\Configuration\Sites\edit_add_region.js" />
+    <Content Include="CMSWeb\Configuration\Sites\helpers.js" />
+    <Content Include="CMSWeb\Configuration\Sites\siteadmin.html" />
+    <Content Include="CMSWeb\Configuration\Sites\siteadmin.js" />
+    <Content Include="CMSWeb\Configuration\Sites\workinghours.html" />
+    <Content Include="CMSWeb\Configuration\Sites\workinghours.js" />
+    <Content Include="CMSWeb\Configuration\UserGroups\delete.html" />
+    <Content Include="CMSWeb\Configuration\UserGroups\delete.js" />
+    <Content Include="CMSWeb\Configuration\UserGroups\edit.html" />
+    <Content Include="CMSWeb\Configuration\UserGroups\edit.js" />
+    <Content Include="CMSWeb\Configuration\UserGroups\usergroups.html" />
+    <Content Include="CMSWeb\Configuration\UserGroups\usergroups.js" />
+    <Content Include="CMSWeb\Configuration\Users\delete.html" />
+    <Content Include="CMSWeb\Configuration\Users\delete.js" />
+    <Content Include="CMSWeb\Configuration\Users\edit.html" />
+    <Content Include="CMSWeb\Configuration\Users\edit.js" />
+    <Content Include="CMSWeb\Configuration\Users\users.html" />
+    <Content Include="CMSWeb\Configuration\Users\users.js" />
+    <Content Include="CMSWeb\dashboard\dashboard.html" />
+    <Content Include="CMSWeb\dashboard\dashboard.js" />
+    <Content Include="CMSWeb\incident\addnewincident\addnewincident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\addnewincident.js" />
+    <Content Include="CMSWeb\incident\addnewincident\form-accident-injury-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-alarm-condition-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-burglary-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-business-interruption-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-customer-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-customer-service-incident-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-dishonest-employee-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-employee-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-fraud-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-general-incident-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-it-security-incident-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-loss-injuy-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\form-shoplifting-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\incident-add-main-menu.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-accident-injury-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-alarm-condition-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-burglary-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-business-interruption-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-customer-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-customer-service-incident-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-dishonest-employee-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-employee-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-fraud-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-general-incident-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-it-security-incident-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-loss-injuy-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\menu\menu-shoplifting-accident.html" />
+    <Content Include="CMSWeb\incident\addnewincident\modal\link.html" />
+    <Content Include="CMSWeb\incident\addnewincident\modal\narrative.html" />
+    <Content Include="CMSWeb\incident\addnewincident\modal\note.html" />
+    <Content Include="CMSWeb\incident\addnewincident\modal\video.html" />
+    <Content Include="CMSWeb\incident\incidentreports.html" />
+    <Content Include="CMSWeb\incident\incidentreports.js" />
+    <Content Include="CMSWeb\index.html" />
+    <Content Include="CMSWeb\index.js" />
+    <Content Include="CMSWeb\Layout\Breadcrumbs.html" />
+    <Content Include="CMSWeb\Layout\Breadcrumbs.js" />
+    <Content Include="CMSWeb\Layout\changepassword.html" />
+    <Content Include="CMSWeb\Layout\changepassword.js" />
+    <Content Include="CMSWeb\Layout\Footer.html" />
+    <Content Include="CMSWeb\Layout\footer.js" />
+    <Content Include="CMSWeb\Layout\header.html" />
+    <Content Include="CMSWeb\Layout\header.js" />
+    <Content Include="CMSWeb\Layout\Home.html" />
+    <Content Include="CMSWeb\Layout\Left-bar.html" />
+    <Content Include="CMSWeb\Layout\Left-bar.js" />
+    <Content Include="CMSWeb\Layout\main.html" />
+    <Content Include="CMSWeb\Layout\main.js" />
+    <Content Include="CMSWeb\Layout\pageNotFound.html" />
+    <Content Include="CMSWeb\Layout\profile.html" />
+    <Content Include="CMSWeb\Layout\profile.js" />
+    <Content Include="CMSWeb\licenses\en.html" />
+    <Content Include="CMSWeb\licenses\fr.html" />
+    <Content Include="CMSWeb\Rebar\Adhocdetails\adhocdetails.html" />
+    <Content Include="CMSWeb\Rebar\Adhocdetails\adhocdetails.js" />
+    <Content Include="CMSWeb\Rebar\Adhocdetails\ahocreportview.html" />
+    <Content Include="CMSWeb\Rebar\Adhocdetails\ahocreportview.js" />
+    <Content Include="CMSWeb\Rebar\Adhoc\adhoc.html" />
+    <Content Include="CMSWeb\Rebar\Adhoc\adhoc.js" />
+    <Content Include="CMSWeb\Rebar\Adhoc\delete.html" />
+    <Content Include="CMSWeb\Rebar\Adhoc\delete.js" />
+    <Content Include="CMSWeb\Rebar\Adhoc\edit.html" />
+    <Content Include="CMSWeb\Rebar\Adhoc\edit.js" />
+    <Content Include="CMSWeb\Rebar\Adhoc\editfolder.html" />
+    <Content Include="CMSWeb\Rebar\Adhoc\editfolder.js" />
+    <Content Include="CMSWeb\Rebar\Adhoc\filtersetting.html" />
+    <Content Include="CMSWeb\Rebar\Adhoc\filtersetting.js" />
+    <Content Include="CMSWeb\Rebar\Adhoc\viewreport.html" />
+    <Content Include="CMSWeb\Rebar\Adhoc\viewreport.js" />
+    <Content Include="CMSWeb\Rebar\Cancels\cancels.html" />
+    <Content Include="CMSWeb\Rebar\Cancels\cancels.js" />
+    <Content Include="CMSWeb\Rebar\Dashboard\dashboard.html" />
+    <Content Include="CMSWeb\Rebar\Dashboard\dashboard.js" />
+    <Content Include="CMSWeb\Rebar\Discounts\discounts.html" />
+    <Content Include="CMSWeb\Rebar\Discounts\discounts.js" />
+    <Content Include="CMSWeb\Rebar\NoSales\nosales.html" />
+    <Content Include="CMSWeb\Rebar\NoSales\nosales.js" />
+    <Content Include="CMSWeb\Rebar\QuickSearch\quicksearch.html" />
+    <Content Include="CMSWeb\Rebar\QuickSearch\quicksearch.js" />
+    <Content Include="CMSWeb\Rebar\rebar.html" />
+    <Content Include="CMSWeb\Rebar\rebar.js" />
+    <Content Include="CMSWeb\Rebar\Refunds\refunds.html" />
+    <Content Include="CMSWeb\Rebar\Refunds\refunds.js" />
+    <Content Include="CMSWeb\Rebar\Voids\voids.html" />
+    <Content Include="CMSWeb\Rebar\Voids\voids.js" />
+    <Content Include="CMSWeb\Rebar\weekataglance\employeedata.html" />
+    <Content Include="CMSWeb\Rebar\weekataglance\employeedatatable.html" />
+    <Content Include="CMSWeb\Rebar\weekataglance\smartexception.html" />
+    <Content Include="CMSWeb\Rebar\weekataglance\weekataglance.html" />
+    <Content Include="CMSWeb\Rebar\weekataglance\weekataglance.js" />
+    <Content Include="CMSWeb\Scripts\AuthServices\InterceptorSvc.js" />
+    <Content Include="CMSWeb\Scripts\common.js" />
+    <Content Include="CMSWeb\Scripts\Core\cms.configs.js" />
+    <Content Include="CMSWeb\Scripts\Core\cms.Run.js" />
+    <Content Include="CMSWeb\Scripts\Core\Constans.Module.js" />
+    <Content Include="CMSWeb\Scripts\Core\Constans.RegExp.js" />
+    <Content Include="CMSWeb\Scripts\Core\Constans.Resource.js" />
+    <Content Include="CMSWeb\Scripts\Core\Constant.Events.js" />
+    <Content Include="CMSWeb\Scripts\Core\constant.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\AccountSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\auth.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Bam\BamHeaderReportsSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Bam\boxgadgetSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Bam\DashboardReportsSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Bam\DistributionSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Bam\SaleReportsSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Bam\usermetricSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\base.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\cmsQuery.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\account.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\calendar.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\commoninfo.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\companySvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\fiscalyearservice.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\goaltypeSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\incidentSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\jobtitleSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\ldapSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\recipientSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\siteadmin.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\sitemetricSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\user.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Configuration\usergroups.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\dashboard.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\dataServices.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Export\ExportAPIService.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\HttpService.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\license.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\mockDataService.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\note.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\POSCommon.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Rebar\adhoc.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Rebar\canned.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Rebar\qsearch.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Rebar\rebar.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\ReportService.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\SiteSvc.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Sites\maps.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Sites\recording.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\Sites\sitealert.service.js" />
+    <Content Include="CMSWeb\Scripts\DataServices\todo.service.js" />
+    <Content Include="CMSWeb\Scripts\Directives\cms-decimal.js" />
+    <Content Include="CMSWeb\Scripts\Directives\cms-interger.js" />
+    <Content Include="CMSWeb\Scripts\Directives\CmsTreeView.js" />
+    <Content Include="CMSWeb\Scripts\Directives\contextMenu.js" />
+    <Content Include="CMSWeb\Scripts\Directives\datepicker.js" />
+    <Content Include="CMSWeb\Scripts\Directives\directives.js" />
+    <Content Include="CMSWeb\Scripts\Directives\fullcalendar.js" />
+    <Content Include="CMSWeb\Scripts\Directives\grid.html" />
+    <Content Include="CMSWeb\Scripts\Directives\inRoles.js" />
+    <Content Include="CMSWeb\Scripts\Directives\metricComponent.js" />
+    <Content Include="CMSWeb\Scripts\Directives\ng-sortable.js" />
+    <Content Include="CMSWeb\Scripts\Directives\RequestVerificationToken.js" />
+    <Content Include="CMSWeb\Scripts\Directives\responsive.js" />
+    <Content Include="CMSWeb\Scripts\Directives\TemplateDirective\rb-search.html" />
+    <Content Include="CMSWeb\Scripts\Directives\TemplateDirective\switch-button.html" />
+    <Content Include="CMSWeb\Scripts\Directives\treeComponent.js" />
+    <Content Include="CMSWeb\Scripts\Directives\treeview.js" />
+    <Content Include="CMSWeb\Scripts\Directives\ui-calendar.js" />
+    <Content Include="CMSWeb\Scripts\Directives\uitree.js" />
+    <Content Include="CMSWeb\Scripts\Directives\widget.js" />
+    <Content Include="CMSWeb\Scripts\ExceptionServices\exception.services.js" />
+    <Content Include="CMSWeb\Scripts\Helpers\cms-filter.js" />
+    <Content Include="CMSWeb\Scripts\LanguageServices\language.js" />
+    <Content Include="CMSWeb\Scripts\LogServices\log.service.js" />
+    <Content Include="CMSWeb\Scripts\RouteServices\configRoutes.js" />
+    <Content Include="CMSWeb\Scripts\Services\bamhelperSvc.js" />
+    <Content Include="CMSWeb\Scripts\Services\chartSvc.js" />
+    <Content Include="CMSWeb\Scripts\Services\colorSvc.js" />
+    <Content Include="CMSWeb\Scripts\Services\dialogService.js" />
+    <Content Include="CMSWeb\Scripts\Services\exportSvc.js" />
+    <Content Include="CMSWeb\Scripts\Services\FileSaver.js" />
+    <Content Include="CMSWeb\Scripts\Services\filterSvc.js" />
+    <Content Include="CMSWeb\Scripts\Services\idletimeoutSvc.js" />
+    <Content Include="CMSWeb\Scripts\Services\jsPdf.js" />
+    <Content Include="CMSWeb\Scripts\Services\localStorage.js" />
+    <Content Include="CMSWeb\Scripts\Services\SignalSvc.js" />
+    <Content Include="CMSWeb\Scripts\Services\treeSiteSvc.js" />
+    <Content Include="CMSWeb\Sites\sites.html" />
+    <Content Include="CMSWeb\Sites\sites.js" />
+    <Content Include="CMSWeb\Styles\app.company.css" />
+    <Content Include="CMSWeb\Styles\app.company.min.css" />
+    <Content Include="CMSWeb\Styles\app.css" />
+    <Content Include="CMSWeb\Styles\app.dashboard.css" />
+    <Content Include="CMSWeb\Styles\app.dashboard.min.css" />
+    <Content Include="CMSWeb\Styles\app.distribution.css" />
+    <Content Include="CMSWeb\Styles\app.distribution.min.css" />
+    <Content Include="CMSWeb\Styles\app.goal-manage.css" />
+    <Content Include="CMSWeb\Styles\app.goal-manage.min.css" />
+    <Content Include="CMSWeb\Styles\app.job-title.css" />
+    <Content Include="CMSWeb\Styles\app.job-title.min.css" />
+    <Content Include="CMSWeb\Styles\app.login.css" />
+    <Content Include="CMSWeb\Styles\app.login.min.css" />
+    <Content Include="CMSWeb\Styles\app.master.css" />
+    <Content Include="CMSWeb\Styles\app.master.min.css" />
+    <Content Include="CMSWeb\Styles\app.min.css" />
+    <Content Include="CMSWeb\Styles\app.mixins.css" />
+    <Content Include="CMSWeb\Styles\app.mixins.min.css" />
+    <Content Include="CMSWeb\Styles\app.navbar-left.css" />
+    <Content Include="CMSWeb\Styles\app.navbar-left.min.css" />
+    <Content Include="CMSWeb\Styles\app.navbar-top.css" />
+    <Content Include="CMSWeb\Styles\app.navbar-top.min.css" />
+    <Content Include="CMSWeb\Styles\app.rebar.css" />
+    <Content Include="CMSWeb\Styles\app.rebar.min.css" />
+    <Content Include="CMSWeb\Styles\app.responsive.css" />
+    <Content Include="CMSWeb\Styles\app.responsive.min.css" />
+    <Content Include="CMSWeb\Styles\app.sale-reports.css" />
+    <Content Include="CMSWeb\Styles\app.sale-reports.min.css" />
+    <Content Include="CMSWeb\Styles\app.site-metric.css" />
+    <Content Include="CMSWeb\Styles\app.site-metric.min.css" />
+    <Content Include="CMSWeb\Styles\app.sites-config.css" />
+    <Content Include="CMSWeb\Styles\app.sites-config.min.css" />
+    <Content Include="CMSWeb\Styles\app.sites-manage.css" />
+    <Content Include="CMSWeb\Styles\app.sites-manage.min.css" />
+    <Content Include="CMSWeb\Styles\app.user-groups.css" />
+    <Content Include="CMSWeb\Styles\app.user-groups.min.css" />
+    <Content Include="CMSWeb\Styles\app.user-manages.css" />
+    <Content Include="CMSWeb\Styles\app.user-manages.min.css" />
+    <Content Include="CMSWeb\Styles\app.user-profile.css" />
+    <Content Include="CMSWeb\Styles\app.user-profile.min.css" />
+    <Content Include="CMSWeb\Styles\app.variables.css" />
+    <Content Include="CMSWeb\Styles\app.variables.min.css" />
+    <Content Include="CMSWeb\Styles\controls\all-controls.css" />
+    <Content Include="CMSWeb\Styles\controls\all-controls.min.css" />
+    <Content Include="CMSWeb\Styles\controls\buttons.css" />
+    <Content Include="CMSWeb\Styles\controls\buttons.min.css" />
+    <Content Include="CMSWeb\Styles\controls\carousel.css" />
+    <Content Include="CMSWeb\Styles\controls\carousel.min.css" />
+    <Content Include="CMSWeb\Styles\controls\charts.css" />
+    <Content Include="CMSWeb\Styles\controls\charts.min.css" />
+    <Content Include="CMSWeb\Styles\controls\checkboxes.css" />
+    <Content Include="CMSWeb\Styles\controls\checkboxes.min.css" />
+    <Content Include="CMSWeb\Styles\controls\cms-tree.css" />
+    <Content Include="CMSWeb\Styles\controls\cms-tree.min.css" />
+    <Content Include="CMSWeb\Styles\controls\forms.css" />
+    <Content Include="CMSWeb\Styles\controls\forms.min.css" />
+    <Content Include="CMSWeb\Styles\controls\function-header.css" />
+    <Content Include="CMSWeb\Styles\controls\function-header.min.css" />
+    <Content Include="CMSWeb\Styles\controls\grids.css" />
+    <Content Include="CMSWeb\Styles\controls\grids.min.css" />
+    <Content Include="CMSWeb\Styles\controls\modals.css" />
+    <Content Include="CMSWeb\Styles\controls\modals.min.css" />
+    <Content Include="CMSWeb\Styles\controls\panel-notes.css" />
+    <Content Include="CMSWeb\Styles\controls\panel-notes.min.css" />
+    <Content Include="CMSWeb\Styles\controls\panel-todo-list.css" />
+    <Content Include="CMSWeb\Styles\controls\panel-todo-list.min.css" />
+    <Content Include="CMSWeb\Styles\controls\panels.css" />
+    <Content Include="CMSWeb\Styles\controls\panels.min.css" />
+    <Content Include="CMSWeb\Styles\controls\table.css" />
+    <Content Include="CMSWeb\Styles\controls\table.min.css" />
+    <Content Include="CMSWeb\Styles\controls\tooltip.css" />
+    <Content Include="CMSWeb\Styles\controls\tooltip.min.css" />
+    <Content Include="CMSWeb\Styles\controls\widgets.css" />
+    <Content Include="CMSWeb\Styles\controls\widgets.min.css" />
+    <Content Include="CMSWeb\Styles\skins\skin_default.css" />
+    <Content Include="CMSWeb\Styles\skins\skin_default.min.css" />
+    <Content Include="CMSWeb\Widgets\about.html" />
+    <Content Include="CMSWeb\Widgets\about.js" />
+    <Content Include="CMSWeb\Widgets\AddRegion.html" />
+    <Content Include="CMSWeb\Widgets\AddSiteSimple.html" />
+    <Content Include="CMSWeb\Widgets\advertisement-retail.html" />
+    <Content Include="CMSWeb\Widgets\advertisement.html" />
+    <Content Include="CMSWeb\Widgets\advertisement.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\bamTraffic.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\bamTraffic.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\convRegion.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\convRegion.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\jquery.circle-diagram.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\saleCharts.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\saleCharts.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\saleNewCharts.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\saleNewCharts.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\waagATV.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\waagATV.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\waagConversion.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\waagConversion.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\waagConvForecast.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Charts\waagConvForecast.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Modal\manuallyupload.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Modal\manuallyupload.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Modal\metricview.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Modal\metricview.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Modal\showdetailimage.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Modal\showdetailimage.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Tables\dashboardSumaryDetail.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Tables\headerBam.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Tables\headerBam.js" />
+    <Content Include="CMSWeb\Widgets\Bam\Tables\infosBox.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Tables\weeksummary.html" />
+    <Content Include="CMSWeb\Widgets\Bam\Tables\weeksummary.js" />
+    <Content Include="CMSWeb\Widgets\BoxGadgets\BoxGadget.html" />
+    <Content Include="CMSWeb\Widgets\BoxGadgets\BoxGadget.js" />
+    <Content Include="CMSWeb\Widgets\BoxGadgets\Note.html" />
+    <Content Include="CMSWeb\Widgets\BoxGadgets\Note.js" />
+    <Content Include="CMSWeb\Widgets\BoxGadgets\Todo.html" />
+    <Content Include="CMSWeb\Widgets\BoxGadgets\Todo.js" />
+    <Content Include="CMSWeb\Widgets\BoxGadgets\Weather.html" />
+    <Content Include="CMSWeb\Widgets\BoxGadgets\Weather.js" />
+    <Content Include="CMSWeb\Widgets\chart-header.html" />
+    <Content Include="CMSWeb\Widgets\Charts\AlertCount.html" />
+    <Content Include="CMSWeb\Widgets\Charts\AlertCount.js" />
+    <Content Include="CMSWeb\Widgets\Charts\ConvBySites.html" />
+    <Content Include="CMSWeb\Widgets\Charts\ConvBySites.js" />
+    <Content Include="CMSWeb\Widgets\Charts\ConvMap.html" />
+    <Content Include="CMSWeb\Widgets\Charts\ConvMap.js" />
+    <Content Include="CMSWeb\Widgets\Charts\ConvRateSite.html" />
+    <Content Include="CMSWeb\Widgets\Charts\ConvRateSite.js" />
+    <Content Include="CMSWeb\Widgets\Charts\DVRCount.html" />
+    <Content Include="CMSWeb\Widgets\Charts\DVRCount.js" />
+    <Content Include="CMSWeb\Widgets\Charts\DVRMostAlert.html" />
+    <Content Include="CMSWeb\Widgets\Charts\DVRMostAlert.js" />
+    <Content Include="CMSWeb\Widgets\Charts\TrafficDetail.html" />
+    <Content Include="CMSWeb\Widgets\Charts\TrafficDetail.js" />
+    <Content Include="CMSWeb\Widgets\Charts\TrafficStatistic.html" />
+    <Content Include="CMSWeb\Widgets\Charts\TrafficStatistic.js" />
+    <Content Include="CMSWeb\Widgets\CmsTreeView.html" />
+    <Content Include="CMSWeb\Widgets\cmsTreeViewNode.html" />
+    <Content Include="CMSWeb\Widgets\ConfirmDialog.html" />
+    <Content Include="CMSWeb\Widgets\ConfirmDialog\ConfirmDialog.html" />
+    <Content Include="CMSWeb\Widgets\ConfirmDialog\ConfirmDialog.js" />
+    <Content Include="CMSWeb\Widgets\Dashboard\addDashboard.html" />
+    <Content Include="CMSWeb\Widgets\Dashboard\addDashboard.js" />
+    <Content Include="CMSWeb\Widgets\Dashboard\dashboard-column.html" />
+    <Content Include="CMSWeb\Widgets\Dashboard\dashboard-row.html" />
+    <Content Include="CMSWeb\Widgets\Dashboard\dashboard.html" />
+    <Content Include="CMSWeb\Widgets\Dashboard\selectWidget.html" />
+    <Content Include="CMSWeb\Widgets\Dashboard\selectWidget.js" />
+    <Content Include="CMSWeb\Widgets\Dashboard\widget.html" />
+    <Content Include="CMSWeb\Widgets\DeleteDialog.html" />
+    <Content Include="CMSWeb\Widgets\DeleteRegion.html" />
+    <Content Include="CMSWeb\Widgets\EventActivities.html" />
+    <Content Include="CMSWeb\Widgets\EventActivities.js" />
+    <Content Include="CMSWeb\Widgets\function-header.html" />
+    <Content Include="CMSWeb\Widgets\ImagePreviewSlide.html" />
+    <Content Include="CMSWeb\Widgets\ImagePreviewSlide.js" />
+    <Content Include="CMSWeb\Widgets\imageslide.html" />
+    <Content Include="CMSWeb\Widgets\imageslide.js" />
+    <Content Include="CMSWeb\Widgets\ImageUpload.html" />
+    <Content Include="CMSWeb\Widgets\ImageUpload.js" />
+    <Content Include="CMSWeb\Widgets\nodetreeview.html" />
+    <Content Include="CMSWeb\Widgets\poi.html" />
+    <Content Include="CMSWeb\Widgets\poi.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\box.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\CannedRptViewer.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\CannedRptViewer.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\column-option.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\column-option.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\compare-transacdetail.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\compare-transacdetail.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\config-tran-flag.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\config-tran-flag.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\custom-filter.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\custom-filter.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\dynamic-filter.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\dynamic-filter.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\payment-filter.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\payment-filter.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\rebar-box-employer.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\rebar-box-employer.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\rebar-box-trantype.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\rebar-box-trantype.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\rebar-iopc-viewer.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\rebar-iopc-viewer.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\rebar-menu.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\rebar-transact-viewer.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\rebar-transact-viewer.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\select-compare.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\select-compare.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\select-tran-flag.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\select-tran-flag.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\transaction-list.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\transaction-list.js" />
+    <Content Include="CMSWeb\Widgets\Rebar\transactiondetail.html" />
+    <Content Include="CMSWeb\Widgets\Rebar\transactiondetail.js" />
+    <Content Include="CMSWeb\Widgets\siteadminnode.html" />
+    <Content Include="CMSWeb\Widgets\SiteList.html" />
+    <Content Include="CMSWeb\Widgets\SiteList.js" />
+    <Content Include="CMSWeb\Widgets\siteMacImages.html" />
+    <Content Include="CMSWeb\Widgets\siteMacImages.js" />
+    <Content Include="CMSWeb\Widgets\siteMetricNode.html" />
+    <Content Include="CMSWeb\Widgets\Sites\alerts.html" />
+    <Content Include="CMSWeb\Widgets\Sites\alerts.js" />
+    <Content Include="CMSWeb\Widgets\Sites\alertsSlider.html" />
+    <Content Include="CMSWeb\Widgets\Sites\alertsSlider.js" />
+    <Content Include="CMSWeb\Widgets\Sites\channels.html" />
+    <Content Include="CMSWeb\Widgets\Sites\channels.js" />
+    <Content Include="CMSWeb\Widgets\Sites\channelSlider.html" />
+    <Content Include="CMSWeb\Widgets\Sites\channelSlider.js" />
+    <Content Include="CMSWeb\Widgets\Sites\email.html" />
+    <Content Include="CMSWeb\Widgets\Sites\email.js" />
+    <Content Include="CMSWeb\Widgets\Sites\emailalerttype.html" />
+    <Content Include="CMSWeb\Widgets\Sites\emailalerttype.js" />
+    <Content Include="CMSWeb\Widgets\Sites\emailsetting.html" />
+    <Content Include="CMSWeb\Widgets\Sites\emailsetting.js" />
+    <Content Include="CMSWeb\Widgets\Sites\ignorealert.html" />
+    <Content Include="CMSWeb\Widgets\Sites\ignorealert.js" />
+    <Content Include="CMSWeb\Widgets\Sites\lastalertmonitor.html" />
+    <Content Include="CMSWeb\Widgets\Sites\lastalertmonitor.js" />
+    <Content Include="CMSWeb\Widgets\Sites\maintabs.html" />
+    <Content Include="CMSWeb\Widgets\Sites\maintabs.js" />
+    <Content Include="CMSWeb\Widgets\Sites\maps.html" />
+    <Content Include="CMSWeb\Widgets\Sites\maps.js" />
+    <Content Include="CMSWeb\Widgets\Sites\mapupload.html" />
+    <Content Include="CMSWeb\Widgets\Sites\mapupload.js" />
+    <Content Include="CMSWeb\Widgets\Sites\recording.html" />
+    <Content Include="CMSWeb\Widgets\Sites\recording.js" />
+    <Content Include="CMSWeb\Widgets\Sites\sensormonitor.html" />
+    <Content Include="CMSWeb\Widgets\Sites\sensormonitor.js" />
+    <Content Include="CMSWeb\Widgets\Sites\sensortooltip.html" />
+    <Content Include="CMSWeb\Widgets\Sites\sensortooltip.js" />
+    <Content Include="CMSWeb\Widgets\Sites\siteboxsummary.html" />
+    <Content Include="CMSWeb\Widgets\Sites\siteboxsummary.js" />
+    <Content Include="CMSWeb\Widgets\Sites\sitedetails.html" />
+    <Content Include="CMSWeb\Widgets\Sites\sitedetails.js" />
+    <Content Include="CMSWeb\Widgets\Sites\sitemonitor.html" />
+    <Content Include="CMSWeb\Widgets\Sites\sitemonitor.js" />
+    <Content Include="CMSWeb\Widgets\Templates\dashboard1.html" />
+    <Content Include="CMSWeb\Widgets\Templates\dashboard2.html" />
+    <Content Include="CMSWeb\Widgets\Templates\dashboard3.html" />
+    <Content Include="CMSWeb\Widgets\Templates\dashboard4.html" />
+    <Content Include="CMSWeb\Widgets\Templates\timepicker.html" />
+    <Content Include="CMSWeb\Widgets\Templates\tooltip.html" />
+    <Content Include="CMSWeb\Widgets\TreeSite.html" />
+    <Content Include="CMSWeb\Widgets\TreeSite.js" />
+    <Content Include="CMSWeb\Widgets\TreeSites\TreeNode.html" />
+    <Content Include="CMSWeb\Widgets\TreeSites\TreeSites.html" />
+    <Content Include="CMSWeb\Widgets\TreeSites\TreeSites.js" />
+    <Content Include="CMSWeb\Widgets\UserList.html" />
+    <Content Include="CMSWeb\Widgets\UserList.js" />
+    <Content Include="CMSWeb\_build\postBuild.txt" />
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\arrow_down_combobox.png" />
+    <Content Include="Content\Images\arrow_right.png" />
+    <Content Include="Content\Images\calendar.png" />
+    <Content Include="Content\Images\chart1.png" />
+    <Content Include="Content\Images\chart2.png" />
+    <Content Include="Content\Images\chart3.png" />
+    <Content Include="Content\Images\chart4.png" />
+    <Content Include="Content\Images\chart5.png" />
+    <Content Include="Content\Images\drop2.png" />
+    <Content Include="Content\Images\Flags\fr.svg" />
+    <Content Include="Content\Images\Flags\us.svg" />
+    <Content Include="Content\Images\Flags\vn.svg" />
+    <Content Include="Content\Images\heatmap.png" />
+    <Content Include="Content\Images\icon-camera.png" />
+    <Content Include="Content\Images\icon_delete.png" />
+    <Content Include="Content\Images\icon_edit.png" />
+    <Content Include="Content\Images\icon_new_region.png" />
+    <Content Include="Content\Images\icon_new_site.png" />
+    <Content Include="Content\Images\icon_search.png" />
+    <Content Include="Content\Images\icon_search_grey.png" />
+    <Content Include="Content\Images\icon_user_login.png" />
+    <Content Include="Content\Images\ic_arrow_drop_down_48px-32-2.png" />
+    <Content Include="Content\Images\ic_arrow_drop_down_48px-32.png" />
+    <Content Include="Content\Images\img_user_blank.png" />
+    <Content Include="Content\Images\logo_Company.png" />
+    <Content Include="Content\Images\menu_icon_company.png" />
+    <Content Include="Content\Images\menu_icon_general.png" />
+    <Content Include="Content\Images\menu_icon_incedent.png" />
+    <Content Include="Content\Images\menu_icon_site.png" />
+    <Content Include="Content\Images\menu_icon_user.png" />
+    <Content Include="Content\Images\navigation_arrow_down.png" />
+    <Content Include="Content\Images\sort_alphabet.png" />
+    <Content Include="Content\Images\spinner.jpg" />
+    <Content Include="Content\Images\tree_company.png" />
+    <Content Include="Content\Images\tree_node_collapse.png" />
+    <Content Include="Content\Images\tree_node_expande.png" />
+    <Content Include="Content\Images\tree_region.png" />
+    <Content Include="Content\Images\tree_sub_region.png" />
+    <Content Include="Content\Images\userimg.jpg" />
+    <Content Include="Content\Images\user_list.png" />
+    <Content Include="Content\libs\angular-autocomplete\css\angucomplete-alt.css">
+      <DependentUpon>angucomplete-alt.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-autocomplete\css\angucomplete-alt.less" />
+    <Content Include="Content\libs\angular-autocomplete\css\angucomplete-alt.min.css">
+      <DependentUpon>angucomplete-alt.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-autocomplete\js\angucomplete-alt.min.js">
+      <DependentUpon>angucomplete-alt.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-autocomplete\js\angucomplete-alt.min.js.map">
+      <DependentUpon>angucomplete-alt.js</DependentUpon>
+    </Content>
+    <Content Include="CMSWeb\Auth\Resources\en.json" />
+    <Content Include="CMSWeb\Auth\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\ByHour\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\ByHour\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\conversioncomparision\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\conversioncomparision\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\customreport\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\customreport\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\Dashboard\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\Dashboard\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\distribution\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\distribution\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\drivethrough\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\drivethrough\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\General\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\General\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\keyperformanceindic\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\keyperformanceindic\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\metric\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\metric\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\Normalize\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\Normalize\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\Sales\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\Sales\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\totalsales\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\totalsales\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\trafficinsights\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\trafficinsights\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\weekataglance\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\weekataglance\Resources\fr.json" />
+    <Content Include="CMSWeb\BAM\ytdconv\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\ytdconv\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\Account\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\Calendar\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\Calendar\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\Company\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\Company\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\FiscalYear\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\FiscalYear\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\FiscalYear\Resources\vn.json" />
+    <Content Include="CMSWeb\Configuration\General\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\General\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\GoalType\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\GoalType\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\GoalType\Resources\vn.json" />
+    <Content Include="CMSWeb\Configuration\Incident\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\Incident\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\JobTitle\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\JobTitle\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\JobTitle\Resources\vn.json" />
+    <Content Include="CMSWeb\Configuration\LDAP\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\LDAP\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\LDAP\Resources\vn.json" />
+    <Content Include="CMSWeb\Configuration\Recipient\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\Recipient\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\Recipient\Resources\vn.json" />
+    <Content Include="CMSWeb\Configuration\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\SiteMetric\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\SiteMetric\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\SiteMetric\Resources\vn.json" />
+    <Content Include="CMSWeb\Configuration\Sites\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\Sites\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\UserGroups\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\UserGroups\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\Users\Resources\en.json" />
+    <Content Include="CMSWeb\Configuration\Users\Resources\fr.json" />
+    <Content Include="CMSWeb\Configuration\Users\Resources\vn.json" />
+    <Content Include="CMSWeb\dashboard\Resources\en.json" />
+    <Content Include="CMSWeb\dashboard\Resources\fr.json" />
+    <Content Include="CMSWeb\Layout\Resources\en.json" />
+    <Content Include="CMSWeb\Layout\Resources\fr.json" />
+    <Content Include="CMSWeb\Layout\Resources\gb.json" />
+    <Content Include="CMSWeb\Layout\Resources\ge.json" />
+    <Content Include="CMSWeb\Layout\Resources\it.json" />
+    <Content Include="CMSWeb\Layout\Resources\jp.json" />
+    <Content Include="CMSWeb\Layout\Resources\sp.json" />
+    <Content Include="CMSWeb\Layout\Resources\vn.json" />
+    <Content Include="CMSWeb\Rebar\Adhoc\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\Adhoc\Resources\fr.json" />
+    <Content Include="CMSWeb\Rebar\Cancels\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\Cancels\Resources\fr.json" />
+    <Content Include="CMSWeb\Rebar\Dashboard\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\Dashboard\Resources\fr.json" />
+    <Content Include="CMSWeb\Rebar\Discounts\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\Discounts\Resources\fr.json" />
+    <Content Include="CMSWeb\Rebar\NoSales\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\NoSales\Resources\fr.json" />
+    <Content Include="CMSWeb\Rebar\QuickSearch\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\QuickSearch\Resources\fr.json" />
+    <Content Include="CMSWeb\Rebar\Refunds\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\Refunds\Resources\fr.json" />
+    <Content Include="CMSWeb\Rebar\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\Resources\fr.json" />
+    <Content Include="CMSWeb\Rebar\Voids\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\Voids\Resources\fr.json" />
+    <Content Include="CMSWeb\Rebar\weekataglance\Resources\en.json" />
+    <Content Include="CMSWeb\Rebar\weekataglance\Resources\fr.json" />
+    <Content Include="CMSWeb\Sites\Resources\en.json" />
+    <Content Include="CMSWeb\Sites\Resources\fr.json" />
+    <Content Include="CMSWeb\Styles\app.bam-manage.less" />
+    <Content Include="CMSWeb\Styles\app.company.less" />
+    <Content Include="CMSWeb\Styles\app.dashboard.less" />
+    <Content Include="CMSWeb\Styles\app.datepicker.less" />
+    <Content Include="CMSWeb\Styles\app.distribution.less" />
+    <Content Include="CMSWeb\Styles\app.drivethrough-reports.less" />
+    <Content Include="CMSWeb\Styles\app.fiscalyear.less" />
+    <Content Include="CMSWeb\Styles\app.footer.less" />
+    <Content Include="CMSWeb\Styles\app.goal-manage.less" />
+    <Content Include="CMSWeb\Styles\app.imagespath.less" />
+    <Content Include="CMSWeb\Styles\app.incident-management.less" />
+    <Content Include="CMSWeb\Styles\app.job-title.less" />
+    <Content Include="CMSWeb\Styles\app.less" />
+    <Content Include="CMSWeb\Styles\app.list-group-event.less" />
+    <Content Include="CMSWeb\Styles\app.list-group-user-permis.less" />
+    <Content Include="CMSWeb\Styles\app.list-group-users.less" />
+    <Content Include="CMSWeb\Styles\app.list-group.general.less" />
+    <Content Include="CMSWeb\Styles\app.login.less" />
+    <Content Include="CMSWeb\Styles\app.master.less" />
+    <Content Include="CMSWeb\Styles\app.mixins.less" />
+    <Content Include="CMSWeb\Styles\app.navbar-left.less" />
+    <Content Include="CMSWeb\Styles\app.navbar-top.less" />
+    <Content Include="CMSWeb\Styles\app.overlay.less" />
+    <Content Include="CMSWeb\Styles\app.popover.less" />
+    <Content Include="CMSWeb\Styles\app.rebar.less" />
+    <Content Include="CMSWeb\Styles\app.recipient-manages.less" />
+    <Content Include="CMSWeb\Styles\app.responsive.less" />
+    <Content Include="CMSWeb\Styles\app.sale-reports.less" />
+    <Content Include="CMSWeb\Styles\app.site-metric.less" />
+    <Content Include="CMSWeb\Styles\app.sitemaps.less" />
+    <Content Include="CMSWeb\Styles\app.sites-config.less" />
+    <Content Include="CMSWeb\Styles\app.sites-manage.less" />
+    <Content Include="CMSWeb\Styles\app.sites-navbar.less" />
+    <Content Include="CMSWeb\Styles\app.thumbnails.less" />
+    <Content Include="CMSWeb\Styles\app.user-groups.less" />
+    <Content Include="CMSWeb\Styles\app.user-manages.less" />
+    <Content Include="CMSWeb\Styles\app.user-profile.less" />
+    <Content Include="CMSWeb\Styles\app.users.less" />
+    <Content Include="CMSWeb\Styles\app.variables.less" />
+    <Content Include="CMSWeb\Styles\bam\summary.less" />
+    <Content Include="CMSWeb\Styles\controls\all-controls.less" />
+    <Content Include="CMSWeb\Styles\controls\button-groups.less" />
+    <Content Include="CMSWeb\Styles\controls\buttons.less" />
+    <Content Include="CMSWeb\Styles\controls\carousel.less" />
+    <Content Include="CMSWeb\Styles\controls\charts.less" />
+    <Content Include="CMSWeb\Styles\controls\checkboxes.less" />
+    <Content Include="CMSWeb\Styles\controls\cms-tree.less" />
+    <Content Include="CMSWeb\Styles\controls\dropdown.less" />
+    <Content Include="CMSWeb\Styles\controls\forms.less" />
+    <Content Include="CMSWeb\Styles\controls\function-header.less" />
+    <Content Include="CMSWeb\Styles\controls\grids.less" />
+    <Content Include="CMSWeb\Styles\controls\modals.less" />
+    <Content Include="CMSWeb\Styles\controls\navbar.less" />
+    <Content Include="CMSWeb\Styles\controls\navs.less" />
+    <Content Include="CMSWeb\Styles\controls\nomalize.less" />
+    <Content Include="CMSWeb\Styles\controls\panel-notes.less" />
+    <Content Include="CMSWeb\Styles\controls\panel-todo-list.less" />
+    <Content Include="CMSWeb\Styles\controls\panel-weather.less" />
+    <Content Include="CMSWeb\Styles\controls\panels.less" />
+    <Content Include="CMSWeb\Styles\controls\table.less" />
+    <Content Include="CMSWeb\Styles\controls\theme.less" />
+    <Content Include="CMSWeb\Styles\controls\tooltip.less" />
+    <Content Include="CMSWeb\Styles\controls\top-sumary.less" />
+    <Content Include="CMSWeb\Styles\controls\widgets.less" />
+    <Content Include="CMSWeb\Styles\sites\sensoralert.less" />
+    <Content Include="CMSWeb\Styles\sites\sensortooltip.less" />
+    <Content Include="CMSWeb\Styles\sites\summarybox.less" />
+    <Content Include="CMSWeb\Styles\skins\all-skins.less" />
+    <Content Include="CMSWeb\Styles\skins\skin_default.less" />
+    <Content Include="CMSWeb\Styles\StyleSheet1.less" />
+    <Content Include="CMSWeb\_build\build - Copy.json" />
+    <Content Include="CMSWeb\_build\build-styles.json" />
+    <Content Include="CMSWeb\_build\build.bat" />
+    <Content Include="CMSWeb\_build\build_js.json" />
+    <Content Include="CMSWeb\BAM\heatmap\Resources\en.json" />
+    <Content Include="CMSWeb\BAM\heatmap\Resources\fr.json" />
+    <Content Include="CMSWeb\incident\addnewincident\Resources\en.json" />
+    <Content Include="CMSWeb\incident\Resources\en.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular-bootstrap-checkbox\angular-bootstrap-checkbox.js" />
+    <Content Include="Content\Images\WidgetChart\input_73.jpg" />
+    <Content Include="Content\Images\WidgetChart\input_82.jpg" />
+    <Content Include="Content\libs\angular-autocomplete\js\angucomplete-alt.js" />
+    <Content Include="Content\libs\angular-bootstrap-checkbox\angular-bootstrap-checkbox.min.js" />
+    <None Include="Content\libs\angular-color-picker\css\spectrum.css" />
+    <Content Include="Content\libs\angular-color-picker\css\spectrum.min.css" />
+    <None Include="Content\libs\angular-color-picker\js\angular-spectrum-colorpicker.js" />
+    <Content Include="Content\libs\angular-color-picker\js\angular-spectrum-colorpicker.min.js" />
+    <None Include="Content\libs\angular-color-picker\js\spectrum.js" />
+    <Content Include="Content\libs\angular-color-picker\js\spectrum.min.js" />
+    <None Include="Content\libs\angular-file-upload\angular-file-upload.js" />
+    <Content Include="Content\libs\angular-datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="Content\libs\angular-datetimepicker\css\jquery.datetimepicker.css" />
+    <Content Include="Content\libs\angular-datetimepicker\js\angular-datetimepicker.js" />
+    <Content Include="Content\libs\angular-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="Content\libs\angular-datetimepicker\js\jquery.datetimepicker.js" />
+    <Content Include="Content\libs\angular-datetimepicker\js\moment.js" />
+    <Content Include="Content\libs\angular-datetimepicker\js\moment.min.js">
+      <DependentUpon>moment.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-file-upload\angular-file-upload.min.js">
+      <DependentUpon>angular-file-upload.js</DependentUpon>
+    </Content>
+    <None Include="Content\libs\angular-local-storage\angular-local-storage.js" />
+    <Content Include="Content\libs\angular-local-storage\angular-local-storage.min.js" />
+    <Content Include="Content\libs\angular-plus-overlay\ngplus-overlay.js" />
+    <Content Include="Content\libs\angular-plus-overlay\ngplus-overlay.min.js">
+      <DependentUpon>ngplus-overlay.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-reset-field\css\reset-field.css">
+      <DependentUpon>reset-field.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-reset-field\css\reset-field.min.css">
+      <DependentUpon>reset-field.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-reset-field\js\resetField.js" />
+    <Content Include="Content\libs\angular-reset-field\js\resetField.min.js">
+      <DependentUpon>resetField.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-select-serial\css\angular-select-serial.css">
+      <DependentUpon>angular-select-serial.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-select-serial\css\angular-select-serial.min.css">
+      <DependentUpon>angular-select-serial.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-select-serial\js\angular-select-serial.min.js">
+      <DependentUpon>angular-select-serial.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-select\css\angular-select.css">
+      <DependentUpon>angular-select.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-select\css\angular-select.min.css">
+      <DependentUpon>angular-select.css</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-select\js\angular-select-tpls.es5.js">
+      <DependentUpon>angular-select-tpls.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-select\js\angular-select-tpls.es5.min.js">
+      <DependentUpon>angular-select-tpls.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-select\js\angular-select-tpls.js" />
+    <Content Include="Content\libs\angular-select\js\angular-select-tpls.min.js">
+      <DependentUpon>angular-select-tpls.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-timepicker-popup\js\timepickerpop.js" />
+    <Content Include="Content\libs\angular-timepicker-popup\js\timepickerpop.min.js">
+      <DependentUpon>timepickerpop.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-translate\angular-translate-loader-partial.min.js" />
+    <Content Include="Content\libs\angular-select\css\angular-select.less" />
+    <Content Include="Content\libs\angular-reset-field\css\reset-field.less" />
+    <Content Include="Content\libs\angular-reset-field\js\resetField.min.js.map">
+      <DependentUpon>resetField.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-select-serial\js\angular-select-serial.min.js.map">
+      <DependentUpon>angular-select-serial.js</DependentUpon>
+    </Content>
+    <None Include="Content\libs\angular-translate\angular-translate-storage-cookie.js" />
+    <Content Include="Content\libs\angular-translate\angular-translate-storage-cookie.min.js" />
+    <None Include="Content\libs\angular-translate\angular-translate-storage-local.js" />
+    <Content Include="Content\libs\angular-translate\angular-translate-storage-local.min.js" />
+    <Content Include="Content\libs\angular-translate\angular-translate.min.js" />
+    <None Include="Content\libs\angular-tree\css\angular-ui-tree.css" />
+    <Content Include="Content\libs\angular-tree\css\angular-ui-tree.min.css" />
+    <None Include="Content\libs\angular-tree\js\angular-ui-tree.js" />
+    <Content Include="Content\libs\angular-tree\js\angular-ui-tree.min.js" />
+    <Content Include="Content\libs\angular-ui-sortable\js\sortable.js" />
+    <Content Include="Content\libs\angular-ui-sortable\js\sortable.min.js">
+      <DependentUpon>sortable.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-ui-sortable\js\sortable.min.js.map">
+      <DependentUpon>sortable.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-ui\angular-ui-bootstrap\ui-bootstrap-tpls-0.13.0.min.js">
+      <DependentUpon>ui-bootstrap-tpls-0.13.0.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-ui\angular-ui-bootstrap\ui-bootstrap-tpls-0.13.0.min.js.map">
+      <DependentUpon>ui-bootstrap-tpls-0.13.0.js</DependentUpon>
+    </Content>
+    <None Include="Content\libs\angular-ui\angular-ui-ng-grid\css\ng-grid.less" />
+    <None Include="Content\libs\angular-ui\angular-ui-ng-grid\js\ng-grid-flexible-height.js" />
+    <Content Include="Content\libs\angular-ui\angular-ui-bootstrap\ui-bootstrap-tpls-0.13.0.js" />
+    <Content Include="Content\libs\angular-ui\angular-ui-ng-grid\css\ng-grid.min.css">
+      <DependentUpon>ng-grid.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-ui\angular-ui-ng-grid\js\ng-grid-flexible-height.min.js">
+      <DependentUpon>ng-grid-flexible-height.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-ui\angular-ui-ng-grid\js\ng-grid-flexible-height.min.js.map">
+      <DependentUpon>ng-grid-flexible-height.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-ui\angular-ui-ng-grid\js\ng-grid.min.js">
+      <DependentUpon>ng-grid.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-ui\angular-ui-ng-grid\js\ng-grid.min.js.map">
+      <DependentUpon>ng-grid.js</DependentUpon>
+    </Content>
+    <None Include="Content\libs\angular-ui\angular-ui-router\angular-ui-router.js" />
+    <Content Include="Content\libs\angular-ui\angular-ui-ng-grid\js\ng-grid.js" />
+    <Content Include="Content\libs\angular-ui\angular-ui-router\angular-ui-router.min.js" />
+    <None Include="Content\libs\angular-ui\angular-ui-until\ui-utils.js" />
+    <Content Include="Content\libs\angular-ui\angular-ui-until\ui-utils.min.js" />
+    <None Include="Content\libs\angular-validator\js\angular-validator.js" />
+    <None Include="Content\libs\angular-file-upload\angular-file-upload.min.js.map">
+      <DependentUpon>angular-file-upload.js</DependentUpon>
+    </None>
+    <Content Include="Content\libs\angular-validator\js\angular-validator.min.js">
+      <DependentUpon>angular-validator.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\angular-validator\js\angular-validator.min.js.map">
+      <DependentUpon>angular-validator.js</DependentUpon>
+    </Content>
+    <None Include="Content\libs\angular\css\angular-csp.css" />
+    <Content Include="Content\libs\angular\css\angular-csp.min.css">
+      <DependentUpon>angular-csp.css</DependentUpon>
+    </Content>
+    <None Include="Content\libs\angular\js\angular-animate.js" />
+    <Content Include="Content\libs\angular\js\angular-animate.min.js" />
+    <None Include="Content\libs\angular\js\angular-aria.js" />
+    <Content Include="Content\libs\angular\js\angular-aria.min.js" />
+    <None Include="Content\libs\angular\js\angular-cookies.js" />
+    <Content Include="Content\libs\angular\js\angular-cookies.min.js" />
+    <None Include="Content\libs\angular\js\angular-loader.js" />
+    <Content Include="Content\libs\angular\js\angular-loader.min.js" />
+    <None Include="Content\libs\angular\js\angular-messages.js" />
+    <Content Include="Content\libs\angular\js\angular-messages.min.js" />
+    <None Include="Content\libs\angular\js\angular-mocks.js" />
+    <None Include="Content\libs\angular\js\angular-resource.js" />
+    <Content Include="Content\libs\angular\js\angular-resource.min.js" />
+    <None Include="Content\libs\angular\js\angular-route.js" />
+    <Content Include="Content\libs\angular\js\angular-route.min.js" />
+    <None Include="Content\libs\angular\js\angular-sanitize.js" />
+    <Content Include="Content\libs\angular\js\angular-sanitize.min.js" />
+    <None Include="Content\libs\angular\js\angular-scenario.js" />
+    <None Include="Content\libs\angular\js\angular-touch.js" />
+    <Content Include="Content\libs\angular\js\angular-touch.min.js" />
+    <None Include="Content\libs\angular\js\angular.js" />
+    <Content Include="Content\libs\angular\js\angular.min.js">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\animations\css\animate.css">
+      <DependentUpon>animate.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\animations\css\animate.less" />
+    <None Include="Content\libs\bootstrap-hover-dropdown\js\bootstrap-hover-dropdown.js" />
+    <Content Include="Content\libs\animations\css\animate.min.css">
+      <DependentUpon>animate.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\bootstrap-hover-dropdown\js\bootstrap-hover-dropdown.min.js" />
+    <None Include="Content\libs\bootstrap-popover\js\bootstrap-popover.js" />
+    <Content Include="Content\libs\bootstrap-popover\js\bootstrap-popover.min.js" />
+    <None Include="Content\libs\bootstrap-show-password\js\bootstrap-show-password.js" />
+    <Content Include="Content\libs\bootstrap-show-password\js\bootstrap-show-password.min.js" />
+    <None Include="Content\libs\bootstrap-tooltip\js\bootstrap-tooltip.js" />
+    <Content Include="Content\libs\bootstrap-tooltip\js\bootstrap-tooltip.min.js" />
+    <None Include="Content\libs\bootstrap-treeview\js\bootstrap-treeview.js" />
+    <Content Include="Content\libs\bootstrap-treeview\js\bootstrap-treeview.min.js" />
+    <None Include="Content\libs\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\libs\bootstrap\css\bootstrap-theme.min.css" />
+    <None Include="Content\libs\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\libs\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\libs\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\libs\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\libs\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\libs\bootstrap\js\npm.js" />
+    <Content Include="Content\libs\angular-select-serial\js\angular-select-serial.js" />
+    <Content Include="Content\libs\font\css\font-google.less" />
+    <Content Include="Content\libs\font\fonts\fontello.eot" />
+    <Content Include="Content\libs\font\fonts\fontello.ttf" />
+    <Content Include="Content\libs\font\fonts\fontello.woff" />
+    <Content Include="Content\libs\font\fonts\open-sans-v13-latin-regular.eot" />
+    <Content Include="Content\libs\font\fonts\open-sans-v13-latin-regular.ttf" />
+    <Content Include="Content\libs\font\fonts\open-sans-v13-latin-regular.woff" />
+    <Content Include="Content\libs\font\fonts\open-sans-v13-latin-regular.woff2" />
+    <Content Include="Content\libs\angular-select-serial\css\angular-select-serial.less" />
+    <None Include="Content\libs\fusioncharts\angular-fusioncharts.js" />
+    <Content Include="Content\libs\font\css\animation.css" />
+    <Content Include="Content\libs\font\css\font-google.min.css" />
+    <Content Include="Content\libs\font\css\font-optimize.css" />
+    <Content Include="Content\libs\font\css\fontello-codes.css" />
+    <Content Include="Content\libs\font\css\fontello-embedded.css" />
+    <Content Include="Content\libs\font\css\fontello-ie7-codes.css" />
+    <Content Include="Content\libs\font\css\fontello-ie7.css" />
+    <Content Include="Content\libs\font\css\fontello.css" />
+    <Content Include="Content\libs\font\fonts\fontello.svg" />
+    <Content Include="Content\libs\font\fonts\open-sans-v13-latin-regular.svg" />
+    <Content Include="Content\libs\fusioncharts\angular-fusioncharts.min.js" />
+    <Content Include="Content\libs\fusioncharts\fusioncharts.charts.js" />
+    <Content Include="Content\libs\fusioncharts\fusioncharts.gantt.js" />
+    <Content Include="Content\libs\fusioncharts\fusioncharts.js" />
+    <Content Include="Content\libs\fusioncharts\fusioncharts.maps.js" />
+    <Content Include="Content\libs\fusioncharts\fusioncharts.widgets.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.alabama.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.alaska.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.arizona.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.arkansas.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.california.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.colorado.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.connecticut.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.delaware.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.districtofcolumbia.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.florida.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.georgia.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.hawaii.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.idaho.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.illinois.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.indiana.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.iowa.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.kansas.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.kentucky.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.louisiana.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.maine.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.maryland.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.massachusetts.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.michigan.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.minnesota.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.mississippi.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.missouri.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.montana.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.nebraska.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.nevada.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.newhampshire.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.newjersey.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.newmexico.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.newyork.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.northcarolina.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.northdakota.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.ohio.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.oklahoma.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.oregon.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.pennsylvania.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.southcarolina.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.southdakota.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.tennessee.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.texas.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.usa.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.utah.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.vermont.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.virginia.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.washington.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.westvirginia.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.wisconsin.js" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.world.js" />
+    <None Include="Content\libs\fusioncharts\maps\readme.txt" />
+    <Content Include="Content\libs\fusioncharts\maps\fusioncharts.wyoming.js" />
+    <Content Include="Content\libs\fusioncharts\themes\fusioncharts.theme.carbon.js" />
+    <Content Include="Content\libs\fusioncharts\themes\fusioncharts.theme.fint.js" />
+    <Content Include="Content\libs\fusioncharts\themes\fusioncharts.theme.ocean.js" />
+    <Content Include="Content\libs\fusioncharts\themes\fusioncharts.theme.zune.js" />
+    <Content Include="Content\libs\html5\html5shiv-printshiv.min.js" />
+    <Content Include="Content\libs\html5\respond.min.js" />
+    <None Include="Content\libs\jquery-cookie\jquery.cookie.js" />
+    <Content Include="Content\libs\jquery-cookie\jquery.cookie.min.js" />
+    <None Include="Content\libs\jquery-cryptojs\aes.js" />
+    <Content Include="Content\libs\jquery-cryptojs\aes.min.js" />
+    <None Include="Content\libs\jquery-detectmobile\detect.js" />
+    <Content Include="Content\libs\jquery-detectmobile\detect.min.js">
+      <DependentUpon>detect.js</DependentUpon>
+    </Content>
+    <None Include="Content\libs\jquery-detectmobile\detect.min.js.map">
+      <DependentUpon>detect.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\jquery-linq\jquery.linq-vsdoc.js" />
+    <None Include="Content\libs\jquery-linq\jquery.linq.js" />
+    <None Include="Content\libs\jquery-linq\jquery.linq.min.js" />
+    <None Include="Content\libs\jquery-linq\linq-vsdoc.js" />
+    <None Include="Content\libs\jquery-linq\linq.js" />
+    <Content Include="Content\libs\jquery-linq\linq.min.js" />
+    <Content Include="Content\libs\jquery-numeral\js\numeral.js" />
+    <Content Include="Content\libs\jquery-scrollbar\css\scrollbar.css">
+      <DependentUpon>scrollbar.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\jquery-scrollbar\css\scrollbar.less" />
+    <Content Include="Content\libs\jquery-scrollbar\css\scrollbar.min.css">
+      <DependentUpon>scrollbar.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\jquery-scrollbar\js\jquery.scrollbar.min.js">
+      <DependentUpon>jquery.scrollbar.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\jquery-scrollbar\js\jquery.scrollbar.min.js.map">
+      <DependentUpon>jquery.scrollbar.js</DependentUpon>
+    </Content>
+    <None Include="Content\libs\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Content\libs\jquery-scrollbar\js\jquery.scrollbar.js" />
+    <Content Include="Content\libs\jquery-slimscroll\jquery.slimscroll.min.js">
+      <DependentUpon>jquery.slimscroll.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\jquery-sortable\js\Sortable.min.js">
+      <DependentUpon>Sortable.js</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\jquery-sortable\js\Sortable.js" />
+    <Content Include="Content\libs\jquery-sortable\js\Sortable.min.js.map">
+      <DependentUpon>Sortable.js</DependentUpon>
+    </Content>
+    <None Include="Content\libs\jquery-toastr\js\toastr.js" />
+    <Content Include="Content\libs\jquery-toastr\css\toastr.min.css">
+      <DependentUpon>toastr.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\jquery-toastr\js\toastr.min.js" />
+    <Content Include="Content\libs\jquery-ui\css\images\animated-overlay.gif" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\libs\jquery-ui\css\images\ui-icons_ffffff_256x240.png" />
+    <None Include="Content\libs\jquery-ui\css\jquery-ui-1.11.4.custom.css" />
+    <Content Include="Content\libs\jquery-ui\css\jquery-ui-1.11.4.custom.min.css" />
+    <Content Include="Content\libs\jquery-ui\js\jquery-ui-1.11.4.custom.min.js" />
+    <None Include="Content\libs\jquery\jquery-2.1.1-vsdoc.js" />
+    <None Include="Content\libs\jquery\jquery-2.1.1.intellisense.js" />
+    <None Include="Content\libs\jquery\jquery-2.1.1.js" />
+    <Content Include="Content\libs\jquery\jquery-2.1.1.min.js" />
+    <Content Include="Content\libs\load-awesome\css\ball-scale-multiple.css">
+      <DependentUpon>ball-scale-multiple.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\load-awesome\css\ball-scale-multiple.min.css">
+      <DependentUpon>ball-scale-multiple.less</DependentUpon>
+    </Content>
+    <Content Include="Content\libs\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Content\libs\magnific-popup\magnific-popup.css" />
+    <Content Include="Content\Metro\docs.css" />
+    <Content Include="Content\Metro\iconFont.css" />
+    <Content Include="Content\Metro\iconFont.min.css" />
+    <Content Include="Content\Metro\metro-bootstrap-responsive.css" />
+    <Content Include="Content\Metro\metro-bootstrap-responsive.min.css" />
+    <Content Include="Content\Metro\metro-bootstrap.css" />
+    <Content Include="Content\Metro\metro-bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <None Include="Content\libs\angular\js\angular-animate.min.js.map">
+      <DependentUpon>angular-animate.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular\js\angular-aria.min.js.map">
+      <DependentUpon>angular-aria.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular\js\angular-cookies.min.js.map">
+      <DependentUpon>angular-cookies.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular\js\angular-loader.min.js.map">
+      <DependentUpon>angular-loader.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular\js\angular-messages.min.js.map">
+      <DependentUpon>angular-messages.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular\js\angular-resource.min.js.map">
+      <DependentUpon>angular-resource.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular\js\angular-route.min.js.map">
+      <DependentUpon>angular-route.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular\js\angular-sanitize.min.js.map">
+      <DependentUpon>angular-sanitize.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular\js\angular-touch.min.js.map">
+      <DependentUpon>angular-touch.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular-bootstrap-checkbox\angular-bootstrap-checkbox.min.js.map">
+      <DependentUpon>angular-bootstrap-checkbox.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular-color-picker\css\spectrum.less" />
+    <None Include="Content\libs\angular-color-picker\js\angular-spectrum-colorpicker.min.js.map">
+      <DependentUpon>angular-spectrum-colorpicker.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular-color-picker\js\spectrum.min.js.map">
+      <DependentUpon>spectrum.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular-translate\angular-translate-storage-cookie.min.js.map">
+      <DependentUpon>angular-translate-storage-cookie.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular-translate\angular-translate-storage-local.min.js.map">
+      <DependentUpon>angular-translate-storage-local.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\angular-tree\js\angular-ui-tree.min.js.map">
+      <DependentUpon>angular-ui-tree.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\bootstrap-hover-dropdown\js\bootstrap-hover-dropdown.min.js.map">
+      <DependentUpon>bootstrap-hover-dropdown.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\bootstrap-popover\js\bootstrap-popover.min.js.map">
+      <DependentUpon>bootstrap-popover.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\bootstrap-show-password\js\bootstrap-show-password.min.js.map">
+      <DependentUpon>bootstrap-show-password.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\bootstrap-tooltip\js\bootstrap-tooltip.min.js.map">
+      <DependentUpon>bootstrap-tooltip.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\bootstrap-treeview\js\bootstrap-treeview.min.js.map">
+      <DependentUpon>bootstrap-treeview.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\bootstrap\css\bootstrap-theme.css.map" />
+    <None Include="Content\libs\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\libs\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\libs\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\libs\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\libs\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Content\libs\jquery-cookie\jquery.cookie.min.js.map">
+      <DependentUpon>jquery.cookie.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\jquery-cryptojs\aes.min.js.map">
+      <DependentUpon>aes.js</DependentUpon>
+    </None>
+    <None Include="Content\libs\jquery-toastr\css\toastr.less" />
+    <None Include="Content\libs\jquery-toastr\js\toastr.min.js.map">
+      <DependentUpon>toastr.js</DependentUpon>
+    </None>
+    <Content Include="Content\libs\jquery-ui\css\images\Thumbs.db" />
+    <None Include="Content\libs\jquery\jquery-2.1.1.min.map" />
+    <Content Include="Content\libs\load-awesome\css\ball-scale-multiple.less" />
+    <Content Include="Report\ByHour.en" />
+    <Content Include="Report\ByHour.fr" />
+    <Content Include="Report\daily.en" />
+    <Content Include="Report\daily.fr" />
+    <Content Include="Report\ConversionScenrio.en" />
+    <Content Include="Report\ConversionScenrio.fr" />
+    <Content Include="Report\OpportunityReport.en" />
+    <Content Include="Report\OpportunityReport.fr" />
+    <Content Include="Report\OpportunityReport.rdlc" />
+    <Content Include="Report\PerformanceComparisonByPeriod.en" />
+    <Content Include="Report\PerformanceComparisonByPeriod.fr" />
+    <Content Include="Report\PerformanceComparisonByPeriod.rdlc" />
+    <Content Include="Report\YearToDateConv.en" />
+    <Content Include="Report\YearToDateConv.fr" />
+    <Content Include="Report\YearToDateConv.rdlc" />
+    <Content Include="Report\ConversionComparision.en" />
+    <Content Include="Report\ConversionComparision.fr" />
+    <Content Include="Report\ConversionComparision.rdlc" />
+    <Content Include="Report\KeyPerformanceIndicators.en" />
+    <Content Include="Report\KeyPerformanceIndicators.fr" />
+    <Content Include="Report\KeyPerformanceIndicators.rdlc" />
+    <Content Include="Report\MetricByHour.en" />
+    <Content Include="Report\MetricByHour.fr" />
+    <Content Include="Report\Traffic.en" />
+    <Content Include="Report\Traffic.fr" />
+    <Content Include="Report\Traffic.rdlc" />
+    <None Include="Scripts\aes.js" />
+    <Content Include="Report\images\logoi3.jpg" />
+    <Content Include="Report\ReportViewer.aspx" />
+    <Content Include="Scripts\aes.min.js">
+      <DependentUpon>aes.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js">
+      <DependentUpon>angular-resource.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Angular\angular-animate.js" />
+    <None Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\Angular\angular-animate.min.js" />
+    <None Include="Scripts\Angular\angular-aria.js" />
+    <None Include="Scripts\Angular\angular-cookies.js" />
+    <Content Include="Scripts\Angular\angular-cookies.min.js" />
+    <None Include="Scripts\Angular\angular-local-storage.js" />
+    <Content Include="Scripts\Angular\angular-local-storage.min.js" />
+    <None Include="Scripts\Angular\angular-material.js" />
+    <None Include="Scripts\Angular\angular-mocks.js" />
+    <None Include="Scripts\Angular\angular-resource.js" />
+    <Content Include="Scripts\Angular\angular-resource.min.js" />
+    <None Include="Scripts\Angular\angular-sanitize.js" />
+    <Content Include="Scripts\Angular\angular-sanitize.min.js" />
+    <Content Include="Scripts\Angular\angular-translate-loader-partial.min.js" />
+    <None Include="Scripts\Angular\angular-translate-storage-cookie.js" />
+    <Content Include="Scripts\Angular\angular-translate-storage-cookie.min.js">
+      <DependentUpon>angular-translate-storage-cookie.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Angular\angular-translate-storage-local.js" />
+    <Content Include="Scripts\Angular\angular-translate-storage-local.min.js">
+      <DependentUpon>angular-translate-storage-local.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-translate.min.js" />
+    <None Include="Scripts\Angular\angular-ui-router.js" />
+    <Content Include="Scripts\Angular\angular-ui-router.min.js" />
+    <None Include="Scripts\Angular\angular-ui\angular-bootstrap-checkbox.js" />
+    <Content Include="Scripts\Angular\angular-ui\angular-bootstrap-checkbox.min.js">
+      <DependentUpon>angular-bootstrap-checkbox.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-ui\angular-file-upload.min.js">
+      <DependentUpon>angular-file-upload.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Angular\angular-ui\angular-file-upload.min.js.map">
+      <DependentUpon>angular-file-upload.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-ui\angular-scrollable-table.js" />
+    <None Include="Scripts\Angular\angular-ui\angular-file-upload.js" />
+    <Content Include="Scripts\Angular\angular-ui\angular-scrollable-table.min.js">
+      <DependentUpon>angular-scrollable-table.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Angular\angular-ui\angular-ui-tree.js" />
+    <None Include="Scripts\Angular\angular-ui\ng-grid-flexible-height.js" />
+    <Content Include="Scripts\Angular\angular-ui\angular-ui-tree.min.js">
+      <DependentUpon>angular-ui-tree.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-ui\ng-grid-flexible-height.min.js">
+      <DependentUpon>ng-grid-flexible-height.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Angular\angular-ui\ng-grid.js" />
+    <Content Include="Scripts\Angular\angular-ui\ng-grid.min.js" />
+    <None Include="Scripts\Angular\angular-ui\ngplus-overlay.js" />
+    <Content Include="Scripts\Angular\angular-ui\ngplus-overlay.min.js">
+      <DependentUpon>ngplus-overlay.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Angular\angular-ui\select.js" />
+    <Content Include="Scripts\Angular\angular-ui\select.min.js">
+      <DependentUpon>select.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Angular\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\Angular\angular-ui\ui-bootstrap-tpls.min.js">
+      <DependentUpon>ui-bootstrap-tpls.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Angular\angular-ui\ui-utils.js" />
+    <Content Include="Scripts\Angular\angular-ui\ui-utils.min.js">
+      <DependentUpon>ui-utils.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Angular\angular-validator.js" />
+    <Content Include="Scripts\Angular\angular-validator.min.js" />
+    <None Include="Scripts\Angular\angular.js" />
+    <Content Include="Scripts\Angular\angular.min.js" />
+    <Content Include="Api\Configuration\Account\AccountController.js" />
+    <Content Include="Api\Configuration\Services\ApiService.js" />
+    <Content Include="Api\Configuration\ConfigModule.js" />
+    <Content Include="Api\Configuration\DBConfig\DBController.js" />
+    <Content Include="Api\Configuration\DVRInfo\DVRInfoController.js" />
+    <Content Include="Api\Configuration\Logs\LogsController.js" />
+    <Content Include="Api\Configuration\ServiceConfig\ServiceConfigController.js" />
+    <None Include="Scripts\Angular\hammer.js" />
+    <Content Include="Scripts\Angular\hammer.min.js" />
+    <Content Include="Scripts\Apps\directives\clearinput.js" />
+    <Content Include="Scripts\Apps\directives\fixedHeader.js" />
+    <Content Include="Scripts\Apps\directives\jqdatepicker.js" />
+    <Content Include="Scripts\Apps\directives\showonhoverparent.js" />
+    <Content Include="Scripts\Apps\directives\togglepassword.js" />
+    <Content Include="Scripts\Apps\Utils\Base64.js" />
+    <Content Include="Scripts\Apps\Utils\Cookies.js" />
+    <Content Include="Scripts\Apps\Utils\Dialogs.js" />
+    <Content Include="Scripts\Apps\Utils\spinnerloading.js" />
+    <Content Include="Scripts\Apps\Utils\Utils.js" />
+    <None Include="Scripts\Angular\angular-animate.min.js.map">
+      <DependentUpon>angular-animate.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-cookies.min.js.map">
+      <DependentUpon>angular-cookies.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-sanitize.min.js.map">
+      <DependentUpon>angular-sanitize.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-ui\ng-grid.min.js.map">
+      <DependentUpon>ng-grid.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-ui\ui-bootstrap-tpls.min.js.map">
+      <DependentUpon>ui-bootstrap-tpls.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular.min.js.map">
+      <DependentUpon>angular.js</DependentUpon>
+    </None>
+    <None Include="Scripts\BootstrapJS\bootstrap-hover-dropdown.js" />
+    <Content Include="Scripts\BootstrapJS\bootstrap-hover-dropdown.min.js">
+      <DependentUpon>bootstrap-hover-dropdown.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\BootstrapJS\bootstrap-multiselect.js" />
+    <Content Include="Scripts\BootstrapJS\bootstrap-multiselect.min.js">
+      <DependentUpon>bootstrap-multiselect.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\BootstrapJS\bootstrap-popover.js" />
+    <Content Include="Scripts\BootstrapJS\bootstrap-popover.min.js">
+      <DependentUpon>bootstrap-popover.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\BootstrapJS\bootstrap-show-password.js" />
+    <Content Include="Scripts\BootstrapJS\bootstrap-show-password.min.js">
+      <DependentUpon>bootstrap-show-password.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\BootstrapJS\bootstrap-tooltip.js" />
+    <Content Include="Scripts\BootstrapJS\bootstrap-tooltip.min.js">
+      <DependentUpon>bootstrap-tooltip.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\BootstrapJS\bootstrap-treeview.js" />
+    <Content Include="Scripts\BootstrapJS\bootstrap-treeview.min.js">
+      <DependentUpon>bootstrap-treeview.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\BootstrapJS\bootstrap.min.js" />
+    <None Include="Scripts\Components\angular-spectrum-colorpicker.js" />
+    <Content Include="Scripts\Components\angular-spectrum-colorpicker.min.js">
+      <DependentUpon>angular-spectrum-colorpicker.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Components\jquery.nicescroll.js" />
+    <Content Include="Scripts\Components\jquery.nicescroll.min.js">
+      <DependentUpon>jquery.nicescroll.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Components\jquery.sumoselect.js" />
+    <Content Include="Scripts\Components\jquery.sumoselect.min.js">
+      <DependentUpon>jquery.sumoselect.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Components\spectrum.js" />
+    <Content Include="Scripts\Components\spectrum.min.js">
+      <DependentUpon>spectrum.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Jquery\jquery-2.1.1.min.js.map">
+      <DependentUpon>jquery-2.1.1.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Jquery\jquery-2.1.1.min.map" />
+    <None Include="Scripts\Angular\angular-ui\angular-ui-tree.min.js.map">
+      <DependentUpon>angular-ui-tree.js</DependentUpon>
+    </None>
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\Jquery\jquery.cookie.min.js">
+      <DependentUpon>jquery.cookie.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Jquery\jquery.cookie.min.js.map">
+      <DependentUpon>jquery.cookie.js</DependentUpon>
+    </None>
+    <None Include="Scripts\BootstrapJS\bootstrap-hover-dropdown.min.js.map">
+      <DependentUpon>bootstrap-hover-dropdown.js</DependentUpon>
+    </None>
+    <None Include="Scripts\BootstrapJS\bootstrap-multiselect.min.js.map">
+      <DependentUpon>bootstrap-multiselect.js</DependentUpon>
+    </None>
+    <None Include="Scripts\BootstrapJS\bootstrap-popover.min.js.map">
+      <DependentUpon>bootstrap-popover.js</DependentUpon>
+    </None>
+    <None Include="Scripts\BootstrapJS\bootstrap-show-password.min.js.map">
+      <DependentUpon>bootstrap-show-password.js</DependentUpon>
+    </None>
+    <None Include="Scripts\BootstrapJS\bootstrap-tooltip.min.js.map">
+      <DependentUpon>bootstrap-tooltip.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-translate-storage-cookie.min.js.map">
+      <DependentUpon>angular-translate-storage-cookie.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-translate-storage-local.min.js.map">
+      <DependentUpon>angular-translate-storage-local.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-ui\angular-scrollable-table.min.js.map">
+      <DependentUpon>angular-scrollable-table.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-ui\ng-grid-flexible-height.min.js.map">
+      <DependentUpon>ng-grid-flexible-height.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-ui\select.min.js.map">
+      <DependentUpon>select.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-ui\ui-utils.min.js.map">
+      <DependentUpon>ui-utils.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Components\jquery.nicescroll.min.js.map">
+      <DependentUpon>jquery.nicescroll.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Components\jquery.sumoselect.min.js.map">
+      <DependentUpon>jquery.sumoselect.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-ui\ngplus-overlay.min.js.map">
+      <DependentUpon>ngplus-overlay.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-ui\angular-bootstrap-checkbox.min.js.map">
+      <DependentUpon>angular-bootstrap-checkbox.js</DependentUpon>
+    </None>
+    <None Include="Scripts\BootstrapJS\bootstrap-treeview.min.js.map">
+      <DependentUpon>bootstrap-treeview.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Angular\angular-validator.min.js.map">
+      <DependentUpon>angular-validator.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Components\spectrum.min.js.map">
+      <DependentUpon>spectrum.js</DependentUpon>
+    </None>
+    <None Include="Scripts\linq-vsdoc.js" />
+    <Content Include="Scripts\Jquery\jquery.slimscroll.min.js" />
+    <None Include="Scripts\less.min.js" />
+    <None Include="Scripts\linq.js" />
+    <None Include="Scripts\Angular\angular-resource.min.js.map">
+      <DependentUpon>angular-resource.js</DependentUpon>
+    </None>
+    <Content Include="App_Data\CMSWeb.Routes\Sites.cfg" />
+    <Content Include="App_Data\CMSWeb.Routes\Bam.cfg" />
+    <Content Include="App_Data\CMSWeb.Routes\Rebar.cfg" />
+    <Content Include="App_Data\CMSWeb.Routes\CMSReports.cfg" />
+    <Content Include="App_Data\CMSWeb.Routes\IncidentReports.cfg" />
+    <Content Include="App_Data\CMSWeb.Routes\Configurations.cfg" />
+    <Content Include="Scripts\linq.min.js">
+      <DependentUpon>linq.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Metro\docs.css" />
+    <Content Include="Scripts\Metro\docs.js" />
+    <Content Include="Scripts\Metro\github.info.js" />
+    <Content Include="Scripts\Metro\hitua.js" />
+    <Content Include="Scripts\Metro\holder\holder.js" />
+    <Content Include="Scripts\Metro\iconFont.css" />
+    <Content Include="Scripts\Metro\iconFont.min.css" />
+    <Content Include="Scripts\Metro\jquery\jquery.dataTables.js" />
+    <Content Include="Scripts\Metro\jquery\jquery.easing.1.3.min.js" />
+    <Content Include="Scripts\Metro\jquery\jquery.min.js" />
+    <Content Include="Scripts\Metro\jquery\jquery.mousewheel.js" />
+    <Content Include="Scripts\Metro\jquery\jquery.widget.min.js" />
+    <Content Include="Scripts\Metro\load-metro.js" />
+    <Content Include="Scripts\Metro\metro-bootstrap-responsive.css" />
+    <Content Include="Scripts\Metro\metro-bootstrap-responsive.min.css" />
+    <Content Include="Scripts\Metro\metro-bootstrap.css" />
+    <Content Include="Scripts\Metro\metro-bootstrap.min.css" />
+    <Content Include="Scripts\Metro\metro.js" />
+    <Content Include="Scripts\Metro\metro.min.js" />
+    <Content Include="Scripts\Metro\metro\metro-accordion.js" />
+    <Content Include="Scripts\Metro\metro\metro-button-set.js" />
+    <Content Include="Scripts\Metro\metro\metro-calendar.js" />
+    <Content Include="Scripts\Metro\metro\metro-carousel.js" />
+    <Content Include="Scripts\Metro\metro\metro-core.js" />
+    <Content Include="Scripts\Metro\metro\metro-countdown.js" />
+    <Content Include="Scripts\Metro\metro\metro-date-format.js" />
+    <Content Include="Scripts\Metro\metro\metro-datepicker.js" />
+    <Content Include="Scripts\Metro\metro\metro-dialog.js" />
+    <Content Include="Scripts\Metro\metro\metro-drag-tile.js" />
+    <Content Include="Scripts\Metro\metro\metro-dropdown.js" />
+    <Content Include="Scripts\Metro\metro\metro-fluentmenu.js" />
+    <Content Include="Scripts\Metro\metro\metro-global.js" />
+    <Content Include="Scripts\Metro\metro\metro-hint.js" />
+    <Content Include="Scripts\Metro\metro\metro-initiator.js" />
+    <Content Include="Scripts\Metro\metro\metro-input-control.js" />
+    <Content Include="Scripts\Metro\metro\metro-listview.js" />
+    <Content Include="Scripts\Metro\metro\metro-live-tile.js" />
+    <Content Include="Scripts\Metro\metro\metro-loader.js" />
+    <Content Include="Scripts\Metro\metro\metro-locale.js" />
+    <Content Include="Scripts\Metro\metro\metro-notify.js" />
+    <Content Include="Scripts\Metro\metro\metro-panel.js" />
+    <Content Include="Scripts\Metro\metro\metro-plugin-template.js" />
+    <Content Include="Scripts\Metro\metro\metro-progressbar.js" />
+    <Content Include="Scripts\Metro\metro\metro-pull.js" />
+    <Content Include="Scripts\Metro\metro\metro-rating.js" />
+    <Content Include="Scripts\Metro\metro\metro-scroll.js" />
+    <Content Include="Scripts\Metro\metro\metro-slider.js" />
+    <Content Include="Scripts\Metro\metro\metro-stepper.js" />
+    <Content Include="Scripts\Metro\metro\metro-streamer.js" />
+    <Content Include="Scripts\Metro\metro\metro-tab-control.js" />
+    <Content Include="Scripts\Metro\metro\metro-table.js" />
+    <Content Include="Scripts\Metro\metro\metro-tile-transform.js" />
+    <Content Include="Scripts\Metro\metro\metro-times.js" />
+    <Content Include="Scripts\Metro\metro\metro-touch-handler.js" />
+    <Content Include="Scripts\Metro\metro\metro-treeview.js" />
+    <Content Include="Scripts\Metro\metro\metro-wizard.js" />
+    <Content Include="Scripts\Metro\prettify\lang-apollo.js" />
+    <Content Include="Scripts\Metro\prettify\lang-basic.js" />
+    <Content Include="Scripts\Metro\prettify\lang-clj.js" />
+    <Content Include="Scripts\Metro\prettify\lang-css.js" />
+    <Content Include="Scripts\Metro\prettify\lang-dart.js" />
+    <Content Include="Scripts\Metro\prettify\lang-erlang.js" />
+    <Content Include="Scripts\Metro\prettify\lang-go.js" />
+    <Content Include="Scripts\Metro\prettify\lang-hs.js" />
+    <Content Include="Scripts\Metro\prettify\lang-lisp.js" />
+    <Content Include="Scripts\Metro\prettify\lang-llvm.js" />
+    <Content Include="Scripts\Metro\prettify\lang-lua.js" />
+    <Content Include="Scripts\Metro\prettify\lang-matlab.js" />
+    <Content Include="Scripts\Metro\prettify\lang-ml.js" />
+    <Content Include="Scripts\Metro\prettify\lang-mumps.js" />
+    <Content Include="Scripts\Metro\prettify\lang-n.js" />
+    <Content Include="Scripts\Metro\prettify\lang-pascal.js" />
+    <Content Include="Scripts\Metro\prettify\lang-proto.js" />
+    <Content Include="Scripts\Metro\prettify\lang-r.js" />
+    <Content Include="Scripts\Metro\prettify\lang-rd.js" />
+    <Content Include="Scripts\Metro\prettify\lang-scala.js" />
+    <Content Include="Scripts\Metro\prettify\lang-sql.js" />
+    <Content Include="Scripts\Metro\prettify\lang-tcl.js" />
+    <Content Include="Scripts\Metro\prettify\lang-tex.js" />
+    <Content Include="Scripts\Metro\prettify\lang-vb.js" />
+    <Content Include="Scripts\Metro\prettify\lang-vhdl.js" />
+    <Content Include="Scripts\Metro\prettify\lang-wiki.js" />
+    <Content Include="Scripts\Metro\prettify\lang-xq.js" />
+    <Content Include="Scripts\Metro\prettify\lang-yaml.js" />
+    <Content Include="Scripts\Metro\prettify\prettify.css" />
+    <Content Include="Scripts\Metro\prettify\prettify.js" />
+    <Content Include="Scripts\Metro\prettify\run_prettify.js" />
+    <Content Include="Scripts\Metro\start-screen.js" />
+    <None Include="Scripts\r.js" />
+    <Content Include="Scripts\React\react.js" />
+    <Content Include="Scripts\React\react.min.js">
+      <DependentUpon>react.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\require.min.js">
+      <DependentUpon>require.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\Sortable.js" />
+    <Content Include="Scripts\Sortable.min.js">
+      <DependentUpon>Sortable.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\toastr.min.js">
+      <DependentUpon>toastr.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\version.json" />
+    <None Include="Scripts\Metro\metro.min.js.map">
+      <DependentUpon>metro.js</DependentUpon>
+    </None>
+    <None Include="Scripts\Jquery\jquery-2.1.1.intellisense.js" />
+    <None Include="Scripts\Jquery\jquery-2.1.1.js" />
+    <Content Include="Scripts\Jquery\jquery-2.1.1.min.js" />
+    <None Include="Scripts\Jquery\jquery-ui-1.10.4.js" />
+    <Content Include="Scripts\Jquery\jquery-ui-1.10.4.min.js" />
+    <None Include="Scripts\Jquery\jquery.cookie.js" />
+    <None Include="Scripts\moment.js" />
+    <None Include="Scripts\require.js" />
+    <None Include="Scripts\toastr.js" />
+    <None Include="Scripts\_references.js" />
+    <None Include="Properties\PublishProfiles\CMSWeb5.1_Publish.pubxml" />
+    <Content Include="Views\Api\Account\Login.html" />
+    <Content Include="Views\Api\Account\Register.html" />
+    <Content Include="Views\Api\DBConfig\DBConfig.html" />
+    <Content Include="Views\Api\DVRInfo\DVRsInfo.html" />
+    <Content Include="Views\Api\Home.html" />
+    <Content Include="Views\Api\Logs\Logs.html" />
+    <Content Include="Views\Api\ServiceConfig\ServiceConfig.html" />
+    <Content Include="Views\Api\Shared\confirm.html" />
+    <Content Include="Views\Api\Shared\error.html" />
+    <Content Include="Views\Api\Shared\Header.html" />
+    <Content Include="Views\Api\Shared\LeftMenu.html" />
+    <Content Include="Views\Api\Shared\message.html" />
+    <Content Include="Views\Api\Shared\ng_grid\CellDateTime.html" />
+    <Content Include="Views\Api\Shared\ng_grid\CellTextTemplate.html" />
+    <Content Include="Views\Api\Shared\ng_grid\footerTemplate.html" />
+    <Content Include="Views\Api\Shared\ng_grid\headerRowTemplate.html" />
+    <Content Include="Views\Api\Shared\ng_grid\HeaderTemplate.html" />
+    <Content Include="Views\Api\Shared\ng_grid\HeaderTemplateDelete.html" />
+    <Content Include="Views\Api\Shared\ng_grid\rowTemplate.html" />
+    <Content Include="Views\Api\Shared\notify.html" />
+    <Content Include="Views\Api\Shared\UserInfo.html" />
+    <Content Include="Views\Api\Shared\wait.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\DVR\RawImages\" />
+    <Folder Include="App_Data\ExportTemplates\" />
+    <Folder Include="App_Data\Users\ntdemo\" />
+    <Folder Include="ChartExports\Exported_Images\" />
+    <Folder Include="CMSWeb\BAM\Custom\" />
+    <Folder Include="CMSWeb\BAM\Sensor\" />
+    <Folder Include="CMSWeb\BAM\Traffic\" />
+    <Folder Include="CMSWeb\Services\" />
+    <Folder Include="CMSWeb\Share\" />
+    <Folder Include="Content\libs\jquery-slimscroll\css\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppSettings\AppSettings.csproj">
+      <Project>{1ad73a91-65c4-4512-8605-dea960d7d7ff}</Project>
+      <Name>AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\APIFilters\CMSWebApi.APIFilters.csproj">
+      <Project>{e2eb560c-38d5-4298-9501-0e44806df4f1}</Project>
+      <Name>CMSWebApi.APIFilters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\BusinessServices\CMSWebApi.BusinessServices.csproj">
+      <Project>{e1086459-c1a1-49e4-8f38-371fb49fc5e1}</Project>
+      <Name>CMSWebApi.BusinessServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\Cache\CMSWebApi.Cache.csproj">
+      <Project>{7353535c-f028-4a25-b562-7187857190ea}</Project>
+      <Name>CMSWebApi.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\CMSWebApi.Controllers\CMSWebApi.Controllers.csproj">
+      <Project>{a99397c7-7140-4154-80d4-4e1b8b873a03}</Project>
+      <Name>CMSWebApi.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\Configurations\CMSWebApi.Configurations.csproj">
+      <Project>{66301320-34ca-4e88-9f10-f8b17fef0baa}</Project>
+      <Name>CMSWebApi.Configurations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\DataModels\CMSWebApi.DataModels.csproj">
+      <Project>{38141ba5-49f0-4d34-8351-0685dc0ff561}</Project>
+      <Name>CMSWebApi.DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\DataServices\CMSWebApi.DataServices.csproj">
+      <Project>{51408a9f-a4e9-4d96-9134-400579c4b269}</Project>
+      <Name>CMSWebApi.DataServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\Hubs\CMSWebApi.Hub.csproj">
+      <Project>{1185bf0d-90f1-44de-b0c8-2a11ecaff919}</Project>
+      <Name>CMSWebApi.Hub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\ServiceInterfaces\CMSWebApi.ServiceInterfaces.csproj">
+      <Project>{268877c1-eabc-45e3-848f-05ef659e2e92}</Project>
+      <Name>CMSWebApi.ServiceInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSWebApi\Utils\CMSWebApi.Utils.csproj">
+      <Project>{a0cb2ec9-9357-4c0f-8759-502c14c27844}</Project>
+      <Name>CMSWebApi.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Commons\Commons.csproj">
+      <Project>{4158702b-07dc-4b34-9cad-586ea4406b2f}</Project>
+      <Name>Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConverterSVR\ConverterSVR.csproj">
+      <Project>{b79336ef-5c3c-4074-b06b-fd0d265be320}</Project>
+      <Name>ConverterSVR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConvertMessage\ConvertMessage.csproj">
+      <Project>{a395a1d4-9871-45c4-8d06-571a0f23dfc7}</Project>
+      <Name>ConvertMessage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cryptography\Cryptography.csproj">
+      <Project>{5a78f393-c5a1-490d-abb7-91af2722f9e9}</Project>
+      <Name>Cryptography</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\Extensions.csproj">
+      <Project>{d237564a-b94c-4e32-9bb2-86b9209448d8}</Project>
+      <Name>Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MessageContentHandler\MessageContentHandler.csproj">
+      <Project>{15a67c96-7bef-49d2-aab2-c3dd8b1eeffe}</Project>
+      <Name>MessageContentHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PACDMModel\PACDMModel.csproj">
+      <Project>{d8d5d11b-cd70-4801-a427-12bb03ada666}</Project>
+      <Name>PACDMModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StreamContent\StreammingContent.csproj">
+      <Project>{85054d49-3f6e-4a6e-81cf-d57301d077f5}</Project>
+      <Name>StreammingContent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SVRDatabase\LogModel\SVRDatabase.csproj">
+      <Project>{6d22e150-4f71-4281-a9df-745569d5a977}</Project>
+      <Name>SVRDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebConfigEncryption\WebConfigEncryption.csproj">
+      <Project>{cf0817b7-1c9d-4ca7-a2d3-73842c88c80e}</Project>
+      <Name>WebConfigEncryption</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\ByHour.rdlc" />
+    <EmbeddedResource Include="Report\ConversionScenrio.rdlc" />
+    <EmbeddedResource Include="Report\Daily.rdlc" />
+    <EmbeddedResource Include="Report\MetricByHour.rdlc" />
+    <EmbeddedResource Include="Report\Report.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9898</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://10.0.0.88:8000/api</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8854.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8854.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

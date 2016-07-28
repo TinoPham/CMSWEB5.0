@@ -1,0 +1,23 @@
+﻿{
+  "BTN_UPLOAD_IMAGE":"Changer la photo"
+, "DETAILS":"Détails"
+, "EMPLOYEE_ID":"ID de l'employée"
+, "EXPIRED_DATE":"Date de l'expiration"
+, "EXPIRE_DATE":"Date d'expiration"
+, "EMAIL_DAILY":"Courriel quotidien du tableau de bord de l'aperçu de la semaine"
+, "HEADER_USER_DELETE":"Supprimer l'utilisateur"
+, "IS_ADMIN":"administrateur"
+, "POSITION_NAME":"Nom du poste"
+, "SELECT_JOB_TITLE_STR":"Sélectionner le titre du poste"
+, "SELECT_USER_GROUP_STR":"Sélectionner le groupe(s) d'utilisateur"
+, "TELEPHONE":"Tél."
+, "USER_EDIT_HEADER":"MODIFIER UTILISATEUR"
+, "USER_ADD_HEADER":"AJOUTER UTILISATEUR"
+
+, "EMPLOYEE_ID_REQUIRED":"Le champ ID employé ne peut pas être vide."
+, "PHONE_VALID_FORMAT":"Format de numéro de téléphone non valide."
+, "USER_NAME_EXIST":"Ce nom d'utilisateur existe déjà."
+, "USER_EMPLOYEE_EXIST":"Cet ID d'employé existe déjà."
+, "USER_DELETE_CONFIRM_MSG":"Êtes-vous sûr de vouloir supprimer cet utilisateur?"
+, "USER_DELETE_CONFIRM_MSGS":"Êtes-vous sûr que vous voulez supprimer ces utilisateurs?"
+}

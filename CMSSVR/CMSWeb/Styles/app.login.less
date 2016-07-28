@@ -1,0 +1,371 @@
+﻿@import url('app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * CMS - LOGIN PAGE CSS, START
+ * -----------
+ */
+
+
+// Login for PC
+.content-page.login-page {
+	margin-left: 0px;
+	margin-right: 0px;
+	&>.content {
+		margin-left: 0px;
+		margin-right: 0px;
+		padding: 0px!important;
+		width: 100%;
+		&>.content-of-login-page{
+			width: 100%;
+			padding: 0px;			
+		    margin-left: 0px;
+			margin-right: 0px;
+			background: #fff;
+			&.forSafari {
+				.form-login {
+					padding-top: 18%;
+				}
+			}
+			// END CSS for safari
+			&>.container-fluid  {	
+				height: 100%;
+				padding: 0px;			
+			 	margin-left: 0px;
+				margin-right: 0px;
+				& > div {
+					&.image-box-left {
+						min-height: 100%;
+						height: 100vh;
+						background: url('../../Content/Images/bg-login.jpg');
+						background-size: cover;
+						background-repeat: no-repeat;
+						position: relative;
+						.blue-mask {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							z-index: 2;
+							background: rgba(41, 128, 185, 0.6)
+						}
+						.text {
+							position: absolute;
+							bottom: 165px;
+							left: 95px;
+							z-index: 3;
+							& > div {
+								float: left;
+								color: #fff;
+								span {
+									&:first-child {
+										text-transform: uppercase;
+									}
+								}
+							}
+							h1 {
+								float: left;
+								font-size: 90px;
+								color: #123851;
+								font-weight: bold;
+								margin-right: 25px;
+							}
+						}
+
+					}
+					&.form-login {
+						min-height: 100%;
+						position: fixed;
+						right: 0;
+						top: 0;
+						width: 500px;
+						background: #fff;
+						height: 100vh;
+						display: -webkit-flex; /* Safari */
+						 display:flex;		
+   						 align-items:center;   						 
+						-webkit-align-items: center; /* Safari 7.0+ */
+   						 color: #666;
+   						 z-index: 4;
+
+   						 .alert {
+								border-radius: 0px;
+								position: relative;
+								z-index: 6;
+						 }
+						.form {
+							width: 330px;
+							margin: auto;
+							h2 {
+								font-weight: bold;
+								margin-top: -40%;
+							}
+
+							.form-group {
+								input[type="password"], 
+								input[type="text"] {
+									width: 330px;
+									height: 45px;
+									border: 1px solid #ebebeb;
+									box-shadow: none;
+   									background-color: transparent;
+   									 -webkit-appearance: none; /*this property remove the inner shadow*/
+									&:focus {
+										box-shadow: 1px;
+										border: 1px solid #999;
+									}
+								}
+								label {
+									text-transform: uppercase;
+								}
+								button {
+									border-radius: 0px;
+									background: #2980b9;
+									color: #fff;	
+									border: 1px solid #2980b9;	
+									padding: 15px 70px;
+									&:hover  {
+										background: #fff !important;
+										color: #2980b9;	
+										border: 1px solid #2980b9;								
+									}
+								}
+							
+								a.back-signin {
+									border: 1px solid #2980b9;
+									padding: 15px 15px;
+									border-radius: 0px;
+									&:hover  {
+										background: #2980b9;
+										color: #fff;									
+									}
+								}
+								.checkbox.large {
+									position: relative;
+									width: 100%;
+									cursor: pointer;
+									label {
+
+										&:before {
+											    top: -3px;
+										}
+										&:after {
+											top: -2px;
+										}
+									}
+									a {
+										position: absolute;
+										right: 0;
+										font-size: 12px;
+										top: -20px;
+										cursor: pointer;
+									}
+								}
+							}
+						}
+
+						.coppy-right {
+							position: fixed;
+							bottom: 50px;
+							right: 0px;
+							width: 500px;													
+							.wrap {
+								width: 330px;
+								margin: auto;
+								img {
+									float: left;
+								}
+								p {
+									float: left;
+									font-size: 12px;
+									margin-top: 5px;
+									a {
+										font-weight: bold;
+									}
+								}
+							}
+						}	
+
+
+					}
+				}
+				
+			}
+
+
+
+
+
+		}
+
+	}
+	
+}
+//END :: Login for PC
+
+
+
+
+// =======================================================
+//                Optimize on mobile version           //
+// =======================================================
+@media (max-width: @screen-xs-max) { 
+
+ .content-page.login-page {
+
+ 	&>.content {
+ 		&>.content-of-login-page{
+
+ 			&.forSafari {
+ 				.form-login { 
+ 					margin-top: 0px;
+ 					padding-top: 0px;
+ 					.form {
+ 						h2 {
+ 							margin-top: -40% !important;
+ 						}
+ 					}
+ 				}
+ 			} /*END for safari*/
+
+			&>.container-fluid  {
+				& > div {
+					&.form-login {
+						width: 100% !important;
+						position: absolute;
+						overflow-y: auto;
+						top: -14px;
+						.form {
+							width: 80%!important;
+							h2 {								
+								margin-top: -25%;
+							}
+							.form-group {
+
+								input[type="password"], 
+								input[type="text"] {
+									width: 100%;
+								}
+
+								
+								&.buttom-forgot {
+									button {
+										padding: 15px 40px;
+									}
+									a.back-signin {
+										padding: 15px 10px;
+										
+									}
+								}
+
+
+							}
+						}
+					}
+
+					.coppy-right {
+						width: 100% !important;
+						left: 0px;
+						right: auto;
+						bottom: 10px   !important;
+						position: absolute !important;
+						.wrap {
+							text-align: center;
+							width: 100% !important;
+							img {
+								display: none;
+							}
+							p {
+								float: none;
+									width: 100% !important;
+							}
+						
+						}
+					}
+				}
+			}
+
+
+		}
+
+ 	}
+ }
+
+
+}
+
+// ==============================================================
+//              END ::   Optimize on mobile version           //
+// ==============================================================
+
+
+
+
+
+// =======================================================
+//                Optimize on tablet version            
+// =======================================================
+@media (min-width: @screen-sm-min) and (max-width: 1025px) { 
+.content-page.login-page {
+
+ 	&>.content {
+ 		&>.content-of-login-page{
+
+ 			&.forSafari {
+ 				.form-login { 
+ 					margin-top: 0px;
+ 					padding-top: 0px;
+ 					.form {
+ 						h2 {
+ 							margin-top: -50% !important;
+ 						}
+ 					}
+ 				}
+ 			} /*END for safari*/
+
+ 			&>.container-fluid  {
+				& > div {
+					&.form-login {
+						 width: 100%;
+						 height: 100%;
+						 .coppy-right {
+						 	width: 100%;
+						 }
+					}
+				}
+			}
+ 		}
+ 	}
+ }
+
+ }
+// =======================================================
+//              END ::    Optimize on tablet version         
+// =======================================================
+
+
+
+//Less function
+.form-control(@border, @boder-focus) {
+	.form-control {
+		border: 1px solid @border;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+
+		&:focus {
+			border-color: @boder-focus;
+			outline: 0;
+			-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+			-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+		}
+	}
+	}
+/*
+ * CMS - LOGIN PAGE CSS, END
+ * -----------
+ */
+
+

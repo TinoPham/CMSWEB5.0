@@ -1,0 +1,31 @@
+﻿<form name="myForm" class="form-horizontal user-manages form-delete" novalidate angular-validator angular-validator-submit="vm.deleteUser()">
+	<div class="modal-header">
+		<span class="close" data-ng-click="vm.cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'HEADER_USER_DELETE'|translate}}</h3>
+	</div>
+	<div class="modal-body" ng-class="{'remove-multiple': !vm.isSingleUser}">
+		<div class="remove-view">
+		<!--Multiple user delete-->
+			<div ng-if="!vm.isSingleUser">
+				<!--slimscroll="{height: '200px'}"-->
+			<div class="listview" ng-grid="listOptions"></div>
+		</div>
+
+		<!--Single user delete-->
+			<div class="item-info" ng-if="vm.isSingleUser" ng-repeat="user in vm.userSelecteds" ng-model="row.entity" tooltip-template="'Widgets/Templates/tooltip.html'" tooltip-trigger="mouseenter" tooltip-class="grid-tooltip" tooltip-append-to-body="true" tooltip-placement="bottom">
+				<div class="i-image">
+					<img ng-if="user.UPhoto==null" src="../Content/Images/img_user_blank.png" alt="" ng-style="{'border-color': vm.convertColor(user.PosColor)}" />
+					<img ng-if="user.UPhoto!=null" ng-src="data:image/jpeg;base64,{{row.entity.ImageSrc}}" alt="" ng-style="{'border-color': vm.convertColor(user.PosColor)}" />
+			</div>
+				<div class="i-name">{{user.FName}} {{user.LName}}</div>
+				<div class="i-pos">{{user.PosName}}</div>
+			<div class="clearfix"></div>
+		</div>
+		</div>
+		<div class="msg-delete">{{vm.msgDelete|translate}}</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" data-ng-click="vm.cancel()">{{"BTN_CANCEL"|translate}}</button>
+		<button type="submit" class="btn btn-primary" ng-disabled="!vm.isSingleUser && vm.selectedRows.length == 0">{{"BTN_OK"|translate}}</button>
+	</div>
+</form>

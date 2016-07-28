@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/cmsweb/!svn/ver/4296/5.0.0/CMSService/CMSWebApi/APIFilters/ErrorHandler
+END
+CmsErrorException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/cmsweb/!svn/ver/4296/5.0.0/CMSService/CMSWebApi/APIFilters/ErrorHandler/CmsErrorException.cs
+END
+ValidateModelAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cmsweb/!svn/ver/4296/5.0.0/CMSService/CMSWebApi/APIFilters/ErrorHandler/ValidateModelAttribute.cs
+END
+ServerErrorException.cs
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/cmsweb/!svn/ver/4296/5.0.0/CMSService/CMSWebApi/APIFilters/ErrorHandler/ServerErrorException.cs
+END

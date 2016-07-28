@@ -1,0 +1,89 @@
+﻿@import url('app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+.site-metric-manages {
+	.listview {
+		.ngRow {
+			.ngCell {
+				.item-info {
+					.i-createdby, .i-date {
+				float: left;
+			}
+
+					.i-date {
+						padding-left: 3px;
+				}
+
+					.checkbox {
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
+
+.remove-view {
+	.listview {
+			.ngRow {
+				.ngCell {
+					.item-info {
+				.checkbox {
+							margin-top: -7px;
+		}
+	}
+		}
+		}
+	}
+}
+
+	&.form-edit {
+		.metric-name-label {
+			padding-right: 0;
+		}
+
+		.table-body {
+			.form-group {
+				margin-left: 0;
+				margin-bottom: 0;
+
+				.required {
+					float: left;
+					padding-right: 3px;
+					padding-top: 5px;
+				}
+
+				.form-control {
+					width: 90%;
+				}
+			}
+
+			&.scroll-body{
+				max-height: 250px;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+		}
+
+		.cms-table{
+			width: 98%;
+			.col-action{
+				width: 15.4%;
+			}
+		}
+	}
+
+	.panel-content, .panel-body {
+		margin-top: -5px;
+	}
+}
+
+
+
+// -------------------------------------------------------------------
+//    FIX :: General on mobie view
+// -------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------
+//END :: General on mobie view
+// -------------------------------------------------------------------

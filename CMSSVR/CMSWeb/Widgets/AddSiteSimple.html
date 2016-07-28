@@ -1,0 +1,276 @@
+﻿<form id="frmAddSite" action="#" name="frmAddSite" method="post">
+	<div class="container container-add">
+		<div class="row">
+			<div class="col-md-12 header">
+				<label>NEW SITE</label>
+			</div>
+		</div>
+		<div class="row body">
+			<!--column site infor-->
+			<div class="col-lg-4 col-sm-12" style="margin-top: 0px;">
+				<div class="container container-add">
+					<div class="row form-item">
+						<div class="col-md-12">
+							<label class="header-column">Site Information</label>
+						</div>
+					</div>
+					<div class="row form-item">
+						<div class="col-md-12">
+							<label>Site Name</label><span class="required">*</span>
+						</div>
+						<div class="col-md-12">
+							<input type="text" id="txtSiteName" />
+						</div>
+					</div>
+					<div class="row form-item">
+						<div class="col-md-12">
+							<label>Mac Address</label><span class="required">*</span>
+						</div>
+						<div class="col-md-12">
+							<input type="text" id="txtMacAddress" />
+						</div>
+					</div>
+					<div class="row form-item">
+						<div class="col-md-12">
+							<label>License ID</label>
+						</div>
+						<div class="col-md-12">
+							<input type="text" id="txtLicenseID" />
+						</div>
+					</div>
+					<div class="row form-item">
+						<div class="col-md-12">
+							<label>Goal Name</label>
+						</div>
+						<div class="col-md-12">
+							<select placeholder="Select a goal" class="SlectBox" id="ddlGoalID">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+							</select>
+						</div>
+					</div>
+					<div class="row form-item">
+						<div class="col-md-12">
+							<label>Calendar Event</label>
+						</div>
+						<div class="col-md-12">
+							<!--class="selectbox3"-->
+							<select multiple="multiple" placeholder="Select calendar event" class="SlectBox" id="ddlCalendarEvent">
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="mercedes">Mercedes</option>
+								<option value="audi">Audi</option>
+								<option value="bmw">BMW</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--column user permission-->
+			<div class="col-lg-8 col-sm-12">
+				<div class="container container-add">
+					<div class="row">
+						<div class="col-md-12">
+							<label class="header-column">User Permission</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="pull-left btn btn-primary small col-md-4 col-sm-4" style="background-color: #265a88; padding: 6px; width: 100px; border-color: #285e8e; border-radius: 4px;">
+							<input type="checkbox" class="checkall css-checkbox sme" id="cbAll" />
+							<label for="cbAll" name="cbAll_lbl" class="css-label sme depressed">ALL</label>
+						</div>
+						<div class="pull-right col-md-8 col-sm-8">
+							<!--<img src="../Content/Images/sort_alphabet.png" style="float: left; padding-right: .5em; height: 28px; margin-top: 3px;">-->
+							<span class="glyphicon glyphicon-sort-by-alphabet sort-icon"></span>
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button" style="height: 34px; float: right; margin-top: 0px; width: 3em; margin-bottom: 0px; padding-bottom: 0px;">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+							<!-- /input-group -->
+						</div>
+					</div>
+					<div id="user-list-permission" class="row" slimscroll="{height:'300px'}">
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox1" />
+									<label for="checkbox1" name="checkbox1_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox2" />
+									<label for="checkbox2" name="checkbox2_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox3" />
+									<label for="checkbox3" name="checkbox3_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox4" />
+									<label for="checkbox4" name="checkbox4_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox5" />
+									<label for="checkbox5" name="checkbox5_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox6" />
+									<label for="checkbox6" name="checkbox6_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox7" />
+									<label for="checkbox7" name="checkbox7_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox8" />
+									<label for="checkbox8" name="checkbox8_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox9" />
+									<label for="checkbox9" name="checkbox9_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row-item col-lg-6 col-sm-12">
+							<div class="user-permiss-box">
+								<span class="pull-left thumb-sm">
+									<img src="../Content/Images/img_user_blank.png" />
+								</span>
+								<div class="user-info">
+									<span class="u-name text-uppercase">TIM SHRAKE</span>
+									<span class="u-regency">Administrator</span>
+									<span class="u-mail">tim@gmail.com</span>
+								</div>
+								<div class="checkbox-item">
+									<input type="checkbox" class="css-checkbox sme" id="checkbox10" />
+									<label for="checkbox10" name="checkbox10_lbl" class="css-label sme depressed"></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<hr />
+				<div class="pull-left">
+					<input type="button" value="ADVANCE" id="btnAddSiteAdvance" class="btn btn-primary small">
+				</div>
+				<div class="pull-right">
+					<input type="button" value="Cancel" id="btnAddSiteCancel" class="btn btn-primary small">
+					<input type="submit" value="OK" id="btnAddSiteSubmit" class="btn btn-primary small">
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

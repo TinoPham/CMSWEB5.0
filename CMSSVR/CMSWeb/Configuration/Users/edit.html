@@ -1,0 +1,190 @@
+﻿<form angular-validator-submit="vm.SaveUser()" name="myForm" class="form-horizontal user-manages" novalidate angular-validator>
+    <div class="modal-header">
+		<span class="close" data-ng-click="vm.CloseUserAdmin()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{vm.frmTitle|translate}}</h3>
+	</div>
+	<div class="modal-body form-edit">
+        <div class="row">
+			<div class="col-md-6 panel-left">
+				<div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+					<!--slimscroll="{height: '635px'}"-->
+                    <accordion close-others="vm.status.isCloseOther">
+                        <accordion-group is-open="vm.status.isInfoOpen">
+						    <accordion-heading>
+						        <i class="fa" ng-class="{'fa-caret-right': !vm.status.isInfoOpen, 'fa-caret-down': vm.status.isInfoOpen}"></i>
+						        <span class="text-uppercase"><strong>{{'INFORMATION'|translate}}</strong></span>
+					        </accordion-heading>       
+                            <div class="form-group">                                    
+						        <div class="col-sm-12">
+                                    <label>{{"USER_IMAGE"|translate}}</label>
+									<div class="user-upload">
+                                    <div class="img-circle">                                       
+                                        <img ng-show="vm.picSource!=null" ng-src="{{vm.picSource}}" />
+								        <img ng-show="vm.picSource == null" src="../Content/Images/img_user_blank.png" />
+                                    </div>                            	
+										<div class="btn-group">
+											<span ng-show="vm.picSource != null" class="btn btn-danger" ng-click="vm.removeFileFn()"><i class="icon-trash"></i></span>
+							        <div class="btn btn-primary btn-file">
+								        <i class="icon-picture"></i><span> {{'BTN_UPLOAD_IMAGE'|translate}}</span>
+												<input type="file" accept="{{vm.fileAccept}}" file-upload>
+											</div>
+							        </div>
+									</div>
+						        </div>
+					        </div>
+							<div class="form-group">   
+                                <div class="col-sm-12">
+                                   <label>{{"FIRST_NAME"|translate}} <span class="required">*</span></label>
+									<input type="text" class="form-control" name="txtFirstName" ng-model="vm.userSelected.FName" autocomplete="off"
+										required-message="'{{'FIRST_NAME_REQUIRED'|translate}}'" required maxlength="20" autofocus/>
+                                </div>                        				
+							</div>
+							<div class="form-group">
+                                <div class="col-sm-12">
+                                    <label>{{"LAST_NAME"|translate}}<span class="required">*</span></label>
+									<input type="text" class="form-control" name="txtLastName" ng-model="vm.userSelected.LName" autocomplete="off"
+										required-message="'{{'LAST_NAME_REQUIRED'|translate}}'" required
+										validate-on="dirty" maxlength="20" />
+                                </div>									
+							</div>
+							<div class="form-group">
+                                <div class="col-sm-12">								
+                                    <label>{{"EMAIL"|translate}}<span class="required">*</span></label>
+									<input type="text" class="form-control" name="txtEmail" ng-model="vm.userSelected.Email" autocomplete="off"
+										required-message="'{{'EMAIL_REQUIRED'|translate}}'" required
+										validator="vm.EmailValidFunc(vm.userSelected.Email) === true" 
+										invalid-message="vm.EmailValidFunc(vm.userSelected.Email)"
+										validate-on="dirty" maxlength="50" />
+                                     
+                                </div>
+							</div>
+                            <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <label>{{"USER_NAME"|translate}}<span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="txtUserName" ng-model="vm.UserName" autocomplete="off"
+										required-message="'{{'USER_NAME_REQUIRED'|translate}}'" required
+										validator="vm.UserNameValidFunc(vm.UserName) === true" 
+										invalid-message="vm.UserNameValidFunc(vm.UserName)"
+										validate-on="dirty" maxlength="15" />
+                                    </div>
+			                    </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label>{{"PASSWORD"|translate}}<span class="required">*</span></label>
+                                    <input type="password" class="form-control" name="txtPassword" ng-model="vm.Password" autocomplete="off"
+										required-message="'{{'PASSWORD_REQUIRED'|translate}}'" required
+										validator="vm.PasswordValidFunc(vm.Password) === true" 
+										invalid-message="vm.PasswordValidFunc(vm.Password)"
+										validate-on="dirty" maxlength="15" ng-blur="vm.TriggerValidPasswordConfirm()" />
+                                </div>							
+		                    </div>
+		                    <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label>{{"PASSWORD_CONFIRM"|translate}}<span class="required">*</span></label>
+                                    <input type="password" class="form-control" name="txtPasswordConfirm" ng-model="vm.PasswordConfirm" autocomplete="off"
+										required-message="'{{'PASSWORD_CONFIRM_REQUIRED'|translate}}'" required
+										validator="vm.Password===vm.PasswordConfirm"
+										invalid-message = "'{{'PASSWORD_MATCH_MSG'|translate}}'"
+										validate-on="dirty" maxlength="15" />
+                                </div>
+		                    </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label>{{"USERGROUP_NAME"|translate}} <span class="required">*</span></label>
+									<!--usergroupSelect-->
+									<div class="input-group">
+										 <multiselect name="ddlUserGroup" class="form-control" ng-model="vm.userGroupSelected" 
+											 options="usergroup as usergroup.GroupName for usergroup in vm.UserGroupsData" 
+											 change="vm.ddlUserGroupChanged()" required>
+										 </multiselect>
+										<span class="input-group-addon" ng-click="vm.AddUserGroup()"><span class="icon-plus-circled-1"></span></span>
+									</div>
+                                </div>
+							</div>							
+                        </accordion-group>
+                        <accordion-group is-open="vm.status.isDetailOpen">
+							<accordion-heading>
+								<div class="border-top"></div>
+								<i class="fa" ng-class="{'fa-caret-right': !vm.status.isDetailOpen, 'fa-caret-down': vm.status.isDetailOpen}"></i>
+								<span class="text-uppercase"><strong>{{'DETAILS'|translate}}</strong></span>
+							</accordion-heading>
+							<div class="form-group">
+                                <div class="col-sm-12">
+                                    <label>{{"JOB_NAME"|translate}}</label>
+									<!--jobtitleSelect-->
+									<div ng-class="vm.userLogin.IsAdmin? 'input-group' : 'select-control'">
+										 <multiselect name="ddlJobTitle" class="form-control" title={{vm.jobtitleSelect.PositionName}} ng-model="vm.jobtitleSelected" 
+											 options="jobtitle as jobtitle.PositionName for jobtitle in vm.JobTitleData" 
+											 change="vm.ddlJobTitleChanged()" hide-icon="true">
+										 </multiselect>
+										<span ng-if="vm.userLogin.IsAdmin" class="input-group-addon" ng-click="vm.AddJobTitle()"><span class="icon-plus-circled-1"></span></span>
+									</div>
+                                </div>
+							</div>
+							<div class="form-group">
+                                <div class="col-sm-12">
+									<label>{{"EXPIRE_DATE"|translate}}<span class="required">*</span></label>
+							        <p class="input-group datepicker-noclear">
+								        <input type="text" class="form-control" datepicker-popup="{{vm.dateFormat}}" ng-model="vm.userSelected.ExpiredDate"
+									        is-open="vm.opened" min-date="vm.minDate" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" readonly />
+								        <span class="input-group-btn">
+									        <button type="button" class="btn btn-white" ng-click="vm.open($event)"><i class="icon-calendar"></i></button>
+								        </span>
+							        </p>
+                                </div>
+							</div>
+							<div class="form-group">
+                                <div class="col-sm-12">
+                                    <label>{{"EMPLOYEE_ID"|translate}}<span class="required">*</span></label>
+									<input type="text" class="form-control" name="txtEmployeeID" ng-model="vm.userSelected.EmployeeID" autocomplete="off" 
+										required-message="'{{'EMPLOYEE_ID_REQUIRED'|translate}}'" required
+										validator="vm.EmployeeIDValidFunc(vm.userSelected.EmployeeID)===true" 
+										invalid-message="vm.EmployeeIDValidFunc(vm.userSelected.EmployeeID)"
+										validate-on="dirty" maxlength="10" />
+                                </div>
+							</div>
+							<div class="form-group">
+                                <div class="col-sm-12">
+                                    <label>{{"TELEPHONE"|translate}}</label>
+									<input type="text" class="form-control" name="txtTelephone" ng-model="vm.userSelected.Telephone"
+										validator="vm.PhoneValidFunc(vm.userSelected.Telephone)===true"
+										invalid-message="vm.PhoneValidFunc(vm.userSelected.Telephone)"
+										validate-on="dirty" maxlength="25"/>
+                                </div>
+							</div>
+							<div class="form-group">
+                                <div class="col-sm-12">
+                                    <label>{{"NOTE"|translate}}</label>
+									<textarea class="form-control vresize" ng-model="vm.userSelected.Notes"></textarea>
+                                </div>
+							</div>
+						</accordion-group>
+                    </accordion>
+                </div>
+            </div>
+			<div class="col-md-6 panel-right">
+				<div class="panel">
+					<div class="panel-header">
+						<div class="input-group">
+							<input type="text" ng-model="vm.query" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+							<span class="search-button">
+								<i class="icon-search"></i>
+							</span>
+						</div>
+					</div>
+					<div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+						<!--slimscroll="{height: '570px'}"-->
+                        <div class="tree-site-addmin">
+                            <tree-component class="cms-tree" ng-if="vm.treeSiteFilter" model="vm.treeSiteFilter" filter-text="vm.query" def-col="def" options="vm.options"></tree-component>
+                        </div>
+						<!--<cms-tree-view data="vm.sitetree" site-option="vm.SiteOption" search-tree="vm.query" class="panel-content"></cms-tree-view>-->
+                </div>
+				</div>
+			</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="vm.CloseUserAdmin()">{{"BTN_CANCEL"|translate}}</button>
+		<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">{{"BTN_SAVE"|translate}}</button>
+	</div>
+</form>

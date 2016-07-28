@@ -1,0 +1,155 @@
+.fa-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* COMMON, START */
+/* COMMON, END */
+/** TOP BAR **/
+/** LEFT BAR **/
+/** FOOTER **/
+.user-manages .listview .ngRow .ngCell .item-info .checkbox {
+  margin-top: 10px;
+}
+.user-manages .remove-view .item-info {
+  text-align: left;
+}
+.user-manages .form-edit {
+  padding: 0 !important;
+}
+.user-manages .form-edit .user-upload {
+  width: 100%;
+}
+.user-manages .form-edit .user-upload .img-circle {
+  display: inline-block;
+}
+.user-manages .form-edit .user-upload .btn-group {
+  margin-left: 10px;
+}
+.user-manages .form-edit .user-upload .btn-group .btn-file,
+.user-manages .form-edit .user-upload .btn-group .btn-danger {
+  display: inline-block;
+  margin-top: -30px;
+  margin-left: 3px;
+}
+.user-manages .form-edit .panel-right .panel .panel-header {
+  padding: 4px 5px;
+}
+.user-manages .form-edit .panel-right .panel .panel-header .input-group {
+  width: 100%;
+}
+.user-manages .form-edit .panel-right .panel .panel-header .input-group .search-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+}
+.user-manages .form-edit .panel-left {
+  border-right: 1px solid #CECECE;
+}
+.user-manages .form-edit .panel-left .panel .panel-heading .panel-title,
+.user-manages .form-edit .panel-left .panel .panel-header .panel-title {
+  overflow: visible;
+}
+.user-manages .form-edit .panel-left .form-group {
+  margin-bottom: 10px;
+}
+.user-manages .form-edit .panel-left .form-group .input-group .form-control {
+  z-index: auto;
+}
+.user-manages .form-edit .panel-left .form-group .required {
+  font-size: 2em;
+  margin: -4px 0 0 3px;
+  float: right;
+}
+.user-manages .form-edit .panel-left .border-top {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.user-manages .form-edit label {
+  font-size: 12px;
+}
+.user-manages .form-edit .img-circle {
+  max-height: 50px;
+  max-width: 50px;
+  margin-top: 2px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+  display: block;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+.user-manages .form-edit .img-circle img {
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+.user-manages .datepicker-noclear [ng-click="select(null)"] {
+  display: none;
+}
+.user-manages .panel-content,
+.user-manages .panel-body {
+  margin-top: -5px;
+}
+@media (min-width: 992px) {
+  .user-manages .panel-left {
+    padding-right: 0;
+  }
+  .user-manages .panel-left .scroll-body {
+    max-height: 635px;
+    overflow: auto;
+  }
+  .user-manages .panel-right {
+    padding-left: 0;
+  }
+  .user-manages .panel-right .scroll-body {
+    max-height: 570px;
+    overflow: auto;
+  }
+}
+@media (max-width: 991px) {
+  .user-manages .panel-right {
+    margin-top: 10px;
+    /*.slimScrollDiv {
+				height: 280px;
+
+				.scroll-body {
+					height: 280px;
+				}
+			}*/
+  }
+  .user-manages .panel-right .panel .panel-header {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .user-manages .panel-right .scroll-body {
+    max-height: 280px;
+    overflow: auto;
+  }
+  .user-manages .panel-left {
+    border-right: none !important;
+    /*.slimScrollDiv {
+				height: 300px;
+
+				.scroll-body {
+					height: 300px;
+				}
+			}*/
+  }
+  .user-manages .panel-left .scroll-body {
+    max-height: 300px;
+    overflow: auto;
+  }
+}

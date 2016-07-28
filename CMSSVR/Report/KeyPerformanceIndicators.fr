@@ -1,0 +1,21 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Indicateurs de performance clés"},
+{"NameField":"footer", "ValueField":"Préparé sous contrat pour l'usage exclusif d’i3 International. La reproduction de ce rapport est interdite."},
+{"NameField":"header_Traffic", "ValueField":"Actuel Trafic"},
+{"NameField":"header_Trans", "ValueField":"Actuel Trans."},
+{"NameField":"header_Sales", "ValueField":"Actuel Ventes"},
+{"NameField":"header_Conv", "ValueField":"Actuel % conv."},
+{"NameField":"rpt_AvgTrans", "ValueField":"Actuel Moy. Taille de la trans."},
+{"NameField":"rpt_Geography", "ValueField":"Géographie"},
+{"NameField":"rpt_Total", "ValueField":"Total"},
+{"NameField":"rpt_star", "ValueField":"Actuel STAR"},
+{"NameField":"rpt_labor", "ValueField":"Actuel Heures de main-d'œuvre"},
+{"NameField":"rpt_UPT", "ValueField":"Actuel Articles par trans."},
+{"NameField":"rpt_AUR", "ValueField":"Actuel Moy. Articles de détail"},
+{"NameField":"rpt_SPS", "ValueField":"Actuel Ventes par client"},
+{"NameField":"header_Period", "ValueField":"Période"},
+{"NameField":"rpt_Average", "ValueField":"Moyenne"},
+{"NameField":"title_Period", "ValueField":"Période du rapport:"},
+{"NameField":"rpt_NODATA", "ValueField":"Données de ne sont pas disponibles"},
+{"NameField":"rpt_To", "ValueField":"À"}
+]

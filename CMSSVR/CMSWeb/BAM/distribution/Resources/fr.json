@@ -1,0 +1,20 @@
+﻿{
+	"LOCATION_STRING":"Région",
+	"MANUALLY":"Manuel",
+	"MANUALLY_UPLOAD":"MANUEL UPLOAD",
+	"MSGDVRVIRTUAL":"Pas d'image sur le DVR virtuel",
+	"MSGCLICK":"Cliquez ici ou faites glisser l'image ici pour télécharger",
+	"NO_DATA_STRING": "Il n’y a pas de données.",
+	"PERIOD_STRING": "Période ",
+	"SUMMARY_STRING": "Summary",
+	"WEEK_STRING": "Semaine ",
+	"QUEUE_NAME":"Nom de Queue",
+	"QUEUE_APPLY_ALL_STORES_MSG": "Caution: Applying changes to all locations may result in changes to the pre-approved Setup. Proceed?",
+	"QUEUE_APPLY_HEADER": "Appliquer à tous les magasins",
+	"QUEUE_TITLE": "Définition de file Queue",
+
+	"QUEUE_NAME_THE_SAME": "NE PEUT PAS ENTREE LA QUEUE MÊME NOM",
+	"QUEUE_NAME_EXIST": "Cette file d'attente '{0}' existe déjà",
+	"REGION_CHOSEN": "Cette région a été choisie",
+	"REGION_MAXIMUM": "Vous ne pouvez pas ajouter plus de numéro de région maximale!"
+}

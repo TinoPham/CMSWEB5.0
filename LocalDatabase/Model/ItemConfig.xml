@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+	<Base>
+		<Item Name="ItemBase" Type="Class">
+			<Property Name="ID" Type="int" Attribute="Key" Identity="None" />
+			<Property Name="Name" Mark ="virtual" Type="string" Length="150"/>
+		</Item>
+	</Base>
+
+	<ItemClass>
+	<Item Name ="POSCheckID" Base ="ItemBase" Table="tbl_POS_CheckIDList"></Item>
+	
+	<Item Name ="POSShift" Base ="ItemBase" Table="tbl_POS_ShiftList"></Item>
+	
+	<Item Name ="POSRegister" Base ="ItemBase" Table="tbl_POS_RegisterList"></Item>
+	
+	<Item Name ="POSCameraNB" Base ="ItemBase" Table="tbl_POS_CameraNBList"></Item>
+	
+	<Item Name ="POSExtraName" Base ="ItemBase" Table="tbl_POS_ExtraName"></Item>
+	
+	<Item Name ="POSDescription" Base ="ItemBase" Table="tbl_POS_DescriptionList">
+		<Property Name="Name" Type="string" Mark ="override" Length="250"/>
+	</Item>
+
+	<Item Name ="POSStore" Base ="ItemBase" Table="tbl_POS_StoreList"></Item>
+	
+	<Item Name ="POSOperator" Base ="ItemBase" Table="tbl_POS_OperatorList"></Item>
+	
+	<Item Name ="POSExtraStringValue" Base ="ItemBase" Table="tbl_POS_ExtraStringValue">
+		<Property Name="Name" Type="string" Mark ="override" Length="250"/>
+	</Item>
+	
+	<Item Name ="POSCardID" Base ="ItemBase" Table="tbl_POS_CardIDList"></Item>
+	
+	<Item Name ="POSTaxes" Base ="ItemBase" Table="tbl_POS_TaxesList">
+		<Property Name="Name" Type="string" Mark ="override" Length="150"/>
+	</Item>
+
+	<Item Name ="POSItemCode" Base ="ItemBase" Table="tbl_POS_ItemCodeList"></Item>
+
+	<Item Name ="POSPayment" Base ="ItemBase" Table="tbl_POS_PaymentList"></Item>
+
+	<Item Name ="POSTerminal" Base ="ItemBase" Table="tbl_POS_TerminalList"></Item>
+
+	<Item Name ="IOPCTrafficCountRegionName" Base ="ItemBase" Table="tbl_IOPC_TrafficCountRegionName"></Item>
+
+	<Item Name ="IOPCAlarmObjectType" Base ="ItemBase" Table="tbl_IOPC_AlarmObjectType"></Item>
+
+	<Item Name ="IOPCAlarmAlarmType" Base ="ItemBase" Table="tbl_IOPC_AlarmAlarmType"></Item>
+
+	<Item Name ="IOPCAlarmArea" Base ="ItemBase" Table="tbl_IOPC_AlarmArea"></Item>
+
+	<Item Name ="IOPCCountArea" Base ="ItemBase" Table="tbl_IOPC_Count_Area"></Item>
+
+	<Item Name ="IOPCCountObjectType" Base ="ItemBase" Table="tbl_IOPC_Count_ObjectType"></Item>
+
+	<Item Name ="ATMTransType" Base ="ItemBase" Table="tbl_ATM_TransTypeList"></Item>
+
+	<Item Name ="ATMXString" Base ="ItemBase" Table="tbl_ATM_XStringList"></Item>
+	
+	<Item Name ="ATMExtraName" Base ="ItemBase" Table="tbl_ATM_ExtraName"></Item>
+
+	<Item Name ="ATMTransCode" Base ="ItemBase" Table="tbl_ATM_TransCodeList"></Item>
+
+	<Item Name ="ATMCardNB" Base ="ItemBase" Table="tbl_ATM_CardNBList"></Item>
+
+	<Item Name ="CAUnitID" Base ="ItemBase" Table="tbl_CA_UnitIDList"></Item>
+
+	<Item Name ="CACard" Base ="ItemBase" Table="tbl_CA_CardList"></Item>
+
+	<Item Name ="CAExtraName" Base ="ItemBase" Table="tbl_CA_ExtraName"></Item>
+
+	<Item Name ="CATranType" Base ="ItemBase" Table="tbl_CA_TranTypeList">
+		<Property Name="Name" Type="string" Mark ="override" Length="150"/>
+	</Item>
+	
+	<Item Name ="CASiteID" Base ="ItemBase" Table="tbl_CA_SiteIDList"></Item>
+
+	<Item Name ="CAName" Base ="ItemBase" Table="tbl_CA_NameList"></Item>
+
+	<Item Name ="CABatch" Base ="ItemBase" Table="tbl_CA_BatchList"></Item>
+
+	<Item Name ="CADevName" Base ="ItemBase" Table="tbl_CA_DevNameList"></Item>
+
+	<Item Name ="CAFullName" Base ="ItemBase" Table="tbl_CA_FullNameList">
+		<Property Name="Name" Type="string" Mark ="override" Length="255"/>
+		<Property Name="LastName" Type="string" Length="255"/>
+	</Item>
+
+	<Item Name ="CAXString" Base ="ItemBase" Table="tbl_CA_XStringList">
+		<Property Name="Name" Type="string" Mark ="override" Length="150"/>
+	</Item>
+
+	<Item Name ="DVRMessage" Base ="" Table="DVRMessages">
+		<Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+		<Property Name="MessageID" Type="int"/>
+		<Property Name="MessageBody" Type="byte[]" />
+		<Property Name="DvrDate" Type="DateTime"/>
+		<Property Name="Direction" Type="short"/>
+	</Item>
+
+	<Item Name ="Log" Base ="" Table="Logs">
+		<Property Name="ID" Type="Int64" Attribute="Key" Identity="Identity"/>
+		<Property Name="LogID" Type="int"/>
+		<Property Name="Message" Type="string" />
+		<Property Name="Owner" Type="Boolean"/>
+		<Property Name="ProgramSet" Type="Byte"/>
+		<Property Name="DVRDate" Type="DateTime"/>
+		<Property Name="MsgClass" Type="string" Length="255"/>
+	</Item>
+	
+	<Item Name ="ConvertInfo" Base ="" Table="ConvertInfos">
+			<Property Name="ID" Type="int" Attribute="Key" Identity="Identity"/>
+			<Property Name="Programset" Type="byte"/>
+			<Property Name="TableName" Type="string" Length="50"/>
+			<Property Name="DvrDate" Type="DateTime"/>
+			<Property Name="LastKey" Type="string" Length="25"/>
+			<Property Name="Order" Type="byte" />
+			<Property Name="UpdateDate" Type="DateTime" />
+			<Property Name="Enable" Type="bool" />
+		</Item>
+	
+	<Item Name ="ServiceConfig" Base ="" Table="ServiceConfigs">
+			<Property Name="ID" Type="int" Attribute="Key" Identity="Identity"/>
+			<Property Name="Url" Type="string" Length="255"/>
+			<Property Name="Interval" Type="int"/>
+			<Property Name="LogRecycle" Type="int"/>
+			<Property Name="NumDVRMsg" Type="int"/>
+			<Property Name="ServerID" Type="string" Length="100"/>
+			<Property Name="KeepAliveToken" Type="Int64"/>
+		</Item>
+	
+	<Item Name ="DVRConverter" Base ="" Table="DVRConverters">
+			<Property Name="ID" Type="int" Attribute="Key" Identity="Identity"/>
+			<Property Name="DvrSocketRetry" Type="int"/>
+			<Property Name="TCPPort" Type="int"/>
+			<Property Name="Enable" Type="bool"/>
+		</Item>
+	
+	</ItemClass>
+</Items>

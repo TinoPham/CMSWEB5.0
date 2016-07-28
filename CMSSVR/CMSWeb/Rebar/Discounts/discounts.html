@@ -1,0 +1,52 @@
+﻿<div class="rebar-container page-have-collapse-data" ng-controller="discountCtrl as vm">
+	<div class="header-content">
+		<div class="tree-site-content pull-left">
+			<div class="rebar-btn-tree btn-group" outside-click="clickOutside($event ,'.rebar-btn-tree')">
+				<a id="btn-popMenuConvSites" class="btn btn-xs dropdown-toggle btn-site" pop-menu>{{'SELECT_REGION_STRING'|translate}} <span class="badge">{{vm.selectedSites.length}}</span><i class="icon-down-open-2"></i></a>
+				<ul class="dropdown-menu pull-left filter-dlg">
+					<li>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel">
+									<div class="panel-header chart-pop-header" style="height: 32px;">
+										<div class="">
+											<div class="input-group">
+												<input type="text" ng-model="vm.querySite" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+											</div>
+										</div>
+
+									</div>
+									<div class="scroll-body" slimscroll="{height: '300px'}">
+										<div class="tree-site-addmin" ng-if="vm.siteloaded === true">
+											<tree-component class="cms-tree" model="vm.treeSiteFilterS" def-col="vm.treeDef" filter-text="vm.querySite" options="vm.treeOptions"></tree-component>
+										</div>
+									</div>
+									<div class="panel-footer">
+										<div class="btn-group">
+											<span id="closeConvSites" class="btn btn-blue-3 pull-right btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div ng-show="showProgressBar" class="col-md-5 showProgressBar">
+			<div class="col-xs-10 col-sm-10">
+				<span class="label">{{'PLEASE_WAIT' | translate}}</span>
+				<span class="label pull-right"> {{dataProgressValue}}% </span>
+				<progressbar class="progress-striped active progress-xs " value="dataProgressValue" type="primary">{{dataProgressValue}}%</progressbar>
+			</div>
+			<div class="col-xs-2  btn btn-danger btn-stop" ng-click="stopGetData()"><i class="icon-off"></i></div>
+		</div>
+		<div class="form-group pull-right">
+			<label class="control-label head-item">{{'GROUP_BY_STRING'|translate}}</label>
+			<span class="head-item">{{'EMPLOYEE_STRING'|translate}}</span>
+			<cms-switch-button model="groupByField" class="head-item"></cms-switch-button>
+			<span class="head-item">{{'SITE_NAME_STRING'|translate}}</span>
+		</div>
+	</div>
+	<div ng-if="vm.siteloaded" ng-include="'Widgets/Rebar/CannedRptViewer.html'"></div>
+</div>

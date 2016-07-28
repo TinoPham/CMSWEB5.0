@@ -1,0 +1,76 @@
+<!-- Page Header, start -->
+<div class="topbar" ng-controller="headerCtrl as vm">
+	<div class="topbar-left">
+		<div class="logo">
+			<h1><a href="#/dashboard">
+				<img src="../Content/Images/logo_Company.png" alt="Logo"></a></h1>
+		</div>
+		<button id="btn-open-left" class="button-menu-mobile open-left" btn-left-bar>
+			<i class="icon-menu"></i>
+		</button>
+	</div>
+	<!-- Button mobile view to collapse sidebar menu -->
+	<div class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-collapse2">
+				<ul class="nav navbar-nav hidden-xs">
+					<li class="language_bar dropdown hidden-xs">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{vm.selectedLanguage.name}}<i class="icon-down-dir"></i></a>
+						<ul class="dropdown-menu pull-right">
+							<li ng-repeat="lang in vm.Languages"><a ng-click="changeLanguage(lang)">{{lang.name}}</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right top-navbar">
+
+				    <li title="Full screen" class="dropdown iconify hide-phone hidden-xs hidden-sm hidden-md">
+				    	<a href="#" full-screen><i class="icon-resize-full-2"></i></a></li>
+				 <!--    <li class="iconify hidden-xs have-icon-live-chat">
+						<a 
+						class="have-image"
+						target="_blank" href="http://i3chat.i3international.com/chat?locale=en" tooltip="Support">							
+							<img src="../Content/Images/chat_icon.png" alt="Live Chat" title="Live Chat">
+						</a>
+					</li> -->	
+                    <li class="language_bar dropdown hidden-sm hidden-md hidden-lg topbar-profile">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-md"><i class="icon-language-2"></i></span><i class="icon-down-dir"></i></a>
+                        <ul class="dropdown-menu pull-right">
+                            <li ng-repeat="lang in vm.Languages"><a ng-click="changeLanguage(lang)">{{lang.name}}</a></li>
+                        </ul>
+                    </li>
+
+				    <li class="dropdown topbar-profile">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="profile-image">
+								<img ng-src="{{vm.parent.UserAvatarUrl}}" />
+								<!--<img ng-show="vm.UPhoto == null" src="../../../Content/Images/img_user_blank.png" />-->
+							</span>
+							<span class="hidden-sm hidden-xs">{{vm.UserModel.FName + " " + vm.UserModel.LName}}</span> <i class="icon-down-dir"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a ng-click="vm.MyProfile()">{{'MY_PROFILE'|translate}}</a></li>
+							<li><a ng-click="vm.ChangePassword()">{{'CHANGE_PASSWORD'|translate}}</a></li>
+							<!--<li><a href="#">{{'ACCOUNT_SETTING'|translate}}</a></li>-->
+							<li ng-if="vm.isDsh"><a class="md-trigger" ng-click="vm.DshSetting()">{{'DASHBOARD_SETTINGS'|translate}}</a></li>
+							<li class="divider"></li>
+							<!--<li><a href="#"><i class="icon-help-2"></i>{{'HELP'|translate}}</a></li>-->
+							<!--<li><a href="#"><i class=" icon-lock"></i>{{'LOCK_ME'|translate}}</a></li>-->
+							<li><a class="md-trigger" data-modal="logout-modal" ng-click="vm.logOut()"><i class="icon-logout-1"></i>{{'LOGOUT'|translate}}</a></li>
+						</ul>
+					</li>
+					<li ng-if="vm.isSite === true" ng-click="showhideTree();" class="site-button-control-top dropdown">
+						<a href="" title="Show/Hide Treesite">
+							<i ng-show="isHideTree === false" class="icon-left-small"></i>	
+							<i ng-show="isHideTree === true" class="icon-right-small"></i>	
+							<i class="icon-site-2"> </i>
+							<!-- <span ng-show="isHideTree === false" ng-bind="sitesCount"> </span> -->
+						</a>
+					</li>
+				</ul>
+				
+			</div>
+			<!--/.nav-collapse   	style="display:none"   -->
+		</div>
+	</div>
+</div>
+<!-- Page Header, start -->

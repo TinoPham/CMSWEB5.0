@@ -1,0 +1,1 @@
+{"GoalCreateBy":1,"GoalLastUpdated":"2016-03-12T03:36:43.479Z","UUsername":"i3admin","MapValue":[{"GoalID":2,"GoalTypeID":1,"MinValue":30,"MaxValue":80,"GoalTypeName":"Conversion rate %"}],"GoalID":2,"GoalName":"bonus"}

@@ -1,0 +1,74 @@
+﻿
+<div class='container recording_tab {{detechBrowser}}'>
+  <div class="row">
+      <div ng-repeat ="item in DVRInfo"  class="{{isHaveData(item)?containerClass[0]:containerClass[1]}}">
+        <div class='header' ng-if="isHaveData(item) == true">
+      		<div class="col-xs-12 col-md-4 infosite">
+      			<div>
+      				<i class="icon-dvr-2"></i>
+      			</div>
+      			<div >
+      				  <h1 title="{{'DVR_NAME'|translate}}: {{item.ServerID}}">{{"DVR_NAME"|translate}}: <strong>{{item.ServerID}}</strong> <br>
+                <small>
+                    {{"RECORDING_DATES" | translate}}: <strong ng-show="(item.MinDateRec + ' - ' + item.MaxDateRec) !== ' - '"> {{item.MinDateRec + ' - ' + item.MaxDateRec}}</strong>
+                    <strong ng-show="(item.MinDateRec + ' - ' + item.MaxDateRec) === ' - '"> {{"NOTAVAILABLE"|translate}}</strong>
+                </small>
+              </h1>
+      			</div> 
+
+      		</div><!-- END infosite -->
+
+      		<div class="col-xs-12 col-md-8 parentdSpaceSafari">   
+          
+            <div class='diskspace dSpaceSafari'>             
+                <div class="progress_custom"> 
+                              
+                  <div class="used_space progress-bar progress-bar-used" ng-style="{'width': '{{ UsedSpace(item) }}%' }">
+                      <span class="percent-text {{UsedSpace(item)===100 ? percentFixclass[1] : ''  }} {{UsedSpace(item) < 10 ? percentFixclass[0] : ''  }}" >{{UsedSpace(item)}}%</span>
+                      <span class="disk-text">{{"USED_SPACE"| translate }}</span>    
+                    </div>
+                
+                    <div class="free_space progress-bar {{progressStatus(item)}}" ng-style="{'width': '{{FreeSpace(item)}}%' }">
+                       <span class="percent-text {{FreeSpace(item)=== 100 ? percentFixclass[1] : ''  }} {{FreeSpace(item) < 10 ? percentFixclass[0] : ''  }} ">{{FreeSpace(item)}}%</span>
+                      <span class="disk-text-free">{{"FREE_SPACE"| translate}}</span>
+                    </div>
+                </div>
+            </div>
+          
+
+      		</div><!-- END Disk space -->
+
+      	</div>  <!-- END header div -->
+        <div class="content" ng-if="isHaveData(item) == true">
+      		<div class="row">
+      			<div class="col-xs-12 col-md-4">
+      				<i class="icon-calendar-inv"></i>
+              <span>{{"TOTAL_RECORDING"|translate}}: <strong>{{item.RecordingDay}}</strong> </span>
+      			</div>
+
+            <div class="col-xs-12 col-md-4">
+              <i class="icon-recording"></i>
+             <span>{{"RECYCLE_RECORDING"|translate}}: <strong>{{recyclePercent(item)}}</strong></span>
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+              <i class="icon-data-storage"></i>
+             <span>{{"TOTAL_HDD_RECORDING"|translate}}: <strong>{{TotalDiskSize(item)}}MB</strong> </span>
+            </div>
+
+      		</div>
+      	</div><!-- END content div -->
+
+         <div class="col-xs-12 col-md-12 infosite" ng-if="isHaveData(item) == false">
+              <i class='icon-dvr-null'></i>
+              <h1>{{"DVR_NAME"|translate}}: <strong>{{item.ServerID}}</strong>  <br>
+                <small>{{"NO_STORAGE_DRIVE"|translate}}</small>
+              </h1>
+          </div><!-- END infosite -->
+      </div>
+  </div><!-- END :: Container -->
+</div>
+
+
+
+

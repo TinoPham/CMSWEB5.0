@@ -1,0 +1,184 @@
+﻿<div class="sites-config">
+    <div class="modal-header" modaldraggable>
+        	<span class="close" data-ng-click="Close()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title" >{{btn_Type === false ? 'BTN_EDIT' : 'BTN_ADD'|translate}} {{"ADHOC_CUSTOM_REPORT"|translate}}</h3>
+    </div>
+	<div class="modal-body form-edit adhoc-custom-report">
+	    <form class="" name="adhoc" angular-validator-submit="Save()" novalidate angular-validator>
+	        <div class="row" ng-class="vm.user.length > 0 ? '' : 'panel_NormalUser'">
+	            <input type="submit" ng-hide="true"/>
+	            <div class="col-md-7 panel-left">
+	                <div class="scroll-body scrollbar-dynamic box-column-select" data-jquery-scrollbar>
+	                    <accordion>
+	                        <accordion-group is-open="vm.status.info">
+	                            <accordion-heading>
+	                                <i class="fa" ng-class="{'fa-caret-right': !vm.status.info, 'fa-caret-down': vm.status.info}"></i>
+	                                <span class="text-uppercase"><span>{{'REP_INFO'|translate}}</span></span>
+	                            </accordion-heading>
+	                            <div class="form-group">   
+	                                <label>{{"REPORT_NAME"|translate}}</label>
+	                                <input type="text" class="form-control" name="Reportname" ng-model="vm.Reportname" autocomplete="off" title="{{'Report Name'|translate}}"
+	                                       required-message="'{{'REPORT_NAME_REQUIRED'|translate}}'" required
+	                                       validate-on="dirty" maxlength="50" autofocus/>
+	                            </div>                        				
+	                            <div class="form-group no-margin">
+	                                <label>{{"DESCRIPTION_STRING"|translate}}</label>
+	                                <textarea name="Description" class="form-control vresize" ng-model="vm.Description" maxlength="50" rows="3"></textarea>
+	                                <label class="required">{{'MAXLENGTH_DESCRIPTION_MSG'|translate}}</label>
+	                            </div>
+                                 <div class="form-group">
+	                                <label class="control-label"><span>{{'COLUMN_SELECT'|translate}}</span></label>
+	                                <div class="input-group col-sm-12">
+	                                    <multiselect name="Group" class="form-control" ng-model="vm.Selected" 
+	                                                 options="g as g.DisplayField for g in vm.SelectedList"
+                                                    change="vm.changeColumns()"
+	                                                 multiple="true"  >
+	                                    </multiselect>
+	                                </div>
+	                            </div>
+	                            <div class="form-group">
+	                                <label class="control-label"><span>{{'GROUP_BY_STRING'|translate}}</span></label>
+	                                <div class="input-group col-sm-12">
+	                                    <div class="no-padding"  ng-class="{'col-sm-12': vm.groupSelected.DisplayField !== 'TranDate', 'col-sm-6' : vm.groupSelected.DisplayField === 'TranDate'}">
+	                                        <multiselect name="Group" class="form-control custom-radio-multiselect " ng-model="vm.groupSelected" 
+	                                                     options="g as g.DisplayField for g in vm.GroupColumns" >
+	                                            <!--change="vm.ddlGoalsChanged()">-->
+	                                        </multiselect>
+	                                    </div>
+	                                    <div class="col-sm-6 no-padding" ng-if="vm.groupSelected.DisplayField === 'TranDate'">
+	                                        <multiselect name="GroupDate" class="form-control custom-radio-multiselect " ng-model="vm.dateGroupSelected" 
+	                                                     options="g as g.Name for g in vm.DateGroup" >
+	                                            <!--change="vm.ddlGoalsChanged()">-->
+	                                        </multiselect>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </accordion-group>
+	                    </accordion>
+                         <accordion>
+                             <accordion-group is-open="vm.status.filter">
+                                 <accordion-heading>
+                                     <i class="fa" ng-class="{'fa-caret-right': !vm.status.info, 'fa-caret-down': vm.status.filter}"></i>
+                                     <span class="text-uppercase"><span>{{'FIELD_SETTINGS'|translate}}</span></span>
+                                 </accordion-heading>
+                                 <div>
+                                     <div class="col-sm-12">
+                                         <div class="list-group field-settings">
+                                             <a class="list-group-item col-sm-12" ng-repeat="p in vm.FilterColumns | orderBy:'DisplayField'" ng-if="p.filter" ng-click="vm.filterSelected = p">
+                                                 <span  class="pull-left">
+                                                     <span style="font-weight:bold;">{{p.filter.SelectAnd ? ' And ' : ' Or '}}</span>
+                                                     <span>{{p.DisplayField |translate}}</span>
+                                                     <span>{{p.DataType === 'childid' || p.DataType === 'list' ? ' = ' : ' ' + p.filter.selectfirst.symbol + ' '}}</span>
+                                                     <span ng-if="p.DataType === 'datetime'">{{p.filter.firstvalue | date: 'MM/dd/yyyy'}}</span>
+                                                     <span ng-if="p.DataType === 'money'">{{p.filter.firstvalue | number: 2}}$</span>
+                                                     <span ng-if="p.DataType === 'number'">{{p.filter.firstvalue | number}}</span>
+                                                     <span ng-if="p.DataType === 'string'">{{p.filter.firstvalue}}</span>
+                                                     <span ng-if="p.DataType === 'childid'" title="{{p.filter.firstvalue.join()}}">{{vm.NumberItemText(p.filter.firstvalue.length)}}</span>
+                                                     <span ng-if="p.DataType === 'list'" title="{{p.filter.firstvalue.join()}}">{{vm.NumberItemText(p.filter.firstvalue.length)}}</span>
+                                                 </span>
+                                                 <div class='pull-right'>
+                                                 	<span id="field-settings-{{$index}}" data-toggle="dropdown" class="icon-dot-verticle dropdown-toggle"></span>
+											              <ul ng-if="rp.IsAssignee !== true" class="dropdown-menu" aria-labelledby="field-settings-{{$index}}">
+											                <li   ng-click="deleteFilter(p)" >
+											                    <i title="{{'BTN_DELETE' | translate}}" class=" icon-trash"></i>
+											                    {{'BTN_DELETE'|translate}}
+
+											                </li>   
+											                <li role="separator" class="divider"></li>
+											                <li  ng-click="selectfilters(false)" >
+											                    <i title="{{'BTN_EDIT' | translate}}"  class="icon-pencil"></i>
+											                    {{'BTN_EDIT'|translate}}
+											                </li>  
+											            </ul>   
+											        </div>
+
+											       <div style="clear:both"></div>
+                                                 <!-- <span class="btn pull-right" ng-show="vm.filterSelected && vm.filterSelected.ColID === p.ColID" ng-click="selectfilters(false)">{{'BTN_EDIT'|translate}}</span>
+                                                 <span class="btn pull-right" ng-show="vm.filterSelected && vm.filterSelected.ColID === p.ColID" ng-click="deleteFilter(p)">{{'BTN_DELETE'|translate}}</span> -->
+                                             </a>
+                                         </div>
+                                     </div>
+                                     <div class="col-xs-12" style="text-align: center;" >
+                                     	<button type="button" class="btn btn-default " ng-click="selectfilters(true)">+</button>
+                                     </div>
+                                     
+                                 </div>
+                             </accordion-group>
+	                    </accordion>
+	                </div>
+	            </div>
+	            <div class="col-md-5 panel-right" >
+	                <accordion>
+	                    <accordion-group is-open="vm.status.isUsersOpen">
+	                        <accordion-heading>
+	                            <i class="fa" ng-class="{'fa-caret-right': !vm.status.isUsersOpen, 'fa-caret-down': vm.status.isUsersOpen}"></i>
+	                            <span class="text-uppercase"><span>{{'ASSIGN_TO'|translate}}</span></span>
+	                            <span ng-click="vm.refeshUsers($event)" class="siteadmin-reload-btn"><i class="icon-ccw-1"></i></span>
+	                        </accordion-heading>
+	                        <div class="form-group search-group">
+	                            <input type="text" ng-model="vm.userquery" class="form-control no-border" placeholder="{{'SEARCH_PLACE_HOLDER' | translate}}" />
+	                        </div>
+	                        <div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+	                            <ul class="list-group user-list">
+	                                <li ng-class="{'active': user.Checked}" class="list-group-item" ng-repeat="user in vm.user | filter: vm.searchUses track by $index">
+	                                    <!--<div class="item-info" ng-dblclick="vm.openUsers(user)" ng-click="vm.checkUser(user)">-->
+                                        <div class="item-info" ng-click="vm.checkUser(user)">
+	                                        <span class="i-image">
+	                                            <img ng-show="user.UPhoto!=null" ng-src="{{vm.ApiImageUrl(user.UID, user.UPhoto)}}" alt="" ng-style="{'display': 'inline-block', 'border': '2px solid ', 'border-color': vm.convertColor(user.PosColor)}"/>
+	                                            <img ng-show="user.UPhoto==null" src="../Content/Images/img_user_blank.png" alt="" ng-style="{'display': 'inline-block', 'border': '2px solid ', 'border-color': vm.convertColor(user.PosColor)}"/>
+	                                            <span ng-show="user.Checked" class="icon-checked"><i class=" icon-ok-1"></i></span>
+	                                        </span>
+	                                        <div class="i-name">{{user.FName}} {{user.LName}}</div>
+	                                        <div class="i-pos">{{user.PosName}}</div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </accordion-group>
+	                </accordion>
+	            </div>
+
+	            <!-- <div class="col-md-12 custom-field-setting">
+
+	            	 <ul class="nav nav-tabs" role="tablist">
+					    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+					    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+					    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+					    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+					  </ul>
+	            	    <accordion>
+                             <accordion-group is-open="vm.status.filter">
+                                 <accordion-heading>
+                                     <i class="fa" ng-class="{'fa-caret-right': !vm.status.info, 'fa-caret-down': vm.status.filter}"></i>
+                                     <span class="text-uppercase"><span>{{'FIELD_SETTINGS'|translate}}</span></span>
+
+                                     
+
+                                 </accordion-heading>
+                                 <div>
+                                     <div class="col-md-12">
+									
+									  <div class="tab-content">
+									    <div role="tabpanel" class="tab-pane active" id="home"> 1 </div>
+									    <div role="tabpanel" class="tab-pane" id="profile"> 2 </div>
+									    <div role="tabpanel" class="tab-pane" id="messages"> 3 </div>
+									    <div role="tabpanel" class="tab-pane" id="settings"> 4 </div>
+									  </div>
+
+									</div>
+                                    
+                                 </div>
+                             </accordion-group>
+	                    </accordion>
+	            </div> -->
+
+	        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="Close()">{{"BTN_CANCEL"|translate}}</button>
+                <button type="submit" class="btn btn-primary" ng-disabled="adhoc.$invalid" >{{"BTN_SAVE"|translate}}</button>
+            </div>
+	    </form>
+    </div>
+    
+</div>

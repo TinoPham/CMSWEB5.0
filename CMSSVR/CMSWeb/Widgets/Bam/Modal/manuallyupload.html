@@ -1,0 +1,47 @@
+﻿<form name="deleNode" class="form-horizontal user-group-manages form-manually-upload">
+	<div class="modal-header">
+		<span class="close" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'MANUALLY_UPLOAD'|translate}}</h3>
+	</div>
+    <div class="modal-body">
+		<div class="slide-content ">
+            <div class="control-filter form-inline">
+                
+                <div class="form-group"><select ng-disabled="parentForm" class="form-control" ng-model="selectedChannel" ng-options="channel as channel.Name for channel in LChannels"></select></div>
+                <div class="form-group"><select ng-disabled="parentForm" ng-change="TypeScheduleChanged()" class="form-control" ng-model="selectedSchedule" ng-options="schedule as schedule.Name for schedule in Schedules"></select></div>
+                
+                <div class="dateUpload form-group start-date">
+			        <div class="input-group" options="{{optionsDate}}" cmsdatetimepicker ng-model="dateUpload">
+				        <input ng-disabled="parentForm" type="text" name="DateFrom" class="form-control input-sm" readonly />
+				        <span class="input-group-addon"><i class="icon-calendar"></i></span>
+			        </div>
+		        </div>
+                <span ng-disabled="parentForm" ng-click="EventRefresh()" class="btn btn-default btn-sm"><i class="icon-cw-2"></i>{{'FUNC_HEADER_BTN_REFRESH'| translate}}</span>
+            </div>
+            <div class="content-model">
+                <span class="btn-file-add btn-file" ng-show="!haveImage">
+                    <span>
+                    <i  class="icon-upload-3"></i><br />
+                    <strong>{{'MSGCLICK'| translate}}</strong>
+
+                    </span>
+                    <input type="file" accept=".jpg, .jpeg, .png, .gif, .bmp" file-upload />
+                </span>
+                <span class="btn-file-edit row" ng-show="haveImage">
+                    <span class="col-md-6"><img id="imgClient"  alt=""></span>
+                    <span class="btn-file"  class="col-md-6">
+                        <span>
+                        <i  class="icon-upload-3"></i><br />
+                        <strong>{{'MSGCLICK'| translate}}</strong>
+                            </span>
+                        <input type="file" accept=".jpg, .jpeg, .png, .gif, .bmp" file-upload />
+                    </span>
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+	<div class="modal-footer">
+		<button class="btn btn-primary ng-binding" ng-disabled="!haveImage" ng-click="SaveUpload()">Upload</button>
+    </div>
+</form>

@@ -1,0 +1,4 @@
+<div ng-controller="dashboardCtrl as vm">
+	<cms-dashboard ng-show="dashboard" name="{{dashboard.Name}}" editable="true" edit-mode="editMode" model="dashboard" 
+		save-dashboard="saveDashboard(editMode)" level-mode="levelMode" load-defined-dashboard="loadDefinedDashboard(levelMode)" ></cms-dashboard>
+</div>

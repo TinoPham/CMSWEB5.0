@@ -1,0 +1,124 @@
+﻿<div class="panel col-md-12 " ng-class="{'panel-full-box' : rvm.optionsShow.Max === true}" >               
+    <div class="row">
+        <div class="panel" style="margin-bottom: 0">
+            <div class="panel-heading custom-panel-heading">               
+                 <div class="additional-btn" > 
+                    <a  data-ng-click="columnFilter()"  
+                    tooltip-placement="left"
+                    tooltip="{{ (rvm.EnableFitler === true ? 'CLOSEFILTER_TOOLTIP' : 'FILTER_TOLLTIP') | translate}}"
+                     ng-class="{ 'active' :  rvm.EnableFitler === true }">                        
+                         <i class="icon-filter"></i>                       
+                    </a>
+
+                     <a data-ng-click="columnOption()" tooltip-placement="left" tooltip="{{'COLUMNOPTION_TOOLTIP' | translate}}">
+                        <i class="icon-list-add-1"></i>
+                     </a>
+
+                    <!--<a  ng-click="rvm.RefreshList()" tooltip="{{'TOOLTIP_REFRESH_WIDGET' | translate}}" tooltip-placement="left" class="ng-scope">
+                        <i class="icon-ccw-1"></i>
+                    </a>-->
+                    <a  ng-click="rvm.optionsShow.Max = !rvm.optionsShow.Max; rvm.optionsShow.Collapse = false;" tooltip="{{'MAXIMIZE' | translate}}" tooltip-placement="left">
+                        <i ng-class="{'icon-resize-full-1': !rvm.optionsShow.Max, 'icon-resize-small-1': rvm.optionsShow.Max}" class="icon-resize-full-1"></i>
+                    </a>
+
+                   <!--  <a ng-show="rvm.ShowBackButton === true"  data-ng-click="calbackFn()"  
+                     tooltip="{{'Back to summary' | translate}}">
+                        <i class="icon-left-1"></i>                        
+                    </a> -->
+                     <a ng-show="!rvm.optionsShow.Max" ng-click="rvm.optionsShow.Collapse = !rvm.optionsShow.Collapse" class="collapse-btn"tooltip="Collapse" tooltip-placement="left"><i class="icon-down-open-2"></i></a>     
+
+                    <span ng-show="rvm.optionsShow.Max" class="ng-hide">&nbsp;&nbsp;</span>
+                </div>
+
+               <!-- <h3 class="title" data-ng-click="calbackFn()" ng-show="rvm.optionsShow.isBack === true">
+                  <i class="icon-left-1"></i>  {{'BACK' | translate}}
+                </h3>    <!-- {{'Transaction Info' | translate}} -->   
+                <div class="panel-heading-title">
+                    <div ng-if="currentSelect.TypeReport" data-ng-click="calbackFn()" style="cursor: pointer;">
+                        <i class="icon-doc" />
+                        <span>{{currentSelect.TypeReport | translate}}</span>
+                        </div>
+                    <div ng-if="currentSelect.Site"><i class="icon-right-open-big" /></div>
+                    <div ng-if="currentSelect.Site" data-ng-click="state > states.Site && calbackFn()" ng-style="{cursor: state > states.Site ? 'pointer' : 'default'}">
+                        <i class="icon-store-3" />
+                        {{'SITE_NAME_STRING' | translate}}{{':'}} <span>{{currentSelect.Site}}</span>
+                    </div>
+                    <div ng-if="currentSelect.EmployerName"><i class="icon-right-open-big" /></div>
+                    <div ng-if="currentSelect.EmployerName" data-ng-click="state > states.Employee && calbackFn()" ng-style="{cursor: state > states.Employee ? 'pointer' : 'default'}">
+                        <i class="icon-vcard-1" />
+                        {{'EMPLOYEE_NAME' | translate}}{{':'}} <span>{{currentSelect.EmployerName}}</span>
+                    </div>
+                    <div ng-if="currentSelect.DateTime"><i class="icon-right-open-big" /></div>
+                    <div ng-if="currentSelect.DateTime">
+                        <i class="icon-calendar" />
+                        <span>{{currentSelect.DateTime | date: 'MM/dd/yyyy'}}</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="panel-body "  ng-show="rvm.optionsShow.Collapse === false" ng-class="{  'have-table' : rvm.optionsShow.Collapse === false  }" >
+              
+                <div class="table-responsive table-hover">
+                 
+                    <table class="cms-table-summary table-hover-tr ">
+                        <thead>
+                            <tr>
+                                <th ng-repeat="h in selectsDef" ng-class="{'first-col': $index === 0}">
+                                    <div ng-click="sortFilter(h)" ng-style="{'cursor': h.fieldType === 'list' ? 'default': 'pointer'}">
+                                        {{h.fieldName | translate}}
+                                        <i ng-if="sortItem.id === h.id" ng-class="{'icon-down-dir-2': sortAsc === true,'icon-up-dir-2':sortAsc === false} "></i>
+                                    </div>
+                                    <div ng-if="rvm.EnableFitler" ng-style="{'color':( (h.filter && h.filter.selectfirst && h.filter.selectfirst.id > 0) || (h.filter && h.filter.firstvalue && h.filter.firstvalue.length > 0) || (h.filter && h.filter.length > 0 && h.fieldType === 'list')) ? '#eb5055 ': '#FFF'}"><i style="cursor: pointer;" ng-click="selectfilters(h)" class="icon-filter"></i></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="!data || data.DataResult.length === 0" class="no-row-data">
+                                <th colspan="6">{{'NO_DATA_STRING' | translate}}</th>
+                            </tr>  
+                            <tr ng-if="data && data.DataResult.length > 0" ng-repeat="sum in data.DataResult">
+                                <td scope="row" style="min-width: 100px; cursor: pointer;" ng-class="{'start-col-row': $index === 0}" ng-repeat="h in selectsDef" ng-click="showTransacDetail(sum)">
+                                    <span ng-if="h.fieldType !=='list'">
+                                        <span ng-if="h.fieldType ==='decimal'">{{h.preFix}} {{sum[h.fieldName] | number: 2}} {{h.subFix}} </span>
+                                        <span ng-if="h.fieldType ==='number'"><span> {{h.preFix}} {{sum[h.fieldName]}} {{h.subFix}}</span></span>
+                                        <span ng-if="h.fieldType ==='datetime'">{{h.preFix}} {{sum[h.fieldName] | date:'MM/dd/yyyy HH:mm:ss':'UTC'}}</span>
+                                        <span ng-if="h.fieldType ==='money'">{{h.preFix}} {{(sum[h.fieldName] ? sum[h.fieldName] : 0 ) | number: 2}} {{h.subFix}}</span>
+                                        <span ng-if="h.fieldType ==='string'">{{h.preFix}} {{sum[h.fieldName]}} {{h.subFix}}</span>
+                                    </span>
+                                    <span  ng-if="h.fieldType ==='list' && sum[h.fieldName].length > 0"><span ng-repeat="p in sum[h.fieldName]" ng-init="pIndex = $index">{{p[h.Expand.fieldName]}}<span ng-if="(sum[h.fieldName].length > pIndex + 1) && sum[h.fieldName].length > 1">,</span></span></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+          
+                </div>  
+                <div>
+                    <span style="float: right" ng-show="totalPages > 1">
+                        <nav style="text-align: center;">
+                            <ul class="pagination">
+                                <li ng-click="prevPage()" ng-disabled="currentPage < 2">
+                                    <a aria-label="Previous">
+                                        <span aria-hidden="true">
+                                           <i class=" icon-left-open-big"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li ng-click="prevPage(1)"><a>1</a></li>
+                                <li><a class="input-page"><input type="text" maxlength ="10" ng-keypress="PreventLetter($event,inputRex)" ng-paste ="PreventPaste($event,pasteRegx)" class="form-control" ng-model="rvm.currentPage" style="max-width: 50px;"></a></li>
+                                <li ng-click="gotoPage()"><a>{{'GO' | translate}}</a></li>
+                                <li ng-click="nextPage(totalPages)"><a>{{totalPages ? totalPages : 0}}</a></li>
+                                <li ng-click="nextPage()" ng-disabled="currentPage >= totalPages">
+                                    <a aria-label="Next">
+                                        <span aria-hidden="true">
+                                           <i class=" icon-right-open-big"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

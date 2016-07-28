@@ -1,0 +1,150 @@
+﻿/*
+ * CMS: TREE VIEW CSS
+ * -----------
+ */
+
+.cms-tree {
+    .choose {
+        color: #000;
+        font-weight: bold;
+    }
+
+    .childuser {
+        color: #F36B05;
+    }
+
+    .cmscheckbox {
+        label {
+            margin: 0px 5px 0px 6px !important;
+        }
+
+        a {
+            padding: 0;
+            margin-left: 0px;
+            color: #6F6F6F;
+            max-width: 230px;
+            white-space: nowrap;
+            overflow: hidden;
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+    a {
+        padding: 0;
+        margin-left: 0px;
+        color: #6F6F6F;
+        max-width: 230px;
+        white-space: nowrap;
+        overflow: hidden;
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .del {
+        color: red;
+        margin-right: 15px;
+        border-left: 1px solid #6F6F6F;
+    }
+
+
+    ol {
+        list-style: none;
+        padding-left: 35px;
+
+        > i {
+            margin-left: -25px;
+        }
+    }
+
+    groupnode {
+        > div {
+            &:hover {
+                background-color: rgba(67, 74, 85, 0.18);
+            }
+        }
+    }
+
+    .tree-node-content {
+        padding-top: 5px;
+        padding-bottom: 1px;
+        height: 33px;
+        white-space: nowrap;
+        overflow: hidden;
+
+        a {
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+
+
+    .node-content {
+        // margin-left: -10px;
+        display: inline;
+        & > a {
+            max-width: inherit !important; 
+        }
+
+        a {
+            i {
+                font-size: 18px;
+                float: left;
+            }
+
+            span {
+                font-size: 14px;
+                max-width: 221px !important;
+                display: inline-flex;
+                float: left;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    .node-name {
+        padding-left: 5px;
+    }
+
+    .node-hidden {
+        border: 1px solid transparent;
+        height: 15px;
+    }
+
+    .highlighted {
+        background-color: #88A9C2;
+    }
+
+    input[type=checkbox] {
+        margin: 2px -3px 2px 7px;
+        vertical-align: middle;
+        position: inherit;
+    }
+
+    .placeholder {
+        margin-left: -3px;
+        min-height: 10px;
+        background-color: #ccc;
+    }
+
+    .control-group {
+        display: none;
+    }
+
+    .select {
+        background-color: rgba(67, 74, 85, 0.18);
+
+        .control-group {
+            display: block;
+        }
+    }
+
+
+    .icon-null {
+        width: 26px;
+    }
+}

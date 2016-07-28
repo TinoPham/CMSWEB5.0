@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="ServiceConfig.LogsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:ServiceConfig"
+             mc:Ignorable="d" Width="Auto" Height="Auto"
+             d:DesignHeight="500" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ProgramsetConverter x:Key="ProgramsetConverter"/>
+
+        <Style x:Key="DgTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="gridMain" Width="Auto" Height="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition  Height="500"/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="0">
+			<Label Content="From" Margin="5,0,0,5" />
+			<DatePicker x:Name="FDate" SelectedDate="{Binding StartDate, StringFormat='MM/dd/yyyy'}"  Style="{DynamicResource DatePickerStyle}"/>
+			<Label Content="To" Margin="15,0,0,5" />
+            <DatePicker x:Name="TDate" SelectedDate="{Binding Date, StringFormat='MM/dd/yyyy'}"  Style="{DynamicResource DatePickerStyle}"/>
+            <Button x:Name="btnSearch" Margin="5,0,0,0" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnSearch_Click" />
+        </StackPanel>
+
+        <DataGrid x:Name="dgLogs" ItemsSource="{Binding Logs}" Margin="0,5,0,0" Grid.Column="0" Grid.Row="1" RowDetailsVisibilityMode ="Collapsed"
+		CellStyle="{DynamicResource dgCellStyle}" ColumnHeaderStyle="{DynamicResource dgColumnHeaderStyle}" RowStyle="{DynamicResource dgRowStyle}" Background="{DynamicResource TextBoxBackgroundBrush}"
+			GridLinesVisibility="All" RowHeaderWidth="0" ScrollViewer.IsDeferredScrollingEnabled="True" EnableColumnVirtualization="True"
+                          IsSynchronizedWithCurrentItem="True" SelectionMode="Single" SelectionUnit="FullRow"
+                          AutoGenerateColumns="False" Width="Auto" CanUserAddRows="False" CanUserDeleteRows="False"
+                          IsReadOnly="True" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" Height="465" VerticalAlignment="Top"
+						
+		>
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Binding="{ Binding ProgramSet, Converter={StaticResource ProgramsetConverter}}" ClipboardContentBinding="{x:Null}" Width="100" Header="Program-set" ElementStyle="{StaticResource DgTextBlockStyle}"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{ Binding Message}" ClipboardContentBinding="{x:Null}" Header="Message" ElementStyle="{StaticResource DgTextBlockStyle}" Width="90*"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{ Binding DVRDate, StringFormat=\{0:MM/dd/yyyy HH:mm:ss\}}" ClipboardContentBinding="{x:Null}" Width="120" Header="Date" ElementStyle="{StaticResource DgTextBlockStyle}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

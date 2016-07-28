@@ -1,0 +1,49 @@
+<div class="panel-heading">
+	<h2>
+		{{'SMART_EXCEPTION' | translate}}
+	</h2>
+	<div class="additional-btn">
+		<a ng-click="vm.reloadMaxException()" tooltip="Refresh" tooltip-placement="left" class="ng-scope">
+			<i class="icon-ccw-1"></i>
+		</a>
+		<a ng-click="vm.smartexceptionProperty.Max = !vm.smartexceptionProperty.Max; vm.smartexceptionProperty.Collapse = false" 
+		   tooltip="{{(vm.smartexceptionProperty.Max ? 'RESTORE' : 'MAXIMIZE')|translate}}" tooltip-placement="left">
+			<i ng-class="{'icon-resize-full-1': !vm.smartexceptionProperty.Max, 'icon-resize-small-1': vm.smartexceptionProperty.Max}" class="icon-resize-full-1"></i>
+		</a>
+		<a ng-show="!vm.smartexceptionProperty.Max" ng-click="vm.smartexceptionProperty.Collapse = !vm.smartexceptionProperty.Collapse" class="collapse-btn" 
+		   tooltip="{{(vm.smartexceptionProperty.Collapse ? 'EXPAND' : 'COLLAPSE')|translate }}" tooltip-placement="left"><i class="icon-down-open-2"></i></a>
+		<span ng-show="vm.smartexceptionProperty.Max" class="ng-hide">&nbsp;&nbsp;</span>
+	</div>
+</div>
+<div ng-show="vm.smartexceptionProperty.Collapse === false" class="panel-body">
+	<div class="col-sm-12">
+		<div id="chart-weekatglance-summary" class="chart-weekatglance-summary"></div>
+	</div>
+	<div class="col-sm-12">
+		<div class="table-responsive table-hover">
+
+			<table class="cms-table-summary">
+				<thead>
+					<tr>
+						<th class="first-col"></th>
+						<th>{{'NO' | translate}}</th>
+						<th>{{'TOTAL' | translate}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-if="!vm.dataStatis || vm.dataStatis.length === 0" class="no-row-data">
+						<th colspan="2">{{'NO_DATA_STRING' | translate}}</th>
+					</tr>
+					<tr ng-if="vm.dataStatis && vm.dataStatis.length > 0" ng-repeat="sum in vm.dataStatis">
+						<th scope="row" class="start-col-row" ng-click="vm.dataClickSmartExTable(sum.Name)">
+							<span>{{sum.Name + sum.Id | translate}}</span>
+						</th>
+						<td>{{ sum.TotalTrans | number}}</td>
+						<td>{{sum.Name === 'CUSTOMER_WOT' || sum.Name === 'CAR_WOT' ? 'N/A' : (sum.TotalAmmount | number : 2) }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>

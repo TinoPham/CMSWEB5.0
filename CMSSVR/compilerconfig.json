@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Content/libs/angular-select/js/angular-select-tpls.es5.js",
+    "inputFile": "Content/libs/angular-select/js/angular-select-tpls.js"
+  },
+  {
+    "outputFile": "CMSWeb/Styles/app.rebar.css",
+    "inputFile": "CMSWeb/Styles/app.rebar.less"
+  },
+  {
+    "outputFile": "Content/libs/angular-select/css/angular-select.css",
+    "inputFile": "Content/libs/angular-select/css/angular-select.less"
+  }
+]

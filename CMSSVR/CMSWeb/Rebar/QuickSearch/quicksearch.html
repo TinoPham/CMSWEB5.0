@@ -1,0 +1,101 @@
+﻿<div ng-controller="quicksearchCtrl as vm" ng-init="vm.Init()" class="rebar-container page-have-collapse-data">
+	<div class="header-content">
+		<div class="tree-site-content pull-left">
+			<div class="rebar-btn-tree btn-group" outside-click="clickOutside(this.event ,'.rebar-btn-tree')">
+				<a id="btn-popMenuConvSites" class="btn btn-xs dropdown-toggle btn-site" pop-menu>{{'SELECT_REGION_STRING'|translate}} <span class="badge">{{vm.selectedSites.length}}</span><i class="icon-down-open-2"></i></a>
+				<ul class="dropdown-menu pull-left filter-dlg">
+					<li>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel">
+									<div class="panel-header chart-pop-header" style="height: 32px;">
+										<div class="">
+											<div class="input-group">
+												<input type="text" ng-model="vm.querySite" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+											</div>
+										</div>
+
+									</div>
+									<div class="scroll-body" slimscroll="{height: '300px'}">
+										<div class="tree-site-addmin" ng-if="vm.siteloaded === true">
+											<tree-component class="cms-tree" model="vm.treeSiteFilterS" def-col="vm.treeDef" filter-text="vm.querySite" options="vm.treeOptions"></tree-component>
+										</div>
+									</div>
+									<div class="panel-footer">
+										<div class="btn-group">
+											<span id="closeConvSites" class="btn btn-blue-3 pull-right btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div ng-show="showProgressBar" class="col-md-5 showProgressBar ">
+			<div class="col-xs-10 col-sm-10">
+				<span class="label">{{'PLEASE_WAIT' | translate}}</span>
+				<span class="label pull-right"> {{dataProgressValue}}% </span>
+				<progressbar class="progress-striped active progress-xs " value="dataProgressValue" type="primary">{{dataProgressValue}}%</progressbar>
+			</div>
+			<div class="btn btn-danger btn-stop col-xs-2" ng-click="stopGetData()"><i class="icon-off"></i></div>
+		</div>
+		<div class="form-group pull-right">
+			<label class="control-label head-item">{{'GROUP_BY_STRING'|translate}}</label>
+			<span class="head-item">{{'EMPLOYEE_STRING'|translate}}</span>
+			<cms-switch-button model="groupByField" class="head-item"></cms-switch-button>
+			<span class="head-item">{{'SITE_NAME_STRING'|translate}}</span>
+		</div>
+	</div>
+	<div ng-show="quicksearchData.length > 0" class="main-content">
+		<div class="list-group list-group-root">
+			<div ng-repeat="quicksearch in quicksearchData">
+				<a href="#item-{{$index}}" class="list-group-item" data-toggle="collapse" ng-click="getQuickSearchChildData($event, quicksearch, $index)">
+					<span>
+						<i class="icon-store-3" ng-if="groupByField"></i>
+						<i class="icon-user-1" ng-if="!groupByField"></i>
+						<span ng-if="groupByField">{{vm.SiteName(quicksearch)}}</span>
+						<span ng-if="!groupByField">{{vm.EmpName(quicksearch)}}</span>
+						<span>:</span>
+					</span>
+					<span class="amount-value">{{quicksearch.TotalAmount|currency}}</span>
+					<span class="badge">{{'COUNT_STRING'|translate}}: {{quicksearch.TotalTrans}}</span>
+				</a>
+				<div class="list-group list-group-child collapse" id="item-{{$index}}">
+					<div ng-repeat="quicksearchChild in quicksearch.Childs">
+						<a href="#child-{{$parent.$index}}-{{$index}}" class="list-group-item" data-toggle="collapse" 
+						   ng-click="getQuickSearchDetail($event, quicksearchChild, $parent.$index, $index)">
+							<span>
+								<i class="icon-user-1" ng-if="groupByField"></i>
+								<i class="icon-store-3" ng-if="!groupByField"></i>
+								<span ng-if="groupByField">{{vm.EmpName(quicksearchChild)}}</span>
+								<span ng-if="!groupByField">{{vm.SiteName(quicksearchChild)}}</span>
+								<span>:</span>
+							</span>
+							<span class="amount-value">{{quicksearchChild.TotalAmount|currency}}</span>
+							<span class="badge">{{'COUNT_STRING'|translate}}: {{quicksearchChild.TotalTrans}}</span>
+						</a>
+
+						<div class="table-data-visable collapse" id="child-{{$parent.$index}}-{{$index}}" 
+							 ng-show="vm.Showdetail === $index && vm.parentshowdetail === $parent.$index">
+							<div ng-if="vm.Showdetail === $index && vm.parentshowdetail === $parent.$index" class="panel" 
+								 ng-include="'widgets/rebar/transaction-list.html'" ng-controller="transactionListCtrl as rvm" 
+								 ng-init="initQSearchCtrl(vm.param, vm.closeEmployerTranView, vm.definefield,null, vm.Transactiondetail, vm.SortCallback)"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div class="footer-content">
+			<div class="load-more">
+				<div class="btn btn-blue-3"><i class="icon-ccw-1"></i>{{'BTN_LOAD_MORE'|translate}}</div>
+			</div>
+		</div>-->
+	</div>
+	<div ng-if="(!quicksearchData || quicksearchData.length === 0 || quicksearchData.ToArray().length === 0)" class="no-data">
+		<i class="icon-boxes6"></i>
+		<span ng-if="showProgressBar === false">{{'NO_DATA_STRING'|translate}}</span>
+	</div>
+	<div ng-if="totalTransCount> 0">{{'COUNT_STRING' | translate}}: {{totalTransCount}}.</div>
+</div>

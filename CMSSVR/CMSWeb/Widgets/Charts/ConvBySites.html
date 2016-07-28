@@ -1,0 +1,138 @@
+﻿<div data-ng-controller="convBySitesCtrl as vm" ng-init="Init()" class="cms-chart treeSiteConvRate">
+	<div class="container-fluid" ng-if="loading===true">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="toolbar">
+					<div class="pull-left">
+						<div class="btn-group">
+							<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{Opt.label|translate}}<i class="icon-down-open-2"></i></a>
+							<ul class="dropdown-menu pull-left" role="menu">
+								<li ng-repeat="opt in Gui.Opts"><a ng-click="GetrptData(opt)" href="#" onclick="return false;">{{opt.label|translate}}</a></li>
+							</ul>
+							<span class="cms-chart-cal chart-subtitle datepicker-noclear" ng-if="SearchMode===true"> 
+								<!-- &nbsp;{{'FROM_STRING'|translate}} -->
+								 <span class="date-box" ng-click="vm.open($event, 1)">
+								&nbsp;{{vm.FromSelDate | date:vm.dateFormat}}</span>
+								<input type="text" datepicker-popup="{{vm.dateFormat}}" ng-model="vm.FromSelDate" is-open="vm.opened1" min-date="vm.minDate" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" />
+								<!-- <span class="btn btn-default btn-xs" ng-click="vm.open($event, 1)" title=""><i class="icon-calendar"></i></span>  -->
+
+								&nbsp;{{'TO_FIELD'|translate}} <span class="date-box" ng-click="vm.open($event, 2)">&nbsp;{{vm.ToSelDate | date:vm.dateFormat}}</span>
+								<input type="text" datepicker-popup="{{vm.dateFormat}}" ng-model="vm.ToSelDate" is-open="vm.opened2" min-date="vm.minDate" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" />
+								<!-- <span class="btn btn-default btn-xs" ng-click="vm.open($event, 2)" title=""><i class="icon-calendar"></i></span> -->
+
+								<span class="btn btn-default btn-xs" ng-click="vm.Search()">{{'BTN_SEARCH'|translate}}</span>
+							</span>
+							<span ng-if="SearchMode===false" class="chart-subtitle">&nbsp; &nbsp; <i class="icon-clock"></i>
+							 {{vm.FromSelDate | date:vm.dateFormat}} - {{vm.ToSelDate | date:vm.dateFormat}}</span>
+							<!--
+							<a id="btn-popMenuConvSites" class="btn btn-default btn-xs dropdown-toggle" pop-menu>{{Opt.label|translate}}<i class="icon-down-open-2"></i></a>
+							<ul class="dropdown-menu pull-left filter-dlg">
+								<li>
+									<div class="row">
+										<div class="col-md-12">
+											<div  class="btn-group" ng-repeat="opt in Gui.Opts">
+												<span class="btn btn-default btn-xs" ng-click="GetrptData(opt)" ng-class="{'active': isActiveOption(opt) === true}" title="{{opt.label|translate}}">{{opt.label|translate}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">From: 
+											<p class="btn-group cms-chart-cal">
+												<input type="text" datepicker-popup="{{vm.dateFormat}}" ng-model="vm.FromSelDate" is-open="vm.opened1" min-date="vm.minDate" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" />
+												<span class="btn btn-default btn-xs" ng-click="vm.open($event, 1)" title=""><i class="icon-calendar"></i></span>
+												<span>&nbsp; {{vm.FromSelDate | date:vm.dateFormat}}</span>
+											</p>
+										</div>
+										<div class="col-md-6">To: 
+											<p class="btn-group cms-chart-cal">
+												<input type="text" datepicker-popup="{{vm.dateFormat}}" ng-model="vm.ToSelDate" is-open="vm.opened2" min-date="vm.minDate" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" />
+												<span class="btn btn-default btn-xs" ng-click="vm.open($event, 2)" title=""><i class="icon-calendar"></i></span>
+												<span>&nbsp; {{vm.ToSelDate | date:vm.dateFormat}}</span>
+											</p>
+										</div>
+									</div>
+									<div class="row"><div class="col-md-12 pull-right"><span id="closeConvSites" class="btn btn-default pull-right" ng-click="vm.Close()">Done</span></div></div>
+								</li>
+							</ul>
+							<span>&nbsp; &nbsp; <i class="icon-clock"></i> {{vm.FromSelDate | date:vm.dateFormat}} - {{vm.ToSelDate | date:vm.dateFormat}}</span>
+							-->
+							<!--
+							<ul class="dropdown-menu pull-left" role="menu">
+								<li ng-repeat="opt in Gui.Opts"><a ng-click="GetrptData(opt)" href="#" onclick="return false;">{{opt.label|translate}}</a></li>
+							</ul>-->
+						</div>
+						<div class="btn-group" style="padding-left:10px;">
+							<a id="btn-popMenuConvSites" class="btn btn-default btn-xs dropdown-toggle" pop-menu>{{'CHART_SITES'|translate}}<i class="icon-down-open-2"></i></a>
+							<ul class="dropdown-menu pull-left filter-dlg tree-mobile">
+								<li>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="panel">
+												<div class="panel-header chart-pop-header" style="height:32px;">
+													<div class="">
+														<div class="input-group input-group-custom">
+															<input type="text" ng-model="vm.querySite" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+															<!--<span class="search-button">
+																<i class="icon-search"></i>
+															</span>-->
+														</div>
+													</div>
+												    <!--<div class="btn-group pull-right">
+												        <span id="closeConvSites" class="btn btn-default pull-right btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+
+												    </div>-->
+												</div>
+												<div class="scroll-body" slimscroll="{height: '250px'}">
+													<div class="tree-site-addmin" ng-if="vm.siteloaded === true">
+														<tree-component class="cms-tree" model="vm.treeSiteFilterS" def-col="vm.treeDef" filter-text="vm.querySite" options="vm.treeOptions"></tree-component>
+													</div>
+												</div>
+                                                <div class="panel-footer">
+												    <div class="btn-group">
+												    	<span id="closeConvSites" class="btn btn-default pull-right btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+											        </div>
+									            </div>
+											</div>
+										</div>
+									</div><!--
+									<div class="row">filter-text="vm.querySite"
+										<div class="col-md-12">
+											<div class="tree-site-addmin" slimscroll="{height: '300px'}" style="height:300px;" ng-if="vm.siteloaded === true">
+												<tree-component class="cms-tree" model="vm.sitetree" filter-text="vm.query" def-col="vm.treeDef" options="vm.treeOptions"></tree-component>
+											</div>
+										</div>
+									</div>
+									<div class="row"><div class="col-md-12 pull-right"><span id="close" class="btn btn-default pull-right" ng-click="vm.TreeSiteClose()">Done</span></div></div>-->
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="pull-right">
+						<div class="btn-group" ng-show="EmptyMode===false">
+							<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							<!-- 	{{'EXPORT_STRING'|translate}}
+								<i class="icon-down-open-2"></i> -->
+								<i class="icon-download-3"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li ng-repeat="exp in ExportOptions"><a id="{{exp.id}}_cvsites" href="#" onclick="return false;">{{exp.label|translate}}</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" id="dshChartConvBySite">
+				<fusioncharts 
+					width="100%" 
+					height="{{ChartHeight}}"
+					type="mscombi2d"
+					datasource="{{chartDSConv}}"
+					events="chartConvSitesEvents">
+				</fusioncharts>
+			</div>
+		</div>
+	</div>
+</div>

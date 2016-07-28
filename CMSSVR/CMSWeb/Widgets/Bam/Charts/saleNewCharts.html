@@ -1,0 +1,97 @@
+﻿<div ng-controller="saleRptNewChartsCtrl as srpt" ng-init="Init()">
+	<div class="toolbar" ng-if="ChartToolbars===true; ChartDataParamAll.ChartData.Regions.length > 0">
+		<div class="pull-left">
+			<div class="btn-group sale-left-dropdown-button" style="padding-left:10px;" ng-show="srpt.arrChartTypes.length > 0" outside-click="clickOutside($event ,'.sale-left-dropdown-button')"><!--'CHART_TRAFFICIN'|translate-->
+				<a id="btn-popMenuAlert_ChartP" class="btn btn-default btn-xs dropdown-toggle" pop-menu tooltip="{{vm.SeverityTip}}" tooltip-placement="left">{{TrafficName}}<i class="icon-down-open-2"></i></a>
+				<ul class="dropdown-menu pull-left severity-dlg">
+					<li>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel" style="margin-bottom:0 !important;">
+									<div>
+										<ul class="dropdown-menu-list ng-isolate-scope" slimscroll="{height: '80px'}" style="list-style: none; padding-left: 20px;">
+											<li ng-repeat="ch in srpt.arrChartTypes | filter: {yAxis: 'P'}">
+												<div class="checkbox checkbox-default">
+													<input type="checkbox" ng-model="selectedTypes.Key" ng-true-value="{{ch.Key}}" ng-false-value="{Key: 0}" /> 
+													<label class="i-name ng-binding"><i class="icon-chart-bar"></i> {{ch.Name}}</label> 
+												</div>
+												<div style="clear: both;"></div>
+											</li>
+										</ul>
+									</div>
+									<div class="panel-footer chart-pop-header btn btn-default btn-sm " ng-click="ShowHideChart(true)" style="height:30px; margin: 10px 0px -1px 0px !important; padding:5px 20px !important; width:100%">
+										<span >{{'BTN_DONE'|translate}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="btn-group" ng-show="srpt.arrChartTypes == null || srpt.arrChartTypes == undefined || srpt.arrChartTypes.length == 0">
+				<div class="checkbox checkbox-default"> 
+					<input type="checkbox" ng-checked="ShowChartTypes[1]" ng-model="ShowChartTypes[1]" ng-change="ShowHideChartType(1)"> 
+					<label class="i-name ng-binding"><i class="icon-chart-bar-2"></i> {{'DWELLTIME'|translate}}</label> 
+				</div>
+			</div>
+			<div ng-show="DSItemNumber > DSItemLimit" style="display: inline-block; padding-left: 25px;">
+				<div class="btn-group">
+					<button ng-show="DSItemIndex > 0" ng_click="Back()" type="button" class="btn btn-xs btn-darkblue-2"><i class="icon-left-open-2"></i>{{'BTN_BACK'|translate}}</button>
+					<button ng-show="isLastPage === false" ng_click="Next()" type="button" class="btn btn-xs btn-primary">{{'NEXT'|translate}}<i class="icon-right-open-2"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="pull-right">
+			<div class="btn-group sale-right-dropdown-button" ng-show="srpt.arrChartTypes.length > 0" outside-click="clickOutside($event ,'.sale-right-dropdown-button')">
+				<a id="btn-popMenuAlert_ChartS" class="btn btn-default btn-xs dropdown-toggle" pop-menu>{{'TRANSACTION_STRING'|translate}}<i class="icon-down-open-2"></i></a>
+				<ul class="dropdown-menu pull-right severity-dlg">
+					<li>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel" style="margin-bottom:0 !important;">
+									<div>
+										<ul class="dropdown-menu-list ng-isolate-scope" slimscroll="{height: '80px'}" style="list-style: none; padding-left: 20px;">
+											<li ng-repeat="ch in srpt.arrChartTypes | filter: {yAxis: 'S'}">
+												<div class="checkbox checkbox-default"> 
+													<input type="checkbox" ng-checked="ch.Checked" ng-model="ch.Checked">
+													<label class="i-name ng-binding"><i ng-class="{'icon-chart-bar': vm.showTypeList.transaction === ch.Key, 'icon-chart-line': vm.showTypeList.conversion === ch.Key}"></i> {{ch.Name}}</label> 
+												</div>
+												<div style="clear: both;"></div>
+											</li>
+										</ul>
+									</div>
+									<div class="panel-footer chart-pop-header btn btn-default btn-sm " ng-click="ShowHideChart(false)" style="height:30px; margin: 10px 0px -1px 0px !important; padding:5px 20px !important; width:100%">
+										<span >{{'BTN_DONE'|translate}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="btn-group" ng-show="srpt.arrChartTypes == null || srpt.arrChartTypes == undefined || srpt.arrChartTypes.length == 0">
+				<div class="checkbox checkbox-default"> 
+					<input type="checkbox" ng-checked="ShowChartTypes[0]" ng-model="ShowChartTypes[0]" ng-change="ShowHideChartType(0)"> 
+					<label class="i-name ng-binding"><i class="icon-chart-line"></i> {{'COUNT'|translate}}</label> 
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<div id="bamNewSaleCharts"></div>
+	<!--
+	<fusioncharts 
+		width="100%" 
+		height="400" 
+		type="mscombidy2d" 
+		datasource="{{chartDataDSMulti}}"
+        config="{{chartDataMessage}}">
+	</fusioncharts> -->
+	<!--msstackedcolumn2dlinedy{{JSChartType}}
+	<div style="width: 100%; text-align:center;">
+		<a ng-repeat="lg in arrChartLegends" ng-click="clickOnLegend(lg.ID)">
+			<i class="icon-folder-1" style="color:{{lg.Display ? lg.Color : '#cccccc'}}"></i> {{lg.Name}}
+		</a>
+	</div>-->
+</div>

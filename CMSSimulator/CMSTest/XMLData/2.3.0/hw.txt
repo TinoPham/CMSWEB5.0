@@ -1,0 +1,864 @@
+
+        <time_change>15345</time_change>
+        <configuration_id>3</configuration_id>
+        <configuration_name>hardware</configuration_name>
+    <hardware>
+      <capture_card_info>
+        <model>28</model>
+        <num_of_boards>1</num_of_boards>
+        <num_of_chips>4</num_of_chips>
+      </capture_card_info>
+      <video_format>1</video_format>
+      <com_ports size="2">
+        <com_port id="0">NONE</com_port>
+        <com_port id="1">COM6</com_port>
+      </com_ports>
+      <hasp_key>
+        <hpk_code>0</hpk_code>
+        <pac>32</pac>
+        <video_fps>480</video_fps>
+        <audio>8</audio>
+        <ip_camera>24</ip_camera>
+        <video_logix>8</video_logix>
+        <vision_count>8</vision_count>
+        <lpr>2</lpr>
+        <video_logix_basic>8</video_logix_basic>
+        <vision_count_basic>8</vision_count_basic>
+      </hasp_key>
+      <ip_cameras size="8">
+        <ip_camera id="0" video_source="17">
+        </ip_camera>
+        <ip_camera id="1" video_source="18">
+        </ip_camera>
+        <ip_camera id="2" video_source="19">
+        </ip_camera>
+        <ip_camera id="3" video_source="20">
+        </ip_camera>
+        <ip_camera id="4" video_source="21">
+        </ip_camera>
+        <ip_camera id="5" video_source="22">
+        </ip_camera>
+        <ip_camera id="6" video_source="23">
+        </ip_camera>
+        <ip_camera id="7" video_source="24">
+        </ip_camera>
+      </ip_cameras>
+      <video_source size="16">
+        <ext_monitor>1</ext_monitor>
+        <dwell>60</dwell>
+        <input_mask>545</input_mask>
+      </video_source>
+      <channels size="64" num_video_input="16" num_ptz_type="24">
+        <channel id="0">
+          <name>Channel 1</name>
+          <enable>0</enable>
+          <camera_id>2</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>1</video_source>
+          <audio_source>4</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="1">
+          <name>Channel 2</name>
+          <enable>0</enable>
+          <camera_id>1</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>2</video_source>
+          <audio_source>4</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="2">
+          <name>gwergwrChannel 3</name>
+          <enable>1</enable>
+          <camera_id>3</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>17</video_source>
+          <audio_source>6</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="3">
+          <name>342362hannel 4</name>
+          <enable>1</enable>
+          <camera_id>4</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>18</video_source>
+          <audio_source>1</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="4">
+          <name>esgreryT$UTJTEJETJChannel 5</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>18</video_source>
+          <audio_source>1</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="5">
+          <name>Channel 6</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>18</video_source>
+          <audio_source>1</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="6">
+          <name>Channel 7</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>18</video_source>
+          <audio_source>1</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="7">
+          <name>Channel 8</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>8</video_source>
+          <audio_source>2</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="8">
+          <name>Channel 9</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>17</ptz_type>
+          <video_source>9</video_source>
+          <audio_source>2</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="9">
+          <name>Channel 10</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>22</ptz_type>
+          <video_source>10</video_source>
+          <audio_source>3</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="10">
+          <name>Channel 11</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>3</ptz_type>
+          <video_source>11</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="11">
+          <name>Channel 12</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>88</dwell_time>
+          <ap>1</ap>
+          <ptz_type>4</ptz_type>
+          <video_source>12</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="12">
+          <name>Channel 13</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>13</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="13">
+          <name>Channel 14</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>19</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="14">
+          <name>Channel 15</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>20</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="15">
+          <name>Channel 16</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>21</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="16">
+          <name>Channel 17</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>22</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="17">
+          <name>Channel 18</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="18">
+          <name>Channel 19</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>23</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="19">
+          <name>Channel 20</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="20">
+          <name>Channel 21</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="21">
+          <name>Channel 22</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="22">
+          <name>Channel 23</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="23">
+          <name>Channel 24</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="24">
+          <name>Channel 25</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="25">
+          <name>Channel 26</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="26">
+          <name>Channel 27</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="27">
+          <name>Channel 28</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="28">
+          <name>Channel 29</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="29">
+          <name>Channel 30</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="30">
+          <name>Channel 31</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="31">
+          <name>Channel 32</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="32">
+          <name>Channel 33</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="33">
+          <name>Channel 34</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="34">
+          <name>Channel 35</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="35">
+          <name>Channel 36</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="36">
+          <name>Channel 37</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="37">
+          <name>Channel 38</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="38">
+          <name>Channel 39</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="39">
+          <name>Channel 40</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="40">
+          <name>Channel 41</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="41">
+          <name>Channel 42</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>24</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="42">
+          <name>Channel 43</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="43">
+          <name>Channel 44</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="44">
+          <name>Channel 45</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="45">
+          <name>Channel 46</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="46">
+          <name>Channel 47</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="47">
+          <name>Channel 48</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="48">
+          <name>Channel 49</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="49">
+          <name>Channel 50</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="50">
+          <name>Channel 51</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="51">
+          <name>Channel 52</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="52">
+          <name>Channel 53</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="53">
+          <name>Channel 54</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="54">
+          <name>Channel 55</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="55">
+          <name>Channel 56</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="56">
+          <name>Channel 57</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="57">
+          <name>Channel 58</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="58">
+          <name>Channel 59</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="59">
+          <name>Channel 60</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="60">
+          <name>Channel 61</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="61">
+          <name>Channel 62</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="62">
+          <name>Channel 63</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="63">
+          <name>Channel 64</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+      </channels>
+      <controls size="6">
+        <control id="0">
+          <name>sdafControl 1</name>
+          <enable>1</enable>
+          <work_seconds>10</work_seconds>
+          <begin_time>47040</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>0</real_index>
+        </control>
+        <control id="1">
+          <name>$#^$^&amp;Control 2</name>
+          <enable>0</enable>
+          <work_seconds>10</work_seconds>
+          <begin_time>57602</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>1</real_index>
+        </control>
+        <control id="2">
+          <name>54y5Control 1</name>
+          <enable>0</enable>
+          <work_seconds>10</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>50400</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>18</real_index>
+        </control>
+        <control id="3">
+          <name>EFWEHERTHControl 2</name>
+          <enable>0</enable>
+          <work_seconds>10</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>46800</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>19</real_index>
+        </control>
+        <control id="4">
+          <name>Control 3</name>
+          <enable>0</enable>
+          <work_seconds>10</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>20</real_index>
+        </control>
+        <control id="5">
+          <name>123514645745756Control 4</name>
+          <enable>1</enable>
+          <work_seconds>10</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>57600</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>21</real_index>
+        </control>
+      </controls>
+      <sensors size="6" alarm="0" pre_record_time="0" post_record_time="0">
+        <sensor id="0">
+          <name>fhgjfmSensor 1</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>4</channel_mask>
+          <control_mask>2097152</control_mask>
+          <real_index>0</real_index>
+        </sensor>
+        <sensor id="1">
+          <name>S4657474ensor 2</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>8589934592</channel_mask>
+          <control_mask>1</control_mask>
+          <real_index>1</real_index>
+        </sensor>
+        <sensor id="2">
+          <name>Sefgnfgtnsor 1</name>
+          <enable>1</enable>
+          <normal_open>0</normal_open>
+          <channel_mask>8</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>18</real_index>
+        </sensor>
+        <sensor id="3">
+          <name>ffgf2</name>
+          <enable>1</enable>
+          <normal_open>0</normal_open>
+          <channel_mask>52776558133248</channel_mask>
+          <control_mask>2097152</control_mask>
+          <real_index>19</real_index>
+        </sensor>
+        <sensor id="4">
+          <name>Sefgvbdnnsor 3</name>
+          <enable>0</enable>
+          <normal_open>0</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>20</real_index>
+        </sensor>
+        <sensor id="5">
+          <name>Sensor 4</name>
+          <enable>0</enable>
+          <normal_open>0</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>21</real_index>
+        </sensor>
+      </sensors>
+    </hardware>
+       

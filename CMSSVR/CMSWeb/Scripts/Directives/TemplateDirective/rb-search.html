@@ -1,0 +1,150 @@
+﻿<div class="rb-search">
+	<div ng-if="searchConfig.filterTypeItem && searchConfig.filterTypeItem.visable" class="filter-type-list btn-group">
+		<a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{filterTypeSelected.name | translate}}<i class="icon-down-open-2"></i></a>
+		<ul class="dropdown-menu pull-left" role="menu">
+			<li ng-repeat="filterItem in filterType"><a ng-if="filterItem.isShow===true" ng-click="changeFilterType(filterItem)">{{filterItem.name | translate}}</a></li>
+		</ul>
+	</div>
+	<div class="row-date">
+		<div ng-if="searchConfig.dateFrom && searchConfig.dateFrom.visable" class="start-date">
+			<div class="input-group" options="{{searchConfig.dateFrom.options}}" cmsdatetimepicker ng-model="searchModel.DateFrom">
+				<input type="text" name="DateFrom" class="form-control input-sm" readonly /> <!--ng-disabled="searchConfig.dateFrom.isReadOnly"-->
+				<span class="input-group-addon"><i class="icon-calendar"></i></span>
+			</div>
+		</div>
+		<div ng-if="searchConfig.dateTo && searchConfig.dateTo.visable" class="end-date">
+			<label ng-if="!singleDate" class="to-label">{{'TO_FIELD' | translate}}</label>
+			<div class="input-group" options="{{searchConfig.dateTo.options}}" cmsdatetimepicker ng-model="searchModel.DateTo">
+				<input type="text" name="DateTo" class="form-control input-sm" readonly /> <!--ng-disabled="searchConfig.dateTo.isReadOnly"-->
+				<span class="input-group-addon"><i class="icon-calendar"></i></span>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="btn btn-default btn-sm" ng-click="searchSubmitEventHandler()">{{'FUNC_HEADER_BTN_REFRESH'|translate}}</div>
+
+	
+
+	<div ng-if="advanceSearch.isShow" ng-class="{'open': advanceSearch.isOpen}" class="btn-group advanceSearch" outside-click="clickOutside(event ,'.advanceSearch')">
+		<a tooltip="{{'QUICK_SEARCH_BOARD' | translate}}" tooltip-placement="left" class="btn btn-white btn-sm dropdown-toggle" pop-menu><i class="icon-search-option"></i></a>
+		<ul ng-show="isView" class="dropdown-menu pull-right rb-search-dropdown">
+			<li class="row-header">
+				<div class="pull-left"><i class="icon-search-3"></i></div>
+				<div class="box-title">{{'QUICK_SEARCH_BOARD'|translate}}</div>
+				<div class="pull-right left-side"><span class="config" ng-click="toggleMode()"><i class="icon-left-big"></i></span></div>
+			</li>
+			<li ng-show="searchConfig.tenderTypeItem.visable" class="row-item">
+				<div class="condition-value form-group">
+					<label class="control-label">{{'TENDER_TYPE'|translate}}</label>
+					<div class="input-group">
+						<span class="input-group-addon condition-prefix" ng-click="toggleConditionPrefix(itemNames.tenderTypeItem)"><span>{{searchConfig.tenderTypeItem.conditionPrefix|translate}}</span></span>
+						<multiselect name="ddlPaymentList" class="form-control multiple-select" ng-model="TenderTypeSelected"
+									 options="tenderType as tenderType.Name for tenderType in searchData.TenderTypeList"
+									 ms-header="{{'ANY_STRING'|translate}}" multiple="true" change="ddlChanged(itemNames.tenderTypeItem)" autocomplete>
+						</multiselect>
+						<!--<span class="input-group-addon" ng-click="getTenderTypeList()" tooltip="reload data"><i class="icon-cw-2"></i></span>-->
+					</div>
+				</div>
+			</li>
+			<li ng-show="searchConfig.registerItem.visable" class="row-item">
+				<div class="condition-value form-group">
+					<label class="control-label">{{'REGISTER_STRING'|translate}}</label>
+					<div class="input-group">
+						<span class="input-group-addon condition-prefix" ng-click="toggleConditionPrefix(itemNames.registerItem)"><span>{{searchConfig.registerItem.conditionPrefix|translate}}</span></span>
+						<multiselect name="ddlRegister" class="form-control multiple-select" ng-model="RegisterSelected"
+									 options="register as register.Name for register in searchData.RegisterList"
+									 ms-header="{{'ANY_STRING'|translate}}" multiple="true" change="ddlChanged(itemNames.registerItem)" autocomplete>
+						</multiselect>
+						<!--<span class="input-group-addon" ng-click="getRegisterList()" tooltip="reload data"><i class="icon-cw-2"></i></span>-->
+					</div>
+				</div>
+			</li>
+			<li ng-show="searchConfig.transactionItem.visable" class="row-item">
+				<div class="condition-value form-group">
+					<label class="control-label">{{'TRANSACTION_RB_STRING'|translate}}</label>
+					<div class="input-group">
+						<span class="input-group-addon condition-prefix" ng-click="toggleConditionPrefix(itemNames.transactionItem)"><span>{{searchConfig.transactionItem.conditionPrefix|translate}}</span></span>
+						<span class="input-group-addon condition-type" ng-click="toggleConditionType(itemNames.transactionItem)"><span>{{searchConfig.transactionItem.conditionType | translate}}</span></span>
+						<input type="text" cms-interger="{maxlength: 15}" class="form-control no-border-left" ng-model="searchModel.TransNB" ng-disabled="searchConfig.transactionItem.conditionType === conditionTypeConst.Any" />
+					</div>
+				</div>
+			</li>
+			<li ng-show="searchConfig.employeeItem.visable" class="row-item">
+				<div class="condition-value form-group">
+					<label class="control-label">{{'EMPLOYEE_STRING'|translate}}</label>
+					<div class="input-group">
+						<span class="input-group-addon condition-prefix" ng-click="toggleConditionPrefix(itemNames.employeeItem)"><span>{{searchConfig.employeeItem.conditionPrefix|translate}}</span></span>
+						<multiselect name="ddlemployee" class="form-control multiple-select" ng-model="EmployeeSelected"
+									 options="employee as employee.Name for employee in searchData.EmployeeList"
+									 ms-header="{{'ANY_STRING'|translate}}" multiple="true" change="ddlChanged(itemNames.employeeItem)" autocomplete>
+						</multiselect>
+						<!--<span class="input-group-addon" ng-click="getEmployeeList()" tooltip="reload data"><i class="icon-cw-2"></i></span>-->
+					</div>
+				</div>
+			</li>
+			<li ng-show="searchConfig.totalItem.visable" class="row-item">
+				<div class="condition-value form-group">
+					<label class="control-label">{{'TOTAL_EXCEPTION_STRING'|translate}}</label>
+					<div class="input-group">
+						<span class="input-group-addon condition-prefix" ng-click="toggleConditionPrefix(itemNames.totalItem)"><span>{{searchConfig.totalItem.conditionPrefix|translate}}</span></span>
+						<span class="input-group-addon condition-type" ng-click="toggleConditionType(itemNames.totalItem)"><span>{{searchConfig.totalItem.conditionType | translate}}</span></span>
+						<input type="text" cms-decimal="{maxlength: 13, digits: 2}" class="form-control no-border-left" ng-model="searchModel.TransAmount" ng-disabled="searchConfig.totalItem.conditionType === conditionTypeConst.Any"/>
+					</div>
+				</div>
+			</li>
+			<li ng-show="searchConfig.descriptionItem.visable" class="row-item description-line">
+				<div class="condition-value form-group">
+					<label class="control-label">{{'DESCRIPTION_STRING'|translate}}</label>
+					<div class="input-group">
+						<span class="input-group-addon condition-prefix" ng-click="toggleConditionPrefix(itemNames.descriptionItem)"><span>{{searchConfig.descriptionItem.conditionPrefix|translate}}</span></span>
+						<multiselect name="ddlDescription" class="form-control multiple-select" ng-model="DescriptionSelected"
+									 options="description as description.Name for description in searchData.DescriptionList"
+									 ms-header="{{'ANY_STRING'|translate}}" multiple="true" change="ddlChanged(itemNames.descriptionItem)" autocomplete>
+						</multiselect>
+						<!--<span class="input-group-addon" ng-click="getDescriptionList()" tooltip="reload data"><i class="icon-cw-2"></i></span>-->
+					</div>
+				</div>
+			</li>
+			<li class="row-item row-footer">
+				<div class="btn btn-default item-display-none" ng-click="clickOutside(event ,'.advanceSearch')">{{'FUNC_HEADER_BTN_CLOSE'|translate}}</div>
+				<div class="btn btn-primary" ng-click="searchSubmitEventHandler()">{{'FUNC_HEADER_BTN_SEARCH'|translate}}</div>
+			</li>
+		</ul>
+		<ul ng-show="!isView" class="dropdown-menu pull-right rb-search-dropdown">
+			<li class="row-header">
+				<div class="box-title">{{'QUICK_SEARCH_BOARD'|translate}}</div>
+				<div class="pull-right left-side"><span class="config" ng-click="toggleMode()"><i class="icon-right-big"></i></span></div>
+			</li>
+			<li class="row-item">
+				<label class="control-label pull-left">{{'TENDER_TYPE'|translate}}</label>
+				<cms-switch-button model="searchConfig.tenderTypeItem.visable" class="pull-right"></cms-switch-button>
+			</li>
+			<li class="row-item">
+				<label class="control-label pull-left">{{'REGISTER_STRING'|translate}}</label>
+				<cms-switch-button model="searchConfig.registerItem.visable" class="pull-right"></cms-switch-button>
+			</li>
+			<li class="row-item">
+				<label class="control-label pull-left">{{'TRANSACTION_RB_STRING'|translate}}</label>
+				<cms-switch-button model="searchConfig.transactionItem.visable" class="pull-right"></cms-switch-button>
+			</li>
+			<li class="row-item">
+				<label class="control-label pull-left">{{'EMPLOYEE_STRING'|translate}}</label>
+				<cms-switch-button model="searchConfig.employeeItem.visable" class="pull-right"></cms-switch-button>
+			</li>
+			<li class="row-item">
+				<label class="control-label pull-left">{{'TOTAL_EXCEPTION_STRING'|translate}}</label>
+				<cms-switch-button model="searchConfig.totalItem.visable" class="pull-right"></cms-switch-button>
+			</li>
+			<li ng-show="searchConfig.descriptionItem.isUsed" class="row-item">
+				<label class="control-label pull-left">{{'DESCRIPTION_STRING'|translate}}</label>
+				<cms-switch-button model="searchConfig.descriptionItem.visable" class="pull-right"></cms-switch-button>
+			</li>
+			<li class="row-item row-footer">
+				<div class="btn btn-default" ng-click="toggleMode()">{{'BTN_SAVE'|translate}}</div>
+			</li>
+		</ul>
+	</div>
+	
+	
+</div>

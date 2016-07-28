@@ -1,0 +1,15 @@
+﻿<div ng-init ="init()">
+     <div class="modal-header">
+        <h3 class="modal-title">{{headerText|translate}}</h3>
+    </div>
+    <div class="modal-body confirm-box-body">    	
+    	<span><i class="icon-help-2"></i></span>
+        <p>{{bodyText|translate}}</p>
+    </div>
+    <div class="modal-footer">
+	<button type="button" class="btn btn-default" data-ng-click="save()">YES</button>
+	<button type="button" class="btn btn-primary" data-ng-click="cancel()">NO</button>
+    </div>
+</div>
+   
+

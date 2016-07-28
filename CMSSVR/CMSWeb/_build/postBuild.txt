@@ -1,0 +1,7 @@
+﻿if $(Configuration) == Release (
+echo "delete dir $(ProjectDir)CMSWeb\_build\js_build"
+rd "$(ProjectDir)CMSWeb\_build\js_build" /s /q
+call "C:\Program Files\nodejs\node.exe" $(ProjectDir)scripts\r.js -o $(ProjectDir)CmsWeb\_build\build_js.json
+del "$(ProjectDir)CMSWeb\_build\js_build\styles\app.variables.css"
+del "$(ProjectDir)CMSWeb\_build\js_build\build.txt"
+)

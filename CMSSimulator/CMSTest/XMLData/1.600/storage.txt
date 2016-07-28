@@ -1,0 +1,60 @@
+
+        <configuration_id>17</configuration_id>
+        <configuration_name>storage</configuration_name>
+        <storage>
+            <over_write>1</over_write>
+            <drivers size="5">
+                <driver id="0">
+                    <name>F:</name>
+                    <volume_name>Local Disk</volume_name>
+                    <use_for_recording>90</use_for_recording>
+                    <total_space>60000</total_space>
+                    <free_space>29662</free_space>
+                    <recorded_time />
+                </driver>
+                <driver id="1">
+                    <name>H:</name>
+                    <volume_name>Local Disk</volume_name>
+                    <use_for_recording>90</use_for_recording>
+                    <total_space>14998</total_space>
+                    <free_space>1994</free_space>
+                    <recorded_time />
+                </driver>
+                <driver id="2">
+                    <name>I:</name>
+                    <volume_name>New Volume</volume_name>
+                    <use_for_recording>90</use_for_recording>
+                    <total_space>16323</total_space>
+                    <free_space>4246</free_space>
+                    <recorded_time />
+                </driver>
+                <driver id="3">
+                    <name>J:</name>
+                    <volume_name>Local Disk</volume_name>
+                    <use_for_recording>149</use_for_recording>
+                    <total_space>50006</total_space>
+                    <free_space>109</free_space>
+                    <recorded_time>
+                        <begin>
+                            <day>2</day>
+                            <month>1</month>
+                            <year>2010</year>
+                        </begin>
+                        <end>
+                            <day>15</day>
+                            <month>1</month>
+                            <year>2010</year>
+                        </end>
+                    </recorded_time>
+                </driver>
+                <driver id="4">
+                    <name>K:</name>
+                    <volume_name>New Volume</volume_name>
+                    <use_for_recording>90</use_for_recording>
+                    <total_space>12613</total_space>
+                    <free_space>12548</free_space>
+                    <recorded_time />
+                </driver>
+            </drivers>
+        </storage>
+       

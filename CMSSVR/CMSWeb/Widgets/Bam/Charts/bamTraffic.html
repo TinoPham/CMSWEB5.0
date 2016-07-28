@@ -1,0 +1,14 @@
+﻿<div class="conversion-chart" ng-controller="bamTrafficCtrl" ng-init="Init()">
+		<div class="panel panelBorder">
+                <b>{{'TRAFFICSTATISTIC' | translate}}</b>
+				<div class="panelGraph">
+                <fusioncharts
+                    width="100%"
+                    height="400"
+                    type="msline"
+                    datasource="{{chartDSTraffic}}"
+					events="chartBamTrafficEvents">
+                </fusioncharts>     
+            </div>
+        </div>
+</div>

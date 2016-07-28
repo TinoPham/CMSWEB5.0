@@ -1,0 +1,11 @@
+[	{
+    "AppID": "4d53bce03ec34c0a911182d4c228ee6c",
+	"RequestAge": 300,
+    "Name":null,
+    "MaxConnection":-1,
+    "RequestPerMin":-1,
+	"UserID":1,
+    "Allow":["IP:*"],
+    "Denied":[]   
+  }
+]

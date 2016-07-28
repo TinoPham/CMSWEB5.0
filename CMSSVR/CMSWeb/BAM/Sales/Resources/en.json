@@ -1,0 +1,15 @@
+﻿{
+	"CONVERSION_STRING": "CONV.%",
+	"CB_TRAFFICIN":"Traffic In",
+	"CB_TRAFFICOUT":"Traffic Out",
+	"CB_POS":"POS",
+	"CB_CONVERSION":"Conversion %",
+	"LOCATION_STRING": "Location",
+	"NO_DATA_STRING": "There is no data",
+	"PERIOD_STRING": "Period ",
+	"SUMMARY_STRING": "Summary",
+	"TRAFFIC_IN_STRING": "IN",
+	"TRAFFIC_OUT_STRING": "OUT",
+	"TRANSACTION_STRING": "POS",
+	"WEEK_STRING": "Week "
+}

@@ -1,0 +1,66 @@
+
+        <configuration_id>17</configuration_id>
+        <configuration_name>storage</configuration_name>
+    <storage>
+      <over_write>1</over_write>
+      <drivers size="3">
+        <driver id="0">
+          <name>E:</name>
+          <volume_name>DATA</volume_name>
+          <use_for_recording>149</use_for_recording>
+          <total_space>99998</total_space>
+          <free_space>155</free_space>
+          <recorded_time>
+            <begin>
+              <day>16</day>
+              <month>10</month>
+              <year>2012</year>
+            </begin>
+            <end>
+              <day>16</day>
+              <month>10</month>
+              <year>2012</year>
+            </end>
+          </recorded_time>
+        </driver>
+        <driver id="1">
+          <name>F:</name>
+          <volume_name>New Volume</volume_name>
+          <use_for_recording>149</use_for_recording>
+          <total_space>156947</total_space>
+          <free_space>137</free_space>
+          <recorded_time>
+            <begin>
+              <day>16</day>
+              <month>10</month>
+              <year>2012</year>
+            </begin>
+            <end>
+              <day>16</day>
+              <month>10</month>
+              <year>2012</year>
+            </end>
+          </recorded_time>
+        </driver>
+        <driver id="2">
+          <name>H:</name>
+          <volume_name>BICH LIEN</volume_name>
+          <use_for_recording>90</use_for_recording>
+          <total_space>79995</total_space>
+          <free_space>62804</free_space>
+          <recorded_time>
+            <begin>
+              <day>0</day>
+              <month>0</month>
+              <year>0</year>
+            </begin>
+            <end>
+              <day>0</day>
+              <month>0</month>
+              <year>0</year>
+            </end>
+          </recorded_time>
+        </driver>
+      </drivers>
+    </storage>
+       

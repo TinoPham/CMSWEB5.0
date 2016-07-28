@@ -1,0 +1,107 @@
+<div class="panel-heading">
+
+	<!-- START :: Treesite panel -->
+	<div class="tree-site-panel">
+		<div class="tree-site-popup">
+			<div class="tree-site-content">
+				<div class="btn-group tree-dropdown-button" style="z-index: 0;" outside-click="clickOutside($event ,'.tree-dropdown-button')">
+					<a id="btn-popMenuConvSites" class="btn btn-xs dropdown-toggle btn-site" pop-menu>{{'SELECT_REGION_STRING'|translate}} <span class="badge">{{vm.selectedSites.length}}</span><i class="icon-down-open-2"></i></a>
+					<ul class="dropdown-menu pull-left filter-dlg">
+						<li>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="panel">
+										<div class="panel-header chart-pop-header" style="height: 32px;">
+											<div class="">
+												<div class="input-group">
+													<input type="text" ng-model="vm.querySite" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+												</div>
+											</div>
+										</div>
+										<div class="scroll-body" slimscroll="{height: '300px'}">
+											<div class="tree-site-addmin">
+												<tree-component class="cms-tree" ng-if="vm.rebarTree" model="vm.rebarTree" filter-text="vm.querySite" def-col="vm.treeDef" options="vm.treeOptions"></tree-component>
+											</div>
+										</div>
+										<div class="panel-footer">
+											<div class="btn-group">
+												<span id="closeConvSites" class="btn btn-default btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END  :: TREESITE panel   -->
+
+	<div class="additional-btn">
+		<a ng-show="vm.currPage > 1" tooltip="Previous" tooltip-placement="left">
+			<i class=" icon-left-open-big" ng-click="vm.prevPage()" ></i><!-- ng-disabled="vm.currPage < 2" -->
+		</a>
+		<!--<a>
+			<i ng-hide ="state!=0">{{vm.currPage}} of {{vm.data.TotalPages}} page(s)</i>
+		</a>-->
+		<a ng-show="vm.currPage < vm.data.TotalPages" tooltip="Next" tooltip-placement="right">
+			<i class=" icon-right-open-big" ng-click="vm.nextPage()" ></i><!-- ng-disabled="vm.currPage >= vm.data.TotalPages" -->
+		</a>
+
+		<a ng-click="vm.reloadEmployerTran()" tooltip="Refresh" tooltip-placement="left" class="ng-scope">
+			<i class="icon-ccw-1"></i>
+		</a>
+		<a ng-click="vm.employeedataProperty.Max = !vm.employeedataProperty.Max; vm.employeedataProperty.Collapse = false;" 
+		   tooltip="{{(vm.employeedataProperty.Max ? 'RESTORE' : 'MAXIMIZE')|translate}}" tooltip-placement="left">
+			<i ng-class="{'icon-resize-full-1': !vm.employeedataProperty.Max, 'icon-resize-small-1': vm.employeedataProperty.Max}" class="icon-resize-full-1"></i>
+		</a>
+		<a ng-show="!vm.employeedataProperty.Max" ng-click="vm.employeedataProperty.Collapse = !vm.employeedataProperty.Collapse" class="collapse-btn" 
+		   tooltip="{{(vm.employeedataProperty.Collapse ? 'EXPAND' : 'COLLAPSE')|translate }}" tooltip-placement="left"><i class="icon-down-open-2"></i></a>
+		<span ng-show="vm.employeedataProperty.Max" class="ng-hide">&nbsp;&nbsp;</span>
+	</div>
+
+</div>
+<!-- END  ::  panel heading -->
+<!-- ===================================== -->
+
+<div class="panel-body" ng-show="vm.employeedataProperty.Collapse === false">
+	<div class="row">
+
+		<div class="col-sm-12 chart">
+			<div id="chart-container" class="chart-container"></div>
+		</div>
+		<div class="col-sm-12 bonus-info">
+
+		</div>
+	</div>
+
+</div>
+<!-- END  :: Treesite panel body  -->
+<!-- ===================================== -->
+
+<div class="panel-footer" ng-show="vm.employeedataProperty.Collapse === false">
+	<div class="row">
+		<div class="col-xs-12 col-md-4" ng-click="vm.showEmployeeTable()" style="cursor: pointer;">
+			<h2>
+				{{vm.totalRisk | number}}
+			</h2>
+			<div>{{'TOTAL_RISKFACTOR' | translate}}</div>
+		</div>
+		<div class="col-xs-12 col-md-8">
+			<div class="col-md-12 switch-views">
+				<label class="control-label">{{'GROUP_BY_STRING'|translate}}</label>
+				<span style="padding-left: 10px;">{{'SITE_NAME_STRING'|translate}}</span>
+				<cms-switch-button model="vm.viewByEmployee"></cms-switch-button>
+				<span>{{'EMPLOYEE_STRING'|translate}}</span>
+			</div>
+			<ul class="risk-commbox-line col-md-12">
+				<li><input type="radio" ng-model="vm.optionview" value="1" name="Risk"><span>{{'RISK_FACTOR' | translate }}</span></li>
+				<li><input type="radio" ng-model="vm.optionview" value="2" name="Total"><span>{{'TOTAL_AMOUNT' | translate }}</span></li>
+				<li><input type="radio" ng-model="vm.optionview" value="3" name="Percentage"><span>{{'RATIO_TO_SALE' | translate }}</span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+

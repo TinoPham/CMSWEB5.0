@@ -1,0 +1,114 @@
+﻿<div class="panel site-monitor" ng-class="{'maximized': isMax}">
+    <div class="panel-header">
+        <!-- <h2>{{'LAST_ALERT_MONITOR' | translate}}</h2> -->
+        <div class="additional-btn">
+            <a tooltip="{{'TOOLTIP_REFRESH_WIDGET'|translate}}" ng-click="refesh()" tooltip-placement="left"><i class="icon-ccw-1"></i></a>
+            <a ng-click="fullSize()" tooltip="{{isMax ? 'Restore' : 'MAXIMIZE'|translate}}" tooltip-placement="left"><i ng-class="{'icon-resize-full-1': !isMax, 'icon-resize-small-1': isMax}"></i></a>
+           <!--  <a ng-show="!isMax" class="collapse-btn" ng-click="isCollapsed = !isCollapsed" tooltip="{{(isCollapsed ? 'EXPAND' : 'COLLAPSE')|translate }}" tooltip-placement="left"><i class="icon-down-open-2"></i></a> -->
+        </div>
+    </div>
+    <div  collapse="isCollapsed">
+        <div class="site-alert-controls">
+            <div class="pull-left">
+                <span class="dropdown pull-left" dropdown>
+					<span class="btn btn-default btn-sm dropdown-toggle" dropdown-toggle>
+                        <i class=" icon-filter"></i>
+                        <span ng-if="takeAlert !== maxRowAlert">{{'TOP_STRING'| translate}} {{takeAlert}}</span>
+                        <span ng-if="takeAlert === maxRowAlert">{{'ALL_STRING'| translate}}</span>
+                        <span class="icon-down-dir"></span>
+                    </span>
+                    <ul class="dropdown-menu">
+						<li ng-repeat="top in topList track by $index"><a class="btn pull-right" ng-click="setTop(top)">{{'TOP_STRING' | translate}} {{top}}</a></li>
+						<li><a class="btn pull-right" ng-click="setTop()">{{'ALL_STRING' | translate}}</a></li>
+                    </ul>
+                </span>
+            </div>
+            <div class="pull-right">
+                <span class="dropdown pull-right" dropdown>
+					<span class="btn btn-default btn-sm dropdown-toggle" dropdown-toggle>
+                        <i class=" icon-doc"></i>
+                        <span>{{'EXPORT_STRING'| translate}}</span>
+                        <span class="icon-down-dir"></span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li><a class="btn pull-right" ng-click="exportToCSV()">{{'EXPORT_TO_CSV' | translate}}</a></li>
+                        <li><a class="btn pull-right" ng-click="exportToXls()">{{'EXPORT_TO_EXCEL' | translate}}</a></li>
+                        <li><a class="btn pull-right" ng-click="exportToPdf()">{{'EXPORT_TO_PDF' | translate}}</a></li>
+                    </ul>
+                </span>
+                <label ng-if="HeaderTitle.length > 0" class="control-label"><span>{{'Alert Types'|translate}}{{': '}}</span></label>
+                <span ng-if="HeaderTitle.length > 0" class="select-alert-types pull-right input-group" outside-click="clickOutside($event ,'.select-alert-types')">
+                    <multiselect name="Group" class="form-control" ng-model="vm.SelectedAlert" 
+	                             options="g as g.Title.Name for g in HeaderTitle"
+                                 isalerttypes="true"
+	                             multiple="true" >
+	                </multiselect>
+                </span>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div ng-if="isNoData === true" style="text-align: center;">{{'NO_DATA_FOUND_MSG' | translate}} </div>
+			<div ng-if="isNoData === false" class="lastalertevent site-monitor-content scrollbar-dynamic" ng-class="{'mobile': isMobile}" data-jquery-scrollbar="ScrollbarOptions">
+                <div id="customers">
+				<table class="site-monitor-table table table-rotated">
+                    <thead>
+                        <tr class="header-top">
+                            <th colspan="3"></th>                            
+							<th class="rotate" ng-repeat="title in HeaderTitleShow | orderBy:'Title.Id' track by $index">
+								<div>
+									<span>
+									<div>{{title.Title.Name}}</div>
+									</span>
+								</div>
+							</th>
+                        </tr> 
+                        <tr class="header-center">
+							<th class="merge-right count-dvr" colspan="3">
+								<div><span>{{'TOTAL_DVR_COUNT' | translate}} <span>{{countDVR()}} </span></span></div>
+							</th>
+							<th ng-repeat="title in HeaderTitleShow | orderBy:'Title.Id' track by $index">
+								<div><span>{{title.Total}}</span></div>
+							</th>
+                        </tr>
+                        <tr class="header-footer">
+							<th>
+								<div class="title-site-alert" ng-click="order('Info.SiteName')">
+                                    <i class="icon-store-3"></i>                                   
+                                    {{'SITE_NAME' | translate}} 
+									<span ng-show="predicate === 'Info.SiteName'" ng-class="{'icon-sort-alt-up':reverse=== false, 'icon-sort-alt-down': reverse ===true }"></span>
+								</div>
+							</th>
+                            <th>
+								<div class="title-site-alert" ng-click="order('Info.Name')">{{'DVR_NAME' | translate}} 
+									<span ng-show="predicate === 'Info.Name'" ng-class="{'icon-up-dir':reverse=== false, 'icon-down-dir': reverse ===true }"></span>
+								</div>
+                            </th>
+                            <th>
+								<div class="title-site-alert" ng-click="order('TypeAlerts.Total')">{{'Total' | translate}} 
+									<span ng-show="predicate === 'TypeAlerts.Total'" ng-class="{'icon-up-dir':reverse=== false, 'icon-down-dir': reverse ===true }"></span>
+								</div>
+							</th>
+                            <th ng-repeat="title in HeaderTitleShow | orderBy:'Title.Id' track by $index"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="bAlert in BodyAlertShow | orderBy:predicate:reverse  track by $index">
+                            <td class="col-header"><a class="btn" ng-click="gotoAlertDetail(bAlert)">{{bAlert.Info.SiteName}}</a></td>
+							<td class="col-header">{{bAlert.Info.Name}}</td>
+                            <td class="col-header">{{bAlert.TypeAlerts.Total}}</td>
+                            <td ng-class="{'td-orange' : title.TotalAlert > 0,'td-disable' :title.AlertTypeId === 37 || title.AlertTypeId === 32 }" ng-repeat="title in bAlert.TypeAlerts.Alert | orderBy:'AlertTypeId' track by $index">
+                                <span ng-if="title.TotalAlert > 0" class="dropdown pull-right" dropdown>
+                                    <span class="dropdown-toggle icon-ok-1" ng-disabled="title.AlertTypeId === 37 || title.AlertTypeId === 32" dropdown-toggle></span>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="btn" ng-click="IgnoreAlerts(title.AlertTypeId, bAlert)">{{'BTN_IGNORE_ALERT' | translate}}</a></li>
+                                    </ul>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @System.Web.Optimization.Styles.Render("~/Content/bootstrap")
+    @System.Web.Optimization.Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.1.js"></script>
+    
+    <script>
+        $(document).ready(function ()
+        {
+            $('.list-group-item').on('click', function (e) {
+                //var previous = $(this).closest(".list-group").children(".active");
+                //var previous = $(".list-group").children(".active");
+                //previous.removeClass('active'); // previous list-item
+                //$(e.target).addClass('active'); // activated list-item
+                //$(".list-group-item").css("border", "13px solid red");
+
+            });
+  });
+</script>
+
+</head>
+<body>
+        <div class="container">
+            @Html.Partial("Menu")
+            <div class="col-md-3">
+       @Html.Partial("Navigation")
+                </div>
+            <div class="col-md-9">
+                @RenderBody()
+                <div  class="footer">
+                    @Html.Partial("Footer")
+                </div>
+            </div>
+            
+            @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)
+            
+        </div>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+</body>
+</html>

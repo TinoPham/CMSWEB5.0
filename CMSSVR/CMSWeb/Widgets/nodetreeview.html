@@ -1,0 +1,11 @@
+ <div class="tree-node tree-handle" ui-tree-handle>    
+     <div class="tree-node-content">
+         <label class="i-checks"><input  type="checkbox" ng-model="node.Checked" ng-click="checklist(node)" ng-class="{'check_ok': node.status == 1, 'uncheck':node.status == 0}"><i class="glyphicon" ng-class="{'check_ok': node.status == 1, 'uncheck':node.status == 0, 'checkintermin':node.status == 2}"></i></label> 
+         <a class="btn btn-xs font-style-node" nodrag ng-click="toggle(this)"><i class="glyphicon tree-node-toggle" ng-if="node.nodes && node.nodes.length > 0" ng-class="{'glyphicon-folder-close': collapsed && node.root !== true, 'glyphicon-folder-open': !collapsed && node.root !== true, 'glyphicon-home': node.root === true}"></i>{{node.title}}</a>
+         <b class="badge bg-success pull-right">{{node.sitescount}}</b>
+     </div>
+ </div>
+<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}"> <!-- ng-class="{hidden: collapsed}">  scroll-body" slimscroll="{height: '500px'}"-->
+    <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'Widgets/nodetreeview.html'">
+    </li>
+</ol>

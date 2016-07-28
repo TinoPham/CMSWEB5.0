@@ -1,0 +1,18 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Scénario de taux de conversion"},
+{"NameField":"rpt_SubTitle", "ValueField":"Augmentation de la conversion de 1 %"},
+{"NameField":"footer", "ValueField":"Préparé sous contrat pour l'usage exclusif d’i3 International. La reproduction de ce rapport est interdite."},
+{"NameField":"header_Day", "ValueField":"Jour"},
+{"NameField":"header_Traffic", "ValueField":"Trafic"},
+{"NameField":"header_Trans", "ValueField":"Trans"},
+{"NameField":"header_Sales", "ValueField":"Ventes"},
+{"NameField":"header_Conv", "ValueField":"% conv."},
+{"NameField":"header_Total", "ValueField":"Total"},
+{"NameField":"header_SalesShopper", "ValueField":"Ventes par client"},
+{"NameField":"header_ATV", "ValueField":"VMT"},
+{"NameField":"header_NewSales", "ValueField":"Nouvelles ventes"},
+{"NameField":"header_SalesDifference", "ValueField":"Différence de ventes"},
+{"NameField":"header_Change", "ValueField":"% changement"},
+{"NameField":"rpt_NODATA", "ValueField":"Données de ne sont pas disponibles"},
+{"NameField":"rpt_TitleWeek", "ValueField":"Semaine "}
+]

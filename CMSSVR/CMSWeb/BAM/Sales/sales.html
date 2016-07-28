@@ -1,0 +1,268 @@
+<div ng-controller="SaleReportsCtrl as vm" class="sale-reports" style="width:97%">
+
+	<div class="title-summary">
+		<!-- <div class="bam_report_header dashboard_header" ng-include="'widgets/bam/tables/headerBam.html'"></div> -->
+	</div>
+	<!-- END :: title  -->
+
+	<div class="sale-reports-chart">
+		<div class="tree-site-content">
+			<div class="btn-group sale-dropdown-button" style="padding-left: 10px;"  outside-click="clickOutside($event ,'.sale-dropdown-button')">
+				<a id="btn-popMenuConvSites" class="btn btn-xs dropdown-toggle btn-site" pop-menu>{{SiteTreeLabel}} <span class="badge">{{vm.selectedSites.length}}</span><i class="icon-down-open-2"></i></a>
+				<ul class="dropdown-menu pull-left filter-dlg">
+					<li>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel">
+									<div class="panel-header chart-pop-header" style="height: 32px;">
+										<div class="">
+											<div class="input-group">
+												<input type="text" ng-model="vm.querySite" class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+											</div>
+										</div>
+									<!-- 	<div class="btn-group pull-right">
+											<span id="closeConvSites" class="btn btn-default pull-right btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+										</div> -->
+									</div>
+									<div class="scroll-body" slimscroll="{height: '300px'}">
+										<div class="tree-site-addmin" ng-if="vm.siteloaded === true">
+											<tree-component class="cms-tree" model="vm.treeSiteFilterS" def-col="vm.treeDef" filter-text="vm.querySite" options="vm.treeOptions"></tree-component>
+										</div>
+									</div>
+									<div class="panel-footer">
+												<div class="btn-group">
+													<span id="closeConvSites" class="btn btn-default pull-right btn-sm" ng-click="vm.TreeSiteClose()">{{'BTN_DONE'|translate}}</span>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="switch-for-chart" ng-if="vm.myData.SummaryData.length > 0">
+				 <div class="switch-ios-button"> 
+					<label>
+						<span>{{'Regions_STRING'|translate}}</span>
+						<input type="checkbox" ng-model="vm.showSiteChart" class="ios-switch blue tinyswitch" />
+						<div>
+							<div></div>
+						</div>
+						<span>{{'SITES_TREE_STRING'|translate}}</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<!--<fusioncharts width="100%" height="400" type="mscombidy2d" datasource="{{chartDataDSMulti}}"></fusioncharts>-->
+		<div ng-show="!vm.showNoData" class="show-chart" ng-include="'widgets/bam/charts/saleNewCharts.html'"></div>
+	</div>
+	<!-- END :: Charts -->
+
+	<div ng-if="vm.myData.SummaryData.length > 0" class="sale-reports-tables" ng-show="isMobile === false">
+	<div class="top-table">
+		<div class="tool-bar">
+				<div class="radio radio-primary" ng-repeat="showType in vm.showDataTypes track by $index" ng-click="vm.rdbShowTypeClick(showType)">
+				<input type="radio" name="rdbShowType" ng-model="vm.showTypeSelected" ng-checked="vm.showTypeSelected === showType.Key">
+				<label>{{showType.Name | translate}}</label>
+			</div>
+			<!--<div class="clearfix"></div>-->
+		</div>
+	</div>
+	<div class="wrapper-bam-table {{rptTypeName}} {{vm.detechBrowser}}" ng-class="vm.showTypeSelected != vm.showTypeList.showAll ? 'bam-table-single-data' : ''">
+			<div class="bam-table bam-table-column">
+				<div class="tb-header">
+					<div class="tb-row">
+						<div class="tb-col col-fixed-header col-left col-location borderLocation">{{'LOCATION_STRING' | translate}}</div>
+					</div>
+				</div>
+				<div class="tb-body">
+					<div class="tb-row  parents-row  color-{{$index+1}} {{ vm.orderRow($index) }} border" ng-repeat-start="region in vm.myData.SummaryData track by $index" ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}">
+						<div tooltip={{region.Name}} class="tb-col col-fixed col-rg-name col-left" ng-click="vm.showSite(region)">
+							<span class="expand">{{region.Name}}</span>
+							<i ng-class="region.checked? 'icon-down-open-mini':'icon-right-open-mini'" class="icon-expand"></i>
+							<span class="arrow color-{{$index+1}}"></span>
+						</div>
+					</div>
+					<div  class="tb-row child-row " ng-show="region && region.checked === true" ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}"  ng-repeat="site in region.Sites track by $index">
+						<div tooltip={{site.Name}} class="tb-col col-fixed col-si-name col-left color-{{$parent.$index+1}} expand borderSite">{{site.Name}}</div>
+					</div>
+					<div ng-repeat-end></div>
+				</div>
+			</div>
+			<!-- END firts column of table  \ scrollbar-dynami \-->
+			<div class="bam-tb-scroll scrollbar-dynamic bam-table-column" data-jquery-scrollbar="vm.tbScrollOptions">
+				<div class="bam-table">
+					<div class="tb-header">
+						<div class="tb-row">
+							<div class="tb-col" ng-repeat="date in dateSearchList track by $index">
+								<div class="col-date">
+									<span>{{date}}</span>
+									<!--<div ng-if="rptType === rptTypeList.Weekly">
+										<span>{{date.Label}}</span>
+										<span>{{date.sDate}}</span>
+										<span>{{date.eDate}}</span>
+									</div>-->
+								</div>
+								<div ng-show="vm.hasShowTypes.showIn" class="col-in">{{'TRAFFIC_IN_STRING' | translate}}</div>
+								<div ng-show="vm.hasShowTypes.showOut" class="col-out">{{'TRAFFIC_OUT_STRING' | translate}}</div>
+								<div ng-show="vm.hasShowTypes.showPos" class="col-pos">{{'TRANSACTION_STRING' | translate}}</div>
+								<div ng-show="vm.hasShowTypes.showConv" class="col-conv">{{'CONVERSION_STRING' | translate}}</div>
+							</div>
+
+							<div class="tb-col col-fixed-header col-right">
+								<div class="col-date">{{'SUMMARY_STRING'|translate}}</div>
+								<div ng-show="vm.hasShowTypes.showIn" class="col-in">{{'TRAFFIC_IN_STRING' | translate}}</div>
+								<div ng-show="vm.hasShowTypes.showOut" class="col-out">{{'TRAFFIC_OUT_STRING' | translate}}</div>
+								<div ng-show="vm.hasShowTypes.showPos" class="col-pos">{{'TRANSACTION_STRING' | translate}}</div>
+								<div ng-show="vm.hasShowTypes.showConv" class="col-conv">{{'CONVERSION_STRING' | translate}}</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="tb-body">
+						<div class="tb-row  parents-row {{ vm.orderRow($index) }}" ng-repeat-start="region in vm.myData.SummaryData track by $index" ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}">
+							<div class="tb-col" ng-repeat="regionDate in region.DataDetail track by $index">
+								<!--region loop by date data-->
+								<div ng-show="vm.hasShowTypes.showIn" class="col-in">{{regionDate.TrafficIn | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && regionDate.TrafficIn >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showOut"  class="col-out">{{regionDate.TrafficOut | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && regionDate.TrafficOut >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showPos"  class="col-pos">{{regionDate.CountTrans | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && regionDate.CountTrans >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showConv" class="col-conv">{{regionDate.Conversion | salenumber: '0,0.00'}} %</div>
+							</div>
+
+								<div class="tb-col col-fixed col-right">
+									<div ng-show="vm.hasShowTypes.showIn" class="col-in">{{region.TrafficIn | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && region.TrafficIn >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+									<div ng-show="vm.hasShowTypes.showOut" class="col-out">{{region.TrafficOut | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && region.TrafficOut >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+									<div ng-show="vm.hasShowTypes.showPos"  class="col-pos">{{region.CountTrans | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && region.CountTrans >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+									<div ng-show="vm.hasShowTypes.showConv" class="col-conv">{{region.Conversion | salenumber: '0,0.00'}}%</div>
+								</div>
+
+
+						</div>
+						<div ng-show="region && region.checked === true" class="tb-row child-row " ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}" ng-repeat="site in region.Sites track by $index">
+							<div class="tb-col" ng-repeat="siteDate in site.DataDetail">
+								<!--site loop by date data-->
+								<div ng-show="vm.hasShowTypes.showIn"  class="col-in">{{siteDate.TrafficIn | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && regionDate.TrafficIn >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showOut"    class="col-out">{{siteDate.TrafficOut | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && regionDate.TrafficOut >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showPos"    class="col-pos">{{siteDate.CountTrans | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && regionDate.CountTrans >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showConv" class="col-conv">{{siteDate.Conversion | salenumber: '0,0.00'}} %</div>
+							</div>
+
+							<div class="tb-col col-fixed col-right">
+								<div ng-show="vm.hasShowTypes.showIn" class="col-in">{{site.TrafficIn | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && site.TrafficIn >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showOut" class="col-out">{{site.TrafficOut | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && site.TrafficOut >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showPos"  class="col-pos">{{site.CountTrans | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && site.CountTrans >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.hasShowTypes.showConv" class="col-conv">{{site.Conversion | salenumber: '0,0.00'}}%</div>
+							</div>
+								
+						</div>
+						<div ng-repeat-end></div>
+					</div>
+				</div>
+			</div>
+			<!-- END Content have scroll of table -->
+			
+<!-- 			<div class="bam-table bam-table-column">
+				<div class="tb-header">
+					<div class="tb-row">
+						<div class="tb-col col-fixed-header col-right">
+							<div class="col-date">{{'SUMMARY_STRING'|translate}}</div>
+							<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.trafficIn" class="col-in">{{'TRAFFIC_IN_STRING' | translate}}</div>
+							<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.trafficOut" class="col-out">{{'TRAFFIC_OUT_STRING' | translate}}</div>
+							<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.transaction" class="col-pos">{{'TRANSACTION_STRING' | translate}}</div>
+							<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.conversion" class="col-conv">{{'CONVERSION_STRING' | translate}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="tb-body">
+					<div class="tb-row   parents-row {{ vm.orderRow($index) }}" ng-repeat-start="region in vm.myData.SummaryData track by $index" ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}">
+						<div class="tb-col col-fixed col-right">
+							<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.trafficIn" ng-class="vm.showTypeSelected === vm.showTypeList.trafficIn ? 'color_100':''" class="col-in">{{region.TrafficIn | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && region.TrafficIn >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+							<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.trafficOut" ng-class="vm.showTypeSelected === vm.showTypeList.trafficOut ? 'color_100':''" class="col-out">{{region.TrafficOut | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && region.TrafficOut >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+							<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.transaction" ng-class="vm.showTypeSelected === vm.showTypeList.transaction ? 'color_100':''" class="col-pos">{{region.CountTrans | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && region.CountTrans >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+							<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.conversion" class="col-conv">{{region.Conversion | salenumber: '0,0.00'}}%</div>
+						</div>
+						<div ng-show="region && region.checked === true" class="tb-row child-row " ng-class="{'row-expanded': region.checked, 'row-end': $index == region.Sites.length-1}" ng-repeat="site in region.Sites track by $index">
+							<div class="tb-col col-fixed col-right">
+								<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.trafficIn" ng-class="vm.showTypeSelected === vm.showTypeList.trafficIn ? 'color_100':''" class="col-in">{{site.TrafficIn | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && site.TrafficIn >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.trafficOut" ng-class="vm.showTypeSelected === vm.showTypeList.trafficOut ? 'color_100':''" class="col-out">{{site.TrafficOut | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && site.TrafficOut >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.transaction" ng-class="vm.showTypeSelected === vm.showTypeList.transaction ? 'color_100':''" class="col-pos">{{site.CountTrans | salenumber: vm.showTypeSelected == vm.showTypeList.showAll && site.CountTrans >= SALE_NUM_ROUND ? '0 a':'0,0'}}</div>
+								<div ng-show="vm.showTypeSelected === vm.showTypeList.showAll || vm.showTypeSelected === vm.showTypeList.conversion" class="col-conv">{{site.Conversion | salenumber: '0,0.00'}}%</div>
+							</div>
+						</div>
+					</div>
+					<div ng-repeat-end></div>
+				</div>
+			</div> -->
+			<!-- END Summary of table -->
+			<div class="clear"></div>
+	</div>
+		<!-- END wrapper-bam-table of table -->
+	</div>
+	
+
+
+
+	<!-- Start :: Show table mobile view -->
+	<div ng-show="isMobile === true  " class="box-on-small-devices">
+	 		
+	 		<div class="bam-table-small-devices">
+				
+	 			<!-- Start colapse -->
+	 			<div class="panel-group list-date" id="Datetime" role="tablist" aria-multiselectable="true">
+
+
+					  <div class="panel panel-default" ng-repeat="date in dateSearchList track by $index">
+					    <div class="panel-heading" role="tab" id="headingOne">
+					      <h4 class="panel-title mobi_datebox">
+					        <a role="button" data-toggle="collapse" data-parent="#Datetime" href="#collapseOne_{{$index}}" aria-expanded="true" aria-controls="collapseOne_{{$index}}">
+					          <i class="icon-calendar-inv"></i>		
+					          Date :  {{date}}
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseOne_{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					      <div class="panel-body">
+						        <div class="tb-header"  ng-repeat="Detail in vm.myData.SummaryData">	
+
+							      	<table ng-repeat="Details in vm.myData.SummaryData[$index].Sites">
+							      		<caption> {{Detail.Name}} <i class=" icon-angle-double-right"></i>  {{Details.Name}} </caption>					      		
+							      		<tbody>
+							      			<tr>
+							      				<td>IN</td>
+							      				<td>Out</td>
+							      				<td>Pos</td>
+							      				<td>Conv.%</td>
+							      			</tr>
+							      			<tr>
+							      				<td>{{ vm.getTrafficIn(Details, $parent.$parent.$index, 'IN') }}</td>
+							      				<td>{{ vm.getTrafficIn(Details, $parent.$parent.$index, 'OUT') }}</td>
+							      				<td>{{ vm.getTrafficIn(Details, $parent.$parent.$index, 'POS') }}</td>
+							      				<td>{{ vm.getTrafficIn(Details, $parent.$parent.$index, 'CON') }}%</td>
+							      			</tr>
+							      		
+							      		</tbody>
+							      	</table>
+
+						      </div>
+					    </div>
+					  </div>
+
+					</div>
+	 			<!-- END :: Colapse -->
+
+
+	 		</div>
+
+	</div>
+	 
+
+</div>
+<!-- END  :: Show table mobile view -->    
+    
+<div ng-if="vm.showNoData" class="table-empty" ><!-- !vm.myData || !vm.myData.SummaryData || vm.myData.SummaryData.length == 0-->
+	<i class="icon-boxes6"></i>
+	<p>{{'NO_DATA_STRING' | translate}}</p>
+</div>
+
+</div>

@@ -1,0 +1,176 @@
+<div class="panel" style="margin-bottom: 0">
+<div class="rebar-transact-viewer rebar-transact-viewer-table panel-heading custom-panel-heading">
+    <div class="additional-btn"  >
+		<a ng-click="vm.reloadEmployerSumTable()" tooltip="Refresh" tooltip-placement="left" class="ng-scope">
+            <i class="icon-ccw-1"></i>
+        </a>
+		<a ng-click="vm.employeedatatableProperty.Max = !vm.employeedatatableProperty.Max; vm.employeedatatableProperty.Collapse = false"
+		   tooltip="{{(vm.employeedatatableProperty.Max ? 'RESTORE' : 'MAXIMIZE')|translate}}" tooltip-placement="left">
+			<i ng-class="{'icon-resize-full-1': !vm.employeedatatableProperty.Max, 'icon-resize-small-1': vm.employeedatatableProperty.Max}" class="icon-resize-full-1"></i>
+        </a>
+		<a ng-show="!vm.employeedatatableProperty.Max" ng-click="vm.employeedatatableProperty.Collapse = !vm.employeedatatableProperty.Collapse" class="collapse-btn"
+		   tooltip="{{(vm.employeedatatableProperty.Collapse ? 'EXPAND' : 'COLLAPSE')|translate }}" tooltip-placement="left"><i class="icon-down-open-2"></i></a>
+		<span ng-show="vm.employeedatatableProperty.Max" class="ng-hide">&nbsp;&nbsp;</span>
+    </div>
+    <!-- July 11, 2016 Tri changed  -->
+    <!--<h3 class="title" style="margin-right:-15px;line-height:15px; cursor:pointer;" ng-show = "state != 0" ng-click="GetBackData()">
+        <i class="icon-left-1" style="font-size:14px;"></i>  {{'BACK' | translate}}
+    </h3> -->
+    <div class="panel-heading-title">
+        <div ng-if="currentSelect.TypeReport" ng-click="GetBackData()" style="cursor: pointer;">
+            <i class="icon-doc" />
+            <span>{{currentSelect.TypeReport | translate}}</span>
+            </div>
+        <div ng-if="currentSelect.Site"><i class="icon-right-open-big" /></div>
+        <div ng-if="currentSelect.Site" ng-click="state > states.Site && GetBackData()" ng-style="{cursor: state > states.Site ? 'pointer' : 'default'}">
+            <i class="icon-store-3" />
+            {{'SITE_NAME_STRING' | translate}}{{':'}} <span>{{currentSelect.Site}}</span>
+        </div>
+        <div ng-if="currentSelect.EmployerName"><i class="icon-right-open-big" /></div>
+        <div ng-if="currentSelect.EmployerName" ng-click="state > states.Employee && GetBackData()" ng-style="{cursor: state > states.Employee ? 'pointer' : 'default'}">
+            <i class="icon-vcard-1" />
+            {{'EMPLOYEE_NAME' | translate}}{{':'}} <span>{{currentSelect.EmployerName}}</span>
+        </div>
+        <div ng-if="currentSelect.DateTime"><i class="icon-right-open-big" /></div>
+        <div ng-if="currentSelect.DateTime">
+            <i class="icon-calendar" />
+            <span>{{currentSelect.DateTime | date: 'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+</div>
+<div class="panel-body" ng-show ="vm.employeedatatableProperty.Collapse === false">
+    <div class="table-responsive table-hover" ng-if="vm.GridDataInfoType === 0"><!-- Transaction info -->
+        <table class="cms-table-summary">
+            <thead>
+                <tr>
+                    <th class="first-col">
+                        <div>
+                            <span ng-if="state=== states.Site"> {{'SITE_NAME_STRING' | translate}}</span>
+                            <span ng-if="state=== states.Employee"> {{'EMPLOYEE_NAME' | translate}}</span>
+                            <span ng-if="state=== states.Date"> Date</span>
+                        </div>
+                    </th>
+                    <th>{{'RISK_FACTOR' | translate}}</th>
+                    <th>{{'TOTAL_AMOUNT' | translate}}</th>
+                    <th>{{'TOTAL_TRANSACTION' | translate}}</th>
+                    <th>{{'RATIO_TO_SALE' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="!vm.data || vm.data.Data.length === 0" class="no-row-data">
+                    <th colspan="5">
+                        <i class="icon-boxes6"></i>
+                        {{'NO_DATA_STRING' | translate}}
+                    </th>
+                </tr>
+                <tr ng-if="vm.data && vm.data.Data.length > 0" ng-repeat="sum in vm.data.Data">
+                    <th scope="row"  class="start-col-row" ng-click="ChangeState(sum)">
+                        <span ng-if="state=== states.Site">{{sum.SiteName}}</span>
+                         <span ng-if="state=== states.Employee"> {{sum.EmployerName}} ({{sum.SiteName}})</span>
+                         <span ng-if="state=== states.Date"> {{convertDate(sum)}}</span>
+                    </th>
+                    <td>{{ sum.RiskFactor| number}}</td>
+                    <td>${{ sum.TotalAmmount | number: 2}}</td>
+                    <td>{{ sum.TotalTran | number}}</td>
+                    <td class="last">{{ sum.PercentToSale | number: 2}}%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<div class="table-responsive table-hover" ng-if="vm.GridDataInfoType === 1"><!-- Customer info -->
+        <table class="cms-table-summary">
+            <thead>
+                <tr>
+                    <th class="first-col">
+                        <div>
+                            <span ng-if="state=== states.Site"> {{'SITE_NAME_STRING' | translate}}</span>
+                            <span ng-if="state=== states.Date"> Date</span>
+                        </div>
+                    </th>
+                    <th>{{'RISK_FACTOR' | translate}}</th>
+                    <th>{{'TOTAL_CUSTOMER' | translate}}</th>
+                    <th>{{'RATIO' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="!vm.data || vm.data.Data.length === 0" class="no-row-data">
+                    <th colspan="4">
+                        <i class="icon-boxes6"></i>
+                        {{'NO_DATA_STRING' | translate}}
+                    </th>
+                </tr>
+                <tr ng-if="vm.data && vm.data.Data.length > 0" ng-repeat="sum in vm.data.Data">
+                    <th scope="row"  class="start-col-row" ng-click="ChangeStateIOPC(sum)">
+                        <span ng-if="state=== states.Site">{{sum.SiteName}}</span>
+                        <span ng-if="state=== states.Date"> {{convertDate(sum)}}</span>
+                    </th>
+                    <td>{{ sum.RiskFactor| number}}</td>
+                    <td>{{ sum.Total | number}}</td>
+                    <td class="last">{{ sum.Percent | number: 2}}%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<div class="table-responsive table-hover" ng-if="vm.GridDataInfoType === 2"><!-- Car info -->
+        <table class="cms-table-summary">
+            <thead>
+                <tr>
+                    <th class="first-col">
+                        <div>
+                            <span ng-if="state=== states.Site"> {{'SITE_NAME_STRING' | translate}}</span>
+                            <span ng-if="state=== states.Date"> Date</span>
+                        </div>
+                    </th>
+                    <th>{{'RISK_FACTOR' | translate}}</th>
+                    <th>{{'TOTAL_CAR' | translate}}</th>
+                    <th>{{'RATIO' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="!vm.data || vm.data.Data.length === 0" class="no-row-data">
+                    <th colspan="4">
+                        <i class="icon-boxes6"></i>
+                        {{'NO_DATA_STRING' | translate}}
+                    </th>
+                </tr>
+                <tr ng-if="vm.data && vm.data.Data.length > 0" ng-repeat="sum in vm.data.Data">
+                    <th scope="row"  class="start-col-row" ng-click="ChangeStateIOPC(sum)">
+                        <span ng-if="state=== states.Site">{{sum.SiteName}}</span>
+                         <span ng-if="state=== states.Employee"> {{sum.EmployerName}} ({{sum.SiteName}})</span>
+                         <span ng-if="state=== states.Date"> {{convertDate(sum)}}</span>
+                    </th>
+                    <td>{{ sum.RiskFactor| number}}</td>
+                    <td>{{ sum.Total | number}}</td>
+                    <td class="last">{{ sum.Percent | number: 2}}%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <span style="float: right" ng-if="vm.data.TotalPages > 1">
+            <nav style="text-align: center;">
+                <ul class="pagination">
+                    <li ng-click="vm.prevPage()" ng-disabled="vm.currPage < 2">
+                        <a aria-label="Previous">
+                            <span aria-hidden="true">
+                                  <i class=" icon-left-open-big"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li ng-click="vm.prevPage(1)"><a>1</a></li>
+                    <li><a class="input-page"><input type="text"  maxlength="10"  class="form-control" ng-model="vm.currPage" style="max-width: 50px;" ng-keypress="PreventLetter($event,inputRex)" ng-paste ="PreventPaste($event,pasteRegx)"> </a></li>
+                    <li ng-click="vm.gotoPage()"><a>{{'GO' | translate}}</a></li>
+                    <li ng-click="vm.nextPage(vm.data.TotalPages)"><a>{{vm.data.TotalPages ? vm.data.TotalPages : 0}}</a></li>
+                    <li ng-click="vm.nextPage()" ng-disabled="vm.currPage >= vm.data.TotalPages">
+                        <a aria-label="Next">
+                            <span aria-hidden="true">
+                               <i class=" icon-right-open-big"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </span>
+    </div>
+</div></div>

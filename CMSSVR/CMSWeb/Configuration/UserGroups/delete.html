@@ -1,0 +1,34 @@
+﻿<form name="myForm" class="form-horizontal user-group-manages form-delete" novalidate angular-validator angular-validator-submit="vm.deleteGroup()">
+	<div class="modal-header">
+		<span class="close" data-ng-click="vm.cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'USERGROUP_DELETE_HEADER'|translate}}</h3>
+	</div>
+	<div class="modal-body" ng-class="{'remove-multiple': !vm.isSingleUserGroup}">
+		<div class="remove-view">
+			<!--Multiple item delete-->
+			<div ng-if="!vm.isSingleUserGroup">
+				<!--slimscroll="{height: '200px'}"-->
+				<div class="listview" ng-grid="listOptions"></div>
+			</div>
+
+			<!--Single item delete-->
+			<div class="item-info" ng-if="vm.isSingleUserGroup" ng-repeat="group in vm.groupSelected" ng-model="row.entity" >
+				<div class="i-name" tooltip-template="'Widgets/Templates/tooltip.html'" tooltip-trigger="mouseenter" 
+					tooltip-class="grid-tooltip" tooltip-append-to-body="true" tooltip-placement="bottom">{{group.GroupName}}</div>
+				<div ng-if="group.Users.length > 0" class="msg-warning-replace"><span>{{vm.msgConfirmToReplace}}</span></div>
+				<div ng-if="group.Users.length > 0" class="i-des" ng-class="{'error': vm.requiredUGroup}">
+					<multiselect name="ddlUserGroups" ng-model="vm.userGroupToReplace"
+						options="ugroup as ugroup.GroupName for ugroup in vm.groupList"
+						hide-icon="true" ng-change="vm.uGroupchange()" required></multiselect>
+					<span class="required">(*)</span>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="msg-delete">{{vm.msgDelete|translate}}</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" data-ng-click="vm.cancel()">{{"BTN_CANCEL"|translate}}</button>
+		<button type="submit" class="btn btn-primary" ng-disabled="!vm.isSingleUserGroup && vm.selectedRows.length == 0">{{"BTN_OK"|translate}}</button>
+	</div>
+</form>

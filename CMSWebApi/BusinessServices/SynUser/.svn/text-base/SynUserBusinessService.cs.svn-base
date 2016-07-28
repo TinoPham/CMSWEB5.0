@@ -1,0 +1,124 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using CMSWebApi.ServiceInterfaces;
+using CMSWebApi.DataModels;
+using System.Globalization;
+using PACDMModel.Model;
+using System.IO;
+using CMSWebApi.APIFilters;
+
+namespace CMSWebApi.BusinessServices.GoalType
+{
+	public class SynUserBusinessService: BusinessBase<ISynUserService>
+	{
+		private const string SYNUSER_NAME_EXIST = "SYNUSER_NAME_EXIST";
+		private const string SYNUSER_REGIST_SUCCESS = "SYNUSER_REGIST_SUCCESS";
+		private const string SYNUSER_REGIST_FAIL = "SYNUSER_REGIST_FAIL";
+
+		public SynUserBusinessService(CultureInfo culture, ISynUserService dbservice) : base(dbservice, culture) { }
+
+		public SynUserModel[] GetAllSynUser(int userID)
+		{
+			tCMSWeb_SynUser[] SynUser = DataService.SelectAllSynUser(userID);
+			tCMSWeb_SynUser_Types[] SynUserType = DataService.SelectSynUserType();
+			tCMSWeb_UserList user = DataService.SelectUser(userID);
+			SynUserModel[] models = (from item in SynUser
+										join types in SynUserType on item.SynType equals types.SynID	
+										  select new SynUserModel {SynID= item.SynID, ServerIP= item.ServerIP, UserID= item.UserID,
+										  PassWord= item.PassWord, isSSL=item.isSSL, Interval= item.Interval, Time= item.Time, LastSyn= item.LastSyn, 
+										  isEnable=item.isEnable, isForceUpdate= item.isForceUpdate, SynType= item.SynType, SynName= types.SynName,
+										  CreateBy= item.CreateBy, LastSynresult= item.LastSynresult, UUsername= user.UUsername}).ToArray();
+			return models;			
+		}
+
+
+		public SynUserTypeModel[] GetAllSynUserType()
+		{
+			tCMSWeb_SynUser_Types[] SynUserType = DataService.SelectSynUserType();
+			SynUserTypeModel[] models = (from item in SynUserType
+										 select new SynUserTypeModel { SynID= item.SynID, SynName= item.SynName, SynDes= item.SynDes, SynConnection= item.SynConnection }).ToArray();
+			return models;
+		}
+
+		public bool DeleteSynUser(int SynID)
+		{
+			bool result = DataService.DeleteSynUser(SynID);
+			return result;
+		}
+
+		public string UpdateSynUser(SynUserModel model)
+		{
+			string message = string.Empty;
+			if (CheckRegistExist(model.ServerIP, model.SynType, model.SynID))
+			{
+				message = SYNUSER_NAME_EXIST;
+			}
+			else
+			{
+				tCMSWeb_SynUser tSynUser = new tCMSWeb_SynUser();
+
+				if (model.SynID != 0)
+				{
+					tSynUser = DataService.SelectSynUser(model.SynID);
+					SetEntitySynUSer(ref tSynUser, model);
+					if (DataService.UpdateSynUser(tSynUser) == null)
+					{
+						message = SYNUSER_REGIST_FAIL;
+					}
+				}
+				else
+				{
+					SetEntitySynUSer(ref tSynUser, model);
+					if (DataService.AddSynUser(tSynUser) == null)
+					{
+						message = SYNUSER_REGIST_FAIL;
+					}
+				}
+				
+			}
+
+			return message;
+		}
+
+		private bool CheckRegistExist(string ServerIP, int SynType, int SynID)
+		{
+			tCMSWeb_SynUser[] tSynUser = DataService.SelectSynUser(ServerIP, SynType);
+			//check insert
+			if (SynID == 0)
+				return (tSynUser.Count() > 0) ? true : false;
+			//check update
+			else
+			{
+				var name = from item in tSynUser
+						   where item.SynID != SynID
+						   select item;
+				return name.Count() > 0 ? true : false;
+			}
+		}
+
+
+		public void SetEntitySynUSer(ref tCMSWeb_SynUser tSynUser, SynUserModel model)
+		{
+			if (tSynUser == null)
+				tSynUser = new tCMSWeb_SynUser();
+
+			tSynUser.SynID = model.SynID;
+			tSynUser.ServerIP = model.ServerIP;
+			tSynUser.UserID = model.UserID;
+			tSynUser.PassWord = model.PassWord;
+			tSynUser.isSSL = model.isSSL;
+			tSynUser.Interval = model.Interval;
+			tSynUser.Time = model.Time;
+			tSynUser.LastSyn = model.LastSyn;
+			tSynUser.isEnable = model.isEnable;
+			tSynUser.isForceUpdate = model.isForceUpdate;
+			tSynUser.SynType = model.SynType;
+			tSynUser.CreateBy = model.CreateBy;
+			tSynUser.LastSynresult = model.LastSynresult;
+
+		}		
+	}
+}

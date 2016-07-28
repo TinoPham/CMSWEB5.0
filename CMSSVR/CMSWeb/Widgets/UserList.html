@@ -1,0 +1,56 @@
+﻿<div class="panel panel-general" data-ng-controller="userlistCtrl as vm">
+	<div class="panel-heading panel-g-heading">
+		<div class="clearfix">
+			<div class="pull-left">
+				<div class="btn-group" dropdown>
+					<button class="cmsuserbox userfontsize" dropdown-toggle>
+						<i class="icon-users"></i>
+					</button>
+					<ul class="dropdown-menu userdropdown" role="menu">
+						<li><a href ng-click="vm.newuserDialog()"><i class="icon-plus user-menu-icon"></i><span>ADD USER</span></a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="glyphicon glyphicon-import user-menu-icon"></i><span>IMPORT</span></a></li>
+					</ul>
+				</div>
+				<span class="cmstextcenter h4">User List</span>
+			</div>
+			<div class="pull-right">
+				<button class="cmsuserbox" ng-click="predicate = 'FirstName'; reverse=!reverse"><i class="fa" ng-class="{'fa-sort-alpha-asc':!reverse, 'fa-sort-alpha-desc':reverse}"></i></button>
+				<button class="cmsuserbox userborderleft" ng-click="isCollapsed = !isCollapsed"><i class="icon-search"></i></button>
+			</div>
+		</div>
+		<hr />
+		<div collapse="isCollapsed">
+			<input type="text" ng-model="search.$" class="form-control input-sm no-border" placeholder="Search..." aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-00Y-9007">
+		</div>
+	</div>
+	<div class="panel-body panel-g-body scroll-body" slimscroll="{ height: '500px'}">
+		<ul class="list-group list-group-users">
+			<li ng-repeat="user in users | filter:search:strict | orderBy:predicate:reverse" class="list-group-item">
+				<div class="item-row">
+					<div class="pull-right item-tools">
+						<a href ng-click="vm.newuserDialog(user)"
+							popover="Edit" popover-placement="bottom" popover-trigger="mouseenter">
+							<i class="fa-fw icon-pencil-1"></i>
+						</a>
+						<br />
+						<a href ng-click="vm.newuserDialog()"
+							popover="Delete" popover-placement="bottom" popover-trigger="mouseenter">
+							<i class="fa-fw icon-cancel-1"></i>
+						</a>
+					</div>
+					<div class="item-info">
+						<div class="user-image">
+							<img src="/content/images/userimg.jpg" class="img-circle">
+						</div>
+						<div class="user-info">
+							<span class="u-name">{{vm.getFullName(user.FName, user.LName)}}</span>
+							<span class="u-regency">{{user.PositionName}}</span>
+							<span class="u-mail">{{user.Email}}</span>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

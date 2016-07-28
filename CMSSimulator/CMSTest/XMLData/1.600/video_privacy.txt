@@ -1,0 +1,632 @@
+
+        <configuration_id>24</configuration_id>
+        <configuration_name>video_privacy</configuration_name>
+        <video_privacy>
+            <channels size="24">
+                <channel id="0">
+                    <video_source>0</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">10,38;358,38;358,246;10,246;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="1">
+                    <video_source>1</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">40,36;400,36;400,288;40,288;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="2">
+                    <video_source>2</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">51,29;375,29;375,261;51,261;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="3">
+                    <video_source>3</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">27,13;368,13;368,261;27,261;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="4">
+                    <video_source>4</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">54,20;394,20;394,252;54,252;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="5">
+                    <video_source>5</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">34,31;358,31;358,223;34,223;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="6">
+                    <video_source>6</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">38,28;406,28;406,288;38,288;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="7">
+                    <video_source>7</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">23,32;348,32;348,288;23,288;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="8">
+                    <video_source>8</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">50,14;355,14;355,258;50,258;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="9">
+                    <video_source>9</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">52,14;345,14;345,274;52,274;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="10">
+                    <video_source>10</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">50,27;367,27;367,283;50,283;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="11">
+                    <video_source>11</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">34,22;324,22;324,238;34,238;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="12">
+                    <video_source>12</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">62,20;394,20;394,288;62,288;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="13">
+                    <video_source>13</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">47,14;347,14;347,246;47,246;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="14">
+                    <video_source>14</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">18,28;410,28;410,288;18,288;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="15">
+                    <video_source>15</video_source>
+                    <enable>0</enable>
+                    <area_trackers>1</area_trackers>
+                    <trackers size="1">
+                        <tracker id="0">
+                            <user_name>Area 0</user_name>
+                            <mask_type>1</mask_type>
+                            <mask_color>0</mask_color>
+                            <repeat_type>-1</repeat_type>
+                            <begin_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </begin_date>
+                            <end_date>
+                                <year>2009</year>
+                                <month>8</month>
+                                <date>10</date>
+                                <dayofweek>1</dayofweek>
+                            </end_date>
+                            <begin_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </begin_time>
+                            <end_time>
+                                <hour>0</hour>
+                                <minute>0</minute>
+                                <second>0</second>
+                            </end_time>
+                            <polygon num_point="4" type="0">59,33;376,33;376,249;59,249;</polygon>
+                        </tracker>
+                    </trackers>
+                </channel>
+                <channel id="16">
+                    <video_source>71</video_source>
+                    <enable>0</enable>
+                    <area_trackers>0</area_trackers>
+                    <trackers size="0" />
+                </channel>
+                <channel id="17">
+                    <video_source>66</video_source>
+                    <enable>0</enable>
+                    <area_trackers>0</area_trackers>
+                    <trackers size="0" />
+                </channel>
+                <channel id="18">
+                    <video_source>69</video_source>
+                    <enable>0</enable>
+                    <area_trackers>0</area_trackers>
+                    <trackers size="0" />
+                </channel>
+                <channel id="19">
+                    <video_source>67</video_source>
+                    <enable>0</enable>
+                    <area_trackers>0</area_trackers>
+                    <trackers size="0" />
+                </channel>
+                <channel id="20">
+                    <video_source>68</video_source>
+                    <enable>0</enable>
+                    <area_trackers>0</area_trackers>
+                    <trackers size="0" />
+                </channel>
+                <channel id="21">
+                    <video_source>-1</video_source>
+                    <enable>0</enable>
+                    <area_trackers>0</area_trackers>
+                    <trackers size="0" />
+                </channel>
+                <channel id="22">
+                    <video_source>65</video_source>
+                    <enable>0</enable>
+                    <area_trackers>0</area_trackers>
+                    <trackers size="0" />
+                </channel>
+                <channel id="23">
+                    <video_source>64</video_source>
+                    <enable>0</enable>
+                    <area_trackers>0</area_trackers>
+                    <trackers size="0" />
+                </channel>
+            </channels>
+        </video_privacy>
+      

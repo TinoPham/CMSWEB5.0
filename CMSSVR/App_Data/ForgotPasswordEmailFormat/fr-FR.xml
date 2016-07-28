@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EmailSetting>
+  <Subject>Web CMS: Réinitialiser le mot de passe information</Subject>
+  <PasswordLength>8</PasswordLength>
+  <NumberNonOfAlpha>0</NumberNonOfAlpha>
+  <IsHtml>1</IsHtml>
+  <Content>
+    <![CDATA[<div>
+    <div> Cher {0}, </div> 
+    <p>Voici votre nouveau mot de passe cầu Ban, S'il vous plaît l'utiliser pour vous connecter, vous pouvez passer à un autre mot de passe que vous voulez.</p>
+      <div style="margin-left: 30px;">
+        UserName: <span  style="color: red; font-weight: bold;"> {1}</span></div>
+      <div style="margin-left: 30px;">
+        Mot de passe: <span  style="color: red; font-weight: bold;"> {2}</span>
+      </div>
+      <div>Merci,</div>
+      <div>CMS Web</div>
+    </div>
+     ]]>
+  </Content>
+</EmailSetting>

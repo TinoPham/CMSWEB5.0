@@ -1,0 +1,26 @@
+﻿<form name="myForm" class="form-horizontal job-title-manages form-delete" novalidate angular-validator angular-validator-submit="vm.deleteJob()">
+	<div class="modal-header">
+		<span class="close" data-ng-click="vm.cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'JOB_DELETE_HEADER'|translate}}</h3>
+	</div>
+	<div class="modal-body" ng-class="{'remove-multiple': !vm.isSingleItem}">
+		<div class="remove-view">
+			<!--Multiple item delete-->
+			<div ng-if="!vm.isSingleItem">
+				<div class="listview" ng-grid="listOptions"></div>
+			</div>
+
+			<!--Single item delete-->
+			<div class="item-info" ng-if="vm.isSingleItem" ng-repeat="job in vm.itemSelecteds" ng-model="row.entity" tooltip-template="'Widgets/Templates/tooltip.html'" tooltip-trigger="mouseenter" tooltip-class="grid-tooltip" tooltip-append-to-body="true" tooltip-placement="bottom">
+				<div class="i-color" ng-style="{'border-color': vm.convertColor(job.Color)}"></div>
+				<div class="i-name">{{job.PositionName}}</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="msg-delete">{{vm.msgDelete|translate}}</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" data-ng-click="vm.cancel()">{{"BTN_CANCEL"|translate}}</button>
+		<button type="submit" class="btn btn-primary" ng-disabled="!vm.isSingleItem && vm.selectedRows.length == 0">{{"BTN_OK"|translate}}</button>
+	</div>
+</form>

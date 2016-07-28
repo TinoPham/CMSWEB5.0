@@ -1,0 +1,39 @@
+﻿<div class="working-hours-manage">
+	<div class="modal-header">
+		<span class="close" data-ng-click="CloseWk()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{btn_Type|translate}} {{"TITLE_WORKING_HOURS"|translate}}</h3>
+	</div>
+	<div class="modal-body">
+		<form name="wkForm" class="form-horizontal">
+			<div class="form-group">
+				<span class="col-sm-2 col-xs-1"></span>
+				<label class="col-sm-1 col-xs-2">Day</label>
+				<label class="col-sm-1 col-xs-8">Select</label>
+				<label class="col-sm-3 text-center col-xs-6">Open Time</label>
+				<label class="col-sm-3 text-center col-xs-6">Close Time</label>
+			</div>
+			<div ng-repeat="wk in vm.workingHours">
+				<div class="form-group">
+					<div class="col-sm-2 col-xs-1"></div>
+					<label class="col-sm-1 col-xs-2 control-label">{{wk.Name |translate}}</label>
+					<div class="col-sm-1 col-xs-8 align-middle">
+						<div class="checkbox checkbox-default">
+							<input type="checkbox" id="wk-{{$index}}" ng-model="wk.Checked"><label></label>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<timepicker-pop input-time="wk.OpenTime" class="input-group" hour-step="1" minute-step="1" show-meridian="true"></timepicker-pop>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<timepicker-pop input-time="wk.CloseTime" class="input-group" hour-step="1" minute-step="1" show-meridian="true"></timepicker-pop>
+					</div>
+				</div>
+				<div ng-if="vm.workingHours.length > $index + 1" class="line-dashed"></div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-default" ng-click="CloseWk()">{{"BTN_CANCEL"|translate}}</button>
+		<button class="btn btn-primary" ng-click="vm.SaveWkHours()" ng-disabled="wkForm.$invalid">{{"BTN_SAVE"|translate}}</button>
+	</div>
+</div>

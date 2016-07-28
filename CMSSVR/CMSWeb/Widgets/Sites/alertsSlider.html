@@ -1,0 +1,20 @@
+﻿<form name="deleNode" class="form-horizontal user-group-manages form-delete custom_slider">
+	<div class="modal-header">
+		<span class="close" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'Images slider'|translate}}</h3>
+	</div>
+    <div class="modal-body" style="padding-left:0px;padding-right:0px;">
+        <div>
+            <carousel interval="Interval">
+                <slide ng-repeat="file in model" active="file.active">
+                    <div class="carousel-caption"><span><b>{{file.Des}} {{time(file.Name)}}</b></span></div>
+                    <div class="order-number">{{$index+1}} of {{model.length}}</div>
+                    <div class="images_box" style="width:100%;max-height:500px;text-align:center;vertical-align:middle;">
+                        <img class="site-slider-image img-thumbnail" ng-src="{{getImages(file.Name, file.KDVR)}}" style="width:100%;"  /> 
+                    </div>
+                     <figcaption></figcaption>
+            </carousel>
+           
+        </div>    
+    </div>
+</form>

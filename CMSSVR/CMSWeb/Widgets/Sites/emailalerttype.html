@@ -1,0 +1,55 @@
+﻿<div class="modal-header" ng-init="init()">
+  <span class="close" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+  <h3 class="modal-title">{{'Alert Types'|translate}}</h3>
+</div>
+
+<div class="modal-body">
+  <div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar  slimscroll="{height: '500px'}">
+    
+      <div class="panel-header search-user">
+        <div class="col-md-6 padding_top_5">
+           {{'ALERT_TYPE' | translate}}
+        </div>
+			<div class="col-md-6 input-group">
+				<input type="text"  ng-model="uquery" maxlength="200"  class="form-control input-search" placeholder="{{'SEARCH_PLACE_HOLDER'|translate}}" />
+				<span class="search-button">
+					<i class="icon-search"></i>
+				</span>
+			</div>
+     </div>
+      <table class="cms-table-summary table-hover-tr ">
+       <!--  <thead>
+          <tr>
+           
+            <th>
+              {{'ALERT_TYPE' | translate}}
+            </th>
+             <th>
+              {{'ACTIVE' | translate}}
+            </th>
+            
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr ng-repeat ="r in data | filter : {Name : uquery} | orderBy:'Id'">            
+            <td  ng-click="r.Active = !r.Active">
+              {{r.Name}}
+            </td>
+              <td>
+              <div class="checkbox checkbox-default">
+                <input type="checkbox" name="chk" ng-model="r.Active" ng-checked="r.Active">
+                <label></label>
+              </div>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+  
+  </div>
+  
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" ng-click="cancel()">{{'BTN_CANCEL'|translate}}</button>
+  <button type="submit" class="btn btn-primary" ng-click="save()">{{'BTN_DONE'|translate}}</button>
+</div>

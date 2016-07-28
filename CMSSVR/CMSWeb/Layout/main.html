@@ -1,0 +1,21 @@
+﻿<!-- Begin of page -->
+<div ng-controller="mainCtrl" ng-init="Initialize()">
+	<div ng-if="isAuthenticate" ng-include="'Layout/header.html'"></div>
+	<div ng-if="isAuthenticate" ng-include="'Layout/Left-bar.html'"></div>
+	<!-- Start right content -->
+	<div class="content-page" ng-class="isAuthenticate ? '': 'login-page'">
+		<span ng-if="isAuthenticate">
+			<h3 class="title"><!--<span ng-if="isShowTitle"><i class="{{iconState}}"></i> {{title}}</span>--></h3>
+		</span>
+		<div ui-view="" class="content row"></div>
+	
+	</div>
+	<!-- End right content -->
+
+	<div ng-if="isAuthenticate" data-ng-include="'Layout/Footer.html'" ></div>
+</div>
+
+<!-- End of page -->
+
+
+

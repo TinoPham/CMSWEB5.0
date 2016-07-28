@@ -1,0 +1,100 @@
+﻿@import url('app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+/*
+ * Navbar - TOP
+ * -----------
+ */
+
+.topbar {
+    left: 0px;
+    right: 0;
+    top: 0px;
+    height: @resized_left;
+    z-index: 5;
+    position: fixed;
+
+    .topbar-left {
+        float: left;
+        height: 50px;
+        position: relative;
+        z-index: 1;
+        width: @left-sidebar-width-default;
+    }
+
+    .topbar-profile {
+        > a {
+            font-family: "Open Sans";
+            max-width: 200px;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            width: 35px;
+            position: relative;
+            margin-right: 5px;
+            margin-top: -15px;
+            margin-bottom: -12px;
+            display: inline-block;
+
+            img {
+                .image-circle(35px, 35px);
+            }
+        }
+    }
+}
+
+.logo {
+	h1 {
+		margin: 0px auto;
+		height: @resized_left;
+		text-align: center;
+
+		img {
+			height: 50%;
+		}
+	}
+}
+
+.button-menu-mobile {
+	position: absolute;
+	right: 0;
+	float: left;
+	top: 0px;
+	z-index: 2;
+	padding: 10px 18px;
+	height: @resized_left;
+	font-size: 21px;
+	border: none;
+	outline: none;
+}
+
+.navbar-right {
+	.iconify {
+		> a {
+			> i {
+				font-size: 18px;
+				line-height: 17px;
+			}
+		}
+	}
+}
+
+#wrapper {
+	&.enlarged {
+		.topbar {
+			.topbar-left {
+				width: @resized_left !important;
+
+				.logo {
+					opacity: 0;
+					display: none;
+				}
+			}
+		}
+	}
+}

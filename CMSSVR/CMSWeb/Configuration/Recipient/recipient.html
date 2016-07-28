@@ -1,0 +1,21 @@
+<div class="panel recipient-manages" ng-controller="recipientCtrl as vm" ng-cloak>
+	<func-header
+		listview='vm.listView'
+		query='vm.query.filterText'
+		add-fn='vm.addRecipient()'
+		edit-fn='vm.editRecipient(vm.selectedRows[vm.selectedRows.length-1])'
+		del-fn='vm.deleteRecipient(vm.selectedRows)'
+		import-fn='vm.showDialog()'
+		show-view-mode="true"></func-header>
+
+	<!--GRID VIEW-->
+	<div data-ng-if="vm.listView == false" class="panel-content">
+		<div class="gridview" ng-grid="vm.gridOptions"></div>
+	</div>
+
+	<!--LIST VIEW-->
+	<div data-ng-if="vm.listView == true" class="panel-content">
+		<div class="listview" ng-grid="vm.listOptions"></div>
+	</div>
+</div>
+

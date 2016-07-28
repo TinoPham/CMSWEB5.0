@@ -1,0 +1,274 @@
+﻿.sale-reports {
+	// background-color: #fff;
+	// position: absolute;	
+	margin-bottom: 25px;
+
+	.title-summary {
+	}
+
+    .fusioncharts-caption{
+        font-size: 16pt !important;
+        font-weight: bold;
+    }
+
+	.clear {
+		clear: both;
+	}
+
+	.sale-reports-chart {
+		margin-top: 7px;
+		margin-bottom: 7px;
+		background-color: #fff;
+		padding: 25px 15px;
+
+		.btn-site {
+			font-size: 14px;
+			font-weight: bold;
+			color: #666;
+			-moz-box-shadow: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+
+			&:hover,
+			&:focus,
+			&.focus,
+			&:active,
+			&.active,
+			.open > .dropdown-toggle {
+				color: #666;
+				background-color: #fff;
+				border-color: none;
+				-moz-box-shadow: none;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+				cursor: pointer;
+			}
+
+			.badge {
+				padding: 6px;
+				-moz-border-radius: 15px;
+				-webkit-border-radius: 15px;
+				border-radius: 15px;
+				background-color: #86AAC4;
+			}
+		}
+
+		.tree-site-content{
+			.switch-for-chart {
+				display: inline-table;
+				vertical-align: middle;
+				margin-left: 15px;
+				.switch-ios-button {
+					label {
+						margin-bottom: 0px;
+					}					
+				}
+
+			}
+			.chart-pop-header{
+				.pull-left{
+					width: 85%;
+					.input-group{ width: 100%; }
+				}
+			}
+		}
+
+		.show-chart {
+			.toolbar {
+				margin: 15px;
+				padding:15px; 	
+				background: #f3f3f3;			
+			}
+		}
+
+	}
+
+	// END :: Chart (.sale-reports-chart { )
+    // ==========================================
+
+
+	.sale-reports-tables {
+		.borderLocation{
+			border-bottom:1px solid #434955 !important;
+		}
+		.border{
+			border-bottom: 2px solid #F3F3F3  !important;
+		}
+		.borderSite{
+			border-bottom: 1px solid white !important;
+		}
+		background-color: #fff;
+		padding: 25px 15px;
+
+		.top-table {
+			height: 45px;
+			width: 100%;
+
+			.tool-bar {
+				float: right;
+
+				div {
+					float: left;
+					margin: 0 7px;
+				}
+
+				input[type="radio"]{
+					outline: 0;
+					outline-offset: unset;
+				}
+			}
+		}
+
+		.wrapper-bam-table {
+			&.forFirefox {
+				& > .bam-table-column:nth-child(2) {
+						.bam-table {
+							.tb-row.parents-row {
+								display: block;
+							}
+						}
+					}
+			}
+			.expand{
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					width: 90px !important;
+					float: left;
+				}
+			.scroll-wrapper {
+				&.bam-table-column {
+					.bam-table {
+						width: 100%;
+						.tb-header {
+							width: 100%;
+							.tb-row {
+								.tb-col {
+									&.col-fixed-header {
+										.col-date {
+											width: 100% !important;
+										}
+									}
+								}
+							}
+						}
+
+						.tb-body {
+							.tb-row {
+								.tb-col {
+									&.col-fixed {
+										// width: auto !important;
+  										min-width: auto !important;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.bam-table-single-data {
+				.scroll-wrapper {
+					&.bam-table-column {
+						.bam-table {
+							.tb-header {
+
+								.tb-row {
+									.tb-col {
+										&:not(.col-fixed-header)  {
+											// float: left;
+										}
+									}
+								}
+
+							}
+							.tb-body {
+								.tb-row {
+									.tb-col {
+										// float: left;
+										&.col-fixed  {
+											width: 150px;
+											min-width: 120px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+	}// END :: .sale-reports-tables
+     /*
+	.table-empty{
+		background-color: #fff;
+		padding: 25px 15px;
+		margin-top: 7px;
+		color: #666;
+		text-align: center;
+		vertical-align: middle;
+		font-weight: bold;
+		font-size: 24px;
+
+		i {
+			font-size: 60px
+		}
+	}
+    */
+	.box-on-small-devices {
+		background: #fff;
+		padding: 10px;
+	}
+
+}
+// ====================================================================
+//
+//                    END :: BAM --- .sale-reports
+//
+// ====================================================================
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+	.bam-tb-scroll {
+		max-width: 320px;
+		float: left;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+}
+
+@media screen and (min-width: 769px) and (max-width: 864px) {
+}
+
+@media screen and (min-width: 865px) and (max-width: 900px) {
+}
+
+@media screen and (min-width: 901px) and (max-width: 950px) {
+}
+
+@media screen and (min-width: 951px) and (max-width: 1007px) {
+}
+
+@media screen and (min-width: 1008px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1201px) {
+	.bam-tb-scroll.scroll-wrapper {
+		// max-width: 720px;
+		// float: left;
+	}
+}

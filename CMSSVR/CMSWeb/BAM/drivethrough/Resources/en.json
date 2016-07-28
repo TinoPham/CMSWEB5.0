@@ -1,0 +1,11 @@
+﻿{
+	"CONVERSION_STRING": "CONV.%",
+	"COUNT":"Count",
+	"DWELL":"Dwell(s)",
+	"LOCATION_STRING": "Location",
+	"NO_DATA_STRING": "There is no data",
+	"SUMMARY_STRING": "Summary",
+	"TRAFFIC_IN_STRING": "IN",
+	"TRAFFIC_OUT_STRING": "OUT",
+	"TRANSACTION_STRING": "POS"
+}

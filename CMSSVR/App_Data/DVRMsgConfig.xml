@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages>
+	<msg id="10000,10030" config="0" class="RawDVRConnect"></msg>
+	<msg id="10002" config="0" class="RawDVRConnect"></msg>
+	<msg id="10004" config="0" class="RawKeepAlive"></msg>
+	<msg id="10006,10008,10009" config="1" class="RawUserManagementConfig"></msg>
+	<msg id="10006,10008,10009" config="2" class="RawIPCameraConfig"></msg>
+	<msg id="10006,10008,10009" config="3" class="RawHardwareConfig"></msg>
+	<msg id="10006,10008,10009" config="4" class="RawSystemConfig"></msg>
+	<msg id="10006,10008,10009" config="5" class="RawServerInfoConfig"></msg>
+	<msg id="10006,10008,10009" config="6" class="RawRecordScheduleConfig"></msg>
+	<msg id="10006,10008,10009" config="7" class="RawVideoLogixConfig"></msg>
+	<msg id="10006,10008,10009" config="8" class="RawRecordingDisplayConfig"></msg>
+	<msg id="10006,10008,10009" config="9" class="RawVideoConfig"></msg>
+	<msg id="10006,10008,10009" config="10" class="RawMotionConfig"></msg>
+	<msg id="10006,10008,10009" config="11" class="RawIntelliZoneConfig"></msg>
+	<msg id="10006,10008,10009" config="12" class="RawIntelliGuardConfig"></msg>
+	<msg id="10006,10008,10009" config="13" class="RawTextOverlayConfig"></msg>
+	<msg id="10006,10008,10009" config="14" class="RawVirtualRulerConfig"></msg>
+	<msg id="10006,10008,10009" config="15" class="RawEmailConfig"></msg>
+	<msg id="10006,10008,10009" config="16" class="RawCommunicationConfig"></msg>
+	<msg id="10006,10008,10009" config="17" class="RawStorageConfig"></msg>
+	<msg id="10006,10008,10009" config="18" class="RawLogRecordConfig"></msg>
+	<msg id="10006,10008,10009" config="19" class="RawLogContentConfig"></msg>
+	<msg id="10006,10008,10009" config="20" class="RawAlertEvent"></msg>
+	<msg id="10006,10008,10009" config="21" class="RawDVRInfoConfig"></msg>
+	<msg id="10006,10008,10009" config="22" class="RawBookmarkConfig"></msg>
+	<msg id="10006,10008,10009" config="23" class="RawVisionCountConfig"></msg>
+	<msg id="10006,10008,10009" config="24" class="RawVideoPrivacyConfig"></msg>
+	<msg id="10006,10008,10009" config="26" class="RawISearchConfig"></msg>
+	<msg id="10010" config="0" class="RawAlertEvent"></msg>
+	<msg id="10012,10017" config="0" class="RawMsgVideo"></msg>
+	<msg id="10013" config="0" class=""></msg>
+	<msg id="10018" config="0" class="RawDVRPerformance"></msg>
+	<msg id="10019" config="0" class="RawAlertEventAll"></msg>
+	<msg id="10020" config="0" class="RawAllInfo"></msg>
+	<msg id="10024" config="0" class="RawTechnicalLog"></msg>
+	<msg id="10029" config="0" class="RawMsgHeatmapImage"></msg>
+	<msg id="10032" config="0" class="RawMsgBackupConfig"></msg>
+</messages>
+<!--
+	MSG_DVR_CONNECT = 10000,			//DVR -> CMS //10000
+	MSG_DVR_CONNECT_RESPONSE,			//
+	MSG_DVR_DISCONNECT,					//DVR -> CMS //10002
+	MSG_DVR_DISCONNECT_RESPONSE,		//
+	MSG_DVR_KEEPALIVE,					//DVR -> CMS //10004
+	MSG_DVR_GET_CONFIG,					//
+	MSG_DVR_GET_CONFIG_RESPONSE,		//DVR -> CMS //10006
+	MSG_DVR_SET_CONFIG,					//
+	MSG_DVR_SET_CONFIG_RESPONSE,		//DVR -> CMS //10008
+	MSG_DVR_CONFIG_CHANGED,				//DVR -> CMS //10009
+	MSG_DVR_SERVER_ALERT,				//DVR -> CMS //10010
+	MSG_DVR_GET_VIDEO,					//
+	MSG_DVR_GET_VIDEO_RESPONSE,			//DVR -> CMS //10012
+	MSG_DVR_TIME_CHANGED,				//DVR -> CMS //10013
+	MSG_DVR_DOWNLOAD_FILE,				//
+	MSG_DVR_DOWNLOAD_FILE_RESPONSE,		//
+	MSG_DVR_GET_SNAPSHOT,
+	MSG_DVR_GET_SNAPSHOT_RESPONSE,		//DVR -> CMS //10017
+	MSG_DVR_PERFORMANCE_STATUS,			//DVR -> CMS //10018
+	MSG_DVR_SERVER_ALERT_ALL,			//DVR -> CMS //10019
+	MSG_DVR_SENT_ALL_INFO,				//DVR -> CMS //10020
+	MSG_DVR_SENT_ALL_INFO_RESPONSE,		//	// CMS Server -> DVR Express: CMS receive all information
+	MSG_DVR_GET_KEEP_ALIVE_INTERVAL,	//	// CMS Server -> DVR: CMS update keep alive interval
+	MSG_DVR_GET_TECHNICAL_LOG,			//
+	MSG_DVR_GET_TECHNICAL_LOG_RESPONSE,	//DVR -> CMS //10024
+	MSG_DVR_END,
+-->

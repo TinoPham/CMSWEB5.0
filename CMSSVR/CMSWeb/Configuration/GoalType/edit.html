@@ -1,0 +1,54 @@
+﻿<form name="myForm" novalidate angular-validator angular-validator-submit="vm.SaveGoalType()">
+	<div class="modal-header">
+		<span class="close" data-ng-click="vm.Cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{btn_Type|translate}} {{vm.Resx.LAYOUT_CONFIG_GOALTYPE|translate}}</h3>
+	</div>
+	<div class="modal-body">
+		<div class="form-horizontal">
+			<div class="form-group">
+				<span for="goalname" class="col-sm-2 control-label">{{vm.Resx.GOALTYPE_NAME|translate}} <span class="required"><i class="icon-asterisk"></i></span></span>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="goalname" placeholder="{{vm.Resx.GOALTYPE_NAME|translate}}" 
+						ng-model="vm.goalSelected.GoalName" maxlength="50"
+						required-message="'{{'GOALTYPE_NAME_REQUIRED'|translate}}'" required
+						validate-on="dirty" autofocus>
+				</div>
+			</div>
+			<div class="form-group">
+				<span class="col-sm-2 control-label">{{vm.Resx.LAYOUT_CONFIG_GOALTYPE|translate}}</span>
+				<div class="col-sm-9 table-responsive no-border">
+					<table class="cms-table">
+						<thead>
+							<tr>
+								<th class="text-center">{{vm.Resx.LAYOUT_CONFIG_GOALTYPE|translate}}</th>
+								<th class="text-center">{{vm.Resx.GOALTYPE_MIN_VALUE|translate}}</th>
+								<th class="text-center">{{vm.Resx.GOALTYPE_MAX_VALUE|translate}}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in vm.goalTypes" ng-form="repeatForm">
+								<td>{{ item.GoalTypeName }}</td>
+								<td class="right" ng-class="{'has-error': repeatForm.min.$error.number}">
+									<input type="number" class="form-control" name="min" ng-model="item.Value.MinValue" step="0.0001" cms-decimal="{maxlength: 14, digits: 4}" />
+									<label ng-show="repeatForm.min.$error.number">{{'GOALTYPE_VALUE_FORMAT_INVALID'|translate}}</label>
+								</td>
+								<td class="right" ng-class="{'has-error': repeatForm.max.$error.number}">
+									<input type="number" class="form-control" name="max" ng-model="item.Value.MaxValue" step="0.0001" cms-decimal="{maxlength: 14, digits: 4}"/>
+									<label ng-show="repeatForm.max.$error.number">{{'GOALTYPE_VALUE_FORMAT_INVALID'|translate}}</label>
+								</td>
+							</tr>
+							<tr ng-show="vm.msgValidator">
+								<td colspan="3" class="required">{{vm.msgValidator}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="vm.Cancel()">{{vm.Resx.BTN_CANCEL|translate}}</button>
+		<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">{{vm.Resx.BTN_SAVE|translate}}</button>
+	</div>
+</form>
+

@@ -1,0 +1,28 @@
+﻿<div ng-controller="adhocCtrl as vm" class="report-custom-frame">
+    <div class="panel">
+        <div class="panel-header">
+            <div class="col-sm-12" style="padding-top: 5px;">
+                <span class="btn btn-info" tooltip="{{ 'ADD_REPORT' | translate}}" tooltip-placement="left" ng-click="vm.showEditAhocDialog(null, true)">{{'ADD_REPORT' | translate}}</span>
+                <span class="btn btn-info" tooltip="{{ !vm.params.reportId || vm.params.reportId === 0? 'ADD_FOLDER'  : 'BACK' | translate}}" tooltip-placement="left" ng-click="vm.showEditFolderAhocDialog(null, true)">{{ !vm.params.reportId || vm.params.reportId === 0? 'ADD_FOLDER'  : 'BACK' | translate}}</span> 
+            </div>
+            </div>
+        <div class="panel-body">
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-sm-6 col-md-4"  ng-repeat="rp in vm.reports">
+                    <a class="thumbnail" style="cursor: pointer;" title="{{'DOUBLECLICKMSG' | translate}}">
+                        <div style="min-height:50px;" ng-click="vm.clickItemRerport(rp)" ng-dblclick="vm.dbclickItemRerport(rp)">
+                            <span ng-if="rp.IsFolder" style="font-size:30px;"><i class="icon-folder-3"></i></span>
+                            <span ng-if="!rp.IsFolder" style="font-size:30px;"><i class="icon-newspaper-1"></i></span>
+                            <span style="position: absolute; padding-top: 13px;">{{rp.Name}}</span>
+                            <span style="position: absolute; padding-top: 13px;width: 90px;right: 20px;">
+                                <span ng-if="vm.selectReport.Id === rp.Id && vm.selectReport.IsFolder === rp.IsFolder" ng-click="vm.deleteItem(rp)" style="" class="btn btn-info btn-xs pull-right" title="{{'BTN_DELETE' | translate}}"><i class="icon-cancel-3"></i></span>
+                                <span ng-if="vm.selectReport.Id === rp.Id && vm.selectReport.IsFolder === rp.IsFolder" ng-click="vm.viewReport(rp)" style="" class="btn btn-info btn-xs pull-right" title="{{'VIEW_STRING' | translate}}"><i class="icon-desktop-1"></i></span>
+                                <span ng-if="vm.selectReport.Id === rp.Id && vm.selectReport.IsFolder === rp.IsFolder" ng-click="vm.showEditAhocDialog(rp, false)" style="" class="btn btn-xs btn-info pull-right" title="{{'BTN_EDIT' | translate}}"><i class="icon-edit"></i></span>    
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

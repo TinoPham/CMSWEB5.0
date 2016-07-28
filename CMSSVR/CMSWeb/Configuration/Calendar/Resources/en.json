@@ -1,0 +1,23 @@
+﻿{
+,"CALENDAR_INFO":"Calendar Info"
+,"CAL_EVENTNAME": "Event Name"
+,"CAL_STARTDATETIME" :"Start Date Time"
+,"CAL_ENDDATETIME" :"End Date Time"
+,"CAL_NAME" :"Name"
+,"CAL_TIME":"Time"
+,"CAL_FROM":"From"
+
+,"CAL_TO" :"To"
+,"CAL_WHERE" :"Where"
+,"CAL_DESC" :"Description"
+,"CAL_COLOR" :"Event color"
+,"CAL_DISNORMAL" :"Disable Normalization"
+,"CAL_ONETIME" :"One Time"
+,"CAL_WEEKLY" :"Weekly"
+,"CAL_YEARLY" :"Yearly"
+,"CAL_REMINDER" :"Reminder"
+,"CAL_EMAIL" :"Email"
+,"CAL_DAYS" :"day(s)"
+,"CAL_BEFORE" :"Before"
+,"CAL_CONFIRM_BODY":"Please select a Calendar Event."
+}

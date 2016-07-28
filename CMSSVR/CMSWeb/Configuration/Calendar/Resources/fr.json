@@ -1,0 +1,23 @@
+﻿{
+,"CALENDAR_INFO":"Informations sur le  calendrier"
+,"CAL_EVENTNAME": "Nom de l'événement"
+,"CAL_STARTDATETIME" :"Date de l'heure de début"
+,"CAL_ENDDATETIME" :"Date de l'heure de fin"
+,"CAL_NAME" :"Nom"
+,"CAL_TIME":"Heure"
+,"CAL_FROM":"De"
+
+,"CAL_TO" :"À"
+,"CAL_WHERE" :"Où"
+,"CAL_DESC" :"Description"
+,"CAL_COLOR" :"Couleur de l'événement"
+,"CAL_DISNORMAL" :"Désactiver la Normalisation"
+,"CAL_ONETIME" :"Une Fois"
+,"CAL_WEEKLY" :"Sur une base hebdomadaire"
+,"CAL_YEARLY" :"Annuellement"
+,"CAL_REMINDER" :"Rappel"
+,"CAL_EMAIL" :"Courriel"
+,"CAL_DAYS" :"jour(s)"
+,"CAL_BEFORE" :"Avant"
+,"CAL_CONFIRM_BODY":"Veuillez sélectionner un événement du calendrier."
+}

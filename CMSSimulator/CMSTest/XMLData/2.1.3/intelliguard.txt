@@ -1,0 +1,8 @@
+
+        <configuration_id>12</configuration_id>
+        <configuration_name>intelli_guard</configuration_name>
+    <intelli_guard>
+      <channels size="0">
+      </channels>
+    </intelli_guard>
+       

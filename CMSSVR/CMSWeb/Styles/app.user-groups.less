@@ -1,0 +1,154 @@
+﻿@import url('app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+.user-group-manages {
+	.listview {
+		.ngRow {
+			.ngCell {
+				.item-info {
+					.checkbox {
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	.search-user {
+		background: none;
+	}
+
+	.select-all {
+		background-color: #FAFAFA;
+	}
+
+	.list-group {
+		padding-left: 0;
+
+		.list-group-item {
+			display: block;
+			padding: 0 5px;
+			clear: both;
+
+			.checkbox {
+				margin: 5px;
+			}
+		}
+	}
+
+	.form-edit {
+		padding: 0;
+
+		.panel-right {
+			.panel {
+				.panel-header {
+					padding: 6px 10px;
+					border: none;
+
+					.input-group {
+						width: 100%;
+
+						.search-button {
+							position: absolute;
+							top: 6px;
+							right: 6px;
+							z-index: 2;
+						}
+					}
+				}
+
+				.panel-content, .panel-body {
+					padding: 0;
+
+					.list-group-item {
+						border: none;
+					}
+				}
+			}
+		}
+
+		.panel-left {
+			.panel {
+				.panel-heading, .panel-header {
+					.panel-title {
+						.border-top {
+							border-top: 1px solid rgba(0, 0, 0, 0.1);
+							width: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
+				}
+
+				.panel-content, .panel-body {
+					.list-group-item {
+						border: none;
+					}
+
+					.panel-full {
+						margin: 0 -15px;
+					}
+				}
+			}
+		}
+	}
+
+	.panel-content, .panel-body {
+		margin-top: -5px;
+	}
+
+	.remove-view {
+		.item-info {
+			.i-des {
+				text-align: left;
+				overflow: visible;
+
+				&.error{ border: 1px solid red; }
+
+				.btn-group {
+					width: 100%;
+					border: 1px solid #ccc;
+					position: relative;
+				}
+			}
+
+			.msg-warning-replace {
+				color: #f89406;
+				margin: 3px -20%;
+				text-align: left;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px){
+	.user-group-manages {
+		.panel-left {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.panel-right {
+			padding-left: 15px;
+			padding-right: 15px;
+			
+			.panel-heading, .panel-header{
+				border-top: 1px solid #E2E2E2;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.user-group-manages {
+		.panel-left {
+			border-right: 1px solid #CECECE;
+			padding-right: 0;
+		}
+
+		.panel-right {
+			padding-left: 0;
+		}
+	}
+}

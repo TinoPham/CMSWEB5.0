@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SVRDatabase.Model.DVRMessage>
+@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "DVR Message";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>DVR Message List</h2>
+        <p>
+            @Html.ActionLink("Create New", "Create",null,new{@class = "btn btn-warning"})
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+                <table class="table table-hover">
+                    <tr>
+                        <th>
+                            <label>Message ID</label>
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach(var item in Model){
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MessageID)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit","Edit",new {id = item.ID}) | 
+                            @Html.ActionLink("Details","Details", new {id = item.ID}) |
+                            @Html.ActionLink("Delete","Delete",new {id = item.ID})
+                        </td>
+                    </tr>
+                    }
+                </table>
+            </div>
+    </div>
+</div>
+
+

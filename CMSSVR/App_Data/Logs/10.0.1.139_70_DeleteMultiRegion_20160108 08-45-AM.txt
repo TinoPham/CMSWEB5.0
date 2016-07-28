@@ -1,0 +1,1 @@
+{"ID":628,"Name":"ok","ServerID":null,"Status":null,"OnlineStatus":null,"UserID":70,"ParentKey":700,"ImageSite":null,"PACData":false,"Sites":[],"SiteCount":0,"Type":0,"Checked":false,"MACAddress":null}

@@ -1,0 +1,45 @@
+﻿<div ng-controller="todoCtrl as vm">
+	<div class="left-btn"><a ng-click="vm.addNote()" class="btn btn-sm btn-default add-todo"><i class="icon-plus"></i></a></div>
+    <div class="todo-view">
+		<div class="scroll-body scrollbar-dynamic" data-jquery-scrollbar>
+			<!--slimscroll="{ height: '{{vm.DivHeight}}px'}" scroll-to-end="vm.crolltoend"-->
+			<ul ui-sortable ng-model="vm.todos" class="todo-list" >
+				<li ng-repeat="todo in vm.todos" ng-class="vm.todoStatusChange(todo)">
+					<div context-menu="vm.onRightClick(todo)" id="panel-{{ $index }}" data-target="menu" ng-class="{'done': todo.Status}" class="display-inline-block">
+						<div class="checkbox checkbox-default"><input type="checkbox" ng-model="todo.Status" ng-change="vm.checkedTodo(todo)"><label></label></div>
+						<!--<checkbox ng-model="todo.Status" ng-change="vm.checkedTodo(todo)" class="check-icon"></checkbox>-->
+						<span ng-if="todo.Id !== vm.todoSelected.Id" class="todo-item" ng-click="vm.editTodo(todo, false)">{{todo.Content}}</span>
+						<span ng-if="todo.Id === vm.todoSelected.Id" class="editable-container editable-inline">
+							<form class="form-inline editable-form">
+								<div class="control-group form-group">
+									<div class="editable-input">
+										<input type="text" id="id{{vm.todoSelected.Id}}" class="form-control input-sm" ng-model="vm.todoSelected.Content" maxlength="100" 
+											autocomplete="off" autofocus am-reset-field />
+										<!--am-reset-field-->
+                                        </div>
+									<div class="editable-buttons">
+										<button type="button" class="btn btn-primary btn-xs" ng-click="vm.changeTodo(todo)" tooltip="{{'BTN_SAVE'|translate}}"><i class="icon-download-1"></i></button>
+										<button type="button" class="btn btn-default btn-xs" ng-click="vm.cancelEditTodo()" tooltip="{{'BTN_UNDO'|translate}}"><i class="icon-reply"></i></button>
+                                        </div>
+                                    <div class="help-block">                                                                              
+                                    </div>
+                                </div>
+                            </form>
+                        </span>
+						<span class="todo-options pull-right">
+							<a class="todo-delete" tooltip="{{'BTN_DELETE'|translate}}"><i class="icon-cancel-3" ng-click="vm.deleteTodo(todo)"></i></a>
+						</span>
+                    </div>
+                </li>
+            </ul>
+			<div class="dropdown clearfix context-menu" id="menu">
+				<ul class="dropdown-menu" role="menu">
+                    <li ng-click="vm.menuSelectHigh()"><a><i class="icon-record high"></i> {{'HIGH_PRIORITY' | translate}}</a></li>
+                    <li ng-click="vm.menuSelectMedium()"><a><i class="icon-record medium"></i> {{'MEDIUM_PRIORITY' | translate}}</a></li>
+                    <li ng-click="vm.menuSelectLow()"><a><i class="icon-record low"></i>{{'LOW_PRIORITY' | translate}} </a></li>
+                    <li ng-click="vm.menuSelectNone()"><a><i class="icon-record none"></i>{{' NONE' | translate}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

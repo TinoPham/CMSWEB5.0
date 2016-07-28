@@ -1,0 +1,89 @@
+﻿    <div class="panel" ng-class="{'panel-full-box' : vm.paytboxProperty.Max === true}">
+
+          <div class="panel-header" ng-show="vm.view.paymentTrans === false">
+              <h2>
+		          {{'METHOD_PAYMENT_TITLE' | translate}}
+	          </h2>
+              <div class="panel-header rebar-panel-header">
+                  <div class="additional-btn" >
+                      <a  ng-click="vm.refreshPaymentView()" tooltip="Refresh" tooltip-placement="left" class="ng-scope"><i class="icon-ccw-1"></i></a>
+				<a ng-click="vm.paytboxProperty.Max = !vm.paytboxProperty.Max; vm.paytboxProperty.Collapse = false;"
+				   tooltip="{{(vm.paytboxProperty.Max ? 'RESTORE' : 'MAXIMIZE')|translate}}" tooltip-placement="left">
+                          <i ng-class="{'icon-resize-full-1': !vm.paytboxProperty.Max, 'icon-resize-small-1': vm.paytboxProperty.Max}" class="icon-resize-full-1"></i>
+                      </a>
+				<a ng-show="!vm.paytboxProperty.Max" ng-click="vm.paytboxProperty.Collapse = !vm.paytboxProperty.Collapse" class="collapse-btn"
+				   tooltip="{{(vm.paytboxProperty.Collapse ? 'EXPAND' : 'COLLAPSE')|translate }}" tooltip-placement="left"><i class="icon-down-open-2"></i></a>
+                      <span ng-show="vm.paytboxProperty.Max" class="ng-hide">&nbsp;&nbsp;</span>
+                  </div>
+              </div>
+        </div>
+        <!-- END :: Panel header -->
+
+
+        <div ng-show="vm.view.paymentTrans === false">
+            <div class="drivethrough-reports-chart">
+                <div class="panel-body" ng-show="vm.paytboxProperty.Collapse === false">
+                    <div id="rebar-employer-tran-type"></div>
+                </div>
+            </div>  
+        </div>   
+        <div  ng-if="vm.view.paymentTrans" ng-show="vm.paytboxProperty.Collapse === false" 
+        class="panel rebar-transact-viewer" ng-include="'widgets/rebar/rebar-transact-viewer.html'" ng-controller="rebarTransactViewerCtrl as rvm" ng-init="initCtrl(vm.paramPayment, vm.closePaymentView, vm.definefieldpayment, optionsShow)"></div> 
+        <!--<div ng-show="vm.view.paymentTrans === true && vm.paytboxProperty.Collapse === false">
+            <div class="drivethrough-reports-chart box-header">            
+                <div  style="line-height: 35px;">
+                    <span class="btn-back "  ng-click="vm.closePaymentView()"  style="cursor: pointer;"> <i class="icon-left-open-big"></i> {{'Back to chart' | translate}}</span>
+                
+                    <span class="btn-pagination" style="float: right">
+                        <nav style="text-align: center;">
+                            <ul class="pagination" style="margin: 0;">
+                                <li ng-click="vm.prevPagePayment()" ng-disabled="vm.currPagePayment < 2">
+                                    <a aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li ng-click="vm.prevPagePayment(1)"><a>1</a></li>
+                                <li><a class="input-page"><input type="number" class="form-control" ng-model="vm.currPagePayment" style="max-width: 50px;"></a></li>
+                                <li ng-click="vm.gotoPagePayment()"><a>{{'Go' | translate}}</a></li>
+                                <li ng-click="vm.nextPagePayment(vm.TranPaymentDetail.TotalPages)"><a>{{vm.TranPaymentDetail.TotalPages ? vm.TranPaymentDetail.TotalPages : 0}}</a></li>
+                                <li ng-click="vm.nextPagePayment()" ng-disabled="vm.currPagePayment >= vm.TranPaymentDetail.TotalPages">
+                                    <a aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </span>
+                </div>
+            </div>
+            <div class="panel-body have-table">
+                <div class="table-responsive table-hover bam-dashboard-summary">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="first-col"><div>{{'Transaction No.' | translate}}</div></th>
+                                <th>{{'Time' | translate}}</th>
+                                <th>{{'Payment' | translate}}</th>
+                                <th>{{'Total Sales' | translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="!vm.TranPaymentDetail || vm.TranPaymentDetail.Data.length === 0" class="no-row-data">
+                                <th colspan="6">{{'NO_DATA_STRING' | translate}}</th>
+                            </tr>  
+                            <tr ng-if="vm.TranPaymentDetail && vm.TranPaymentDetail.Data.length > 0" ng-repeat="sum in vm.TranPaymentDetail.Data">
+                                <th scope="row"  class="start-col-row"><span ng-click="showTransacDetail(sum)"  ng-style="{'padding-left': sum.Notes.length > 0 ? '18px': '0px'}">#{{sum.TranNo}}</span>
+                                    <span style="float: right;" ng-click="vm.editTranFlag(sum)"><i style="width: 30px;" ng-class="{'icon-flag-null': sum.ExceptionTypes.length > 0}"></i><span class="rebar-icon-flag-null">{{sum.ExceptionTypes.length}}</span></span>
+                                    <span style="float: right;" ng-click="vm.editTranFlag(sum)"><i style="width: 30px;" ng-class="{' icon-chain': sum.ExceptionTypes.length > 0}"></i><span class="rebar-icon-weight-null">{{vm.sumWeight(sum.ExceptionTypes)}}</span></span>
+                                    <span style="float: right;"  data-toggle="tooltip" data-placement="left" title="{{sum.Notes[0].Note}}"><i style="width: 30px;" ng-class="{'icon-doc-text': sum.Notes.length > 0}"></i></span>
+                                </th>
+                                <td>{{ sum.DateTran | date:'MMM dd, yyyy HH:mm'}}</td>
+                                <td>{{ sum.PaymentMethod}}</td>
+                                <td>{{ sum.Total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>-->
+    </div>

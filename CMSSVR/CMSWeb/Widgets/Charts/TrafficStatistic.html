@@ -1,0 +1,56 @@
+﻿<div data-ng-controller="trafficStatisticCtrl as vm" ng-init="Init()" class="cms-chart">
+	<div class="container-fluid" ng-if="loading===true">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="toolbar">
+					<div class="pull-left">
+						<div class="btn-group">
+							<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{Opt.label|translate}}<i class="icon-down-open-2"></i></a>
+							<ul class="dropdown-menu pull-left" role="menu">
+								<li ng-repeat="opt in Gui.Opts"><a ng-click="GetrptData(opt)" href="#" onclick="return false;">{{opt.label|translate}}</a></li>
+							</ul>
+							<span class="cms-chart-cal chart-subtitle datepicker-noclear" ng-show="SearchMode===true"> 
+								<!-- &nbsp;{{'FROM_STRING'|translate}}  -->
+								<span class="date-box" ng-click="vm.open($event, 1)">
+								&nbsp;{{vm.FromSelDate | date:vm.dateFormat}}</span>
+								<input type="text" datepicker-popup="{{vm.dateFormat}}" ng-model="vm.FromSelDate" is-open="vm.opened1" min-date="vm.minDate" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" />
+								<!-- <span class="btn btn-default btn-xs" ng-click="vm.open($event, 1)" title=""><i class="icon-calendar"></i></span>  -->
+
+								&nbsp;{{'TO_FIELD'|translate}} <span class="date-box" ng-click="vm.open($event, 2)">&nbsp;{{vm.ToSelDate | date:vm.dateFormat}}</span>
+								<input type="text" datepicker-popup="{{vm.dateFormat}}" ng-model="vm.ToSelDate" is-open="vm.opened2" min-date="vm.minDate" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" />
+								<!-- <span class="btn btn-default btn-xs" ng-click="vm.open($event, 2)" title=""><i class="icon-calendar"></i></span> -->
+
+								<span class="btn btn-default btn-xs" ng-click="vm.Search()">{{'BTN_SEARCH'|translate}}</span>
+							</span>
+							<span ng-show="SearchMode===false" class="chart-subtitle">&nbsp; &nbsp; <i class="icon-clock"></i> {{DateTimeDesc}}</span>
+						</div>
+					</div>
+					<div class="pull-right">
+						<div class="btn-group">
+							<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<!-- {{'EXPORT_STRING'|translate}}<i class="icon-down-open-2"></i> -->
+								<i class="icon-download-3"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li ng-repeat="exp in ExportOptions"><a id="{{exp.id}}_traff" href="#" onclick="return false;">{{exp.label|translate}}</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div ng-class="{'height-mobile': isFull}" class="col-md-12 scroll-body scrollbar-dynamic"><!--  data-jquery-scrollbar-->
+				<fusioncharts 
+					width="100%" 
+					height="{{ChartHeight}}" 
+					type="msline" 
+					datasource="{{chartDSTraffic}}" 
+					events="chartTrafficEvents">
+				</fusioncharts>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="TrafficPlotDetail" style="display: none;"></div>

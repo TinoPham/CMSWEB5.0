@@ -1,0 +1,134 @@
+﻿<div class="container">
+  <div class="row alert-tab-panel">
+    <div class="dvr-id-box col-md-12">
+      <summary>
+      <i class="icon-store-3"></i>
+      <strong>  {{Provider.Name}} </strong>
+      <!-- {{'DVR_ID' | translate}} {{AlertProvider}}  -->
+      
+      </summary>
+    </div>
+    <div class="search-box col-md-12 ">
+      <div class="form-inline">
+        <div id="startDateAL" class="form-group">
+          <label for="OpenDate">{{'FROM_STRING' | translate}}</label>
+          <input type="text" class="form-control"
+          datepicker-popup="MM/dd/yyyy"
+          name="OpenDate"
+          ng-model="dateAlert.startDate" datepicker-options="dateOptions"
+          is-open="datestatus.startopened" readonly="true" max-date="maxdate" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-sm" ng-click="startopen($event, 'startopened', 'endopened')"><i class="icon-calendar"></i></button>
+          </span>
+        </div>
+        <!-- END box from -->
+        <div id="endDateAL" class="form-group">
+          <label for="CloseDate">{{'TO_FIELD' | translate}}</label>
+          <input type="text" class="form-control"
+          min-date="startDate"
+          datepicker-popup="MM/dd/yyyy"
+          name="CloseDate"
+          ng-model="dateAlert.endDate" datepicker-options="dateOptions"
+          is-open="datestatus.endopened" readonly="true" max-date="maxdate"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-sm" ng-click="endopen($event,'endopened', 'startopened')"><i class="icon-calendar"></i></button>
+          </span>
+        </div>
+        <!-- END box To -->
+        
+        <div class="form-group">
+          <label for="AlertType">{{'ALERT_TYPE' | translate}} </label>
+          <multiselect name="ddlCalEvent" ng-model="vm.SelectedAlertTypes" class="multiselect_tags"
+          options="cal as cal.Name for cal in vm.AlertType"
+          multiple="true" change="vm.ChangeAlertTypes()">
+          </multiselect>
+          
+        </div>
+        <!-- END box To -->
+        <div class="form-group">
+          <button class="btn btn-default btn-sm"
+          ng-click="searchClick()">
+          <i class="icon-search-3"></i>
+          {{'BTN_SEARCH' | translate}}
+          </button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="result-box col-md-12">
+      <div class="panel-group Site_list_result" role="tablist" aria-multiselectable="true" data-ng-repeat-start="alert in AlertProvider">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne{{$index}}">
+            <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent=".Site_list_result" href="#collapseOne{{$index}}" aria-expanded="false" aria-controls="collapseOne{{$index}}">
+              <i class="icon-dvr-2"></i>
+              {{alert.SiteInfo.Name}}
+            </a>
+            </h4>
+            <span>{{alert.TotalAlert}}</span>
+          </div>
+          <div id="collapseOne{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne{{$index}}">
+            <div class="panel-body">
+              <div class="panel-group Alert_list" role="tablist" aria-multiselectable="true"  data-ng-repeat-start="ai in alert.AlertInfo">
+                <div class="panel panel-default" >
+                  <div class="panel-heading" role="tab" id="headingOne1{{$parent.$index}}{{$index}}" ng-click ="selectAlertDate(alert.SiteInfo,ai,null)">
+                    <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne1{{$parent.$index}}{{$index}}" aria-expanded="true" aria-controls="collapseOne1{{$parent.$index}}{{$index}}">
+                      <i class="icon-calendar-inv"></i>
+                                    {{ai.TimeZone|date:'MMM dd, yyyy': 'UTC'}}
+                    </a>
+                    </h4>
+                    <span>{{ai.TotalAlert}}</span>
+                  </div>
+                  <div id="collapseOne1{{$parent.$index}}{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne1{{$parent.$index}}{{$index}}">
+                    <div class="panel-body">
+                      <table class="table table-striped table-striped-custom" >
+                        <thead>
+                          <tr>
+                            <th>{{'HEADER_NO' | translate}}</th>
+                            <th>{{'ALERT_TYPE' | translate}}</th>
+                            <th>{{'HEADER_DESCRIPTION' | translate}}</th>
+                            <th>{{'HEADER_IMAGE' | translate}}</th>
+                            <th>{{'TIME' | translate}}</th>
+                            <th>{{'HEADER_IGNORE' | translate}}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                                     <tr ng-repeat-start="details in  ai.AlertDetails">
+                            <td>{{$index + 1}}</td>
+                            <td>{{details.AlertType}}</td>
+                                       <td>{{isVideoLoss(details.KAlertType) && (details.KChannel > 0) ?  details.Name : details.Description}}</td>
+                            <td>
+                                        <img  ng-src="{{GetSnapShot(details.Image,details.KDVR)}}" ng-class="{'has-image': details.Image.length > 0}" class="img-thumbnail" style="width:75px;height:75px" alt="" ng-click="showSlide(details.Image, details)" >
+                            </td>
+                                       <td>{{details.TimeZone| date:'hh:mm:ss a':'UTC' }}</td>
+                            <td >
+                                       <!-- <input type="checkbox" ng-show="details.showCheck && details.LastKAlertEvent > 0" ng-model="details.IsManual"  ng-checked="details.FixEventID > 0 || details.IsManual " ng-disabled="details.FixEventID > 0 || details.IsManual" ng-click="IgnoreAlert(details,alert.SiteInfo)" >-->
+
+                                   <input type="checkbox" ng-init="IsInit=details.IsManual" class="checkbox-table large" ng-show="details.LastKAlertEvent > 0 && !(details.FixEventID > 0 || IsInit == true)" ng-model="details.IsManual"  ng-checked="details.IsManual" ng-click="IgnoreAlert(details,alert.SiteInfo)" ng-disabled ="details.IsManual">
+                            </td>
+                          </tr>
+                                    <tr ng-repeat-end />
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-ng-repeat-end="" />
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-ng-repeat-end="" />
+
+        <div ng-if="isNoData === true" class="noData col-md-12" style="text-align: center;">
+          <h1><i class='icon-boxes6'></i></h1>
+          {{'NO_DATA_FOUND_MSG' | translate}} 
+        </div>
+        <!-- END :: No Data -->
+          
+        </div>
+      </div>

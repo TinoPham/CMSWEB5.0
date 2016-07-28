@@ -1,0 +1,92 @@
+﻿<form name="config"  novalidate>
+    <div ng-init="loadconfig()">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="control-label col-md-3">Convert Interval</div>
+            <div class="col-md-3">
+                <div ng-class="{false:'input-control text', true: 'input-control text error-state'}[config.ConvertInterval.$invalid && config.ConvertInterval.$dirty]">
+                    <input type="number" name="ConvertInterval" id="ConvertInterval" ng-model="model.ConvertInterval" required ng-disabled="ReadOnly" min="10" max="32767"/>
+                    <p class="has-error" ng-if="config.ConvertInterval.$invalid && config.ConvertInterval.$dirty">Convert Interval should in range 10-32767.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-3">DVR Keep alive</div>
+            <div class="col-md-3">
+                <div ng-class="{false:'input-control text', true: 'input-control text error-state'}[config.DVRKeepAlive.$invalid && config.DVRKeepAlive.$dirty]">
+                    <input type="number" name="DVRKeepAlive" id="DVRKeepAlive" ng-model="model.DVRKeepAlive" required ng-disabled="ReadOnly" min="10" max="32767"/>
+                    <p class="has-error" ng-if="config.DVRKeepAlive.$invalid && config.DVRKeepAlive.$dirty">DVR Keep alive should in range 10-32767.</p>
+                </div>
+            </div>
+        </div>
+       
+        <div class="form-group">
+            <div class="control-label col-md-3">Auto accept DVR</div>
+            <div class="col-md-3">
+                <div class="input-control checkbox" style="padding-left:2px; margin:0px">
+                                    <label style="height:100%">
+                                        <input type="checkbox" class="checkbox" style="margin:0px"  name="Authenticate" ng-model ="model.Authenticate" ng-disabled="ReadOnly"/>
+                                        <span class="check" style="margin:0px"></span>
+                                    </label>
+                                </div>
+            </div>
+        </div>
+        <div class="form-group" style="margin-bottom:15px">
+            <div class="control-label col-md-3">DVR Map</div>
+            
+            <div class="col-md-5" >
+                
+                <div class="input-control radio default-style" data-role="input-control" >
+                                    <label>Match all info
+                                        <input type="radio" name="rAll" ng-value="true" ng-model ="model.MatchAllinfo" ng-disabled="ReadOnly">
+                                        <span class="check"></span>
+                                    </label>
+                </div>
+                <div class="input-control radio default-style" data-role="input-control">
+                                    <label>Match any info
+                                        <input type="radio" name="rAll" ng-value="false" ng-model ="model.MatchAllinfo" ng-disabled="ReadOnly">
+                                        <span class="check"></span>
+                                    </label>
+                </div>
+                <div style="display:inline-block;vertical-align: middle; margin:0px">
+                <table class="table table-bordered hovered" style="margin:0px" id="tblMatch" name ="tblMatch">
+                    <tbody>
+                        <tr ng-repeat="DVRAuth in model.DVRAuths" ng-class="{false:'', true: 'selected'}[DVRAuth.Key == Selected.Key ]" >
+                            <td style="vertical-align: middle;" ng-click="setSelected(DVRAuth)">{{DVRAuth.Name}}</td> 
+                            <td  style="align-content:center; width:50px">
+                                    <div class="input-control switch" style="padding-left:2px; margin:0px">
+                                    <label style="height:100%">
+                                        <input type="checkbox" class="checkbox" style="margin:0px" ng-model ="DVRAuth.Checked" ng-disabled="ReadOnly"/>
+                                        <span class="check" style="margin:0px"></span>
+                                    </label>
+                                </div>
+                            </td> 
+                        </tr> 
+                        
+                    </tbody>
+                    
+                </table>
+                    
+                </div>
+
+                <div style="display:inline-block;vertical-align: middle;">
+                    <div>
+                        <button class=" btn info" style="width:20px; height:20px; padding:0px" ng-disabled="!allow_up||ReadOnly" ng-click="moveUpDown(-1)"><i class="icon-arrow-up-5"></i></button>
+                     </div>
+                    <div>
+                        <button class=" btn info" style="width:20px; height:20px; padding:0px" ng-disabled="!allow_down||ReadOnly" ng-click ="moveUpDown(1)"><i class="icon-arrow-down-5"></i></button>
+                     </div>
+                </div>
+                   <label class="error" style="font-weight:normal; cursor:default; color:#e51400; margin-top:5px; margin-bottom:0px" ng-if="dirtyMatch">Please select a condition to identify DVR.</label>
+                </div>
+            
+        </div>
+    <div class="form-group">
+            <div class="col-md-offset-3 col-md-3">
+                <input type="button" id="btnSave" ng-value="btnSave" class="btn info" ng-click="SaveEdit()"/>
+                <input type="button" id="btnCancel" ng-value="Resx.str_Cancel" ng-show="!ReadOnly" ng-click="CancelEdit()" class="btn info"/>
+            </div>
+        </div>
+</div>
+    </div>
+</form>

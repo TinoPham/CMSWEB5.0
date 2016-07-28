@@ -1,0 +1,192 @@
+﻿<div class="panel site-monitor sensor-alert" ng-class="{'maximized': isMax}">
+    <div class="panel-header">
+        <!-- <h2>{{'SENSOR_MONITOR' | translate}}</h2> -->
+        <div class="additional-btn">
+            <a tooltip="{{'TOOLTIP_REFRESH_WIDGET'|translate}}" ng-click="refesh()" tooltip-placement="left"><i class="icon-ccw-1"></i></a>
+            <a tooltip="{{'SHOW_CHART'|translate}}" ng-click="ChartShow()" tooltip-placement="left"><i class="icon-chart-bar-2"></i></a>
+            <a ng-click="fullSize()" tooltip="{{(isMax ? 'RESTORE' : 'MAXIMIZE')|translate}}" tooltip-placement="left"><i ng-class="{'icon-resize-full-1': !isMax, 'icon-resize-small-1': isMax}"></i></a>
+           <!--  <a ng-show="!isMax" class="collapse-btn" ng-click="isCollapsed = !isCollapsed" tooltip="{{(isCollapsed ? 'EXPAND' : 'COLLAPSE')|translate }}" tooltip-placement="left"><i class="icon-down-open-2"></i></a> -->
+        </div>
+    </div>
+    <div collapse="isCollapsed">
+        <div class="site-alert-controls">
+            <div class="col-sm-9 no-padding pull-left">
+                <div id="startDateSM" class="form-group col-sm-4 no-padding">
+                    <div class="pull-left date-site-alert">{{'FROM_STRING' | translate}}</div>
+                    <span class="input-group">
+                        <input type="text" class="form-control"
+                        datepicker-popup="MM/dd/yyyy"
+                        name="OpenDate"
+                        ng-model="dateAlert.startDate" datepicker-options="dateOptions"
+                        is-open="datestatus.startopened" readonly="true"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="startopen($event, 'startopened', 'endopened')"><i class="icon-calendar"></i></button>
+                        </span>
+                    </span>
+                </div>
+                <div id="endDateSM" class="form-group col-sm-4 no-padding">
+                    <span class="pull-left date-site-alert date-label-To">{{'TO_FIELD' | translate}}</span>
+                    <span class="input-group">
+                        <input type="text" class="form-control"
+                        min-date="startDate"
+                        datepicker-popup="MM/dd/yyyy"
+                        name="OpenDate"
+                        ng-model="dateAlert.endDate" datepicker-options="dateOptions"
+                        is-open="datestatus.endopened" readonly="true"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-sm" ng-click="endopen($event,'endopened', 'startopened')"><i class="icon-calendar"></i></button>
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <span class="input-group">
+                        <button class="btn btn-default btn-sm" ng-click="searchFn()">{{'BTN_SEARCH' | translate}}</button>
+                    </span>
+                </div>
+            </div>
+            <div class="pull-right">
+                <span class="dropdown pull-right" dropdown>
+                    <span class="btn btn-default btn-sm dropdown-toggle" dropdown-toggle>
+                        <i class=" icon-doc"></i>
+                        <span>{{'EXPORT_STRING'| translate}}</span>
+                        <span class="icon-down-dir"></span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li><a class="btn pull-right" ng-click="exportToCSV()">{{'EXPORT_TO_CSV' | translate}}</a></li>
+                        <li><a class="btn pull-right" ng-click="exportToXls()">{{'EXPORT_TO_EXCEL' | translate}}</a></li>
+                        <li><a class="btn pull-right" ng-click="exportToPdf()">{{'EXPORT_TO_PDF' | translate}}</a></li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+        <div class="panel-body" id="sensormonitor" ng-show="isBusy === false">
+            <div ng-if="isNoData === false" class="sensormonitor scrollbar-dynamic" data-jquery-scrollbar="sensorScrollbarOptions">
+                <div ng-show="sDetailSelected === null && isShowChart === true" class="sensors-chart">
+                    <fusioncharts
+                    width="100%"
+                    height="280"
+                    type="column2d"
+                    datasource="{{dataSource()}}">
+                    </fusioncharts>
+                </div>
+                <div ng-if="sDetailSelected !== null  && isShowChart === true" class="sensor-details">
+                    <div ng-if="sDetailSelected.SnapShot.length > 0" class="sensor-slider col-sm-8">
+                        <carousel interval="Interval">
+                        <slide ng-repeat="image in sDetailSelected.SnapShot track by $index">
+                        <img class="sensor-image" ng-src="{{sensorSnapshotUrl + '?filename=' + image + '&kdvr='+ sensorSelected.Kdvr}}" alt="" style="margin:auto;" />
+                        </slide>
+                        </carousel>
+                    </div>
+                    <div class="details-info col-sm-4">
+                        <h3>{{sensorSelected.SiteName}}</h3>
+                        <h4>{{sensorSelected.DVR_ID}}</h4>
+                        <h5>{{sDetailSelected.ChannelName}}</h5>
+                        <h6>{{sDetailSelected.Description}}</h6>
+                        <h7>{{sDetailSelected.Time}}</h7>
+                    </div>
+                </div>
+                <div class="sensor-monitor-content" >
+                    
+                    <div class="panel-group list-date" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div  ng-repeat-start="date in SensorsTable"  class="panel panel-default">
+                            
+                            
+                            <div class="panel-heading" role="tab" id="heading{{$index}}">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                        href="#Page{{$index}}"
+                                        ng-click="Reverseddate = !Reverseddate ; expandDate(date,Reverseddate);"
+                                        aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                    <i class="icon-calendar-inv"></i>
+                                    Date :  {{date.Time | date:'MM/dd/yyyy' : 'UTC'}}
+                                </a>
+                                </h4>
+                                <span>Total : {{date.Total}} </span>
+                            </div>
+                            <div id="Page{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$index}}">
+                                <div class="panel-body">
+                                    
+                                    <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                                        
+                                        <div ng-repeat-start="sensor in date.Sensors" class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingChild{{$parent.$index}}{{$index}}">
+                                                <div class="panel-title row">
+                                                    <div class="col-xs-8 col-md-6" >
+                                                        <a role="button" data-toggle="collapse"
+                                                            ng-click="Reversed = !Reversed ; expandSensor(sensor,Reversed); imageShow()"                             
+                                                             href="#child{{$parent.$index}}{{$index}}"
+                                                            aria-expanded="false" aria-controls="child{{$parent.$index}}{{$index}}">
+                                                            <i class="icon-store-3"></i>
+                                                            {{sensor.SiteName}}
+                                                        </a>
+                                                        <div>
+                                                            {{sensor.TotalAlert}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4  col-md-2">
+                                                        <i class="icon-dvr-2"></i>
+                                                        {{sensor.DVRID}}
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-4">
+                                                        <a data-toggle="collapse"
+                                                            ng-click="Reversed = !Reversed;expandSensor(sensor,Reversed);  imageShow()"
+                                                            aria-controls="child{{$parent.$index}}{{$index}}"
+                                                            href="#child{{$parent.$index}}{{$index}}">
+                                                            <i ng-class="{'icon-up-open-1': Reversed === true, 'icon-down-open-1': !Reversed} "></i>
+                                                        </a>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div id="child{{$parent.$index}}{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingChild{{$parent.$index}}{{$index}}">
+                                                <div class="panel-body">
+                                                   <div class="chanel_box_list">
+                                                       <div ng-repeat="detail in sensor.Details" class="chanel_box">
+                                                            <a ng-repeat="image in detail.SnapShot | orderBy" class="zooming" ng-href="{{sensor.sensorSnapshotUrl + '?filename=' + image + '&kdvr='+ sensor.Kdvr}}" title="{{detail.Description}} {{time(detail,$index)}}"> 
+                                                                <div ng-if="image === 'channel_' + (detail.ChannelNo + 1) + '_' + detail.TimeZone + '.jpg'"> 
+                                                                    <i  title="{{detail.Description}} {{time(detail,$index)}}" class="icon-zoom-in mfp-fade"></i>
+                                                                </div>
+                                                            </a>
+                                                            <div>
+                                                                <p><i class="icon-clock-2"></i>  {{detail.SnapShot.length > 0 ? detail.Time :  time(detail,0)}}</p>
+                                                                <p><i class="icon-sensor"></i> {{detail.Description}}</p>
+                                                                <p><i class="icon-videocam-2" ng-show="detail.ChannelName"></i> {{detail.ChannelName}}</p>
+                                                            </div>
+                                                            <img ng-src="{{detail.SnapShot.length > 0 ? sensor.sensorSnapshotUrl + '?filename=channel_' + (detail.ChannelNo + 1) + '_' + detail.TimeZone + '.jpg' + '&kdvr='+ sensor.Kdvr : '../Content/Images/no_image.jpg'}}" alt="" />
+                                                        </div>  
+
+														<!-- END :: A Channel BOX -->	
+
+                                                   </div> <!-- END :: Row-->
+                                                </div> <!-- END :: Panel body level 2 -->
+                                            </div>
+                                        </div>
+                                        <div style="display: none" ng-repeat-end> </div>
+                                        <!-- END :: repeat level 2 -->
+                                    </div>
+                                    
+                                    </div> <!-- END :: Panel body -->
+                                </div>
+                                
+                            </div>
+                            <div style="display: none" ng-repeat-end> </div>
+                            <!-- END :: repeat level 1 -->                            
+                     
+                            </div> <!-- END :: panel-group list-date" -->
+                        </div>
+                        <!-- END :: sensor-monitor-content -->
+                    </div>
+                    <div class="sensormonitor no_data scrollbar-dynamic" ng-if="isNoData === true"data-jquery-scrollbar="sensorScrollbarOptions" style="text-align: center;">
+                        <i class='icon-boxes6'>
+                           <br> {{'NO_DATA_FOUND_MSG' | translate}}
+                        </i>
+                        <!-- <p> </p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+

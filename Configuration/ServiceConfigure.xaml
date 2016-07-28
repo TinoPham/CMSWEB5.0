@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="ServiceConfig.ServiceConfigure"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:local="clr-namespace:ServiceConfig"
+             mc:Ignorable="d" Background="Transparent" d:DesignWidth="300" Height="Auto">
+    <UserControl.Resources>
+        <local:IntervalConverter x:Key="IntervalConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="140"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="5,5,0,5">
+            <Label Content="Service URL(IP:Port)" Margin="5,0,0,5" />
+			
+            <!--<Label Content="Interval(min)" Margin="5,0,0,5" />-->
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0" Margin="5,5,0,0">
+            <TextBox x:Name="txtUrl" Width="Auto" Text="{Binding Data.Url, UpdateSourceTrigger=LostFocus, NotifyOnSourceUpdated=True, IsAsync=True}" SourceUpdated="TextBox_SourceUpdated" Margin="5,0,0,5" ToolTip="The URL to CMS web API." MaxLength="255"/>
+            <!--<CheckBox x:Uid="cbSSL" Content="Enable SSL" ToolTip="" IsChecked="{Binding Data.Url }" />-->
+            <!--<TextBox x:Name="txtInterval" Text="{Binding Data.Interval,  Converter={StaticResource IntervalConverter}, UpdateSourceTrigger=LostFocus, NotifyOnSourceUpdated=True}" SourceUpdated="TextBox_SourceUpdated" Margin="5,0,0,5" ToolTip="Timer to convert PACDM data. The value must be in range 10 - 32767"
+                     PreviewTextInput="TextBox_PreviewTextInput" DataObject.Pasting="TextBox_Pasting"/>-->
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5" Grid.ColumnSpan="2" Width="269">
+            <Button x:Uid="btnTest" Content="Test Connection" Margin="0,0,5,0" Click="Button_Click" IsDefault="True" Width="127"/>
+            <Button x:Uid="btnSave" Content="Save" Margin="0,0,5,0" Click="Button_Click"/>
+            <Button x:Uid="btnCancel" Content="Cancel" Click="Button_Click" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

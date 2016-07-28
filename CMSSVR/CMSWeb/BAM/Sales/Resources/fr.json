@@ -1,0 +1,15 @@
+﻿{
+	 "CONVERSION_STRING":"CONV.%"
+	,"CB_TRAFFICIN":"Trafic"
+	,"CB_TRAFFICOUT":"Le trafic Sur"
+	,"CB_POS":"PDV"
+	,"CB_CONVERSION":" % conversion"
+	,"LOCATION_STRING": "Emplacement"
+	,"NO_DATA_STRING":"Il n’y a pas de données."
+	,"PERIOD_STRING": "Période "
+	,"SUMMARY_STRING":"Récapitulatif"
+	,"TRAFFIC_IN_STRING":"ENTRÉE"
+	,"TRAFFIC_OUT_STRING":"SORTIE"
+	,"TRANSACTION_STRING":"PDV"
+	,"WEEK_STRING": "Semaine "
+}

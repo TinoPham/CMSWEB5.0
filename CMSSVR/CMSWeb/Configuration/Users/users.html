@@ -1,0 +1,22 @@
+﻿<div class="panel user-manages" ng-controller="usersCtrl as vm" ng-cloak>
+	<func-header
+		listview='vm.listView'
+		query='vm.query'
+		add-fn='vm.addUser()'
+		edit-fn='vm.editUser(vm.selectedRows)'
+		del-fn='vm.deleteUser(vm.selectedRows)'
+		refresh-fn='vm.ReloadData()'
+		import-fn='false'
+		show-view-mode="true"></func-header>
+
+	<!--GRID VIEW-->
+	<div data-ng-if="vm.listView == false" class="panel-content">
+		<div class="gridview" ng-grid="vm.gridOptions"></div>
+	</div>
+
+	<!--LIST VIEW-->
+	<div data-ng-if="vm.listView == true" class="panel-content">
+		<div class="listview" ng-grid="vm.listOptions"></div>
+	</div>
+</div>
+

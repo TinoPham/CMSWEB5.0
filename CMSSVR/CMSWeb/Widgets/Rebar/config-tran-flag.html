@@ -1,0 +1,96 @@
+﻿<div class="panel col-md-12">               
+    <div class="row">
+        <div class="panel" style="margin-bottom: 0">
+            <div class="panel-header">
+                <span class="btn pull-right">
+                    <span  data-ng-click="cancel()"><i class="icon-cancel-1"></i></span>
+                </span>
+                <h3 class="title"> {{'FLAG_SETTING' | translate}}</h3>      
+            </div>
+            <div class="panel-body">
+             
+                <div class="col-sm-6 flag-form" ng-repeat="ty in data">
+                    <div class="select-flag-form">
+
+                        <span>
+                            <span class="select-flag-form-icon" ng-style="{'color': ty.Color}"> 
+                                <i class="icon-flag"></i>
+                            </span>
+                            <span class="flag-name-box" title="{{ty.Name}}">{{ty.Name}}</span>
+                        </span>                        
+
+                        <span title="{{'WEIGHT_STRING' | translate}}" class="pull-right select-flag-form-weight">
+                            <span> <i class="icon-chain"></i></span>
+                            <strong>{{ty.TypeWeight}}</strong>
+
+                            <span> <i data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                class='icon-wrench-2 dropdown-toggle '></i>
+                                <ul class="dropdown-menu">
+
+                                    <li ng-click="editFlag(ty)" title="{{'BTN_EDIT' | translate}}">
+                                        <a href="">
+                                            <i class="icon-edit"></i>
+                                            {{'BTN_EDIT' | translate}}
+                                        </a>
+                                    </li>
+                                    <li ng-hide="ty.IsSystem"  ng-click="removeFlag(ty)" title="{{'TOOLTIP_REMOVE_WIDGET' | translate}}" >
+                                         <a href="">
+                                            <i class="icon-trash"></i>
+                                           {{'TOOLTIP_REMOVE_WIDGET' | translate}}
+                                          </a>
+                                    </li>                                  
+                                </ul>
+                            </span>
+                        </span>
+
+
+                    </div>       
+                </div>
+                
+                <div style="padding-left: 5px; padding-right: 5px;" ng-show="editMode === true">
+
+                    <div class="col-sm-12" style="background-color: #F3F4F6;margin-top: 15px;padding: 15px 40px">
+                        <div class="input-group">
+                            <span class="input-group-btn" style="width: 55px;">
+                                   
+                                <!--<label >{{Resx.JOB_COLOR|translate}}</label>-->
+                                <div style="float: left; display: inline;">
+                                    <spectrum-colorpicker
+                                        ng-model="Color"
+                                        format="'rgb'"
+                                        options="optionColor">
+                                    </spectrum-colorpicker>
+                                </div>
+              
+                        
+                            </span>
+                            <input type="text" class="form-control" ng-model="Name" placeholder="{{'FLAG_NAME' | translate}}" required maxlength="30" ng-disabled="selectItem.IsSystem === true && userLogin.IsAdmin === true">
+                            <span class="input-group-btn no-spin">
+                                <!--<input style="width: 60px;" type="number" title="{{'FLAG_WEIGHT' | translate}}"  class="numberic form-control" ng-model="TypeWeight" 
+                                    required id="typeWeight" ng-change="maxLengthCheck()" >-->
+                                <input style="width: 60px;" type="text" title="{{'FLAG_WEIGHT' | translate}}" maxlength="3"  class="numberic form-control" ng-model="TypeWeight" 
+                                    required id="typeWeight" ng-keypress="PreventLetter($event,inputRex)" ng-paste ="PreventPaste($event,pasteRegx)">
+                            </span>
+                            <span class="input-group-btn">
+                                <span style=" display: inline;" class="btn btn-info pull-right" data-ng-click="addFlag()"><i aria-hidden="true" class="icon-save"></i></span>
+                            </span>
+                        </div>
+                        <div ng-if="error === true">
+                            <span style="color:#f08080;">{{'ERR_EMPTY_MSG' | translate}}</span>
+                        </div>
+                        <div ng-if="error2 === true">
+                            <span style="color:#f08080;">{{'ERR_ZERO_MSG' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="panel-footer text-align-right ">
+                <span class="btn btn-danger " data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i>{{'BTN_CLOSE' | translate}}</span>
+                <!--<span class="btn btn-info pull-right" data-ng-click="saveFlags()"><i aria-hidden="true" class="icon-ok-circled2"></i>{{'Save' | translate}}</span>-->
+                <span class="btn btn-info" data-ng-click="addNewFlags()"><i aria-hidden="true" class="icon-plus"></i>{{'ADD_NEW' | translate}}</span>
+            </div>
+        </div>
+    </div>
+</div>

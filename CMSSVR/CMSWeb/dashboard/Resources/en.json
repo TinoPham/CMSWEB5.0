@@ -1,0 +1,26 @@
+﻿{
+  "DASHBOARD_LIST":"Dashboard List"
+, "DASHBOARD_TECHNICAL": "Technical Dashboard"
+, "DASHBOARD_STORE": "Store Level Dashboard"
+, "DASHBOARD_BUSINESS": "Business Dashboard"
+, "HIGH_PRIORITY": "High Priority"
+, "LOW_PRIORITY": "Low Priority"
+, "MEDIUM_PRIORITY": "Medium Priority"
+, "NOTE_FIELD":"Notes"
+, "NONE": "None"
+
+, "REMOVE_WIDGET_CONFIRM":"Are you sure you want to remove this widget?"
+, "SELECT_WIDGET_HEADER": "Select Widget"
+, "SELECT_DASHBOARD_HEADER": "Select Dashboard"
+, "TOOLTIP_ADD_WIDGET": "Click to Add new Widget"
+, "TOOLTIP_CHANGE_WIDGET": "Change"
+, "TOOLTIP_ADD_DASHBOARD": "Create Dashboard"
+, "TOOLTIP_EDIT_DASHBOARD": "Edit Dashboard"
+, "TOOLTIP_SAVE_DASHBOARD": "Save Dashboard"
+, "TODO_DEFAULT_VALUE": "Todo Here..."
+, "WIDGET_CHART_STRING": "Charts Widget"
+, "WIDGET_HEADER_STRING": "Headers Widget"
+, "WIDGET_EXTRA_STRING": "Extra Widget"
+, "WIDGET_EXIST_MSG":"This Widget aleady exists in this Dashboard."
+
+}

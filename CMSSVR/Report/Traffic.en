@@ -1,0 +1,14 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Traffic Insights Report"},
+{"NameField":"footer", "ValueField":"Prepared under contract for the exclusive use of i3 International. Reproduction of this report is prohibited."},
+{"NameField":"header_Time", "ValueField":"Time"},
+{"NameField":"header_TrafficIn", "ValueField":"Traffic"},
+{"NameField":"header_Trans", "ValueField":"Transactions"},
+{"NameField":"header_TrueTraffic", "ValueField":"True Traffic"},
+{"NameField":"header_LostOpp", "ValueField":"Lost Opportunities"},
+{"NameField":"title_Period", "ValueField":"Report Period"},
+{"NameField":"rpt_NODATA", "ValueField":"Data is not available"},
+{"NameField":"chart_Children", "ValueField":"Children"},
+{"NameField":"chart_CoupleAdults", "ValueField":"Couple Adults"},
+{"NameField":"chart_SingleAdults", "ValueField":"Single Adults"}
+]

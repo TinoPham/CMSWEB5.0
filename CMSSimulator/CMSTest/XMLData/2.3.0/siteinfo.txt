@@ -1,0 +1,47 @@
+
+        <time_change>14611</time_change>
+        <configuration_id>5</configuration_id>
+        <configuration_name>server_info</configuration_name>
+    <site_info>
+      <server_info>
+        <user_name>i3dvr</user_name>
+        <version>2.3.0 (06.06.2012)</version>
+        <server_id>100-001Liennnnnnnnnnnnnnnnnnnn</server_id>
+        <pacid>155-100</pacid>
+        <ip_add>10.0.0.155</ip_add>
+        <server_name>Liennnnnnnnnnnnnnnnnnnn</server_name>
+        <location>Liennnnnnnnnnnnnnnnnnnn</location>
+        <model>SRX-Pro Server</model>
+        <distributor>Liennnnnnnnnnnnnnnnnnnn</distributor>
+        <sale_date>
+          <year>2012</year>
+          <month>10</month>
+          <day>16</day>
+        </sale_date>
+        <note>Liennnnnnnnnnnnnnnnnnnn</note>
+        <display>1</display>
+      </server_info>
+      <system_info>
+        <user_name>i3dvr</user_name>
+        <comp_name>DH55HC_XPE3_2</comp_name>
+        <language>en</language>
+        <drives>
+          <drive total_space="39997" free_space="33003">C:</drive>
+          <drive total_space="99998" free_space="99500">D:</drive>
+          <drive total_space="99998" free_space="155">E:</drive>
+          <drive total_space="156947" free_space="137">F:</drive>
+          <drive total_space="79995" free_space="62804">H:</drive>
+        </drives>
+        <computer>
+          <cpu_model>Intel(R) Core(TM) i3 CPU 530 @ 2.93GHz</cpu_model>
+          <total_memory>3061 MBytes</total_memory>
+          <free_memory>2148 MBytes</free_memory>
+        </computer>
+        <system>
+          <os>Windows XP Professional </os>
+          <version>Service Pack 2 (Build 2600)</version>
+          <mac_address>00-27-0E-09-4E-44</mac_address>
+        </system>
+      </system_info>
+    </site_info>
+      

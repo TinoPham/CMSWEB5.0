@@ -1,0 +1,62 @@
+﻿<div class="panel dynamic-filter">
+	<div class="panel-header">
+		<span class="btn pull-right">
+			<span data-ng-click="cancel()"><i class="icon-cancel-1"></i></span>
+		</span>
+		<h3 class="title"> {{'CUSTOM_FILTER' | translate}}</h3>
+	</div>
+	<div class="panel-body">
+		<div ng-if="filterModel.type === 'string'" class="=row-item">
+			<div class="control-label">{{filterModel.name}}</div>
+			<div class="fnc-restyle-select-item-list scrollbar-dynamic" style="height: 300px;" data-jquery-scrollbar="scrollOption">
+				<ul class="list-group">
+					<li class="btn list-group-item" ng-class="{'active': item.Checked === true}" ng-repeat="item in dataList | orderBy:'Name'" ng-click="item.Checked = !item.Checked">
+						<span>{{item.Name}}</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div ng-if="filterModel.type === 'number'" class="row-item">
+			<div class="control-label">{{filterModel.name}}</div>
+			<div class="col-operator">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default btn-sm dropdown-toggle col-md-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i>{{compOperatorSelected.name}}</i>
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li ng-repeat="operator in comparationOperators"><a ng-click="selectOperator(operator)">{{operator.name | translate}}</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-input-search">
+				<input type="number" ng-model="filterModel.value" class="form-control">
+			</div>
+		</div>
+		<div ng-if="filterModel.type === 'datetime'" class="row-item">
+			<div class="control-label">{{filterModel.name}}</div>
+			<div class="col-operator">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default btn-sm dropdown-toggle col-md-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i>{{compOperatorSelected.name}}</i>
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li ng-repeat="operator in comparationOperators"><a ng-click="selectOperator(operator)">{{operator.name | translate}}</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-input-search">
+				<div class="input-group" options="{{dateOptions}}" cmsdatetimepicker ng-model="filterModel.value">
+					<input type="text" name="DateFrom" class="form-control input-sm" />
+					<span class="input-group-addon"><i class="icon-calendar"></i></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel-footer text-align-right">
+		<span class="btn btn-default pull-left" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i>{{'Close' | translate}}</span>
+		<span class="btn btn-orange-3" data-ng-click="clearSearch()"><i aria-hidden="true" class="icon-erase"></i>{{'Clear' | translate}}</span>
+		<span class="btn btn-primary " data-ng-click="save()"><i aria-hidden="true" class="icon-ok-circled2"></i>{{'Done' | translate}}</span>
+	</div>
+</div>

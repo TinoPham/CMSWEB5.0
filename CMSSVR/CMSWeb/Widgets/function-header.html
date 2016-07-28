@@ -1,0 +1,27 @@
+﻿<div class="panel-header function-header">
+    <div class="pull-left btn-group">
+        <b ng-if="title">{{title}}</b>
+        <span ng-if="titlecount" class="site-count-title">{{titlecount}}</span>
+		<span ng-if="showAdd" ng-click="addFn(selected)"><i class="icon-doc-new"></i><span>{{'FUNC_HEADER_BTN_ADD'|translate}}</span></span>
+		<span ng-if="showEdit" ng-click="editFn(selected)" ng-class="{'disabled': editDisabled}" ng-disabled="editDisabled"><i class="icon-pencil fa-fw"></i><span>{{'FUNC_HEADER_BTN_EDIT'|translate}}</span></span>
+		<span ng-if="showDel" ng-click="delFn(selected)" ng-class="{'disabled': deleteDisabled}" class="delete-item" ng-disabled="deleteDisabled"><i class="icon-trash fa-fw"></i><span>{{'FUNC_HEADER_BTN_DELETE'|translate}}</span></span>
+		<span ng-if="showRefresh" ng-click="refreshFn()"><i class="icon-cw-2"></i><span>{{'FUNC_HEADER_BTN_REFRESH'|translate}}</span></span>
+		<span ng-if="showImport" ng-click="importFn(selected)"><i class="icon-upload-3 fa-fw"></i><span>{{'FUNC_HEADER_BTN_IMPORT'|translate}}</span></span>
+    </div>
+	<div class="pull-right btn-group">
+		<span ng-if="showViewMode" class="btn-group-mode">
+			<span ng-show="btnGrid" class="btn btn-function" ng-click="SetModeView(false)" ng-class="{'active':$parent.listview === false}"><i class="icon-list-1"></i></span>
+			<span ng-show="btnList" class="btn btn-function" ng-click="SetModeView(true)" ng-class="{'active':$parent.listview === true}"><i class="icon-align-justify"></i></span>
+		</span>
+		<form ng-if="showFilter" class="navbar-form navbar-left" role="search">
+            <div class="form-group user-formgroup">
+				<div class="input-group">
+					<input type="text" ng-model="$parent.query" class="form-control input-search" placeholder="{{'FUNC_HEADER_BTN_SEARCH' | translate}}" />
+                    <span class="search-button">
+                        <i class="icon-search"></i>
+                    </span>
+                </div>
+            </div>
+        </form>              
+</div>
+    </div>

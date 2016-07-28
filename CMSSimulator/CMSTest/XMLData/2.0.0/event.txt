@@ -1,0 +1,11 @@
+
+        <event>
+            <id>21</id>
+            <name>DVR changes configuration</name>
+            <time>1249961619</time>
+            <string_time>2009/08/10 - 20:33:39</string_time>
+            <channel_id>-1</channel_id>
+            <user>i3dvr</user>
+            <information>User changed configuration on page [communication]</information>
+        </event>
+   

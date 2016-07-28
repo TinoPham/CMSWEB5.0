@@ -1,0 +1,14 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Rapport de renseignements sur le trafic"},
+{"NameField":"footer", "ValueField":"Préparé sous contrat pour l'usage exclusif d’i3 International. La reproduction de ce rapport est interdite."},
+{"NameField":"header_Time", "ValueField":"Heure"},
+{"NameField":"header_TrafficIn", "ValueField":"Trafic"},
+{"NameField":"header_Trans", "ValueField":"Transactions"},
+{"NameField":"header_TrueTraffic", "ValueField":"Vrai trafic"},
+{"NameField":"header_LostOpp", "ValueField":"Occasions perdues"},
+{"NameField":"title_Period", "ValueField":"Période du rapport"},
+{"NameField":"rpt_NODATA", "ValueField":"Données de ne sont pas disponibles"},
+{"NameField":"chart_Children", "ValueField":"enfant"},
+{"NameField":"chart_CoupleAdults", "ValueField":"couple adultes"},
+{"NameField":"chart_SingleAdults", "ValueField":"adultes simples"}
+]

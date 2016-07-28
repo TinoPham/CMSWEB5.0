@@ -1,0 +1,1 @@
+{"ReportId":2,"Metrics":[{"MetricId":1,"Name":"Opportunities(traffic)","ResourceKey":"METRIC_OPPORTUNITIES","Order":0,"Active":true},{"MetricId":2,"Name":"Transactions","ResourceKey":"METRIC_TRANSACTIONS","Order":0,"Active":true},{"MetricId":5,"Name":"Conversion rate","ResourceKey":"METRIC_CONVERSION_RATE","Order":0,"Active":true}]}

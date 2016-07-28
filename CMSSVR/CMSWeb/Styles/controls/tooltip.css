@@ -1,0 +1,67 @@
+/* COMMON, START */
+/* COMMON, END */
+/** TOP BAR **/
+/** LEFT BAR **/
+/** FOOTER **/
+.fa-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/*
+ * Customize: ToolTips (bootstrap)
+ * -----------
+ */
+.tooltip-inner {
+  background-color: #434a55;
+}
+.tooltip.top .tooltip-arrow {
+  border-top-color: #434a55;
+}
+.tooltip.top-left .tooltip-arrow {
+  border-top-color: #434a55;
+}
+.tooltip.top-right .tooltip-arrow {
+  border-top-color: #434a55;
+}
+.tooltip.right .tooltip-arrow {
+  border-right-color: #434a55;
+}
+.tooltip.left .tooltip-arrow {
+  border-left-color: #434a55;
+}
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: #434a55;
+}
+.tooltip.bottom-left .tooltip-arrow {
+  border-bottom-color: #434a55;
+}
+.tooltip.bottom-right .tooltip-arrow {
+  border-bottom-color: #434a55;
+}
+.tooltip.grid-tooltip .tooltip-inner,
+.tooltip.list-tooltip .tooltip-inner {
+  color: #4a525f;
+  background-color: #FFFED9;
+  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  text-align: left;
+}
+.tooltip.grid-tooltip.top .tooltip-arrow,
+.tooltip.list-tooltip.top .tooltip-arrow {
+  border-top-color: #FFFED9;
+}
+.tooltip.grid-tooltip.bottom .tooltip-arrow,
+.tooltip.list-tooltip.bottom .tooltip-arrow {
+  border-bottom-color: #FFFED9;
+}
+.tooltip.grid-tooltip.right .tooltip-arrow,
+.tooltip.list-tooltip.right .tooltip-arrow {
+  border-right-color: #FFFED9;
+}

@@ -1,0 +1,481 @@
+
+        <configuration_id>24</configuration_id>
+        <configuration_name>video_privacy</configuration_name>
+    <video_privacy>
+      <channels size="64">
+        <channel id="0">
+          <enable>1</enable>
+          <video_source>0</video_source>
+          <area_trackers>2</area_trackers>
+          <trackers size="2">
+            <tracker id="0">
+              <user_name>Area 0</user_name>
+              <mask_type>1</mask_type>
+              <mask_color>0</mask_color>
+              <repeat_type>-1</repeat_type>
+              <begin_date>
+                <year>2012</year>
+                <month>10</month>
+                <date>5</date>
+                <dayofweek>5</dayofweek>
+              </begin_date>
+              <end_date>
+                <year>2012</year>
+                <month>10</month>
+                <date>5</date>
+                <dayofweek>5</dayofweek>
+              </end_date>
+              <begin_time>
+                <hour>0</hour>
+                <minute>0</minute>
+                <second>0</second>
+              </begin_time>
+              <end_time>
+                <hour>0</hour>
+                <minute>0</minute>
+                <second>0</second>
+              </end_time>
+              <polygon num_point="4" type="0">184,87;210,87;210,147;184,147;</polygon>
+            </tracker>
+            <tracker id="1">
+              <user_name>Area 1</user_name>
+              <mask_type>1</mask_type>
+              <mask_color>0</mask_color>
+              <repeat_type>-1</repeat_type>
+              <begin_date>
+                <year>2012</year>
+                <month>10</month>
+                <date>5</date>
+                <dayofweek>5</dayofweek>
+              </begin_date>
+              <end_date>
+                <year>2012</year>
+                <month>10</month>
+                <date>5</date>
+                <dayofweek>5</dayofweek>
+              </end_date>
+              <begin_time>
+                <hour>0</hour>
+                <minute>0</minute>
+                <second>0</second>
+              </begin_time>
+              <end_time>
+                <hour>0</hour>
+                <minute>0</minute>
+                <second>0</second>
+              </end_time>
+              <polygon num_point="4" type="0">185,87;210,87;210,147;185,147;</polygon>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="1">
+          <enable>0</enable>
+          <video_source>1</video_source>
+          <area_trackers>1</area_trackers>
+          <trackers size="1">
+            <tracker id="0">
+              <user_name>Area 0</user_name>
+              <mask_type>1</mask_type>
+              <mask_color>0</mask_color>
+              <repeat_type>-1</repeat_type>
+              <begin_date>
+                <year>2012</year>
+                <month>9</month>
+                <date>12</date>
+                <dayofweek>3</dayofweek>
+              </begin_date>
+              <end_date>
+                <year>2014</year>
+                <month>10</month>
+                <date>17</date>
+                <dayofweek>5</dayofweek>
+              </end_date>
+              <begin_time>
+                <hour>2</hour>
+                <minute>12</minute>
+                <second>0</second>
+              </begin_time>
+              <end_time>
+                <hour>17</hour>
+                <minute>0</minute>
+                <second>0</second>
+              </end_time>
+              <polygon num_point="4" type="0">147,61;348,61;348,205;147,205;</polygon>
+            </tracker>
+          </trackers>
+        </channel>
+        <channel id="2">
+          <enable>0</enable>
+          <video_source>2</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="3">
+          <enable>0</enable>
+          <video_source>3</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="4">
+          <enable>0</enable>
+          <video_source>4</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="5">
+          <enable>0</enable>
+          <video_source>5</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="6">
+          <enable>0</enable>
+          <video_source>6</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="7">
+          <enable>0</enable>
+          <video_source>7</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="8">
+          <enable>0</enable>
+          <video_source>8</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="9">
+          <enable>0</enable>
+          <video_source>9</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="10">
+          <enable>0</enable>
+          <video_source>10</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="11">
+          <enable>0</enable>
+          <video_source>11</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="12">
+          <enable>0</enable>
+          <video_source>12</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="13">
+          <enable>0</enable>
+          <video_source>13</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="14">
+          <enable>0</enable>
+          <video_source>14</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="15">
+          <enable>0</enable>
+          <video_source>15</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="16">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="17">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="18">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="19">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="20">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="21">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="22">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="23">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="24">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="25">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="26">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="27">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="28">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="29">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="30">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="31">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="32">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="33">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="34">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="35">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="36">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="37">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="38">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="39">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="40">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="41">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="42">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="43">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="44">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="45">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="46">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="47">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="48">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="49">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="50">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="51">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="52">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="53">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="54">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="55">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="56">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="57">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="58">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="59">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="60">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="61">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="62">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+        <channel id="63">
+          <enable>0</enable>
+          <video_source>-1</video_source>
+          <area_trackers>0</area_trackers>
+          <trackers size="0" />
+        </channel>
+      </channels>
+    </video_privacy>
+      

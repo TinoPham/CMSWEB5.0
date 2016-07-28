@@ -1,0 +1,74 @@
+<!-- Left Sidebar Start -->
+<div class="left side-menu boxShadow" ng-controller="leftbarCtrl as vm">
+	<div class="sidebar-inner slimscrollleft">
+		<!-- Search form -->
+		<form role="search" class="navbar-form" ng-if="vm.showFrmSearch">
+			<div class="form-group">
+				<input type="text" placeholder="Search" class="form-control">
+				<button type="submit" class="btn search-button"><i class="icon-search"></i></button>
+			</div>
+		</form>
+		<div class="clearfix"></div>
+		<!--- Profile -->
+		<div class="profile-info">
+			<div class="col-xs-4 profile-image">
+				<a href="#">
+					<img ng-src="{{vm.parent.UserAvatarUrl}}" ng-class="vm.isAuthenticated? 'online': ''" />
+				<!--<img ng-show="vm.UserModel.UPhoto == null" src="../../../Content/Images/img_user_blank.png" ng-class="vm.isAuthenticated? 'online': ''" />-->
+
+<!--				<img ng-show="vm.UPhoto!=null" ng-src="{{vm.UPhoto}}" ng-class="vm.isAuthenticated? 'online': ''" />
+				<img ng-show="vm.UPhoto == null" src="../../../Content/Images/img_user_blank.png" ng-class="vm.isAuthenticated? 'online': ''" />-->
+				</a>
+			</div>
+			<div class="col-xs-8 profile-detail">
+				<div class="profile-text">{{'WELCOME'|translate}} <div>{{vm.UserModel.FName}}</div></div>
+				<!--<div class="profile-status" ng-class="vm.isAuthenticated? 'online': ''"><i class=" icon-record"></i>online</div>-->
+				<div class="profile-buttons">
+				<!--	<a href="javascript:;"><i class="icon-mail-1 pulse"></i></a>
+					<a href="#connect" class="open-right"><i class="icon-chat"></i></a>-->
+					<a ng-click="vm.logOut()" title="Sign Out"><i class="icon-off text-red-1"></i></a>
+				</div>
+			</div>
+		</div>
+		<!--- Divider -->
+		<div class="clearfix"></div>
+		<hr class="divider" />
+		<div class="clearfix"></div>
+		<!--- Divider -->
+		<div id="sidebar-menu">
+			<ul>
+				<li ng-repeat="menu in vm.Menus" ng-class="{'has_sub parent': vm.hasGroup(menu), 'disable': menu.Menu === false, 'active': vm.rootSelected === menu.State}">
+					<a ng-if="menu.Menu === true" ui-sref="{{menu.State}}" menu-dropdown>
+						<i ng-class="menu.Classstyle"></i>
+						<span ng-class="vm.hasGroup(menu) ? 'parent':''">{{menu.Translate | translate}}</span>
+						<span ng-if="vm.hasGroup(menu)" class="pull-right"><i class="icon-down-open-mini"></i></span>
+					</a>
+					<a ng-if="menu.Menu === false" menu-dropdown>
+						<i ng-class="menu.Classstyle"></i>
+						<span ng-class="vm.hasGroup(menu) ? 'parent':''">{{menu.Translate | translate}}</span>
+						<span ng-if="vm.hasGroup(menu)" class="pull-right"><i class="icon-down-open-mini"></i></span>
+					</a>
+					<ul ng-if="vm.hasGroup(menu)">
+						<li ng-repeat="grop in menu.group.groups" ng-class="grop.objlist.length > 0 ? 'has_sub':''">
+							<a menu-dropdown>
+								<span>{{grop.key | translate}}</span>
+								<span ng-if="grop.objlist.length > 0" class="pull-right"><i class="icon-down-open-mini"></i></span>
+							</a>
+							<ul ng-if="grop.objlist.length > 0">
+								<li ng-repeat="lust in grop.objlist">
+									<a ui-sref="{{lust.State}}" menu-dropdown ng-class="{'active': vm.childSelected.state === lust.State}">
+										<span>{{lust.Translate | translate}}</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+</div>
+<!-- Left Sidebar End -->

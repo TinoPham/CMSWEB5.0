@@ -1,0 +1,23 @@
+
+        <dvr_summary>
+            <server_id>100-001</server_id>
+            <server_ip>10.0.1.9</server_ip>
+            <pac_id></pac_id>
+            <server_port>17221</server_port>
+            <public_server_ip>10.0.1.9</public_server_ip>
+            <password_user_i3dvr>i3dvr</password_user_i3dvr>
+            <server_name>SRX-Pro Server</server_name>
+            <version>2.3.0 IR</version>
+            <model>SRX-Pro Server</model>
+            <location></location>
+            <os>Windows XP Professional </os>
+            <os_version>Service Pack 2 (Build 2600)</os_version>
+            <total_size>50006</total_size>
+            <free_size>109</free_size>
+            <recording_days>8</recording_days>
+            <channels size="32" num_video_input="16">
+                <video_source>1718030405060708091011121314151600000000000000000000000000000000</video_source>
+                <channel_status>0202030303030303030303030202030301010101010101010101010101010101</channel_status>
+            </channels>
+        </dvr_summary>
+  

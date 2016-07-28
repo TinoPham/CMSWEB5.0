@@ -1,0 +1,79 @@
+
+<div class='container'>
+  <div class="row  channels-tab-panel">
+
+        <div class="panel-group channels_dvr_list"  role="tablist" aria-multiselectable="true">
+            {{}}
+
+          <div  ng-repeat-start="dvr in provider" class="panel panel-default">
+
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a ng-show="listIsShow[$index].isShow" role="button"
+                data-toggle="collapse" 
+                class="collapsed"
+                data-parent=".channels_dvr_list" 
+                href="#collapse{{$index}}" 
+                aria-expanded="false" 
+                ng-click="listIsShow[$index].isCollapseIn = !listIsShow[$index].isCollapseIn ;"
+                aria-controls="collapse{{$index}}">
+                    <i class="icon-dvr-2 "></i>
+                   {{dvr[0].DVRName}}
+                </a>
+                  
+                <i class="icon-dvr-2 " ng-show="!listIsShow[$index].isShow">  {{"NOTAVAILABLE"|translate}}</i>
+              </h4>
+              <i ng-show="listIsShow[$index].isShow" class="pull-right collapsed {{(listIsShow[$index].isCollapseIn == true) ? 'icon-up-open-1':'icon-down-open-1'}}" 
+              ng-click="listIsShow[$index].isCollapseIn = !listIsShow[$index].isCollapseIn ;"
+              data-toggle="collapse" 
+              href="#collapse{{$index}}" 
+              ></i>
+            </div>
+
+            <div ng-show="listIsShow[$index].isShow" id="collapse{{$index}}" class="panel-collapse collapse {{listIsShow[$index].isCollapseIn === true ? 'in' : '' }}"
+             role="tabpanel" aria-labelledby="heading{{$index}}">
+              <div class="panel-body maxHeighPanel">
+                <table class="table table-striped-custom table-striped">
+                    <thead>
+                        <tr>
+                            <th>{{'CHN_NUMBER' | translate}}</th>
+                            <th>{{'CHN_NAME' | translate}}</th>
+                            <th>{{'CHN_RESOLUTION' | translate}}</th>
+                            <th>{{'FRAME' | translate}}</th>
+                            <th>{{'CHN_STATUS' | translate}}</th>
+                            <th>{{'CHN_IMAGE' | translate}}</th>
+                            <th>{{'CHN_MODEL' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="channels in dvr">
+                            <td>{{$index + 1}}</td>
+                            <td>
+                                 <i class="icon-videocam-2"></i> <br>
+                                {{channels.Name}}
+                            </td>
+                            <td>{{channels.Resolution}}</td>
+                            <td>{{channels.FPS }}</td>
+                            <td>{{getStatus(channels.Status)|translate}}</td>
+                            <td>
+                                 <img ng-src="{{getImages(channels)}}" class="img-thumbnail" style="width:75px;height:75px" alt="" ng-click="showSlide(dvr,channels)">
+                            </td>
+                            <td>{{channels.ModelName}}</td>
+                        </tr>
+
+                        
+                    </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+          <div ng-repeat-end style="display: none"> </div>
+        
+           {{SetHeight(listIsShow.length);}}
+ 
+        </div>
+        <!-- END :: accordion panel-group -->
+
+  </div> 
+</div>

@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85DF0E2C-2336-4BBF-ACBA-BB836D2D3D55}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMSTest</RootNamespace>
+    <AssemblyName>CMSTest</AssemblyName>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0043FE209248242E465C4434BA55CC80E18987D1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CMSTest_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientSocket.cs" />
+    <Compile Include="CMSMessage.cs" />
+    <Compile Include="ConverterSimulators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConverterSimulators.Designer.cs">
+      <DependentUpon>ConverterSimulators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DvrInfoList.cs" />
+    <Compile Include="ProgressBarFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBarFrm.Designer.cs">
+      <DependentUpon>ProgressBarFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupTimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupTimer.Designer.cs">
+      <DependentUpon>SetupTimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DVRSimulator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DVRSimulator.Designer.cs">
+      <DependentUpon>DVRSimulator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConverterSimulators.resx">
+      <DependentUpon>ConverterSimulators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBarFrm.resx">
+      <DependentUpon>ProgressBarFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupTimer.resx">
+      <DependentUpon>SetupTimer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DVRSimulator.resx">
+      <DependentUpon>DVRSimulator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="i3ZLib.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DVRSites\Siteinfo.xml" />
+    <Content Include="VideoData\logo.png" />
+    <Content Include="VideoData\video_input_1.jpg" />
+    <Content Include="VideoData\video_input_10.jpg" />
+    <Content Include="VideoData\video_input_11.jpg" />
+    <Content Include="VideoData\video_input_12.jpg" />
+    <Content Include="VideoData\video_input_13.jpg" />
+    <Content Include="VideoData\video_input_14.jpg" />
+    <Content Include="VideoData\video_input_15.jpg" />
+    <Content Include="VideoData\video_input_16.jpg" />
+    <Content Include="VideoData\video_input_2.jpg" />
+    <Content Include="VideoData\video_input_3.jpg" />
+    <Content Include="VideoData\video_input_4.jpg" />
+    <Content Include="VideoData\video_input_5.jpg" />
+    <Content Include="VideoData\video_input_6.jpg" />
+    <Content Include="VideoData\video_input_69.jpg" />
+    <Content Include="VideoData\video_input_7.jpg" />
+    <Content Include="VideoData\video_input_8.jpg" />
+    <Content Include="VideoData\video_input_9.jpg" />
+    <Content Include="XMLData\1.600\book_mark.txt" />
+    <Content Include="XMLData\1.600\communication.txt" />
+    <Content Include="XMLData\1.600\email.txt" />
+    <Content Include="XMLData\1.600\event.txt" />
+    <Content Include="XMLData\1.600\hw.txt" />
+    <Content Include="XMLData\1.600\intelliguard.txt" />
+    <Content Include="XMLData\1.600\intellizone.txt" />
+    <Content Include="XMLData\1.600\ip_camera.txt" />
+    <Content Include="XMLData\1.600\KeepAlive.txt" />
+    <Content Include="XMLData\1.600\log_content.txt" />
+    <Content Include="XMLData\1.600\log_record.txt" />
+    <Content Include="XMLData\1.600\motion.txt" />
+    <Content Include="XMLData\1.600\PerformanceStatus.txt" />
+    <Content Include="XMLData\1.600\recording_display.txt" />
+    <Content Include="XMLData\1.600\record_schedule.txt" />
+    <Content Include="XMLData\1.600\siteinfo.txt" />
+    <Content Include="XMLData\1.600\storage.txt" />
+    <Content Include="XMLData\1.600\system.txt" />
+    <Content Include="XMLData\1.600\text_overlay.txt" />
+    <Content Include="XMLData\1.600\user_management.txt" />
+    <Content Include="XMLData\1.600\video_input.txt" />
+    <Content Include="XMLData\1.600\video_logix.txt" />
+    <Content Include="XMLData\1.600\video_privacy.txt" />
+    <Content Include="XMLData\1.600\virtual_ruler.txt" />
+    <Content Include="XMLData\1.600\vision_count.txt" />
+    <Content Include="XMLData\2.0.0\book_mark.txt" />
+    <Content Include="XMLData\2.0.0\communication.txt" />
+    <Content Include="XMLData\2.0.0\email.txt" />
+    <Content Include="XMLData\2.0.0\event.txt" />
+    <Content Include="XMLData\2.0.0\hw.txt" />
+    <Content Include="XMLData\2.0.0\intelliguard.txt" />
+    <Content Include="XMLData\2.0.0\intellizone.txt" />
+    <Content Include="XMLData\2.0.0\ip_camera.txt" />
+    <Content Include="XMLData\2.0.0\KeepAlive.txt" />
+    <Content Include="XMLData\2.0.0\log_content.txt" />
+    <Content Include="XMLData\2.0.0\log_record.txt" />
+    <Content Include="XMLData\2.0.0\motion.txt" />
+    <Content Include="XMLData\2.0.0\PerformanceStatus.txt" />
+    <Content Include="XMLData\2.0.0\recording_display.txt" />
+    <Content Include="XMLData\2.0.0\record_schedule.txt" />
+    <Content Include="XMLData\2.0.0\siteinfo.txt" />
+    <Content Include="XMLData\2.0.0\storage.txt" />
+    <Content Include="XMLData\2.0.0\system.txt" />
+    <Content Include="XMLData\2.0.0\text_overlay.txt" />
+    <Content Include="XMLData\2.0.0\user_management.txt" />
+    <Content Include="XMLData\2.0.0\video_input.txt" />
+    <Content Include="XMLData\2.0.0\video_logix.txt" />
+    <Content Include="XMLData\2.0.0\video_privacy.txt" />
+    <Content Include="XMLData\2.0.0\virtual_ruler.txt" />
+    <Content Include="XMLData\2.0.0\vision_count.txt" />
+    <Content Include="XMLData\2.1.3\book_mark.txt" />
+    <Content Include="XMLData\2.1.3\communication.txt" />
+    <Content Include="XMLData\2.1.3\email.txt" />
+    <Content Include="XMLData\2.1.3\event.txt" />
+    <Content Include="XMLData\2.1.3\hw.txt" />
+    <Content Include="XMLData\2.1.3\intelliguard.txt" />
+    <Content Include="XMLData\2.1.3\intellizone.txt" />
+    <Content Include="XMLData\2.1.3\ip_camera.txt" />
+    <Content Include="XMLData\2.1.3\KeepAlive.txt" />
+    <Content Include="XMLData\2.1.3\log_content.txt" />
+    <Content Include="XMLData\2.1.3\log_record.txt" />
+    <Content Include="XMLData\2.1.3\motion.txt" />
+    <Content Include="XMLData\2.1.3\PerformanceStatus.txt" />
+    <Content Include="XMLData\2.1.3\recording_display.txt" />
+    <Content Include="XMLData\2.1.3\record_schedule.txt" />
+    <Content Include="XMLData\2.1.3\siteinfo.txt" />
+    <Content Include="XMLData\2.1.3\storage.txt" />
+    <Content Include="XMLData\2.1.3\system.txt" />
+    <Content Include="XMLData\2.1.3\text_overlay.txt" />
+    <Content Include="XMLData\2.1.3\user_management.txt" />
+    <Content Include="XMLData\2.1.3\video_input.txt" />
+    <Content Include="XMLData\2.1.3\video_logix.txt" />
+    <Content Include="XMLData\2.1.3\video_privacy.txt" />
+    <Content Include="XMLData\2.1.3\virtual_ruler.txt" />
+    <Content Include="XMLData\2.1.3\vision_count.txt" />
+    <Content Include="XMLData\2.2.0\book_mark.txt" />
+    <Content Include="XMLData\2.2.0\communication.txt" />
+    <Content Include="XMLData\2.2.0\email.txt" />
+    <Content Include="XMLData\2.2.0\event.txt" />
+    <Content Include="XMLData\2.2.0\hw.txt" />
+    <Content Include="XMLData\2.2.0\intelliguard.txt" />
+    <Content Include="XMLData\2.2.0\intellizone.txt" />
+    <Content Include="XMLData\2.2.0\ip_camera.txt" />
+    <Content Include="XMLData\2.2.0\KeepAlive.txt" />
+    <Content Include="XMLData\2.2.0\log_content.txt" />
+    <Content Include="XMLData\2.2.0\log_record.txt" />
+    <Content Include="XMLData\2.2.0\motion.txt" />
+    <Content Include="XMLData\2.2.0\PerformanceStatus.txt" />
+    <Content Include="XMLData\2.2.0\recording_display.txt" />
+    <Content Include="XMLData\2.2.0\record_schedule.txt" />
+    <Content Include="XMLData\2.2.0\siteinfo.txt" />
+    <Content Include="XMLData\2.2.0\storage.txt" />
+    <Content Include="XMLData\2.2.0\system.txt" />
+    <Content Include="XMLData\2.2.0\text_overlay.txt" />
+    <Content Include="XMLData\2.2.0\user_management.txt" />
+    <Content Include="XMLData\2.2.0\video_input.txt" />
+    <Content Include="XMLData\2.2.0\video_logix.txt" />
+    <Content Include="XMLData\2.2.0\video_privacy.txt" />
+    <Content Include="XMLData\2.2.0\virtual_ruler.txt" />
+    <Content Include="XMLData\2.2.0\vision_count.txt" />
+    <Content Include="XMLData\2.3.0\book_mark.txt" />
+    <Content Include="XMLData\2.3.0\communication.txt" />
+    <Content Include="XMLData\2.3.0\email.txt" />
+    <Content Include="XMLData\2.3.0\event.txt" />
+    <Content Include="XMLData\2.3.0\hw.txt" />
+    <Content Include="XMLData\2.3.0\intelliguard.txt" />
+    <Content Include="XMLData\2.3.0\intellizone.txt" />
+    <Content Include="XMLData\2.3.0\ip_camera.txt" />
+    <Content Include="XMLData\2.3.0\KeepAlive.txt" />
+    <Content Include="XMLData\2.3.0\log_content.txt" />
+    <Content Include="XMLData\2.3.0\log_record.txt" />
+    <Content Include="XMLData\2.3.0\motion.txt" />
+    <Content Include="XMLData\2.3.0\PerformanceStatus.txt" />
+    <Content Include="XMLData\2.3.0\recording_display.txt" />
+    <Content Include="XMLData\2.3.0\record_schedule.txt" />
+    <Content Include="XMLData\2.3.0\siteinfo.txt" />
+    <Content Include="XMLData\2.3.0\storage.txt" />
+    <Content Include="XMLData\2.3.0\system.txt" />
+    <Content Include="XMLData\2.3.0\text_overlay.txt" />
+    <Content Include="XMLData\2.3.0\user_management.txt" />
+    <Content Include="XMLData\2.3.0\video_input.txt" />
+    <Content Include="XMLData\2.3.0\video_logix.txt" />
+    <Content Include="XMLData\2.3.0\video_privacy.txt" />
+    <Content Include="XMLData\2.3.0\virtual_ruler.txt" />
+    <Content Include="XMLData\2.3.0\vision_count.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ConvertMessage\ConvertMessage.csproj">
+      <Project>{a395a1d4-9871-45c4-8d06-571a0f23dfc7}</Project>
+      <Name>ConvertMessage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LocalDatabase\ConvertDB.csproj">
+      <Project>{d1d0007e-8d7f-4ff8-afed-a7ac62f92933}</Project>
+      <Name>ConvertDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PACDMConverter\PACDMSimulator.csproj">
+      <Project>{940269da-458b-4beb-b4a4-012c6586ad00}</Project>
+      <Name>PACDMSimulator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

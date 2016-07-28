@@ -1,0 +1,154 @@
+﻿@model CMSSVR.Models.Api.Configuration.DBConfigModel
+
+@{
+    ViewBag.Title = "Edit Data base connection";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+
+    function TestConnection() {
+        var modeldata = new Object();
+        modeldata.Trusted = $("#Trusted").prop("checked");
+        modeldata.DBName = $("#DBName").val();
+        modeldata.Server = $("#Server").val();
+        modeldata.UserID = $("#UserID").val();
+        modeldata.Password = $("#Password").val();
+        modelDataJSON = JSON.stringify(modeldata);
+        var url = '@Url.Action("TestConnection", "DBConfig")';
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: { data: modelDataJSON },
+            dataType: 'json',
+            success: function (data) 
+                    {
+                        //var _dialogcontent = $('div.modal-body');
+                        //_dialogcontent.html(data);
+
+                //$('#ResultModel').modal('show')
+                alert(data);
+                disabledCtrl('btnTestConection', false);
+                //$("#btnTestConection").prop('disabled', false);
+            },
+            error: function (data) {
+                disabledCtrl('btnTestConection', false);
+            },
+            beforeSend: function (data) {
+                disabledCtrl('btnTestConection', true);
+        }
+        });
+    }
+    function disabledCtrl(name, disabled)
+    {
+        var str_dis = 'disabled';
+        var ctrl = $('#' + name)
+        if( ctrl != null)
+            ctrl.prop(str_dis, disabled);
+    }
+    function CancelEdit() {
+        $("#DBName").val('@Model.DBName');
+        $("#Server").val('@Model.Server');
+        $("#UserID").val('@Model.UserID');
+        $("#Password").val('@Model.Password');
+        
+        var checked = '@Model.Trusted';
+        $("#Trusted").prop('checked', checked.toLowerCase()=='true'? true : false);
+    }
+    function EditConfig()
+    {
+        var str_dis ='disabled';
+        var val_true = true;
+        var ctrl = $("#Server")
+        var is_disable = ctrl.prop(str_dis);
+        is_disable = !is_disable;
+
+        disabledCtrl('Server', is_disable);
+        disabledCtrl('DBName', is_disable);
+        disabledCtrl('UserID', is_disable);
+        disabledCtrl('Password', is_disable);
+        disabledCtrl('Trusted', is_disable);
+        disabledCtrl('btnSave', is_disable);
+        
+        ctrl = $("#btnEdit");
+        if (!is_disable)
+            ctrl.val("Cancel");
+        else {
+            ctrl.val("Edit");
+            CancelEdit();
+        }
+
+
+    }
+
+</script>
+<h2>Edit Database configuration</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Server, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.Server, new {@class = "editor-field", @disabled = "true"})
+                @Html.ValidationMessageFor(model => model.Server)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DBName, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                
+                    @Html.TextBoxFor(model => model.DBName, new {@class = "editor-field", @disabled = "true"})
+                    @Html.ValidationMessageFor(model => model.DBName)
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserID, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.TextBoxFor(model => model.UserID, new {@class = "editor-field", @disabled = "true"})
+                @Html.ValidationMessageFor(model => model.UserID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.Password("Password", Model.Password,new {@class = "editor-field", @disabled = "true"})
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+        </div>
+
+        <div class="form-group">
+            
+            @Html.LabelFor(model => model.Trusted, new { @class = " col-md-2 control-label", @disabled = "true" })
+            <div class="col-md-3">
+                @Html.CheckBoxFor(model => model.Trusted, new {@class = "check-box", @disabled = "true"})
+                @Html.ValidationMessageFor(model => model.Trusted)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" id="btnSave" value="Save" disabled="true" class="btn btn btn-success" />
+                <input type="button" id="btnEdit" value="Edit" class="btn btn btn-success" onclick="EditConfig()"/>
+                <input type="button" id="btnTestConection" value="Test Connection" class="btn btn btn-success" onclick="TestConnection()" />
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index", new { @class="btn btn-info"})
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

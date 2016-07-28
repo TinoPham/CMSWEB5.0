@@ -1,0 +1,26 @@
+﻿<form name="deleNode" class="form-horizontal user-group-manages form-delete form-detailimage">
+	<div class="modal-header">
+		<span class="close" data-ng-click="cancel()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'IMAGE_SLIDER'|translate}}</h3>
+	</div>
+    <div class="modal-body">
+		<div class="slide-content">
+            <carousel>
+                <slide ng-repeat="file in model track by $index" active="slide.active">
+                    <div class="button-manually-edit" ng-click="showMunuallyUploadEdit(file, file.Channels.ChannelID)"><i class="icon-pencil-1"></i></div>
+                    <div class="button-manually-video" ng-click="showVideoFn(file)"><i class="icon-vpc"></i></div>
+                    
+
+                    <img class="site-slider-image" ng-src="{{ file.ImageURL }}" /> 
+
+                    <div class="modal-footer">
+                        <div><i class="icon-store-3"></i><span>{{siteName}}</span></div>
+                        <div><i class="icon-dvr-2"></i><span>{{DVRName}}</span></div>
+                        <div><i class="icon-videocam-2"></i><span>{{file.Channels.ChannelName}}</span></div>
+	                </div>
+                </slide>
+            </carousel>
+        </div>
+    </div>
+	
+</form>

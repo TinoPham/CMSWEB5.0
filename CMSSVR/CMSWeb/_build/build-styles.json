@@ -1,0 +1,6 @@
+﻿( {
+    keepBuildDir: false,
+    optimizeCss: "standard",
+    cssIn: "../Styles/app.css",
+    out: "js_build/styles/app.css"
+} )

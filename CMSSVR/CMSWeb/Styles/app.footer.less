@@ -1,0 +1,49 @@
+﻿@import url('app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+
+.footer {
+	position: fixed;
+	padding: 10px 15px;
+	font-size: 12px;
+	border-top: 1px solid @footer-default-border;
+	margin: 0 25px;
+	color: @footer-default-color;
+	z-index: 4;
+	background: #e4eae6;
+	bottom: 0;
+	left: -25px;
+	width: 100%;
+}
+
+@media (max-width: 767px) { 
+	/*.footer {
+		position: absolute;
+	}*/
+}
+
+
+
+// ====================================================================
+
+ // <!--     START   ::  BAM TABLET VERSION     -->
+
+// ====================================================================
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+	footer {
+		& > div {
+			&:first-child {
+				width: 50%;
+				float: right;
+				text-align: right;
+			}
+		}
+	}
+}
+
+
+// ====================================================================
+
+ // <!--     END    ::  BAM TABLET VERSION     -->
+
+// ====================================================================

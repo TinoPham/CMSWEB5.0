@@ -1,0 +1,676 @@
+
+        <time_change>15345</time_change>
+        <configuration_id>3</configuration_id>
+        <configuration_name>hardware</configuration_name>
+    <hardware>
+      <capture_card_info>
+        <model>0</model>
+        <num_of_boards>0</num_of_boards>
+        <num_of_chips>4</num_of_chips>
+      </capture_card_info>
+      <video_format>1</video_format>
+      <com_ports size="2">
+        <com_port id="0">NONE</com_port>
+        <com_port id="1">COM6</com_port>
+      </com_ports>
+      <hasp_key>
+        <hpk_code>0</hpk_code>
+        <pac>4</pac>
+        <video_fps>480</video_fps>
+        <audio>0</audio>
+        <ip_camera>32</ip_camera>
+        <video_logix>2</video_logix>
+        <vision_count>4</vision_count>
+        <lpr>1</lpr>
+        <video_logix_basic>4</video_logix_basic>
+        <vision_count_basic>8</vision_count_basic>
+      </hasp_key>
+      <ip_cameras size="5">
+        <ip_camera id="0" video_source="1">
+        </ip_camera>
+        <ip_camera id="1" video_source="2">
+        </ip_camera>
+        <ip_camera id="2" video_source="3">
+        </ip_camera>
+        <ip_camera id="3" video_source="4">
+        </ip_camera>
+        <ip_camera id="4" video_source="5">
+        </ip_camera>
+      </ip_cameras>
+      <video_source size="16">
+        <ext_monitor>0</ext_monitor>
+        <dwell>5</dwell>
+        <input_mask>0</input_mask>
+      </video_source>
+      <channels size="32" num_video_input="16" num_ptz_type="24">
+        <channel id="0">
+          <name>Channel 1</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>1</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="1">
+          <name>Channel 2</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>2</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="2">
+          <name>Channel 3</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>3</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="3">
+          <name>Channel 4</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>4</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="4">
+          <name>Channel 5</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>5</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="5">
+          <name>Channel 6</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="6">
+          <name>Channel 7</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="7">
+          <name>Channel 8</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="8">
+          <name>Channel 9</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="9">
+          <name>Channel 10</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="10">
+          <name>Channel 11</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="11">
+          <name>Channel 12</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="12">
+          <name>Channel 13</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="13">
+          <name>Channel 14</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="14">
+          <name>Channel 15</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="15">
+          <name>Channel 16</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="16">
+          <name>Channel 17</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="17">
+          <name>Channel 18</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="18">
+          <name>Channel 19</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="19">
+          <name>Channel 20</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="20">
+          <name>Channel 21</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="21">
+          <name>Channel 22</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="22">
+          <name>Channel 23</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="23">
+          <name>Channel 24</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="24">
+          <name>Channel 25</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="25">
+          <name>Channel 26</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="26">
+          <name>Channel 27</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="27">
+          <name>Channel 28</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="28">
+          <name>Channel 29</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="29">
+          <name>Channel 30</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="30">
+          <name>Channel 31</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+        <channel id="31">
+          <name>Channel 32</name>
+          <enable>1</enable>
+          <camera_id>0</camera_id>
+          <dwell_time>30</dwell_time>
+          <ap>0</ap>
+          <ptz_type>0</ptz_type>
+          <video_source>0</video_source>
+          <audio_source>0</audio_source>
+          <video_compress_quality>80</video_compress_quality>
+        </channel>
+      </channels>
+      <controls size="16">
+        <control id="0">
+          <name>Control 1</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="1">
+          <name>Control 2</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="2">
+          <name>Control 3</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="3">
+          <name>Control 4</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="4">
+          <name>Control 5</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="5">
+          <name>Control 6</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="6">
+          <name>Control 7</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="7">
+          <name>Control 8</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="8">
+          <name>Control 9</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="9">
+          <name>Control 10</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="10">
+          <name>Control 11</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="11">
+          <name>Control 12</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="12">
+          <name>Control 13</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="13">
+          <name>Control 14</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="14">
+          <name>Control 15</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+        <control id="15">
+          <name>Control 16</name>
+          <enable>1</enable>
+          <work_seconds>5</work_seconds>
+          <begin_time>0</begin_time>
+          <end_time>0</end_time>
+          <channel_mask>0</channel_mask>
+          <real_index>-1</real_index>
+        </control>
+      </controls>
+      <sensors size="16" alarm="0" pre_record_time="5" post_record_time="5">
+        <sensor id="0">
+          <name>Sensor 1</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="1">
+          <name>Sensor 2</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="2">
+          <name>Sensor 3</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="3">
+          <name>Sensor 4</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="4">
+          <name>Sensor 5</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="5">
+          <name>Sensor 6</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="6">
+          <name>Sensor 7</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="7">
+          <name>Sensor 8</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="8">
+          <name>Sensor 9</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="9">
+          <name>Sensor 10</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="10">
+          <name>Sensor 11</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="11">
+          <name>Sensor 12</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="12">
+          <name>Sensor 13</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="13">
+          <name>Sensor 14</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="14">
+          <name>Sensor 15</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+        <sensor id="15">
+          <name>Sensor 16</name>
+          <enable>1</enable>
+          <normal_open>1</normal_open>
+          <channel_mask>0</channel_mask>
+          <control_mask>0</control_mask>
+          <real_index>-1</real_index>
+        </sensor>
+      </sensors>
+    </hardware>
+       

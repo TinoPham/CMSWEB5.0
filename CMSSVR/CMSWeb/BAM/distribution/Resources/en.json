@@ -1,0 +1,19 @@
+﻿{
+	"LOCATION_STRING": "Region",
+	"MANUALLY":"Manual",
+	"MANUALLY_UPLOAD":"MANUAL UPLOAD",
+	"MSGDVRVIRTUAL":"No image on virtual DVR",
+	"MSGCLICK":"Click here or drag image here to upload",
+	"NO_DATA_STRING": "There is no data",
+	"PERIOD_STRING": "Period ",
+	"SUMMARY_STRING": "Summary",
+	"WEEK_STRING": "Week ",
+	"QUEUE_NAME":"Queue name",
+	"QUEUE_APPLY_ALL_STORES_MSG": "Caution: Applying changes to all locations may result in changes to the pre-approved Setup. Proceed?",
+	"QUEUE_APPLY_HEADER": "Apply to all stores",
+	"QUEUE_TITLE": "Queue definition",
+	"QUEUE_NAME_THE_SAME": "CAN NOT INPUT THE SAME QUEUE'S NAME",
+	"QUEUE_NAME_EXIST": "This Queue '{0}' already exists",
+	"REGION_CHOSEN": "This region has been chosen",
+	"REGION_MAXIMUM": "Cannot add more than maximum region number!"
+}

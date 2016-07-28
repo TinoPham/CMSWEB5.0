@@ -1,0 +1,45 @@
+.fa-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* COMMON, START */
+/* COMMON, END */
+/** TOP BAR **/
+/** LEFT BAR **/
+/** FOOTER **/
+/*
+ * CMS - WIDGETS PANEL
+ * -----------
+ */
+.widget .widget-progress {
+  position: relative;
+}
+.widget .widget-progress.maximized {
+  position: fixed;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  top: 50px;
+  left: 240px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 15;
+  margin: 0px;
+  border-left: 1px solid #eee;
+  width: auto;
+  padding: 0px;
+}
+.widget .widget-progress.maximized .panel {
+  height: 100%;
+}
+.widget .widget-progress.maximized .todo-panel .todo-view .todo-list .editable-container .editable-input {
+  width: 90%;
+}
+/*Set FULL Widget */
+#wrapper.enlarged .widget .widget-progress.maximized {
+  left: 50px;
+}

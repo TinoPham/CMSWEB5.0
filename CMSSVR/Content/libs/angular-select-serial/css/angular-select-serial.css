@@ -1,0 +1,163 @@
+multiselect-serial .input-group .caret {
+  position: absolute;
+  top: 14px;
+  right: 55px;
+}
+multiselect-serial .btn-group {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  line-height: 20px;
+  z-index: 0 !important;
+}
+multiselect-serial .btn-group.open .dropdown-toggle {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+multiselect-serial .btn-group.open .dropdown-menu {
+  display: block;
+  border: 1px solid #ccc;
+}
+multiselect-serial .btn-group > .form-control {
+  border: none;
+  height: 28px;
+}
+multiselect-serial .btn-group > .form-control .caret {
+  margin-top: -13px;
+}
+multiselect-serial .dropdown-menu {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+  overflow-y: auto;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2px;
+}
+multiselect-serial .dropdown-menu li .checkbox,
+multiselect-serial .dropdown-menu li .radio {
+  width: 100%;
+  padding-top: 3px;
+}
+multiselect-serial .dropdown-menu li .checkbox label::after {
+  padding-top: 0;
+  margin-top: -1px;
+}
+multiselect-serial .dropdown-menu li.input-search {
+  height: 35px;
+}
+multiselect-serial .dropdown-menu li .i-name {
+  /*font-weight: normal;
+				margin-bottom: 0;
+				padding: 5px;*/
+}
+multiselect-serial .dropdown-menu li .i-color {
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: 1px solid;
+  padding: 1px 8px;
+  margin-right: 3px;
+}
+multiselect-serial .select-header {
+  padding-right: 25px;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+multiselect-serial .dropdown-menu-list {
+  list-style: none;
+  padding: 0;
+}
+multiselect-serial .dropdown-menu-list > :first-child {
+  border-top: 1px solid #eee;
+}
+multiselect-serial .dropdown-menu-list li {
+  border-bottom: 1px solid #eee;
+  padding: 2px;
+}
+multiselect-serial .dropdown-menu-list li:hover,
+multiselect-serial .dropdown-menu-list li:focus {
+  background-color: #eee;
+}
+multiselect-serial .dropdown-menu-list li:hover .remove-item,
+multiselect-serial .dropdown-menu-list li:focus .remove-item {
+  display: block;
+}
+multiselect-serial .dropdown-menu-list li .checkbox,
+multiselect-serial .dropdown-menu-list li .radio {
+  width: 100%;
+  padding-top: 3px;
+  margin: 3px 0;
+}
+multiselect-serial .dropdown-menu-list li .checkbox label {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  font-weight: normal;
+}
+multiselect-serial .dropdown-menu-list li .checkbox label::after {
+  padding-top: 0;
+  margin-top: -1px;
+}
+multiselect-serial .dropdown-menu-list li.input-search {
+  height: 35px;
+}
+multiselect-serial .dropdown-menu-list li .i-name {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  font-weight: normal;
+}
+multiselect-serial .dropdown-menu-list li .i-color {
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: 1px solid;
+  padding: 1px 8px;
+  margin-right: 5px;
+}
+multiselect-serial .dropdown-menu-list li .remove-item {
+  display: none;
+  color: #fb0b0b;
+  float: right;
+}
+multiselect-serial .dropdown-menu-list li .remove-item:hover,
+multiselect-serial .dropdown-menu-list li .remove-item:focus {
+  cursor: pointer;
+}
+multiselect-serial .dropdown-menu-list.scroll-body {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+multiselect-serial .multiple-controls {
+  border-bottom: 1px solid #DDD;
+  -moz-box-shadow: 0 1px 5px -2px #abb7b7;
+  -webkit-box-shadow: 0 1px 5px -2px #abb7b7;
+  box-shadow: 0 1px 5px -2px #abb7b7;
+}
+multiselect-serial .footer-dropdown {
+  background-color: #EEE;
+  margin-left: -2px;
+  margin-right: -2px;
+  margin-bottom: -2px;
+  border-top: 1px solid #ccc;
+  box-shadow: 0px 1px 5px #888888;
+  padding: 3px;
+  text-align: center;
+}
+/*ThangPham, Customize angular select UI, July 01 2015, Start*/
+.select-control multiselect-serial {
+  padding: 6px 0;
+}
+.select-control multiselect-serial.form-control {
+  padding: 6px 0;
+}
+.select-control multiselect-serial .btn-group {
+  position: relative;
+  top: -6px;
+}

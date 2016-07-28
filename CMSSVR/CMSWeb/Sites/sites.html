@@ -1,0 +1,87 @@
+﻿<div class="sites-manage resizer-position col-xs-12 col-sm-12" ng-controller="siteCtrl as vm">    
+
+    <div class="tree-content" id="resizer-scope">
+        <div class="col-xs-12" id="sidebar" ng-show="isBusy === false">
+			<div class="row" ng-if="selectedNode.Type == 0">
+				<div ng-class="box.SizeClass" ng-repeat="box in siteBox" ng-include="'widgets/boxgadgets/boxgadget.html'"></div>
+			</div>
+
+			<div class="group-monitor"  ng-if="selectedNode && selectedNode.Type === 0">
+                 <tabset justified="true">
+                     <tab active="vm.activetab.heath">
+                        <tab-heading>
+                             <i class="icon-health-monitor"></i> 
+                             <span>{{'LAST_ALERT_MONITOR' | translate}}</span>
+                       </tab-heading>
+                        <div ng-include="'widgets/sites/lastalertmonitor.html'" ng-controller="lastalertmonitorCtrl as vm" ng-init="init(selectedNode, ShowSensorTab)"></div>
+                    </tab>
+                     <tab active="vm.activetab.sensor"> 
+                         <tab-heading>
+                                <i class="icon-sensor"></i> 
+                                 <span>{{'SENSOR_MONITOR' | translate}}</span>
+                        </tab-heading>
+                        <div  ng-include="'widgets/sites/sensormonitor.html'" ng-controller="sensormonitorCtrl" ng-init="init(selectedNode, ShowSensorTab)"></div>
+                    </tab>
+                     <tab active="vm.activetab.email"> 
+                         <tab-heading>
+                                <i class="icon-mail"></i> 
+                                 <span>{{'EMAIL_SETTINGS' | translate}}</span>
+                        </tab-heading>
+                        <div  ng-include="'widgets/sites/email.html'" ng-controller="emailsCtrl" ng-init="init()" class="email-setting-site-info"></div>
+                    </tab>
+                 </tabset>
+			</div>
+           
+            <div class="row"  ng-if="selectedNode.Type == 1" >
+                <div class="col-lg-12" ng-if="selectedNode.Type == 1" ng-include="'widgets/sites/maintabs.html'" ng-controller="maintabsCtrl" ng-init="init(selectedNode, tabselect, alertSelected)"></div>  
+            </div>
+        </div>
+        <!-- End left content -->
+
+        <div class="tree-right scalable" scalex='0.1'  id="content">
+			<div ng-class="fixTreesitemobile ? 'tree-site-mobile':  ''"
+            class="tree_site_fix">
+                <div class="head_tree_site">
+                    <div title="Sites ( {{countSite()}} )" class="search_box">  
+                        <div>{{countSite()}}</div>                        
+                        <input ng-model="filterText"
+                               ng-click="selectSearch()"
+                               ng-blur="lostFocusSearch()"       
+                               placeholder="{{'Search'| translate}}"                                          
+                               type="text">
+                        <i class="icon-search-3"></i>
+                        <div class="btn-mobile-close" 
+                             ng-click="fixTreesitemobile = !fixTreesitemobile;SHOW_HIDE_TREESITE_LOCAl()" >
+                            <i class="icon-cancel-2"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End :: head tree site -->
+
+                <div id="sidebar-resizer"
+                     resizer="vertical" 
+                     resizer-scope="#resizer-scope"
+                     resizer-left="#sidebar" 
+                     resizer-right="#content"
+                     resizer-hide="fusioncharts"
+                     resizer-min ="150"
+                     resizer-max="600">
+                    <div ng-click="showhideTree(this, $event)">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="tree-right-side">
+                    <div class="search">
+                    </div>
+    				<div class="tree-site-addmin tree-panel scrollbar-dynamic" data-jquery-scrollbar="jqueryScrollbarOptions">
+                        <tree-component class="cms-tree" ng-if="treeSiteFilter" model="treeSiteFilter" filter-text="filterText" def-col="def" options="options"></tree-component>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End tree site -->
+
+        
+    </div>
+</div>

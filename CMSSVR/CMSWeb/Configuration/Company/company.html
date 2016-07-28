@@ -1,0 +1,56 @@
+<div class="panel company-manages" ng-controller="companyCtrl">
+	<!--<func-header
+		listview='false'
+		query='false'
+		add-fn='false'
+		edit-fn='false'
+		del-fn='false'
+		refresh-fn='false'
+		import-fn='false'
+		show-view-mode="false"></func-header>-->
+	<div class="panel-content">
+		<form name="myForm" novalidate angular-validator angular-validator-submit="Save()" ng-cloak>
+			<div class="panel panel-default">
+				<div class="panel-content form-horizontal padding">
+					<div class="form-group">
+						<label for="name" class="col-sm-3 control-label">{{Resx.COMPANY_NAME|translate}}</label>
+						<div class="col-sm-4">
+							<input type="text" maxlength="50" name="dirty" class="form-control"
+								validate-on="dirty"
+								ng-model="valueCompany.CompanyName"
+								required-message="'{{Resx.COMPANY_NAME_REQUIRED|translate}}'"
+								required autofocus />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="name" class="col-sm-3 control-label">{{Resx.COMPANY_NUMBER_RECORDING|translate}}</label>
+						<div class="col-sm-4">
+							<input type="text" name="recodingday" class="form-control"
+								ng-model="valueCompany.NumberRecording"
+								required 
+								required-message="'{{Resx.COMPANY_NAME_NUMBER_RECORDING|translate}}'"
+								validator="NumberValidFunc(valueCompany.NumberRecording)===true"
+								invalid-message="NumberValidFunc(valueCompany.NumberRecording)"
+								validate-on="dirty" autofocus cms-interger="{maxlength: 3}"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="logo" class="col-sm-3 control-label">{{Resx.COMPANY_LOGO|translate}}</label>
+						<div class="col-sm-4">
+							<img ng-show="picSource != null" ng-src="{{picSource}}" class="thumbnail" />
+							<div ng-show="picSource == null" class="thumbnail no-image"><i class="icon-upload-cloud"></i></div>
+							<span ng-show="picSource.length > 0" class="btn btn-danger" ng-click="removeFileFn()"><i class="icon-trash"></i></span>
+							<div class="btn btn-primary btn-file">
+								<i class="icon-picture"></i><span>{{'UPLOAD_IMAGE'|translate}}</span>
+								<input type="file" accept="{{fileAccept}}" file-upload />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">{{Resx.BTN_SAVE|translate}}</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

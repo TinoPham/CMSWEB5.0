@@ -1,0 +1,15 @@
+﻿<style>
+.ngRow.selected
+{
+ background-color: rgba(28, 183, 236, 0.1);
+}
+.ngRow
+{
+ border:none;
+ background-color: transparent;
+}
+.ui-state-active{
+background-color: rgba(28, 183, 236, 0.1);
+}
+</style>
+<div showonhoverparent ng-style="{ 'cursor': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}"><div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }">&nbsp;</div><div ng-cell></div></div>

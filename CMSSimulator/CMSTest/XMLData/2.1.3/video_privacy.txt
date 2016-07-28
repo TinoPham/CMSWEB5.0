@@ -1,0 +1,7 @@
+
+        <configuration_id>24</configuration_id>
+        <configuration_name>video_privacy</configuration_name>
+    <video_privacy>
+      <channels size="0" />
+    </video_privacy>
+      

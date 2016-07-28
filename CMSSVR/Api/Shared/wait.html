@@ -1,0 +1,26 @@
+﻿<div class="modal" id="waitModal" role="dialog" aria-Labelledby="waitModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header dialog-header-wait">
+                <h4 class="modal-title">
+                    <span class="glyphicon glyphicon-time"></span> Please Wait
+
+                </h4>
+
+            </div>
+            <div class="modal-body">
+                <p ng-bind-html="msg"></p>
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-info" ng-style="getProgress()">
+
+                    </div><span class="sr-only">{{progress}}% Complete</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

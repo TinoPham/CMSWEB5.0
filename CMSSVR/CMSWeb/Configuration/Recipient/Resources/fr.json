@@ -1,0 +1,18 @@
+﻿{
+"RECIPIENT_NAME":"Nom du destinataire "
+, "RECIPIENT_FIRST_NAME":"Prénom"
+, "RECIPIENT_LAST_NAME":"Nom de famille"
+, "RECIPIENT_EMAIL":"Courriel"
+, "RECIPIENT_CREATE_BY":"Créé par"
+, "RECIPIENT_CREATE_DATE":"Date de création"
+, "RECIPIENT_DELETE_TITLE":"Supprimer le destinataire"
+
+, "RECIPIENT_EMAIL_EXIST":"Cette adresse courriel existe déjà."
+, "RECIPIENT_EMAIL_INVALID":"Veuillez saisir une adresse courriel."
+, "RECIPIENT_EMAIL_REQUIRED":"Le champ Courriel ne peut pas être vide."
+, "RECIPIENT_FIRSTNAME_REQUIRED":"Le Prénom ne peut pas être vide."
+, "RECIPIENT_LASTNAME_REQUIRED":"Le Nom ne peut pas être vide."
+, "RECIPIENT_DELETE_CONFIRM_MSG":"Êtes-vous sûr de vouloir supprimer ce destinataire?"
+, "RECIPIENT_DELETE_CONFIRM_MSGS":"Êtes-vous sûr que vous voulez supprimer ces destinataires?"
+, "RECIPIENT_CONFIRM_BODY":"S'il vous plaît sélectionner un bénéficiaire."
+}

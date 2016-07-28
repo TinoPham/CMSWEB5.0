@@ -1,0 +1,1375 @@
+
+        <time_change>0</time_change>
+        <configuration_id>1</configuration_id>
+        <configuration_name>user_management</configuration_name>
+        <user_management>
+            <server>{0}</server>
+      <users size="2">
+        <user>
+          <user_name>i3dvr</user_name>
+          <password>i3dvr</password>
+          <all_permission>
+            <live_permission>
+              <itself_permission>
+                <name>Live</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </itself_permission>
+              <real_time_mode_permission>
+                <name>Ext Spot</name>
+                <description>RealTime Live Mode</description>
+                <privilege_mask>0</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </real_time_mode_permission>
+              <instant_search_permission>
+                <name>Instant Search</name>
+                <description>Instant Search in Live Mode</description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </instant_search_permission>
+              <mux_mode_permission>
+                <name>Mux</name>
+                <description>Mux Mode in Live Mode</description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </mux_mode_permission>
+              <channels_permission>
+                <itself_permission>
+                  <name>Channels</name>
+                  <description>
+                  </description>
+                  <privilege_mask>7</privilege_mask>
+                  <privilege_value>4</privilege_value>
+                </itself_permission>
+                <channels size="32">
+                  <channel id="0">
+                    <name>Channel 1</name>
+                    <description>Channel 1</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="1">
+                    <name>Channel 2</name>
+                    <description>Channel 2</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="2">
+                    <name>Channel 3</name>
+                    <description>Channel 3</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="3">
+                    <name>Channel 4</name>
+                    <description>Channel 4</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="4">
+                    <name>Channel 5</name>
+                    <description>Channel 5</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="5">
+                    <name>Channel 6</name>
+                    <description>Channel 6</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="6">
+                    <name>Channel 7</name>
+                    <description>Channel 7</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="7">
+                    <name>Channel 8</name>
+                    <description>Channel 8</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="8">
+                    <name>Channel 9</name>
+                    <description>Channel 9</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="9">
+                    <name>Channel 10</name>
+                    <description>Channel 10</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="10">
+                    <name>Channel 11</name>
+                    <description>Channel 11</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="11">
+                    <name>Channel 12</name>
+                    <description>Channel 12</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="12">
+                    <name>Channel 13</name>
+                    <description>Channel 13</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="13">
+                    <name>Channel 14</name>
+                    <description>Channel 14</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="14">
+                    <name>Channel 15</name>
+                    <description>Channel 15</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="15">
+                    <name>Channel 16</name>
+                    <description>Channel 16</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="16">
+                    <name>Channel 17</name>
+                    <description>Channel 17</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="17">
+                    <name>Channel 18</name>
+                    <description>Channel 18</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="18">
+                    <name>Channel 19</name>
+                    <description>Channel 19</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="19">
+                    <name>Channel 20</name>
+                    <description>Channel 20</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="20">
+                    <name>Channel 21</name>
+                    <description>Channel 21</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="21">
+                    <name>Channel 22</name>
+                    <description>Channel 22</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="22">
+                    <name>Channel 23</name>
+                    <description>Channel 23</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="23">
+                    <name>Channel 24</name>
+                    <description>Channel 24</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="24">
+                    <name>Channel 25</name>
+                    <description>Channel 25</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="25">
+                    <name>Channel 26</name>
+                    <description>Channel 26</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="26">
+                    <name>Channel 27</name>
+                    <description>Channel 27</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="27">
+                    <name>Channel 28</name>
+                    <description>Channel 28</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="28">
+                    <name>Channel 29</name>
+                    <description>Channel 29</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="29">
+                    <name>Channel 30</name>
+                    <description>Channel 30</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="30">
+                    <name>Channel 31</name>
+                    <description>Channel 31</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                  <channel id="31">
+                    <name>Channel 32</name>
+                    <description>Channel 32</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>4</privilege_value>
+                  </channel>
+                </channels>
+              </channels_permission>
+            </live_permission>
+            <search_permission>
+              <itself_permission>
+                <name>Search</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </itself_permission>
+              <dump_permission>
+                <name>Dump data</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </dump_permission>
+              <channels_permission>
+                <itself_permission>
+                  <name>Channels</name>
+                  <description>
+                  </description>
+                  <privilege_mask>17</privilege_mask>
+                  <privilege_value>16</privilege_value>
+                </itself_permission>
+                <channels size="32">
+                  <channel id="0">
+                    <name>Channel 1</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="1">
+                    <name>Channel 2</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="2">
+                    <name>Channel 3</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="3">
+                    <name>Channel 4</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="4">
+                    <name>Channel 5</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="5">
+                    <name>Channel 6</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="6">
+                    <name>Channel 7</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="7">
+                    <name>Channel 8</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="8">
+                    <name>Channel 9</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="9">
+                    <name>Channel 10</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="10">
+                    <name>Channel 11</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="11">
+                    <name>Channel 12</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="12">
+                    <name>Channel 13</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="13">
+                    <name>Channel 14</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="14">
+                    <name>Channel 15</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="15">
+                    <name>Channel 16</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="16">
+                    <name>Channel 17</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="17">
+                    <name>Channel 18</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="18">
+                    <name>Channel 19</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="19">
+                    <name>Channel 20</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="20">
+                    <name>Channel 21</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="21">
+                    <name>Channel 22</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="22">
+                    <name>Channel 23</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="23">
+                    <name>Channel 24</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="24">
+                    <name>Channel 25</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="25">
+                    <name>Channel 26</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="26">
+                    <name>Channel 27</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="27">
+                    <name>Channel 28</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="28">
+                    <name>Channel 29</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="29">
+                    <name>Channel 30</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="30">
+                    <name>Channel 31</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                  <channel id="31">
+                    <name>Channel 32</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>16</privilege_value>
+                  </channel>
+                </channels>
+              </channels_permission>
+            </search_permission>
+            <setup_permission>
+              <itself_permission>
+                <name>Setup</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </itself_permission>
+              <all_setup_permission>
+                <itself_permission>
+                  <name>All Setups</name>
+                  <description>Permissions of operating each setup page</description>
+                  <privilege_mask>11</privilege_mask>
+                  <privilege_value>8</privilege_value>
+                </itself_permission>
+                <setups size="23">
+                  <setup id="0">
+                    <name>Hardware setup</name>
+                    <description>Hardware setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="1">
+                    <name>Motion setup</name>
+                    <description>Motion setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="2">
+                    <name>User management</name>
+                    <description>User management</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="3">
+                    <name>Recording schedule setup</name>
+                    <description>Recording schedule setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="4">
+                    <name>Site information</name>
+                    <description>Site information</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="5">
+                    <name>Server information</name>
+                    <description>Server information</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="6">
+                    <name>Video setup</name>
+                    <description>Video setup</description>
+                    <privilege_mask>0</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="7">
+                    <name>System setup</name>
+                    <description>System setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="8">
+                    <name>Storage setup</name>
+                    <description>Storage setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="9">
+                    <name>Emap setup</name>
+                    <description>Emap setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="10">
+                    <name>Log setup</name>
+                    <description>Log setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="11">
+                    <name>Intelligent guard setup</name>
+                    <description>Intelligent guard setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="12">
+                    <name>Communication setup</name>
+                    <description>Communication setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="13">
+                    <name>Text overlay setup</name>
+                    <description>Text overlay setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="14">
+                    <name>Email setup</name>
+                    <description>Email setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="15">
+                    <name>IntelliZone setup</name>
+                    <description>IntelliZone setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="16">
+                    <name>Recording Display</name>
+                    <description>Recording Display</description>
+                    <privilege_mask>0</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="17">
+                    <name>IP camera setup</name>
+                    <description>IP camera setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="18">
+                    <name>Virtual Ruler setup</name>
+                    <description>Virtual Ruler setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="19">
+                    <name>VideoLogix setup</name>
+                    <description>VideoLogix setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="20">
+                    <name>VisionCount setup</name>
+                    <description>VisionCount setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>8</privilege_value>
+                  </setup>
+                  <setup id="21">
+                    <name>LPR setup</name>
+                    <description>LPR setup</description>
+                    <privilege_mask>0</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="22">
+                    <name>VideoPrivacy setup</name>
+                    <description>VideoPrivacy setup</description>
+                    <privilege_mask>0</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                </setups>
+              </all_setup_permission>
+            </setup_permission>
+            <pac_permission>
+              <itself_permission>
+                <name>PAC</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </itself_permission>
+            </pac_permission>
+            <ptz_permission>
+              <itself_permission>
+                <name>In-cameo PTZ</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </itself_permission>
+            </ptz_permission>
+            <panic_permission>
+              <itself_permission>
+                <name>Panic</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </itself_permission>
+            </panic_permission>
+            <to_display_permission>
+              <itself_permission>
+                <name>On/Off Text Overlay Context Menu</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>16</privilege_value>
+              </itself_permission>
+            </to_display_permission>
+          </all_permission>
+        </user>
+        <user>
+          <user_name>LOGOUT</user_name>
+          <password>
+          </password>
+          <all_permission>
+            <live_permission>
+              <itself_permission>
+                <name>Live</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </itself_permission>
+              <real_time_mode_permission>
+                <name>Ext Spot</name>
+                <description>RealTime Live Mode</description>
+                <privilege_mask>0</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </real_time_mode_permission>
+              <instant_search_permission>
+                <name>Instant Search</name>
+                <description>Instant Search in Live Mode</description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </instant_search_permission>
+              <mux_mode_permission>
+                <name>Mux</name>
+                <description>Mux Mode in Live Mode</description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </mux_mode_permission>
+              <channels_permission>
+                <itself_permission>
+                  <name>Channels</name>
+                  <description>
+                  </description>
+                  <privilege_mask>7</privilege_mask>
+                  <privilege_value>0</privilege_value>
+                </itself_permission>
+                <channels size="32">
+                  <channel id="0">
+                    <name>Channel 1</name>
+                    <description>Channel 1</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="1">
+                    <name>Channel 2</name>
+                    <description>Channel 2</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="2">
+                    <name>Channel 3</name>
+                    <description>Channel 3</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="3">
+                    <name>Channel 4</name>
+                    <description>Channel 4</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="4">
+                    <name>Channel 5</name>
+                    <description>Channel 5</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="5">
+                    <name>Channel 6</name>
+                    <description>Channel 6</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="6">
+                    <name>Channel 7</name>
+                    <description>Channel 7</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="7">
+                    <name>Channel 8</name>
+                    <description>Channel 8</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="8">
+                    <name>Channel 9</name>
+                    <description>Channel 9</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="9">
+                    <name>Channel 10</name>
+                    <description>Channel 10</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="10">
+                    <name>Channel 11</name>
+                    <description>Channel 11</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="11">
+                    <name>Channel 12</name>
+                    <description>Channel 12</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="12">
+                    <name>Channel 13</name>
+                    <description>Channel 13</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="13">
+                    <name>Channel 14</name>
+                    <description>Channel 14</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="14">
+                    <name>Channel 15</name>
+                    <description>Channel 15</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="15">
+                    <name>Channel 16</name>
+                    <description>Channel 16</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="16">
+                    <name>Channel 17</name>
+                    <description>Channel 17</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="17">
+                    <name>Channel 18</name>
+                    <description>Channel 18</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="18">
+                    <name>Channel 19</name>
+                    <description>Channel 19</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="19">
+                    <name>Channel 20</name>
+                    <description>Channel 20</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="20">
+                    <name>Channel 21</name>
+                    <description>Channel 21</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="21">
+                    <name>Channel 22</name>
+                    <description>Channel 22</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="22">
+                    <name>Channel 23</name>
+                    <description>Channel 23</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="23">
+                    <name>Channel 24</name>
+                    <description>Channel 24</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="24">
+                    <name>Channel 25</name>
+                    <description>Channel 25</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="25">
+                    <name>Channel 26</name>
+                    <description>Channel 26</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="26">
+                    <name>Channel 27</name>
+                    <description>Channel 27</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="27">
+                    <name>Channel 28</name>
+                    <description>Channel 28</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="28">
+                    <name>Channel 29</name>
+                    <description>Channel 29</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="29">
+                    <name>Channel 30</name>
+                    <description>Channel 30</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="30">
+                    <name>Channel 31</name>
+                    <description>Channel 31</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="31">
+                    <name>Channel 32</name>
+                    <description>Channel 32</description>
+                    <privilege_mask>7</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                </channels>
+              </channels_permission>
+            </live_permission>
+            <search_permission>
+              <itself_permission>
+                <name>Search</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </itself_permission>
+              <dump_permission>
+                <name>Dump data</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </dump_permission>
+              <channels_permission>
+                <itself_permission>
+                  <name>Channels</name>
+                  <description>
+                  </description>
+                  <privilege_mask>17</privilege_mask>
+                  <privilege_value>0</privilege_value>
+                </itself_permission>
+                <channels size="32">
+                  <channel id="0">
+                    <name>Channel 1</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="1">
+                    <name>Channel 2</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="2">
+                    <name>Channel 3</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="3">
+                    <name>Channel 4</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="4">
+                    <name>Channel 5</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="5">
+                    <name>Channel 6</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="6">
+                    <name>Channel 7</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="7">
+                    <name>Channel 8</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="8">
+                    <name>Channel 9</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="9">
+                    <name>Channel 10</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="10">
+                    <name>Channel 11</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="11">
+                    <name>Channel 12</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="12">
+                    <name>Channel 13</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="13">
+                    <name>Channel 14</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="14">
+                    <name>Channel 15</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="15">
+                    <name>Channel 16</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="16">
+                    <name>Channel 17</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="17">
+                    <name>Channel 18</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="18">
+                    <name>Channel 19</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="19">
+                    <name>Channel 20</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="20">
+                    <name>Channel 21</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="21">
+                    <name>Channel 22</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="22">
+                    <name>Channel 23</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="23">
+                    <name>Channel 24</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="24">
+                    <name>Channel 25</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="25">
+                    <name>Channel 26</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="26">
+                    <name>Channel 27</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="27">
+                    <name>Channel 28</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="28">
+                    <name>Channel 29</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="29">
+                    <name>Channel 30</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="30">
+                    <name>Channel 31</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                  <channel id="31">
+                    <name>Channel 32</name>
+                    <description>
+                    </description>
+                    <privilege_mask>17</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </channel>
+                </channels>
+              </channels_permission>
+            </search_permission>
+            <setup_permission>
+              <itself_permission>
+                <name>Setup</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </itself_permission>
+              <all_setup_permission>
+                <itself_permission>
+                  <name>All Setups</name>
+                  <description>Permissions of operating each setup page</description>
+                  <privilege_mask>11</privilege_mask>
+                  <privilege_value>0</privilege_value>
+                </itself_permission>
+                <setups size="23">
+                  <setup id="0">
+                    <name>Hardware setup</name>
+                    <description>Hardware setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="1">
+                    <name>Motion setup</name>
+                    <description>Motion setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="2">
+                    <name>User management</name>
+                    <description>User management</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="3">
+                    <name>Recording schedule setup</name>
+                    <description>Recording schedule setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="4">
+                    <name>Site information</name>
+                    <description>Site information</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="5">
+                    <name>Server information</name>
+                    <description>Server information</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="6">
+                    <name>Video setup</name>
+                    <description>Video setup</description>
+                    <privilege_mask>0</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="7">
+                    <name>System setup</name>
+                    <description>System setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="8">
+                    <name>Storage setup</name>
+                    <description>Storage setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="9">
+                    <name>Emap setup</name>
+                    <description>Emap setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="10">
+                    <name>Log setup</name>
+                    <description>Log setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="11">
+                    <name>Intelligent guard setup</name>
+                    <description>Intelligent guard setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="12">
+                    <name>Communication setup</name>
+                    <description>Communication setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="13">
+                    <name>Text overlay setup</name>
+                    <description>Text overlay setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="14">
+                    <name>Email setup</name>
+                    <description>Email setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="15">
+                    <name>IntelliZone setup</name>
+                    <description>IntelliZone setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="16">
+                    <name>Recording Display</name>
+                    <description>Recording Display</description>
+                    <privilege_mask>0</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="17">
+                    <name>IP camera setup</name>
+                    <description>IP camera setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="18">
+                    <name>Virtual Ruler setup</name>
+                    <description>Virtual Ruler setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="19">
+                    <name>VideoLogix setup</name>
+                    <description>VideoLogix setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="20">
+                    <name>VisionCount setup</name>
+                    <description>VisionCount setup</description>
+                    <privilege_mask>11</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="21">
+                    <name>LPR setup</name>
+                    <description>LPR setup</description>
+                    <privilege_mask>0</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                  <setup id="22">
+                    <name>VideoPrivacy setup</name>
+                    <description>VideoPrivacy setup</description>
+                    <privilege_mask>0</privilege_mask>
+                    <privilege_value>0</privilege_value>
+                  </setup>
+                </setups>
+              </all_setup_permission>
+            </setup_permission>
+            <pac_permission>
+              <itself_permission>
+                <name>PAC</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </itself_permission>
+            </pac_permission>
+            <ptz_permission>
+              <itself_permission>
+                <name>In-cameo PTZ</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </itself_permission>
+            </ptz_permission>
+            <panic_permission>
+              <itself_permission>
+                <name>Panic</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </itself_permission>
+            </panic_permission>
+            <to_display_permission>
+              <itself_permission>
+                <name>On/Off Text Overlay Context Menu</name>
+                <description>
+                </description>
+                <privilege_mask>17</privilege_mask>
+                <privilege_value>0</privilege_value>
+              </itself_permission>
+            </to_display_permission>
+          </all_permission>
+        </user>
+      </users>
+            <auto_logout>
+                <enable>0</enable>
+                <time_out>10</time_out>
+            </auto_logout>
+        </user_management>
+      

@@ -1,0 +1,166 @@
+
+        <time_change>14618</time_change>
+        <configuration_id>4</configuration_id>
+        <configuration_name>system</configuration_name>
+    <system_info>
+      <date_format>2</date_format>
+      <time_format>0</time_format>
+      <video_loss_alarm>
+        <enable_control>1</enable_control>
+        <enable_alarm>0</enable_alarm>
+        <control>-1</control>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>20</second>
+      </video_loss_alarm>
+      <restart_schedule>
+        <monday>
+          <enable>0</enable>
+          <hour>0</hour>
+          <minute>0</minute>
+          <rs_mode>0</rs_mode>
+        </monday>
+        <tuesday>
+          <enable>1</enable>
+          <hour>6</hour>
+          <minute>0</minute>
+          <rs_mode>1</rs_mode>
+        </tuesday>
+        <wednesday>
+          <enable>1</enable>
+          <hour>0</hour>
+          <minute>0</minute>
+          <rs_mode>1</rs_mode>
+        </wednesday>
+        <thursday>
+          <enable>1</enable>
+          <hour>6</hour>
+          <minute>0</minute>
+          <rs_mode>0</rs_mode>
+        </thursday>
+        <friday>
+          <enable>1</enable>
+          <hour>0</hour>
+          <minute>0</minute>
+          <rs_mode>1</rs_mode>
+        </friday>
+        <saturday>
+          <enable>1</enable>
+          <hour>6</hour>
+          <minute>0</minute>
+          <rs_mode>1</rs_mode>
+        </saturday>
+        <sunday>
+          <enable>0</enable>
+          <hour>0</hour>
+          <minute>0</minute>
+          <rs_mode>0</rs_mode>
+        </sunday>
+      </restart_schedule>
+      <auto_logon>0</auto_logon>
+      <user_name>i3dvr</user_name>
+      <password>i3dvr</password>
+      <watermark_enable>1</watermark_enable>
+      <watermark_display>1</watermark_display>
+      <baudrate_ptzwd>19200</baudrate_ptzwd>
+      <port_ptzwd_name>COM6</port_ptzwd_name>
+      <activate_sensor>
+        <wait_time>30</wait_time>
+        <sensors size="22">
+          <sensor id="0">
+            <enabled>0</enabled>
+            <used>0</used>
+          </sensor>
+          <sensor id="1">
+            <enabled>0</enabled>
+            <used>0</used>
+          </sensor>
+          <sensor id="2">
+            <enabled>1</enabled>
+            <used>0</used>
+          </sensor>
+          <sensor id="3">
+            <enabled>1</enabled>
+            <used>0</used>
+          </sensor>
+          <sensor id="4">
+            <enabled>0</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="5">
+            <enabled>1</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="6">
+            <enabled>1</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="7">
+            <enabled>1</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="8">
+            <enabled>1</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="9">
+            <enabled>1</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="10">
+            <enabled>0</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="11">
+            <enabled>0</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="12">
+            <enabled>0</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="13">
+            <enabled>0</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="14">
+            <enabled>1</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="15">
+            <enabled>1</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="16">
+            <enabled>1</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="17">
+            <enabled>1</enabled>
+            <used>1</used>
+          </sensor>
+          <sensor id="18">
+            <enabled>0</enabled>
+            <used>0</used>
+          </sensor>
+          <sensor id="19">
+            <enabled>0</enabled>
+            <used>0</used>
+          </sensor>
+          <sensor id="20">
+            <enabled>0</enabled>
+            <used>0</used>
+          </sensor>
+          <sensor id="21">
+            <enabled>0</enabled>
+            <used>0</used>
+          </sensor>
+        </sensors>
+      </activate_sensor>
+      <synch_time>
+        <enable>0</enable>
+        <hour>7</hour>
+        <minute>0</minute>
+      </synch_time>
+    </system_info>
+       

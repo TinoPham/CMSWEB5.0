@@ -1,0 +1,32 @@
+﻿<div class="panel panel-general" data-ng-controller="eventactivitiesCtrl as vm">
+	<div class="panel-heading panel-g-heading">
+		<div class="clearfix">
+			<div class="pull-left">
+				<div class="btn-group" dropdown>
+					<button class="cmsuserbox userfontsize" dropdown-toggle>
+						<i class="icon-calendar iconpanel"></i>
+					</button>
+					<ul class="dropdown-menu userdropdown" no-close-on-click>
+						<li>
+							<div class="event-activity">
+								<cmsdatepicker ng-if="DataLoaded === true" ng-model="dt" show-weeks="false" min-date="minDate" date-info="datanfo(date)" date-disabled="disabled(date, mode)" show-weeks="true"></cmsdatepicker>
+							</div>
+							<small class="cmstextcenter text-small text-italic">Note: N signify normalization has occurred</small>
+						</li>
+					</ul>
+				</div>
+				<span class="cmstextcenter h4"><a>Event Activities</a> </span>
+			</div>
+
+		</div>
+		<hr class="userlist-bline">
+	</div>
+	<div class="panel-body panel-g-body scroll-body" slimscroll="{ height: '300px'}">
+		<ul class="list-group list-group-event">
+			<li class="list-group-item" ng-repeat="calAgen in DataAgenda">                
+				<span class="event-date">{{calAgen.StartDate| date:'MM-dd-yyyy hh:mm'}} - {{calAgen.EndDate| date:'MM-dd-yyyy hh:mm'}}</span><br />
+				<span class="event-description" title="{{calAgen.Name}} - {{calAgen.Description}}">{{calAgen.Name}} - {{calAgen.Description}}</span>
+			</li>			
+		</ul>
+	</div>
+</div>

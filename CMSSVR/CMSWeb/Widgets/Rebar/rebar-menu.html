@@ -1,0 +1,100 @@
+﻿<div data-ng-repeat="x in vm.Menus" 
+ng-class=" $index === 2 ? 'adhoc-block-nav' : '' "
+class="col-xs-12 col-md-4 divdashboard">
+
+
+    <!--  START ::Group name -->
+    <span ng-hide="vm.SubFolder === true && $index === 2" class="{{x.GroupName}} icon-head"></span> 
+    <!-- Parent icon -->
+    <span ng-hide="vm.SubFolder === true && $index === 2" data-parent="#sub_menu_bam"
+         title="{{x.GroupName | translate}}"
+          ng-mouseenter="vm.triggerChildmenu($event);"
+        data-toggle="collapse" data-target="#sub_{{$index}}"
+    class="groupName">{{x.GroupName | translate}}  </span>
+     <!--  END ::Group name -->
+
+
+
+
+     <!-- START :: nav For  Subfolder -->
+    <span ng-show="vm.SubFolder === true && $index === 2"
+      ng-click="vm.BackFolderAdhoc();vm.SubFolder = !vm.SubFolder "
+        class="icon-head">
+        <i class="icon-left-1"></i>
+    </span>
+     <span ng-show="vm.SubFolder === true && $index === 2" data-parent="#sub_menu_bam"
+     class="groupName">{{vm.Foldername}}</span>
+    <!-- END :: nav For  Subfolder -->
+
+
+
+
+
+    <span ng-show="vm.SubFolder === false && $index === 2" class='adhoc-head-icon pull-right'>
+       <i tooltip="{{ 'ADD_FOLDER' | translate}}" tooltip-placement="left"  ng-click="vm.showEditFolderAhocDialog(null, true);" class='icon-folder-add'></i>
+       <i tooltip="{{ 'ADD_REPORT' | translate}}" tooltip-placement="left" ng-click="vm.showEditAhocDialog(null, true)" class='icon-doc-new'></i>
+    </span>
+    <!-- For Adhoc main -->
+
+
+
+    <span ng-if="vm.__thisReport.IsAssignee !== true" ng-show="vm.SubFolder === true && $index === 2" class='adhoc-head-icon pull-right sub-folder-icon '>
+       <i  tooltip="{{ 'BTN_DELETE' | translate}}" tooltip-placement="left" ng-click="vm.deleteItem(vm.__thisReport ); " class='icon-trash'></i>
+       <i  tooltip="{{ 'BTN_EDIT' | translate}}" tooltip-placement="left" ng-click="vm.showEditAhocDialog(vm.__thisReport, false); " class='icon-pencil'></i>
+       <i  tooltip="{{ 'ADD_REPORT' | translate}}" tooltip-placement="left" ng-click="vm.addReportInFolder(vm.__thisReport)" class='icon-doc-new'></i>
+    </span>
+    <!-- For Adhoc folder -->
+
+
+
+
+    <div style="border-bottom: 1px solid #88a9c2; height: 1px; margin: 20px 0;"></div>
+    <!-- Blue line -->
+
+    <ul id="sub_{{$index}}" class="collapse sub_{{$index}}"     
+    ng-class="customMenuRebar() === true? '' : 'in'">
+
+        <li  ng-hide="$parent.$index === 2" data-ng-repeat="xx in x.Childs" class="liName li-{{xx.Name}}" data-toggle="tooltip" title="{{xx.Translate | translate}}">
+
+            <a href="#" ng-click="closePopMenu('.report_names')"             
+            class="linkName" ui-sref="{{xx.State}}">
+                <i class="{{xx.Classstyle}} icon-bam"></i>
+                {{xx.Translate | translate}}            
+            </a>
+         <!--    <span id="dropdownMenu{{$index}}" ng-show="$parent.$index === 2" data-toggle="dropdown" class="icon-dot-verticle dropdown-toggle"></span>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu{{$index}}">
+                <li>
+                    <i class=" icon-trash"></i>
+                </li>   
+                <li>
+                    <i class="icon-pencil"></i>
+                </li>  
+            </ul> -->
+
+        </li>
+
+        <!-- ng-click="closePopMenu('.report_names')" -->
+        <!-- START ::  Show Folde and report Adhoc --> 
+        <li ng-repeat="rp in vm.reports" ng-show="$parent.$index === 2" 
+        ng-class=" rp.IsFolder ? 'li-adhoc' : 'li-adhocdetails' "  
+        data-toggle="tooltip" title="{{rp.Name | translate}}" class="liName" >
+            <a  class="linkNameAchod linkName"  ng-click="vm.AdhocReportDetail(rp)" >
+                <i ng-class=" rp.IsFolder ? 'icon-folder-open' : 'icon-doc-4' " class="icon-bam"></i>
+                {{rp.Name}}           
+            </a>  
+              <span id="dropdownMenu{{$index}}" ng-show="$parent.$index === 2" data-toggle="dropdown" class="icon-dot-verticle dropdown-toggle"></span>
+              <ul ng-if="rp.IsAssignee !== true" class="dropdown-menu" aria-labelledby="dropdownMenu{{$index}}">
+                <li  ng-click="vm.deleteItem(rp)" >
+                    <i title="{{'BTN_DELETE' | translate}}" class=" icon-trash"></i>
+                </li>   
+                <li  ng-click="vm.showEditAhocDialog(rp, false)" >
+                    <i title="{{'BTN_EDIT' | translate}}"  class="icon-pencil"></i>
+                </li>  
+            </ul>          
+        </li>
+        <!-- END ::  Show Folde and report Adhoc -->
+
+    </ul>
+    <!-- Child list -->
+
+</div>

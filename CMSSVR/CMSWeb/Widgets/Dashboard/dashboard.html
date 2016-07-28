@@ -1,0 +1,38 @@
+﻿<div class="dashboard" ng-class="{'dashboard-edit-mode': editMode}">
+	<div ng-if="editMode" class="dashboard-toolbar">
+		<div class="pull-left">
+			<h4><i class="icon-plus"></i><span class="page-name">{{'DASHBOARD_SETTINGS'|translate}}</span></h4>
+		</div>
+		<div class="pull-right">
+			<span class="btn btn-default" ng-if="editMode" ng-click="cancelEditMode()">{{'BTN_CANCEL'|translate}}</span>
+			<span class="btn btn-primary" ng-if="editable && editMode === true" ng-click="editModeFn()">{{'Save'|translate}}</span>
+		</div>
+
+		<!--<label ng-if="editMode" ng-click="addWidgetDialog()" class="btn btn-default" tooltip="{{'TOOLTIP_ADD_DASHBOARD'|translate}}"><i class="icon-plus-squared"></i></label>
+		<span ng-if="isCreate === false">&nbsp</span>
+		<span ng-if="isCreate === true">{{model.Name}} </span>
+		<span class="pull-right">
+			<label ng-if="editable && editMode === false" ng-click="editModeFn()" class="btn btn-default" tooltip="{{'TOOLTIP_EDIT_DASHBOARD'|translate}}"><i class="icon-edit-alt"></i></label>
+			<label ng-if="editable && editMode === true" ng-click="editModeFn()" class="btn btn-default" tooltip="{{'TOOLTIP_SAVE_DASHBOARD'|translate}}"><i class="icon-download-alt"></i></label>
+			<label ng-if="editMode" ng-click="cancelEditMode()" class="btn btn-default" tooltip="{{'BTN_CANCEL'|translate}}"><i class="icon-undo"></i></label>
+		</span>-->
+	</div>
+	<div class="clearfix"></div>
+	<div class="dashboard-content" ng-class="{'panel':editMode}">
+		<div ng-if="editMode" class="panel-header">
+			<div class="additional-btn btn_group">
+				<a ng-click="addWidgetDialog()" tooltip="{{'TOOLTIP_ADD_DASHBOARD'|translate}}"><i class="icon-plus-circled-1"></i>{{'BTN_ADD'|translate}}</a>
+				<a id="dropdownMenu1" data-toggle="dropdown"> 
+					<span class="icon-list-1"></span>{{'DASHBOARD_LIST'|translate}} <i class="icon-down-dir"></i></a>
+				<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+					<li><a ng-click="loadDefinedDshBoard(1)">{{'DASHBOARD_TECHNICAL'|translate}}</a></li>
+					<li><a ng-click="loadDefinedDshBoard(2)">{{'DASHBOARD_STORE'|translate}}</a></li>
+					<li><a ng-click="loadDefinedDshBoard(3)">{{'DASHBOARD_BUSINESS'|translate}}</a></li>
+				</ul>
+			</div>
+		</div>
+		<div ng-class="{'panel-content': editMode}">
+		<dashboard-row row="row" model="model" ng-repeat="row in model.Rows" edit-mode="editMode"></dashboard-row>
+		</div>
+	</div>
+</div>

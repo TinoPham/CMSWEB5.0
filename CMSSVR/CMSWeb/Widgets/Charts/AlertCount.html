@@ -1,0 +1,88 @@
+﻿<div data-ng-controller="alertCountCtrl as vm" ng-init="Init()" class="cms-chart overall_statistic">
+	<div class="container-fluid" ng-if="loading===true">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="toolbar">
+					<div class="pull-left">
+						<div class="btn-group">
+							<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{Opt.label|translate}}<i class="icon-down-open-2"></i></a>
+							<ul class="dropdown-menu pull-left" role="menu">
+								<li ng-repeat="opt in Gui.Opts"><a ng-click="GetrptData(opt)" href="#" onclick="return false;">{{opt.label|translate}}</a></li>
+							</ul>
+							<span class="cms-chart-cal chart-subtitle datepicker-noclear" ng-show="SearchMode===true"> 
+
+									&nbsp;{{'FROM_STRING'|translate}} <span class="date-box" ng-click="vm.open($event, 'opened1', 'opened2')">&nbsp;{{vm.FromSelDate | date:vm.dateFormat}}</span>
+									<input type="text" datepicker-popup="{{vm.dateFormat}}" ng-model="vm.FromSelDate" is-open="vm.datestatus.opened1" min-date="vm.minDate" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" />
+									<span class="btn btn-default btn-xs" ng-click="vm.open($event, 'opened1', 'opened2')" title=""><i class="icon-calendar"></i></span>
+								
+									&nbsp;{{'TO_FIELD'|translate}} <span class="date-box" ng-click="vm.open($event, 'opened2', 'opened1')">&nbsp;{{vm.ToSelDate | date:vm.dateFormat}}</span>
+									<input type="text" datepicker-popup="{{vm.dateFormat}}" ng-model="vm.ToSelDate" is-open="vm.datestatus.opened2" min-date="vm.minDate" max-date="vm.maxDate" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" />
+									<span class="btn btn-default btn-xs" ng-click="vm.open($event, 'opened2', 'opened1')" title=""><i class="icon-calendar"></i></span>
+								
+
+								<span class="btn btn-default btn-xs" ng-click="vm.Search()">{{'BTN_SEARCH'|translate}}</span>
+							</span>
+							<span ng-show="SearchMode===false" class="chart-subtitle">&nbsp; &nbsp; <i class="icon-clock"></i> {{vm.FromSelDate | date:vm.dateFormat}} - {{vm.ToSelDate | date:vm.dateFormat}}</span>
+							<!--
+							<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{Opt.label|translate}}<i class="icon-down-open-2"></i></a>
+							<ul class="dropdown-menu pull-left" role="menu">
+								<li ng-repeat="opt in Gui.Opts"><a ng-click="GetData(opt)" href="#" onclick="return false;">{{opt.label|translate}}</a></li>
+							</ul>-->
+						</div>
+						<div ng-show="showSeverity == true" class="btn-group" style="padding-left:10px;">
+							<a id="btn-popMenuAlert_{{chartType}}" class="btn btn-default btn-xs dropdown-toggle" pop-menu tooltip="{{vm.SeverityTip}}" tooltip-placement="left">{{'ALERT_SEVERITY'|translate}}<i class="icon-down-open-2"></i></a>
+							<ul class="dropdown-menu pull-left severity-dlg">
+								<li>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="panel" style="margin-bottom:0 !important;">
+												<div>
+													<ul class="dropdown-menu-list ng-isolate-scope" slimscroll="{height: '150px'}" style="list-style: none; padding-left: 20px;">
+														<li ng-repeat="sev in AlertSeverity">
+															<div class="checkbox checkbox-default"> 
+																<input type="checkbox" ng-checked="sev.checked" ng-model="sev.checked"> 
+																<label class="i-name ng-binding">{{sev.label|translate}}</label> 
+															</div>
+															<div style="clear: both;"></div>
+														</li>
+													</ul>
+												</div>
+                                                <div class="panel-footer chart-pop-header btn btn-default btn-sm " ng-click="vm.RefreshData()" style="height:30px; margin: 10px 0px -1px 0px !important; padding:5px 20px !important; width:100%">
+													<!--<div class="btn-group pull-left"><span class="btn btn-default pull-left btn-sm" ng-click="vm.RefreshData()">{{'BTN_DONE'|translate}}</span></div>-->
+                                                    <span >{{'BTN_DONE'|translate}}</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="pull-right">
+						<div class="btn-group" ng-show="EmptyMode===false">
+							<a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<!-- {{'EXPORT_STRING'|translate}}<i class="icon-down-open-2"></i> -->
+								<i class="icon-download-3"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li ng-repeat="exp in ExportOptions"><a id="{{exp.id}}{{chartType}}" href="#" onclick="return false;">{{exp.label|translate}}</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<fusioncharts 
+					width="100%" 
+					height="{{ChartHeight}}"
+					type="bar2d"
+					datasource="{{chartDSAlerts}}"
+					events="chartAlertEvents">
+				</fusioncharts>
+			</div>
+		</div>
+	</div>
+</div>

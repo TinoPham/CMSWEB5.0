@@ -1,0 +1,226 @@
+
+        <configuration_id>19</configuration_id>
+        <configuration_name>log_content</configuration_name>
+        <client_guid>75c7934f_74ef_428e_bf78_592ab911fc1b</client_guid>
+        <log_content>
+            <rows size="54">
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="9">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="10">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="3">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="4">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="5">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="6">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="7">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="8">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="2">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="11">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="12">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="13">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="14">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="15">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="16">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="42" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="1">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="49" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="21">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="53" second="49" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="0">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="54" second="17" />
+                </row>
+                <row user="LOGOUT" address="localhost" operation_id="12">
+                    <description>SUCCEEDED</description>
+                    <time hour="0" minute="54" second="17" />
+                </row>
+                <row user="LOGOUT" address="localhost" operation_id="13">
+                    <description>SUCCEEDED</description>
+                    <time hour="1" minute="1" second="42" />
+                </row>
+                <row user="i3dvr" address="localhost" operation_id="12">
+                    <description>SUCCEEDED</description>
+                    <time hour="1" minute="1" second="44" />
+                </row>
+                <row user="CMS User" address="10.0.0.21" operation_id="61">
+                    <description>CHANGED</description>
+                    <time hour="1" minute="12" second="26" />
+                </row>
+                <row user="i3dvr" address="localhost" operation_id="22">
+                    <description>CHANGED</description>
+                    <time hour="1" minute="49" second="29" />
+                </row>
+                <row user="i3dvr" address="localhost" operation_id="22">
+                    <description>CHANGED</description>
+                    <time hour="1" minute="49" second="36" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="5">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="6">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="11">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="14">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="3">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="4">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="9">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="10">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="15">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="16">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="11" extra_num="2">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="17" />
+                </row>
+                <row user="Logged out" address="localhost" operation_id="0">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="40" />
+                </row>
+                <row user="LOGOUT" address="localhost" operation_id="12">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="15" second="40" />
+                </row>
+                <row user="LOGOUT" address="localhost" operation_id="13">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="16" second="19" />
+                </row>
+                <row user="i3dvr" address="localhost" operation_id="12">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="16" second="21" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="25">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="18" second="22" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="27">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="18" second="26" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="21">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="18" second="27" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="58">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="18" second="29" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="61">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="18" second="30" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="61">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="19" second="50" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="61">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="20" second="40" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="61">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="22" second="23" />
+                </row>
+                <row user="i3dvr" address="localhost" operation_id="61">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="23" second="30" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="31">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="29" second="8" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="29">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="29" second="9" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="26">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="29" second="10" />
+                </row>
+                <row user="CMS User" address="10.0.1.68" operation_id="58">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="29" second="11" />
+                </row>
+                <row user="i3dvr" address="localhost" operation_id="25">
+                    <description>CHANGED</description>
+                    <time hour="2" minute="34" second="33" />
+                </row>
+                <row user="i3dvr" address="localhost" operation_id="11" extra_num="1">
+                    <description>SUCCEEDED</description>
+                    <time hour="2" minute="34" second="36" />
+                </row>
+            </rows>
+            <date day="4" month="7" year="2009" />
+        </log_content>
+  

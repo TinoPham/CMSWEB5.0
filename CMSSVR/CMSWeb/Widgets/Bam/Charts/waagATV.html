@@ -1,0 +1,24 @@
+﻿<div style="height:270px; padding: 0" ng-controller="waagATVCtrl as atv" ng-init="Init()">
+	<div style="height:185px; width:100%; padding: 0;">
+		<fusioncharts 
+			width="100%" 
+			height="200"
+			type="mscombi2d"
+			datasource="{{chartATVDS}}">
+		</fusioncharts>
+	</div>
+	<div style="height:40px; width:100%">
+		<div class="col-xs-6">
+			<div class="value-box">
+				<h3>${{ATVData.value}}</h3>
+				{{'CHART_ATV_THISWEEK' | translate}}
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div class="compare-box" style="text-align:right">
+				<h3>{{ATVData.compare}}% <i class="{{ATVData.icon}}"></i> </h3>
+				{{'CHART_ATV_LASTWEEK' | translate}}
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+﻿<div ng-model="column.Widgets" cms-column-id="{{column.PositionId}}"
+	ng-class="column.Group.Name === 'SMALL' ? 'column col-lg-{{column.WidthSize}} col-md-{{column.WidthSize * 2}}' : (column.Group.Name === 'FULL' ? 'column col-lg-{{column.WidthSize}}': 'column col-lg-{{column.WidthSize}}')"
+	class="dashboard-col">
+	<span ng-if="editMode && column.Widgets" class="widget-add-btn">
+		<a ng-click="addWidgetDialog()" tooltip="{{'TOOLTIP_ADD_WIDGET'|translate}}">
+			<i class="icon-plus-circled-1"></i>
+		</a>
+	</span>
+	<div class="widgetsortable widget row" ng-class="{'has-item': column.Widgets.length > 0}">
+		<!--<div ng-show="column.Widgets.length == 0" ng-click="addWidgetDialog()" class="widget-add-area"></div>-->
+		<widget-panel ng-repeat="widget in column.Widgets | orderBy:'Order'" current-column="column" column="widget" edit-mode="editMode" collpase="collapse"></widget-panel>
+	</div>
+</div>

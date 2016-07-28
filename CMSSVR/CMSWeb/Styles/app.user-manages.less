@@ -1,0 +1,197 @@
+﻿@import url('app.mixins.less'); //don't merge, it's used for build debug (remove it when build release).
+@import url('app.variables.less'); //don't merge, it's used for build debug (remove it when build release).
+
+.user-manages {
+	.listview {
+		.ngRow {
+			.ngCell {
+				.item-info {
+					.checkbox {
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	.remove-view {
+		.item-info {
+			text-align: left;
+		}
+	}
+
+	.form-edit {
+		padding: 0 !important;
+
+		.user-upload {
+			width: 100%;
+
+			.img-circle {
+				display: inline-block;
+			}
+
+			.btn-group {
+				margin-left: 10px;
+
+				.btn-file, .btn-danger {
+					display: inline-block;
+					margin-top: -30px;
+					margin-left: 3px;
+				}
+			}
+		}
+
+		.panel-right {
+			.panel {
+				.panel-header {
+					padding: 4px 5px;
+
+					.input-group {
+						width: 100%;
+
+						.search-button {
+							position: absolute;
+							top: 6px;
+							right: 6px;
+							z-index: 2;
+						}
+					}
+				}
+			}
+		}
+
+		.panel-left {
+			border-right: 1px solid #CECECE;
+
+			.panel {
+				.panel-heading, .panel-header {
+					.panel-title {
+						overflow: visible;
+					}
+				}
+			}
+
+			.form-group {
+				margin-bottom: 10px;
+				.input-group .form-control {
+					z-index: auto;
+				}
+
+				.required {
+					font-size: 2em;
+					margin: -4px 0 0 3px;
+					float: right;
+				}
+
+				span.input-group-addon {
+					cursor: pointer;
+					&:hover {
+						opacity: 0.5;
+					}
+					&:active {
+						opacity: 0.8;
+					}
+				}
+			}
+
+			.border-top {
+				border-top: 1px solid rgba(0, 0, 0, 0.1);
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+		label {
+			font-size: 12px;
+		}
+
+		.img-circle {
+			max-height: 50px;
+			max-width: 50px;
+			margin-top: 2px;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+			overflow: hidden;
+			display: block;
+			border: 2px solid rgba(0,0,0,0.1);
+
+			img {
+				.image-circle(50px, 50px);
+			}
+		}
+	}
+
+	.datepicker-noclear [ng-click="select(null)"] {
+		display: none;
+	}
+
+	.panel-content, .panel-body {
+		margin-top: -5px;
+	}
+}
+
+@media (min-width: 992px) {
+	.user-manages {
+		.panel-left {
+			padding-right: 0;
+			.scroll-body{
+				max-height: 635px;
+				overflow: auto;
+			}
+		}
+
+		.panel-right {
+			padding-left: 0;
+			.scroll-body{
+				max-height: 570px;
+				overflow: auto;
+			}
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.user-manages {
+		.panel-right {
+			margin-top: 10px;
+
+			.panel {
+				.panel-header {
+					border-top: 1px solid rgba(0, 0, 0, 0.1);
+				}
+			}
+			//Customize scroll on mobile & tablet
+			.scroll-body{
+				max-height: 280px;
+				overflow: auto;
+			}
+
+			/*.slimScrollDiv {
+				height: 280px;
+
+				.scroll-body {
+					height: 280px;
+				}
+			}*/
+		}
+
+		.panel-left {
+			border-right: none !important;
+			//Customize scroll on mobile & tablet
+			.scroll-body{
+				max-height: 300px;
+				overflow: auto;
+			}
+			/*.slimScrollDiv {
+				height: 300px;
+
+				.scroll-body {
+					height: 300px;
+				}
+			}*/
+		}
+	}
+}

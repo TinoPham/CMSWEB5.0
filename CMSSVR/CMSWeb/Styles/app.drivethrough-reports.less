@@ -1,0 +1,357 @@
+﻿.drivethrough-reports {
+	// background-color: #fff;
+	// position: absolute;	
+	margin-bottom: 25px;
+
+	.title-summary {
+	}
+
+    .fusioncharts-caption{
+        font-size: 16pt !important;
+        font-weight: bold;
+    }
+
+	.clear {
+		clear: both;
+	}
+
+	.drivethrough-reports-chart {
+		margin-top: 7px;
+		margin-bottom: 7px;
+		background-color: #fff;
+		padding: 25px 15px;
+
+		.btn-site {
+			font-size: 14px;
+			font-weight: bold;
+			color: #666;
+			-moz-box-shadow: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+
+			&:hover,
+			&:focus,
+			&.focus,
+			&:active,
+			&.active,
+			.open > .dropdown-toggle {
+				color: #666;
+				background-color: #fff;
+				border-color: none;
+				-moz-box-shadow: none;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+				cursor: pointer;
+			}
+
+			.badge {
+				padding: 6px;
+				-moz-border-radius: 15px;
+				-webkit-border-radius: 15px;
+				border-radius: 15px;
+				background-color: #86AAC4;
+			}
+		}
+
+		.tree-site-content{
+			.chart-pop-header{
+				.pull-left{
+					width: 85%;
+					.input-group{ width: 100%; }
+				}
+			}
+			.switch-for-chart {
+				display: inline-block;
+				margin-left: 15px;
+				.switch-ios-button {
+					cursor: pointer;
+					label {
+						margin-bottom: -5px; 
+						color: #666;
+						span {
+							&:first-child {
+								margin-right: 7px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.show-chart {
+			.toolbar {
+				margin: 15px;
+				padding:0 15px 0px 15px; 	
+				background: #f3f3f3;			
+			}
+		}
+	}
+	// END :: .drivethrough-reports-chart
+
+	.drivethrough-reports-tables {
+		background-color: #fff;
+		padding: 25px 15px;
+
+		.top-table {
+			height: 45px;
+			width: 100%;
+
+			.tool-bar {
+				float: right;
+
+				div {
+					float: left;
+					margin: 0 7px;
+				}
+
+				input[type="radio"]{
+					outline: 0;
+					outline-offset: unset;
+				}
+			}
+		}
+
+
+		.wrapper-bam-table {
+
+			&.forIE {
+				& > .bam-table-column {
+					.site-row {
+						display:flex;
+					}
+						&:nth-child(2) {
+							.tb-row {
+								  /*display:-ms-box;*/
+								.tb-col {
+									display: table-cell !important;								
+								}
+							}
+						}
+					
+				}
+
+				&.bam-table-single-data {
+						& > .bam-table-column {
+					
+						&:nth-child(2) {
+							.tb-row {
+								  display:-ms-flexbox;								
+							}
+						}
+					
+				}
+			}
+			} /* END :: for Only ÍE*/
+
+			&.forFirefox {
+
+				& > .bam-table-column {
+					
+						&:nth-child(2) {
+							.tb-row {
+								  // display:-ms-box;
+								display:flex;
+								.tb-col {
+									display: flex !important;								
+										display: table-cell !important;										
+								}
+							}
+						}
+					
+				}
+
+			} /* END :: for Only Firefox */
+
+			
+			.bam-table-column {
+				.siteExpand{
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					width: 90px !important;
+					float: left;    
+					padding-bottom: 11px;
+					border-bottom: 1px solid #fff;
+				}
+				.expand{
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					width: 90px !important;
+					float: left;    
+				}
+				.sumRow{
+					border-bottom: 1px solid #D7E5F0;
+
+				}
+				&:nth-child(2) {
+
+					.tb-body {
+						.tb-row {
+							display: -webkit-box;
+							.tb-col {
+								display: flex;
+								& > div {									
+									display: block;
+									float: left;
+									width: 50% !important;									
+								}
+							}
+						}
+					}
+				}/* Scroll part */
+
+				&:nth-child(3) {
+
+					.tb-header {
+						.tb-row {
+							.tb-col {
+								& > div {
+									&:not(.col-date) {
+										display: block;
+										float: left;
+										width: 50% !important;
+									}
+								}
+							}
+						}
+					}
+
+					.tb-body {
+						.tb-row {
+							.tb-col {
+								display: block;
+								& > div {									
+									display: block;
+									float: left;
+									width: 50% !important;									
+								}
+							}
+						}
+					}
+
+
+				} /* Summary*/
+			}
+
+			&.bam-table-single-data {
+				.bam-table-column {
+					&:nth-child(2) {
+						.tb-header {
+							.tb-row { 
+								.tb-col {
+									& > div:not(.col-date) {
+										display: none;
+									}
+								}
+							}
+						}
+						.tb-body {
+							.tb-row {
+								.tb-col {
+									display: flex;
+									 & > div {
+									 	width: 100% !important;
+									 	padding-right: 20px;
+									 	&.col-date {
+											padding: 30px 0;
+										}
+									 }
+								}
+							}
+
+						}
+					}
+					&:nth-child(3) {
+						.tb-header {
+							.tb-row {
+								.tb-col {
+									& > div {
+										&:not(.col-date) {
+											display: none;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+			} /* END :: .bam-table-single-data   */
+
+			  .tooltip-inner{
+				  text-transform:none;
+			  }
+		}/* END :: .wrapper-bam-table   */
+		
+
+
+
+	}
+	// END :: .drivethrough-reports-tables
+
+	.table-empty{
+		background-color: #fff;
+		height: 50px;
+		padding: 15px 0;
+		text-align: center;
+		vertical-align: middle;
+		font-weight: bold;
+	}
+
+	.box-on-small-devices {
+		background: #fff;
+		padding: 10px;
+	}
+	.border{
+		border-top:1px solid #D7E5F0;
+	}
+}
+// ====================================================================
+//
+//                    END :: BAM --- .drivethrough-reports
+//
+// ====================================================================
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+	.bam-tb-scroll {
+		max-width: 320px;
+		float: left;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+}
+
+@media screen and (min-width: 769px) and (max-width: 864px) {
+}
+
+@media screen and (min-width: 865px) and (max-width: 900px) {
+}
+
+@media screen and (min-width: 901px) and (max-width: 950px) {
+}
+
+@media screen and (min-width: 951px) and (max-width: 1007px) {
+}
+
+@media screen and (min-width: 1008px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1201px) {
+	.bam-tb-scroll.scroll-wrapper {
+		// max-width: 720px;
+		// float: left;
+	}
+}

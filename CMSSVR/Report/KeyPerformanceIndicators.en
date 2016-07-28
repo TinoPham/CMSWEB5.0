@@ -1,0 +1,21 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Keys Performance Indicators"},
+{"NameField":"footer", "ValueField":"Prepared under contract for the exclusive use of i3 International. Reproduction of this report is prohibited."},
+{"NameField":"header_Traffic", "ValueField":"Curr. Traffic"},
+{"NameField":"header_Trans", "ValueField":"Curr. Trans"},
+{"NameField":"header_Sales", "ValueField":"Curr. Sales"},
+{"NameField":"header_Conv", "ValueField":"Curr. Conv%"},
+{"NameField":"rpt_AvgTrans", "ValueField":"Curr. Avg. Trans Size"},
+{"NameField":"rpt_Geography", "ValueField":"Geography"},
+{"NameField":"rpt_Total", "ValueField":"Total"},
+{"NameField":"rpt_star", "ValueField":"Curr. STAR"},
+{"NameField":"rpt_labor", "ValueField":"Curr. Labor Hours"},
+{"NameField":"rpt_UPT", "ValueField":"Curr. Units per Trans"},
+{"NameField":"rpt_AUR", "ValueField":"Curr. Avg. Units Retail"},
+{"NameField":"rpt_SPS", "ValueField":"Curr. Sales per Shopper"},
+{"NameField":"header_Period", "ValueField":"Period"},
+{"NameField":"rpt_Average", "ValueField":"Average"},
+{"NameField":"title_Period", "ValueField":"Report Period:"},
+{"NameField":"rpt_NODATA", "ValueField":"Data is not available"},
+{"NameField":"rpt_To", "ValueField":"To"}
+]

@@ -1,0 +1,19 @@
+<div class="panel" ng-controller="ldapsettingCtrl">
+	<func-header 
+        listview = 'listView'
+        query ='query.filterText'
+        add-fn = 'addLDAP()'
+        edit-fn  = 'editLDAP(selected)'
+        del-fn  = 'deleteLDAP(selected)'
+        import-fn  = 'showDialog(selected)'
+        ></func-header>
+
+    <div class="pannel-body" >        
+		<div class="table-responsive no-border">
+			<div class="table table-striped" style="width: 99.95%">
+                <div class="gridStyle" ng-grid="gridOptions" ></div>
+            </div>
+		</div>
+	</div>
+</div>
+

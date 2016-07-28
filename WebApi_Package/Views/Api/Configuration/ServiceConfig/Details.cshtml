@@ -1,0 +1,43 @@
+﻿@model SVRDatabase.Model.ServiceConfig
+
+@{
+    ViewBag.Title = "Details";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ServiceConfig</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Converter Limitted
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConverterLimit)
+        </dd>
+
+        <dt>
+            DVR Authenticate
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DVRAuthenticate)
+        </dd>
+
+        <dt>
+            Converter Interval
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConverterInterval)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

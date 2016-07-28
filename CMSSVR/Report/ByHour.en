@@ -1,0 +1,17 @@
+﻿[
+{"NameField":"rpt_Title", "ValueField":"Hourly Performance Measurements"},
+{"NameField":"footer", "ValueField":"Prepared under contract for the exclusive use of i3 International. Reproduction of this report is prohibited."},
+{"NameField":"header_Time", "ValueField":"Time"},
+{"NameField":"header_Traffic", "ValueField":"Traffic"},
+{"NameField":"header_Trans", "ValueField":"Trans"},
+{"NameField":"header_Sales", "ValueField":"Sales"},
+{"NameField":"header_PTraffic", "ValueField":"%Traffic"},
+{"NameField":"header_PTrans", "ValueField":"%Trans"},
+{"NameField":"header_PSales", "ValueField":"%Sales"},
+{"NameField":"header_PConv", "ValueField":"Conv%"},
+{"NameField":"header_Total", "ValueField":"Total"},
+{"NameField":"rpt_FromDatePeriod", "ValueField":"From date period"},
+{"NameField":"header_WH", "ValueField":"WH"},
+{"NameField":"rpt_NODATA", "ValueField":"Data is not available"},
+{"NameField":"rpt_TitlePeriod", "ValueField":"Report Period: "}
+]

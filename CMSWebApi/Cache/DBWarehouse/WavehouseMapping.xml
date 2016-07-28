@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+	<Item Raw="tbl_POS_CameraNBList" Dim="Dim_POS_CameraNB" detectchange="false" Handle="">
+		<value raw="CameraNB_ID" dim="CameraNB_BK" key="true"/>
+		<value raw="CameraNB_Name" dim="CameraNB_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_CardIDList" Dim="Dim_POS_CardID" detectchange="false" Handler="">
+		<value raw="CardID_ID" dim="CardID_BK" key="true"/>
+		<value raw="CardID_Name" dim="CardID_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_CheckIDList" Dim="Dim_POS_CheckID" detectchange="false" Handler="">
+		<value raw="CheckID_ID" dim="CheckID_BK" key="true"/>
+		<value raw="CheckID_Name" dim="CheckID_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_DescriptionList" Dim="Dim_POS_Description" detectchange="false" Handler="">
+		<value raw="Description_ID" dim="Description_ID_BK" key="true"/>
+		<value raw="Description_Name" dim="Description_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_ExtraName" Dim="Dim_POS_ExtraName" detectchange="false" Handler="">
+		<value raw="ExtraID" dim="ExtraID_BK" key="true"/>
+		<value raw="ExtraName" dim="ExtraName"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_ExtraStringValue" Dim="Dim_POS_ExtraStringValue" detectchange="false" Handler="">
+		<value raw="ExString_ValueID" dim="ExString_ValueID_BK" key="true"/>
+		<value raw="ExString_Value" dim="ExString_Value"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_ItemCodeList" Dim="Dim_POS_ItemCode" detectchange="false">
+		<value raw="ItemCode_ID" dim="ItemCode_ID_BK" key="true"/>
+		<value raw="ItemCode_Name" dim="ItemCode_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_OperatorList" Dim="Dim_POS_Operator" detectchange="false" Handler="">
+		<value raw="Operator_ID" dim="Operator_BK" key="true"/>
+		<value raw="Operator_Name" dim="Operator_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_PACID" Dim="Dim_POS_PACID" detectchange="false" Handler="">
+		<value raw="KDVR" dim="KDVR" key="true"/>
+		<value raw="PACID_Name" dim="PACID_Name"  key="false"/>
+		<value raw="CreationDate" dim="CreationDate" key="false"/>
+		<value raw="Stop_Convert" dim="Stop_Convert"  key="false"/>
+		<value raw="Updated_ConvertInfo" dim="Updated_ConvertInfo" key="false"/>
+		<value raw="Last_Convert" dim="Last_Convert"  key="false"/>
+		<value raw="SPK_KeyID" dim="SPK_KeyID"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_PaymentList" Dim="Dim_POS_Payment" detectchange="false" Handler="">
+		<value raw="PaymentID" dim="PaymentID_BK" key="true"/>
+		<value raw="PaymentName" dim="PaymentName"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_RegisterList" Dim="Dim_POS_Register" detectchange="false" Handler="">
+		<value raw="Register_ID" dim="Register_BK" key="true"/>
+		<value raw="Register_Name" dim="Register_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_ShiftList" Dim="Dim_POS_Shift" detectchange="false" Handler="">
+		<value raw="Shift_ID" dim="Shift_BK" key="true"/>
+		<value raw="Shift_Name" dim="Shift_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_StoreList" Dim="Dim_POS_Store" detectchange="false" Handler="">
+		<value raw="Store_ID" dim="Store_BK" key="true"/>
+		<value raw="Store_Name" dim="Store_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_TaxesList" Dim="Dim_POS_Tax" detectchange="false" Handler="">
+		<value raw="TaxID" dim="TaxID_BK" key="true"/>
+		<value raw="TaxName" dim="TaxName"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_TerminalList" Dim="Dim_POS_Terminal" detectchange="false" Handler="">
+		<value raw="Terminal_ID" dim="Terminal_BK" key="true"/>
+		<value raw="Terminal_Name" dim="Terminal_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_POS_TerminalList" Dim="Dim_POS_TransactionType" detectchange="false" Handler="">
+		<value raw="Terminal_ID" dim="Terminal_BK" key="true"/>
+		<value raw="Terminal_Name" dim="Terminal_Name"  key="false"/>
+	</Item>
+	<Item Raw="tbl_IOPC_AlarmAlarmType" Dim="Dim_IOPC_Alarm_AlarmType" detectchange="false" Handler="">
+		<value raw="AlarmTypeID" dim="AlarmTypeID_BK" key="true"/>
+		<value raw="AlarmType" dim="AlarmType"  key="false"/>
+	</Item>
+	<Item Raw="tbl_IOPC_AlarmArea" Dim="Dim_IOPC_Monitored_Location" detectchange="false" Handler="DimIOPCMonitoredLocationAlarmArea">
+		<value raw="AreaID" dim="LocationID_BK" key="true"/>
+		<value raw="AreaName" dim="Location"  key="false"/>
+	</Item>
+	<Item Raw="tbl_IOPC_Count_Area" Dim="Dim_IOPC_Monitored_Location" detectchange="false" Handler="DimIOPCMonitoredLocationCountArea">
+		<value raw="AreaID" dim="LocationID_BK" key="true"/>
+		<value raw="AreaName" dim="Location"  key="false"/>
+	</Item>
+	<Item Raw="tbl_IOPC_TrafficCountRegionName" Dim="Dim_IOPC_Monitored_Location" detectchange="false" Handler="DimIOPCMonitoredLocationTrafficCountRegionName">
+		<value raw="AreaID" dim="LocationID_BK" key="true"/>
+		<value raw="AreaName" dim="Location"  key="false"/>
+	</Item>
+	<Item Raw="tbl_IOPC_AlarmObjectType" Dim="Dim_IOPC_ObjectType" detectchange="false" Handler="DimIOPCObjectTypeAlarm">
+		<value raw="ObjectTypeID" dim="ObjectTypeID_BK" key="true"/>
+		<value raw="ObjectType" dim="ObjectType"  key="false"/>
+	</Item>
+	<Item Raw="tbl_IOPC_Count_ObjectType" Dim="Dim_IOPC_ObjectType" detectchange="false" Handler="DimIOPCObjectTypeCount">
+		<value raw="ObjectTypeID" dim="ObjectTypeID_BK" key="true"/>
+		<value raw="ObjectType" dim="ObjectType"  key="false"/>
+	</Item>
+	<Item Raw="" Dim="Dim_POS_TransactionType" detectchange="true" Handler="">
+		<value raw="" dim="TransactionTypeID" key="true"/>
+		<value raw="" dim="TransactionTypeName"  key="false"/>
+	</Item>
+	<Item Raw="Dim_POS_TransNBText" Dim="Dim_POS_TransNBText" detectchange="false" Handler="">
+		<value raw="TransNBText_ID" dim="TransNBText_ID" key="true"/>
+		<value raw="TransNBText" dim="TransNBText"  key="false"/>
+	</Item>
+</Items>

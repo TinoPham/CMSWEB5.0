@@ -1,0 +1,22 @@
+﻿<div class="select-widget">
+	<div class="modal-header">
+		<span class="close" data-ng-click="Close()"><i aria-hidden="true" class="icon-cancel-1"></i></span>
+		<h3 class="modal-title">{{'SELECT_METRIC_LIST'| translate}}</h3>
+	</div>
+    <div class="modal-body">
+        <br/>
+        <div class="col-md-12">
+            <div class="list-group">
+                <a ng-repeat="me in metricList" href="#" class="list-group-item" ng-class="{'active': me.Active === true }" ng-click="me.Active = !me.Active">
+                    {{ me.ResourceKey !== ""?  (me.ResourceKey | translate) : me.Name}} 
+                    <span ng-show="me.Active === true" class="badge"><i class="icon-check-1"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+	<div class="modal-footer">
+		<button class="btn btn-default" ng-click="Close()">{{"BTN_CANCEL"|translate}}</button>
+		<button class="btn btn-primary"  ng-click="Save()" >{{"BTN_OK"|translate}}</button>
+	</div>
+</div>

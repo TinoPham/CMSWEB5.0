@@ -1,0 +1,51 @@
+
+        <time_change>14611</time_change>
+        <configuration_id>5</configuration_id>
+        <configuration_name>server_info</configuration_name>
+        <site_info>
+            <server_info>
+                <user_name>i3dvr</user_name>
+                <version>1.600 Beta5 (01.14.10)</version>
+                <server_id>100-001</server_id>
+                <pacid></pacid>
+                <ip_add>{0}</ip_add>
+                <server_name>SRX-Pro Server</server_name>
+                <location></location>
+                <model>SRX-Pro Server</model>
+                <distributor></distributor>
+                <sale_date>
+                    <day>15</day>
+                    <month>1</month>
+                    <year>2010</year>
+                </sale_date>
+                <note>aaal;&apos;l&apos;</note>
+                <display>0</display>
+            </server_info>
+            <system_info>
+                <user_name>Administrator</user_name>
+                <comp_name>CMS-GROUP</comp_name>
+                <drives>
+                    <drive total_space="24999" free_space="9142">C:</drive>
+                    <drive total_space="19994" free_space="1730">D:</drive>
+                    <drive total_space="30004" free_space="12683">E:</drive>
+                    <drive total_space="60000" free_space="29662">F:</drive>
+                    <drive total_space="0" free_space="0">G:CDROM</drive>
+                    <drive total_space="14998" free_space="1994">H:</drive>
+                    <drive total_space="16323" free_space="4246">I:</drive>
+                    <drive total_space="50006" free_space="109">J:</drive>
+                    <drive total_space="12613" free_space="12548">K:</drive>
+                </drives>
+                <computer>
+                    <cpu_model>Intel Pentium43.20GHz</cpu_model>
+                    <total_memory>1023 MBytes</total_memory>
+                    <free_memory>163 MBytes</free_memory>
+                </computer>
+                <system>
+                    <os>Windows XP Professional </os>
+                    <version>Service Pack 2 (Build 2600)</version>
+                    <mac_address>{1}</mac_address>
+                </system>
+                <language>en</language>
+            </system_info>
+        </site_info>
+      
